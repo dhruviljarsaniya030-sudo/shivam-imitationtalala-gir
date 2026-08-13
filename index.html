@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shivam Imitation - Premium imitation jewellery and novelties in Talala Gir.">
+  <meta name="keywords" content="Shivam Imitation, imitation jewellery, jewellery Talala, necklaces, bracelets, bangles">
+  <meta name="theme-color" content="#080808">
+  <title>Shivam Imitation | Premium Jewellery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="topbar">✨ New Collection • Visit Shivam Imitation, Talala Gir</div>
+
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <img src="images/logo.jpg" alt="Shivam Imitation logo">
+      <span>SHIVAM <b>IMITATION</b></span>
+    </a>
+
+    <button class="menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#collection" onclick="closeMenu()">Collection</a>
+      <a href="#offers" onclick="closeMenu()">Offers</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-slider">
+        <img src="images/product-1.jpg" alt="Premium necklace set" class="hero-slide active">
+        <img src="images/product-4.jpg" alt="Gold necklace set" class="hero-slide">
+        <img src="images/product-5.jpg" alt="Traditional jewellery set" class="hero-slide">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">PREMIUM IMITATION JEWELLERY</p>
+        <h1>Elegance That <span>Shines</span></h1>
+        <p class="hero-text">Discover beautiful jewellery collections for every special moment.</p>
+        <div class="hero-actions">
+          <a href="#collection" class="gold-btn">Explore Collection</a>
+          <a href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20see%20your%20latest%20collection." target="_blank" class="outline-btn">WhatsApp Us</a>
+        </div>
+      </div>
+
+      <button class="slider-arrow left" onclick="changeSlide(-1)" aria-label="Previous">‹</button>
+      <button class="slider-arrow right" onclick="changeSlide(1)" aria-label="Next">›</button>
+      <div class="dots" id="dots"></div>
+    </section>
+
+    <section class="intro">
+      <p class="eyebrow">SHIVAM IMITATION</p>
+      <h2>Jewellery Made to <span>Stand Out</span></h2>
+      <p>Premium-looking imitation jewellery and novelties, selected for style, occasions and everyday elegance.</p>
+    </section>
+
+    <section id="collection" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Featured Pieces</h2>
+        </div>
+        <a href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20please%20share%20your%20full%20catalogue." target="_blank" class="text-link">View Catalogue →</a>
+      </div>
+
+      <div class="products">
+        <article class="card">
+          <img src="images/product-1.jpg" alt="Royal necklace set">
+          <div class="card-body">
+            <span>NECKLACE SET</span>
+            <h3>Royal Green Drop Set</h3>
+            <button onclick="orderProduct('Royal Green Drop Set')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-2.jpg" alt="Elegant necklace set">
+          <div class="card-body">
+            <span>NECKLACE SET</span>
+            <h3>Elegant Pearl Drop Set</h3>
+            <button onclick="orderProduct('Elegant Pearl Drop Set')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-3.jpg" alt="Butterfly necklace">
+          <div class="card-body">
+            <span>NECKLACE</span>
+            <h3>Butterfly Charm Necklace</h3>
+            <button onclick="orderProduct('Butterfly Charm Necklace')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-4.jpg" alt="Traditional gold necklace">
+          <div class="card-body">
+            <span>TRADITIONAL</span>
+            <h3>Classic Gold Pendant Set</h3>
+            <button onclick="orderProduct('Classic Gold Pendant Set')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-5.jpg" alt="Traditional jewellery set">
+          <div class="card-body">
+            <span>BRIDAL STYLE</span>
+            <h3>Heritage Statement Set</h3>
+            <button onclick="orderProduct('Heritage Statement Set')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-6.jpg" alt="Multicolor necklace">
+          <div class="card-body">
+            <span>NECKLACE</span>
+            <h3>Multicolor Stone Necklace</h3>
+            <button onclick="orderProduct('Multicolor Stone Necklace')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-7.jpg" alt="Pendant necklace">
+          <div class="card-body">
+            <span>DAILY WEAR</span>
+            <h3>Minimal Rose Pendant</h3>
+            <button onclick="orderProduct('Minimal Rose Pendant')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-8.jpg" alt="Bracelet">
+          <div class="card-body">
+            <span>BRACELET</span>
+            <h3>Rose Gold Crystal Bracelet</h3>
+            <button onclick="orderProduct('Rose Gold Crystal Bracelet')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-9.jpg" alt="Black stone bracelet">
+          <div class="card-body">
+            <span>BRACELET</span>
+            <h3>Black Stone Bracelet</h3>
+            <button onclick="orderProduct('Black Stone Bracelet')">WhatsApp Order</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/product-10.jpg" alt="Hair accessory set">
+          <div class="card-body">
+            <span>NOVELTY</span>
+            <h3>Crystal Hair Accessories</h3>
+            <button onclick="orderProduct('Crystal Hair Accessories')">WhatsApp Order</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="offers" class="offer">
+      <div>
+        <p class="eyebrow">SPECIAL OFFER</p>
+        <h2>Something Beautiful<br><span>Is Waiting For You</span></h2>
+        <p>Ask us on WhatsApp for today's latest collection and available offers.</p>
+      </div>
+      <a href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20please%20tell%20me%20today%27s%20special%20offers." target="_blank" class="gold-btn">Ask for Offer</a>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="about-image">
+        <img src="images/product-5.jpg" alt="Shivam Imitation jewellery collection">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT SHIVAM IMITATION</p>
+        <h2>Your Style.<br><span>Your Statement.</span></h2>
+        <p>Shivam Imitation brings together stylish imitation jewellery and novelties for festive looks, functions, gifting and everyday fashion.</p>
+        <p>Visit our showroom in Talala Gir to explore the latest collection.</p>
+        <a href="#contact" class="gold-btn">Visit Our Store</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <div class="section-heading center">
+        <div>
+          <p class="eyebrow">GET IN TOUCH</p>
+          <h2>Visit Shivam Imitation</h2>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <span class="icon">⌖</span>
+          <h3>Store Address</h3>
+          <p>Akshar Arcade, Gitanjali Talkies,<br>Shop No. 16, Talala Gir</p>
+        </div>
+
+        <div class="contact-card">
+          <span class="icon">☎</span>
+          <h3>Call Us</h3>
+          <p><a href="tel:9714978206">97149 78206</a><br><a href="tel:9624982393">96249 82393</a></p>
+        </div>
+
+        <div class="contact-card">
+          <span class="icon">✉</span>
+          <h3>Email</h3>
+          <p><a href="mailto:shivamimitationgir26@gmail.com">shivamimitationgir26@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-actions">
+        <a class="gold-btn" href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20would%20like%20to%20know%20about%20your%20jewellery%20collection." target="_blank">💬 WhatsApp Us</a>
+        <a class="outline-btn dark" href="tel:9714978206">Call Now</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-whatsapp" href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20see%20your%20collection." target="_blank" aria-label="WhatsApp">☏</a>
+
+  <footer>
+    <img src="images/logo.jpg" alt="Shivam Imitation">
+    <p>SHIVAM <span>IMITATION</span></p>
+    <small>© <span id="year"></span> Shivam Imitation • Talala Gir</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
