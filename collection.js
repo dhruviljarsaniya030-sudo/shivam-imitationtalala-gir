@@ -1,7 +1,3 @@
-/* =========================================================
-   SHIVAM IMITATION - COLLECTION SYSTEM
-========================================================= */
-
 const products = {
 
   necklace: [
@@ -27,19 +23,19 @@ const products = {
     }
   ],
 
-  bridal: [
-    {
-      image: "product-5.jpg",
-      category: "BRIDAL STYLE",
-      name: "Heritage Statement Set"
-    }
-  ],
-
   traditional: [
     {
       image: "product-4.jpg",
       category: "TRADITIONAL",
       name: "Classic Gold Pendant Set"
+    }
+  ],
+
+  bridal: [
+    {
+      image: "product-5.jpg",
+      category: "BRIDAL STYLE",
+      name: "Heritage Statement Set"
     }
   ],
 
@@ -75,17 +71,13 @@ const products = {
 };
 
 
-/* =========================================================
-   CATEGORY NAMES
-========================================================= */
-
 const categoryNames = {
 
   necklace: "Necklace Collection",
 
-  bridal: "Bridal Collection",
-
   traditional: "Traditional Collection",
+
+  bridal: "Bridal Collection",
 
   "daily-wear": "Daily Wear Collection",
 
@@ -96,49 +88,34 @@ const categoryNames = {
 };
 
 
-/* =========================================================
-   OPEN CATEGORY
-========================================================= */
-
-function openCategory(category){
+function openCategory(category) {
 
   const productSection =
     document.getElementById("productSection");
 
-  const productDetails =
-    document.getElementById("productDetails");
-
   const productGrid =
     document.getElementById("productGrid");
+
+  const productDetails =
+    document.getElementById("productDetails");
 
   const categoryTitle =
     document.getElementById("categoryTitle");
 
 
-  if(!products[category]){
-    return;
-  }
-
-
-  /* Hide product details */
-
   productDetails.classList.remove("show");
 
+  productSection.classList.add("show");
 
-  /* Set category title */
 
   categoryTitle.textContent =
     categoryNames[category];
 
 
-  /* Clear old products */
-
   productGrid.innerHTML = "";
 
 
-  /* Create products */
-
-  products[category].forEach(function(product, index){
+  products[category].forEach((product, index) => {
 
     const card =
       document.createElement("article");
@@ -176,11 +153,12 @@ function openCategory(category){
     `;
 
 
-    /* Product click */
+    card.addEventListener("click", function() {
 
-    card.addEventListener("click", function(){
-
-      openProduct(category, index);
+      openProduct(
+        category,
+        index
+      );
 
     });
 
@@ -190,119 +168,65 @@ function openCategory(category){
   });
 
 
-  /* Show product section */
-
-  productSection.classList.add("show");
-
-
-  /* Scroll smoothly */
-
-  setTimeout(function(){
-
-    productSection.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-  },100);
+  productSection.scrollIntoView({
+    behavior: "smooth"
+  });
 
 }
 
 
-/* =========================================================
-   OPEN PRODUCT DETAILS
-========================================================= */
-
-function openProduct(category, index){
+function openProduct(category, index) {
 
   const product =
     products[category][index];
 
 
-  if(!product){
-    return;
-  }
-
-
   const productSection =
     document.getElementById("productSection");
 
   const productDetails =
     document.getElementById("productDetails");
 
-  const detailImage =
-    document.getElementById("detailImage");
 
-  const detailCategory =
-    document.getElementById("detailCategory");
-
-  const detailName =
-    document.getElementById("detailName");
-
-  const detailWhatsapp =
-    document.getElementById("detailWhatsapp");
-
-
-  /* Product image */
-
-  detailImage.src =
+  document.getElementById("detailImage").src =
     product.image;
 
-  detailImage.alt =
+
+  document.getElementById("detailImage").alt =
     product.name;
 
 
-  /* Product information */
-
-  detailCategory.textContent =
+  document.getElementById("detailCategory").textContent =
     product.category;
 
-  detailName.textContent =
+
+  document.getElementById("detailName").textContent =
     product.name;
 
-
-  /* WhatsApp message */
 
   const message =
     "Hello Shivam Imitation, I want to know about " +
-    product.name +
-    ".";
+    product.name;
 
 
-  detailWhatsapp.href =
+  document.getElementById("detailWhatsapp").href =
     "https://wa.me/919714978206?text=" +
     encodeURIComponent(message);
 
 
-  /* Hide product list */
-
   productSection.classList.remove("show");
-
-
-  /* Show details */
 
   productDetails.classList.add("show");
 
 
-  /* Scroll to details */
-
-  setTimeout(function(){
-
-    productDetails.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
-    });
-
-  },100);
+  productDetails.scrollIntoView({
+    behavior: "smooth"
+  });
 
 }
 
 
-/* =========================================================
-   BACK TO CATEGORIES
-========================================================= */
-
-function backToCategories(){
+function backToCategories() {
 
   const productSection =
     document.getElementById("productSection");
@@ -310,72 +234,31 @@ function backToCategories(){
   const productDetails =
     document.getElementById("productDetails");
 
-
-  productDetails.classList.remove("show");
 
   productSection.classList.remove("show");
 
+  productDetails.classList.remove("show");
 
-  setTimeout(function(){
 
-    document.querySelector(".catalog-section")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
-
-  },100);
+  document.querySelector(".catalog-section")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
 }
 
 
-/* =========================================================
-   CLOSE PRODUCT
-========================================================= */
-
-function closeProduct(){
+function closeProduct() {
 
   const productDetails =
     document.getElementById("productDetails");
 
-  const productSection =
-    document.getElementById("productSection");
-
-
   productDetails.classList.remove("show");
 
-  productSection.classList.add("show");
 
-
-  setTimeout(function(){
-
-    productSection.scrollIntoView({
-      behavior:"smooth",
-      block:"start"
+  document.querySelector(".catalog-section")
+    .scrollIntoView({
+      behavior: "smooth"
     });
 
-  },100);
-
 }
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
-document.addEventListener(
-  "DOMContentLoaded",
-  function(){
-
-    const year =
-      document.getElementById("year");
-
-    if(year){
-
-      year.textContent =
-        new Date().getFullYear();
-
-    }
-
-  }
-);
