@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Shivam Imitation Collection - Premium imitation jewellery and novelties in Talala Gir.">
+  <meta name="description"
+    content="Shivam Imitation - Explore premium imitation jewellery collections in Talala Gir.">
 
-  <meta
-    name="keywords"
-    content="Shivam Imitation, imitation jewellery, necklace, bracelet, bridal jewellery, novelty, Talala Gir">
+  <meta name="keywords"
+    content="Shivam Imitation, jewellery Talala Gir, necklace, bridal jewellery, bracelet, traditional jewellery">
 
   <meta name="theme-color" content="#080808">
 
   <title>Collection | Shivam Imitation</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="collection.css">
 </head>
 
 <body>
@@ -32,16 +32,13 @@
 
     <a class="brand" href="index.html">
 
-      <img
-        src="logo.jpg"
-        alt="Shivam Imitation logo">
+      <img src="logo.jpg" alt="Shivam Imitation logo">
 
       <span>
         SHIVAM <b>IMITATION</b>
       </span>
 
     </a>
-
 
     <button
       class="menu-btn"
@@ -50,38 +47,17 @@
       ☰
     </button>
 
-
     <nav id="nav">
 
-      <a
-        href="index.html"
-        onclick="closeMenu()">
-        Home
-      </a>
+      <a href="index.html" onclick="closeMenu()">Home</a>
 
-      <a
-        href="collection.html"
-        onclick="closeMenu()">
-        Collection
-      </a>
+      <a href="collection.html" onclick="closeMenu()">Collection</a>
 
-      <a
-        href="index.html#offers"
-        onclick="closeMenu()">
-        Offers
-      </a>
+      <a href="index.html#offers" onclick="closeMenu()">Offers</a>
 
-      <a
-        href="index.html#about"
-        onclick="closeMenu()">
-        About
-      </a>
+      <a href="index.html#about" onclick="closeMenu()">About</a>
 
-      <a
-        href="index.html#contact"
-        onclick="closeMenu()">
-        Contact
-      </a>
+      <a href="index.html#contact" onclick="closeMenu()">Contact</a>
 
     </nav>
 
@@ -90,37 +66,268 @@
 
   <main>
 
-    <!-- COLLECTION HEADER -->
-    <section class="intro">
+    <!-- COLLECTION HERO -->
+    <section class="catalog-hero">
 
-      <p class="eyebrow">
-        SHIVAM IMITATION
-      </p>
+      <div class="catalog-hero-content">
 
-      <h1>
-        Our <span>Collection</span>
-      </h1>
+        <p class="eyebrow">
+          SHIVAM IMITATION
+        </p>
 
-      <p>
-        Explore our latest imitation jewellery and novelty collection.
-      </p>
+        <h1>
+          Discover Our
+          <span>Collection</span>
+        </h1>
+
+        <p>
+          Explore jewellery by category and find the perfect
+          style for every occasion.
+        </p>
+
+      </div>
 
     </section>
 
 
-    <!-- COLLECTION SECTION -->
-    <section class="section">
+    <!-- CATEGORY SECTION -->
+    <section class="catalog-section">
 
-      <div class="section-heading">
+      <div class="catalog-heading">
+
+        <p class="eyebrow">
+          PREMIUM COLLECTION
+        </p>
+
+        <h2>
+          Shop By Category
+        </h2>
+
+        <p>
+          Choose a collection to explore our latest designs.
+        </p>
+
+      </div>
+
+
+      <!-- CATEGORY GRID -->
+      <div class="category-grid">
+
+
+        <!-- NECKLACE -->
+        <article
+          class="category-card"
+          onclick="openCategory('necklace')">
+
+          <img
+            src="product-1.jpg"
+            alt="Necklace Collection">
+
+          <div class="category-overlay"></div>
+
+          <div class="category-content">
+
+            <small>
+              04 DESIGNS
+            </small>
+
+            <h3>
+              Necklace
+              <span>Collection</span>
+            </h3>
+
+            <button>
+              Explore Collection →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- BRIDAL -->
+        <article
+          class="category-card"
+          onclick="openCategory('bridal')">
+
+          <img
+            src="product-5.jpg"
+            alt="Bridal Jewellery Collection">
+
+          <div class="category-overlay"></div>
+
+          <div class="category-content">
+
+            <small>
+              01 DESIGN
+            </small>
+
+            <h3>
+              Bridal
+              <span>Collection</span>
+            </h3>
+
+            <button>
+              Explore Collection →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- TRADITIONAL -->
+        <article
+          class="category-card"
+          onclick="openCategory('traditional')">
+
+          <img
+            src="product-4.jpg"
+            alt="Traditional Jewellery Collection">
+
+          <div class="category-overlay"></div>
+
+          <div class="category-content">
+
+            <small>
+              01 DESIGN
+            </small>
+
+            <h3>
+              Traditional
+              <span>Collection</span>
+            </h3>
+
+            <button>
+              Explore Collection →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- DAILY WEAR -->
+        <article
+          class="category-card"
+          onclick="openCategory('daily-wear')">
+
+          <img
+            src="product-7.jpg"
+            alt="Daily Wear Jewellery Collection">
+
+          <div class="category-overlay"></div>
+
+          <div class="category-content">
+
+            <small>
+              01 DESIGN
+            </small>
+
+            <h3>
+              Daily Wear
+              <span>Collection</span>
+            </h3>
+
+            <button>
+              Explore Collection →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- BRACELET -->
+        <article
+          class="category-card"
+          onclick="openCategory('bracelet')">
+
+          <img
+            src="product-8.jpg"
+            alt="Bracelet Collection">
+
+          <div class="category-overlay"></div>
+
+          <div class="category-content">
+
+            <small>
+              02 DESIGNS
+            </small>
+
+            <h3>
+              Bracelet
+              <span>Collection</span>
+            </h3>
+
+            <button>
+              Explore Collection →
+            </button>
+
+          </div>
+
+        </article>
+
+
+        <!-- NOVELTY -->
+        <article
+          class="category-card"
+          onclick="openCategory('novelty')">
+
+          <img
+            src="product-10.jpg"
+            alt="Novelty Collection">
+
+          <div class="category-overlay"></div>
+
+          <div class="category-content">
+
+            <small>
+              01 DESIGN
+            </small>
+
+            <h3>
+              Novelty
+              <span>Collection</span>
+            </h3>
+
+            <button>
+              Explore Collection →
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUCT AREA -->
+
+    <section
+      id="productSection"
+      class="product-section">
+
+      <div class="product-section-header">
+
+        <button
+          class="back-category"
+          onclick="backToCategories()">
+
+          ← Back To Categories
+
+        </button>
 
         <div>
 
           <p class="eyebrow">
-            PREMIUM COLLECTION
+            COLLECTION
           </p>
 
-          <h2>
-            Shop By Category
+          <h2 id="categoryTitle">
+            Necklace Collection
           </h2>
 
         </div>
@@ -128,387 +335,70 @@
       </div>
 
 
-      <!-- FILTER BUTTONS -->
-      <div class="collection-filters">
-
-        <button
-          class="filter-btn active"
-          data-filter="all">
-          All
-        </button>
-
-        <button
-          class="filter-btn"
-          data-filter="necklace">
-          Necklace
-        </button>
-
-        <button
-          class="filter-btn"
-          data-filter="traditional">
-          Traditional
-        </button>
-
-        <button
-          class="filter-btn"
-          data-filter="bridal">
-          Bridal Style
-        </button>
-
-        <button
-          class="filter-btn"
-          data-filter="daily-wear">
-          Daily Wear
-        </button>
-
-        <button
-          class="filter-btn"
-          data-filter="bracelet">
-          Bracelet
-        </button>
-
-        <button
-          class="filter-btn"
-          data-filter="novelty">
-          Novelty
-        </button>
-
+      <div
+        id="productGrid"
+        class="catalog-product-grid">
       </div>
 
-
-      <!-- PRODUCTS -->
-      <div class="products collection-products">
+    </section>
 
 
-        <!-- PRODUCT 1 -->
-        <article
-          class="collection-card"
-          data-category="necklace">
+    <!-- PRODUCT DETAILS -->
 
-          <img
-            src="product-1.jpg"
-            alt="Royal Green Drop Set">
+    <section
+      id="productDetails"
+      class="product-details">
 
-          <div class="collection-info">
+      <button
+        class="back-category"
+        onclick="closeProduct()">
 
-            <small>
-              NECKLACE SET
-            </small>
+        ← Back To Collection
 
-            <h3>
-              Royal Green Drop Set
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Royal%20Green%20Drop%20Set."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
+      </button>
 
 
-        <!-- PRODUCT 2 -->
-        <article
-          class="collection-card"
-          data-category="necklace">
+      <div class="product-detail-inner">
+
+        <div class="product-detail-image">
 
           <img
-            src="product-2.jpg"
-            alt="Elegant Pearl Drop Set">
+            id="detailImage"
+            src=""
+            alt="Product">
 
-          <div class="collection-info">
+        </div>
 
-            <small>
-              NECKLACE SET
-            </small>
 
-            <h3>
-              Elegant Pearl Drop Set
-            </h3>
+        <div class="product-detail-content">
 
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Elegant%20Pearl%20Drop%20Set."
-              target="_blank">
+          <p
+            id="detailCategory"
+            class="eyebrow">
+          </p>
 
-              WhatsApp Enquiry
+          <h2 id="detailName">
+          </h2>
 
-            </a>
+          <div class="detail-line"></div>
 
-          </div>
+          <p class="detail-description">
+            Discover this beautiful design from
+            Shivam Imitation. Contact us on WhatsApp
+            for availability, details and today's price.
+          </p>
 
-        </article>
+          <a
+            id="detailWhatsapp"
+            href="#"
+            target="_blank"
+            class="gold-btn">
 
+            💬 WhatsApp Enquiry
 
-        <!-- PRODUCT 3 -->
-        <article
-          class="collection-card"
-          data-category="necklace">
+          </a>
 
-          <img
-            src="product-3.jpg"
-            alt="Butterfly Charm Necklace">
-
-          <div class="collection-info">
-
-            <small>
-              NECKLACE
-            </small>
-
-            <h3>
-              Butterfly Charm Necklace
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Butterfly%20Charm%20Necklace."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 4 -->
-        <article
-          class="collection-card"
-          data-category="traditional">
-
-          <img
-            src="product-4.jpg"
-            alt="Classic Gold Pendant Set">
-
-          <div class="collection-info">
-
-            <small>
-              TRADITIONAL
-            </small>
-
-            <h3>
-              Classic Gold Pendant Set
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Classic%20Gold%20Pendant%20Set."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 5 -->
-        <article
-          class="collection-card"
-          data-category="bridal">
-
-          <img
-            src="product-5.jpg"
-            alt="Heritage Statement Set">
-
-          <div class="collection-info">
-
-            <small>
-              BRIDAL STYLE
-            </small>
-
-            <h3>
-              Heritage Statement Set
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Heritage%20Statement%20Set."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 6 -->
-        <article
-          class="collection-card"
-          data-category="necklace">
-
-          <img
-            src="product-6.jpg"
-            alt="Multicolor Stone Necklace">
-
-          <div class="collection-info">
-
-            <small>
-              NECKLACE
-            </small>
-
-            <h3>
-              Multicolor Stone Necklace
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Multicolor%20Stone%20Necklace."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 7 -->
-        <article
-          class="collection-card"
-          data-category="daily-wear">
-
-          <img
-            src="product-7.jpg"
-            alt="Minimal Rose Pendant">
-
-          <div class="collection-info">
-
-            <small>
-              DAILY WEAR
-            </small>
-
-            <h3>
-              Minimal Rose Pendant
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Minimal%20Rose%20Pendant."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 8 -->
-        <article
-          class="collection-card"
-          data-category="bracelet">
-
-          <img
-            src="product-8.jpg"
-            alt="Rose Gold Crystal Bracelet">
-
-          <div class="collection-info">
-
-            <small>
-              BRACELET
-            </small>
-
-            <h3>
-              Rose Gold Crystal Bracelet
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Rose%20Gold%20Crystal%20Bracelet."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 9 -->
-        <article
-          class="collection-card"
-          data-category="bracelet">
-
-          <img
-            src="product-9.jpg"
-            alt="Black Stone Bracelet">
-
-          <div class="collection-info">
-
-            <small>
-              BRACELET
-            </small>
-
-            <h3>
-              Black Stone Bracelet
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Black%20Stone%20Bracelet."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- PRODUCT 10 -->
-        <article
-          class="collection-card"
-          data-category="novelty">
-
-          <img
-            src="product-10.jpg"
-            alt="Crystal Hair Accessories">
-
-          <div class="collection-info">
-
-            <small>
-              NOVELTY
-            </small>
-
-            <h3>
-              Crystal Hair Accessories
-            </h3>
-
-            <a
-              class="whatsapp-btn"
-              href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20know%20about%20Crystal%20Hair%20Accessories."
-              target="_blank">
-
-              WhatsApp Enquiry
-
-            </a>
-
-          </div>
-
-        </article>
-
+        </div>
 
       </div>
 
@@ -516,7 +406,8 @@
 
 
     <!-- WHATSAPP OFFER -->
-    <section class="offer">
+
+    <section class="offer catalog-offer">
 
       <div>
 
@@ -530,7 +421,8 @@
         </h2>
 
         <p>
-          Contact us on WhatsApp for the latest collection and offers.
+          Contact us on WhatsApp for the latest
+          collection and offers.
         </p>
 
       </div>
@@ -550,6 +442,7 @@
 
 
   <!-- FLOATING WHATSAPP -->
+
   <a
     class="floating-whatsapp"
     href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20see%20your%20collection."
@@ -562,6 +455,7 @@
 
 
   <!-- FOOTER -->
+
   <footer>
 
     <img
@@ -573,74 +467,16 @@
     </p>
 
     <small>
-      © <span id="year"></span> Shivam Imitation • Talala Gir
+      © <span id="year"></span>
+      Shivam Imitation • Talala Gir
     </small>
 
   </footer>
 
 
-  <!-- FILTER SCRIPT -->
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      const filterButtons =
-        document.querySelectorAll(".filter-btn");
-
-      const products =
-        document.querySelectorAll(".collection-card");
-
-
-      filterButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-          const filter =
-            this.getAttribute("data-filter");
-
-
-          filterButtons.forEach(function (btn) {
-
-            btn.classList.remove("active");
-
-          });
-
-
-          this.classList.add("active");
-
-
-          products.forEach(function (product) {
-
-            const category =
-              product.getAttribute("data-category");
-
-
-            if (
-              filter === "all" ||
-              category === filter
-            ) {
-
-              product.style.display = "";
-
-            } else {
-
-              product.style.display = "none";
-
-            }
-
-          });
-
-        });
-
-      });
-
-    });
-
-  </script>
-
-
-  <!-- MAIN SCRIPT -->
   <script src="script.js"></script>
+  <script src="collection.js"></script>
 
 </body>
+
 </html>
