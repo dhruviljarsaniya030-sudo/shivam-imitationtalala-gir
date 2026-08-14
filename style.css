@@ -1,83 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root{
-  --black:#070707;
-  --black2:#0d0d0c;
-  --black3:#141310;
-
-  --gold:#d4af62;
-  --gold-light:#f1d995;
-  --gold-dark:#9f7b35;
-
-  --white:#f8f5ee;
-  --muted:#aaa59b;
-  --muted2:#77736b;
-
-  --line:rgba(212,175,98,.22);
-  --glass:rgba(10,10,10,.78);
+  --bg:#070707;
+  --bg2:#0d0c0b;
+  --card:#11100e;
+  --gold:#d8b568;
+  --gold-light:#f2d998;
+  --cream:#f7f2e8;
+  --white:#fff;
+  --muted:#aaa49a;
+  --line:rgba(216,181,104,.22);
 }
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:100px;
 }
 
 body{
-  font-family:"Montserrat",Arial,sans-serif;
-  background:var(--black);
+  background:var(--bg);
   color:var(--white);
+  font-family:Montserrat,Arial,sans-serif;
   line-height:1.6;
   overflow-x:hidden;
 }
 
-body::selection{
-  background:var(--gold);
-  color:#111;
-}
-
 a{
-  text-decoration:none;
   color:inherit;
+  text-decoration:none;
 }
 
 button{
-  font:inherit;
+  font-family:inherit;
 }
 
-/* =========================================
-   TOP BAR
-========================================= */
+/* ================= TOP BAR ================= */
 
 .topbar{
-  height:34px;
+  height:36px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  padding:0 15px;
+  align-items:center;
 
-  background:linear-gradient(
-    90deg,
-    #a9853c,
-    #e0bd6c,
-    #b08b42
-  );
+  background:var(--gold);
+  color:#111;
 
-  color:#080808;
   font-size:10px;
   font-weight:700;
   letter-spacing:2px;
   text-transform:uppercase;
 }
 
-/* =========================================
-   NAVBAR
-========================================= */
+/* ================= NAVBAR ================= */
 
 .navbar{
   height:82px;
@@ -91,37 +70,32 @@ button{
   top:0;
   z-index:1000;
 
-  background:rgba(7,7,7,.88);
+  background:rgba(7,7,7,.94);
   backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
 
-  border-bottom:1px solid rgba(212,175,98,.18);
+  border-bottom:1px solid var(--line);
 }
 
 .brand{
   display:flex;
   align-items:center;
-  gap:13px;
+  gap:12px;
 }
 
 .brand img{
-  width:49px;
-  height:49px;
+  width:48px;
+  height:48px;
   border-radius:50%;
   object-fit:cover;
   background:#fff;
 
-  border:1px solid rgba(212,175,98,.55);
-  box-shadow:
-    0 0 0 4px rgba(212,175,98,.04),
-    0 8px 25px rgba(0,0,0,.4);
+  border:1px solid rgba(216,181,104,.5);
 }
 
 .brand span{
   font-family:"Cormorant Garamond",serif;
-  font-size:25px;
+  font-size:24px;
   letter-spacing:4px;
-  line-height:1;
 }
 
 .brand b{
@@ -132,38 +106,39 @@ button{
 nav{
   display:flex;
   align-items:center;
-  gap:30px;
+  gap:32px;
 }
 
 nav a{
   position:relative;
 
+  color:#ddd;
+
   font-size:10px;
   font-weight:600;
+  letter-spacing:1.8px;
   text-transform:uppercase;
-  letter-spacing:2px;
 
-  color:#d7d3ca;
-
-  transition:.3s ease;
+  transition:.3s;
 }
 
 nav a::after{
   content:"";
+
   position:absolute;
   left:0;
-  bottom:-9px;
+  bottom:-8px;
 
   width:0;
   height:1px;
 
   background:var(--gold);
 
-  transition:.3s ease;
+  transition:.3s;
 }
 
 nav a:hover{
-  color:var(--gold-light);
+  color:var(--gold);
 }
 
 nav a:hover::after{
@@ -172,29 +147,31 @@ nav a:hover::after{
 
 .menu-btn{
   display:none;
-  border:0;
+
   background:none;
+  border:0;
+
   color:white;
   font-size:27px;
+
   cursor:pointer;
 }
 
-/* =========================================
-   HERO
-========================================= */
+/* ================= HERO ================= */
 
 .hero{
-  height:calc(100vh - 116px);
+  height:calc(100vh - 118px);
   min-height:650px;
 
   position:relative;
-  overflow:hidden;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
   text-align:center;
+
+  overflow:hidden;
 }
 
 .hero-slider,
@@ -212,16 +189,15 @@ nav a:hover::after{
 
   opacity:0;
 
+  filter:
+    brightness(.65)
+    saturate(.75);
+
   transform:scale(1.04);
 
   transition:
     opacity 1.2s ease,
     transform 6s ease;
-
-  filter:
-    saturate(.72)
-    contrast(1.05)
-    brightness(.72);
 }
 
 .hero-slide.active{
@@ -232,26 +208,10 @@ nav a:hover::after{
 .hero-overlay{
   background:
     linear-gradient(
-      90deg,
-      rgba(0,0,0,.86),
-      rgba(0,0,0,.35),
-      rgba(0,0,0,.84)
-    );
-
-  z-index:1;
-}
-
-.hero-overlay::after{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle at center,
-      transparent 15%,
-      rgba(0,0,0,.55) 100%
+      180deg,
+      rgba(0,0,0,.65),
+      rgba(0,0,0,.25) 45%,
+      rgba(0,0,0,.85)
     );
 }
 
@@ -260,11 +220,13 @@ nav a:hover::after{
   z-index:5;
 
   max-width:900px;
+
   padding:30px;
 }
 
 .eyebrow{
   color:var(--gold);
+
   font-size:10px;
   font-weight:700;
 
@@ -275,159 +237,109 @@ nav a:hover::after{
 .hero h1{
   font-family:"Cormorant Garamond",serif;
 
-  font-size:clamp(64px,9vw,112px);
-  line-height:.84;
+  font-size:clamp(65px,9vw,120px);
+
+  font-weight:500;
+
+  line-height:.82;
 
   letter-spacing:-2px;
 
-  margin:22px 0 25px;
-
-  text-shadow:
-    0 10px 35px rgba(0,0,0,.5);
+  margin:22px 0;
 }
 
-.hero h1 span,
-.intro h2 span,
-.offer h2 span,
-.about h2 span{
+.hero h1 span{
+  display:block;
   color:var(--gold);
 }
 
 .hero-text{
-  max-width:610px;
+  max-width:570px;
+
   margin:auto;
 
-  color:#d2cec5;
+  color:#ddd;
 
-  font-size:14px;
-  letter-spacing:.2px;
+  font-size:13px;
 }
 
 .hero-actions{
+  margin-top:35px;
+
   display:flex;
   justify-content:center;
   align-items:center;
 
   gap:14px;
 
-  margin-top:34px;
   flex-wrap:wrap;
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
-
-.gold-btn,
-.outline-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  min-height:47px;
-
-  padding:0 25px;
-
-  border-radius:2px;
-
-  text-transform:uppercase;
-  letter-spacing:1.7px;
-
-  font-size:10px;
-  font-weight:700;
-
-  transition:
-    transform .3s ease,
-    background .3s ease,
-    box-shadow .3s ease;
-}
+/* ================= BUTTONS ================= */
 
 .gold-btn{
-  color:#0b0b0b;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
 
-  background:
-    linear-gradient(
-      135deg,
-      #bd9447,
-      #efd489,
-      #b98e43
-    );
+  min-height:48px;
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.25);
+  padding:0 27px;
+
+  background:var(--gold);
+  color:#111;
+
+  border:1px solid var(--gold);
+
+  font-size:9px;
+  font-weight:700;
+
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+
+  transition:.3s;
 }
 
 .gold-btn:hover{
+  background:var(--gold-light);
+
   transform:translateY(-3px);
 
   box-shadow:
-    0 14px 35px rgba(212,175,98,.18);
-}
-
-.outline-btn{
-  color:white;
-
-  border:1px solid var(--gold);
-  background:transparent;
-}
-
-.outline-btn:hover{
-  background:rgba(212,175,98,.08);
-  transform:translateY(-2px);
+    0 12px 30px rgba(216,181,104,.18);
 }
 
 .text-link{
-  position:relative;
-
   color:var(--gold);
 
   font-size:10px;
   font-weight:700;
 
+  letter-spacing:1.5px;
   text-transform:uppercase;
-  letter-spacing:1.8px;
-}
-
-.text-link::after{
-  content:"";
-
-  position:absolute;
-  left:0;
-  bottom:-6px;
-
-  width:35px;
-  height:1px;
-
-  background:var(--gold);
 
   transition:.3s;
 }
 
-.text-link:hover::after{
-  width:100%;
+.text-link:hover{
+  color:white;
 }
 
-/* =========================================
-   HERO ARROWS
-========================================= */
+/* ================= HERO ARROWS ================= */
 
 .slider-arrow{
   position:absolute;
   z-index:10;
-  top:50%;
 
+  top:50%;
   transform:translateY(-50%);
 
   width:48px;
   height:48px;
 
-  display:grid;
-  place-items:center;
-
   border:1px solid rgba(255,255,255,.25);
 
-  background:rgba(0,0,0,.25);
-  backdrop-filter:blur(5px);
+  background:rgba(0,0,0,.3);
 
   color:white;
 
@@ -439,39 +351,34 @@ nav a:hover::after{
 }
 
 .slider-arrow:hover{
-  background:rgba(212,175,98,.12);
+  background:var(--gold);
+  color:#111;
   border-color:var(--gold);
-  color:var(--gold);
 }
 
 .slider-arrow.left{
-  left:30px;
+  left:28px;
 }
 
 .slider-arrow.right{
-  right:30px;
+  right:28px;
 }
-
-/* =========================================
-   SLIDER DOTS
-========================================= */
 
 .dots{
   position:absolute;
-
   z-index:10;
 
   bottom:30px;
 
   display:flex;
-  gap:8px;
+  gap:7px;
 }
 
 .dot{
   width:7px;
   height:7px;
 
-  border-radius:20px;
+  border-radius:10px;
 
   background:#777;
 
@@ -481,54 +388,44 @@ nav a:hover::after{
 }
 
 .dot.active{
-  width:30px;
+  width:28px;
   background:var(--gold);
 }
 
-/* =========================================
-   INTRO
-========================================= */
+/* ================= INTRO ================= */
 
 .intro{
-  position:relative;
-
-  padding:125px 7%;
+  padding:120px 7%;
 
   text-align:center;
 
   background:
     radial-gradient(
       circle at 50% 0,
-      rgba(212,175,98,.11),
-      transparent 42%
+      rgba(216,181,104,.1),
+      transparent 45%
     );
 }
 
-.intro::before{
-  content:"✦";
-
-  display:block;
-
-  color:var(--gold);
-
-  font-size:18px;
-
-  margin-bottom:20px;
-
-  opacity:.7;
-}
-
-.intro h2{
+.intro h2,
+.intro h1{
   font-family:"Cormorant Garamond",serif;
 
-  font-size:clamp(46px,5vw,64px);
+  font-size:clamp(48px,6vw,70px);
 
-  line-height:1;
+  font-weight:500;
 
-  margin:13px 0 20px;
+  line-height:.95;
+
+  margin:15px 0;
 }
 
-.intro>p:last-child{
+.intro h1 span,
+.intro h2 span{
+  color:var(--gold);
+}
+
+.intro > p:last-child{
   max-width:650px;
 
   margin:auto;
@@ -538,38 +435,35 @@ nav a:hover::after{
   font-size:13px;
 }
 
-/* =========================================
-   SECTIONS
-========================================= */
+/* ================= SECTION ================= */
 
 .section{
-  padding:105px 6%;
+  padding:100px 6%;
 }
 
 .section-heading{
-  display:flex;
+  margin-bottom:42px;
 
+  display:flex;
   align-items:flex-end;
   justify-content:space-between;
 
   gap:30px;
-
-  margin-bottom:42px;
 }
 
 .section-heading h2{
   font-family:"Cormorant Garamond",serif;
 
-  font-size:clamp(46px,5vw,62px);
+  font-size:clamp(48px,6vw,68px);
 
-  line-height:.95;
+  font-weight:500;
 
-  margin-top:9px;
+  line-height:.9;
+
+  margin-top:10px;
 }
 
-/* =========================================
-   PRODUCTS
-========================================= */
+/* ================= PRODUCTS ================= */
 
 .products{
   display:grid;
@@ -581,7 +475,7 @@ nav a:hover::after{
 }
 
 .card{
-  position:relative;
+  overflow:hidden;
 
   background:
     linear-gradient(
@@ -590,75 +484,38 @@ nav a:hover::after{
       #0d0d0c
     );
 
-  border:1px solid rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.07);
 
-  overflow:hidden;
-
-  transition:
-    transform .4s ease,
-    border-color .4s ease,
-    box-shadow .4s ease;
-}
-
-.card::before{
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent,
-      rgba(212,175,98,.08),
-      transparent
-    );
-
-  transform:translateX(-100%);
-
-  transition:.7s;
-
-  z-index:2;
-
-  pointer-events:none;
+  transition:.4s;
 }
 
 .card:hover{
   transform:translateY(-8px);
 
-  border-color:rgba(212,175,98,.35);
+  border-color:var(--line);
 
   box-shadow:
-    0 20px 50px rgba(0,0,0,.38);
+    0 20px 50px rgba(0,0,0,.4);
 }
 
-.card:hover::before{
-  transform:translateX(100%);
-}
-
-.card>img{
+.card > img{
   width:100%;
 
   aspect-ratio:4/5;
 
-  object-fit:cover;
-
   display:block;
 
-  transition:
-    transform .7s ease,
-    filter .5s ease;
+  object-fit:cover;
+
+  transition:.7s;
 }
 
-.card:hover>img{
-  transform:scale(1.045);
-
-  filter:brightness(1.06);
+.card:hover > img{
+  transform:scale(1.05);
 }
 
 .card-body{
-  padding:22px 20px 20px;
+  padding:21px;
 }
 
 .card-body span{
@@ -667,7 +524,7 @@ nav a:hover::after{
   font-size:8px;
   font-weight:700;
 
-  letter-spacing:2.2px;
+  letter-spacing:2px;
 }
 
 .card-body h3{
@@ -675,118 +532,87 @@ nav a:hover::after{
 
   font-size:25px;
 
+  font-weight:600;
+
   line-height:1.05;
 
-  margin:7px 0 18px;
-
-  color:#f5f0e7;
+  margin:8px 0 17px;
 }
 
 .card-body button{
   width:100%;
 
-  min-height:42px;
-
-  padding:0 10px;
-
-  border:1px solid var(--line);
+  height:40px;
 
   background:transparent;
 
   color:var(--gold);
 
-  cursor:pointer;
+  border:1px solid var(--line);
 
-  text-transform:uppercase;
-
-  font-size:9px;
+  font-size:8px;
   font-weight:700;
 
-  letter-spacing:1.4px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+
+  cursor:pointer;
 
   transition:.3s;
 }
 
 .card-body button:hover{
-  color:#0b0b0b;
-
   background:var(--gold);
-
-  border-color:var(--gold);
+  color:#111;
 }
 
-/* =========================================
-   OFFER
-========================================= */
+/* ================= OFFER ================= */
 
 .offer{
-  position:relative;
+  margin:10px 6% 0;
 
-  margin:25px 6% 0;
-
-  padding:72px 7%;
+  padding:75px 7%;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  gap:35px;
-
-  overflow:hidden;
+  gap:40px;
 
   background:
     radial-gradient(
       circle at 80% 50%,
-      rgba(212,175,98,.12),
+      rgba(216,181,104,.12),
       transparent 35%
     ),
-    linear-gradient(
-      105deg,
-      #18140e,
-      #0c0c0b
-    );
+    linear-gradient(110deg,#15120d,#0b0b0a);
 
   border:1px solid var(--line);
 }
 
-.offer::before{
-  content:"";
-
-  position:absolute;
-
-  width:220px;
-  height:220px;
-
-  border:1px solid rgba(212,175,98,.12);
-
-  border-radius:50%;
-
-  right:8%;
-  top:-80px;
-}
-
 .offer h2{
-  position:relative;
-  z-index:2;
-
   font-family:"Cormorant Garamond",serif;
 
-  font-size:clamp(45px,5vw,62px);
+  font-size:clamp(48px,6vw,70px);
 
-  line-height:.9;
+  font-weight:500;
 
-  margin:12px 0 18px;
+  line-height:.88;
+
+  margin:14px 0 20px;
+}
+
+.offer h2 span{
+  color:var(--gold);
 }
 
 .offer p:not(.eyebrow){
   color:var(--muted);
 
-  font-size:13px;
+  font-size:12px;
 }
 
-/* =========================================
-   ABOUT
-========================================= */
+/* ================= ABOUT ================= */
 
 .about{
   display:grid;
@@ -801,24 +627,11 @@ nav a:hover::after{
 }
 
 .about-image{
-  height:610px;
-
-  position:relative;
+  height:620px;
 
   overflow:hidden;
 
   border:1px solid var(--line);
-}
-
-.about-image::after{
-  content:"";
-
-  position:absolute;
-  inset:15px;
-
-  border:1px solid rgba(212,175,98,.35);
-
-  pointer-events:none;
 }
 
 .about-image img{
@@ -827,54 +640,48 @@ nav a:hover::after{
 
   object-fit:cover;
 
-  transition:transform 1s ease;
+  transition:.8s;
 }
 
 .about-image:hover img{
-  transform:scale(1.035);
+  transform:scale(1.04);
 }
 
 .about-copy h2{
   font-family:"Cormorant Garamond",serif;
 
-  font-size:clamp(55px,6vw,75px);
+  font-size:clamp(55px,6vw,78px);
+
+  font-weight:500;
 
   line-height:.86;
 
-  margin:16px 0 28px;
+  margin:15px 0 30px;
+}
+
+.about-copy h2 span{
+  color:var(--gold);
 }
 
 .about-copy p:not(.eyebrow){
-  max-width:560px;
+  max-width:550px;
+
+  margin-bottom:16px;
 
   color:var(--muted);
 
   font-size:13px;
-
-  margin-bottom:16px;
 }
 
-/* =========================================
-   CONTACT
-========================================= */
+/* ================= CONTACT ================= */
 
 .contact{
-  background:
-    radial-gradient(
-      circle at 50% 0,
-      rgba(212,175,98,.08),
-      transparent 40%
-    ),
-    #f5f0e7;
+  background:var(--cream);
 
   color:#111;
 }
 
-.contact .eyebrow{
-  color:#9b762e;
-}
-
-.contact .section-heading{
+.center{
   justify-content:center;
   text-align:center;
 }
@@ -883,44 +690,36 @@ nav a:hover::after{
   display:grid;
 
   grid-template-columns:
-    repeat(3,minmax(0,1fr));
+    repeat(3,1fr);
 
-  gap:20px;
+  gap:18px;
 }
 
 .contact-card{
-  position:relative;
+  min-height:205px;
 
-  background:#fff;
-
-  border:1px solid #e5dccb;
+  padding:38px 20px;
 
   text-align:center;
 
-  padding:40px 22px;
+  background:#fff;
 
-  min-height:205px;
+  border:1px solid #e7ddca;
 
   transition:.35s;
 }
 
 .contact-card:hover{
-  transform:translateY(-6px);
-
-  border-color:#c8a75d;
+  transform:translateY(-5px);
 
   box-shadow:
-    0 15px 35px rgba(70,50,15,.08);
+    0 15px 35px rgba(0,0,0,.08);
 }
 
 .icon{
-  display:block;
+  color:#9c762e;
 
-  font-size:25px;
-
-  color:#a17b30;
-
-  margin-bottom:5px;
+  font-size:28px;
 }
 
 .contact-card h3{
@@ -928,57 +727,34 @@ nav a:hover::after{
 
   font-size:29px;
 
-  margin:8px 0;
+  margin:9px 0;
 }
 
 .contact-card p{
-  color:#5d5951;
+  color:#666;
 
   font-size:12px;
 }
 
 .contact-card a{
-  color:#946f28;
-
-  transition:.2s;
-}
-
-.contact-card a:hover{
-  color:#111;
+  color:#96702c;
 }
 
 .contact-actions{
-  display:flex;
+  margin-top:32px;
 
-  justify-content:center;
-
-  gap:12px;
-
-  margin-top:35px;
-
-  flex-wrap:wrap;
+  text-align:center;
 }
 
-.outline-btn.dark{
-  color:#111;
-
-  border-color:#111;
-}
-
-.outline-btn.dark:hover{
-  background:#111;
-  color:#fff;
-}
-
-/* =========================================
-   FLOATING WHATSAPP
-========================================= */
+/* ================= WHATSAPP ================= */
 
 .floating-whatsapp{
   position:fixed;
 
   right:24px;
   bottom:24px;
+
+  z-index:900;
 
   width:58px;
   height:58px;
@@ -990,60 +766,26 @@ nav a:hover::after{
 
   background:#25d366;
 
-  color:white;
+  color:#fff;
 
-  font-size:27px;
-
-  z-index:900;
+  font-size:25px;
 
   box-shadow:
-    0 12px 35px rgba(0,0,0,.4);
+    0 12px 35px rgba(0,0,0,.35);
 
   transition:.3s;
 }
 
-.floating-whatsapp::before{
-  content:"";
-
-  position:absolute;
-
-  inset:-5px;
-
-  border-radius:50%;
-
-  border:1px solid rgba(37,211,102,.4);
-
-  animation:whatsappPulse 2s infinite;
-}
-
 .floating-whatsapp:hover{
-  transform:translateY(-5px) scale(1.05);
+  transform:scale(1.08);
 }
 
-@keyframes whatsappPulse{
-  0%{
-    transform:scale(.95);
-    opacity:.7;
-  }
-
-  70%{
-    transform:scale(1.18);
-    opacity:0;
-  }
-
-  100%{
-    opacity:0;
-  }
-}
-
-/* =========================================
-   FOOTER
-========================================= */
+/* ================= FOOTER ================= */
 
 footer{
-  text-align:center;
+  padding:55px 20px;
 
-  padding:55px 20px 45px;
+  text-align:center;
 
   background:#050505;
 
@@ -1051,8 +793,8 @@ footer{
 }
 
 footer img{
-  width:68px;
-  height:68px;
+  width:65px;
+  height:65px;
 
   border-radius:50%;
 
@@ -1060,17 +802,17 @@ footer img{
 
   background:white;
 
-  border:1px solid rgba(212,175,98,.5);
+  border:1px solid var(--line);
 }
 
 footer p{
+  margin:12px 0;
+
   font-family:"Cormorant Garamond",serif;
 
-  font-size:21px;
+  font-size:22px;
 
   letter-spacing:4px;
-
-  margin:12px 0 5px;
 }
 
 footer p span{
@@ -1078,63 +820,42 @@ footer p span{
 }
 
 footer small{
-  color:#69655d;
+  color:#666;
 
   font-size:10px;
-
-  letter-spacing:.5px;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:1100px){
+@media(max-width:1050px){
 
   .products{
     grid-template-columns:repeat(3,1fr);
   }
 
   .about{
-    gap:45px;
+    grid-template-columns:1fr;
   }
 
   .about-image{
-    height:540px;
-  }
-
-  nav{
-    gap:20px;
+    height:520px;
   }
 }
-
-/* =========================================
-   MOBILE
-========================================= */
 
 @media(max-width:700px){
 
   .topbar{
-    height:32px;
-
     font-size:8px;
-
     letter-spacing:1.2px;
   }
 
   .navbar{
-    height:70px;
-
-    padding:0 5%;
-  }
-
-  .brand{
-    gap:9px;
+    height:72px;
   }
 
   .brand img{
-    width:42px;
-    height:42px;
+    width:43px;
+    height:43px;
   }
 
   .brand span{
@@ -1151,141 +872,68 @@ footer small{
 
     position:absolute;
 
-    top:70px;
     left:0;
     right:0;
+    top:72px;
 
-    padding:25px 20px 30px;
-
-    background:rgba(8,8,8,.97);
-
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid var(--line);
+    padding:22px;
 
     flex-direction:column;
 
-    gap:22px;
+    gap:20px;
 
-    text-align:center;
+    background:#090909;
+
+    border-bottom:1px solid var(--line);
   }
 
   nav.open{
     display:flex;
   }
 
-  nav a{
-    font-size:10px;
-  }
-
-  /* HERO */
-
   .hero{
+    min-height:570px;
     height:78vh;
-    min-height:560px;
-  }
-
-  .hero-content{
-    padding:25px 18px;
   }
 
   .hero h1{
-    font-size:55px;
-
-    line-height:.87;
-
-    letter-spacing:-1px;
-
-    margin:18px 0 20px;
+    font-size:56px;
   }
 
   .hero-text{
     font-size:12px;
-
-    max-width:360px;
-  }
-
-  .hero-actions{
-    margin-top:27px;
-
-    flex-direction:column;
-
-    align-items:center;
-  }
-
-  .gold-btn{
-    min-height:45px;
-
-    padding:0 22px;
   }
 
   .slider-arrow{
     display:none;
   }
 
-  .dots{
-    bottom:23px;
-  }
-
-  /* INTRO */
-
   .intro{
-    padding:85px 7%;
+    padding:80px 6%;
   }
-
-  .intro h2{
-    font-size:43px;
-  }
-
-  /* SECTIONS */
 
   .section{
     padding:75px 5%;
   }
 
   .section-heading{
-    align-items:flex-start;
-
     flex-direction:column;
-
-    gap:20px;
-
-    margin-bottom:30px;
+    align-items:flex-start;
   }
-
-  .section-heading h2{
-    font-size:44px;
-  }
-
-  /* PRODUCTS */
 
   .products{
     grid-template-columns:repeat(2,1fr);
 
-    gap:11px;
+    gap:10px;
   }
 
   .card-body{
-    padding:15px 13px;
-  }
-
-  .card-body span{
-    font-size:7px;
+    padding:14px;
   }
 
   .card-body h3{
     font-size:21px;
-
-    margin:6px 0 14px;
   }
-
-  .card-body button{
-    min-height:39px;
-
-    font-size:8px;
-  }
-
-  /* OFFER */
 
   .offer{
     margin:0 5%;
@@ -1295,117 +943,38 @@ footer small{
     display:block;
   }
 
-  .offer h2{
-    font-size:45px;
-  }
-
   .offer .gold-btn{
     margin-top:25px;
   }
 
-  /* ABOUT */
-
-  .about{
-    grid-template-columns:1fr;
-
-    gap:35px;
-  }
-
   .about-image{
-    height:470px;
+    height:450px;
   }
-
-  .about-copy h2{
-    font-size:54px;
-  }
-
-  /* CONTACT */
 
   .contact-grid{
     grid-template-columns:1fr;
-
-    gap:12px;
-  }
-
-  .contact-card{
-    min-height:175px;
-
-    padding:30px 18px;
-  }
-
-  /* WHATSAPP */
-
-  .floating-whatsapp{
-    right:17px;
-    bottom:17px;
-
-    width:54px;
-    height:54px;
-
-    font-size:25px;
   }
 }
-
-/* =========================================
-   SMALL PHONES
-========================================= */
 
 @media(max-width:430px){
 
   .hero h1{
-    font-size:47px;
-  }
-
-  .hero-text{
-    font-size:11px;
-  }
-
-  .products{
-    grid-template-columns:1fr 1fr;
-
-    gap:9px;
-  }
-
-  .card-body{
-    padding:13px 11px;
-  }
-
-  .card-body h3{
-    font-size:19px;
-  }
-
-  .section-heading h2{
-    font-size:40px;
-  }
-
-  .intro h2{
-    font-size:39px;
-  }
-
-  .about-image{
-    height:420px;
-  }
-
-  .about-copy h2{
-    font-size:49px;
-  }
-}
-
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
-
-@media(max-width:360px){
-
-  .brand span{
-    font-size:17px;
+    font-size:48px;
   }
 
   .products{
     grid-template-columns:1fr;
   }
 
-  .hero h1{
-    font-size:43px;
+  .hero-actions{
+    flex-direction:column;
+  }
+
+  .gold-btn{
+    width:100%;
+  }
+
+  .about-copy h2{
+    font-size:52px;
   }
 }
