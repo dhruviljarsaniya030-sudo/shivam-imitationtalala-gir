@@ -5,11 +5,12 @@
   --bg2:#0d0c0b;
   --card:#11100e;
   --gold:#d8b568;
-  --gold-light:#f2d998;
-  --cream:#f7f2e8;
+  --gold-light:#f4dfa5;
+  --cream:#f8f4eb;
   --white:#fff;
   --muted:#aaa49a;
   --line:rgba(216,181,104,.22);
+  --shadow:0 25px 70px rgba(0,0,0,.45);
 }
 
 *{
@@ -25,7 +26,7 @@ html{
 body{
   background:var(--bg);
   color:var(--white);
-  font-family:Montserrat,Arial,sans-serif;
+  font-family:'Montserrat',Arial,sans-serif;
   line-height:1.6;
   overflow-x:hidden;
 }
@@ -44,13 +45,19 @@ button{
 .topbar{
   height:36px;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
-  background:var(--gold);
+  background:linear-gradient(
+    90deg,
+    #b78a3b,
+    var(--gold),
+    #b78a3b
+  );
+
   color:#111;
 
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
   letter-spacing:2px;
   text-transform:uppercase;
@@ -70,8 +77,8 @@ button{
   top:0;
   z-index:1000;
 
-  background:rgba(7,7,7,.94);
-  backdrop-filter:blur(18px);
+  background:rgba(7,7,7,.92);
+  backdrop-filter:blur(20px);
 
   border-bottom:1px solid var(--line);
 }
@@ -79,22 +86,29 @@ button{
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:13px;
 }
 
 .brand img{
-  width:48px;
-  height:48px;
+  width:49px;
+  height:49px;
+
   border-radius:50%;
   object-fit:cover;
+
   background:#fff;
 
-  border:1px solid rgba(216,181,104,.5);
+  border:1px solid rgba(216,181,104,.6);
+
+  box-shadow:
+    0 0 0 4px rgba(216,181,104,.05),
+    0 8px 25px rgba(0,0,0,.35);
 }
 
 .brand span{
-  font-family:"Cormorant Garamond",serif;
-  font-size:24px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:25px;
+  font-weight:600;
   letter-spacing:4px;
 }
 
@@ -106,7 +120,7 @@ button{
 nav{
   display:flex;
   align-items:center;
-  gap:32px;
+  gap:34px;
 }
 
 nav a{
@@ -114,27 +128,30 @@ nav a{
 
   color:#ddd;
 
-  font-size:10px;
-  font-weight:600;
+  font-size:9px;
+  font-weight:700;
   letter-spacing:1.8px;
+
   text-transform:uppercase;
 
-  transition:.3s;
+  transition:.3s ease;
 }
 
 nav a::after{
   content:"";
 
   position:absolute;
-  left:0;
-  bottom:-8px;
+  left:50%;
+  bottom:-9px;
 
   width:0;
   height:1px;
 
   background:var(--gold);
 
-  transition:.3s;
+  transform:translateX(-50%);
+
+  transition:.3s ease;
 }
 
 nav a:hover{
@@ -151,8 +168,9 @@ nav a:hover::after{
   background:none;
   border:0;
 
-  color:white;
-  font-size:27px;
+  color:#fff;
+
+  font-size:28px;
 
   cursor:pointer;
 }
@@ -190,14 +208,15 @@ nav a:hover::after{
   opacity:0;
 
   filter:
-    brightness(.65)
-    saturate(.75);
+    brightness(.58)
+    contrast(1.08)
+    saturate(.78);
 
-  transform:scale(1.04);
+  transform:scale(1.06);
 
   transition:
-    opacity 1.2s ease,
-    transform 6s ease;
+    opacity:1.3s ease,
+    transform:7s ease;
 }
 
 .hero-slide.active{
@@ -207,11 +226,16 @@ nav a:hover::after{
 
 .hero-overlay{
   background:
+    radial-gradient(
+      circle at center,
+      rgba(0,0,0,.08),
+      rgba(0,0,0,.55)
+    ),
     linear-gradient(
       180deg,
-      rgba(0,0,0,.65),
-      rgba(0,0,0,.25) 45%,
-      rgba(0,0,0,.85)
+      rgba(0,0,0,.68),
+      rgba(0,0,0,.18) 45%,
+      rgba(0,0,0,.9)
     );
 }
 
@@ -219,7 +243,8 @@ nav a:hover::after{
   position:relative;
   z-index:5;
 
-  max-width:900px;
+  width:100%;
+  max-width:950px;
 
   padding:30px;
 }
@@ -227,21 +252,22 @@ nav a:hover::after{
 .eyebrow{
   color:var(--gold);
 
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
 
   letter-spacing:4px;
+
   text-transform:uppercase;
 }
 
 .hero h1{
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(65px,9vw,120px);
+  font-size:clamp(55px,8vw,105px);
 
   font-weight:500;
 
-  line-height:.82;
+  line-height:.86;
 
   letter-spacing:-2px;
 
@@ -249,28 +275,30 @@ nav a:hover::after{
 }
 
 .hero h1 span{
-  display:block;
   color:var(--gold);
 }
 
 .hero-text{
-  max-width:570px;
+  max-width:620px;
 
-  margin:auto;
+  margin:0 auto;
 
-  color:#ddd;
+  color:#e1e1e1;
 
   font-size:13px;
+
+  line-height:1.8;
 }
 
 .hero-actions{
-  margin-top:35px;
+  margin-top:34px;
 
   display:flex;
-  justify-content:center;
-  align-items:center;
 
-  gap:14px;
+  align-items:center;
+  justify-content:center;
+
+  gap:18px;
 
   flex-wrap:wrap;
 }
@@ -279,14 +307,22 @@ nav a:hover::after{
 
 .gold-btn{
   display:inline-flex;
-  justify-content:center;
+
   align-items:center;
+  justify-content:center;
 
-  min-height:48px;
+  min-height:49px;
 
-  padding:0 27px;
+  padding:0 29px;
 
-  background:var(--gold);
+  background:
+    linear-gradient(
+      135deg,
+      #c49a4d,
+      var(--gold),
+      #e4c77f
+    );
+
   color:#111;
 
   border:1px solid var(--gold);
@@ -295,43 +331,49 @@ nav a:hover::after{
   font-weight:700;
 
   letter-spacing:1.8px;
+
   text-transform:uppercase;
 
-  transition:.3s;
+  box-shadow:
+    0 8px 25px rgba(216,181,104,.12);
+
+  transition:.35s ease;
 }
 
 .gold-btn:hover{
-  background:var(--gold-light);
-
   transform:translateY(-3px);
 
+  background:var(--gold-light);
+
   box-shadow:
-    0 12px 30px rgba(216,181,104,.18);
+    0 15px 40px rgba(216,181,104,.25);
 }
 
 .text-link{
   color:var(--gold);
 
-  font-size:10px;
+  font-size:9px;
   font-weight:700;
 
-  letter-spacing:1.5px;
+  letter-spacing:1.6px;
+
   text-transform:uppercase;
 
   transition:.3s;
 }
 
 .text-link:hover{
-  color:white;
+  color:#fff;
 }
 
-/* ================= HERO ARROWS ================= */
+/* ================= SLIDER ================= */
 
 .slider-arrow{
   position:absolute;
   z-index:10;
 
   top:50%;
+
   transform:translateY(-50%);
 
   width:48px;
@@ -341,7 +383,7 @@ nav a:hover::after{
 
   background:rgba(0,0,0,.3);
 
-  color:white;
+  color:#fff;
 
   font-size:30px;
 
@@ -366,11 +408,17 @@ nav a:hover::after{
 
 .dots{
   position:absolute;
+
   z-index:10;
 
   bottom:30px;
 
+  left:50%;
+
+  transform:translateX(-50%);
+
   display:flex;
+
   gap:7px;
 }
 
@@ -378,18 +426,22 @@ nav a:hover::after{
   width:7px;
   height:7px;
 
-  border-radius:10px;
+  border-radius:20px;
 
   background:#777;
 
   cursor:pointer;
 
-  transition:.3s;
+  transition:.35s;
 }
 
 .dot.active{
   width:28px;
+
   background:var(--gold);
+
+  box-shadow:
+    0 0 12px rgba(216,181,104,.5);
 }
 
 /* ================= INTRO ================= */
@@ -402,49 +454,50 @@ nav a:hover::after{
   background:
     radial-gradient(
       circle at 50% 0,
-      rgba(216,181,104,.1),
+      rgba(216,181,104,.12),
       transparent 45%
     );
 }
 
-.intro h2,
-.intro h1{
-  font-family:"Cormorant Garamond",serif;
+.intro h2{
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(48px,6vw,70px);
+  font-size:clamp(48px,6vw,72px);
 
   font-weight:500;
 
   line-height:.95;
 
-  margin:15px 0;
+  margin:15px 0 22px;
 }
 
-.intro h1 span,
 .intro h2 span{
   color:var(--gold);
 }
 
 .intro > p:last-child{
-  max-width:650px;
+  max-width:700px;
 
   margin:auto;
 
   color:var(--muted);
 
   font-size:13px;
+
+  line-height:1.9;
 }
 
 /* ================= SECTION ================= */
 
 .section{
-  padding:100px 6%;
+  padding:105px 6%;
 }
 
 .section-heading{
-  margin-bottom:42px;
+  margin-bottom:45px;
 
   display:flex;
+
   align-items:flex-end;
   justify-content:space-between;
 
@@ -452,9 +505,9 @@ nav a:hover::after{
 }
 
 .section-heading h2{
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:clamp(48px,6vw,68px);
+  font-size:clamp(48px,6vw,70px);
 
   font-weight:500;
 
@@ -471,31 +524,61 @@ nav a:hover::after{
   grid-template-columns:
     repeat(4,minmax(0,1fr));
 
-  gap:20px;
+  gap:22px;
 }
 
 .card{
+  position:relative;
+
   overflow:hidden;
 
   background:
     linear-gradient(
       145deg,
-      #151411,
-      #0d0d0c
+      #171512,
+      #0c0c0b
     );
 
   border:1px solid rgba(255,255,255,.07);
 
-  transition:.4s;
+  transition:
+    transform .4s ease,
+    border-color .4s ease,
+    box-shadow .4s ease;
+}
+
+.card::before{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,.05),
+      transparent
+    );
+
+  transform:translateX(-100%);
+
+  transition:.7s;
+
+  pointer-events:none;
+}
+
+.card:hover::before{
+  transform:translateX(100%);
 }
 
 .card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-9px);
 
   border-color:var(--line);
 
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.4);
+  box-shadow:var(--shadow);
 }
 
 .card > img{
@@ -507,42 +590,43 @@ nav a:hover::after{
 
   object-fit:cover;
 
-  transition:.7s;
+  transition:.7s ease;
 }
 
 .card:hover > img{
-  transform:scale(1.05);
+  transform:scale(1.06);
 }
 
 .card-body{
-  padding:21px;
+  padding:22px;
 }
 
 .card-body span{
   color:var(--gold);
 
   font-size:8px;
+
   font-weight:700;
 
   letter-spacing:2px;
 }
 
 .card-body h3{
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:25px;
+  font-size:26px;
 
   font-weight:600;
 
   line-height:1.05;
 
-  margin:8px 0 17px;
+  margin:8px 0 18px;
 }
 
 .card-body button{
   width:100%;
 
-  height:40px;
+  height:42px;
 
   background:transparent;
 
@@ -551,19 +635,24 @@ nav a:hover::after{
   border:1px solid var(--line);
 
   font-size:8px;
+
   font-weight:700;
 
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 
   cursor:pointer;
 
-  transition:.3s;
+  transition:.3s ease;
 }
 
 .card-body button:hover{
   background:var(--gold);
+
   color:#111;
+
+  border-color:var(--gold);
 }
 
 /* ================= OFFER ================= */
@@ -571,27 +660,55 @@ nav a:hover::after{
 .offer{
   margin:10px 6% 0;
 
-  padding:75px 7%;
+  padding:80px 7%;
 
   display:flex;
+
   align-items:center;
   justify-content:space-between;
 
   gap:40px;
 
+  position:relative;
+
+  overflow:hidden;
+
   background:
     radial-gradient(
       circle at 80% 50%,
-      rgba(216,181,104,.12),
+      rgba(216,181,104,.15),
       transparent 35%
     ),
-    linear-gradient(110deg,#15120d,#0b0b0a);
+    linear-gradient(
+      110deg,
+      #17130d,
+      #0b0b0a
+    );
 
   border:1px solid var(--line);
+
+  box-shadow:var(--shadow);
+}
+
+.offer::after{
+  content:"✦";
+
+  position:absolute;
+
+  right:8%;
+
+  top:10px;
+
+  color:rgba(216,181,104,.12);
+
+  font-size:130px;
 }
 
 .offer h2{
-  font-family:"Cormorant Garamond",serif;
+  position:relative;
+  z-index:2;
+
+  font-family:'Cormorant Garamond',serif;
 
   font-size:clamp(48px,6vw,70px);
 
@@ -610,6 +727,8 @@ nav a:hover::after{
   color:var(--muted);
 
   font-size:12px;
+
+  max-width:550px;
 }
 
 /* ================= ABOUT ================= */
@@ -632,6 +751,8 @@ nav a:hover::after{
   overflow:hidden;
 
   border:1px solid var(--line);
+
+  box-shadow:var(--shadow);
 }
 
 .about-image img{
@@ -648,7 +769,7 @@ nav a:hover::after{
 }
 
 .about-copy h2{
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
 
   font-size:clamp(55px,6vw,78px);
 
@@ -666,23 +787,31 @@ nav a:hover::after{
 .about-copy p:not(.eyebrow){
   max-width:550px;
 
-  margin-bottom:16px;
+  margin-bottom:17px;
 
   color:var(--muted);
 
   font-size:13px;
+
+  line-height:1.9;
 }
 
 /* ================= CONTACT ================= */
 
 .contact{
-  background:var(--cream);
+  background:
+    linear-gradient(
+      180deg,
+      #f8f4eb,
+      #eee5d5
+    );
 
   color:#111;
 }
 
 .center{
   justify-content:center;
+
   text-align:center;
 }
 
@@ -692,28 +821,31 @@ nav a:hover::after{
   grid-template-columns:
     repeat(3,1fr);
 
-  gap:18px;
+  gap:20px;
 }
 
 .contact-card{
-  min-height:205px;
+  min-height:215px;
 
-  padding:38px 20px;
+  padding:40px 22px;
 
   text-align:center;
 
-  background:#fff;
+  background:
+    rgba(255,255,255,.95);
 
-  border:1px solid #e7ddca;
+  border:1px solid #e2d5be;
 
-  transition:.35s;
+  transition:.35s ease;
 }
 
 .contact-card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-7px);
 
   box-shadow:
-    0 15px 35px rgba(0,0,0,.08);
+    0 20px 45px rgba(0,0,0,.09);
+
+  border-color:#d5bb8b;
 }
 
 .icon{
@@ -723,9 +855,9 @@ nav a:hover::after{
 }
 
 .contact-card h3{
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:29px;
+  font-size:30px;
 
   margin:9px 0;
 }
@@ -734,16 +866,63 @@ nav a:hover::after{
   color:#666;
 
   font-size:12px;
+
+  line-height:1.9;
 }
 
 .contact-card a{
   color:#96702c;
+
+  transition:.3s;
+}
+
+.contact-card a:hover{
+  color:#111;
 }
 
 .contact-actions{
-  margin-top:32px;
+  margin-top:35px;
 
-  text-align:center;
+  display:flex;
+
+  justify-content:center;
+
+  gap:14px;
+
+  flex-wrap:wrap;
+}
+
+.outline-btn{
+  min-height:49px;
+
+  padding:0 28px;
+
+  display:inline-flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #a78951;
+
+  color:#8a672c;
+
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:1.8px;
+
+  text-transform:uppercase;
+
+  transition:.3s;
+}
+
+.outline-btn:hover{
+  background:#111;
+
+  color:#fff;
+
+  border-color:#111;
 }
 
 /* ================= WHATSAPP ================= */
@@ -756,10 +935,11 @@ nav a:hover::after{
 
   z-index:900;
 
-  width:58px;
-  height:58px;
+  width:60px;
+  height:60px;
 
   display:grid;
+
   place-items:center;
 
   border-radius:50%;
@@ -771,19 +951,40 @@ nav a:hover::after{
   font-size:25px;
 
   box-shadow:
-    0 12px 35px rgba(0,0,0,.35);
+    0 12px 35px rgba(0,0,0,.4);
 
-  transition:.3s;
+  transition:.3s ease;
+
+  animation:
+    whatsappPulse 2.5s infinite;
 }
 
 .floating-whatsapp:hover{
-  transform:scale(1.08);
+  transform:scale(1.1);
+
+  animation:none;
+}
+
+@keyframes whatsappPulse{
+
+  0%,100%{
+    box-shadow:
+      0 12px 35px rgba(0,0,0,.4),
+      0 0 0 0 rgba(37,211,102,.25);
+  }
+
+  50%{
+    box-shadow:
+      0 12px 35px rgba(0,0,0,.4),
+      0 0 0 12px rgba(37,211,102,0);
+  }
+
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-  padding:55px 20px;
+  padding:60px 20px;
 
   text-align:center;
 
@@ -793,24 +994,27 @@ footer{
 }
 
 footer img{
-  width:65px;
-  height:65px;
+  width:68px;
+  height:68px;
 
   border-radius:50%;
 
   object-fit:cover;
 
-  background:white;
+  background:#fff;
 
   border:1px solid var(--line);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
 }
 
 footer p{
-  margin:12px 0;
+  margin:13px 0;
 
-  font-family:"Cormorant Garamond",serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-size:22px;
+  font-size:23px;
 
   letter-spacing:4px;
 }
@@ -823,34 +1027,55 @@ footer small{
   color:#666;
 
   font-size:10px;
+
+  letter-spacing:.5px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 
 @media(max-width:1050px){
 
   .products{
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+      repeat(3,1fr);
   }
 
   .about{
     grid-template-columns:1fr;
+
+    gap:55px;
   }
 
   .about-image{
-    height:520px;
+    height:540px;
   }
+
 }
+
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
   .topbar{
-    font-size:8px;
-    letter-spacing:1.2px;
+    height:34px;
+
+    padding:0 10px;
+
+    font-size:7px;
+
+    letter-spacing:1.1px;
+
+    text-align:center;
   }
 
   .navbar{
     height:72px;
+
+    padding:0 5%;
+  }
+
+  .brand{
+    gap:9px;
   }
 
   .brand img{
@@ -860,6 +1085,7 @@ footer small{
 
   .brand span{
     font-size:19px;
+
     letter-spacing:2px;
   }
 
@@ -874,17 +1100,22 @@ footer small{
 
     left:0;
     right:0;
+
     top:72px;
 
-    padding:22px;
+    padding:25px;
 
     flex-direction:column;
 
-    gap:20px;
+    gap:22px;
 
-    background:#090909;
+    background:
+      rgba(8,8,8,.98);
 
     border-bottom:1px solid var(--line);
+
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.4);
   }
 
   nav.open{
@@ -892,16 +1123,21 @@ footer small{
   }
 
   .hero{
-    min-height:570px;
+    min-height:590px;
+
     height:78vh;
   }
 
   .hero h1{
-    font-size:56px;
+    font-size:55px;
+
+    letter-spacing:-1px;
   }
 
   .hero-text{
-    font-size:12px;
+    font-size:11px;
+
+    line-height:1.8;
   }
 
   .slider-arrow{
@@ -912,38 +1148,62 @@ footer small{
     padding:80px 6%;
   }
 
+  .intro h2{
+    font-size:48px;
+  }
+
   .section{
     padding:75px 5%;
   }
 
   .section-heading{
     flex-direction:column;
+
     align-items:flex-start;
+
+    margin-bottom:35px;
+  }
+
+  .section-heading h2{
+    font-size:48px;
   }
 
   .products{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:
+      repeat(2,1fr);
 
-    gap:10px;
+    gap:11px;
   }
 
   .card-body{
-    padding:14px;
+    padding:15px;
   }
 
   .card-body h3{
     font-size:21px;
   }
 
+  .card-body button{
+    height:39px;
+
+    font-size:7px;
+  }
+
   .offer{
     margin:0 5%;
 
-    padding:45px 25px;
+    padding:50px 25px;
 
     display:block;
   }
 
+  .offer h2{
+    font-size:50px;
+  }
+
   .offer .gold-btn{
+    width:100%;
+
     margin-top:25px;
   }
 
@@ -951,30 +1211,65 @@ footer small{
     height:450px;
   }
 
+  .about-copy h2{
+    font-size:55px;
+  }
+
   .contact-grid{
     grid-template-columns:1fr;
   }
+
+  .contact-actions{
+    flex-direction:column;
+  }
+
+  .contact-actions .gold-btn,
+  .contact-actions .outline-btn{
+    width:100%;
+  }
+
 }
+
+/* ================= SMALL MOBILE ================= */
 
 @media(max-width:430px){
 
   .hero h1{
-    font-size:48px;
+    font-size:46px;
+  }
+
+  .hero-content{
+    padding:20px;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+
+    width:100%;
+  }
+
+  .hero-actions .gold-btn{
+    width:100%;
   }
 
   .products{
     grid-template-columns:1fr;
   }
 
-  .hero-actions{
-    flex-direction:column;
-  }
-
-  .gold-btn{
-    width:100%;
+  .card-body h3{
+    font-size:25px;
   }
 
   .about-copy h2{
-    font-size:52px;
+    font-size:50px;
   }
+
+  .floating-whatsapp{
+    right:18px;
+    bottom:18px;
+
+    width:56px;
+    height:56px;
+  }
+
 }
