@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/sitemap.xml
