@@ -1659,3 +1659,291 @@ footer img {
     width: 100%;
   }
 }
+/* =========================================================
+   PREMIUM ROUNDED BORDER — ALL WEBSITE ELEMENTS
+   ========================================================= */
+
+/* ALL PHOTOS */
+img {
+  border-radius: 18px;
+  border: 1px solid rgba(216, 173, 69, 0.35);
+}
+
+/* HERO PHOTO */
+.hero-slide {
+  border-radius: 0;
+  border: none;
+}
+
+/* LOGO */
+.brand img,
+footer img {
+  border-radius: 50%;
+  border: 2px solid var(--gold-light);
+}
+
+/* PRODUCT PHOTOS */
+.card {
+  border-radius: 18px;
+  border: 1px solid rgba(216, 173, 69, 0.45);
+  overflow: hidden;
+}
+
+.card > img {
+  border-radius: 18px 18px 0 0;
+  border: none;
+}
+
+/* CATEGORY PHOTOS */
+.category-card {
+  border-radius: 18px;
+  border: 1px solid rgba(216, 173, 69, 0.5);
+  overflow: hidden;
+}
+
+.category-card img {
+  border-radius: 18px;
+  border: none;
+}
+
+/* ABOUT PHOTO */
+.about-image {
+  border-radius: 22px;
+  border: 1px solid rgba(216, 173, 69, 0.5);
+  overflow: hidden;
+}
+
+.about-image img {
+  border-radius: 22px;
+  border: none;
+}
+
+/* INSTAGRAM PHOTOS */
+.instagram-card {
+  border-radius: 18px;
+  border: 1px solid rgba(216, 173, 69, 0.5);
+  overflow: hidden;
+}
+
+.instagram-card img {
+  border-radius: 18px;
+  border: none;
+}
+
+/* GOOGLE MAP */
+.map-wrapper {
+  border-radius: 22px;
+  border: 1px solid rgba(216, 173, 69, 0.6);
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(216, 173, 69, 0.08);
+}
+
+.map-wrapper iframe {
+  border-radius: 22px;
+  border: none;
+}
+
+/* =========================================================
+   CONTACT CARDS
+   ========================================================= */
+
+.contact-card {
+  border-radius: 20px;
+
+  border: 1px solid rgba(216, 173, 69, 0.55);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 67, 61, 0.98),
+      rgba(0, 48, 44, 0.98)
+    );
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(216, 173, 69, 0.05);
+
+  transition: all 0.35s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--gold-light);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(216, 173, 69, 0.08);
+}
+
+/* Contact icons */
+.contact-card .icon {
+  border: 1px solid var(--gold-light);
+  border-radius: 50%;
+
+  background: rgba(216, 173, 69, 0.06);
+
+  box-shadow:
+    0 0 0 5px rgba(216, 173, 69, 0.04);
+}
+
+/* CONTACT LINKS */
+.contact-card a {
+  display: inline-block;
+
+  margin: 3px 0;
+  padding: 5px 12px;
+
+  border: 1px solid rgba(216, 173, 69, 0.35);
+  border-radius: 8px;
+
+  color: var(--cream);
+
+  transition: 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: var(--emerald-dark);
+
+  background: var(--gold-light);
+
+  border-color: var(--gold-light);
+}
+
+/* =========================================================
+   INSTAGRAM BUTTON
+   ========================================================= */
+
+.instagram-content .gold-btn {
+  border-radius: 12px;
+
+  border: 1px solid var(--gold-light);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(216, 173, 69, 0.05);
+}
+
+.instagram-content .gold-btn:hover {
+  border-radius: 12px;
+}
+
+/* =========================================================
+   WHATSAPP BUTTONS
+   ========================================================= */
+
+.gold-btn {
+  border-radius: 12px;
+
+  border: 1px solid var(--gold-light);
+}
+
+.outline-btn {
+  border-radius: 12px;
+
+  border: 1px solid var(--gold-light);
+}
+
+.floating-whatsapp {
+  border: 2px solid rgba(216, 173, 69, 0.7);
+  border-radius: 50%;
+}
+
+/* =========================================================
+   OFFER BOX
+   ========================================================= */
+
+.offer {
+  border-radius: 24px;
+
+  border: 1px solid rgba(216, 173, 69, 0.55);
+}
+
+/* =========================================================
+   REVIEW BOX
+   ========================================================= */
+
+.rating-highlight {
+  border-radius: 20px;
+
+  border: 1px solid rgba(216, 173, 69, 0.55);
+}
+
+.review-note {
+  padding: 18px 25px;
+
+  border: 1px solid rgba(216, 173, 69, 0.3);
+  border-radius: 14px;
+
+  background: rgba(0, 67, 61, 0.45);
+}
+
+/* =========================================================
+   BUTTONS + LINKS PREMIUM BORDER
+   ========================================================= */
+
+.gold-btn,
+.outline-btn,
+.text-link {
+  transition: all 0.3s ease;
+}
+
+.gold-btn:hover,
+.outline-btn:hover {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    0 0 15px rgba(216, 173, 69, 0.12);
+}
+
+/* =========================================================
+   ALL SECTION CONTENT CARDS
+   ========================================================= */
+
+.card,
+.category-card,
+.contact-card,
+.instagram-card,
+.rating-highlight,
+.review-note,
+.offer,
+.map-wrapper,
+.about-image {
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   MOBILE BORDER FIX
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .card,
+  .category-card,
+  .contact-card,
+  .instagram-card {
+    border-radius: 15px;
+  }
+
+  .card > img {
+    border-radius: 15px 15px 0 0;
+  }
+
+  .category-card img,
+  .instagram-card img {
+    border-radius: 15px;
+  }
+
+  .contact-card a {
+    border-radius: 7px;
+  }
+
+  .map-wrapper,
+  .map-wrapper iframe {
+    border-radius: 16px;
+  }
+
+}
