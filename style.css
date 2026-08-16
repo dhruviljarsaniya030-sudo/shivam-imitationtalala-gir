@@ -1,19 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
 /* =========================================================
    SHIVAM IMITATION
    DARK TEAL + GOLD + SUBTLE LEATHER BACKGROUND
    ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   ROOT COLORS
+   ========================================================= */
+
 :root {
   --green: #003d37;
-  --green-dark: #002b27;
-  --green-deep: #00231f;
+  --green-dark: #002f2b;
+  --green-deep: #002722;
   --green-card: #004841;
   --green-light: #07564e;
 
   --gold: #e7bd55;
-  --gold-light: #f4d77b;
+  --gold-light: #f3d77b;
   --gold-dark: #c99b32;
 
   --white: #fffdf7;
@@ -21,7 +26,6 @@
   --muted: #b8c7c3;
 
   --border: rgba(231, 189, 85, 0.35);
-
   --shadow: rgba(0, 0, 0, 0.35);
 }
 
@@ -43,69 +47,85 @@ html {
 body {
   font-family: "DM Sans", sans-serif;
   color: var(--text);
-  background-color: var(--green);
-  overflow-x: hidden;
 
-  /* SUBTLE LEATHER BACKGROUND */
+  /* IMPORTANT:
+     MAIN BACKGROUND REMAINS DARK TEAL */
+  background-color: var(--green);
+
+  /* SUBTLE LEATHER TEXTURE */
   background-image:
     radial-gradient(
-      circle at 15% 20%,
+      ellipse at 15% 20%,
       rgba(255, 255, 255, 0.025) 0,
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1.5px
+      transparent 35%
     ),
     radial-gradient(
-      circle at 80% 75%,
-      rgba(0, 0, 0, 0.08) 0,
-      rgba(0, 0, 0, 0.08) 1px,
-      transparent 1.5px
+      ellipse at 85% 75%,
+      rgba(0, 0, 0, 0.10) 0,
+      transparent 40%
     ),
     repeating-linear-gradient(
       115deg,
-      rgba(255, 255, 255, 0.012) 0,
+      rgba(255, 255, 255, 0.012) 0px,
       rgba(255, 255, 255, 0.012) 1px,
       transparent 1px,
-      transparent 6px
+      transparent 5px
     ),
     repeating-linear-gradient(
       25deg,
-      rgba(0, 0, 0, 0.02) 0,
-      rgba(0, 0, 0, 0.02) 1px,
+      rgba(0, 0, 0, 0.018) 0px,
+      rgba(0, 0, 0, 0.018) 1px,
       transparent 1px,
-      transparent 8px
+      transparent 7px
     ),
     linear-gradient(
       135deg,
       #003d37 0%,
-      #003a35 45%,
-      #00322e 100%
+      #003b35 45%,
+      #00342f 100%
     );
 
-  background-size:
-    9px 9px,
-    11px 11px,
-    auto,
-    auto,
-    auto;
-
   background-attachment: fixed;
+
+  overflow-x: hidden;
+
+  min-height: 100vh;
 }
 
-/* DARK LEATHER VIGNETTE */
+
+/* =========================================================
+   SUBTLE LEATHER OVERLAY
+   ========================================================= */
 
 body::before {
   content: "";
   position: fixed;
+
   inset: 0;
+
   pointer-events: none;
+
   z-index: -1;
 
-  background:
+  opacity: 0.45;
+
+  background-image:
     radial-gradient(
-      ellipse at center,
-      transparent 35%,
-      rgba(0, 0, 0, 0.18) 100%
+      circle at 25% 25%,
+      rgba(255,255,255,0.025) 0 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 75% 65%,
+      rgba(0,0,0,0.035) 0 1px,
+      transparent 1.5px
     );
+
+  background-size:
+    13px 13px,
+    17px 17px;
+
+  mix-blend-mode: soft-light;
 }
 
 
@@ -137,9 +157,12 @@ section {
 
 .eyebrow {
   color: var(--gold);
+
   font-size: 13px;
   font-weight: 700;
+
   letter-spacing: 4px;
+
   margin-bottom: 16px;
 }
 
@@ -147,6 +170,7 @@ h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
+
   color: var(--gold-light);
 }
 
@@ -157,11 +181,13 @@ h2 span {
 
 h2 {
   font-size: clamp(38px, 5vw, 64px);
+
   line-height: 1.1;
 }
 
 p {
   color: var(--text);
+
   line-height: 1.8;
 }
 
@@ -171,7 +197,8 @@ p {
    ========================================================= */
 
 .topbar {
-  background: #002c28;
+  background: #002e2a;
+
   color: var(--gold-light);
 
   text-align: center;
@@ -179,6 +206,7 @@ p {
   padding: 10px 15px;
 
   font-size: 13px;
+
   letter-spacing: 1px;
 
   border-bottom: 1px solid var(--border);
@@ -191,26 +219,31 @@ p {
 
 .navbar {
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   padding: 14px 5%;
 
-  background: rgba(0, 45, 41, 0.96);
+  background: rgba(0, 50, 46, 0.96);
 
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
 
   border-bottom: 1px solid var(--border);
 }
 
 .brand {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 }
 
@@ -239,7 +272,9 @@ p {
 
 .navbar nav {
   display: flex;
+
   align-items: center;
+
   gap: 28px;
 }
 
@@ -247,6 +282,7 @@ p {
   color: var(--text);
 
   font-size: 14px;
+
   font-weight: 600;
 
   transition: 0.3s ease;
@@ -287,16 +323,19 @@ p {
   overflow: hidden;
 
   display: flex;
+
   align-items: center;
 }
 
 .hero-slider {
   position: absolute;
+
   inset: 0;
 }
 
 .hero-slide {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -315,6 +354,7 @@ p {
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
@@ -328,6 +368,7 @@ p {
 
 .hero-content {
   position: relative;
+
   z-index: 2;
 
   width: 55%;
@@ -341,6 +382,8 @@ p {
   line-height: 0.98;
 
   margin-bottom: 25px;
+
+  color: var(--gold-light);
 }
 
 .hero-text {
@@ -365,13 +408,14 @@ p {
 
 
 /* =========================================================
-   BUTTONS
+   GOLD BUTTON
    ========================================================= */
 
 .gold-btn {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 15px 27px;
@@ -383,7 +427,7 @@ p {
       var(--gold)
     );
 
-  color: #173a35;
+  color: #183a35;
 
   border: 1px solid var(--gold-light);
 
@@ -392,7 +436,7 @@ p {
   font-weight: 700;
 
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.25);
+    0 10px 25px rgba(0,0,0,0.25);
 
   transition: all 0.3s ease;
 }
@@ -401,7 +445,7 @@ p {
   transform: translateY(-3px);
 
   box-shadow:
-    0 15px 30px rgba(0, 0, 0, 0.35);
+    0 15px 30px rgba(0,0,0,0.35);
 }
 
 .text-link {
@@ -418,6 +462,7 @@ p {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 14px 25px;
@@ -436,7 +481,7 @@ p {
 .outline-btn:hover {
   background: var(--gold);
 
-  color: var(--green);
+  color: #003d37;
 }
 
 
@@ -454,6 +499,7 @@ p {
   transform: translateY(-50%);
 
   width: 48px;
+
   height: 48px;
 
   border-radius: 50%;
@@ -503,13 +549,14 @@ p {
 
 .dots button {
   width: 9px;
+
   height: 9px;
 
   border-radius: 50%;
 
   border: none;
 
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255,255,255,0.4);
 
   cursor: pointer;
 }
@@ -582,8 +629,8 @@ p {
   background:
     linear-gradient(
       145deg,
-      rgba(0, 80, 73, 0.92),
-      rgba(0, 45, 41, 0.97)
+      rgba(0, 72, 65, 0.92),
+      rgba(0, 47, 43, 0.97)
     );
 
   border: 1px solid var(--border);
@@ -593,7 +640,7 @@ p {
   overflow: hidden;
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.18);
+    0 15px 35px rgba(0,0,0,0.18);
 
   transition: 0.35s ease;
 }
@@ -604,7 +651,7 @@ p {
   border-color: var(--gold);
 
   box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.35);
+    0 20px 45px rgba(0,0,0,0.35);
 }
 
 .card > img {
@@ -691,6 +738,7 @@ p {
 
 .category-card img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
@@ -718,7 +766,7 @@ p {
   background:
     linear-gradient(
       transparent 30%,
-      rgba(0, 35, 32, 0.95)
+      rgba(0,35,32,0.95)
     );
 }
 
@@ -774,7 +822,7 @@ p {
   gap: 30px;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.25);
+    0 20px 50px rgba(0,0,0,0.25);
 }
 
 .offer h2 {
@@ -809,7 +857,7 @@ p {
   border: 1px solid var(--border);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.3);
+    0 20px 50px rgba(0,0,0,0.3);
 }
 
 .about-copy h2 {
@@ -843,7 +891,7 @@ p {
   padding: 35px;
 
   background:
-    rgba(0, 72, 65, 0.72);
+    rgba(0, 72, 65, 0.7);
 
   border: 1px solid var(--border);
 
@@ -920,6 +968,7 @@ p {
 
 .instagram-icon {
   width: 24px;
+
   height: 24px;
 
   display: inline-flex;
@@ -931,6 +980,7 @@ p {
 
 .instagram-icon svg {
   width: 24px;
+
   height: 24px;
 }
 
@@ -955,6 +1005,7 @@ p {
 
 .instagram-card img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
@@ -997,17 +1048,13 @@ p {
   border: 1px solid var(--border);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.3);
+    0 20px 50px rgba(0,0,0,0.3);
 }
 
 .map-wrapper iframe {
   width: 100%;
 
-  height: 450px;
-
   display: block;
-
-  border: 0;
 }
 
 
@@ -1123,9 +1170,9 @@ p {
   font-size: 30px;
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4);
+    0 10px 30px rgba(0,0,0,0.4);
 
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255,255,255,0.25);
 
   transition: 0.3s ease;
 }
@@ -1186,7 +1233,7 @@ footer small {
 
 
 /* =========================================================
-   SUBTLE LEATHER DOT EFFECT
+   SUBTLE LEATHER PATTERN ON SECTIONS
    ========================================================= */
 
 .section::before,
@@ -1200,34 +1247,26 @@ footer small {
 
   pointer-events: none;
 
-  opacity: 0.28;
+  z-index: 0;
+
+  opacity: 0.20;
 
   background-image:
     radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.035) 1px,
-      transparent 1px
+      rgba(255,255,255,0.035) 1px,
+      transparent 1.5px
     );
 
   background-size: 9px 9px;
+}
 
-  mask-image:
-    linear-gradient(
-      to bottom,
-      transparent,
-      black 15%,
-      black 85%,
-      transparent
-    );
+.section > *,
+.map-section > *,
+.contact > * {
+  position: relative;
 
-  -webkit-mask-image:
-    linear-gradient(
-      to bottom,
-      transparent,
-      black 15%,
-      black 85%,
-      transparent
-    );
+  z-index: 1;
 }
 
 
@@ -1251,7 +1290,7 @@ footer small {
 
 
 /* =========================================================
-   MOBILE
+   MOBILE - TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1277,6 +1316,10 @@ footer small {
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 700px) {
 
   .navbar {
@@ -1293,6 +1336,7 @@ footer small {
     top: 100%;
 
     left: 0;
+
     right: 0;
 
     display: none;
@@ -1391,6 +1435,10 @@ footer small {
   }
 }
 
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 450px) {
 
