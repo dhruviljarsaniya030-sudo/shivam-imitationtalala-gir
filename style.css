@@ -1947,3 +1947,500 @@ footer img {
   }
 
 }
+/* =========================================================
+   SHIVAM IMITATION - FINAL PREMIUM ROUND CORNERS
+   PASTE THIS AT THE VERY END OF style.css
+   ========================================================= */
+
+/* ---------- GLOBAL BOX SIZING ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+#contact .contact-grid {
+  gap: 24px;
+}
+
+
+/* Contact Cards - FORCE ROUND CORNERS */
+
+#contact .contact-card {
+  border-radius: 28px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.65) !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 67, 61, 0.98),
+      rgba(0, 48, 44, 0.98)
+    ) !important;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.20),
+    inset 0 0 0 1px rgba(221, 183, 76, 0.04) !important;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+
+/* Contact card hover */
+
+#contact .contact-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #e6c75c !important;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(221, 183, 76, 0.10) !important;
+}
+
+
+/* =========================================================
+   CONTACT ICON
+   ========================================================= */
+
+#contact .contact-card .icon {
+  width: 58px !important;
+  height: 58px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 50% !important;
+
+  border: 1px solid #dfba4c !important;
+
+  background: rgba(221, 183, 76, 0.08) !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   PHONE + EMAIL LINKS
+   ========================================================= */
+
+#contact .contact-card a {
+  display: inline-block !important;
+
+  border-radius: 999px !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.45) !important;
+
+  padding: 6px 15px !important;
+
+  margin: 3px 0 !important;
+
+  text-decoration: none !important;
+
+  transition: all 0.3s ease !important;
+}
+
+
+#contact .contact-card a:hover {
+  border-color: #e6c75c !important;
+
+  background: #d8b34d !important;
+
+  color: #003d37 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   WHATSAPP + CALL BUTTONS
+   ========================================================= */
+
+#contact .contact-actions {
+  gap: 16px !important;
+
+  display: flex !important;
+
+  justify-content: center !important;
+
+  align-items: center !important;
+
+  flex-wrap: wrap !important;
+}
+
+
+#contact .contact-actions .gold-btn,
+#contact .contact-actions .outline-btn {
+  border-radius: 999px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid #e2bc50 !important;
+
+  padding: 14px 28px !important;
+
+  transition: all 0.3s ease !important;
+}
+
+
+#contact .contact-actions .gold-btn:hover,
+#contact .contact-actions .outline-btn:hover {
+  border-radius: 999px !important;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(221, 183, 76, 0.12) !important;
+}
+
+
+/* =========================================================
+   INSTAGRAM SECTION
+   ========================================================= */
+
+.instagram-section .instagram-content .gold-btn {
+  border-radius: 999px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid #e2bc50 !important;
+
+  padding: 14px 28px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  transition: all 0.3s ease !important;
+}
+
+
+.instagram-section .instagram-content .gold-btn:hover {
+  border-radius: 999px !important;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(221, 183, 76, 0.12) !important;
+}
+
+
+/* =========================================================
+   INSTAGRAM CARDS
+   ========================================================= */
+
+.instagram-card {
+  border-radius: 24px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.55) !important;
+}
+
+
+.instagram-card img {
+  border-radius: 24px !important;
+
+  overflow: hidden !important;
+
+  border: none !important;
+}
+
+
+/* =========================================================
+   GOOGLE MAP
+   ========================================================= */
+
+.map-wrapper {
+  border-radius: 28px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.65) !important;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+.map-wrapper iframe {
+  display: block !important;
+
+  width: 100% !important;
+
+  border: none !important;
+
+  border-radius: 28px !important;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+   ========================================================= */
+
+.card {
+  border-radius: 24px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.55) !important;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20) !important;
+
+  transition: all 0.35s ease !important;
+}
+
+
+.card:hover {
+  transform: translateY(-7px);
+
+  border-color: #e6c75c !important;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.30) !important;
+}
+
+
+.card img {
+  border-radius: 0 !important;
+
+  border: none !important;
+
+  display: block !important;
+
+  width: 100% !important;
+}
+
+
+/* =========================================================
+   CATEGORY CARDS
+   ========================================================= */
+
+.category-card {
+  border-radius: 24px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.55) !important;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20) !important;
+}
+
+
+.category-card img {
+  border-radius: 0 !important;
+
+  border: none !important;
+
+  display: block !important;
+}
+
+
+/* =========================================================
+   ABOUT IMAGE
+   ========================================================= */
+
+.about-image {
+  border-radius: 28px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.6) !important;
+}
+
+
+.about-image img {
+  border-radius: 0 !important;
+
+  border: none !important;
+
+  display: block !important;
+}
+
+
+/* =========================================================
+   OFFER BOX
+   ========================================================= */
+
+.offer {
+  border-radius: 28px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.65) !important;
+}
+
+
+/* =========================================================
+   REVIEW BOX
+   ========================================================= */
+
+.rating-highlight {
+  border-radius: 28px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.6) !important;
+}
+
+
+.review-note {
+  border-radius: 20px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid rgba(221, 183, 76, 0.35) !important;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+   ========================================================= */
+
+.floating-whatsapp {
+  width: 66px !important;
+
+  height: 66px !important;
+
+  border-radius: 50% !important;
+
+  border: 2px solid rgba(221, 183, 76, 0.7) !important;
+
+  overflow: hidden !important;
+}
+
+
+/* =========================================================
+   ALL GOLD BUTTONS
+   ========================================================= */
+
+.gold-btn {
+  border-radius: 999px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid #e2bc50 !important;
+}
+
+
+.outline-btn {
+  border-radius: 999px !important;
+
+  overflow: hidden !important;
+
+  border: 1px solid #e2bc50 !important;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand img {
+  border-radius: 50% !important;
+
+  overflow: hidden !important;
+
+  border: 2px solid #dfba4c !important;
+}
+
+
+footer img {
+  border-radius: 50% !important;
+
+  border: 2px solid #dfba4c !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  #contact .contact-card {
+    border-radius: 22px !important;
+  }
+
+  #contact .contact-actions .gold-btn,
+  #contact .contact-actions .outline-btn {
+    border-radius: 999px !important;
+  }
+
+  .instagram-section .instagram-content .gold-btn {
+    border-radius: 999px !important;
+  }
+
+  .instagram-card {
+    border-radius: 20px !important;
+  }
+
+  .map-wrapper,
+  .map-wrapper iframe {
+    border-radius: 22px !important;
+  }
+
+  .card,
+  .category-card {
+    border-radius: 20px !important;
+  }
+
+  .about-image {
+    border-radius: 22px !important;
+  }
+
+  .offer,
+  .rating-highlight {
+    border-radius: 22px !important;
+  }
+
+}
+
+
+/* =========================================================
+   FINAL FORCE OVERRIDE
+   ========================================================= */
+
+.contact-card,
+.instagram-card,
+.map-wrapper,
+.offer,
+.rating-highlight,
+.review-note,
+.about-image,
+.card,
+.category-card,
+.gold-btn,
+.outline-btn {
+  -webkit-border-radius: 28px !important;
+  -moz-border-radius: 28px !important;
+  border-radius: 28px !important;
+}
+
+.gold-btn,
+.outline-btn {
+  border-radius: 999px !important;
+}
+
+.floating-whatsapp {
+  border-radius: 50% !important;
+}
