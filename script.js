@@ -1,203 +1,254 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  /* ================= HERO SLIDER ================= */
-
-  let currentSlide = 0;
-
-  const slides = document.querySelectorAll(".hero-slide");
-  const dotsContainer = document.getElementById("dots");
-
-  if (slides.length && dotsContainer) {
-
-    // Create slider dots
-    slides.forEach((_, index) => {
-
-      const dot = document.createElement("span");
-
-      dot.className =
-        "dot" + (index === 0 ? " active" : "");
-
-      dot.setAttribute(
-        "aria-label",
-        `Go to slide ${index + 1}`
-      );
-
-      dot.addEventListener("click", () => {
-        showSlide(index);
-      });
-
-      dotsContainer.appendChild(dot);
-
-    });
+/* =========================================================
+   SHIVAM IMITATION
+   WEBSITE JAVASCRIPT
+========================================================= */
 
 
-    function showSlide(index) {
+/* ================= MOBILE MENU ================= */
 
-      currentSlide =
-        (index + slides.length) % slides.length;
+function toggleMenu() {
 
-      slides.forEach((slide, i) => {
+  const nav = document.getElementById("nav");
 
-        slide.classList.toggle(
-          "active",
-          i === currentSlide
-        );
+  if (!nav) return;
 
-      });
-
-      document
-        .querySelectorAll(".dot")
-        .forEach((dot, i) => {
-
-          dot.classList.toggle(
-            "active",
-            i === currentSlide
-          );
-
-        });
-
-    }
+  nav.classList.toggle("open");
+}
 
 
-    function changeSlide(step) {
+function closeMenu() {
 
-      showSlide(currentSlide + step);
+  const nav = document.getElementById("nav");
 
-    }
+  if (!nav) return;
 
-
-    // Make functions available to HTML buttons
-    window.changeSlide = changeSlide;
-    window.showSlide = showSlide;
+  nav.classList.remove("open");
+}
 
 
-    // Automatic slider
-    setInterval(() => {
+/* ================= HERO SLIDER ================= */
 
-      changeSlide(1);
+let currentSlide = 0;
 
-    }, 4500);
+let slideTimer;
 
+
+function getSlides() {
+
+  return document.querySelectorAll(".hero-slide");
+}
+
+
+function showSlide(index) {
+
+  const slides = getSlides();
+
+  if (!slides.length) return;
+
+  if (index >= slides.length) {
+    currentSlide = 0;
   }
 
+  if (index < 0) {
+    currentSlide = slides.length - 1;
+  }
 
-  /* ================= WHATSAPP ORDER ================= */
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
 
-  window.orderProduct = function(productName) {
+  slides[currentSlide].classList.add("active");
 
-    const message =
-      `Hello Shivam Imitation, I am interested in "${productName}". Please share price and availability.`;
+  updateDots();
+}
 
-    const whatsappURL =
-      `https://wa.me/919714978206?text=${encodeURIComponent(message)}`;
 
-    window.open(
-      whatsappURL,
-      "_blank",
-      "noopener,noreferrer"
+function changeSlide(direction) {
+
+  const slides = getSlides();
+
+  if (!slides.length) return;
+
+  currentSlide += direction;
+
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+
+  if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  }
+
+  showSlide(currentSlide);
+
+  restartSlider();
+}
+
+
+/* ================= SLIDER DOTS ================= */
+
+function createDots() {
+
+  const slides = getSlides();
+
+  const dotsContainer =
+    document.getElementById("dots");
+
+  if (!dotsContainer || !slides.length) return;
+
+  dotsContainer.innerHTML = "";
+
+  slides.forEach((slide, index) => {
+
+    const button =
+      document.createElement("button");
+
+    button.type = "button";
+
+    button.setAttribute(
+      "aria-label",
+      "Go to slide " + (index + 1)
     );
 
-  };
+    button.addEventListener(
+      "click",
+      function () {
+
+        currentSlide = index;
+
+        showSlide(currentSlide);
+
+        restartSlider();
+      }
+    );
+
+    dotsContainer.appendChild(button);
+  });
+
+  updateDots();
+}
 
 
-  /* ================= MOBILE MENU ================= */
+function updateDots() {
 
-  const menuButton =
-    document.querySelector(".menu-btn");
+  const dotsContainer =
+    document.getElementById("dots");
 
-  const nav =
-    document.getElementById("nav");
+  if (!dotsContainer) return;
 
+  const dots =
+    dotsContainer.querySelectorAll("button");
 
-  if (menuButton && nav) {
+  dots.forEach((dot, index) => {
 
-    window.toggleMenu = function() {
-
-      nav.classList.toggle("open");
-
-    };
-
-
-    window.closeMenu = function() {
-
-      nav.classList.remove("open");
-
-    };
+    dot.classList.toggle(
+      "active",
+      index === currentSlide
+    );
+  });
+}
 
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (event) => {
+/* ================= AUTO SLIDER ================= */
 
-      if (
-        nav.classList.contains("open") &&
-        !nav.contains(event.target) &&
-        !menuButton.contains(event.target)
-      ) {
+function startSlider() {
 
-        nav.classList.remove("open");
+  clearInterval(slideTimer);
 
+  slideTimer = setInterval(
+    function () {
+
+      const slides = getSlides();
+
+      if (!slides.length) return;
+
+      currentSlide++;
+
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
       }
 
-    });
+      showSlide(currentSlide);
 
-  }
+    },
+    5000
+  );
+}
 
 
-  /* ================= CURRENT YEAR ================= */
+function restartSlider() {
 
-  const yearElement =
+  startSlider();
+}
+
+
+/* ================= WHATSAPP ORDER ================= */
+
+function orderProduct(productName) {
+
+  const phone =
+    "919714978206";
+
+  const message =
+    "Hello Shivam Imitation,%0A%0A" +
+    "I am interested in:%0A" +
+    productName +
+    "%0A%0APlease share price and details.";
+
+  const url =
+    "https://wa.me/" +
+    phone +
+    "?text=" +
+    message;
+
+  window.open(
+    url,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+
+/* ================= CURRENT YEAR ================= */
+
+function setCurrentYear() {
+
+  const year =
     document.getElementById("year");
 
-  if (yearElement) {
+  if (!year) return;
 
-    yearElement.textContent =
-      new Date().getFullYear();
-
-  }
-
-
-  /* ================= SCROLL EFFECT ================= */
-
-  const navbar =
-    document.querySelector(".navbar");
-
-  if (navbar) {
-
-    window.addEventListener(
-      "scroll",
-      () => {
-
-        if (window.scrollY > 30) {
-
-          navbar.classList.add("scrolled");
-
-        } else {
-
-          navbar.classList.remove("scrolled");
-
-        }
-
-      },
-      { passive: true }
-    );
-
-  }
+  year.textContent =
+    new Date().getFullYear();
+}
 
 
-  /* ================= ESC KEY ================= */
+/* ================= CLOSE MENU ON ESC ================= */
 
-  document.addEventListener("keydown", (event) => {
+document.addEventListener(
+  "keydown",
+  function (event) {
 
     if (event.key === "Escape") {
 
-      if (nav) {
-
-        nav.classList.remove("open");
-
-      }
-
+      closeMenu();
     }
+  }
+);
 
-  });
 
-});
+/* ================= INITIALIZE ================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    createDots();
+
+    showSlide(0);
+
+    startSlider();
+
+    setCurrentYear();
+  }
+);
