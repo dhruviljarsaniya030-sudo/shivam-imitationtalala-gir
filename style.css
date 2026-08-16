@@ -1617,3 +1617,106 @@ footer small {
     letter-spacing: 2.5px;
   }
 }
+/* =========================================
+   SUBTLE PREMIUM BACKGROUND DESIGN
+   Existing colours remain unchanged
+   ========================================= */
+
+body {
+  position: relative;
+  background-color: #f8f6ef;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(0, 61, 55, 0.035) 0 2px, transparent 3px),
+    radial-gradient(circle at 90% 80%, rgba(0, 61, 55, 0.035) 0 2px, transparent 3px),
+    linear-gradient(
+      135deg,
+      transparent 0 48%,
+      rgba(184, 145, 55, 0.035) 49% 51%,
+      transparent 52%
+    );
+  background-size: 90px 90px, 110px 110px, 180px 180px;
+}
+
+/* Soft jewellery-style decorative pattern */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image:
+    radial-gradient(
+      circle at center,
+      transparent 0 34px,
+      rgba(184, 145, 55, 0.045) 35px 36px,
+      transparent 37px
+    );
+
+  background-size: 150px 150px;
+  opacity: 0.7;
+}
+
+/* Keep important sections clean */
+.hero,
+.offer {
+  position: relative;
+}
+
+/* Very light pattern inside normal sections */
+.section,
+.intro,
+.about,
+.reviews,
+.instagram-section,
+.contact {
+  position: relative;
+  background-image:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(0, 61, 55, 0.025) 0 2px,
+      transparent 3px
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(184, 145, 55, 0.035) 0 2px,
+      transparent 3px
+    );
+  background-size: 120px 120px, 160px 160px;
+}
+
+/* Elegant corner decoration */
+.section::after,
+.intro::after,
+.about::after,
+.reviews::after,
+.instagram-section::after,
+.contact::after {
+  content: "✦";
+  position: absolute;
+  right: 5%;
+  top: 30px;
+  font-size: 22px;
+  color: rgba(184, 145, 55, 0.10);
+  pointer-events: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  body {
+    background-size: 70px 70px, 90px 90px, 140px 140px;
+  }
+
+  .section::after,
+  .intro::after,
+  .about::after,
+  .reviews::after,
+  .instagram-section::after,
+  .contact::after {
+    right: 4%;
+    top: 20px;
+    font-size: 18px;
+  }
+
+}
