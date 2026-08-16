@@ -13,12 +13,12 @@
 
   <meta
     name="description"
-    content="Shivam Imitation, Talala Gir – Beautiful imitation jewellery, necklaces, mangalsutra, rings, bracelets, bangles and novelties."
+    content="Shivam Imitation, Talala Gir – Explore beautiful imitation jewellery, mangalsutra, necklaces, rings, bracelets, bangles and novelties."
   >
 
   <meta
     name="keywords"
-    content="Shivam Imitation, imitation jewellery Talala Gir, artificial jewellery Talala, jewellery shop Talala Gir, mangalsutra Talala, necklace Talala, bracelet Talala"
+    content="Shivam Imitation, imitation jewellery Talala Gir, artificial jewellery Talala, jewellery shop Talala Gir, mangalsutra Talala, necklace Talala, ladies jewellery Talala, bracelet Talala"
   >
 
   <meta name="theme-color" content="#003d37">
@@ -26,299 +26,23 @@
   <title>Shivam Imitation | Imitation Jewellery Shop in Talala Gir</title>
 
   <link rel="stylesheet" href="style.css">
-
-  <!-- COMPLETE BACKGROUND DESIGN -->
-  <style>
-
-    /* =========================================
-       SHIVAM IMITATION
-       PREMIUM LIGHT BACKGROUND
-       ========================================= */
-
-    body {
-      position: relative;
-      background-color: #f8f6ef !important;
-
-      background-image:
-        radial-gradient(
-          circle,
-          rgba(184, 145, 55, 0.09) 1px,
-          transparent 1.5px
-        ),
-        radial-gradient(
-          circle,
-          rgba(0, 61, 55, 0.055) 1px,
-          transparent 1.5px
-        ) !important;
-
-      background-size:
-        45px 45px,
-        75px 75px !important;
-
-      background-position:
-        0 0,
-        20px 20px !important;
-    }
-
-
-    /* Elegant diamond pattern */
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-
-      pointer-events: none;
-
-      z-index: -1;
-
-      opacity: 0.45;
-
-      background-image:
-        linear-gradient(
-          45deg,
-          transparent 47%,
-          rgba(184, 145, 55, 0.035) 48%,
-          rgba(184, 145, 55, 0.035) 52%,
-          transparent 53%
-        ),
-        linear-gradient(
-          -45deg,
-          transparent 47%,
-          rgba(0, 61, 55, 0.025) 48%,
-          rgba(0, 61, 55, 0.025) 52%,
-          transparent 53%
-        );
-
-      background-size: 90px 90px;
-    }
-
-
-    /* Keep original dark sections */
-
-    .topbar,
-    .navbar,
-    .hero,
-    .offer,
-    footer {
-      position: relative;
-      z-index: 1;
-    }
-
-
-    /* Soft background on normal sections */
-
-    .intro,
-    .section,
-    .about,
-    .reviews,
-    .instagram-section,
-    .contact,
-    .map-section,
-    .categories {
-      position: relative;
-
-      background-color: transparent !important;
-
-      overflow: hidden;
-    }
-
-
-    /* Decorative gold star */
-
-    .intro::after,
-    .section::after,
-    .about::after,
-    .reviews::after,
-    .instagram-section::after,
-    .contact::after,
-    .map-section::after {
-
-      content: "✦";
-
-      position: absolute;
-
-      top: 25px;
-      right: 5%;
-
-      font-size: 28px;
-
-      color: rgba(184, 145, 55, 0.12);
-
-      pointer-events: none;
-    }
-
-
-    /* Second small decoration */
-
-    .intro::before,
-    .section::before,
-    .about::before,
-    .reviews::before,
-    .instagram-section::before,
-    .contact::before,
-    .map-section::before {
-
-      content: "◇";
-
-      position: absolute;
-
-      bottom: 30px;
-      left: 4%;
-
-      font-size: 34px;
-
-      color: rgba(0, 61, 55, 0.07);
-
-      pointer-events: none;
-    }
-
-
-    /* Instagram */
-
-    .instagram-btn {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 10px !important;
-
-      border-radius: 999px !important;
-
-      text-decoration: none !important;
-    }
-
-
-    .instagram-icon {
-      width: 24px;
-      height: 24px;
-
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      flex-shrink: 0;
-    }
-
-
-    .instagram-icon svg {
-      width: 24px;
-      height: 24px;
-
-      display: block;
-
-      color: currentColor;
-
-      transition: transform 0.3s ease;
-    }
-
-
-    .instagram-btn:hover .instagram-icon svg {
-      transform: scale(1.12);
-    }
-
-
-    .instagram-btn:hover {
-      transform: translateY(-3px);
-    }
-
-
-    /* Instagram cards */
-
-    .instagram-card {
-      border-radius: 24px !important;
-
-      overflow: hidden !important;
-    }
-
-
-    .instagram-card img {
-      display: block !important;
-
-      border-radius: 0 !important;
-    }
-
-
-    /* Contact cards */
-
-    .contact-card {
-      border-radius: 28px !important;
-
-      overflow: hidden !important;
-    }
-
-
-    /* Contact buttons */
-
-    .contact-actions .gold-btn,
-    .contact-actions .outline-btn {
-      border-radius: 999px !important;
-    }
-
-
-    /* Google Maps */
-
-    .map-wrapper {
-      border-radius: 28px !important;
-
-      overflow: hidden !important;
-    }
-
-
-    .map-wrapper iframe {
-      display: block !important;
-
-      border-radius: 28px !important;
-    }
-
-
-    /* Mobile */
-
-    @media (max-width: 768px) {
-
-      body {
-        background-size:
-          35px 35px,
-          60px 60px !important;
-      }
-
-      body::before {
-        background-size: 70px 70px;
-      }
-
-      .intro::after,
-      .section::after,
-      .about::after,
-      .reviews::after,
-      .instagram-section::after,
-      .contact::after,
-      .map-section::after {
-
-        right: 4%;
-        top: 18px;
-
-        font-size: 20px;
-      }
-
-    }
-
-  </style>
-
 </head>
 
 
 <body>
 
-
-  <!-- TOP BAR -->
+  <!-- =====================================================
+       TOP BAR
+       ===================================================== -->
 
   <div class="topbar">
     ✨ Best Collection • Visit Shivam Imitation, Talala Gir
   </div>
 
 
-
-  <!-- NAVBAR -->
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
 
   <header class="navbar">
 
@@ -347,52 +71,31 @@
 
     <nav id="nav">
 
-      <a
-        href="#home"
-        onclick="closeMenu()"
-      >
+      <a href="#home" onclick="closeMenu()">
         Home
       </a>
 
-      <a
-        href="collection.html"
-        onclick="closeMenu()"
-      >
+      <a href="collection.html" onclick="closeMenu()">
         Collection
       </a>
 
-      <a
-        href="#categories"
-        onclick="closeMenu()"
-      >
+      <a href="#categories" onclick="closeMenu()">
         Categories
       </a>
 
-      <a
-        href="#offers"
-        onclick="closeMenu()"
-      >
+      <a href="#offers" onclick="closeMenu()">
         Offers
       </a>
 
-      <a
-        href="#about"
-        onclick="closeMenu()"
-      >
+      <a href="#about" onclick="closeMenu()">
         About
       </a>
 
-      <a
-        href="#reviews"
-        onclick="closeMenu()"
-      >
+      <a href="#reviews" onclick="closeMenu()">
         Reviews
       </a>
 
-      <a
-        href="#contact"
-        onclick="closeMenu()"
-      >
+      <a href="#contact" onclick="closeMenu()">
         Contact
       </a>
 
@@ -401,19 +104,16 @@
   </header>
 
 
-
   <main>
 
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-    <section
-      id="home"
-      class="hero"
-    >
+    <section id="home" class="hero">
 
       <div class="hero-slider">
-
 
         <img
           src="product-1.jpg"
@@ -421,13 +121,11 @@
           class="hero-slide active"
         >
 
-
         <img
           src="product-4.jpg"
           alt="Traditional gold imitation necklace"
           class="hero-slide"
         >
-
 
         <img
           src="product-5.jpg"
@@ -447,16 +145,14 @@
           PREMIUM IMITATION JEWELLERY
         </p>
 
-
         <h1>
           Elegance That
           <span>Shines</span>
         </h1>
 
-
         <p class="hero-text">
-          Discover beautiful imitation jewellery
-          collections for every special moment.
+          Discover beautiful imitation jewellery collections
+          for every special moment.
         </p>
 
 
@@ -468,7 +164,6 @@
           >
             Explore Collection
           </a>
-
 
           <a
             href="collection.html"
@@ -509,7 +204,9 @@
 
 
 
-    <!-- INTRO -->
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
 
     <section class="intro">
 
@@ -517,12 +214,10 @@
         SHIVAM IMITATION
       </p>
 
-
       <h2>
         Jewellery Made to
         <span>Stand Out</span>
       </h2>
-
 
       <p>
         Welcome to Shivam Imitation, your trusted
@@ -536,7 +231,9 @@
 
 
 
-    <!-- COLLECTION -->
+    <!-- =====================================================
+         COLLECTION
+         ===================================================== -->
 
     <section
       id="collection"
@@ -550,7 +247,6 @@
           <p class="eyebrow">
             OUR COLLECTION
           </p>
-
 
           <h2>
             Featured Pieces
@@ -583,18 +279,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               NECKLACE SET
             </span>
 
-
             <h3>
               Royal Green Drop Set
             </h3>
-
 
             <button
               onclick="orderProduct('Royal Green Drop Set')"
@@ -618,18 +311,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               NECKLACE SET
             </span>
 
-
             <h3>
               Elegant Pearl Drop Set
             </h3>
-
 
             <button
               onclick="orderProduct('Elegant Pearl Drop Set')"
@@ -653,18 +343,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               NECKLACE
             </span>
 
-
             <h3>
               Butterfly Charm Necklace
             </h3>
-
 
             <button
               onclick="orderProduct('Butterfly Charm Necklace')"
@@ -688,18 +375,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               TRADITIONAL
             </span>
 
-
             <h3>
               Classic Gold Pendant Set
             </h3>
-
 
             <button
               onclick="orderProduct('Classic Gold Pendant Set')"
@@ -723,18 +407,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               BRIDAL STYLE
             </span>
 
-
             <h3>
               Heritage Statement Set
             </h3>
-
 
             <button
               onclick="orderProduct('Heritage Statement Set')"
@@ -758,18 +439,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               NECKLACE
             </span>
 
-
             <h3>
               Multicolor Stone Necklace
             </h3>
-
 
             <button
               onclick="orderProduct('Multicolor Stone Necklace')"
@@ -793,18 +471,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               DAILY WEAR
             </span>
 
-
             <h3>
               Minimal Rose Pendant
             </h3>
-
 
             <button
               onclick="orderProduct('Minimal Rose Pendant')"
@@ -828,18 +503,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               BRACELET
             </span>
 
-
             <h3>
               Rose Gold Crystal Bracelet
             </h3>
-
 
             <button
               onclick="orderProduct('Rose Gold Crystal Bracelet')"
@@ -863,18 +535,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               BRACELET
             </span>
 
-
             <h3>
               Black Stone Bracelet
             </h3>
-
 
             <button
               onclick="orderProduct('Black Stone Bracelet')"
@@ -898,18 +567,15 @@
             loading="lazy"
           >
 
-
           <div class="card-body">
 
             <span>
               NOVELTY
             </span>
 
-
             <h3>
               Crystal Hair Accessories
             </h3>
-
 
             <button
               onclick="orderProduct('Crystal Hair Accessories')"
@@ -921,14 +587,15 @@
 
         </article>
 
-
       </div>
 
     </section>
 
 
 
-    <!-- CATEGORIES -->
+    <!-- =====================================================
+         PRODUCT CATEGORIES
+         ===================================================== -->
 
     <section
       id="categories"
@@ -943,7 +610,6 @@
             SHOP BY CATEGORY
           </p>
 
-
           <h2>
             Explore Our Collection
           </h2>
@@ -953,8 +619,11 @@
       </div>
 
 
+
       <div class="category-grid">
 
+
+        <!-- CATEGORY 1 -->
 
         <a
           href="collection.html"
@@ -967,18 +636,15 @@
             loading="lazy"
           >
 
-
           <div class="category-overlay">
 
             <span>
               01
             </span>
 
-
             <h3>
               Necklaces
             </h3>
-
 
             <p>
               Elegant designs for every occasion
@@ -989,6 +655,8 @@
         </a>
 
 
+
+        <!-- CATEGORY 2 -->
 
         <a
           href="collection.html"
@@ -1001,18 +669,15 @@
             loading="lazy"
           >
 
-
           <div class="category-overlay">
 
             <span>
               02
             </span>
 
-
             <h3>
               Bridal Jewellery
             </h3>
-
 
             <p>
               Beautiful statement styles
@@ -1023,6 +688,8 @@
         </a>
 
 
+
+        <!-- CATEGORY 3 -->
 
         <a
           href="collection.html"
@@ -1035,18 +702,15 @@
             loading="lazy"
           >
 
-
           <div class="category-overlay">
 
             <span>
               03
             </span>
 
-
             <h3>
               Bracelets
             </h3>
-
 
             <p>
               Stylish everyday sparkle
@@ -1057,6 +721,8 @@
         </a>
 
 
+
+        <!-- CATEGORY 4 -->
 
         <a
           href="collection.html"
@@ -1069,18 +735,15 @@
             loading="lazy"
           >
 
-
           <div class="category-overlay">
 
             <span>
               04
             </span>
 
-
             <h3>
               Daily Wear
             </h3>
-
 
             <p>
               Simple and elegant designs
@@ -1091,6 +754,8 @@
         </a>
 
 
+
+        <!-- CATEGORY 5 -->
 
         <a
           href="collection.html"
@@ -1103,18 +768,15 @@
             loading="lazy"
           >
 
-
           <div class="category-overlay">
 
             <span>
               05
             </span>
 
-
             <h3>
               Novelties
             </h3>
-
 
             <p>
               Trendy accessories and more
@@ -1130,7 +792,9 @@
 
 
 
-    <!-- OFFER -->
+    <!-- =====================================================
+         SPECIAL OFFER
+         ===================================================== -->
 
     <section
       id="offers"
@@ -1143,13 +807,11 @@
           SPECIAL OFFER
         </p>
 
-
         <h2>
           Something Beautiful
           <br>
           <span>Is Waiting For You</span>
         </h2>
-
 
         <p>
           Ask us on WhatsApp for today's latest
@@ -1172,7 +834,9 @@
 
 
 
-    <!-- ABOUT -->
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
 
     <section
       id="about"
@@ -1196,13 +860,11 @@
           ABOUT SHIVAM IMITATION
         </p>
 
-
         <h2>
           Your Style.
           <br>
           <span>Your Statement.</span>
         </h2>
-
 
         <p>
           Shivam Imitation brings together stylish
@@ -1211,12 +873,10 @@
           everyday fashion.
         </p>
 
-
         <p>
           Visit our showroom in Talala Gir to
           explore the latest collection.
         </p>
-
 
         <a
           href="#contact"
@@ -1231,7 +891,9 @@
 
 
 
-    <!-- REVIEWS -->
+    <!-- =====================================================
+         CUSTOMER REVIEWS
+         ===================================================== -->
 
     <section
       id="reviews"
@@ -1246,7 +908,6 @@
             CUSTOMER EXPERIENCE
           </p>
 
-
           <h2>
             What Our Customers Say
           </h2>
@@ -1254,6 +915,7 @@
         </div>
 
       </div>
+
 
 
       <div class="rating-highlight">
@@ -1269,14 +931,13 @@
             ★★★★★
           </div>
 
-
           <p>
             Google customer rating
           </p>
 
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Shivam%20imitation%20Shop%20No%2016%20Aksar%20Arcade%20Talala%20Gujarat%20362150"
+            href="https://www.google.com/maps/search/?api=1&query=Shivam%20imitation%20Shop%20No%2016%20Akshar%20Arcade%20Talala%20Gujarat%20362150"
             target="_blank"
             rel="noopener noreferrer"
             class="gold-btn"
@@ -1303,7 +964,9 @@
 
 
 
-    <!-- INSTAGRAM -->
+    <!-- =====================================================
+         INSTAGRAM
+         ===================================================== -->
 
     <section
       class="instagram-section section"
@@ -1315,12 +978,10 @@
           FOLLOW OUR STYLE
         </p>
 
-
         <h2>
           Shivam
           <span>Imitation</span>
         </h2>
-
 
         <p>
           Follow us on Instagram for new jewellery
@@ -1353,7 +1014,6 @@
                 stroke-width="2"
               ></rect>
 
-
               <circle
                 cx="12"
                 cy="12"
@@ -1362,7 +1022,6 @@
                 stroke="currentColor"
                 stroke-width="2"
               ></circle>
-
 
               <circle
                 cx="17.5"
@@ -1375,7 +1034,6 @@
 
           </span>
 
-
           <span>
             Follow @shivam_imitation_gir
           </span>
@@ -1385,6 +1043,8 @@
       </div>
 
 
+
+      <!-- INSTAGRAM IMAGE CARDS -->
 
       <div class="instagram-cards">
 
@@ -1442,7 +1102,9 @@
 
 
 
-    <!-- GOOGLE MAPS -->
+    <!-- =====================================================
+         GOOGLE MAPS
+         ===================================================== -->
 
     <section class="map-section">
 
@@ -1452,12 +1114,10 @@
           FIND US
         </p>
 
-
         <h2>
           Visit Our
           <span>Showroom</span>
         </h2>
-
 
         <p>
           Akshar Arcade, Gitanjali Talkies,
@@ -1470,7 +1130,7 @@
       <div class="map-wrapper">
 
         <iframe
-          src="https://www.google.com/maps?q=Shivam%20imitation%2C%20Shop%20no%2016%2C%20Aksar%20arcade%2C%20Talala%2C%20Gujarat%20362150&output=embed"
+          src="https://www.google.com/maps?q=Shivam%20imitation%2C%20Shop%20no%2016%2C%20Akshar%20Arcade%2C%20Talala%2C%20Gujarat%20362150&output=embed"
           width="100%"
           height="450"
           style="border:0;"
@@ -1486,7 +1146,9 @@
 
 
 
-    <!-- CONTACT -->
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
 
     <section
       id="contact"
@@ -1501,7 +1163,6 @@
             GET IN TOUCH
           </p>
 
-
           <h2>
             Visit Shivam Imitation
           </h2>
@@ -1511,8 +1172,11 @@
       </div>
 
 
+
       <div class="contact-grid">
 
+
+        <!-- STORE ADDRESS -->
 
         <div class="contact-card">
 
@@ -1520,11 +1184,9 @@
             ⌖
           </span>
 
-
           <h3>
             Store Address
           </h3>
-
 
           <p>
             Akshar Arcade,
@@ -1538,17 +1200,17 @@
 
 
 
+        <!-- PHONE -->
+
         <div class="contact-card">
 
           <span class="icon">
             ☎
           </span>
 
-
           <h3>
             Call Us
           </h3>
-
 
           <p>
 
@@ -1568,17 +1230,17 @@
 
 
 
+        <!-- EMAIL -->
+
         <div class="contact-card">
 
           <span class="icon">
             ✉
           </span>
 
-
           <h3>
             Email
           </h3>
-
 
           <p>
 
@@ -1594,8 +1256,9 @@
 
 
 
-      <div class="contact-actions">
+      <!-- CONTACT BUTTONS -->
 
+      <div class="contact-actions">
 
         <a
           class="gold-btn"
@@ -1622,7 +1285,9 @@
 
 
 
-  <!-- FLOATING WHATSAPP -->
+  <!-- =====================================================
+       FLOATING WHATSAPP
+       ===================================================== -->
 
   <a
     class="floating-whatsapp"
@@ -1636,7 +1301,9 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
   <footer>
 
@@ -1645,21 +1312,17 @@
       alt="Shivam Imitation"
     >
 
-
     <p>
       SHIVAM
       <span>IMITATION</span>
     </p>
-
 
     <small>
       © <span id="year"></span>
       Shivam Imitation • Talala Gir
     </small>
 
-
     <br>
-
 
     <small>
       Imitation Jewellery • Talala Gir
@@ -1669,9 +1332,113 @@
 
 
 
-  <!-- JAVASCRIPT -->
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
   <script src="script.js"></script>
+
+
+  <!-- =====================================================
+       EXTRA INSTAGRAM / MAP / CONTACT CSS
+       ===================================================== -->
+
+  <style>
+
+    .instagram-btn {
+      display: inline-flex !important;
+
+      align-items: center !important;
+
+      justify-content: center !important;
+
+      gap: 10px !important;
+
+      border-radius: 999px !important;
+
+      text-decoration: none !important;
+    }
+
+
+    .instagram-icon {
+      width: 24px;
+
+      height: 24px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      flex-shrink: 0;
+    }
+
+
+    .instagram-icon svg {
+      width: 24px;
+
+      height: 24px;
+
+      display: block;
+
+      color: currentColor;
+
+      transition: transform 0.3s ease;
+    }
+
+
+    .instagram-btn:hover .instagram-icon svg {
+      transform: scale(1.12);
+    }
+
+
+    .instagram-btn:hover {
+      transform: translateY(-3px);
+    }
+
+
+    .instagram-card {
+      border-radius: 24px !important;
+
+      overflow: hidden !important;
+    }
+
+
+    .instagram-card img {
+      border-radius: 0 !important;
+
+      display: block !important;
+    }
+
+
+    .contact-card {
+      border-radius: 28px !important;
+
+      overflow: hidden !important;
+    }
+
+
+    .contact-actions .gold-btn,
+    .contact-actions .outline-btn {
+      border-radius: 999px !important;
+    }
+
+
+    .map-wrapper {
+      border-radius: 28px !important;
+
+      overflow: hidden !important;
+    }
+
+
+    .map-wrapper iframe {
+      border-radius: 28px !important;
+
+      display: block !important;
+    }
+
+  </style>
 
 
 </body>
