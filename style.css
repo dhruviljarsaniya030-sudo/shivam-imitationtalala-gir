@@ -2035,3 +2035,103 @@ footer small {
     height: 290px;
   }
 }
+/* =========================================
+   PREMIUM ROUNDED PHOTO CORNERS
+   ========================================= */
+
+/* All images */
+img {
+  border-radius: 18px;
+}
+
+/* Hero images */
+.hero-slider,
+.hero-slide {
+  border-radius: 0;
+}
+
+.hero-slider {
+  overflow: hidden;
+}
+
+/* Product cards */
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* Category cards */
+.category-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.category-card img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* About image */
+.about-image {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+}
+
+/* Instagram photos */
+.instagram-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.instagram-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+/* Footer logo */
+footer img {
+  border-radius: 50%;
+}
+
+/* Navbar logo */
+.brand img {
+  border-radius: 50%;
+}
+
+/* Map */
+.map-wrapper {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* Smooth premium effect */
+.card,
+.category-card,
+.instagram-card,
+.about-image,
+.map-wrapper {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.card:hover,
+.category-card:hover,
+.instagram-card:hover {
+  transform: translateY(-4px);
+}
