@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
 
 /* =========================================================
    SHIVAM IMITATION
    PREMIUM LUXURY JEWELLERY WEBSITE
+   FINAL CLEAN STYLE.CSS
    ========================================================= */
 
 :root {
@@ -22,7 +23,7 @@
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Montserrat", Arial, sans-serif;
 
-  --radius: 18px;
+  --radius: 24px;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
 }
 
@@ -30,7 +31,9 @@
    RESET
    ========================================================= */
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -123,6 +126,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px 15px;
 
   background: #002a27;
   border-bottom: 1px solid rgba(216, 173, 69, 0.35);
@@ -132,6 +136,7 @@ span {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 /* =========================================================
@@ -179,8 +184,9 @@ span {
 
   border-radius: 50%;
   background: white;
-
   padding: 5px;
+
+  border: 2px solid var(--gold-light);
 
   box-shadow:
     0 0 0 1px rgba(216, 173, 69, 0.6),
@@ -192,7 +198,7 @@ span {
   font-weight: 600;
 }
 
-/* NAV */
+/* NAVIGATION */
 
 nav {
   display: flex;
@@ -235,7 +241,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* MOBILE MENU */
+/* MOBILE MENU BUTTON */
 
 .menu-btn {
   display: none;
@@ -258,11 +264,8 @@ nav a:hover::after {
 
 .hero {
   position: relative;
-
   min-height: calc(100vh - 130px);
-
   overflow: hidden;
-
   background: var(--emerald-dark);
 }
 
@@ -287,7 +290,7 @@ nav a:hover::after {
     opacity 1s ease,
     transform 5s ease;
 
-  /* Rounded corners for hero images */
+  border: none;
   border-radius: 0;
 }
 
@@ -317,7 +320,6 @@ nav a:hover::after {
   min-height: calc(100vh - 130px);
 
   width: min(1200px, 90%);
-
   margin: auto;
 
   display: flex;
@@ -338,11 +340,9 @@ nav a:hover::after {
 
 .hero-text {
   max-width: 550px;
-
   margin-top: 30px;
 
   color: rgba(248, 244, 233, 0.82);
-
   font-size: 17px;
 }
 
@@ -358,15 +358,27 @@ nav a:hover::after {
    BUTTONS
    ========================================================= */
 
-.gold-btn {
+.gold-btn,
+.outline-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 
   min-height: 52px;
-
   padding: 13px 28px;
 
+  border-radius: 999px;
+
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gold-btn {
   background: linear-gradient(
     135deg,
     var(--gold-light),
@@ -374,18 +386,10 @@ nav a:hover::after {
   );
 
   color: #18302d;
-
   border: 1px solid var(--gold-light);
-  border-radius: 8px;
 
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-
-  transition: 0.3s ease;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .gold-btn:hover {
@@ -394,6 +398,22 @@ nav a:hover::after {
   box-shadow:
     0 14px 35px rgba(0, 0, 0, 0.28),
     0 0 20px rgba(216, 173, 69, 0.15);
+}
+
+.outline-btn {
+  border: 1px solid var(--gold-light);
+  color: var(--gold-light);
+  background: transparent;
+}
+
+.outline-btn:hover {
+  background: var(--gold);
+  color: var(--emerald-dark);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .text-link {
@@ -411,40 +431,8 @@ nav a:hover::after {
   color: var(--white);
 }
 
-/* OUTLINE BUTTON */
-
-.outline-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 52px;
-
-  padding: 13px 28px;
-
-  border: 1px solid var(--gold);
-
-  color: var(--gold-light);
-
-  border-radius: 8px;
-
-  font-size: 13px;
-  font-weight: 600;
-
-  transition: 0.3s ease;
-}
-
-.outline-btn:hover {
-  background: var(--gold);
-  color: var(--emerald-dark);
-}
-
-.outline-btn.dark {
-  border-color: var(--gold);
-}
-
 /* =========================================================
-   SLIDER BUTTONS
+   SLIDER ARROWS
    ========================================================= */
 
 .slider-arrow {
@@ -460,7 +448,6 @@ nav a:hover::after {
   border-radius: 50%;
 
   background: rgba(0, 40, 36, 0.55);
-
   color: var(--gold-light);
 
   font-size: 34px;
@@ -469,7 +456,6 @@ nav a:hover::after {
   cursor: pointer;
 
   transform: translateY(-50%);
-
   transition: 0.3s ease;
 }
 
@@ -517,9 +503,7 @@ nav a:hover::after {
 
 .dots button.active {
   width: 28px;
-
   border-radius: 20px;
-
   background: var(--gold-light);
 }
 
@@ -529,11 +513,8 @@ nav a:hover::after {
 
 .intro {
   width: min(850px, 90%);
-
   margin: auto;
-
   padding: 130px 0;
-
   text-align: center;
 }
 
@@ -547,11 +528,9 @@ nav a:hover::after {
 
 .intro > p:last-child {
   max-width: 700px;
-
   margin: 30px auto 0;
 
   color: var(--muted);
-
   font-size: 16px;
 }
 
@@ -561,9 +540,7 @@ nav a:hover::after {
 
 .section {
   width: min(1400px, 92%);
-
   margin: auto;
-
   padding: 110px 0;
 }
 
@@ -581,14 +558,12 @@ nav a:hover::after {
 }
 
 /* =========================================================
-   PRODUCTS
+   PRODUCT CARDS
    ========================================================= */
 
 .products {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 22px;
 }
 
@@ -597,24 +572,23 @@ nav a:hover::after {
 
   background: #00443f;
 
-  border: 1px solid rgba(216, 173, 69, 0.25);
+  border: 1px solid rgba(221, 183, 76, 0.55);
+  border-radius: 24px;
 
-  border-radius: 18px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20);
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-  transition: 0.4s ease;
+  transition: all 0.35s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(216, 173, 69, 0.65);
+  border-color: var(--gold-light);
 
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.30);
 }
-
-/* ALL PRODUCT PHOTOS */
 
 .card > img {
   width: 100%;
@@ -622,7 +596,8 @@ nav a:hover::after {
 
   object-fit: cover;
 
-  border-radius: 18px 18px 0 0;
+  border: none;
+  border-radius: 0;
 
   transition: 0.5s ease;
 }
@@ -630,8 +605,6 @@ nav a:hover::after {
 .card:hover > img {
   transform: scale(1.04);
 }
-
-/* CARD BODY */
 
 .card-body {
   padding: 24px 22px 26px;
@@ -652,7 +625,6 @@ nav a:hover::after {
 
 .card-body h3 {
   min-height: 65px;
-
   color: var(--cream);
 }
 
@@ -660,15 +632,12 @@ nav a:hover::after {
   width: 100%;
 
   margin-top: 18px;
-
   padding: 12px 15px;
 
   border: 1px solid var(--gold);
-
-  border-radius: 7px;
+  border-radius: 999px;
 
   background: transparent;
-
   color: var(--gold-light);
 
   font-family: var(--sans);
@@ -696,9 +665,7 @@ nav a:hover::after {
 
 .category-grid {
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
-
   gap: 18px;
 }
 
@@ -706,16 +673,15 @@ nav a:hover::after {
   position: relative;
 
   min-height: 440px;
-
   overflow: hidden;
 
-  border: 1px solid rgba(216, 173, 69, 0.25);
-
-  border-radius: 18px;
+  border: 1px solid rgba(221, 183, 76, 0.55);
+  border-radius: 24px;
 
   background: var(--emerald);
 
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.20);
 }
 
 .category-card img {
@@ -724,7 +690,8 @@ nav a:hover::after {
 
   object-fit: cover;
 
-  border-radius: 18px;
+  border: none;
+  border-radius: 0;
 
   transition: 0.6s ease;
 }
@@ -739,11 +706,12 @@ nav a:hover::after {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-    to top,
-    rgba(0, 31, 28, 0.95),
-    rgba(0, 31, 28, 0.08)
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 31, 28, 0.95),
+      rgba(0, 31, 28, 0.08)
+    );
 }
 
 .category-overlay {
@@ -765,16 +733,13 @@ nav a:hover::after {
 
 .category-overlay h3 {
   margin-top: 5px;
-
   color: var(--cream);
   font-size: 31px;
 }
 
 .category-overlay p {
   margin-top: 5px;
-
   color: rgba(248, 244, 233, 0.75);
-
   font-size: 13px;
 }
 
@@ -786,7 +751,6 @@ nav a:hover::after {
   width: min(1400px, 92%);
 
   margin: 70px auto;
-
   padding: 70px;
 
   display: flex;
@@ -794,9 +758,8 @@ nav a:hover::after {
   justify-content: space-between;
   gap: 40px;
 
-  border: 1px solid rgba(216, 173, 69, 0.4);
-
-  border-radius: 24px;
+  border: 1px solid rgba(221, 183, 76, 0.65);
+  border-radius: 28px;
 
   background:
     radial-gradient(
@@ -815,9 +778,7 @@ nav a:hover::after {
 
 .offer p:not(.eyebrow) {
   max-width: 600px;
-
   margin-top: 20px;
-
   color: var(--muted);
 }
 
@@ -838,9 +799,8 @@ nav a:hover::after {
 .about-image {
   overflow: hidden;
 
-  border-radius: 24px;
-
-  border: 1px solid rgba(216, 173, 69, 0.35);
+  border-radius: 28px;
+  border: 1px solid rgba(221, 183, 76, 0.6);
 
   box-shadow: var(--shadow);
 }
@@ -851,7 +811,8 @@ nav a:hover::after {
 
   object-fit: cover;
 
-  border-radius: 24px;
+  border: none;
+  border-radius: 0;
 
   transition: 0.6s ease;
 }
@@ -866,9 +827,7 @@ nav a:hover::after {
 
 .about-copy > p:not(.eyebrow) {
   margin-top: 25px;
-
   color: var(--muted);
-
   font-size: 15px;
 }
 
@@ -888,7 +847,6 @@ nav a:hover::after {
   width: min(650px, 100%);
 
   margin: 50px auto 25px;
-
   padding: 40px;
 
   display: flex;
@@ -896,9 +854,8 @@ nav a:hover::after {
   align-items: center;
   gap: 35px;
 
-  border: 1px solid rgba(216, 173, 69, 0.35);
-
-  border-radius: 20px;
+  border: 1px solid rgba(221, 183, 76, 0.6);
+  border-radius: 28px;
 
   background: #003a36;
 
@@ -916,20 +873,24 @@ nav a:hover::after {
 
 .stars {
   color: var(--gold-light);
-
   font-size: 24px;
   letter-spacing: 4px;
 }
 
 .rating-highlight p {
   margin: 7px 0 18px;
-
   color: var(--muted);
-
   font-size: 13px;
 }
 
 .review-note {
+  padding: 18px 25px;
+
+  border: 1px solid rgba(221, 183, 76, 0.35);
+  border-radius: 20px;
+
+  background: rgba(0, 67, 61, 0.45);
+
   color: var(--muted);
 }
 
@@ -953,10 +914,12 @@ nav a:hover::after {
 
 .instagram-content > p:not(.eyebrow) {
   max-width: 550px;
-
   margin: 22px 0;
-
   color: var(--muted);
+}
+
+.instagram-content .gold-btn {
+  border-radius: 999px;
 }
 
 .instagram-cards {
@@ -972,9 +935,8 @@ nav a:hover::after {
 
   aspect-ratio: 1 / 1;
 
-  border-radius: 18px;
-
-  border: 1px solid rgba(216, 173, 69, 0.3);
+  border-radius: 24px;
+  border: 1px solid rgba(221, 183, 76, 0.55);
 }
 
 .instagram-card img {
@@ -983,7 +945,8 @@ nav a:hover::after {
 
   object-fit: cover;
 
-  border-radius: 18px;
+  border: none;
+  border-radius: 0;
 
   transition: 0.5s ease;
 }
@@ -1000,13 +963,11 @@ nav a:hover::after {
   width: min(1400px, 92%);
 
   margin: auto;
-
   padding: 100px 0;
 }
 
 .map-heading {
   text-align: center;
-
   margin-bottom: 45px;
 }
 
@@ -1016,26 +977,28 @@ nav a:hover::after {
 
 .map-heading p:last-child {
   margin-top: 15px;
-
   color: var(--muted);
 }
 
 .map-wrapper {
   overflow: hidden;
 
-  border: 1px solid rgba(216, 173, 69, 0.35);
+  border: 1px solid rgba(221, 183, 76, 0.65);
+  border-radius: 28px;
 
-  border-radius: 22px;
-
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .map-wrapper iframe {
   display: block;
 
   width: 100%;
+  min-height: 450px;
 
-  border-radius: 22px;
+  border: none;
+  border-radius: 0;
+
   filter: saturate(0.85);
 }
 
@@ -1052,7 +1015,7 @@ nav a:hover::after {
 
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 24px;
 
   margin-top: 50px;
 }
@@ -1060,38 +1023,49 @@ nav a:hover::after {
 .contact-card {
   padding: 40px 25px;
 
-  border: 1px solid rgba(216, 173, 69, 0.28);
+  border: 1px solid rgba(221, 183, 76, 0.65);
+  border-radius: 28px;
 
-  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 67, 61, 0.98),
+      rgba(0, 48, 44, 0.98)
+    );
 
-  background: #003a36;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.20);
 
-  transition: 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
 
-  border-color: rgba(216, 173, 69, 0.65);
+  border-color: var(--gold-light);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.30),
+    0 0 25px rgba(216, 173, 69, 0.08);
 }
 
 .contact-card .icon {
-  display: flex;
+  display: inline-flex;
 
-  width: 55px;
-  height: 55px;
+  width: 58px;
+  height: 58px;
 
   margin: 0 auto 20px;
 
   align-items: center;
   justify-content: center;
 
-  border: 1px solid var(--gold);
-
+  border: 1px solid var(--gold-light);
   border-radius: 50%;
 
-  color: var(--gold-light);
+  background: rgba(216, 173, 69, 0.08);
 
+  color: var(--gold-light);
   font-size: 22px;
 }
 
@@ -1101,23 +1075,49 @@ nav a:hover::after {
 
 .contact-card p {
   margin-top: 12px;
-
   color: var(--muted);
-
   font-size: 14px;
 }
 
+.contact-card a {
+  display: inline-block;
+
+  margin: 3px 0;
+  padding: 6px 15px;
+
+  border: 1px solid rgba(221, 183, 76, 0.45);
+  border-radius: 999px;
+
+  color: var(--cream);
+
+  transition: 0.3s ease;
+}
+
 .contact-card a:hover {
-  color: var(--gold-light);
+  color: var(--emerald-dark);
+
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+
+  transform: translateY(-2px);
 }
 
 .contact-actions {
   display: flex;
 
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 16px;
 
   margin-top: 35px;
+}
+
+.contact-actions .gold-btn,
+.contact-actions .outline-btn {
+  border-radius: 999px;
 }
 
 /* =========================================================
@@ -1132,22 +1132,23 @@ nav a:hover::after {
 
   z-index: 2000;
 
-  width: 62px;
-  height: 62px;
+  width: 66px;
+  height: 66px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
+  border: 2px solid rgba(221, 183, 76, 0.7);
 
   background: #16a05d;
-
   color: white;
 
   font-size: 27px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3);
 
   transition: 0.3s ease;
 }
@@ -1184,7 +1185,7 @@ footer img {
 
   border-radius: 50%;
 
-  border: 1px solid var(--gold);
+  border: 2px solid var(--gold-light);
 }
 
 footer p {
@@ -1209,24 +1210,6 @@ footer small {
   font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 1px;
-}
-
-/* =========================================================
-   IMAGE ROUNDING - ALL WEBSITE IMAGES
-   ========================================================= */
-
-.products img,
-.category-card img,
-.about-image img,
-.instagram-card img,
-footer img {
-  border-radius: 18px;
-}
-
-/* Product image top corners */
-
-.card > img {
-  border-radius: 18px 18px 0 0;
 }
 
 /* =========================================================
@@ -1264,7 +1247,6 @@ footer img {
    ========================================================= */
 
 @media (max-width: 1100px) {
-
   .navbar {
     padding: 12px 3%;
   }
@@ -1299,20 +1281,15 @@ footer img {
    ========================================================= */
 
 @media (max-width: 768px) {
-
   .topbar {
     min-height: 36px;
-
     padding: 5px 10px;
 
     font-size: 12px;
-
-    text-align: center;
   }
 
   .navbar {
     min-height: 75px;
-
     padding: 8px 18px;
   }
 
@@ -1320,7 +1297,6 @@ footer img {
     gap: 10px;
 
     font-size: 22px;
-
     letter-spacing: 1.5px;
   }
 
@@ -1351,7 +1327,8 @@ footer img {
 
     border-bottom: 1px solid rgba(216, 173, 69, 0.3);
 
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+    box-shadow:
+      0 20px 30px rgba(0, 0, 0, 0.25);
   }
 
   nav.open {
@@ -1376,7 +1353,6 @@ footer img {
 
   .hero-content {
     min-height: 75vh;
-
     padding: 60px 25px;
   }
 
@@ -1394,9 +1370,7 @@ footer img {
 
   .hero-actions {
     flex-direction: column;
-
     align-items: flex-start;
-
     gap: 18px;
   }
 
@@ -1417,13 +1391,11 @@ footer img {
 
   .section-heading {
     display: block;
-
     margin-bottom: 35px;
   }
 
   .section-heading .text-link {
     display: inline-block;
-
     margin-top: 18px;
   }
 
@@ -1431,18 +1403,15 @@ footer img {
 
   .products {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 14px;
   }
 
   .card {
-    border-radius: 14px;
+    border-radius: 20px;
   }
 
   .card > img {
     height: 240px;
-
-    border-radius: 14px 14px 0 0;
   }
 
   .card-body {
@@ -1451,13 +1420,11 @@ footer img {
 
   .card-body h3 {
     min-height: 60px;
-
     font-size: 23px;
   }
 
   .card-body > span {
     font-size: 9px;
-
     letter-spacing: 2px;
   }
 
@@ -1465,18 +1432,12 @@ footer img {
 
   .category-grid {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 12px;
   }
 
   .category-card {
     min-height: 330px;
-
-    border-radius: 14px;
-  }
-
-  .category-card img {
-    border-radius: 14px;
+    border-radius: 20px;
   }
 
   .category-overlay {
@@ -1499,22 +1460,23 @@ footer img {
     width: 92%;
 
     margin: 40px auto;
-
     padding: 45px 25px;
 
     flex-direction: column;
-
     align-items: flex-start;
 
-    border-radius: 18px;
+    border-radius: 22px;
   }
 
   /* ABOUT */
 
   .about {
     grid-template-columns: 1fr;
-
     gap: 45px;
+  }
+
+  .about-image {
+    border-radius: 22px;
   }
 
   .about-image img {
@@ -1529,6 +1491,8 @@ footer img {
     gap: 18px;
 
     padding: 30px 20px;
+
+    border-radius: 22px;
   }
 
   .rating-number {
@@ -1539,7 +1503,6 @@ footer img {
 
   .instagram-section {
     grid-template-columns: 1fr;
-
     gap: 40px;
   }
 
@@ -1548,11 +1511,7 @@ footer img {
   }
 
   .instagram-card {
-    border-radius: 12px;
-  }
-
-  .instagram-card img {
-    border-radius: 12px;
+    border-radius: 20px;
   }
 
   /* MAP */
@@ -1561,26 +1520,28 @@ footer img {
     padding: 70px 0;
   }
 
-  .map-wrapper,
+  .map-wrapper {
+    border-radius: 22px;
+  }
+
   .map-wrapper iframe {
-    border-radius: 15px;
+    min-height: 350px;
   }
 
   /* CONTACT */
 
   .contact-grid {
     grid-template-columns: 1fr;
-
     gap: 14px;
   }
 
   .contact-card {
     padding: 30px 20px;
+    border-radius: 22px;
   }
 
   .contact-actions {
     flex-direction: column;
-
     align-items: stretch;
   }
 
@@ -1601,6 +1562,11 @@ footer img {
     right: 18px;
     bottom: 18px;
   }
+
+  .gold-btn,
+  .outline-btn {
+    width: 100%;
+  }
 }
 
 /* =========================================================
@@ -1608,7 +1574,6 @@ footer img {
    ========================================================= */
 
 @media (max-width: 480px) {
-
   .brand {
     font-size: 19px;
   }
@@ -1632,7 +1597,6 @@ footer img {
 
   .card-body button {
     padding: 10px 5px;
-
     font-size: 10px;
   }
 
@@ -1650,797 +1614,6 @@ footer img {
 
   .eyebrow {
     font-size: 10px;
-
     letter-spacing: 2.5px;
   }
-
-  .gold-btn,
-  .outline-btn {
-    width: 100%;
-  }
-}
-/* =========================================================
-   PREMIUM ROUNDED BORDER — ALL WEBSITE ELEMENTS
-   ========================================================= */
-
-/* ALL PHOTOS */
-img {
-  border-radius: 18px;
-  border: 1px solid rgba(216, 173, 69, 0.35);
-}
-
-/* HERO PHOTO */
-.hero-slide {
-  border-radius: 0;
-  border: none;
-}
-
-/* LOGO */
-.brand img,
-footer img {
-  border-radius: 50%;
-  border: 2px solid var(--gold-light);
-}
-
-/* PRODUCT PHOTOS */
-.card {
-  border-radius: 18px;
-  border: 1px solid rgba(216, 173, 69, 0.45);
-  overflow: hidden;
-}
-
-.card > img {
-  border-radius: 18px 18px 0 0;
-  border: none;
-}
-
-/* CATEGORY PHOTOS */
-.category-card {
-  border-radius: 18px;
-  border: 1px solid rgba(216, 173, 69, 0.5);
-  overflow: hidden;
-}
-
-.category-card img {
-  border-radius: 18px;
-  border: none;
-}
-
-/* ABOUT PHOTO */
-.about-image {
-  border-radius: 22px;
-  border: 1px solid rgba(216, 173, 69, 0.5);
-  overflow: hidden;
-}
-
-.about-image img {
-  border-radius: 22px;
-  border: none;
-}
-
-/* INSTAGRAM PHOTOS */
-.instagram-card {
-  border-radius: 18px;
-  border: 1px solid rgba(216, 173, 69, 0.5);
-  overflow: hidden;
-}
-
-.instagram-card img {
-  border-radius: 18px;
-  border: none;
-}
-
-/* GOOGLE MAP */
-.map-wrapper {
-  border-radius: 22px;
-  border: 1px solid rgba(216, 173, 69, 0.6);
-  overflow: hidden;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(216, 173, 69, 0.08);
-}
-
-.map-wrapper iframe {
-  border-radius: 22px;
-  border: none;
-}
-
-/* =========================================================
-   CONTACT CARDS
-   ========================================================= */
-
-.contact-card {
-  border-radius: 20px;
-
-  border: 1px solid rgba(216, 173, 69, 0.55);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(0, 67, 61, 0.98),
-      rgba(0, 48, 44, 0.98)
-    );
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px rgba(216, 173, 69, 0.05);
-
-  transition: all 0.35s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-7px);
-
-  border-color: var(--gold-light);
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.3),
-    0 0 25px rgba(216, 173, 69, 0.08);
-}
-
-/* Contact icons */
-.contact-card .icon {
-  border: 1px solid var(--gold-light);
-  border-radius: 50%;
-
-  background: rgba(216, 173, 69, 0.06);
-
-  box-shadow:
-    0 0 0 5px rgba(216, 173, 69, 0.04);
-}
-
-/* CONTACT LINKS */
-.contact-card a {
-  display: inline-block;
-
-  margin: 3px 0;
-  padding: 5px 12px;
-
-  border: 1px solid rgba(216, 173, 69, 0.35);
-  border-radius: 8px;
-
-  color: var(--cream);
-
-  transition: 0.3s ease;
-}
-
-.contact-card a:hover {
-  color: var(--emerald-dark);
-
-  background: var(--gold-light);
-
-  border-color: var(--gold-light);
-}
-
-/* =========================================================
-   INSTAGRAM BUTTON
-   ========================================================= */
-
-.instagram-content .gold-btn {
-  border-radius: 12px;
-
-  border: 1px solid var(--gold-light);
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    0 0 0 3px rgba(216, 173, 69, 0.05);
-}
-
-.instagram-content .gold-btn:hover {
-  border-radius: 12px;
-}
-
-/* =========================================================
-   WHATSAPP BUTTONS
-   ========================================================= */
-
-.gold-btn {
-  border-radius: 12px;
-
-  border: 1px solid var(--gold-light);
-}
-
-.outline-btn {
-  border-radius: 12px;
-
-  border: 1px solid var(--gold-light);
-}
-
-.floating-whatsapp {
-  border: 2px solid rgba(216, 173, 69, 0.7);
-  border-radius: 50%;
-}
-
-/* =========================================================
-   OFFER BOX
-   ========================================================= */
-
-.offer {
-  border-radius: 24px;
-
-  border: 1px solid rgba(216, 173, 69, 0.55);
-}
-
-/* =========================================================
-   REVIEW BOX
-   ========================================================= */
-
-.rating-highlight {
-  border-radius: 20px;
-
-  border: 1px solid rgba(216, 173, 69, 0.55);
-}
-
-.review-note {
-  padding: 18px 25px;
-
-  border: 1px solid rgba(216, 173, 69, 0.3);
-  border-radius: 14px;
-
-  background: rgba(0, 67, 61, 0.45);
-}
-
-/* =========================================================
-   BUTTONS + LINKS PREMIUM BORDER
-   ========================================================= */
-
-.gold-btn,
-.outline-btn,
-.text-link {
-  transition: all 0.3s ease;
-}
-
-.gold-btn:hover,
-.outline-btn:hover {
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.25),
-    0 0 15px rgba(216, 173, 69, 0.12);
-}
-
-/* =========================================================
-   ALL SECTION CONTENT CARDS
-   ========================================================= */
-
-.card,
-.category-card,
-.contact-card,
-.instagram-card,
-.rating-highlight,
-.review-note,
-.offer,
-.map-wrapper,
-.about-image {
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.18);
-}
-
-/* =========================================================
-   MOBILE BORDER FIX
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  .card,
-  .category-card,
-  .contact-card,
-  .instagram-card {
-    border-radius: 15px;
-  }
-
-  .card > img {
-    border-radius: 15px 15px 0 0;
-  }
-
-  .category-card img,
-  .instagram-card img {
-    border-radius: 15px;
-  }
-
-  .contact-card a {
-    border-radius: 7px;
-  }
-
-  .map-wrapper,
-  .map-wrapper iframe {
-    border-radius: 16px;
-  }
-
-}
-/* =========================================================
-   SHIVAM IMITATION - FINAL PREMIUM ROUND CORNERS
-   PASTE THIS AT THE VERY END OF style.css
-   ========================================================= */
-
-/* ---------- GLOBAL BOX SIZING ---------- */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-/* =========================================================
-   CONTACT SECTION
-   ========================================================= */
-
-#contact .contact-grid {
-  gap: 24px;
-}
-
-
-/* Contact Cards - FORCE ROUND CORNERS */
-
-#contact .contact-card {
-  border-radius: 28px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.65) !important;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(0, 67, 61, 0.98),
-      rgba(0, 48, 44, 0.98)
-    ) !important;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.20),
-    inset 0 0 0 1px rgba(221, 183, 76, 0.04) !important;
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease !important;
-}
-
-
-/* Contact card hover */
-
-#contact .contact-card:hover {
-  transform: translateY(-6px);
-
-  border-color: #e6c75c !important;
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.28),
-    0 0 25px rgba(221, 183, 76, 0.10) !important;
-}
-
-
-/* =========================================================
-   CONTACT ICON
-   ========================================================= */
-
-#contact .contact-card .icon {
-  width: 58px !important;
-  height: 58px !important;
-
-  display: inline-flex !important;
-
-  align-items: center !important;
-  justify-content: center !important;
-
-  border-radius: 50% !important;
-
-  border: 1px solid #dfba4c !important;
-
-  background: rgba(221, 183, 76, 0.08) !important;
-
-  overflow: hidden !important;
-}
-
-
-/* =========================================================
-   PHONE + EMAIL LINKS
-   ========================================================= */
-
-#contact .contact-card a {
-  display: inline-block !important;
-
-  border-radius: 999px !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.45) !important;
-
-  padding: 6px 15px !important;
-
-  margin: 3px 0 !important;
-
-  text-decoration: none !important;
-
-  transition: all 0.3s ease !important;
-}
-
-
-#contact .contact-card a:hover {
-  border-color: #e6c75c !important;
-
-  background: #d8b34d !important;
-
-  color: #003d37 !important;
-
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   WHATSAPP + CALL BUTTONS
-   ========================================================= */
-
-#contact .contact-actions {
-  gap: 16px !important;
-
-  display: flex !important;
-
-  justify-content: center !important;
-
-  align-items: center !important;
-
-  flex-wrap: wrap !important;
-}
-
-
-#contact .contact-actions .gold-btn,
-#contact .contact-actions .outline-btn {
-  border-radius: 999px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid #e2bc50 !important;
-
-  padding: 14px 28px !important;
-
-  transition: all 0.3s ease !important;
-}
-
-
-#contact .contact-actions .gold-btn:hover,
-#contact .contact-actions .outline-btn:hover {
-  border-radius: 999px !important;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(221, 183, 76, 0.12) !important;
-}
-
-
-/* =========================================================
-   INSTAGRAM SECTION
-   ========================================================= */
-
-.instagram-section .instagram-content .gold-btn {
-  border-radius: 999px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid #e2bc50 !important;
-
-  padding: 14px 28px !important;
-
-  display: inline-flex !important;
-
-  align-items: center !important;
-
-  justify-content: center !important;
-
-  transition: all 0.3s ease !important;
-}
-
-
-.instagram-section .instagram-content .gold-btn:hover {
-  border-radius: 999px !important;
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(221, 183, 76, 0.12) !important;
-}
-
-
-/* =========================================================
-   INSTAGRAM CARDS
-   ========================================================= */
-
-.instagram-card {
-  border-radius: 24px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.55) !important;
-}
-
-
-.instagram-card img {
-  border-radius: 24px !important;
-
-  overflow: hidden !important;
-
-  border: none !important;
-}
-
-
-/* =========================================================
-   GOOGLE MAP
-   ========================================================= */
-
-.map-wrapper {
-  border-radius: 28px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.65) !important;
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.25) !important;
-}
-
-
-.map-wrapper iframe {
-  display: block !important;
-
-  width: 100% !important;
-
-  border: none !important;
-
-  border-radius: 28px !important;
-}
-
-
-/* =========================================================
-   PRODUCT CARDS
-   ========================================================= */
-
-.card {
-  border-radius: 24px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.55) !important;
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.20) !important;
-
-  transition: all 0.35s ease !important;
-}
-
-
-.card:hover {
-  transform: translateY(-7px);
-
-  border-color: #e6c75c !important;
-
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.30) !important;
-}
-
-
-.card img {
-  border-radius: 0 !important;
-
-  border: none !important;
-
-  display: block !important;
-
-  width: 100% !important;
-}
-
-
-/* =========================================================
-   CATEGORY CARDS
-   ========================================================= */
-
-.category-card {
-  border-radius: 24px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.55) !important;
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.20) !important;
-}
-
-
-.category-card img {
-  border-radius: 0 !important;
-
-  border: none !important;
-
-  display: block !important;
-}
-
-
-/* =========================================================
-   ABOUT IMAGE
-   ========================================================= */
-
-.about-image {
-  border-radius: 28px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.6) !important;
-}
-
-
-.about-image img {
-  border-radius: 0 !important;
-
-  border: none !important;
-
-  display: block !important;
-}
-
-
-/* =========================================================
-   OFFER BOX
-   ========================================================= */
-
-.offer {
-  border-radius: 28px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.65) !important;
-}
-
-
-/* =========================================================
-   REVIEW BOX
-   ========================================================= */
-
-.rating-highlight {
-  border-radius: 28px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.6) !important;
-}
-
-
-.review-note {
-  border-radius: 20px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid rgba(221, 183, 76, 0.35) !important;
-}
-
-
-/* =========================================================
-   FLOATING WHATSAPP
-   ========================================================= */
-
-.floating-whatsapp {
-  width: 66px !important;
-
-  height: 66px !important;
-
-  border-radius: 50% !important;
-
-  border: 2px solid rgba(221, 183, 76, 0.7) !important;
-
-  overflow: hidden !important;
-}
-
-
-/* =========================================================
-   ALL GOLD BUTTONS
-   ========================================================= */
-
-.gold-btn {
-  border-radius: 999px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid #e2bc50 !important;
-}
-
-
-.outline-btn {
-  border-radius: 999px !important;
-
-  overflow: hidden !important;
-
-  border: 1px solid #e2bc50 !important;
-}
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-.brand img {
-  border-radius: 50% !important;
-
-  overflow: hidden !important;
-
-  border: 2px solid #dfba4c !important;
-}
-
-
-footer img {
-  border-radius: 50% !important;
-
-  border: 2px solid #dfba4c !important;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  #contact .contact-card {
-    border-radius: 22px !important;
-  }
-
-  #contact .contact-actions .gold-btn,
-  #contact .contact-actions .outline-btn {
-    border-radius: 999px !important;
-  }
-
-  .instagram-section .instagram-content .gold-btn {
-    border-radius: 999px !important;
-  }
-
-  .instagram-card {
-    border-radius: 20px !important;
-  }
-
-  .map-wrapper,
-  .map-wrapper iframe {
-    border-radius: 22px !important;
-  }
-
-  .card,
-  .category-card {
-    border-radius: 20px !important;
-  }
-
-  .about-image {
-    border-radius: 22px !important;
-  }
-
-  .offer,
-  .rating-highlight {
-    border-radius: 22px !important;
-  }
-
-}
-
-
-/* =========================================================
-   FINAL FORCE OVERRIDE
-   ========================================================= */
-
-.contact-card,
-.instagram-card,
-.map-wrapper,
-.offer,
-.rating-highlight,
-.review-note,
-.about-image,
-.card,
-.category-card,
-.gold-btn,
-.outline-btn {
-  -webkit-border-radius: 28px !important;
-  -moz-border-radius: 28px !important;
-  border-radius: 28px !important;
-}
-
-.gold-btn,
-.outline-btn {
-  border-radius: 999px !important;
-}
-
-.floating-whatsapp {
-  border-radius: 50% !important;
 }
