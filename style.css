@@ -1,4 +1,4 @@
-/* =========================================================
+  /* =========================================================
    SHIVAM IMITATION
    DARK TEAL + GOLD + SUBTLE LEATHER BACKGROUND
    ========================================================= */
@@ -47,12 +47,8 @@ html {
 body {
   font-family: "DM Sans", sans-serif;
   color: var(--text);
-
-  /* IMPORTANT:
-     MAIN BACKGROUND REMAINS DARK TEAL */
   background-color: var(--green);
 
-  /* SUBTLE LEATHER TEXTURE */
   background-image:
     radial-gradient(
       ellipse at 15% 20%,
@@ -99,6 +95,7 @@ body {
 
 body::before {
   content: "";
+
   position: fixed;
 
   inset: 0;
@@ -963,7 +960,21 @@ p {
 }
 
 .instagram-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   gap: 10px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+}
+
+.instagram-btn:hover {
+  transform: translateY(-3px);
 }
 
 .instagram-icon {
@@ -982,6 +993,12 @@ p {
   width: 24px;
 
   height: 24px;
+
+  transition: transform 0.3s ease;
+}
+
+.instagram-btn:hover .instagram-icon svg {
+  transform: scale(1.12);
 }
 
 .instagram-cards {
@@ -1290,7 +1307,7 @@ footer small {
 
 
 /* =========================================================
-   MOBILE - TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1468,153 +1485,27 @@ footer small {
     width: 100%;
   }
 }
+
+
 /* =========================================================
-   SHIVAM IMITATION - VISIBLE GOLD LEAVES
+   GOLD LEAVES - COMPLETELY DISABLED
    ========================================================= */
 
-body {
-  position: relative !important;
-}
-
-.leaf-decoration {
-  position: fixed !important;
-  width: 100px !important;
-  height: 100px !important;
-  z-index: 99999 !important;
+.leaf-decoration,
+.leaf-decoration span,
+.leaf-decoration i,
+.leaf-1,
+.leaf-2,
+.leaf-3,
+.leaf-4,
+.leaf,
+.gold-leaf,
+.decorative-leaf,
+.hero-leaf {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
   pointer-events: none !important;
-  display: block !important;
-  opacity: 1 !important;
+  content: none !important;
 }
-
-.leaf-decoration span {
-  position: absolute !important;
-  display: block !important;
-  width: 32px !important;
-  height: 58px !important;
-
-  background: linear-gradient(
-    135deg,
-    #8a650d,
-    #d4af37,
-    #ffe58a,
-    #b8860b
-  ) !important;
-
-  border-radius: 100% 0 100% 0 !important;
-
-  box-shadow:
-    0 0 8px rgba(212,175,55,.8),
-    inset 2px 2px 5px rgba(255,255,255,.4) !important;
-}
-
-.leaf-decoration span:nth-child(1) {
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(-35deg) !important;
-}
-
-.leaf-decoration span:nth-child(2) {
-  left: 42px !important;
-  top: 28px !important;
-  transform: rotate(35deg) !important;
-}
-
-.leaf-decoration i {
-  position: absolute !important;
-  display: block !important;
-  width: 65px !important;
-  height: 3px !important;
-  left: 20px !important;
-  top: 67px !important;
-
-  background: #d4af37 !important;
-  border-radius: 50% !important;
-  transform: rotate(-20deg) !important;
-}
-
-
-/* TOP LEFT */
-
-.leaf-1 {
-  top: 100px !important;
-  left: 10px !important;
-}
-
-
-/* TOP RIGHT */
-
-.leaf-2 {
-  top: 100px !important;
-  right: 10px !important;
-  transform: scaleX(-1) !important;
-}
-
-
-/* BOTTOM LEFT */
-
-.leaf-3 {
-  bottom: 30px !important;
-  left: 10px !important;
-}
-
-
-/* BOTTOM RIGHT */
-
-.leaf-4 {
-  bottom: 30px !important;
-  right: 10px !important;
-  transform: scaleX(-1) !important;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-  .leaf-decoration {
-    width: 75px !important;
-    height: 75px !important;
-  }
-
-  .leaf-decoration span {
-    width: 25px !important;
-    height: 45px !important;
-  }
-
-  .leaf-decoration span:nth-child(1) {
-    left: 8px !important;
-    top: 8px !important;
-  }
-
-  .leaf-decoration span:nth-child(2) {
-    left: 32px !important;
-    top: 22px !important;
-  }
-
-  .leaf-decoration i {
-    width: 48px !important;
-    top: 52px !important;
-    left: 15px !important;
-  }
-
-  .leaf-1 {
-    top: 90px !important;
-    left: 5px !important;
-  }
-
-  .leaf-2 {
-    top: 90px !important;
-    right: 5px !important;
-  }
-
-  .leaf-3 {
-    bottom: 20px !important;
-    left: 5px !important;
-  }
-
-  .leaf-4 {
-    bottom: 20px !important;
-    right: 5px !important;
-  }
-
-}
+```
