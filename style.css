@@ -1,14 +1,14 @@
 /* =========================================================
    SHIVAM IMITATION
    DARK TEAL + GOLD
-   SUBTLE GOLD LEAF / FLORAL BACKGROUND DESIGN
+   GOLD LEAF / FLORAL BACKGROUND
    ========================================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
 
 
 /* =========================================================
-   ROOT
+   ROOT COLORS
    ========================================================= */
 
 :root {
@@ -55,7 +55,6 @@ body {
 
   background-color: var(--green);
 
-  /* DARK TEAL BASE */
   background-image:
     linear-gradient(
       135deg,
@@ -69,8 +68,7 @@ body {
 
 
 /* =========================================================
-   GOLD FLORAL / LEAF DESIGN
-   EXACTLY SUBTLE - DOES NOT CHANGE MAIN COLOUR
+   GOLD FLORAL / LEAF BACKGROUND
    ========================================================= */
 
 body::before {
@@ -79,21 +77,23 @@ body::before {
   inset: 0;
 
   pointer-events: none;
-  z-index: 0;
 
-  opacity: 0.32;
+  z-index: 1;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.3' opacity='.75'%3E%3Cpath d='M42 92c24-42 64-54 91-25 20 21 12 54-17 69-30 15-57-4-54-30 3-26 35-42 57-23 17 15 11 40-8 50'/%3E%3Cpath d='M58 106c27-3 49-19 68-40'/%3E%3Cpath d='M155 50c18 14 31 32 37 56'/%3E%3Cpath d='M198 85c-17-24-3-51 23-54 24-3 39 20 27 41-12 20-40 18-48-3-7-19 9-35 26-32'/%3E%3Cpath d='M235 72c21 6 43 23 55 44'/%3E%3Cpath d='M301 42c-7 25-4 50 14 66 17 15 44 9 49-12 5-22-18-39-37-28-17 10-16 34 0 42'/%3E%3Cpath d='M310 67c22 12 39 27 51 45'/%3E%3Cpath d='M80 210c15-34 49-43 69-20 18 20 9 49-15 59-27 11-49-8-45-30 4-20 28-30 43-16 13 12 7 31-8 37'/%3E%3Cpath d='M96 218c23-5 39-18 53-37'/%3E%3Cpath d='M173 184c17 19 25 39 27 65'/%3E%3Cpath d='M235 190c-12-22 1-45 23-47 22-1 35 19 26 38-9 18-32 18-43 3-10-14 0-30 14-31'/%3E%3Cpath d='M269 185c20 7 35 22 46 42'/%3E%3Cpath d='M342 183c-4 25 4 47 22 59 18 12 40 4 42-15 2-20-20-32-35-20-13 10-10 29 5 34'/%3E%3Cpath d='M350 207c18 8 31 19 42 34'/%3E%3Cpath d='M38 330c18-37 51-45 72-22 18 20 10 48-15 59-27 11-50-7-46-29 4-21 29-31 44-16 13 12 7 31-9 37'/%3E%3Cpath d='M52 338c24-6 42-20 57-40'/%3E%3Cpath d='M150 306c19 14 32 33 38 57'/%3E%3Cpath d='M204 333c-12-22 1-46 25-47 22-1 36 20 26 39-10 19-34 18-45 2-10-15 0-31 15-32'/%3E%3Cpath d='M239 327c21 7 38 23 49 44'/%3E%3Cpath d='M313 305c-5 25 3 48 21 61 19 13 42 5 44-16 2-21-20-34-37-21-14 11-11 30 5 36'/%3E%3Cpath d='M321 330c19 9 34 21 46 37'/%3E%3C/g%3E%3Cg fill='%23d4af37' opacity='.55'%3E%3Ccircle cx='28' cy='48' r='2'/%3E%3Ccircle cx='115' cy='164' r='1.8'/%3E%3Ccircle cx='280' cy='125' r='2'/%3E%3Ccircle cx='391' cy='95' r='1.7'/%3E%3Ccircle cx='72' cy='282' r='1.8'/%3E%3Ccircle cx='282' cy='270' r='2'/%3E%3Ccircle cx='388' cy='360' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.34;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='1.5' opacity='.8'%3E%3Cpath d='M30 115 C55 55 115 35 150 75 C180 110 158 160 112 168 C72 175 42 145 55 112 C67 80 105 75 127 97 C145 116 135 145 111 151'/%3E%3Cpath d='M55 124 C91 112 118 91 140 62'/%3E%3Cpath d='M154 62 C177 82 190 105 197 137'/%3E%3Cpath d='M215 80 C196 50 216 20 248 24 C278 28 290 58 271 80 C252 101 221 96 214 73 C208 54 226 40 243 44'/%3E%3Cpath d='M267 70 C296 80 318 101 334 128'/%3E%3Cpath d='M360 38 C350 73 357 106 384 123 C409 139 440 126 443 98 C446 71 418 55 397 72 C377 88 383 113 405 119'/%3E%3Cpath d='M370 70 C399 84 421 103 439 126'/%3E%3Cpath d='M42 270 C63 215 111 197 143 228 C172 256 155 300 115 312 C76 323 48 297 58 267 C68 238 101 229 122 248 C139 263 132 289 110 296'/%3E%3Cpath d='M59 276 C89 267 115 246 136 220'/%3E%3Cpath d='M162 212 C181 232 192 257 198 289'/%3E%3Cpath d='M223 230 C207 203 226 177 255 180 C283 183 295 211 278 232 C261 252 233 246 225 225 C218 207 234 194 250 198'/%3E%3Cpath d='M276 222 C302 232 324 252 337 279'/%3E%3Cpath d='M374 196 C366 228 374 258 399 274 C422 289 450 277 453 252 C456 227 431 212 411 228 C393 243 399 266 418 271'/%3E%3Cpath d='M383 226 C409 238 430 257 446 279'/%3E%3Cpath d='M25 430 C48 370 94 351 129 383 C159 410 145 456 103 468 C65 479 37 453 47 422 C57 392 91 383 112 402 C129 418 121 445 99 451'/%3E%3Cpath d='M47 437 C78 426 105 405 126 377'/%3E%3Cpath d='M150 370 C174 390 188 416 194 449'/%3E%3Cpath d='M222 390 C205 363 225 336 255 340 C283 343 295 372 278 393 C260 413 231 407 223 385 C216 366 233 353 250 358'/%3E%3Cpath d='M275 384 C303 395 326 416 341 444'/%3E%3Cpath d='M376 344 C367 378 375 410 401 426 C425 442 454 429 457 402 C460 376 433 361 413 378 C395 393 402 416 421 422'/%3E%3Cpath d='M385 376 C412 389 435 408 451 431'/%3E%3C/g%3E%3Cg fill='%23d4af37' opacity='.6'%3E%3Ccircle cx='25' cy='45' r='2'/%3E%3Ccircle cx='182' cy='160' r='2'/%3E%3Ccircle cx='334' cy='180' r='1.8'/%3E%3Ccircle cx='490' cy='120' r='2'/%3E%3Ccircle cx='28' cy='340' r='1.8'/%3E%3Ccircle cx='205' cy='320' r='2'/%3E%3Ccircle cx='350' cy='315' r='1.8'/%3E%3Ccircle cx='485' cy='465' r='2'/%3E%3C/g%3E%3C/svg%3E");
 
   background-repeat: repeat;
-  background-size: 420px 420px;
+  background-position: center top;
+  background-size: 520px 520px;
 
   mix-blend-mode: normal;
 }
 
 
 /* =========================================================
-   SOFT GOLD DUST
+   GOLD DUST
    ========================================================= */
 
 body::after {
@@ -102,36 +102,37 @@ body::after {
   inset: 0;
 
   pointer-events: none;
-  z-index: 0;
 
-  opacity: 0.20;
+  z-index: 1;
+
+  opacity: 0.16;
 
   background-image:
     radial-gradient(
-      circle at 12% 18%,
+      circle at 15% 20%,
+      rgba(231, 189, 85, 0.65) 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 70% 35%,
       rgba(231, 189, 85, 0.5) 0 1px,
       transparent 2px
     ),
     radial-gradient(
-      circle at 72% 32%,
-      rgba(231, 189, 85, 0.4) 0 1px,
-      transparent 2px
-    ),
-    radial-gradient(
       circle at 35% 75%,
-      rgba(231, 189, 85, 0.35) 0 1px,
+      rgba(231, 189, 85, 0.5) 0 1px,
       transparent 2px
     );
 
   background-size:
     150px 150px,
-    210px 210px,
-    180px 180px;
+    190px 190px,
+    220px 220px;
 }
 
 
 /* =========================================================
-   KEEP CONTENT ABOVE DESIGN
+   CONTENT ABOVE BACKGROUND DESIGN
    ========================================================= */
 
 .topbar,
@@ -178,12 +179,9 @@ section {
 
 .eyebrow {
   color: var(--gold);
-
   font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 4px;
-
   margin-bottom: 16px;
 }
 
@@ -217,14 +215,10 @@ p {
 .topbar {
   background: #002e2a;
   color: var(--gold-light);
-
   text-align: center;
-
   padding: 10px 15px;
-
   font-size: 13px;
   letter-spacing: 1px;
-
   border-bottom: 1px solid var(--border);
 }
 
@@ -260,18 +254,14 @@ p {
 .brand img {
   width: 52px;
   height: 52px;
-
   object-fit: contain;
   border-radius: 50%;
 }
 
 .brand span {
   font-family: "Playfair Display", serif;
-
   font-size: 21px;
-
   color: var(--gold);
-
   letter-spacing: 1px;
 }
 
@@ -287,10 +277,8 @@ p {
 
 .navbar nav a {
   color: var(--text);
-
   font-size: 14px;
   font-weight: 600;
-
   transition: 0.3s ease;
 }
 
@@ -302,9 +290,7 @@ p {
   display: none;
 
   border: 1px solid var(--gold);
-
   background: transparent;
-
   color: var(--gold);
 
   font-size: 24px;
@@ -325,7 +311,6 @@ p {
   min-height: 85vh;
 
   position: relative;
-
   overflow: hidden;
 
   display: flex;
@@ -379,11 +364,8 @@ p {
 
 .hero-content h1 {
   font-size: clamp(52px, 7vw, 95px);
-
   line-height: 0.98;
-
   margin-bottom: 25px;
-
   color: var(--gold-light);
 }
 
@@ -399,11 +381,8 @@ p {
 
 .hero-actions {
   display: flex;
-
   align-items: center;
-
   gap: 18px;
-
   flex-wrap: wrap;
 }
 
@@ -450,7 +429,6 @@ p {
 
 .text-link {
   color: var(--gold-light);
-
   font-weight: 700;
 }
 
@@ -479,7 +457,6 @@ p {
 
 .outline-btn:hover {
   background: var(--gold);
-
   color: #003d37;
 }
 
@@ -517,7 +494,6 @@ p {
 
 .slider-arrow:hover {
   background: var(--gold);
-
   color: var(--green);
 }
 
@@ -569,7 +545,6 @@ p {
 
 .intro {
   text-align: center;
-
   padding: 100px 10%;
 }
 
@@ -579,9 +554,7 @@ p {
 
 .intro p:last-child {
   max-width: 760px;
-
   margin: auto;
-
   color: var(--muted);
 }
 
@@ -594,7 +567,6 @@ p {
   display: flex;
 
   align-items: flex-end;
-
   justify-content: space-between;
 
   gap: 30px;
@@ -604,7 +576,6 @@ p {
 
 .section-heading.center {
   justify-content: center;
-
   text-align: center;
 }
 
@@ -653,9 +624,7 @@ p {
 
 .card > img {
   width: 100%;
-
   height: 280px;
-
   object-fit: cover;
 }
 
@@ -703,7 +672,6 @@ p {
 
 .card-body button:hover {
   background: var(--gold);
-
   color: var(--green);
 }
 
@@ -748,7 +716,6 @@ p {
 
 .category-overlay {
   position: absolute;
-
   inset: 0;
 
   display: flex;
@@ -862,7 +829,6 @@ p {
 
 .about-copy p {
   color: var(--muted);
-
   margin-bottom: 18px;
 }
 
@@ -1021,7 +987,6 @@ p {
 
 .map-heading {
   text-align: center;
-
   margin-bottom: 35px;
 }
 
@@ -1046,7 +1011,6 @@ p {
 
 .map-wrapper iframe {
   width: 100%;
-
   display: block;
 }
 
@@ -1089,7 +1053,6 @@ p {
 
 .contact-card:hover {
   transform: translateY(-5px);
-
   border-color: var(--gold);
 }
 
@@ -1132,7 +1095,7 @@ p {
 
 
 /* =========================================================
-   WHATSAPP
+   FLOATING WHATSAPP
    ========================================================= */
 
 .floating-whatsapp {
@@ -1216,14 +1179,12 @@ footer p span {
 
 footer small {
   color: var(--muted);
-
   line-height: 2;
 }
 
 
 /* =========================================================
-   IMPORTANT
-   OLD 4 CORNER LEAF CODE DISABLED
+   OLD CORNER LEAVES OFF
    ========================================================= */
 
 .leaf-decoration {
@@ -1232,7 +1193,7 @@ footer small {
 
 
 /* =========================================================
-   MOBILE / TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1265,8 +1226,12 @@ footer small {
 @media (max-width: 700px) {
 
   body::before {
-    background-size: 300px 300px;
+    background-size: 330px 330px;
     opacity: 0.28;
+  }
+
+  body::after {
+    opacity: 0.12;
   }
 
   .navbar {
@@ -1307,7 +1272,6 @@ footer small {
 
   .hero-content {
     width: 100%;
-
     padding: 60px 7%;
   }
 
@@ -1325,7 +1289,6 @@ footer small {
 
   .section-heading {
     align-items: flex-start;
-
     flex-direction: column;
   }
 
