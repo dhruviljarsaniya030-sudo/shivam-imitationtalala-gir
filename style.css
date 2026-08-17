@@ -1630,3 +1630,279 @@ div[class*="leaf"] {
 /* =========================================================
    END
    ========================================================= */
+/* =========================================================
+   SHIVAM IMITATION
+   BACKGROUND DESIGN ONLY
+   ---------------------------------------------------------
+   IMPORTANT:
+   - Existing colours remain same
+   - Existing photos remain same
+   - Existing layout remains same
+   - Only subtle background design is added
+   ========================================================= */
+
+/* Main background stays exactly dark teal */
+body {
+  background-color: #003d37 !important;
+
+  background-image:
+    /* Very subtle light texture */
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.025) 0px,
+      rgba(255, 255, 255, 0.012) 1px,
+      transparent 2px
+    ),
+
+    /* Second texture */
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(231, 189, 85, 0.018) 0px,
+      rgba(231, 189, 85, 0.008) 1px,
+      transparent 2px
+    ),
+
+    /* Fine diagonal design */
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.008) 0px,
+      rgba(255, 255, 255, 0.008) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+
+    /* Dark subtle pattern */
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.012) 0px,
+      rgba(0, 0, 0, 0.012) 1px,
+      transparent 1px,
+      transparent 15px
+    ),
+
+    /* Original teal colour */
+    linear-gradient(
+      135deg,
+      #003d37 0%,
+      #003d37 50%,
+      #00342f 100%
+    ) !important;
+
+  background-size:
+    18px 18px,
+    22px 22px,
+    auto,
+    auto,
+    auto;
+
+  background-attachment: fixed;
+}
+
+
+/* =========================================================
+   SUBTLE LUXURY GLOW
+   ========================================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      ellipse at 10% 15%,
+      rgba(231, 189, 85, 0.025),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      ellipse at 90% 85%,
+      rgba(231, 189, 85, 0.018),
+      transparent 32%
+    ),
+
+    radial-gradient(
+      ellipse at 50% 50%,
+      transparent 45%,
+      rgba(0, 0, 0, 0.06) 100%
+    );
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   BACKGROUND DESIGN FOR SECTIONS
+   Colours are NOT changed
+   ========================================================= */
+
+.section,
+.map-section,
+.contact,
+.intro,
+.instagram-section {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Fine luxury texture inside sections */
+.section::before,
+.map-section::before,
+.contact::before,
+.intro::before,
+.instagram-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1.5px
+    );
+
+  background-size: 12px 12px;
+
+  opacity: 0.7;
+}
+
+
+/* Keep all original content above design */
+.section > *,
+.map-section > *,
+.contact > *,
+.intro > *,
+.instagram-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   VERY SUBTLE GOLD DECORATIVE GLOW
+   No visible gold objects/leaves
+   ========================================================= */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: -180px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(231, 189, 85, 0.035) 0%,
+      rgba(231, 189, 85, 0.012) 35%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   REMOVE OLD GOLD LEAF DECORATIONS COMPLETELY
+   ========================================================= */
+
+.leaf-decoration,
+.leaf-1,
+.leaf-2,
+.leaf-3,
+.leaf-4 {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
+/* =========================================================
+   REMOVE SIDE ARROWS ONLY IF THEY ARE THE DECORATIVE
+   LEAF/EDGE ARROWS
+
+   NOTE:
+   Actual HERO slider arrows remain visible because they use
+   .slider-arrow
+   ========================================================= */
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  body {
+    background-attachment: scroll !important;
+  }
+
+  body::before {
+    opacity: 0.8;
+  }
+
+  .section::before,
+  .map-section::before,
+  .contact::before,
+  .intro::before,
+  .instagram-section::before {
+    background-size: 14px 14px;
+    opacity: 0.55;
+  }
+
+  .hero::after {
+    width: 300px;
+    height: 300px;
+    right: -170px;
+    top: -100px;
+  }
+}
+
+
+/* =========================================================
+   SAFETY: NO CHANGE TO PRODUCT IMAGES
+   ========================================================= */
+
+.card > img,
+.category-card img,
+.instagram-card img,
+.about-image img,
+.hero-slide,
+footer img,
+.brand img {
+  filter: none !important;
+}
+
+
+/* =========================================================
+   SAFETY: NO CHANGE TO EXISTING COLOURS
+   ========================================================= */
+
+.navbar,
+.topbar,
+.card,
+.contact-card,
+.offer,
+footer {
+  background-image: initial;
+}
