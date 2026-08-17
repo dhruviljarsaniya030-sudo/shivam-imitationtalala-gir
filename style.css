@@ -6,6 +6,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
 :root {
   --green: #003d37;
   --green-dark: #002f2b;
@@ -15,14 +20,17 @@
 
   --gold: #e7bd55;
   --gold-light: #f3d77b;
-  --gold-dark: #b98b28;
+  --gold-dark: #c99b32;
 
   --white: #fffdf7;
   --text: #eee9dc;
-  --muted: #b9c8c4;
+  --muted: #b8c7c3;
 
-  --border: rgba(231, 189, 85, .42);
+  --border: rgba(231, 189, 85, 0.38);
+
+  --shadow: rgba(0, 0, 0, 0.35);
 }
+
 
 /* =========================================================
    RESET
@@ -39,6 +47,7 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   overflow-x: hidden;
 
@@ -49,58 +58,87 @@ body {
     linear-gradient(
       135deg,
       #003d37 0%,
-      #003a34 48%,
-      #002e2a 100%
+      #003a34 45%,
+      #002f2b 100%
     );
-
-  position: relative;
 }
 
+
 /* =========================================================
-   FLORAL BACKGROUND
-   NO CURLS / NO RANDOM SPIRALS
+   IMPORTANT
+   REMOVE OLD SWIRL / LEAF DECORATIONS
+   ========================================================= */
+
+.leaf-decoration,
+.leaf,
+.leaves,
+.floral-decoration,
+.background-leaf,
+.bg-leaf {
+  display: none !important;
+}
+
+
+/* =========================================================
+   EXACT FLORAL / LEAF BACKGROUND
    ========================================================= */
 
 body::before {
   content: "";
   position: fixed;
+
   inset: 0;
 
   z-index: 0;
   pointer-events: none;
 
-  opacity: .28;
+  opacity: 0.30;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.25' opacity='.9'%3E%3C!-- large flower --%3E%3Cpath d='M75 30 C95 55 105 78 92 99 C80 119 48 112 45 88 C42 66 64 54 81 66 C96 77 91 99 74 105'/%3E%3Cpath d='M75 30 C52 43 31 62 25 84 C18 108 37 127 58 118 C79 109 82 84 66 74'/%3E%3Cpath d='M92 99 C113 92 135 94 145 111 C158 133 139 154 117 149 C96 145 91 124 105 111'/%3E%3Cpath d='M45 88 C31 101 19 121 24 141 C31 164 58 167 70 148 C80 132 70 115 54 112'/%3E%3Ccircle cx='85' cy='106' r='7'/%3E%3C!-- leaves --%3E%3Cpath d='M120 155 C150 128 178 115 208 116'/%3E%3Cpath d='M145 137 C137 119 147 106 162 109 C174 112 176 127 165 136 C157 143 149 141 145 137'/%3E%3Cpath d='M166 125 C169 105 185 99 196 108 C205 116 200 130 188 135 C178 139 169 133 166 125'/%3E%3Cpath d='M190 119 C195 100 211 95 222 106 C230 115 224 129 213 133 C203 137 194 131 190 119'/%3E%3C!-- flower 2 --%3E%3Cpath d='M410 35 C438 50 450 72 440 92 C430 111 402 108 395 87 C389 69 405 55 421 61 C437 67 438 84 427 93'/%3E%3Cpath d='M410 35 C390 29 368 35 359 52 C348 72 364 92 385 89 C404 86 411 69 400 57'/%3E%3Cpath d='M440 92 C459 99 473 117 468 136 C462 158 434 160 422 142 C412 126 421 108 438 106'/%3E%3Cpath d='M395 87 C378 97 368 116 374 133 C381 153 406 156 419 140 C430 126 422 108 406 105'/%3E%3Ccircle cx='414' cy='98' r='7'/%3E%3C!-- bottom flower --%3E%3Cpath d='M82 390 C105 406 114 429 103 448 C92 467 65 463 59 443 C53 425 68 411 83 417 C98 423 99 440 88 449'/%3E%3Cpath d='M82 390 C60 382 38 388 30 406 C20 427 38 446 58 442 C77 438 83 421 72 409'/%3E%3Cpath d='M103 448 C124 455 138 472 133 491 C127 512 100 514 87 497 C77 483 85 465 101 462'/%3E%3Cpath d='M59 443 C42 452 32 469 38 487 C45 507 70 509 82 493 C93 478 85 460 70 457'/%3E%3Ccircle cx='88' cy='454' r='7'/%3E%3C!-- bottom right flower --%3E%3Cpath d='M430 380 C452 397 461 420 450 439 C439 458 412 453 406 433 C400 415 415 401 430 407 C445 413 446 430 435 439'/%3E%3Cpath d='M430 380 C408 371 387 378 378 396 C368 417 386 436 406 432 C425 428 431 411 420 399'/%3E%3Cpath d='M450 439 C470 446 484 463 479 482 C473 503 446 505 433 488 C423 474 431 456 447 453'/%3E%3Cpath d='M406 433 C389 442 379 459 385 477 C392 497 417 499 429 483 C440 468 432 450 417 447'/%3E%3Ccircle cx='435' cy='445' r='7'/%3E%3C/g%3E%3Cg fill='%23d4af37' opacity='.6'%3E%3Ccircle cx='24' cy='35' r='2'/%3E%3Ccircle cx='250' cy='55' r='2'/%3E%3Ccircle cx='488' cy='165' r='2'/%3E%3Ccircle cx='32' cy='290' r='2'/%3E%3Ccircle cx='250' cy='300' r='1.7'/%3E%3Ccircle cx='488' cy='330' r='2'/%3E%3Ccircle cx='280' cy='485' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.3' opacity='.78'%3E%3Cpath d='M42 92c24-42 64-54 91-25 20 21 12 54-17 69-30 15-57-4-54-30 3-26 35-42 57-23 17 15 11 40-8 50'/%3E%3Cpath d='M58 106c27-3 49-19 68-40'/%3E%3Cpath d='M155 50c18 14 31 32 37 56'/%3E%3Cpath d='M198 85c-17-24-3-51 23-54 24-3 39 20 27 41-12 20-40 18-48-3-7-19 9-35 26-32'/%3E%3Cpath d='M235 72c21 6 43 23 55 44'/%3E%3Cpath d='M301 42c-7 25-4 50 14 66 17 15 44 9 49-12 5-22-18-39-37-28-17 10-16 34 0 42'/%3E%3Cpath d='M310 67c22 12 39 27 51 45'/%3E%3Cpath d='M80 210c15-34 49-43 69-20 18 20 9 49-15 59-27 11-49-8-45-30 4-20 28-30 43-16 13 12 7 31-8 37'/%3E%3Cpath d='M96 218c23-5 39-18 53-37'/%3E%3Cpath d='M173 184c17 19 25 39 27 65'/%3E%3Cpath d='M235 190c-12-22 1-45 23-47 22-1 35 19 26 38-9 18-32 18-43 3-10-14 0-30 14-31'/%3E%3Cpath d='M269 185c20 7 35 22 46 42'/%3E%3Cpath d='M342 183c-4 25 4 47 22 59 18 12 40 4 42-15 2-20-20-32-35-20-13 10-10 29 5 34'/%3E%3Cpath d='M350 207c18 8 31 19 42 34'/%3E%3Cpath d='M38 330c18-37 51-45 72-22 18 20 10 48-15 59-27 11-50-7-46-29 4-21 29-31 44-16 13 12 7 31-9 37'/%3E%3Cpath d='M52 338c24-6 42-20 57-40'/%3E%3Cpath d='M150 306c19 14 32 33 38 57'/%3E%3Cpath d='M204 333c-12-22 1-46 25-47 22-1 36 20 26 39-10 19-34 18-45 2-10-15 0-31 15-32'/%3E%3Cpath d='M239 327c21 7 38 23 49 44'/%3E%3Cpath d='M313 305c-5 25 3 48 21 61 19 13 42 5 44-16 2-21-20-34-37-21-14 11-11 30 5 36'/%3E%3Cpath d='M321 330c19 9 34 21 46 37'/%3E%3C/g%3E%3Cg fill='%23d4af37' opacity='.55'%3E%3Ccircle cx='28' cy='48' r='2'/%3E%3Ccircle cx='115' cy='164' r='1.8'/%3E%3Ccircle cx='280' cy='125' r='2'/%3E%3Ccircle cx='391' cy='95' r='1.7'/%3E%3Ccircle cx='72' cy='282' r='1.8'/%3E%3Ccircle cx='282' cy='270' r='2'/%3E%3Ccircle cx='388' cy='360' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
 
   background-repeat: repeat;
-  background-size: 520px 520px;
+  background-size: 420px 420px;
 }
 
+
 /* =========================================================
-   SOFT GOLD DUST
+   SOFT GOLD PARTICLES
    ========================================================= */
 
 body::after {
   content: "";
+
   position: fixed;
   inset: 0;
 
   z-index: 0;
   pointer-events: none;
 
-  opacity: .16;
+  opacity: 0.15;
 
   background-image:
-    radial-gradient(circle at 15% 20%, #e7bd55 0 1px, transparent 2px),
-    radial-gradient(circle at 75% 30%, #e7bd55 0 1px, transparent 2px),
-    radial-gradient(circle at 35% 75%, #e7bd55 0 1px, transparent 2px);
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(231,189,85,.7) 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 72% 32%,
+      rgba(231,189,85,.6) 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 35% 75%,
+      rgba(231,189,85,.5) 0 1px,
+      transparent 2px
+    );
 
   background-size:
-    170px 170px,
-    230px 230px,
-    190px 190px;
+    150px 150px,
+    210px 210px,
+    180px 180px;
 }
+
 
 /* =========================================================
    CONTENT ABOVE BACKGROUND
@@ -114,6 +152,7 @@ footer,
   position: relative;
   z-index: 2;
 }
+
 
 /* =========================================================
    COMMON
@@ -138,7 +177,7 @@ section {
 }
 
 .section {
-  padding: 90px 8%;
+  padding: 90px 5%;
 }
 
 .eyebrow {
@@ -149,7 +188,7 @@ section {
 
   letter-spacing: 4px;
 
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 h1,
@@ -170,27 +209,31 @@ h2 {
 }
 
 p {
+  color: var(--text);
   line-height: 1.8;
 }
+
 
 /* =========================================================
    TOP BAR
    ========================================================= */
 
 .topbar {
-  padding: 10px 15px;
-
-  text-align: center;
+  background: #002e2a;
 
   color: var(--gold-light);
 
-  background: #002e2a;
+  text-align: center;
 
-  border-bottom: 1px solid var(--border);
+  padding: 10px 15px;
 
   font-size: 13px;
+
   letter-spacing: 1px;
+
+  border-bottom: 1px solid var(--border);
 }
+
 
 /* =========================================================
    NAVBAR
@@ -198,26 +241,32 @@ p {
 
 .navbar {
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
-  padding: 12px 6%;
+  padding: 14px 6%;
 
-  background: rgba(0, 48, 44, .97);
+  background: rgba(0, 50, 46, 0.96);
 
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
 
   border-bottom: 1px solid var(--border);
 }
 
 .brand {
   display: flex;
+
   align-items: center;
-  gap: 14px;
+
+  gap: 15px;
 }
 
 .brand img {
@@ -232,9 +281,9 @@ p {
 .brand span {
   font-family: "Playfair Display", serif;
 
-  color: var(--gold);
+  font-size: 22px;
 
-  font-size: 23px;
+  color: var(--gold);
 
   letter-spacing: 1px;
 }
@@ -245,15 +294,18 @@ p {
 
 .navbar nav {
   display: flex;
+
   align-items: center;
+
   gap: 30px;
 }
 
 .navbar nav a {
-  color: var(--white);
+  color: var(--text);
 
   font-size: 15px;
-  font-weight: 500;
+
+  font-weight: 600;
 
   transition: .3s ease;
 }
@@ -280,30 +332,32 @@ p {
   cursor: pointer;
 }
 
+
 /* =========================================================
    HERO
    ========================================================= */
 
 .hero {
-  min-height: 80vh;
+  min-height: 85vh;
 
   position: relative;
 
   overflow: hidden;
 
   display: flex;
-  align-items: center;
 
-  border-bottom: 1px solid var(--border);
+  align-items: center;
 }
 
 .hero-slider {
   position: absolute;
+
   inset: 0;
 }
 
 .hero-slide {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -322,38 +376,42 @@ p {
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0, 43, 39, .96) 0%,
-      rgba(0, 48, 44, .78) 43%,
-      rgba(0, 48, 44, .18) 100%
+      rgba(0,45,41,.94) 0%,
+      rgba(0,45,41,.76) 45%,
+      rgba(0,45,41,.22) 100%
     );
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
+
+  z-index: 2;
 
   width: 55%;
 
-  padding: 80px 9%;
+  padding: 80px 7%;
 }
 
 .hero-content h1 {
-  font-size: clamp(55px, 7vw, 95px);
+  font-size: clamp(52px, 7vw, 95px);
 
   line-height: .98;
 
   margin-bottom: 25px;
+
+  color: var(--gold-light);
 }
 
 .hero-text {
-  max-width: 590px;
+  max-width: 570px;
 
-  color: var(--white);
+  color: var(--text);
 
   font-size: 18px;
 
@@ -362,12 +420,14 @@ p {
 
 .hero-actions {
   display: flex;
+
   align-items: center;
 
-  gap: 25px;
+  gap: 18px;
 
   flex-wrap: wrap;
 }
+
 
 /* =========================================================
    BUTTONS
@@ -377,9 +437,10 @@ p {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  padding: 15px 28px;
+  padding: 15px 27px;
 
   background:
     linear-gradient(
@@ -388,7 +449,7 @@ p {
       var(--gold)
     );
 
-  color: #123c36;
+  color: #183a35;
 
   border: 1px solid var(--gold-light);
 
@@ -396,7 +457,8 @@ p {
 
   font-weight: 700;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,.22);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
 
   transition: .3s ease;
 }
@@ -404,15 +466,14 @@ p {
 .gold-btn:hover {
   transform: translateY(-3px);
 
-  box-shadow: 0 15px 30px rgba(0,0,0,.35);
+  box-shadow:
+    0 15px 30px rgba(0,0,0,.35);
 }
 
 .text-link {
   color: var(--gold-light);
 
   font-weight: 700;
-
-  transition: .3s ease;
 }
 
 .text-link:hover {
@@ -423,9 +484,10 @@ p {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
-  padding: 14px 26px;
+  padding: 14px 25px;
 
   border: 1px solid var(--gold);
 
@@ -444,14 +506,13 @@ p {
   color: #003d37;
 }
 
+
 /* =========================================================
-   DOTS
+   SLIDER DOTS
    ========================================================= */
 
 .dots {
   position: absolute;
-
-  z-index: 5;
 
   bottom: 25px;
 
@@ -462,17 +523,19 @@ p {
   display: flex;
 
   gap: 10px;
+
+  z-index: 5;
 }
 
 .dots button {
   width: 10px;
   height: 10px;
 
-  border: 0;
-
   border-radius: 50%;
 
-  background: rgba(255,255,255,.65);
+  border: none;
+
+  background: rgba(255,255,255,.5);
 
   cursor: pointer;
 }
@@ -481,6 +544,7 @@ p {
   background: var(--gold);
 }
 
+
 /* =========================================================
    INTRO
    ========================================================= */
@@ -488,22 +552,21 @@ p {
 .intro {
   text-align: center;
 
-  padding: 75px 10%;
-
-  border-bottom: 1px solid var(--border);
+  padding: 100px 10%;
 }
 
 .intro h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.intro p:last-child {
-  max-width: 780px;
+.intro > p:last-child {
+  max-width: 760px;
 
   margin: auto;
 
   color: var(--muted);
 }
+
 
 /* =========================================================
    SECTION HEADING
@@ -518,7 +581,7 @@ p {
 
   gap: 30px;
 
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .section-heading.center {
@@ -527,6 +590,7 @@ p {
   text-align: center;
 }
 
+
 /* =========================================================
    PRODUCTS
    ========================================================= */
@@ -534,26 +598,28 @@ p {
 .products {
   display: grid;
 
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(5, minmax(0,1fr));
 
-  gap: 22px;
+  gap: 24px;
 }
 
 .card {
-  overflow: hidden;
-
   background:
     linear-gradient(
       145deg,
-      rgba(0,72,65,.95),
-      rgba(0,45,41,.98)
+      rgba(0,72,65,.92),
+      rgba(0,47,43,.97)
     );
 
   border: 1px solid var(--border);
 
-  border-radius: 16px;
+  border-radius: 18px;
 
-  box-shadow: 0 15px 35px rgba(0,0,0,.2);
+  overflow: hidden;
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.18);
 
   transition: .35s ease;
 }
@@ -563,24 +629,27 @@ p {
 
   border-color: var(--gold);
 
-  box-shadow: 0 20px 45px rgba(0,0,0,.35);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
 }
 
 .card > img {
   width: 100%;
-  height: 270px;
+
+  height: 280px;
 
   object-fit: cover;
 }
 
 .card-body {
-  padding: 20px;
+  padding: 22px;
 }
 
 .card-body span {
   color: var(--gold);
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
@@ -589,21 +658,21 @@ p {
 .card-body h3 {
   color: var(--gold-light);
 
-  font-size: 20px;
+  font-size: 22px;
 
-  margin: 8px 0 16px;
+  margin: 9px 0 18px;
 }
 
 .card-body button {
   width: 100%;
 
-  padding: 11px;
+  border: 1px solid var(--gold);
 
   background: transparent;
 
-  border: 1px solid var(--gold);
-
   color: var(--gold-light);
+
+  padding: 11px;
 
   border-radius: 999px;
 
@@ -620,6 +689,7 @@ p {
   color: var(--green);
 }
 
+
 /* =========================================================
    CATEGORIES
    ========================================================= */
@@ -627,7 +697,8 @@ p {
 .category-grid {
   display: grid;
 
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns:
+    repeat(5, minmax(0,1fr));
 
   gap: 18px;
 }
@@ -639,9 +710,9 @@ p {
 
   overflow: hidden;
 
-  border: 1px solid var(--border);
+  border-radius: 22px;
 
-  border-radius: 20px;
+  border: 1px solid var(--border);
 }
 
 .category-card img {
@@ -659,6 +730,7 @@ p {
 
 .category-overlay {
   position: absolute;
+
   inset: 0;
 
   display: flex;
@@ -667,12 +739,12 @@ p {
 
   justify-content: flex-end;
 
-  padding: 24px;
+  padding: 25px;
 
   background:
     linear-gradient(
       transparent 30%,
-      rgba(0,35,32,.96)
+      rgba(0,35,32,.95)
     );
 }
 
@@ -687,7 +759,7 @@ p {
 .category-overlay h3 {
   color: var(--gold-light);
 
-  font-size: 24px;
+  font-size: 25px;
 
   margin: 5px 0;
 }
@@ -698,25 +770,19 @@ p {
   font-size: 13px;
 }
 
+
 /* =========================================================
    OFFER
    ========================================================= */
 
 .offer {
-  margin: 35px 6%;
+  margin: 40px 5%;
 
-  padding: 65px;
+  padding: 70px;
 
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 30px;
+  border-radius: 30px;
 
   border: 1px solid var(--gold);
-
-  border-radius: 28px;
 
   background:
     linear-gradient(
@@ -725,12 +791,18 @@ p {
       #00352f
     );
 
-  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
 }
 
-.offer h2 {
-  color: var(--gold-light);
-}
 
 /* =========================================================
    ABOUT
@@ -753,11 +825,12 @@ p {
 
   object-fit: cover;
 
-  border-radius: 25px;
+  border-radius: 28px;
 
   border: 1px solid var(--border);
 
-  box-shadow: 0 20px 50px rgba(0,0,0,.3);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
 }
 
 .about-copy h2 {
@@ -770,6 +843,7 @@ p {
   margin-bottom: 18px;
 }
 
+
 /* =========================================================
    REVIEWS
    ========================================================= */
@@ -777,18 +851,19 @@ p {
 .rating-highlight {
   max-width: 700px;
 
-  margin: auto;
+  margin: 0 auto 30px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 30px;
 
   padding: 35px;
 
-  background: rgba(0,72,65,.75);
+  background: rgba(0,72,65,.7);
 
   border: 1px solid var(--border);
 
@@ -820,14 +895,17 @@ p {
 }
 
 .review-note {
-  max-width: 800px;
+  max-width: 700px;
 
-  margin: 30px auto 0;
+  margin: auto;
+
+  padding: 20px;
 
   text-align: center;
 
   color: var(--gold-light);
 }
+
 
 /* =========================================================
    INSTAGRAM
@@ -848,9 +926,9 @@ p {
 }
 
 .instagram-content p {
-  max-width: 550px;
-
   color: var(--muted);
+
+  max-width: 550px;
 
   margin-bottom: 25px;
 }
@@ -866,6 +944,7 @@ p {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 }
 
@@ -877,7 +956,7 @@ p {
 .instagram-cards {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
 
   gap: 15px;
 }
@@ -885,11 +964,11 @@ p {
 .instagram-card {
   overflow: hidden;
 
-  aspect-ratio: 1;
+  border-radius: 20px;
 
   border: 1px solid var(--border);
 
-  border-radius: 20px;
+  aspect-ratio: 1;
 }
 
 .instagram-card img {
@@ -905,12 +984,13 @@ p {
   transform: scale(1.08);
 }
 
+
 /* =========================================================
-   MAP
+   GOOGLE MAP
    ========================================================= */
 
 .map-section {
-  padding: 80px 6%;
+  padding: 90px 5%;
 }
 
 .map-heading {
@@ -930,11 +1010,12 @@ p {
 .map-wrapper {
   overflow: hidden;
 
-  border-radius: 25px;
+  border-radius: 28px;
 
   border: 1px solid var(--border);
 
-  box-shadow: 0 20px 50px rgba(0,0,0,.3);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
 }
 
 .map-wrapper iframe {
@@ -942,6 +1023,7 @@ p {
 
   display: block;
 }
+
 
 /* =========================================================
    CONTACT
@@ -954,7 +1036,8 @@ p {
 .contact-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:
+    repeat(3,1fr);
 
   gap: 24px;
 
@@ -962,7 +1045,7 @@ p {
 }
 
 .contact-card {
-  padding: 42px 25px;
+  padding: 45px 25px;
 
   background:
     linear-gradient(
@@ -991,7 +1074,7 @@ p {
 
   color: var(--gold-light);
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .contact-card h3 {
@@ -1021,6 +1104,7 @@ p {
   margin-top: 40px;
 }
 
+
 /* =========================================================
    WHATSAPP
    ========================================================= */
@@ -1031,10 +1115,10 @@ p {
   right: 25px;
   bottom: 25px;
 
-  z-index: 9999;
+  z-index: 999;
 
-  width: 62px;
-  height: 62px;
+  width: 64px;
+  height: 64px;
 
   display: flex;
 
@@ -1047,11 +1131,12 @@ p {
 
   border-radius: 50%;
 
-  font-size: 29px;
+  font-size: 30px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.4);
 
   border: 2px solid rgba(255,255,255,.25);
-
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
 
   transition: .3s ease;
 }
@@ -1060,14 +1145,15 @@ p {
   transform: scale(1.08);
 }
 
+
 /* =========================================================
    FOOTER
    ========================================================= */
 
 footer {
-  padding: 55px 20px 35px;
-
   text-align: center;
+
+  padding: 60px 20px 35px;
 
   background:
     linear-gradient(
@@ -1108,17 +1194,6 @@ footer small {
   line-height: 2;
 }
 
-/* =========================================================
-   REMOVE OLD LEAF / CURL DECORATIONS
-   ========================================================= */
-
-.leaf-decoration {
-  display: none !important;
-}
-
-.slider-arrow {
-  display: none !important;
-}
 
 /* =========================================================
    TABLET
@@ -1127,17 +1202,18 @@ footer small {
 @media (max-width: 1100px) {
 
   .products {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
   }
 
   .category-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
   }
 
   .hero-content {
     width: 70%;
   }
 }
+
 
 /* =========================================================
    MOBILE
@@ -1146,8 +1222,9 @@ footer small {
 @media (max-width: 700px) {
 
   body::before {
-    background-size: 360px 360px;
-    opacity: .24;
+    background-size: 300px 300px;
+
+    opacity: .25;
   }
 
   .navbar {
@@ -1171,8 +1248,6 @@ footer small {
 
     align-items: flex-start;
 
-    gap: 18px;
-
     padding: 25px;
 
     background: #003d37;
@@ -1184,27 +1259,18 @@ footer small {
     display: flex;
   }
 
-  .brand span {
-    font-size: 18px;
-  }
-
-  .brand img {
-    width: 45px;
-    height: 45px;
-  }
-
   .hero {
-    min-height: 700px;
+    min-height: 720px;
   }
 
   .hero-content {
     width: 100%;
 
-    padding: 55px 7%;
+    padding: 60px 7%;
   }
 
   .hero-content h1 {
-    font-size: 52px;
+    font-size: 55px;
   }
 
   .hero-text {
@@ -1269,14 +1335,24 @@ footer small {
   }
 }
 
+
 /* =========================================================
    SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 450px) {
 
+  .brand span {
+    font-size: 17px;
+  }
+
+  .brand img {
+    width: 45px;
+    height: 45px;
+  }
+
   .hero-content h1 {
-    font-size: 43px;
+    font-size: 45px;
   }
 
   .products {
@@ -1293,9 +1369,5 @@ footer small {
 
   .contact-actions a {
     width: 100%;
-  }
-
-  .instagram-cards {
-    gap: 8px;
   }
 }
