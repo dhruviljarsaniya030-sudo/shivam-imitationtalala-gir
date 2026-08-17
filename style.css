@@ -1,7 +1,12 @@
 /* =========================================================
    SHIVAM IMITATION
+   COMPLETE STYLE.CSS
    DARK TEAL + GOLD
-   SUBTLE GOLD FLORAL BACKGROUND DESIGN
+   SUBTLE GOLD FLORAL BACKGROUND
+   ========================================================= */
+
+/* =========================================================
+   GOOGLE FONTS
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
@@ -26,7 +31,7 @@
   --text: #e9e5d8;
   --muted: #b8c7c3;
 
-  --border: rgba(231, 189, 85, 0.35);
+  --border: rgba(231, 189, 85, 0.38);
   --shadow: rgba(0, 0, 0, 0.35);
 }
 
@@ -46,82 +51,73 @@ html {
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+
   font-family: "DM Sans", sans-serif;
+
   color: var(--text);
   background-color: var(--green);
-  overflow-x: hidden;
-  min-height: 100vh;
-  position: relative;
 
-  /* Main subtle golden floral pattern */
+  /*
+    BASIC DARK TEAL BACKGROUND
+    Floral design is added below.
+  */
   background-image:
-
-    /* tiny golden dots */
-    radial-gradient(
-      circle at 15px 15px,
-      rgba(231, 189, 85, 0.12) 0,
-      rgba(231, 189, 85, 0.12) 2px,
-      transparent 2.5px
-    ),
-
-    /* soft diagonal texture */
-    repeating-linear-gradient(
-      115deg,
-      rgba(255,255,255,0.012) 0px,
-      rgba(255,255,255,0.012) 1px,
-      transparent 1px,
-      transparent 6px
-    ),
-
-    /* green base */
     linear-gradient(
       135deg,
       #003d37 0%,
-      #003b35 45%,
-      #00342f 100%
+      #003a34 45%,
+      #00332e 100%
     );
-
-  background-size:
-    105px 105px,
-    7px 7px,
-    100% 100%;
 
   background-attachment: fixed;
 }
 
 
 /* =========================================================
-   GOLD FLORAL BACKGROUND
-   This creates the design visible behind the sections
+   MAIN GOLD FLORAL BACKGROUND
+   EXACTLY SUBTLE - DOES NOT CHANGE COLORS
    ========================================================= */
 
 body::before {
   content: "";
   position: fixed;
+
   inset: 0;
+
+  width: 100%;
+  height: 100%;
 
   pointer-events: none;
 
+  /*
+    VERY IMPORTANT:
+    Pattern stays behind website content.
+  */
   z-index: 0;
 
-  opacity: 0.27;
+  opacity: 0.34;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.15' opacity='.72'%3E%3Cpath d='M70 60c-20-30-48 2-20 18 28 15 42-20 20-18z'/%3E%3Cpath d='M70 60c-6-35 32-38 35-8 3 28-28 33-35 8z'/%3E%3Cpath d='M70 60c31-25 48 8 25 25-23 16-39-8-25-25z'/%3E%3Cpath d='M70 60c-32 0-35 37-5 38 28 1 32-26 5-38z'/%3E%3Ccircle cx='70' cy='60' r='7'/%3E%3Cpath d='M70 67c-5 35-32 57-58 67'/%3E%3Cpath d='M70 70c28 20 55 22 82 5'/%3E%3Cpath d='M35 115c-18-20-37 1-19 13 18 12 29-10 19-13z'/%3E%3Cpath d='M105 102c18-22 38-3 23 13-15 16-29 3-23-13z'/%3E%3Cpath d='M180 70c-17-28-44-3-22 13 22 15 34-11 22-13z'/%3E%3Cpath d='M180 70c-2-32 34-35 37-8 2 25-27 30-37 8z'/%3E%3Cpath d='M180 70c29-21 43 9 23 23-20 14-34-7-23-23z'/%3E%3Cpath d='M180 70c-28 4-28 35-3 37 24 2 29-20 3-37z'/%3E%3Ccircle cx='180' cy='70' r='6'/%3E%3Cpath d='M180 76c10 31 35 48 62 58'/%3E%3Cpath d='M175 77c-28 22-48 27-73 18'/%3E%3Cpath d='M330 75c-20-32-49 0-21 18 27 17 42-18 21-18z'/%3E%3Cpath d='M330 75c-6-34 33-38 36-8 3 27-28 32-36 8z'/%3E%3Cpath d='M330 75c31-25 48 8 25 25-23 16-39-8-25-25z'/%3E%3Cpath d='M330 75c-32 0-35 37-5 38 28 1 32-26 5-38z'/%3E%3Ccircle cx='330' cy='75' r='7'/%3E%3Cpath d='M330 82c-8 28-25 43-51 56'/%3E%3Cpath d='M337 82c25 18 48 22 72 8'/%3E%3Cpath d='M70 285c-20-30-48 2-20 18 28 15 42-20 20-18z'/%3E%3Cpath d='M70 285c-6-35 32-38 35-8 3 28-28 33-35 8z'/%3E%3Cpath d='M70 285c31-25 48 8 25 25-23 16-39-8-25-25z'/%3E%3Cpath d='M70 285c-32 0-35 37-5 38 28 1 32-26 5-38z'/%3E%3Ccircle cx='70' cy='285' r='7'/%3E%3Cpath d='M70 292c-5 35-32 57-58 67'/%3E%3Cpath d='M70 295c28 20 55 22 82 5'/%3E%3Cpath d='M180 300c-17-28-44-3-22 13 22 15 34-11 22-13z'/%3E%3Cpath d='M180 300c-2-32 34-35 37-8 2 25-27 30-37 8z'/%3E%3Cpath d='M180 300c29-21 43 9 23 23-20 14-34-7-23-23z'/%3E%3Cpath d='M180 300c-28 4-28 35-3 37 24 2 29-20 3-37z'/%3E%3Ccircle cx='180' cy='300' r='6'/%3E%3Cpath d='M180 306c10 31 35 48 62 58'/%3E%3Cpath d='M175 307c-28 22-48 27-73 18'/%3E%3Cpath d='M330 310c-20-32-49 0-21 18 27 17 42-18 21-18z'/%3E%3Cpath d='M330 310c-6-34 33-38 36-8 3 27-28 32-36 8z'/%3E%3Cpath d='M330 310c31-25 48 8 25 25-23 16-39-8-25-25z'/%3E%3Cpath d='M330 310c-32 0-35 37-5 38 28 1 32-26 5-38z'/%3E%3Ccircle cx='330' cy='310' r='7'/%3E%3Cpath d='M330 317c-8 28-25 43-51 56'/%3E%3Cpath d='M337 317c25 18 48 22 72 8'/%3E%3Cpath d='M250 190c-13-22-35-2-18 10 17 12 27-8 18-10z'/%3E%3Cpath d='M250 190c-3-25 25-27 28-6 2 20-20 24-28 6z'/%3E%3Cpath d='M250 190c22-17 35 6 18 18-16 11-27-6-18-18z'/%3E%3Cpath d='M250 190c-23 2-24 28-3 29 20 1 24-17 3-29z'/%3E%3Ccircle cx='250' cy='190' r='5'/%3E%3Cpath d='M250 195c-2 28-17 44-38 57'/%3E%3Cpath d='M255 195c22 15 41 17 60 8'/%3E%3C/g%3E%3C/svg%3E");
+  background-image:
 
-  background-size: 420px 420px;
+    /* FLOWER / LINE PATTERN */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.15' opacity='.70'%3E%3Cpath d='M25 105 C48 70 82 62 105 84 C124 102 114 130 88 134 C62 138 45 117 56 96 C67 76 96 79 109 98 C122 117 115 143 94 158 C68 177 39 166 25 143 C15 126 17 113 25 105Z'/%3E%3Cpath d='M72 105 C84 90 102 89 113 101 C122 111 118 126 105 131 C91 136 79 127 82 114 C85 102 99 99 109 107 C119 115 117 130 107 140'/%3E%3Cpath d='M255 35 C276 5 309 0 330 20 C347 36 339 62 315 67 C290 72 272 54 281 34 C290 15 316 14 329 31 C342 48 335 72 315 88 C291 106 262 96 249 75 C239 59 244 45 255 35Z'/%3E%3Cpath d='M303 42 C315 27 333 26 344 37 C353 46 349 60 337 65 C324 70 312 61 314 50 C316 39 329 37 338 44 C347 51 345 64 336 74'/%3E%3Cpath d='M325 225 C350 190 383 186 404 207 C421 224 412 252 387 258 C362 264 343 245 352 224 C361 204 388 204 401 222 C414 240 407 266 386 282 C361 301 332 290 319 267 C309 249 313 235 325 225Z'/%3E%3Cpath d='M373 231 C386 215 404 216 414 228 C422 238 418 252 406 257 C394 262 383 253 385 242 C387 231 400 229 409 236 C418 243 416 256 407 265'/%3E%3Cpath d='M40 300 C60 272 89 268 108 285 C123 299 117 321 96 326 C75 331 60 316 68 298 C76 281 98 281 109 296 C120 311 114 333 96 345 C75 360 51 353 40 334 C31 319 33 308 40 300Z'/%3E%3Cpath d='M85 304 C96 291 111 291 120 301 C128 310 124 322 113 326 C102 330 93 322 95 313 C97 304 108 302 116 308 C124 314 122 325 114 333'/%3E%3Cpath d='M190 150 C208 125 234 122 251 137 C265 150 259 170 241 174 C223 178 209 164 216 149 C223 134 242 134 252 147 C262 160 257 179 241 190 C222 204 200 198 190 181 C182 168 184 158 190 150Z'/%3E%3Cpath d='M224 155 C234 143 248 144 256 153 C263 161 260 172 250 176 C240 180 232 173 234 165 C236 157 246 155 253 160 C260 165 259 176 252 183'/%3E%3Cpath d='M145 360 C164 334 189 330 207 345 C221 358 215 378 197 383 C179 388 165 374 172 359 C179 344 198 344 208 357 C218 370 213 389 197 400 C177 414 154 406 145 390 C137 378 139 368 145 360Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23e7bd55' stroke-width='.8' opacity='.45'%3E%3Cpath d='M145 65 C160 47 180 45 193 57 C204 68 199 84 184 88 C169 92 158 80 163 68 C168 56 184 56 193 66 C202 76 198 91 185 101'/%3E%3Cpath d='M35 210 C49 192 67 190 79 201 C89 211 85 225 72 229 C58 233 48 222 52 211 C56 200 70 199 78 207 C86 215 83 229 72 238'/%3E%3Cpath d='M280 135 C293 117 311 115 324 126 C334 136 330 151 317 155 C303 159 293 148 297 137 C301 126 315 125 324 133 C333 141 329 155 318 164'/%3E%3Cpath d='M220 310 C235 290 255 288 269 301 C280 312 275 329 260 333 C245 337 234 325 239 312 C244 299 260 299 269 310 C278 321 274 337 261 347'/%3E%3C/g%3E%3C/svg%3E");
+
   background-repeat: repeat;
-  background-position: center;
-
-  mix-blend-mode: screen;
+  background-size: 420px 420px;
+  background-position: center top;
 }
 
 
 /* =========================================================
-   SECOND SOFT DESIGN LAYER
+   SOFT GOLD DUST
    ========================================================= */
 
 body::after {
   content: "";
+
   position: fixed;
   inset: 0;
 
@@ -129,23 +125,49 @@ body::after {
 
   z-index: 0;
 
-  opacity: 0.14;
+  opacity: 0.16;
 
-  background:
+  background-image:
     radial-gradient(
       circle at 10% 20%,
-      rgba(231,189,85,0.20) 0 2px,
-      transparent 3px
+      rgba(231, 189, 85, 0.55) 0 1px,
+      transparent 2px
     ),
     radial-gradient(
-      circle at 80% 70%,
-      rgba(231,189,85,0.18) 0 2px,
-      transparent 3px
+      circle at 75% 35%,
+      rgba(231, 189, 85, 0.40) 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 35% 75%,
+      rgba(231, 189, 85, 0.40) 0 1px,
+      transparent 2px
     );
 
   background-size:
-    160px 160px,
-    190px 190px;
+    95px 95px,
+    130px 130px,
+    160px 160px;
+}
+
+
+/* =========================================================
+   ALL CONTENT ABOVE BACKGROUND
+   ========================================================= */
+
+.topbar,
+.navbar,
+.hero,
+.intro,
+.section,
+.offer,
+.about,
+.instagram-section,
+.map-section,
+.contact,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -169,7 +191,6 @@ button {
 
 section {
   position: relative;
-  z-index: 1;
 }
 
 .section {
@@ -215,10 +236,7 @@ p {
    ========================================================= */
 
 .topbar {
-  position: relative;
-  z-index: 1001;
-
-  background: #002e2a;
+  background: rgba(0, 46, 42, 0.97);
 
   color: var(--gold-light);
 
@@ -336,20 +354,42 @@ p {
   overflow: hidden;
 
   display: flex;
-  align-items: center;
 
-  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+/* Hero also gets the same floral design */
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.1' opacity='.75'%3E%3Cpath d='M30 110c22-31 48-35 65-19 14 14 7 34-11 38-20 4-34-10-27-25 7-15 26-14 37-2 11 12 7 31-8 43-19 16-42 10-52-7-8-13-9-20-4-28Z'/%3E%3Cpath d='M230 40c18-25 40-30 56-15 13 12 7 31-10 36-19 5-33-10-25-25 8-15 27-14 38-2 11 12 7 32-8 44-18 15-42 9-51-9-7-13-6-21 0-29Z'/%3E%3Cpath d='M245 230c19-28 43-33 60-17 14 13 7 34-12 39-21 5-35-11-27-27 8-16 29-15 41-2 12 13 8 34-9 47-20 16-45 9-54-10-7-13-6-22 1-30Z'/%3E%3Cpath d='M45 270c16-23 36-28 51-14 12 11 6 29-10 33-17 4-29-9-23-22 6-13 24-12 34-1 10 11 6 29-8 40-17 14-38 8-46-7-7-12-6-21 2-29Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+
+  background-size: 330px 330px;
 }
 
 .hero-slider {
   position: absolute;
   inset: 0;
 
-  z-index: 1;
+  z-index: 0;
 }
 
 .hero-slide {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -368,16 +408,17 @@ p {
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
 
-  z-index: 2;
+  z-index: 1;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0,45,41,0.94) 0%,
-      rgba(0,45,41,0.75) 45%,
-      rgba(0,45,41,0.25) 100%
+      rgba(0, 45, 41, 0.94) 0%,
+      rgba(0, 45, 41, 0.75) 45%,
+      rgba(0, 45, 41, 0.25) 100%
     );
 }
 
@@ -413,6 +454,7 @@ p {
 
 .hero-actions {
   display: flex;
+
   align-items: center;
 
   gap: 18px;
@@ -463,6 +505,7 @@ p {
 
 .text-link {
   color: var(--gold-light);
+
   font-weight: 700;
 }
 
@@ -491,6 +534,7 @@ p {
 
 .outline-btn:hover {
   background: var(--gold);
+
   color: #003d37;
 }
 
@@ -513,7 +557,7 @@ p {
 
   border-radius: 50%;
 
-  background: rgba(0,61,55,0.75);
+  background: rgba(0, 61, 55, 0.75);
 
   color: var(--gold-light);
 
@@ -528,6 +572,7 @@ p {
 
 .slider-arrow:hover {
   background: var(--gold);
+
   color: var(--green);
 }
 
@@ -578,13 +623,38 @@ p {
    ========================================================= */
 
 .intro {
-  position: relative;
-
   text-align: center;
 
   padding: 100px 10%;
 
   overflow: hidden;
+}
+
+.intro::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.20;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M60 120c15-22 34-25 47-12 11 10 5 26-9 30-15 4-27-8-21-21 6-13 22-12 32-1 10 11 6 27-7 37-16 13-36 7-43-8-6-11-5-18 1-25Z'/%3E%3Cpath d='M250 240c16-23 35-27 49-14 11 11 6 27-9 31-16 4-28-9-22-22 6-13 23-12 33-1 10 11 6 28-8 39-17 14-37 8-44-8-6-12-5-19 1-25Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+
+  background-size: 340px 340px;
+}
+
+.intro > * {
+  position: relative;
+
+  z-index: 2;
 }
 
 .intro h2 {
@@ -618,6 +688,7 @@ p {
 
 .section-heading.center {
   justify-content: center;
+
   text-align: center;
 }
 
@@ -639,8 +710,8 @@ p {
   background:
     linear-gradient(
       145deg,
-      rgba(0,72,65,0.92),
-      rgba(0,47,43,0.97)
+      rgba(0, 72, 65, 0.92),
+      rgba(0, 47, 43, 0.97)
     );
 
   border: 1px solid var(--border);
@@ -666,6 +737,7 @@ p {
 
 .card > img {
   width: 100%;
+
   height: 280px;
 
   object-fit: cover;
@@ -679,6 +751,7 @@ p {
   color: var(--gold);
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
@@ -714,6 +787,7 @@ p {
 
 .card-body button:hover {
   background: var(--gold);
+
   color: var(--green);
 }
 
@@ -758,6 +832,7 @@ p {
 
 .category-overlay {
   position: absolute;
+
   inset: 0;
 
   display: flex;
@@ -830,7 +905,31 @@ p {
     0 20px 50px rgba(0,0,0,0.25);
 
   position: relative;
-  z-index: 1;
+
+  overflow: hidden;
+}
+
+.offer::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.16;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M30 100c18-27 40-30 55-15 12 12 6 30-10 34-18 4-31-10-24-24 7-14 27-13 38 0 11 13 7 32-8 44-19 15-42 8-51-9-7-13-6-22 0-30Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-size: 320px 320px;
+}
+
+.offer > * {
+  position: relative;
+
+  z-index: 2;
 }
 
 .offer h2 {
@@ -899,7 +998,7 @@ p {
   padding: 35px;
 
   background:
-    rgba(0,72,65,0.7);
+    rgba(0, 72, 65, 0.7);
 
   border: 1px solid var(--border);
 
@@ -1034,6 +1133,31 @@ p {
   overflow: hidden;
 }
 
+.map-section::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='350'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M25 110c20-29 45-34 62-18 14 13 7 33-11 38-20 5-35-10-27-26 8-16 29-15 41-1 12 14 8 34-9 47-21 16-47 9-57-10-7-13-6-22 1-30Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-size: 350px 350px;
+}
+
+.map-section > * {
+  position: relative;
+
+  z-index: 2;
+}
+
 .map-heading {
   text-align: center;
 
@@ -1057,15 +1181,14 @@ p {
 
   box-shadow:
     0 20px 50px rgba(0,0,0,0.3);
-
-  position: relative;
-  z-index: 2;
 }
 
 .map-wrapper iframe {
   width: 100%;
 
   display: block;
+
+  border: 0;
 }
 
 
@@ -1079,6 +1202,31 @@ p {
   position: relative;
 
   overflow: hidden;
+}
+
+.contact::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.17;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M40 120c18-25 40-30 56-15 13 12 7 31-10 36-19 5-33-10-26-25 7-15 28-14 39 0 11 14 7 33-9 45-20 15-43 8-52-10-7-13-6-22 2-31Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-size: 330px 330px;
+}
+
+.contact > * {
+  position: relative;
+
+  z-index: 2;
 }
 
 .contact-grid {
@@ -1098,8 +1246,8 @@ p {
   background:
     linear-gradient(
       145deg,
-      rgba(0,76,69,0.92),
-      rgba(0,49,45,0.96)
+      rgba(0, 76, 69, 0.92),
+      rgba(0, 49, 45, 0.96)
     );
 
   border: 1px solid var(--border);
@@ -1161,9 +1309,10 @@ p {
   position: fixed;
 
   right: 25px;
+
   bottom: 25px;
 
-  z-index: 999;
+  z-index: 9999;
 
   width: 64px;
   height: 64px;
@@ -1213,11 +1362,36 @@ footer {
   border-top: 1px solid var(--border);
 
   position: relative;
+
+  overflow: hidden;
+}
+
+footer::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.16;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='350'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M40 110c20-29 45-34 62-18 14 13 7 33-11 38-20 5-35-10-27-26 8-16 29-15 41-1 12 14 8 34-9 47-21 16-47 9-57-10-7-13-6-22 1-30Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-size: 350px 350px;
+}
+
+footer > * {
+  position: relative;
+
   z-index: 2;
 }
 
 footer img {
   width: 70px;
+
   height: 70px;
 
   object-fit: contain;
@@ -1243,43 +1417,6 @@ footer small {
   color: var(--muted);
 
   line-height: 2;
-}
-
-
-/* =========================================================
-   SECTION FLORAL DESIGN
-   Screenshot જેવી side floral decoration
-   ========================================================= */
-
-.section::before,
-.map-section::before,
-.contact::before,
-.intro::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  z-index: 0;
-
-  opacity: 0.23;
-
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.2' opacity='.65'%3E%3Cpath d='M45 110c-25-38-58-4-25 17 31 20 48-21 25-17z'/%3E%3Cpath d='M45 110c-6-42 39-45 44-8 4 31-34 40-44 8z'/%3E%3Cpath d='M45 110c36-31 59 8 29 30-29 20-48-9-29-30z'/%3E%3Cpath d='M45 110c-39 1-43 44-7 46 35 1 39-31 7-46z'/%3E%3Ccircle cx='45' cy='110' r='8'/%3E%3Cpath d='M45 118c-7 47-29 73-60 92'/%3E%3Cpath d='M53 118c37 27 68 29 103 10'/%3E%3Cpath d='M450 380c-25-38-58-4-25 17 31 20 48-21 25-17z'/%3E%3Cpath d='M450 380c-6-42 39-45 44-8 4 31-34 40-44 8z'/%3E%3Cpath d='M450 380c36-31 59 8 29 30-29 20-48-9-29-30z'/%3E%3Cpath d='M450 380c-39 1-43 44-7 46 35 1 39-31 7-46z'/%3E%3Ccircle cx='450' cy='380' r='8'/%3E%3Cpath d='M450 388c-7 47-29 73-60 92'/%3E%3Cpath d='M458 388c37 27 68 29 103 10'/%3E%3Cpath d='M250 250c-18-28-43-3-20 12 23 15 34-14 20-12z'/%3E%3Cpath d='M250 250c-3-31 31-34 34-7 3 25-25 30-34 7z'/%3E%3Cpath d='M250 250c27-23 45 7 22 23-22 15-36-7-22-23z'/%3E%3Cpath d='M250 250c-29 2-31 34-5 35 26 1 30-23 5-35z'/%3E%3Ccircle cx='250' cy='250' r='6'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-size: 500px 500px;
-  background-repeat: repeat;
-}
-
-.section > *,
-.map-section > *,
-.contact > *,
-.intro > * {
-  position: relative;
-
-  z-index: 1;
 }
 
 
@@ -1335,6 +1472,16 @@ footer small {
 
 @media (max-width: 700px) {
 
+  body::before {
+    background-size: 280px 280px;
+
+    opacity: 0.27;
+  }
+
+  body::after {
+    opacity: 0.10;
+  }
+
   .navbar {
     padding: 12px 5%;
   }
@@ -1370,6 +1517,12 @@ footer small {
 
   .hero {
     min-height: 720px;
+  }
+
+  .hero::before {
+    background-size: 240px 240px;
+
+    opacity: 0.18;
   }
 
   .hero-content {
@@ -1443,20 +1596,6 @@ footer small {
     right: 18px;
     bottom: 18px;
   }
-
-  /* Smaller floral pattern on mobile */
-  body::before {
-    background-size: 300px 300px;
-    opacity: 0.22;
-  }
-
-  .section::before,
-  .map-section::before,
-  .contact::before,
-  .intro::before {
-    background-size: 320px 320px;
-    opacity: 0.18;
-  }
 }
 
 
@@ -1491,3 +1630,13 @@ footer small {
     width: 100%;
   }
 }
+
+
+/* =========================================================
+   IMPORTANT:
+   NO SEPARATE GOLD LEAVES
+   NO EXTRA CORNERS
+   NO COLOR CHANGE
+   NO LAYOUT CHANGE
+   ONLY SUBTLE FLORAL GOLD BACKGROUND DESIGN
+   ========================================================= */
