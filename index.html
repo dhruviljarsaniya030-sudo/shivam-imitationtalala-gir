@@ -18,7 +18,6 @@
 
   <title>Shivam Imitation | Imitation Jewellery Shop in Talala Gir</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -26,164 +25,310 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- =====================================================
-       GOLD FLORAL BACKGROUND
+       DECORATIVE GOLD LEAF BACKGROUND
        ===================================================== -->
 
   <div class="gold-floral-bg" aria-hidden="true">
 
-    <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
+    <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
 
-      <g fill="none"
-        stroke="#d4af37"
-        stroke-width="1.4"
-        opacity="0.42">
+      <defs>
 
-        <!-- Top Left -->
-        <path d="M20 110
-          C65 40 125 35 155 80
-          C180 118 155 160 115 160
-          C75 160 55 125 75 95
-          C95 65 135 75 140 105
-          C145 130 120 145 100 130" />
+        <!-- Leaf -->
+        <g id="leaf">
+          <path d="M0,0 C22,-42 62,-52 88,-28 C62,8 30,20 0,0Z" />
+          <path d="M0,0 C27,-10 54,-24 82,-40" />
+        </g>
 
-        <path d="M42 122
-          C80 115 115 90 140 60" />
+        <!-- Small leaf -->
+        <g id="small-leaf">
+          <path d="M0,0 C15,-25 38,-29 50,-14 C37,8 18,13 0,0Z" />
+          <path d="M0,0 C15,-5 31,-13 47,-24" />
+        </g>
 
-        <path d="M145 65
-          C175 85 195 110 205 145" />
+        <!-- Floral flower -->
+        <g id="flower">
+          <circle cx="0" cy="0" r="5" />
+          <ellipse cx="0" cy="-22" rx="9" ry="20" />
+          <ellipse cx="0" cy="22" rx="9" ry="20" />
+          <ellipse cx="-22" cy="0" rx="20" ry="9" />
+          <ellipse cx="22" cy="0" rx="20" ry="9" />
+        </g>
 
-        <!-- Top Middle -->
-        <path d="M240 35
-          C215 65 225 105 260 115
-          C295 125 320 95 305 65
-          C290 38 255 40 245 65
-          C235 88 255 103 275 94" />
+      </defs>
 
-        <path d="M305 82
-          C340 92 365 115 380 145" />
 
-        <!-- Top Right -->
-        <path d="M475 35
-          C455 75 465 110 500 125
-          C535 140 565 115 560 85
-          C555 55 520 45 500 65
-          C480 85 492 110 515 112" />
+      <!-- TOP LEFT VINE -->
 
-        <path d="M485 72
-          C520 85 545 105 565 130" />
+      <g class="vine">
 
-        <!-- Middle Left -->
-        <path d="M15 270
-          C45 215 95 205 125 240
-          C150 270 135 310 100 320
-          C65 330 35 305 45 275
-          C55 245 90 240 105 260
-          C118 280 100 300 80 295" />
+        <path d="M0 180 C90 70, 180 35, 310 85 C390 115, 430 70, 500 0" />
 
-        <path d="M30 285
-          C65 275 95 250 115 225" />
+        <g transform="translate(70 125) rotate(-28)">
+          <use href="#leaf" />
+        </g>
 
-        <path d="M125 230
-          C150 250 170 280 178 315" />
+        <g transform="translate(125 80) rotate(-48)">
+          <use href="#leaf" />
+        </g>
 
-        <!-- Middle -->
-        <path d="M275 190
-          C245 220 255 260 290 275
-          C325 290 350 260 340 230
-          C330 200 295 195 280 220
-          C267 242 285 258 305 250" />
+        <g transform="translate(195 70) rotate(-25)">
+          <use href="#small-leaf" />
+        </g>
 
-        <path d="M340 230
-          C375 245 400 275 415 310" />
+        <g transform="translate(255 88) rotate(10)">
+          <use href="#leaf" />
+        </g>
 
-        <!-- Middle Right -->
-        <path d="M475 245
-          C455 280 465 315 500 330
-          C535 345 565 320 560 290
-          C555 260 520 250 500 270
-          C480 290 492 315 515 318" />
+        <g transform="translate(330 75) rotate(-35)">
+          <use href="#small-leaf" />
+        </g>
 
-        <path d="M485 285
-          C520 295 545 315 565 340" />
+        <g transform="translate(400 48) rotate(15)">
+          <use href="#leaf" />
+        </g>
 
-        <!-- Bottom Left -->
-        <path d="M20 470
-          C55 410 105 405 135 440
-          C160 470 145 510 110 520
-          C75 530 45 505 55 475
-          C65 445 100 440 115 460
-          C128 480 110 500 90 495" />
+        <g transform="translate(165 135) rotate(120)">
+          <use href="#small-leaf" />
+        </g>
 
-        <path d="M35 485
-          C70 475 105 450 125 425" />
+        <g transform="translate(295 125) rotate(130)">
+          <use href="#leaf" />
+        </g>
 
-        <path d="M135 430
-          C160 450 180 480 188 515" />
-
-        <!-- Bottom Middle -->
-        <path d="M255 405
-          C225 440 235 480 270 495
-          C305 510 330 480 320 450
-          C310 420 275 415 260 440
-          C247 462 265 478 285 470" />
-
-        <path d="M320 450
-          C355 465 380 495 395 530" />
-
-        <!-- Bottom Right -->
-        <path d="M475 430
-          C455 470 465 505 500 520
-          C535 535 565 510 560 480
-          C555 450 520 440 500 460
-          C480 480 492 505 515 508" />
-
-        <path d="M485 470
-          C520 480 545 500 565 525" />
+        <g transform="translate(420 100) scale(.8)">
+          <use href="#flower" />
+        </g>
 
       </g>
 
-      <!-- Small Gold Dots -->
-      <g fill="#d4af37" opacity="0.45">
 
-        <circle cx="25" cy="40" r="2" />
-        <circle cx="180" cy="175" r="1.7" />
-        <circle cx="350" cy="50" r="2" />
-        <circle cx="570" cy="175" r="1.7" />
+      <!-- TOP RIGHT VINE -->
 
-        <circle cx="190" cy="350" r="2" />
-        <circle cx="410" cy="180" r="1.8" />
-        <circle cx="570" cy="380" r="2" />
+      <g class="vine">
 
-        <circle cx="40" cy="580" r="1.8" />
-        <circle cx="220" cy="540" r="2" />
-        <circle cx="400" cy="580" r="1.7" />
-        <circle cx="575" cy="570" r="2" />
+        <path d="M1200 170 C1110 75, 1030 35, 910 80 C820 115, 780 65, 710 0" />
+
+        <g transform="translate(1120 120) rotate(145)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(1060 75) rotate(130)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(1000 68) rotate(155)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(935 88) rotate(195)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(865 65) rotate(145)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(800 45) rotate(200)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(1035 130) rotate(250)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(900 125) rotate(240)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(790 95) scale(.8)">
+          <use href="#flower" />
+        </g>
+
+      </g>
+
+
+      <!-- LEFT MIDDLE VINE -->
+
+      <g class="vine">
+
+        <path d="M0 520 C90 430, 130 370, 230 405 C300 430, 330 385, 360 330" />
+
+        <g transform="translate(60 470) rotate(-40)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(110 415) rotate(-70)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(170 400) rotate(-20)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(230 420) rotate(15)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(285 385) rotate(-30)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(190 455) rotate(130)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(330 350) scale(.7)">
+          <use href="#flower" />
+        </g>
+
+      </g>
+
+
+      <!-- RIGHT MIDDLE VINE -->
+
+      <g class="vine">
+
+        <path d="M1200 520 C1110 430, 1070 370, 970 405 C900 430, 870 385, 840 330" />
+
+        <g transform="translate(1140 470) rotate(140)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(1090 415) rotate(110)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(1030 400) rotate(160)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(970 420) rotate(195)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(915 385) rotate(150)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(1010 455) rotate(230)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(870 350) scale(.7)">
+          <use href="#flower" />
+        </g>
+
+      </g>
+
+
+      <!-- BOTTOM LEFT VINE -->
+
+      <g class="vine">
+
+        <path d="M0 900 C80 800, 150 770, 250 820 C330 860, 400 800, 470 700" />
+
+        <g transform="translate(65 850) rotate(-35)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(120 800) rotate(-65)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(190 810) rotate(-20)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(260 825) rotate(15)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(330 795) rotate(-35)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(395 750) rotate(15)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(430 735) scale(.75)">
+          <use href="#flower" />
+        </g>
+
+      </g>
+
+
+      <!-- BOTTOM RIGHT VINE -->
+
+      <g class="vine">
+
+        <path d="M1200 900 C1120 800, 1050 770, 950 820 C870 860, 800 800, 730 700" />
+
+        <g transform="translate(1135 850) rotate(145)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(1080 800) rotate(115)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(1010 810) rotate(160)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(940 825) rotate(195)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(870 795) rotate(145)">
+          <use href="#leaf" />
+        </g>
+
+        <g transform="translate(805 750) rotate(195)">
+          <use href="#small-leaf" />
+        </g>
+
+        <g transform="translate(770 735) scale(.75)">
+          <use href="#flower" />
+        </g>
+
+      </g>
+
+
+      <!-- Small decorative dots -->
+
+      <g class="gold-dots">
+
+        <circle cx="530" cy="120" r="3" />
+        <circle cx="650" cy="180" r="2" />
+        <circle cx="560" cy="350" r="2.5" />
+        <circle cx="650" cy="470" r="3" />
+        <circle cx="520" cy="620" r="2" />
+        <circle cx="680" cy="700" r="2.5" />
+        <circle cx="580" cy="820" r="3" />
 
       </g>
 
     </svg>
+
   </div>
 
 
-  <!-- =====================================================
-       TOP BAR
-       ===================================================== -->
+  <!-- TOP BAR -->
 
   <div class="topbar">
     ✨ Best Collection • Visit Shivam Imitation, Talala Gir
   </div>
 
 
-  <!-- =====================================================
-       NAVBAR
-       ===================================================== -->
+  <!-- NAVBAR -->
 
   <header class="navbar">
 
@@ -208,17 +353,11 @@
     <nav id="nav">
 
       <a href="#home" onclick="closeMenu()">Home</a>
-
       <a href="collection.html" onclick="closeMenu()">Collection</a>
-
       <a href="#categories" onclick="closeMenu()">Categories</a>
-
       <a href="#offers" onclick="closeMenu()">Offers</a>
-
       <a href="#about" onclick="closeMenu()">About</a>
-
       <a href="#reviews" onclick="closeMenu()">Reviews</a>
-
       <a href="#contact" onclick="closeMenu()">Contact</a>
 
     </nav>
@@ -228,36 +367,29 @@
 
   <main>
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+    <!-- HERO -->
 
     <section id="home" class="hero">
 
       <div class="hero-slider">
 
-        <img
-          src="product-1.jpg"
+        <img src="product-1.jpg"
           alt="Premium imitation necklace set"
           class="hero-slide active">
 
-        <img
-          src="product-4.jpg"
+        <img src="product-4.jpg"
           alt="Traditional gold imitation necklace"
           class="hero-slide">
 
-        <img
-          src="product-5.jpg"
+        <img src="product-5.jpg"
           alt="Bridal imitation jewellery set"
           class="hero-slide">
 
-        <img
-          src="product-6.jpg"
+        <img src="product-6.jpg"
           alt="Multicolor imitation jewellery"
           class="hero-slide">
 
-        <img
-          src="product-8.jpg"
+        <img src="product-8.jpg"
           alt="Rose gold bracelet"
           class="hero-slide">
 
@@ -283,15 +415,11 @@
 
         <div class="hero-actions">
 
-          <a
-            href="#collection"
-            class="gold-btn">
+          <a href="#collection" class="gold-btn">
             Explore Collection
           </a>
 
-          <a
-            href="collection.html"
-            class="text-link">
+          <a href="collection.html" class="text-link">
             View Collection →
           </a>
 
@@ -299,17 +427,12 @@
 
       </div>
 
-      <div
-        class="dots"
-        id="dots">
-      </div>
+      <div class="dots" id="dots"></div>
 
     </section>
 
 
-    <!-- =====================================================
-         INTRO
-         ===================================================== -->
+    <!-- INTRO -->
 
     <section class="intro">
 
@@ -333,13 +456,9 @@
     </section>
 
 
-    <!-- =====================================================
-         COLLECTION
-         ===================================================== -->
+    <!-- COLLECTION -->
 
-    <section
-      id="collection"
-      class="section">
+    <section id="collection" class="section">
 
       <div class="section-heading">
 
@@ -355,9 +474,7 @@
 
         </div>
 
-        <a
-          href="collection.html"
-          class="text-link">
+        <a href="collection.html" class="text-link">
           View Catalogue →
         </a>
 
@@ -366,273 +483,183 @@
 
       <div class="products">
 
-        <!-- PRODUCT 1 -->
         <article class="card">
-
-          <img
-            src="product-1.jpg"
-            alt="Royal green necklace set"
-            loading="lazy">
+          <img src="product-1.jpg" alt="Royal green necklace set" loading="lazy">
 
           <div class="card-body">
-
             <span>NECKLACE SET</span>
 
             <h3>
               Royal Green Drop Set
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Royal Green Drop Set')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 2 -->
         <article class="card">
-
-          <img
-            src="product-2.jpg"
-            alt="Elegant pearl necklace set"
-            loading="lazy">
+          <img src="product-2.jpg" alt="Elegant pearl necklace set" loading="lazy">
 
           <div class="card-body">
-
             <span>NECKLACE SET</span>
 
             <h3>
               Elegant Pearl Drop Set
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Elegant Pearl Drop Set')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 3 -->
         <article class="card">
-
-          <img
-            src="product-3.jpg"
-            alt="Butterfly charm imitation necklace"
-            loading="lazy">
+          <img src="product-3.jpg" alt="Butterfly charm imitation necklace" loading="lazy">
 
           <div class="card-body">
-
             <span>NECKLACE</span>
 
             <h3>
               Butterfly Charm Necklace
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Butterfly Charm Necklace')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 4 -->
         <article class="card">
-
-          <img
-            src="product-4.jpg"
-            alt="Classic gold pendant imitation set"
-            loading="lazy">
+          <img src="product-4.jpg" alt="Classic gold pendant imitation set" loading="lazy">
 
           <div class="card-body">
-
             <span>TRADITIONAL</span>
 
             <h3>
               Classic Gold Pendant Set
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Classic Gold Pendant Set')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 5 -->
         <article class="card">
-
-          <img
-            src="product-5.jpg"
-            alt="Heritage bridal imitation jewellery set"
-            loading="lazy">
+          <img src="product-5.jpg" alt="Heritage bridal imitation jewellery set" loading="lazy">
 
           <div class="card-body">
-
             <span>BRIDAL STYLE</span>
 
             <h3>
               Heritage Statement Set
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Heritage Statement Set')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 6 -->
         <article class="card">
-
-          <img
-            src="product-6.jpg"
-            alt="Multicolor stone necklace"
-            loading="lazy">
+          <img src="product-6.jpg" alt="Multicolor stone necklace" loading="lazy">
 
           <div class="card-body">
-
             <span>NECKLACE</span>
 
             <h3>
               Multicolor Stone Necklace
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Multicolor Stone Necklace')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 7 -->
         <article class="card">
-
-          <img
-            src="product-7.jpg"
-            alt="Minimal rose pendant necklace"
-            loading="lazy">
+          <img src="product-7.jpg" alt="Minimal rose pendant necklace" loading="lazy">
 
           <div class="card-body">
-
             <span>DAILY WEAR</span>
 
             <h3>
               Minimal Rose Pendant
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Minimal Rose Pendant')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 8 -->
         <article class="card">
-
-          <img
-            src="product-8.jpg"
-            alt="Rose gold crystal bracelet"
-            loading="lazy">
+          <img src="product-8.jpg" alt="Rose gold crystal bracelet" loading="lazy">
 
           <div class="card-body">
-
             <span>BRACELET</span>
 
             <h3>
               Rose Gold Crystal Bracelet
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Rose Gold Crystal Bracelet')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 9 -->
         <article class="card">
-
-          <img
-            src="product-9.jpg"
-            alt="Black stone bracelet"
-            loading="lazy">
+          <img src="product-9.jpg" alt="Black stone bracelet" loading="lazy">
 
           <div class="card-body">
-
             <span>BRACELET</span>
 
             <h3>
               Black Stone Bracelet
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Black Stone Bracelet')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
 
-        <!-- PRODUCT 10 -->
         <article class="card">
-
-          <img
-            src="product-10.jpg"
-            alt="Crystal hair accessories"
-            loading="lazy">
+          <img src="product-10.jpg" alt="Crystal hair accessories" loading="lazy">
 
           <div class="card-body">
-
             <span>NOVELTY</span>
 
             <h3>
               Crystal Hair Accessories
             </h3>
 
-            <button
-              type="button"
+            <button type="button"
               onclick="orderProduct('Crystal Hair Accessories')">
               WhatsApp Order
             </button>
-
           </div>
-
         </article>
 
       </div>
@@ -640,13 +667,9 @@
     </section>
 
 
-    <!-- =====================================================
-         CATEGORIES
-         ===================================================== -->
+    <!-- CATEGORIES -->
 
-    <section
-      id="categories"
-      class="categories section">
+    <section id="categories" class="categories section">
 
       <div class="section-heading center">
 
@@ -667,17 +690,13 @@
 
       <div class="category-grid">
 
-        <a
-          href="collection.html"
-          class="category-card">
+        <a href="collection.html" class="category-card">
 
-          <img
-            src="product-1.jpg"
+          <img src="product-1.jpg"
             alt="Imitation necklace collection"
             loading="lazy">
 
           <div class="category-overlay">
-
             <span>01</span>
 
             <h3>
@@ -687,23 +706,18 @@
             <p>
               Elegant designs for every occasion
             </p>
-
           </div>
 
         </a>
 
 
-        <a
-          href="collection.html"
-          class="category-card">
+        <a href="collection.html" class="category-card">
 
-          <img
-            src="product-5.jpg"
+          <img src="product-5.jpg"
             alt="Bridal imitation jewellery"
             loading="lazy">
 
           <div class="category-overlay">
-
             <span>02</span>
 
             <h3>
@@ -713,23 +727,18 @@
             <p>
               Beautiful statement styles
             </p>
-
           </div>
 
         </a>
 
 
-        <a
-          href="collection.html"
-          class="category-card">
+        <a href="collection.html" class="category-card">
 
-          <img
-            src="product-8.jpg"
+          <img src="product-8.jpg"
             alt="Imitation bracelet collection"
             loading="lazy">
 
           <div class="category-overlay">
-
             <span>03</span>
 
             <h3>
@@ -739,23 +748,18 @@
             <p>
               Stylish everyday sparkle
             </p>
-
           </div>
 
         </a>
 
 
-        <a
-          href="collection.html"
-          class="category-card">
+        <a href="collection.html" class="category-card">
 
-          <img
-            src="product-7.jpg"
+          <img src="product-7.jpg"
             alt="Daily wear imitation jewellery"
             loading="lazy">
 
           <div class="category-overlay">
-
             <span>04</span>
 
             <h3>
@@ -765,23 +769,18 @@
             <p>
               Simple and elegant designs
             </p>
-
           </div>
 
         </a>
 
 
-        <a
-          href="collection.html"
-          class="category-card">
+        <a href="collection.html" class="category-card">
 
-          <img
-            src="product-10.jpg"
+          <img src="product-10.jpg"
             alt="Fashion jewellery and novelties"
             loading="lazy">
 
           <div class="category-overlay">
-
             <span>05</span>
 
             <h3>
@@ -791,7 +790,6 @@
             <p>
               Trendy accessories and more
             </p>
-
           </div>
 
         </a>
@@ -801,13 +799,9 @@
     </section>
 
 
-    <!-- =====================================================
-         SPECIAL OFFER
-         ===================================================== -->
+    <!-- OFFER -->
 
-    <section
-      id="offers"
-      class="offer">
+    <section id="offers" class="offer">
 
       <div>
 
@@ -828,7 +822,6 @@
 
       </div>
 
-
       <a
         href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20please%20tell%20me%20today%27s%20special%20offers"
         target="_blank"
@@ -842,13 +835,9 @@
     </section>
 
 
-    <!-- =====================================================
-         ABOUT
-         ===================================================== -->
+    <!-- ABOUT -->
 
-    <section
-      id="about"
-      class="about section">
+    <section id="about" class="about section">
 
       <div class="about-image">
 
@@ -858,7 +847,6 @@
           loading="lazy">
 
       </div>
-
 
       <div class="about-copy">
 
@@ -884,12 +872,8 @@
           explore the latest collection.
         </p>
 
-        <a
-          href="#contact"
-          class="gold-btn">
-
+        <a href="#contact" class="gold-btn">
           Visit Our Store
-
         </a>
 
       </div>
@@ -897,13 +881,9 @@
     </section>
 
 
-    <!-- =====================================================
-         REVIEWS
-         ===================================================== -->
+    <!-- REVIEWS -->
 
-    <section
-      id="reviews"
-      class="reviews section">
+    <section id="reviews" class="reviews section">
 
       <div class="section-heading center">
 
@@ -928,7 +908,6 @@
           5.0
         </div>
 
-
         <div>
 
           <div class="stars">
@@ -938,7 +917,6 @@
           <p>
             Google customer rating
           </p>
-
 
           <a
             href="https://www.google.com/maps/search/?api=1&query=Shivam%20imitation%20Shop%20No%2016%20Akshar%20Arcade%20Talala%20Gujarat%20362150"
@@ -968,12 +946,9 @@
     </section>
 
 
-    <!-- =====================================================
-         INSTAGRAM
-         ===================================================== -->
+    <!-- INSTAGRAM -->
 
-    <section
-      class="instagram-section section">
+    <section class="instagram-section section">
 
       <div class="instagram-content">
 
@@ -991,7 +966,6 @@
           designs, latest arrivals, offers and updates.
         </p>
 
-
         <a
           href="https://www.instagram.com/shivam_imitation_gir/"
           target="_blank"
@@ -1000,13 +974,9 @@
 
           <span class="instagram-icon">
 
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
 
-              <rect
-                x="3"
-                y="3"
+              <rect x="3" y="3"
                 width="18"
                 height="18"
                 rx="5"
@@ -1015,18 +985,14 @@
                 stroke-width="2">
               </rect>
 
-              <circle
-                cx="12"
-                cy="12"
+              <circle cx="12" cy="12"
                 r="4"
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2">
               </circle>
 
-              <circle
-                cx="17.5"
-                cy="6.5"
+              <circle cx="17.5" cy="6.5"
                 r="1.2"
                 fill="currentColor">
               </circle>
@@ -1052,36 +1018,31 @@
           rel="noopener noreferrer"
           class="instagram-card">
 
-          <img
-            src="product-1.jpg"
+          <img src="product-1.jpg"
             alt="Shivam Imitation Instagram jewellery"
             loading="lazy">
 
         </a>
 
-
         <a
           href="https://www.instagram.com/shivam_imitation_gir/"
           target="_blank"
           rel="noopener noreferrer"
           class="instagram-card">
 
-          <img
-            src="product-5.jpg"
+          <img src="product-5.jpg"
             alt="Shivam Imitation latest jewellery"
             loading="lazy">
 
         </a>
 
-
         <a
           href="https://www.instagram.com/shivam_imitation_gir/"
           target="_blank"
           rel="noopener noreferrer"
           class="instagram-card">
 
-          <img
-            src="product-8.jpg"
+          <img src="product-8.jpg"
             alt="Shivam Imitation bracelet collection"
             loading="lazy">
 
@@ -1092,9 +1053,7 @@
     </section>
 
 
-    <!-- =====================================================
-         GOOGLE MAP
-         ===================================================== -->
+    <!-- GOOGLE MAP -->
 
     <section class="map-section">
 
@@ -1116,7 +1075,6 @@
 
       </div>
 
-
       <div class="map-wrapper">
 
         <iframe
@@ -1135,13 +1093,9 @@
     </section>
 
 
-    <!-- =====================================================
-         CONTACT
-         ===================================================== -->
+    <!-- CONTACT -->
 
-    <section
-      id="contact"
-      class="contact section">
+    <section id="contact" class="contact section">
 
       <div class="section-heading center">
 
@@ -1161,7 +1115,6 @@
 
 
       <div class="contact-grid">
-
 
         <div class="contact-card">
 
@@ -1248,7 +1201,7 @@
 
 
         <a
-          class="outline-btn dark"
+          class="outline-btn"
           href="tel:9714978206">
 
           ☎ Call Now
@@ -1262,9 +1215,7 @@
   </main>
 
 
-  <!-- =====================================================
-       FLOATING WHATSAPP
-       ===================================================== -->
+  <!-- FLOATING WHATSAPP -->
 
   <a
     class="floating-whatsapp"
@@ -1278,15 +1229,11 @@
   </a>
 
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
 
   <footer>
 
-    <img
-      src="logo.jpg"
-      alt="Shivam Imitation">
+    <img src="logo.jpg" alt="Shivam Imitation">
 
     <p>
       SHIVAM
@@ -1307,167 +1254,27 @@
   </footer>
 
 
-  <!-- =====================================================
-       FINAL CSS FIXES
-       ===================================================== -->
-
-  <style>
-
-    /* Remove old slider arrows */
-    .slider-arrow,
-    .slider-arrow.left,
-    .slider-arrow.right,
-    button.slider-arrow {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
-
-    /* Remove old leaf decorations */
-    .leaf-decoration,
-    .leaf-1,
-    .leaf-2,
-    .leaf-3,
-    .leaf-4 {
-      display: none !important;
-      visibility: hidden !important;
-    }
-
-
-    /* Gold background */
-    .gold-floral-bg {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-      opacity: 1;
-    }
-
-
-    .gold-floral-bg svg {
-      width: 100%;
-      height: 100%;
-      min-width: 100%;
-      min-height: 100%;
-      display: block;
-    }
-
-
-    /* Website content above background */
-    body > *:not(.gold-floral-bg) {
-      position: relative;
-      z-index: 2;
-    }
-
-
-    .hero,
-    .navbar,
-    .topbar,
-    main,
-    footer {
-      position: relative;
-      z-index: 2;
-    }
-
-
-    /* Hero slider */
-    .hero-slider {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
-    }
-
-
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-
-
-    .hero-slide.active {
-      opacity: 1;
-    }
-
-
-    /* Hero dots */
-    .dots {
-      position: absolute;
-      bottom: 25px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-      z-index: 10;
-    }
-
-
-    .dots button {
-      width: 10px;
-      height: 10px;
-      padding: 0;
-      border: 0;
-      border-radius: 50%;
-      background: #ffffff;
-      opacity: 0.8;
-      cursor: pointer;
-    }
-
-
-    .dots button.active {
-      background: #d4af37;
-      opacity: 1;
-      transform: scale(1.2);
-    }
-
-
-    @media (max-width: 700px) {
-
-      .gold-floral-bg {
-        opacity: 0.75;
-      }
-
-      .gold-floral-bg svg {
-        min-width: 140%;
-        min-height: 140%;
-      }
-
-    }
-
-  </style>
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+  <!-- JAVASCRIPT -->
 
   <script>
 
     document.addEventListener("DOMContentLoaded", function () {
 
-      /* =========================
-         HERO AUTO SLIDER
-         ========================= */
+      const slides =
+        document.querySelectorAll(".hero-slide");
 
-      const slides = document.querySelectorAll(".hero-slide");
-      const dotsContainer = document.getElementById("dots");
+      const dotsContainer =
+        document.getElementById("dots");
 
       let currentSlide = 0;
+
 
       if (slides.length && dotsContainer) {
 
         slides.forEach(function (slide, index) {
 
-          const dot = document.createElement("button");
+          const dot =
+            document.createElement("button");
 
           dot.type = "button";
 
@@ -1485,7 +1292,8 @@
         });
 
 
-        const dots = dotsContainer.querySelectorAll("button");
+        const dots =
+          dotsContainer.querySelectorAll("button");
 
 
         function showSlide(index) {
@@ -1497,7 +1305,6 @@
           dots.forEach(function (dot) {
             dot.classList.remove("active");
           });
-
 
           slides[index].classList.add("active");
 
@@ -1525,24 +1332,18 @@
       }
 
 
-      /* =========================
-         FOOTER YEAR
-         ========================= */
-
       const yearElement =
         document.getElementById("year");
 
       if (yearElement) {
+
         yearElement.textContent =
           new Date().getFullYear();
+
       }
 
     });
 
-
-    /* =========================
-       MOBILE MENU
-       ========================= */
 
     function toggleMenu() {
 
@@ -1567,10 +1368,6 @@
 
     }
 
-
-    /* =========================
-       WHATSAPP PRODUCT ORDER
-       ========================= */
 
     function orderProduct(productName) {
 
