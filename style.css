@@ -1,12 +1,7 @@
- /* =========================================================
+/* =========================================================
    SHIVAM IMITATION
    DARK TEAL + GOLD
-   COMPLETE STYLE.CSS
-   ========================================================= */
-
-
-/* =========================================================
-   GOOGLE FONTS
+   SUBTLE TRADITIONAL JEWELLERY BACKGROUND
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
@@ -55,6 +50,7 @@ body {
   color: var(--text);
   background-color: var(--green);
 
+  /* Original dark teal background + subtle texture */
   background-image:
     radial-gradient(
       ellipse at 15% 20%,
@@ -88,37 +84,34 @@ body {
     );
 
   background-attachment: fixed;
-
   overflow-x: hidden;
   min-height: 100vh;
 }
 
 
 /* =========================================================
-   SUBTLE BACKGROUND TEXTURE
+   SUBTLE LEATHER TEXTURE
    ========================================================= */
 
 body::before {
   content: "";
-
   position: fixed;
   inset: 0;
 
   pointer-events: none;
+  z-index: 0;
 
-  z-index: -1;
-
-  opacity: 0.45;
+  opacity: 0.30;
 
   background-image:
     radial-gradient(
       circle at 25% 25%,
-      rgba(255, 255, 255, 0.025) 0 1px,
+      rgba(255,255,255,0.025) 0 1px,
       transparent 1.5px
     ),
     radial-gradient(
       circle at 75% 65%,
-      rgba(0, 0, 0, 0.035) 0 1px,
+      rgba(0,0,0,0.035) 0 1px,
       transparent 1.5px
     );
 
@@ -127,6 +120,77 @@ body::before {
     17px 17px;
 
   mix-blend-mode: soft-light;
+}
+
+
+/* =========================================================
+   TRADITIONAL JEWELLERY BACKGROUND DESIGN
+   ONLY DECORATION
+   ========================================================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  opacity: 0.085;
+
+  background-image:
+
+    /* Floral circles */
+    radial-gradient(
+      circle at 12% 18%,
+      transparent 0 24px,
+      rgba(231,189,85,0.55) 25px,
+      transparent 27px
+    ),
+
+    radial-gradient(
+      circle at 88% 18%,
+      transparent 0 28px,
+      rgba(231,189,85,0.45) 29px,
+      transparent 31px
+    ),
+
+    radial-gradient(
+      circle at 15% 82%,
+      transparent 0 30px,
+      rgba(231,189,85,0.45) 31px,
+      transparent 33px
+    ),
+
+    radial-gradient(
+      circle at 85% 82%,
+      transparent 0 26px,
+      rgba(231,189,85,0.50) 27px,
+      transparent 29px
+    ),
+
+    /* Small jewellery-style dots */
+    radial-gradient(
+      circle,
+      rgba(231,189,85,0.45) 1px,
+      transparent 2px
+    );
+
+  background-size:
+    260px 260px,
+    300px 300px,
+    280px 280px,
+    320px 320px,
+    42px 42px;
+
+  background-position:
+    0 0,
+    120px 70px,
+    40px 150px,
+    180px 100px,
+    10px 10px;
+
+  mix-blend-mode: screen;
 }
 
 
@@ -191,6 +255,27 @@ p {
 
 
 /* =========================================================
+   KEEP CONTENT ABOVE BACKGROUND DESIGN
+   ========================================================= */
+
+.topbar,
+.navbar,
+.hero,
+.intro,
+.section,
+.offer,
+.about,
+.reviews,
+.instagram-section,
+.map-section,
+.contact,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
    TOP BAR
    ========================================================= */
 
@@ -217,15 +302,11 @@ p {
 
 .navbar {
   position: sticky;
-
   top: 0;
-
   z-index: 1000;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   padding: 14px 5%;
@@ -239,9 +320,7 @@ p {
 
 .brand {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
 }
 
@@ -250,7 +329,6 @@ p {
   height: 52px;
 
   object-fit: contain;
-
   border-radius: 50%;
 }
 
@@ -270,9 +348,7 @@ p {
 
 .navbar nav {
   display: flex;
-
   align-items: center;
-
   gap: 28px;
 }
 
@@ -280,7 +356,6 @@ p {
   color: var(--text);
 
   font-size: 14px;
-
   font-weight: 600;
 
   transition: 0.3s ease;
@@ -321,14 +396,13 @@ p {
   overflow: hidden;
 
   display: flex;
-
   align-items: center;
 }
 
 .hero-slider {
   position: absolute;
-
   inset: 0;
+  z-index: 1;
 }
 
 .hero-slide {
@@ -355,6 +429,8 @@ p {
 
   inset: 0;
 
+  z-index: 2;
+
   background:
     linear-gradient(
       90deg,
@@ -367,7 +443,7 @@ p {
 .hero-content {
   position: relative;
 
-  z-index: 2;
+  z-index: 3;
 
   width: 55%;
 
@@ -434,7 +510,7 @@ p {
   font-weight: 700;
 
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.25);
+    0 10px 25px rgba(0,0,0,0.25);
 
   transition: all 0.3s ease;
 }
@@ -443,7 +519,7 @@ p {
   transform: translateY(-3px);
 
   box-shadow:
-    0 15px 30px rgba(0, 0, 0, 0.35);
+    0 15px 30px rgba(0,0,0,0.35);
 }
 
 .text-link {
@@ -484,22 +560,17 @@ p {
 
 
 /* =========================================================
-   HERO SLIDER ARROWS
-   HIDDEN
+   SLIDER
+   SIDE ARROWS HIDDEN
    ========================================================= */
 
-/*
-   બંને side ના ← → arrows સંપૂર્ણ hide.
-   Hero photos automatic JavaScript થી બદલાશે.
-*/
-
-.hero .slider-arrow {
+.slider-arrow {
   display: none !important;
 }
 
 
 /* =========================================================
-   HERO DOTS
+   DOTS
    ========================================================= */
 
 .dots {
@@ -527,7 +598,7 @@ p {
 
   border: none;
 
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255,255,255,0.4);
 
   cursor: pointer;
 }
@@ -611,7 +682,7 @@ p {
   overflow: hidden;
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.18);
+    0 15px 35px rgba(0,0,0,0.18);
 
   transition: 0.35s ease;
 }
@@ -622,7 +693,7 @@ p {
   border-color: var(--gold);
 
   box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.35);
+    0 20px 45px rgba(0,0,0,0.35);
 }
 
 .card > img {
@@ -737,7 +808,7 @@ p {
   background:
     linear-gradient(
       transparent 30%,
-      rgba(0, 35, 32, 0.95)
+      rgba(0,35,32,0.95)
     );
 }
 
@@ -793,7 +864,7 @@ p {
   gap: 30px;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.25);
+    0 20px 50px rgba(0,0,0,0.25);
 }
 
 .offer h2 {
@@ -828,7 +899,7 @@ p {
   border: 1px solid var(--border);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.3);
+    0 20px 50px rgba(0,0,0,0.3);
 }
 
 .about-copy h2 {
@@ -961,16 +1032,6 @@ p {
   width: 24px;
 
   height: 24px;
-
-  display: block;
-
-  color: currentColor;
-
-  transition: transform 0.3s ease;
-}
-
-.instagram-btn:hover .instagram-icon svg {
-  transform: scale(1.12);
 }
 
 .instagram-cards {
@@ -1037,7 +1098,7 @@ p {
   border: 1px solid var(--border);
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.3);
+    0 20px 50px rgba(0,0,0,0.3);
 }
 
 .map-wrapper iframe {
@@ -1046,8 +1107,6 @@ p {
   display: block;
 
   border: 0;
-
-  border-radius: 28px;
 }
 
 
@@ -1085,8 +1144,6 @@ p {
   border-radius: 25px;
 
   transition: 0.3s ease;
-
-  overflow: hidden;
 }
 
 .contact-card:hover {
@@ -1170,9 +1227,9 @@ p {
   font-size: 30px;
 
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4);
+    0 10px 30px rgba(0,0,0,0.4);
 
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255,255,255,0.25);
 
   transition: 0.3s ease;
 }
@@ -1233,7 +1290,7 @@ footer small {
 
 
 /* =========================================================
-   SUBTLE SECTION PATTERN
+   SECTION TEXTURE
    ========================================================= */
 
 .section::before,
@@ -1249,12 +1306,12 @@ footer small {
 
   z-index: 0;
 
-  opacity: 0.20;
+  opacity: 0.12;
 
   background-image:
     radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.035) 1px,
+      rgba(255,255,255,0.035) 1px,
       transparent 1.5px
     );
 
@@ -1290,7 +1347,27 @@ footer small {
 
 
 /* =========================================================
-   MOBILE / TABLET
+   IMPORTANT - NO GOLD LEAVES
+   ========================================================= */
+
+.leaf-decoration {
+  display: none !important;
+}
+
+
+/* =========================================================
+   IMPORTANT - NO SIDE ARROWS
+   ========================================================= */
+
+.slider-arrow,
+.slider-arrow.left,
+.slider-arrow.right {
+  display: none !important;
+}
+
+
+/* =========================================================
+   TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1420,6 +1497,10 @@ footer small {
       repeat(3, 1fr);
   }
 
+  .map-wrapper {
+    border-radius: 20px;
+  }
+
   .map-wrapper iframe {
     height: 350px;
   }
@@ -1432,6 +1513,11 @@ footer small {
     right: 18px;
 
     bottom: 18px;
+  }
+
+  /* Keep background design subtle on mobile */
+  body::after {
+    opacity: 0.055;
   }
 }
 
@@ -1467,39 +1553,4 @@ footer small {
   .contact-actions a {
     width: 100%;
   }
-}
-
-
-/* =========================================================
-   FINAL GOLD LEAF REMOVAL
-   ========================================================= */
-
-/*
-   જો HTML માં જૂના leaf-decoration div હજુ પડ્યા હોય,
-   તો આ CSS તેમને પણ સંપૂર્ણ hide કરશે.
-*/
-
-.leaf-decoration {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-
-/* =========================================================
-   FINAL HERO ARROW REMOVAL
-   ========================================================= */
-
-/*
-   Hero ના બંને side arrows દેખાશે નહીં.
-   Photos slider automatic ચાલુ રહેશે.
-*/
-
-.hero .slider-arrow,
-.hero button.slider-arrow {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
 }
