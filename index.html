@@ -18,6 +18,7 @@
 
   <title>Shivam Imitation | Imitation Jewellery Shop in Talala Gir</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -25,154 +26,15 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet">
 
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- =========================
-       FLORAL BACKGROUND
-       ========================= -->
-
-  <div class="gold-floral-bg" aria-hidden="true">
-
-    <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice">
-
-      <g fill="none"
-        stroke="#d4af37"
-        stroke-width="1.4"
-        opacity="0.48">
-
-        <!-- TOP LEFT -->
-        <path d="M20 110
-          C65 40 125 35 155 80
-          C180 118 155 160 115 160
-          C75 160 55 125 75 95
-          C95 65 135 75 140 105
-          C145 130 120 145 100 130" />
-
-        <path d="M42 122
-          C80 115 115 90 140 60" />
-
-        <path d="M145 65
-          C175 85 195 110 205 145" />
-
-        <!-- TOP MIDDLE -->
-        <path d="M240 35
-          C215 65 225 105 260 115
-          C295 125 320 95 305 65
-          C290 38 255 40 245 65
-          C235 88 255 103 275 94" />
-
-        <path d="M305 82
-          C340 92 365 115 380 145" />
-
-        <!-- TOP RIGHT -->
-        <path d="M475 35
-          C455 75 465 110 500 125
-          C535 140 565 115 560 85
-          C555 55 520 45 500 65
-          C480 85 492 110 515 112" />
-
-        <path d="M485 72
-          C520 85 545 105 565 130" />
-
-        <!-- MIDDLE LEFT -->
-        <path d="M15 270
-          C45 215 95 205 125 240
-          C150 270 135 310 100 320
-          C65 330 35 305 45 275
-          C55 245 90 240 105 260
-          C118 280 100 300 80 295" />
-
-        <path d="M30 285
-          C65 275 95 250 115 225" />
-
-        <path d="M125 230
-          C150 250 170 280 178 315" />
-
-        <!-- MIDDLE -->
-        <path d="M275 190
-          C245 220 255 260 290 275
-          C325 290 350 260 340 230
-          C330 200 295 195 280 220
-          C267 242 285 258 305 250" />
-
-        <path d="M340 230
-          C375 245 400 275 415 310" />
-
-        <!-- MIDDLE RIGHT -->
-        <path d="M475 245
-          C455 280 465 315 500 330
-          C535 345 565 320 560 290
-          C555 260 520 250 500 270
-          C480 290 492 315 515 318" />
-
-        <path d="M485 285
-          C520 295 545 315 565 340" />
-
-        <!-- BOTTOM LEFT -->
-        <path d="M20 470
-          C55 410 105 405 135 440
-          C160 470 145 510 110 520
-          C75 530 45 505 55 475
-          C65 445 100 440 115 460
-          C128 480 110 500 90 495" />
-
-        <path d="M35 485
-          C70 475 105 450 125 425" />
-
-        <path d="M135 430
-          C160 450 180 480 188 515" />
-
-        <!-- BOTTOM MIDDLE -->
-        <path d="M255 405
-          C225 440 235 480 270 495
-          C305 510 330 480 320 450
-          C310 420 275 415 260 440
-          C247 462 265 478 285 470" />
-
-        <path d="M320 450
-          C355 465 380 495 395 530" />
-
-        <!-- BOTTOM RIGHT -->
-        <path d="M475 430
-          C455 470 465 505 500 520
-          C535 535 565 510 560 480
-          C555 450 520 440 500 460
-          C480 480 492 505 515 508" />
-
-        <path d="M485 470
-          C520 480 545 500 565 525" />
-
-      </g>
-
-      <!-- GOLD DOTS -->
-      <g fill="#d4af37" opacity="0.55">
-
-        <circle cx="25" cy="40" r="2" />
-        <circle cx="180" cy="175" r="1.7" />
-        <circle cx="350" cy="50" r="2" />
-        <circle cx="570" cy="175" r="1.7" />
-
-        <circle cx="190" cy="350" r="2" />
-        <circle cx="410" cy="180" r="1.8" />
-        <circle cx="570" cy="380" r="2" />
-
-        <circle cx="40" cy="580" r="1.8" />
-        <circle cx="220" cy="540" r="2" />
-        <circle cx="400" cy="580" r="1.7" />
-        <circle cx="575" cy="570" r="2" />
-
-      </g>
-
-    </svg>
-  </div>
-
-
-  <!-- =========================
        TOP BAR
-       ========================= -->
+  ========================== -->
 
   <div class="topbar">
     ✨ Best Collection • Visit Shivam Imitation, Talala Gir
@@ -181,13 +43,15 @@
 
   <!-- =========================
        NAVBAR
-       ========================= -->
+  ========================== -->
 
   <header class="navbar">
 
     <a class="brand" href="#home">
 
-      <img src="logo.jpg" alt="Shivam Imitation Logo">
+      <img
+        src="logo.jpg"
+        alt="Shivam Imitation Logo">
 
       <span>
         SHIVAM <b>IMITATION</b>
@@ -199,6 +63,7 @@
       class="menu-btn"
       type="button"
       aria-label="Open menu"
+      aria-expanded="false"
       onclick="toggleMenu()">
       ☰
     </button>
@@ -206,12 +71,30 @@
     <nav id="nav">
 
       <a href="#home" onclick="closeMenu()">Home</a>
-      <a href="collection.html" onclick="closeMenu()">Collection</a>
-      <a href="#categories" onclick="closeMenu()">Categories</a>
-      <a href="#offers" onclick="closeMenu()">Offers</a>
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#reviews" onclick="closeMenu()">Reviews</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
+
+      <a href="collection.html" onclick="closeMenu()">
+        Collection
+      </a>
+
+      <a href="#categories" onclick="closeMenu()">
+        Categories
+      </a>
+
+      <a href="#offers" onclick="closeMenu()">
+        Offers
+      </a>
+
+      <a href="#about" onclick="closeMenu()">
+        About
+      </a>
+
+      <a href="#reviews" onclick="closeMenu()">
+        Reviews
+      </a>
+
+      <a href="#contact" onclick="closeMenu()">
+        Contact
+      </a>
 
     </nav>
 
@@ -222,7 +105,7 @@
 
     <!-- =========================
          HERO
-         ========================= -->
+    ========================== -->
 
     <section id="home" class="hero">
 
@@ -259,8 +142,12 @@
 
       <div class="hero-content">
 
+        <div class="hero-badge">
+          ✦ PREMIUM COLLECTION ✦
+        </div>
+
         <p class="eyebrow">
-          PREMIUM IMITATION JEWELLERY
+          SHIVAM IMITATION • TALALA GIR
         </p>
 
         <h1>
@@ -270,31 +157,48 @@
 
         <p class="hero-text">
           Discover beautiful imitation jewellery collections
-          for every special moment.
+          designed for every special moment, celebration
+          and everyday style.
         </p>
 
         <div class="hero-actions">
 
-          <a href="#collection" class="gold-btn">
+          <a
+            href="#collection"
+            class="gold-btn">
             Explore Collection
           </a>
 
-          <a href="collection.html" class="text-link">
-            View Collection →
+          <a
+            href="collection.html"
+            class="outline-btn">
+            View Catalogue →
           </a>
+
+        </div>
+
+        <div class="hero-features">
+
+          <span>✦ Premium Designs</span>
+          <span>✦ Latest Collection</span>
+          <span>✦ Talala Gir</span>
 
         </div>
 
       </div>
 
-      <div class="dots" id="dots"></div>
+      <div
+        class="dots"
+        id="dots"
+        aria-label="Hero slider controls">
+      </div>
 
     </section>
 
 
     <!-- =========================
          INTRO
-         ========================= -->
+    ========================== -->
 
     <section class="intro">
 
@@ -307,22 +211,27 @@
         <span>Stand Out</span>
       </h2>
 
-      <p>
-        Welcome to Shivam Imitation, your trusted
-        imitation jewellery shop in Talala Gir.
-        Explore stylish jewellery and novelties
-        selected for festive looks, functions,
-        gifting and everyday elegance.
+      <p class="intro-text">
+        Welcome to Shivam Imitation, your trusted imitation
+        jewellery destination in Talala Gir. Explore stylish
+        jewellery and accessories selected for festive looks,
+        functions, gifting and everyday elegance.
       </p>
+
+      <div class="intro-line">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
 
     </section>
 
 
     <!-- =========================
          COLLECTION
-         ========================= -->
+    ========================== -->
 
-    <section id="collection" class="section">
+    <section id="collection" class="section collection-section">
 
       <div class="section-heading">
 
@@ -333,13 +242,15 @@
           </p>
 
           <h2>
-            Featured Pieces
+            Featured <span>Pieces</span>
           </h2>
 
         </div>
 
-        <a href="collection.html" class="text-link">
-          View Catalogue →
+        <a
+          href="collection.html"
+          class="text-link">
+          View Full Catalogue →
         </a>
 
       </div>
@@ -347,16 +258,29 @@
 
       <div class="products">
 
+
+        <!-- PRODUCT 1 -->
+
         <article class="card">
 
-          <img
-            src="product-1.jpg"
-            alt="Royal green necklace set"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-1.jpg"
+              alt="Royal Green Drop Set"
+              loading="lazy">
+
+            <span class="card-number">
+              01
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>NECKLACE SET</span>
+            <span class="product-category">
+              NECKLACE SET
+            </span>
 
             <h3>
               Royal Green Drop Set
@@ -365,7 +289,8 @@
             <button
               type="button"
               onclick="orderProduct('Royal Green Drop Set')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -373,16 +298,28 @@
         </article>
 
 
+        <!-- PRODUCT 2 -->
+
         <article class="card">
 
-          <img
-            src="product-2.jpg"
-            alt="Elegant pearl necklace set"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-2.jpg"
+              alt="Elegant Pearl Drop Set"
+              loading="lazy">
+
+            <span class="card-number">
+              02
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>NECKLACE SET</span>
+            <span class="product-category">
+              NECKLACE SET
+            </span>
 
             <h3>
               Elegant Pearl Drop Set
@@ -391,7 +328,8 @@
             <button
               type="button"
               onclick="orderProduct('Elegant Pearl Drop Set')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -399,16 +337,28 @@
         </article>
 
 
+        <!-- PRODUCT 3 -->
+
         <article class="card">
 
-          <img
-            src="product-3.jpg"
-            alt="Butterfly charm imitation necklace"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-3.jpg"
+              alt="Butterfly Charm Necklace"
+              loading="lazy">
+
+            <span class="card-number">
+              03
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>NECKLACE</span>
+            <span class="product-category">
+              NECKLACE
+            </span>
 
             <h3>
               Butterfly Charm Necklace
@@ -417,7 +367,8 @@
             <button
               type="button"
               onclick="orderProduct('Butterfly Charm Necklace')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -425,16 +376,28 @@
         </article>
 
 
+        <!-- PRODUCT 4 -->
+
         <article class="card">
 
-          <img
-            src="product-4.jpg"
-            alt="Classic gold pendant imitation set"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-4.jpg"
+              alt="Classic Gold Pendant Set"
+              loading="lazy">
+
+            <span class="card-number">
+              04
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>TRADITIONAL</span>
+            <span class="product-category">
+              TRADITIONAL
+            </span>
 
             <h3>
               Classic Gold Pendant Set
@@ -443,7 +406,8 @@
             <button
               type="button"
               onclick="orderProduct('Classic Gold Pendant Set')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -451,16 +415,28 @@
         </article>
 
 
+        <!-- PRODUCT 5 -->
+
         <article class="card">
 
-          <img
-            src="product-5.jpg"
-            alt="Heritage bridal imitation jewellery set"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-5.jpg"
+              alt="Heritage Statement Set"
+              loading="lazy">
+
+            <span class="card-number">
+              05
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>BRIDAL STYLE</span>
+            <span class="product-category">
+              BRIDAL STYLE
+            </span>
 
             <h3>
               Heritage Statement Set
@@ -469,7 +445,8 @@
             <button
               type="button"
               onclick="orderProduct('Heritage Statement Set')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -477,16 +454,28 @@
         </article>
 
 
+        <!-- PRODUCT 6 -->
+
         <article class="card">
 
-          <img
-            src="product-6.jpg"
-            alt="Multicolor stone necklace"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-6.jpg"
+              alt="Multicolor Stone Necklace"
+              loading="lazy">
+
+            <span class="card-number">
+              06
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>NECKLACE</span>
+            <span class="product-category">
+              NECKLACE
+            </span>
 
             <h3>
               Multicolor Stone Necklace
@@ -495,7 +484,8 @@
             <button
               type="button"
               onclick="orderProduct('Multicolor Stone Necklace')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -503,16 +493,28 @@
         </article>
 
 
+        <!-- PRODUCT 7 -->
+
         <article class="card">
 
-          <img
-            src="product-7.jpg"
-            alt="Minimal rose pendant necklace"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-7.jpg"
+              alt="Minimal Rose Pendant"
+              loading="lazy">
+
+            <span class="card-number">
+              07
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>DAILY WEAR</span>
+            <span class="product-category">
+              DAILY WEAR
+            </span>
 
             <h3>
               Minimal Rose Pendant
@@ -521,7 +523,8 @@
             <button
               type="button"
               onclick="orderProduct('Minimal Rose Pendant')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -529,16 +532,28 @@
         </article>
 
 
+        <!-- PRODUCT 8 -->
+
         <article class="card">
 
-          <img
-            src="product-8.jpg"
-            alt="Rose gold crystal bracelet"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-8.jpg"
+              alt="Rose Gold Crystal Bracelet"
+              loading="lazy">
+
+            <span class="card-number">
+              08
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>BRACELET</span>
+            <span class="product-category">
+              BRACELET
+            </span>
 
             <h3>
               Rose Gold Crystal Bracelet
@@ -547,7 +562,8 @@
             <button
               type="button"
               onclick="orderProduct('Rose Gold Crystal Bracelet')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -555,16 +571,28 @@
         </article>
 
 
+        <!-- PRODUCT 9 -->
+
         <article class="card">
 
-          <img
-            src="product-9.jpg"
-            alt="Black stone bracelet"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-9.jpg"
+              alt="Black Stone Bracelet"
+              loading="lazy">
+
+            <span class="card-number">
+              09
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>BRACELET</span>
+            <span class="product-category">
+              BRACELET
+            </span>
 
             <h3>
               Black Stone Bracelet
@@ -573,7 +601,8 @@
             <button
               type="button"
               onclick="orderProduct('Black Stone Bracelet')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
@@ -581,16 +610,28 @@
         </article>
 
 
+        <!-- PRODUCT 10 -->
+
         <article class="card">
 
-          <img
-            src="product-10.jpg"
-            alt="Crystal hair accessories"
-            loading="lazy">
+          <div class="card-image">
+
+            <img
+              src="product-10.jpg"
+              alt="Crystal Hair Accessories"
+              loading="lazy">
+
+            <span class="card-number">
+              10
+            </span>
+
+          </div>
 
           <div class="card-body">
 
-            <span>NOVELTY</span>
+            <span class="product-category">
+              ACCESSORIES
+            </span>
 
             <h3>
               Crystal Hair Accessories
@@ -599,12 +640,14 @@
             <button
               type="button"
               onclick="orderProduct('Crystal Hair Accessories')">
-              WhatsApp Order
+              <span>WhatsApp Enquiry</span>
+              <b>→</b>
             </button>
 
           </div>
 
         </article>
+
 
       </div>
 
@@ -613,9 +656,11 @@
 
     <!-- =========================
          CATEGORIES
-         ========================= -->
+    ========================== -->
 
-    <section id="categories" class="categories section">
+    <section
+      id="categories"
+      class="categories section">
 
       <div class="section-heading center">
 
@@ -626,7 +671,7 @@
           </p>
 
           <h2>
-            Explore Our Collection
+            Explore Our <span>Collection</span>
           </h2>
 
         </div>
@@ -636,11 +681,14 @@
 
       <div class="category-grid">
 
-        <a href="collection.html" class="category-card">
+
+        <a
+          href="collection.html"
+          class="category-card">
 
           <img
             src="product-1.jpg"
-            alt="Imitation necklace collection"
+            alt="Necklace collection"
             loading="lazy">
 
           <div class="category-overlay">
@@ -655,16 +703,22 @@
               Elegant designs for every occasion
             </p>
 
+            <b>
+              Explore →
+            </b>
+
           </div>
 
         </a>
 
 
-        <a href="collection.html" class="category-card">
+        <a
+          href="collection.html"
+          class="category-card">
 
           <img
             src="product-5.jpg"
-            alt="Bridal imitation jewellery"
+            alt="Bridal jewellery collection"
             loading="lazy">
 
           <div class="category-overlay">
@@ -679,16 +733,22 @@
               Beautiful statement styles
             </p>
 
+            <b>
+              Explore →
+            </b>
+
           </div>
 
         </a>
 
 
-        <a href="collection.html" class="category-card">
+        <a
+          href="collection.html"
+          class="category-card">
 
           <img
             src="product-8.jpg"
-            alt="Imitation bracelet collection"
+            alt="Bracelet collection"
             loading="lazy">
 
           <div class="category-overlay">
@@ -703,16 +763,22 @@
               Stylish everyday sparkle
             </p>
 
+            <b>
+              Explore →
+            </b>
+
           </div>
 
         </a>
 
 
-        <a href="collection.html" class="category-card">
+        <a
+          href="collection.html"
+          class="category-card">
 
           <img
             src="product-7.jpg"
-            alt="Daily wear imitation jewellery"
+            alt="Daily wear jewellery"
             loading="lazy">
 
           <div class="category-overlay">
@@ -727,16 +793,22 @@
               Simple and elegant designs
             </p>
 
+            <b>
+              Explore →
+            </b>
+
           </div>
 
         </a>
 
 
-        <a href="collection.html" class="category-card">
+        <a
+          href="collection.html"
+          class="category-card">
 
           <img
             src="product-10.jpg"
-            alt="Fashion jewellery and novelties"
+            alt="Fashion accessories"
             loading="lazy">
 
           <div class="category-overlay">
@@ -744,16 +816,21 @@
             <span>05</span>
 
             <h3>
-              Novelties
+              Accessories
             </h3>
 
             <p>
               Trendy accessories and more
             </p>
 
+            <b>
+              Explore →
+            </b>
+
           </div>
 
         </a>
+
 
       </div>
 
@@ -762,11 +839,17 @@
 
     <!-- =========================
          OFFER
-         ========================= -->
+    ========================== -->
 
-    <section id="offers" class="offer">
+    <section
+      id="offers"
+      class="offer">
 
-      <div>
+      <div class="offer-decoration">
+        ✦
+      </div>
+
+      <div class="offer-content">
 
         <p class="eyebrow">
           SPECIAL OFFER
@@ -780,7 +863,7 @@
 
         <p>
           Ask us on WhatsApp for today's latest
-          collection and available offers.
+          collection, new arrivals and available offers.
         </p>
 
       </div>
@@ -791,7 +874,7 @@
         rel="noopener noreferrer"
         class="gold-btn">
 
-        Ask for Offer
+        💬 Ask for Offer
 
       </a>
 
@@ -800,16 +883,27 @@
 
     <!-- =========================
          ABOUT
-         ========================= -->
+    ========================== -->
 
-    <section id="about" class="about section">
+    <section
+      id="about"
+      class="about section">
 
       <div class="about-image">
 
-        <img
-          src="product-5.jpg"
-          alt="Shivam Imitation jewellery collection"
-          loading="lazy">
+        <div class="image-frame">
+
+          <img
+            src="product-5.jpg"
+            alt="Shivam Imitation jewellery collection"
+            loading="lazy">
+
+          <div class="image-caption">
+            <span>SHIVAM</span>
+            <b>IMITATION</b>
+          </div>
+
+        </div>
 
       </div>
 
@@ -828,17 +922,39 @@
 
         <p>
           Shivam Imitation brings together stylish
-          imitation jewellery and novelties for
+          imitation jewellery and accessories for
           festive looks, functions, gifting and
           everyday fashion.
         </p>
 
         <p>
-          Visit our showroom in Talala Gir to
-          explore the latest collection.
+          We carefully select beautiful designs so you
+          can discover something special for every
+          occasion.
         </p>
 
-        <a href="#contact" class="gold-btn">
+        <div class="about-points">
+
+          <div>
+            <strong>✦</strong>
+            <span>Latest Designs</span>
+          </div>
+
+          <div>
+            <strong>✦</strong>
+            <span>Elegant Collections</span>
+          </div>
+
+          <div>
+            <strong>✦</strong>
+            <span>Friendly Service</span>
+          </div>
+
+        </div>
+
+        <a
+          href="#contact"
+          class="gold-btn">
           Visit Our Store
         </a>
 
@@ -849,9 +965,11 @@
 
     <!-- =========================
          REVIEWS
-         ========================= -->
+    ========================== -->
 
-    <section id="reviews" class="reviews section">
+    <section
+      id="reviews"
+      class="reviews section">
 
       <div class="section-heading center">
 
@@ -862,7 +980,7 @@
           </p>
 
           <h2>
-            What Our Customers Say
+            What Our <span>Customers Say</span>
           </h2>
 
         </div>
@@ -876,7 +994,7 @@
           5.0
         </div>
 
-        <div>
+        <div class="rating-details">
 
           <div class="stars">
             ★★★★★
@@ -903,8 +1021,10 @@
 
       <div class="review-note">
 
+        <span>★★★★★</span>
+
         <p>
-          ⭐ Loved by customers in Talala Gir.
+          Loved by customers in Talala Gir.
           Visit our showroom and discover the
           latest imitation jewellery collection.
         </p>
@@ -916,7 +1036,7 @@
 
     <!-- =========================
          INSTAGRAM
-         ========================= -->
+    ========================== -->
 
     <section class="instagram-section section">
 
@@ -944,7 +1064,9 @@
 
           <span class="instagram-icon">
 
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true">
 
               <rect
                 x="3"
@@ -996,7 +1118,7 @@
 
           <img
             src="product-1.jpg"
-            alt="Shivam Imitation Instagram jewellery"
+            alt="Shivam Imitation jewellery"
             loading="lazy">
 
         </a>
@@ -1036,7 +1158,7 @@
 
     <!-- =========================
          GOOGLE MAP
-         ========================= -->
+    ========================== -->
 
     <section class="map-section">
 
@@ -1079,9 +1201,11 @@
 
     <!-- =========================
          CONTACT
-         ========================= -->
+    ========================== -->
 
-    <section id="contact" class="contact section">
+    <section
+      id="contact"
+      class="contact section">
 
       <div class="section-heading center">
 
@@ -1092,7 +1216,7 @@
           </p>
 
           <h2>
-            Visit Shivam Imitation
+            Visit Shivam <span>Imitation</span>
           </h2>
 
         </div>
@@ -1101,6 +1225,9 @@
 
 
       <div class="contact-grid">
+
+
+        <!-- ADDRESS -->
 
         <div class="contact-card">
 
@@ -1122,6 +1249,8 @@
 
         </div>
 
+
+        <!-- PHONE -->
 
         <div class="contact-card">
 
@@ -1150,6 +1279,8 @@
         </div>
 
 
+        <!-- EMAIL -->
+
         <div class="contact-card">
 
           <span class="icon">
@@ -1169,6 +1300,7 @@
           </p>
 
         </div>
+
 
       </div>
 
@@ -1203,7 +1335,7 @@
 
   <!-- =========================
        FLOATING WHATSAPP
-       ========================= -->
+  ========================== -->
 
   <a
     class="floating-whatsapp"
@@ -1212,35 +1344,39 @@
     rel="noopener noreferrer"
     aria-label="WhatsApp Shivam Imitation">
 
-    ☏
+    <span>☏</span>
 
   </a>
 
 
   <!-- =========================
        FOOTER
-       ========================= -->
+  ========================== -->
 
   <footer>
 
-    <img
-      src="logo.jpg"
-      alt="Shivam Imitation">
+    <div class="footer-logo">
 
-    <p>
+      <img
+        src="logo.jpg"
+        alt="Shivam Imitation">
+
+    </div>
+
+    <p class="footer-brand">
       SHIVAM
       <span>IMITATION</span>
     </p>
 
+    <p class="footer-tagline">
+      Premium Imitation Jewellery • Talala Gir
+    </p>
+
+    <div class="footer-line"></div>
+
     <small>
       © <span id="year"></span>
       Shivam Imitation • Talala Gir
-    </small>
-
-    <br>
-
-    <small>
-      Imitation Jewellery • Talala Gir
     </small>
 
   </footer>
@@ -1248,43 +1384,62 @@
 
   <!-- =========================
        JAVASCRIPT
-       ========================= -->
+  ========================== -->
 
   <script>
 
+    /* =========================================
+       HERO SLIDER
+    ========================================== */
+
     document.addEventListener("DOMContentLoaded", function () {
 
-      /* HERO SLIDER */
+      const slides =
+        document.querySelectorAll(".hero-slide");
 
-      const slides = document.querySelectorAll(".hero-slide");
-      const dotsContainer = document.getElementById("dots");
+      const dotsContainer =
+        document.getElementById("dots");
 
       let currentSlide = 0;
       let sliderTimer;
+
 
       function showSlide(index) {
 
         if (!slides.length) return;
 
         slides.forEach(function (slide) {
+
           slide.classList.remove("active");
+
         });
 
-        const dots = dotsContainer
-          ? dotsContainer.querySelectorAll("button")
-          : [];
+
+        const dots =
+          dotsContainer
+            ? dotsContainer.querySelectorAll("button")
+            : [];
+
 
         dots.forEach(function (dot) {
+
           dot.classList.remove("active");
+
         });
+
 
         slides[index].classList.add("active");
 
+
         if (dots[index]) {
+
           dots[index].classList.add("active");
+
         }
 
+
         currentSlide = index;
+
       }
 
 
@@ -1294,6 +1449,7 @@
           (currentSlide + 1) % slides.length;
 
         showSlide(currentSlide);
+
       }
 
 
@@ -1311,32 +1467,42 @@
             "Go to slide " + (index + 1)
           );
 
-          dot.addEventListener("click", function () {
 
-            showSlide(index);
+          dot.addEventListener(
+            "click",
+            function () {
 
-            clearInterval(sliderTimer);
+              showSlide(index);
 
-            sliderTimer =
-              setInterval(nextSlide, 4000);
+              clearInterval(sliderTimer);
 
-          });
+              sliderTimer =
+                setInterval(nextSlide, 4500);
+
+            }
+          );
+
 
           dotsContainer.appendChild(dot);
 
         });
 
+
         showSlide(0);
 
         sliderTimer =
-          setInterval(nextSlide, 4000);
+          setInterval(nextSlide, 4500);
+
       }
 
 
-      /* FOOTER YEAR */
+      /* =========================================
+         FOOTER YEAR
+      ========================================== */
 
       const yearElement =
         document.getElementById("year");
+
 
       if (yearElement) {
 
@@ -1348,15 +1514,36 @@
     });
 
 
-    /* MOBILE MENU */
+    /* =========================================
+       MOBILE MENU
+    ========================================== */
 
     function toggleMenu() {
 
       const nav =
         document.getElementById("nav");
 
+      const button =
+        document.querySelector(".menu-btn");
+
+
       if (nav) {
+
         nav.classList.toggle("show");
+
+        const isOpen =
+          nav.classList.contains("show");
+
+
+        if (button) {
+
+          button.setAttribute(
+            "aria-expanded",
+            isOpen
+          );
+
+        }
+
       }
 
     }
@@ -1367,14 +1554,32 @@
       const nav =
         document.getElementById("nav");
 
+      const button =
+        document.querySelector(".menu-btn");
+
+
       if (nav) {
+
         nav.classList.remove("show");
+
+      }
+
+
+      if (button) {
+
+        button.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
       }
 
     }
 
 
-    /* WHATSAPP PRODUCT ORDER */
+    /* =========================================
+       WHATSAPP PRODUCT ORDER
+    ========================================== */
 
     function orderProduct(productName) {
 
@@ -1382,11 +1587,17 @@
         "Hello Shivam Imitation, I am interested in: "
         + productName;
 
+
       const url =
         "https://wa.me/919714978206?text="
         + encodeURIComponent(message);
 
-      window.open(url, "_blank");
+
+      window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+      );
 
     }
 
