@@ -1,7 +1,7 @@
 /* =========================================================
    SHIVAM IMITATION
    DARK TEAL + GOLD
-   FLORAL DECORATIVE BACKGROUND
+   FLORAL BACKGROUND DESIGN
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
@@ -55,134 +55,110 @@ body {
 
   background-color: var(--green);
 
-  /* MAIN DARK TEAL BACKGROUND */
+  /* Original dark teal background */
   background-image:
+    radial-gradient(
+      ellipse at 15% 20%,
+      rgba(255, 255, 255, 0.025) 0,
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(0, 0, 0, 0.10) 0,
+      transparent 40%
+    ),
     linear-gradient(
       135deg,
       #003d37 0%,
       #003b35 45%,
       #00342f 100%
     );
+
+  background-attachment: fixed;
 }
 
 
 /* =========================================================
-   FLORAL DESIGN BACKGROUND
-   Screenshot jevu subtle gold floral pattern
+   GOLD FLORAL BACKGROUND DESIGN
+   IMPORTANT - THIS IS THE NEW DESIGN
    ========================================================= */
 
 body::before {
   content: "";
+
   position: fixed;
   inset: 0;
 
+  width: 100%;
+  height: 100%;
+
   pointer-events: none;
+
   z-index: 0;
 
-  opacity: 0.20;
+  opacity: 0.30;
 
-  background-image:
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='1.2' opacity='.75'%3E%3Cpath d='M70 55 C45 25 5 48 25 78 C45 108 75 92 70 55Z'/%3E%3Cpath d='M70 55 C72 20 112 20 113 55 C114 90 82 91 70 55Z'/%3E%3Cpath d='M70 55 C100 45 125 70 105 92 C85 114 63 90 70 55Z'/%3E%3Cpath d='M70 55 C40 48 22 76 43 96 C64 116 79 88 70 55Z'/%3E%3Ccircle cx='70' cy='55' r='7'/%3E%3Cpath d='M70 62 C68 100 55 125 30 142'/%3E%3Cpath d='M55 90 C30 78 14 92 25 108 C38 124 54 109 55 90Z'/%3E%3Cpath d='M65 100 C90 82 110 94 100 112 C90 130 70 119 65 100Z'/%3E%3Cpath d='M285 240 C260 210 220 233 240 263 C260 293 290 277 285 240Z'/%3E%3Cpath d='M285 240 C287 205 327 205 328 240 C329 275 297 276 285 240Z'/%3E%3Cpath d='M285 240 C315 230 340 255 320 277 C300 299 278 275 285 240Z'/%3E%3Cpath d='M285 240 C255 233 237 261 258 281 C279 301 294 273 285 240Z'/%3E%3Ccircle cx='285' cy='240' r='7'/%3E%3Cpath d='M285 247 C283 285 270 310 245 327'/%3E%3Cpath d='M270 275 C245 263 229 277 240 293 C253 309 269 294 270 275Z'/%3E%3Cpath d='M280 285 C305 267 325 279 315 297 C305 315 285 304 280 285Z'/%3E%3Cpath d='M175 25 C160 5 135 18 145 38 C155 58 178 49 175 25Z'/%3E%3Cpath d='M175 25 C178 3 203 4 204 25 C205 46 184 47 175 25Z'/%3E%3Cpath d='M175 25 C195 18 210 35 197 48 C184 61 170 43 175 25Z'/%3E%3Cpath d='M175 25 C155 20 142 38 155 50 C168 62 180 43 175 25Z'/%3E%3Ccircle cx='175' cy='25' r='5'/%3E%3Cpath d='M175 30 C173 55 165 70 150 82'/%3E%3Cpath d='M185 65 C205 52 220 62 212 76 C204 90 188 82 185 65Z'/%3E%3Cpath d='M170 58 C150 50 138 62 146 76 C155 89 170 79 170 58Z'/%3E%3C/g%3E%3Cg fill='%23d4af37' opacity='.18'%3E%3Ccircle cx='20' cy='200' r='2'/%3E%3Ccircle cx='120' cy='145' r='2'/%3E%3Ccircle cx='220' cy='90' r='2'/%3E%3Ccircle cx='335' cy='160' r='2'/%3E%3Ccircle cx='155' cy='320' r='2'/%3E%3C/g%3E%3C/svg%3E");
 
-    /* small floral circles */
-    radial-gradient(
-      circle at 20px 20px,
-      transparent 0 7px,
-      rgba(231, 189, 85, 0.30) 7px 8px,
-      transparent 8px 15px
-    ),
+  background-repeat: repeat;
+  background-size: 360px 360px;
 
-    radial-gradient(
-      circle at 45px 45px,
-      transparent 0 6px,
-      rgba(231, 189, 85, 0.22) 6px 7px,
-      transparent 7px 16px
-    ),
-
-    /* diagonal flower pattern */
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 48px,
-      rgba(231, 189, 85, 0.035) 49px,
-      transparent 50px
-    );
-
-  background-size:
-    90px 90px,
-    110px 110px,
-    180px 180px;
-
-  background-position:
-    0 0,
-    45px 45px,
-    0 0;
+  background-position: center top;
 
   mix-blend-mode: screen;
 }
 
 
 /* =========================================================
-   EXTRA FLORAL ORNAMENT
+   EXTRA SUBTLE TEXTURE
    ========================================================= */
 
 body::after {
   content: "";
+
   position: fixed;
   inset: 0;
 
   pointer-events: none;
+
   z-index: 0;
 
   opacity: 0.16;
 
   background-image:
-    radial-gradient(
-      ellipse 45px 70px at 50% 50%,
-      transparent 58%,
-      rgba(231, 189, 85, 0.32) 60%,
-      transparent 63%
+    repeating-linear-gradient(
+      115deg,
+      rgba(255, 255, 255, 0.012) 0px,
+      rgba(255, 255, 255, 0.012) 1px,
+      transparent 1px,
+      transparent 5px
     ),
-    radial-gradient(
-      ellipse 45px 70px at 50% 50%,
-      transparent 58%,
-      rgba(231, 189, 85, 0.26) 60%,
-      transparent 63%
-    ),
-    radial-gradient(
-      circle at center,
-      rgba(231, 189, 85, 0.32) 0 3px,
-      transparent 4px
+    repeating-linear-gradient(
+      25deg,
+      rgba(0, 0, 0, 0.018) 0px,
+      rgba(0, 0, 0, 0.018) 1px,
+      transparent 1px,
+      transparent 7px
     );
 
-  background-size:
-    90px 90px,
-    90px 90px,
-    90px 90px;
-
-  background-position:
-    0 0,
-    45px 45px,
-    0 0;
-
-  background-repeat: repeat;
+  background-size: auto;
 }
 
 
 /* =========================================================
-   KEEP CONTENT ABOVE BACKGROUND DESIGN
+   KEEP WEBSITE CONTENT ABOVE BACKGROUND DESIGN
    ========================================================= */
 
 .topbar,
 .navbar,
 .hero,
-.intro,
+section,
 .section,
-.offer,
 .map-section,
 .contact,
 footer {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 
@@ -252,6 +228,7 @@ p {
 
 .topbar {
   background: #002e2a;
+
   color: var(--gold-light);
 
   text-align: center;
@@ -259,6 +236,7 @@ p {
   padding: 10px 15px;
 
   font-size: 13px;
+
   letter-spacing: 1px;
 
   border-bottom: 1px solid var(--border);
@@ -272,7 +250,6 @@ p {
 .navbar {
   position: sticky;
   top: 0;
-
   z-index: 1000;
 
   display: flex;
@@ -327,6 +304,7 @@ p {
   color: var(--text);
 
   font-size: 14px;
+
   font-weight: 600;
 
   transition: 0.3s ease;
@@ -367,71 +345,20 @@ p {
   overflow: hidden;
 
   display: flex;
+
   align-items: center;
-
-  background-color: var(--green);
 }
-
-
-/* Floral design specifically inside HERO */
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;
-  pointer-events: none;
-
-  opacity: 0.24;
-
-  background-image:
-
-    radial-gradient(
-      ellipse 35px 55px at 50% 50%,
-      transparent 55%,
-      rgba(231, 189, 85, 0.38) 57%,
-      transparent 60%
-    ),
-
-    radial-gradient(
-      ellipse 35px 55px at 50% 50%,
-      transparent 55%,
-      rgba(231, 189, 85, 0.30) 57%,
-      transparent 60%
-    ),
-
-    radial-gradient(
-      circle at center,
-      rgba(231, 189, 85, 0.45) 0 2px,
-      transparent 3px
-    );
-
-  background-size:
-    110px 110px,
-    110px 110px,
-    110px 110px;
-
-  background-position:
-    0 0,
-    55px 55px,
-    0 0;
-}
-
-
-/* =========================================================
-   HERO SLIDER
-   ========================================================= */
 
 .hero-slider {
   position: absolute;
   inset: 0;
 
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-slide {
   position: absolute;
+
   inset: 0;
 
   width: 100%;
@@ -448,16 +375,10 @@ p {
   opacity: 1;
 }
 
-
-/* =========================================================
-   HERO OVERLAY
-   ========================================================= */
-
 .hero-overlay {
   position: absolute;
-  inset: 0;
 
-  z-index: 1;
+  inset: 0;
 
   background:
     linear-gradient(
@@ -466,12 +387,9 @@ p {
       rgba(0, 45, 41, 0.75) 45%,
       rgba(0, 45, 41, 0.25) 100%
     );
+
+  z-index: 2;
 }
-
-
-/* =========================================================
-   HERO CONTENT
-   ========================================================= */
 
 .hero-content {
   position: relative;
@@ -511,56 +429,6 @@ p {
   gap: 18px;
 
   flex-wrap: wrap;
-}
-
-
-/* =========================================================
-   HIDE SLIDER ARROWS
-   Photos continue changing automatically
-   ========================================================= */
-
-.slider-arrow {
-  display: none !important;
-}
-
-
-/* =========================================================
-   SLIDER DOTS
-   ========================================================= */
-
-.dots {
-  position: absolute;
-
-  bottom: 25px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  display: flex;
-
-  gap: 9px;
-
-  z-index: 5;
-}
-
-.dots button {
-  width: 9px;
-  height: 9px;
-
-  padding: 0;
-
-  border-radius: 50%;
-
-  border: none;
-
-  background: rgba(255, 255, 255, 0.45);
-
-  cursor: pointer;
-}
-
-.dots button.active {
-  background: var(--gold);
 }
 
 
@@ -641,6 +509,85 @@ p {
 
 
 /* =========================================================
+   SLIDER BUTTONS
+   ========================================================= */
+
+.slider-arrow {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: rgba(0, 61, 55, 0.75);
+
+  color: var(--gold-light);
+
+  border: 1px solid var(--gold);
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.slider-arrow:hover {
+  background: var(--gold);
+
+  color: var(--green);
+}
+
+.slider-arrow.left {
+  left: 20px;
+}
+
+.slider-arrow.right {
+  right: 20px;
+}
+
+.dots {
+  position: absolute;
+
+  bottom: 25px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  gap: 8px;
+
+  z-index: 5;
+}
+
+.dots button {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(255, 255, 255, 0.4);
+
+  cursor: pointer;
+}
+
+.dots button.active {
+  background: var(--gold);
+}
+
+
+/* =========================================================
    INTRO
    ========================================================= */
 
@@ -648,8 +595,6 @@ p {
   text-align: center;
 
   padding: 100px 10%;
-
-  background: transparent;
 }
 
 .intro h2 {
@@ -685,67 +630,6 @@ p {
   justify-content: center;
 
   text-align: center;
-}
-
-
-/* =========================================================
-   SECTIONS FLORAL SIDE DESIGN
-   ========================================================= */
-
-.section::before,
-.map-section::before,
-.contact::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  z-index: 0;
-
-  opacity: 0.19;
-
-  background-image:
-
-    radial-gradient(
-      ellipse 40px 62px at 50% 50%,
-      transparent 57%,
-      rgba(231, 189, 85, 0.38) 59%,
-      transparent 62%
-    ),
-
-    radial-gradient(
-      ellipse 40px 62px at 50% 50%,
-      transparent 57%,
-      rgba(231, 189, 85, 0.30) 59%,
-      transparent 62%
-    ),
-
-    radial-gradient(
-      circle at center,
-      rgba(231, 189, 85, 0.4) 0 3px,
-      transparent 4px
-    );
-
-  background-size:
-    120px 120px,
-    120px 120px,
-    120px 120px;
-
-  background-position:
-    0 0,
-    60px 60px,
-    0 0;
-}
-
-.section > *,
-.map-section > *,
-.contact > * {
-  position: relative;
-
-  z-index: 1;
 }
 
 
@@ -935,8 +819,6 @@ p {
    ========================================================= */
 
 .offer {
-  position: relative;
-
   margin: 40px 5%;
 
   padding: 70px;
@@ -962,41 +844,10 @@ p {
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.25);
-
-  overflow: hidden;
-}
-
-
-/* Offer floral decoration */
-
-.offer::before {
-  content: "";
-
-  position: absolute;
-
-  width: 350px;
-  height: 350px;
-
-  right: -120px;
-  top: -120px;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(231, 189, 85, 0.15);
-
-  box-shadow:
-    0 0 0 30px rgba(231, 189, 85, 0.04),
-    0 0 0 60px rgba(231, 189, 85, 0.03),
-    0 0 0 90px rgba(231, 189, 85, 0.02);
-
-  pointer-events: none;
 }
 
 .offer h2 {
   color: var(--gold-light);
-
-  position: relative;
-  z-index: 2;
 }
 
 
@@ -1143,6 +994,7 @@ p {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 }
 
@@ -1190,8 +1042,6 @@ p {
 
 .map-section {
   padding: 90px 5%;
-
-  position: relative;
 }
 
 .map-heading {
@@ -1232,8 +1082,6 @@ p {
 
 .contact {
   text-align: center;
-
-  position: relative;
 }
 
 .contact-grid {
@@ -1322,13 +1170,11 @@ p {
   z-index: 999;
 
   width: 64px;
-
   height: 64px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   background: #18a957;
@@ -1369,57 +1215,15 @@ footer {
     );
 
   border-top: 1px solid var(--border);
-
-  position: relative;
-
-  overflow: hidden;
-}
-
-
-/* Footer decorative floral rings */
-
-footer::before,
-footer::after {
-  content: "";
-
-  position: absolute;
-
-  width: 250px;
-  height: 250px;
-
-  border-radius: 50%;
-
-  border: 1px solid rgba(231, 189, 85, 0.15);
-
-  box-shadow:
-    0 0 0 25px rgba(231, 189, 85, 0.035),
-    0 0 0 50px rgba(231, 189, 85, 0.025);
-
-  pointer-events: none;
-}
-
-footer::before {
-  left: -100px;
-  bottom: -120px;
-}
-
-footer::after {
-  right: -100px;
-  bottom: -120px;
 }
 
 footer img {
   width: 70px;
-
   height: 70px;
 
   object-fit: contain;
 
   margin: 0 auto 15px;
-
-  position: relative;
-
-  z-index: 2;
 }
 
 footer p {
@@ -1430,10 +1234,6 @@ footer p {
   font-size: 24px;
 
   font-weight: 700;
-
-  position: relative;
-
-  z-index: 2;
 }
 
 footer p span {
@@ -1444,10 +1244,6 @@ footer small {
   color: var(--muted);
 
   line-height: 2;
-
-  position: relative;
-
-  z-index: 2;
 }
 
 
@@ -1471,7 +1267,7 @@ footer small {
 
 
 /* =========================================================
-   TABLET
+   MOBILE - TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
@@ -1502,6 +1298,12 @@ footer small {
    ========================================================= */
 
 @media (max-width: 700px) {
+
+  /* Keep floral design visible on mobile */
+  body::before {
+    opacity: 0.24;
+    background-size: 260px 260px;
+  }
 
   .navbar {
     padding: 12px 5%;
@@ -1606,26 +1408,10 @@ footer small {
 
   .floating-whatsapp {
     width: 56px;
-
     height: 56px;
 
     right: 18px;
-
     bottom: 18px;
-  }
-
-
-  /* Mobile floral design slightly lighter */
-  body::before {
-    opacity: 0.14;
-  }
-
-  body::after {
-    opacity: 0.11;
-  }
-
-  .hero::before {
-    opacity: 0.16;
   }
 }
 
@@ -1642,7 +1428,6 @@ footer small {
 
   .brand img {
     width: 45px;
-
     height: 45px;
   }
 
@@ -1661,29 +1446,9 @@ footer small {
   .contact-actions a {
     width: 100%;
   }
-}
 
-
-/* =========================================================
-   IMPORTANT
-   REMOVE OLD GOLD LEAF ELEMENTS
-   ========================================================= */
-
-.leaf-decoration,
-.leaf-1,
-.leaf-2,
-.leaf-3,
-.leaf-4 {
-  display: none !important;
-}
-
-
-/* =========================================================
-   KEEP SLIDER ARROWS HIDDEN
-   ========================================================= */
-
-.slider-arrow,
-.slider-arrow.left,
-.slider-arrow.right {
-  display: none !important;
+  body::before {
+    opacity: 0.20;
+    background-size: 220px 220px;
+  }
 }
