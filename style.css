@@ -1,19 +1,13 @@
 /* =========================================================
    SHIVAM IMITATION
-   COMPLETE STYLE.CSS
-   DARK TEAL + GOLD
-   SUBTLE GOLD FLORAL BACKGROUND
-   ========================================================= */
-
-/* =========================================================
-   GOOGLE FONTS
+   EXACT DARK TEAL + GOLD FLORAL DESIGN
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 
 /* =========================================================
-   ROOT COLORS
+   ROOT
    ========================================================= */
 
 :root {
@@ -23,15 +17,15 @@
   --green-card: #004841;
   --green-light: #07564e;
 
-  --gold: #e7bd55;
-  --gold-light: #f3d77b;
-  --gold-dark: #c99b32;
+  --gold: #d4a936;
+  --gold-light: #f3cf68;
+  --gold-dark: #9d7620;
 
   --white: #fffdf7;
-  --text: #e9e5d8;
-  --muted: #b8c7c3;
+  --text: #f1eee4;
+  --muted: #c2cbc7;
 
-  --border: rgba(231, 189, 85, 0.38);
+  --border: rgba(212, 169, 54, 0.48);
   --shadow: rgba(0, 0, 0, 0.35);
 }
 
@@ -56,63 +50,46 @@ body {
   overflow-x: hidden;
 
   font-family: "DM Sans", sans-serif;
-
   color: var(--text);
-  background-color: var(--green);
 
-  /*
-    BASIC DARK TEAL BACKGROUND
-    Floral design is added below.
-  */
+  background-color: #003d37;
+
+  /* DARK TEAL BASE */
   background-image:
     linear-gradient(
       135deg,
-      #003d37 0%,
-      #003a34 45%,
-      #00332e 100%
+      #003f39 0%,
+      #003b35 45%,
+      #002f2b 100%
     );
-
-  background-attachment: fixed;
 }
 
 
 /* =========================================================
-   MAIN GOLD FLORAL BACKGROUND
-   EXACTLY SUBTLE - DOES NOT CHANGE COLORS
+   MAIN FLORAL DESIGN
+   THIS IS THE DESIGN YOU SHOWED IN THE PHOTO
    ========================================================= */
 
 body::before {
   content: "";
-  position: fixed;
 
+  position: fixed;
   inset: 0;
 
-  width: 100%;
-  height: 100%;
-
+  z-index: 0;
   pointer-events: none;
 
-  /*
-    VERY IMPORTANT:
-    Pattern stays behind website content.
-  */
-  z-index: 0;
+  opacity: 0.42;
 
-  opacity: 0.34;
-
-  background-image:
-
-    /* FLOWER / LINE PATTERN */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.15' opacity='.70'%3E%3Cpath d='M25 105 C48 70 82 62 105 84 C124 102 114 130 88 134 C62 138 45 117 56 96 C67 76 96 79 109 98 C122 117 115 143 94 158 C68 177 39 166 25 143 C15 126 17 113 25 105Z'/%3E%3Cpath d='M72 105 C84 90 102 89 113 101 C122 111 118 126 105 131 C91 136 79 127 82 114 C85 102 99 99 109 107 C119 115 117 130 107 140'/%3E%3Cpath d='M255 35 C276 5 309 0 330 20 C347 36 339 62 315 67 C290 72 272 54 281 34 C290 15 316 14 329 31 C342 48 335 72 315 88 C291 106 262 96 249 75 C239 59 244 45 255 35Z'/%3E%3Cpath d='M303 42 C315 27 333 26 344 37 C353 46 349 60 337 65 C324 70 312 61 314 50 C316 39 329 37 338 44 C347 51 345 64 336 74'/%3E%3Cpath d='M325 225 C350 190 383 186 404 207 C421 224 412 252 387 258 C362 264 343 245 352 224 C361 204 388 204 401 222 C414 240 407 266 386 282 C361 301 332 290 319 267 C309 249 313 235 325 225Z'/%3E%3Cpath d='M373 231 C386 215 404 216 414 228 C422 238 418 252 406 257 C394 262 383 253 385 242 C387 231 400 229 409 236 C418 243 416 256 407 265'/%3E%3Cpath d='M40 300 C60 272 89 268 108 285 C123 299 117 321 96 326 C75 331 60 316 68 298 C76 281 98 281 109 296 C120 311 114 333 96 345 C75 360 51 353 40 334 C31 319 33 308 40 300Z'/%3E%3Cpath d='M85 304 C96 291 111 291 120 301 C128 310 124 322 113 326 C102 330 93 322 95 313 C97 304 108 302 116 308 C124 314 122 325 114 333'/%3E%3Cpath d='M190 150 C208 125 234 122 251 137 C265 150 259 170 241 174 C223 178 209 164 216 149 C223 134 242 134 252 147 C262 160 257 179 241 190 C222 204 200 198 190 181 C182 168 184 158 190 150Z'/%3E%3Cpath d='M224 155 C234 143 248 144 256 153 C263 161 260 172 250 176 C240 180 232 173 234 165 C236 157 246 155 253 160 C260 165 259 176 252 183'/%3E%3Cpath d='M145 360 C164 334 189 330 207 345 C221 358 215 378 197 383 C179 388 165 374 172 359 C179 344 198 344 208 357 C218 370 213 389 197 400 C177 414 154 406 145 390 C137 378 139 368 145 360Z'/%3E%3C/g%3E%3Cg fill='none' stroke='%23e7bd55' stroke-width='.8' opacity='.45'%3E%3Cpath d='M145 65 C160 47 180 45 193 57 C204 68 199 84 184 88 C169 92 158 80 163 68 C168 56 184 56 193 66 C202 76 198 91 185 101'/%3E%3Cpath d='M35 210 C49 192 67 190 79 201 C89 211 85 225 72 229 C58 233 48 222 52 211 C56 200 70 199 78 207 C86 215 83 229 72 238'/%3E%3Cpath d='M280 135 C293 117 311 115 324 126 C334 136 330 151 317 155 C303 159 293 148 297 137 C301 126 315 125 324 133 C333 141 329 155 318 164'/%3E%3Cpath d='M220 310 C235 290 255 288 269 301 C280 312 275 329 260 333 C245 337 234 325 239 312 C244 299 260 299 269 310 C278 321 274 337 261 347'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'%3E%3Cg fill='none' stroke='%23c79b32' stroke-width='1.2' opacity='.72'%3E%3Ccircle cx='90' cy='95' r='42'/%3E%3Ccircle cx='90' cy='95' r='17'/%3E%3Cpath d='M90 42c-9 17-28 19-32 3 15 1 27-6 32-20 5 14 17 21 32 20-4 16-23 14-32-3z'/%3E%3Cpath d='M143 95c-17-9-19-28-3-32-1 15 6 27 20 32-14 5-21 17-20 32-16-4-14-23-32-32z'/%3E%3Cpath d='M90 148c9-17 28-19 32-3-15-1-27 6-32 20-5-14-17-21-32-20 4-16 23-14 32 3z'/%3E%3Cpath d='M37 95c17 9 19 28 3 32 1-15-6-27-20-32 14-5 21-17 20-32 16 4 14 23 32 32z'/%3E%3Cpath d='M53 58c18 5 28-5 25-18 14 8 17 23 5 34 14-1 26 8 27 22-17-7-30 2-30 16-12-8-25-20-27-34z'/%3E%3Cpath d='M127 58c-18 5-28-5-25-18-14 8-17 23-5 34-14-1-26 8-27 22 17-7 30 2 30 16 12-8 25-20 27-34z'/%3E%3Cpath d='M53 132c18-5 28 5 25 18 14-8 17-23 5-34 14 1 26-8 27-22-17 7-30-2-30-16-12 8-25 20-27 34z'/%3E%3Cpath d='M127 132c-18-5-28 5-25 18-14-8-17-23-5-34-14 1-26-8-27-22 17 7 30-2 30-16 12 8 25 20 27 34z'/%3E%3Ccircle cx='300' cy='285' r='54'/%3E%3Ccircle cx='300' cy='285' r='20'/%3E%3Cpath d='M300 218c-10 22-34 25-40 5 19 2 33-8 40-27 7 19 21 29 40 27-6 20-30 17-40-5z'/%3E%3Cpath d='M367 285c-22-10-25-34-5-40-2 19 8 33 27 40-19 7-29 21-27 40-20-6-17-30 5-40z'/%3E%3Cpath d='M300 352c10-22 34-25 40-5-19-2-33 8-40 27-7-19-21-29-40-27 6-20 30-17 40 5z'/%3E%3Cpath d='M233 285c22 10 25 34 5 40 2-19-8-33-27-40 19-7 29-21 27-40 20 6 17 30-5 40z'/%3E%3Cpath d='M262 246c20 7 31-5 27-20 17 9 21 28 6 41 17-2 31 9 32 26-20-8-35 3-36 20-14-10-27-25-29-42z'/%3E%3Cpath d='M338 246c-20 7-31-5-27-20-17 9-21 28-6 41-17-2-31 9-32 26 20-8 35 3 36 20 14-10 27-25 29-42z'/%3E%3Cpath d='M262 324c20-7 31 5 27 20 17-9 21-28 6-41 17 2 31-9 32-26-20 8-35-3-36-20-14 10-27 25-29 42z'/%3E%3Cpath d='M338 324c-20-7-31 5-27 20-17-9-21-28-6-41-17 2-31-9-32-26 20 8 35-3 36-20 14 10 27 25 29 42z'/%3E%3C/g%3E%3C/svg%3E");
 
   background-repeat: repeat;
   background-size: 420px 420px;
-  background-position: center top;
 }
 
 
 /* =========================================================
-   SOFT GOLD DUST
+   SECOND SUBTLE GOLD PATTERN
    ========================================================= */
 
 body::after {
@@ -121,51 +98,40 @@ body::after {
   position: fixed;
   inset: 0;
 
-  pointer-events: none;
-
   z-index: 0;
+  pointer-events: none;
 
   opacity: 0.16;
 
   background-image:
     radial-gradient(
-      circle at 10% 20%,
-      rgba(231, 189, 85, 0.55) 0 1px,
+      circle at 20% 30%,
+      rgba(212,169,54,0.5) 0 1.5px,
       transparent 2px
     ),
     radial-gradient(
-      circle at 75% 35%,
-      rgba(231, 189, 85, 0.40) 0 1px,
-      transparent 2px
-    ),
-    radial-gradient(
-      circle at 35% 75%,
-      rgba(231, 189, 85, 0.40) 0 1px,
+      circle at 75% 70%,
+      rgba(212,169,54,0.45) 0 1.3px,
       transparent 2px
     );
 
-  background-size:
-    95px 95px,
-    130px 130px,
-    160px 160px;
+  background-size: 150px 150px, 190px 190px;
 }
 
 
 /* =========================================================
-   ALL CONTENT ABOVE BACKGROUND
+   KEEP WEBSITE CONTENT ABOVE DESIGN
    ========================================================= */
 
 .topbar,
 .navbar,
+main,
+section,
+footer,
 .hero,
-.intro,
-.section,
 .offer,
-.about,
-.instagram-section,
-.map-section,
 .contact,
-footer {
+.map-section {
   position: relative;
   z-index: 1;
 }
@@ -198,13 +164,10 @@ section {
 }
 
 .eyebrow {
-  color: var(--gold);
-
+  color: var(--gold-light);
   font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 4px;
-
   margin-bottom: 16px;
 }
 
@@ -236,18 +199,12 @@ p {
    ========================================================= */
 
 .topbar {
-  background: rgba(0, 46, 42, 0.97);
-
+  background: rgba(0, 46, 42, 0.96);
   color: var(--gold-light);
-
   text-align: center;
-
   padding: 10px 15px;
-
   font-size: 13px;
-
   letter-spacing: 1px;
-
   border-bottom: 1px solid var(--border);
 }
 
@@ -259,7 +216,6 @@ p {
 .navbar {
   position: sticky;
   top: 0;
-
   z-index: 1000;
 
   display: flex;
@@ -268,8 +224,7 @@ p {
 
   padding: 14px 5%;
 
-  background: rgba(0, 50, 46, 0.96);
-
+  background: rgba(0, 50, 46, 0.97);
   backdrop-filter: blur(14px);
 
   border-bottom: 1px solid var(--border);
@@ -282,21 +237,17 @@ p {
 }
 
 .brand img {
-  width: 52px;
-  height: 52px;
-
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-
   border-radius: 50%;
 }
 
 .brand span {
   font-family: "Playfair Display", serif;
-
-  font-size: 21px;
-
-  color: var(--gold);
-
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold-light);
   letter-spacing: 1px;
 }
 
@@ -307,37 +258,32 @@ p {
 .navbar nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 30px;
 }
 
 .navbar nav a {
   color: var(--text);
-
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-
   transition: 0.3s ease;
 }
 
 .navbar nav a:hover {
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .menu-btn {
   display: none;
 
   border: 1px solid var(--gold);
-
   background: transparent;
 
-  color: var(--gold);
+  color: var(--gold-light);
 
   font-size: 24px;
-
   padding: 5px 10px;
 
   border-radius: 8px;
-
   cursor: pointer;
 }
 
@@ -347,49 +293,26 @@ p {
    ========================================================= */
 
 .hero {
-  min-height: 85vh;
+  min-height: 550px;
+  height: 78vh;
 
   position: relative;
-
   overflow: hidden;
 
   display: flex;
-
   align-items: center;
-}
 
-/* Hero also gets the same floral design */
-.hero::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  pointer-events: none;
-
-  opacity: 0.22;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1.1' opacity='.75'%3E%3Cpath d='M30 110c22-31 48-35 65-19 14 14 7 34-11 38-20 4-34-10-27-25 7-15 26-14 37-2 11 12 7 31-8 43-19 16-42 10-52-7-8-13-9-20-4-28Z'/%3E%3Cpath d='M230 40c18-25 40-30 56-15 13 12 7 31-10 36-19 5-33-10-25-25 8-15 27-14 38-2 11 12 7 32-8 44-18 15-42 9-51-9-7-13-6-21 0-29Z'/%3E%3Cpath d='M245 230c19-28 43-33 60-17 14 13 7 34-12 39-21 5-35-11-27-27 8-16 29-15 41-2 12 13 8 34-9 47-20 16-45 9-54-10-7-13-6-22 1-30Z'/%3E%3Cpath d='M45 270c16-23 36-28 51-14 12 11 6 29-10 33-17 4-29-9-23-22 6-13 24-12 34-1 10 11 6 29-8 40-17 14-38 8-46-7-7-12-6-21 2-29Z'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-repeat: repeat;
-
-  background-size: 330px 330px;
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-slider {
   position: absolute;
   inset: 0;
-
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-slide {
   position: absolute;
-
   inset: 0;
 
   width: 100%;
@@ -398,7 +321,6 @@ p {
   object-fit: cover;
 
   opacity: 0;
-
   transition: opacity 0.8s ease;
 }
 
@@ -406,35 +328,53 @@ p {
   opacity: 1;
 }
 
+
+/* DARK OVERLAY */
 .hero-overlay {
   position: absolute;
-
   inset: 0;
-
-  z-index: 1;
+  z-index: 2;
 
   background:
     linear-gradient(
       90deg,
-      rgba(0, 45, 41, 0.94) 0%,
-      rgba(0, 45, 41, 0.75) 45%,
-      rgba(0, 45, 41, 0.25) 100%
+      rgba(0, 47, 43, 0.95) 0%,
+      rgba(0, 47, 43, 0.78) 40%,
+      rgba(0, 47, 43, 0.20) 100%
     );
 }
 
+
+/* FLORAL DESIGN OVER HERO */
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+  pointer-events: none;
+
+  opacity: 0.32;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23d4a936' stroke-width='1.1' opacity='.8'%3E%3Ccircle cx='180' cy='180' r='38'/%3E%3Ccircle cx='180' cy='180' r='10'/%3E%3Cpath d='M180 130c-8 18-25 20-30 4 14 1 24-6 30-21 6 15 16 22 30 21-5 16-22 14-30-4z'/%3E%3Cpath d='M230 180c-18-8-20-25-4-30-1 14 6 24 21 30-15 6-22 16-21 30-16-5-14-22 4-30z'/%3E%3Cpath d='M180 230c8-18 25-20 30-4-14-1-24 6-30 21-6-15-16-22-30-21 5-16 22-14 30 4z'/%3E%3Cpath d='M130 180c18 8 20 25 4 30 1-14-6-24-21-30 15-6 22-16 21-30 16 5 14 22-4 30z'/%3E%3Cpath d='M148 148c16 5 24-4 21-17 13 7 17 22 5 33 13-1 25 7 26 20-16-6-28 2-29 15-11-8-21-20-23-34z'/%3E%3Cpath d='M212 148c-16 5-24-4-21-17-13 7-17 22-5 33-13-1-25 7-26 20 16-6 28 2 29 15 11-8 21-20 23-34z'/%3E%3Cpath d='M148 212c16-5 24 4 21 17 13-7 17-22 5-33 13 1 25-7 26-20-16 6-28-2-29-15-11 8-21 20-23 34z'/%3E%3Cpath d='M212 212c-16-5-24 4-21 17-13-7-17-22-5-33-13 1-25-7-26-20 16 6 28-2 29-15 11 8 21 20 23 34z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+  background-size: 360px 360px;
+}
+
+
+/* HERO CONTENT */
 .hero-content {
   position: relative;
-
-  z-index: 3;
+  z-index: 5;
 
   width: 55%;
-
   padding: 80px 6%;
 }
 
 .hero-content h1 {
   font-size: clamp(52px, 7vw, 95px);
-
   line-height: 0.98;
 
   margin-bottom: 25px;
@@ -448,17 +388,13 @@ p {
   color: var(--text);
 
   font-size: 18px;
-
   margin-bottom: 32px;
 }
 
 .hero-actions {
   display: flex;
-
   align-items: center;
-
   gap: 18px;
-
   flex-wrap: wrap;
 }
 
@@ -469,7 +405,6 @@ p {
 
 .gold-btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
@@ -485,13 +420,11 @@ p {
   color: #183a35;
 
   border: 1px solid var(--gold-light);
-
   border-radius: 999px;
 
   font-weight: 700;
 
-  box-shadow:
-    0 10px 25px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 
   transition: all 0.3s ease;
 }
@@ -505,7 +438,6 @@ p {
 
 .text-link {
   color: var(--gold-light);
-
   font-weight: 700;
 }
 
@@ -515,18 +447,15 @@ p {
 
 .outline-btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
   padding: 14px 25px;
 
   border: 1px solid var(--gold);
-
   color: var(--gold-light);
 
   border-radius: 999px;
-
   font-weight: 700;
 
   transition: 0.3s ease;
@@ -534,22 +463,19 @@ p {
 
 .outline-btn:hover {
   background: var(--gold);
-
   color: #003d37;
 }
 
 
 /* =========================================================
-   SLIDER BUTTONS
+   SLIDER
    ========================================================= */
 
 .slider-arrow {
   position: absolute;
-
-  z-index: 5;
+  z-index: 10;
 
   top: 50%;
-
   transform: translateY(-50%);
 
   width: 48px;
@@ -566,13 +492,11 @@ p {
   font-size: 30px;
 
   cursor: pointer;
-
   transition: 0.3s ease;
 }
 
 .slider-arrow:hover {
   background: var(--gold);
-
   color: var(--green);
 }
 
@@ -588,16 +512,14 @@ p {
   position: absolute;
 
   bottom: 25px;
-
   left: 50%;
 
   transform: translateX(-50%);
 
   display: flex;
-
   gap: 8px;
 
-  z-index: 5;
+  z-index: 10;
 }
 
 .dots button {
@@ -605,16 +527,15 @@ p {
   height: 9px;
 
   border-radius: 50%;
-
   border: none;
 
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.55);
 
   cursor: pointer;
 }
 
 .dots button.active {
-  background: var(--gold);
+  background: var(--gold-light);
 }
 
 
@@ -623,38 +544,29 @@ p {
    ========================================================= */
 
 .intro {
+  position: relative;
+
   text-align: center;
 
-  padding: 100px 10%;
+  padding: 80px 10%;
 
-  overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 
 .intro::before {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
-  z-index: 0;
+  z-index: -1;
 
-  pointer-events: none;
+  opacity: 0.34;
 
-  opacity: 0.20;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='340'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M60 120c15-22 34-25 47-12 11 10 5 26-9 30-15 4-27-8-21-21 6-13 22-12 32-1 10 11 6 27-7 37-16 13-36 7-43-8-6-11-5-18 1-25Z'/%3E%3Cpath d='M250 240c16-23 35-27 49-14 11 11 6 27-9 31-16 4-28-9-22-22 6-13 23-12 33-1 10 11 6 28-8 39-17 14-37 8-44-8-6-12-5-19 1-25Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%23c79b32' stroke-width='1.1' opacity='.7'%3E%3Ccircle cx='70' cy='70' r='38'/%3E%3Ccircle cx='70' cy='70' r='12'/%3E%3Cpath d='M70 20c-7 16-23 19-29 5 14 1 23-7 29-20 6 13 15 21 29 20-6 14-22 11-29-5zM120 70c-16-7-19-23-5-29-1 14 7 23 20 29-13 6-21 15-20 29-14-6-11-22-5-29zM70 120c7-16 23-19 29-5-14-1-23 7-29 20-6-13-15-21-29-20 6-14 22-11 29 5zM20 70c16 7 19 23 5 29 1-14-7-23-20-29 13-6 21-15 20-29 14 6 11 22-5 29z'/%3C/g%3E%3C/svg%3E");
 
   background-repeat: repeat;
-
-  background-size: 340px 340px;
-}
-
-.intro > * {
-  position: relative;
-
-  z-index: 2;
+  background-size: 500px 500px;
 }
 
 .intro h2 {
@@ -663,9 +575,7 @@ p {
 
 .intro p:last-child {
   max-width: 760px;
-
   margin: auto;
-
   color: var(--muted);
 }
 
@@ -678,17 +588,14 @@ p {
   display: flex;
 
   align-items: flex-end;
-
   justify-content: space-between;
 
   gap: 30px;
-
   margin-bottom: 45px;
 }
 
 .section-heading.center {
   justify-content: center;
-
   text-align: center;
 }
 
@@ -710,8 +617,8 @@ p {
   background:
     linear-gradient(
       145deg,
-      rgba(0, 72, 65, 0.92),
-      rgba(0, 47, 43, 0.97)
+      rgba(0, 72, 65, 0.94),
+      rgba(0, 47, 43, 0.98)
     );
 
   border: 1px solid var(--border);
@@ -737,9 +644,7 @@ p {
 
 .card > img {
   width: 100%;
-
   height: 280px;
-
   object-fit: cover;
 }
 
@@ -749,19 +654,14 @@ p {
 
 .card-body span {
   color: var(--gold);
-
   font-size: 11px;
-
   font-weight: 700;
-
   letter-spacing: 2px;
 }
 
 .card-body h3 {
   color: var(--gold-light);
-
   font-size: 22px;
-
   margin: 9px 0 18px;
 }
 
@@ -779,7 +679,6 @@ p {
   border-radius: 999px;
 
   cursor: pointer;
-
   font-weight: 700;
 
   transition: 0.3s ease;
@@ -787,7 +686,6 @@ p {
 
 .card-body button:hover {
   background: var(--gold);
-
   color: var(--green);
 }
 
@@ -832,13 +730,10 @@ p {
 
 .category-overlay {
   position: absolute;
-
   inset: 0;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: flex-end;
 
   padding: 25px;
@@ -852,23 +747,18 @@ p {
 
 .category-overlay span {
   color: var(--gold);
-
   font-weight: 700;
-
   font-size: 12px;
 }
 
 .category-overlay h3 {
   color: var(--gold-light);
-
   font-size: 25px;
-
   margin: 5px 0;
 }
 
 .category-overlay p {
   color: var(--text);
-
   font-size: 13px;
 }
 
@@ -896,40 +786,12 @@ p {
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 
   gap: 30px;
 
   box-shadow:
     0 20px 50px rgba(0,0,0,0.25);
-
-  position: relative;
-
-  overflow: hidden;
-}
-
-.offer::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  pointer-events: none;
-
-  opacity: 0.16;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M30 100c18-27 40-30 55-15 12 12 6 30-10 34-18 4-31-10-24-24 7-14 27-13 38 0 11 13 7 32-8 44-19 15-42 8-51-9-7-13-6-22 0-30Z'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-size: 320px 320px;
-}
-
-.offer > * {
-  position: relative;
-
-  z-index: 2;
 }
 
 .offer h2 {
@@ -973,7 +835,6 @@ p {
 
 .about-copy p {
   color: var(--muted);
-
   margin-bottom: 18px;
 }
 
@@ -990,7 +851,6 @@ p {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 30px;
@@ -998,7 +858,7 @@ p {
   padding: 35px;
 
   background:
-    rgba(0, 72, 65, 0.7);
+    rgba(0,72,65,0.78);
 
   border: 1px solid var(--border);
 
@@ -1016,7 +876,7 @@ p {
 }
 
 .stars {
-  color: var(--gold);
+  color: var(--gold-light);
 
   font-size: 25px;
 
@@ -1025,7 +885,6 @@ p {
 
 .rating-highlight p {
   color: var(--muted);
-
   margin-bottom: 15px;
 }
 
@@ -1127,40 +986,10 @@ p {
 
 .map-section {
   padding: 90px 5%;
-
-  position: relative;
-
-  overflow: hidden;
-}
-
-.map-section::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 0;
-
-  pointer-events: none;
-
-  opacity: 0.18;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='350'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M25 110c20-29 45-34 62-18 14 13 7 33-11 38-20 5-35-10-27-26 8-16 29-15 41-1 12 14 8 34-9 47-21 16-47 9-57-10-7-13-6-22 1-30Z'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-size: 350px 350px;
-}
-
-.map-section > * {
-  position: relative;
-
-  z-index: 2;
 }
 
 .map-heading {
   text-align: center;
-
   margin-bottom: 35px;
 }
 
@@ -1185,10 +1014,7 @@ p {
 
 .map-wrapper iframe {
   width: 100%;
-
   display: block;
-
-  border: 0;
 }
 
 
@@ -1198,35 +1024,6 @@ p {
 
 .contact {
   text-align: center;
-
-  position: relative;
-
-  overflow: hidden;
-}
-
-.contact::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 0;
-
-  pointer-events: none;
-
-  opacity: 0.17;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='330' height='330'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M40 120c18-25 40-30 56-15 13 12 7 31-10 36-19 5-33-10-26-25 7-15 28-14 39 0 11 14 7 33-9 45-20 15-43 8-52-10-7-13-6-22 2-31Z'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-size: 330px 330px;
-}
-
-.contact > * {
-  position: relative;
-
-  z-index: 2;
 }
 
 .contact-grid {
@@ -1246,8 +1043,8 @@ p {
   background:
     linear-gradient(
       145deg,
-      rgba(0, 76, 69, 0.92),
-      rgba(0, 49, 45, 0.96)
+      rgba(0,76,69,0.92),
+      rgba(0,49,45,0.96)
     );
 
   border: 1px solid var(--border);
@@ -1259,7 +1056,6 @@ p {
 
 .contact-card:hover {
   transform: translateY(-5px);
-
   border-color: var(--gold);
 }
 
@@ -1287,7 +1083,7 @@ p {
 }
 
 .contact-card a:hover {
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .contact-actions {
@@ -1302,14 +1098,13 @@ p {
 
 
 /* =========================================================
-   FLOATING WHATSAPP
+   WHATSAPP
    ========================================================= */
 
 .floating-whatsapp {
   position: fixed;
 
   right: 25px;
-
   bottom: 25px;
 
   z-index: 9999;
@@ -1348,6 +1143,8 @@ p {
    ========================================================= */
 
 footer {
+  position: relative;
+
   text-align: center;
 
   padding: 60px 20px 35px;
@@ -1361,8 +1158,6 @@ footer {
 
   border-top: 1px solid var(--border);
 
-  position: relative;
-
   overflow: hidden;
 }
 
@@ -1370,28 +1165,25 @@ footer::before {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
+  opacity: 0.28;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%23c79b32' stroke-width='1'%3E%3Ccircle cx='200' cy='200' r='40'/%3E%3Ccircle cx='200' cy='200' r='12'/%3E%3Cpath d='M200 145c-8 18-25 21-31 5 15 1 25-7 31-22 6 15 16 23 31 22-6 16-23 13-31-5zM255 200c-18-8-21-25-5-31-1 15 7 25 22 31-15 6-23 16-22 31-16-6-13-23-5-31zM200 255c8-18 25-21 31-5-15-1-25 7-31 22-6-15-16-23-31-22 6-16 23-13 31 5zM145 200c18 8 21 25 5 31 1-15-7-25-22-31 15-6 23-16 22-31 16 6 13 23-5 31z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+  background-size: 400px 400px;
+
   pointer-events: none;
-
-  opacity: 0.16;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='350' height='350'%3E%3Cg fill='none' stroke='%23c99b32' stroke-width='1'%3E%3Cpath d='M40 110c20-29 45-34 62-18 14 13 7 33-11 38-20 5-35-10-27-26 8-16 29-15 41-1 12 14 8 34-9 47-21 16-47 9-57-10-7-13-6-22 1-30Z'/%3E%3C/g%3E%3C/svg%3E");
-
-  background-size: 350px 350px;
 }
 
 footer > * {
   position: relative;
-
   z-index: 2;
 }
 
 footer img {
   width: 70px;
-
   height: 70px;
 
   object-fit: contain;
@@ -1415,8 +1207,39 @@ footer p span {
 
 footer small {
   color: var(--muted);
-
   line-height: 2;
+}
+
+
+/* =========================================================
+   SECTION FLORAL DESIGN
+   ========================================================= */
+
+.section::before,
+.map-section::before,
+.contact::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  opacity: 0.25;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='520' viewBox='0 0 520 520'%3E%3Cg fill='none' stroke='%23c79b32' stroke-width='1.1' opacity='.75'%3E%3Ccircle cx='70' cy='450' r='48'/%3E%3Ccircle cx='70' cy='450' r='15'/%3E%3Cpath d='M70 385c-10 20-30 23-37 5 17 1 29-8 37-26 8 18 20 27 37 26-7 18-27 15-37-5zM135 450c-20-10-23-30-5-37-1 17 8 29 26 37-18 8-27 20-26 37-18-7-15-27-5-37zM70 515c10-20 30-23 37-5-17-1-29 8-37 26-8-18-20-27-37-26 7-18 27-15 37 5zM5 450c20 10 23 30 5 37 1-17-8-29-26-37 18-8 27-20 26-37 18 7 15 27-5 37z'/%3E%3Ccircle cx='455' cy='70' r='50'/%3E%3Ccircle cx='455' cy='70' r='15'/%3E%3Cpath d='M455 5c-10 20-30 23-37 5 17 1 29-8 37-26 8 18 20 27 37 26-7 18-27 15-37-5zM520 70c-20-10-23-30-5-37-1 17 8 29 26 37-18 8-27 20-26 37-18-7-15-27-5-37zM455 135c10-20 30-23 37-5-17-1-29 8-37 26-8-18-20-27-37-26 7-18 27-15 37 5zM390 70c20 10 23 30 5 37 1-17-8-29-26-37 18-8 27-20 26-37 18 7 15 27-5 37z'/%3E%3C/g%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+  background-size: 520px 520px;
+}
+
+.section > *,
+.map-section > *,
+.contact > * {
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -1440,19 +1263,17 @@ footer small {
 
 
 /* =========================================================
-   MOBILE - TABLET
+   TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
 
   .products {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .category-grid {
-    grid-template-columns:
-      repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .hero-content {
@@ -1463,6 +1284,7 @@ footer small {
   .instagram-section {
     grid-template-columns: 1fr;
   }
+
 }
 
 
@@ -1472,18 +1294,17 @@ footer small {
 
 @media (max-width: 700px) {
 
-  body::before {
-    background-size: 280px 280px;
-
-    opacity: 0.27;
-  }
-
-  body::after {
-    opacity: 0.10;
-  }
-
   .navbar {
     padding: 12px 5%;
+  }
+
+  .brand img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand span {
+    font-size: 18px;
   }
 
   .menu-btn {
@@ -1494,14 +1315,12 @@ footer small {
     position: absolute;
 
     top: 100%;
-
     left: 0;
     right: 0;
 
     display: none;
 
     flex-direction: column;
-
     align-items: flex-start;
 
     padding: 25px;
@@ -1516,23 +1335,17 @@ footer small {
   }
 
   .hero {
-    min-height: 720px;
-  }
-
-  .hero::before {
-    background-size: 240px 240px;
-
-    opacity: 0.18;
+    min-height: 680px;
+    height: 720px;
   }
 
   .hero-content {
     width: 100%;
-
     padding: 60px 7%;
   }
 
   .hero-content h1 {
-    font-size: 55px;
+    font-size: 52px;
   }
 
   .hero-text {
@@ -1545,7 +1358,6 @@ footer small {
 
   .section-heading {
     align-items: flex-start;
-
     flex-direction: column;
   }
 
@@ -1554,8 +1366,7 @@ footer small {
   }
 
   .category-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .category-card {
@@ -1564,11 +1375,9 @@ footer small {
 
   .offer {
     margin: 20px 5%;
-
     padding: 40px 25px;
 
     flex-direction: column;
-
     align-items: flex-start;
   }
 
@@ -1581,8 +1390,7 @@ footer small {
   }
 
   .instagram-cards {
-    grid-template-columns:
-      repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .map-wrapper iframe {
@@ -1596,6 +1404,7 @@ footer small {
     right: 18px;
     bottom: 18px;
   }
+
 }
 
 
@@ -1606,7 +1415,7 @@ footer small {
 @media (max-width: 450px) {
 
   .brand span {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .brand img {
@@ -1615,7 +1424,7 @@ footer small {
   }
 
   .hero-content h1 {
-    font-size: 45px;
+    font-size: 44px;
   }
 
   .category-grid {
@@ -1629,14 +1438,5 @@ footer small {
   .contact-actions a {
     width: 100%;
   }
+
 }
-
-
-/* =========================================================
-   IMPORTANT:
-   NO SEPARATE GOLD LEAVES
-   NO EXTRA CORNERS
-   NO COLOR CHANGE
-   NO LAYOUT CHANGE
-   ONLY SUBTLE FLORAL GOLD BACKGROUND DESIGN
-   ========================================================= */
