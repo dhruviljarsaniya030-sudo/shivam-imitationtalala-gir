@@ -228,9 +228,19 @@
       font-size: 13px;
       color: #f3d77b;
     }
-  </style>
 
+    .next-name {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(231, 189, 85, 0.10);
+      color: #f3d77b;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 
 <body>
 
@@ -369,7 +379,7 @@
         placeholder="Example: Premium imitation jewellery"></textarea>
 
 
-      <!-- ================= IMAGE UPLOAD ================= -->
+      <!-- ================= IMAGE ================= -->
 
       <label for="productImage">
         Product Image *
@@ -383,15 +393,24 @@
           accept="image/jpeg,image/png,image/webp">
 
         <div class="small">
-          📷 Computerમાંથી સીધી product photo select કરો.
+          📷 Computerમાંથી સીધી product photo પસંદ કરો.
           <br>
-          JPG, PNG અથવા WEBP.
+          URL નાખવાની જરૂર નથી.
         </div>
 
       </div>
 
 
-      <!-- IMAGE PREVIEW -->
+      <div
+        id="nextProductName"
+        class="next-name">
+
+        Checking next image number...
+
+      </div>
+
+
+      <!-- PREVIEW -->
 
       <div id="imagePreview" class="preview">
 
@@ -403,7 +422,7 @@
       </div>
 
 
-      <!-- UPLOAD PROGRESS -->
+      <!-- PROGRESS -->
 
       <div id="progressBox" class="progress-box">
 
@@ -427,7 +446,7 @@
       </div>
 
 
-      <!-- ADD PRODUCT -->
+      <!-- ADD -->
 
       <button
         id="addProductButton"
@@ -451,8 +470,6 @@
       </button>
 
 
-      <!-- MESSAGE -->
-
       <div
         id="productMessage"
         class="message">
@@ -474,7 +491,6 @@
     } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-
     import {
       getAuth,
       signInWithEmailAndPassword,
@@ -483,15 +499,14 @@
     } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-
     import {
       getFirestore,
       collection,
       addDoc,
+      getDocs,
       serverTimestamp
     } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
 
     import {
       getStorage,
@@ -502,9 +517,7 @@
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
 
 
-    /* =====================================================
-       FIREBASE CONFIG
-       ===================================================== */
+    /* ================= FIREBASE CONFIG ================= */
 
     const firebaseConfig = {
 
@@ -532,37 +545,28 @@
     };
 
 
-    /* =====================================================
-       INITIALIZE
-       ===================================================== */
+    /* ================= INITIALIZE ================= */
 
     const app =
       initializeApp(firebaseConfig);
 
-
     const auth =
       getAuth(app);
 
-
     const db =
       getFirestore(app);
-
 
     const storage =
       getStorage(app);
 
 
-    /* =====================================================
-       ADMIN EMAIL
-       ===================================================== */
+    /* ================= ADMIN ================= */
 
     const ADMIN_EMAIL =
       "dhruviljarsaniya030@gmail.com";
 
 
-    /* =====================================================
-       MESSAGE
-       ===================================================== */
+    /* ================= MESSAGE ================= */
 
     function showMessage(
       elementId,
@@ -579,7 +583,31 @@
 
       element.className =
         "message " + type;
+    }
 
+
+    /* ================= ERROR ================= */
+
+    function getFirebaseErrorMessage(error) {
+
+      if (!error) {
+        return "Unknown error.";
+      }
+
+      if (error.code) {
+
+        return (
+          error.code +
+          " — " +
+          (error.message || "")
+        );
+
+      }
+
+      return (
+        error.message ||
+        "Unknown error."
+      );
     }
 
 
@@ -615,7 +643,6 @@
           );
 
           return;
-
         }
 
 
@@ -631,7 +658,6 @@
           );
 
           return;
-
         }
 
 
@@ -660,12 +686,6 @@
 
         catch (error) {
 
-          console.error(
-            "LOGIN ERROR:",
-            error
-          );
-
-
           showMessage(
             "loginMessage",
             "❌ Login Error: " +
@@ -681,38 +701,9 @@
 
           button.textContent =
             "🔐 Login";
-
         }
 
       };
-
-
-    /* =====================================================
-       FIREBASE ERROR
-       ===================================================== */
-
-    function getFirebaseErrorMessage(error) {
-
-      if (!error) {
-        return "Unknown error.";
-      }
-
-      if (error.code) {
-
-        return (
-          error.code +
-          " — " +
-          (error.message || "")
-        );
-
-      }
-
-      return (
-        error.message ||
-        "Unknown Firebase error."
-      );
-
-    }
 
 
     /* =====================================================
@@ -748,6 +739,8 @@
             adminPanel.style.display =
               "block";
 
+            findNextProductNumber();
+
           }
 
           else {
@@ -759,13 +752,6 @@
 
             adminPanel.style.display =
               "none";
-
-            showMessage(
-              "loginMessage",
-              "This account is not authorized.",
-              "error"
-            );
-
           }
 
         }
@@ -777,7 +763,6 @@
 
           adminPanel.style.display =
             "none";
-
         }
 
       }
@@ -785,17 +770,125 @@
 
 
     /* =====================================================
+       FIND NEXT PRODUCT NUMBER
+       ===================================================== */
+
+    async function findNextProductNumber() {
+
+      try {
+
+        const snapshot =
+          await getDocs(
+            collection(
+              db,
+              "products"
+            )
+          );
+
+
+        let highestNumber = 10;
+
+
+        snapshot.forEach(
+          function (doc) {
+
+            const data =
+              doc.data();
+
+
+            /*
+              જો Firestoreમાં imageName હોય
+              તો તેમાંથી number શોધશે.
+            */
+
+            if (data.imageName) {
+
+              const match =
+                String(
+                  data.imageName
+                ).match(
+                  /product-(\d+)/i
+                );
+
+
+              if (match) {
+
+                const number =
+                  Number(match[1]);
+
+
+                if (
+                  number > highestNumber
+                ) {
+
+                  highestNumber =
+                    number;
+
+                }
+
+              }
+
+            }
+
+          }
+        );
+
+
+        const nextNumber =
+          highestNumber + 1;
+
+
+        window.nextProductNumber =
+          nextNumber;
+
+
+        document.getElementById(
+          "nextProductName"
+        ).textContent =
+          "📁 Next image: product-" +
+          nextNumber +
+          ".jpg";
+
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "NUMBER ERROR:",
+          error
+        );
+
+
+        window.nextProductNumber =
+          11;
+
+
+        document.getElementById(
+          "nextProductName"
+        ).textContent =
+          "📁 Next image: product-11.jpg";
+
+      }
+
+    }
+
+
+    /* =====================================================
        IMAGE PREVIEW
        ===================================================== */
 
     document
-      .getElementById("productImage")
+      .getElementById(
+        "productImage"
+      )
       .addEventListener(
         "change",
         function () {
 
           const file =
             this.files[0];
+
 
           const preview =
             document.getElementById(
@@ -814,14 +907,13 @@
               "none";
 
             return;
-
           }
 
 
-          /* IMAGE TYPE CHECK */
-
           if (
-            !file.type.startsWith("image/")
+            !file.type.startsWith(
+              "image/"
+            )
           ) {
 
             this.value = "";
@@ -831,19 +923,17 @@
 
             showMessage(
               "productMessage",
-              "❌ Please select an image file.",
+              "❌ Please select an image.",
               "error"
             );
 
             return;
-
           }
 
 
-          /* SIZE CHECK - 10 MB */
-
           if (
-            file.size > 10 * 1024 * 1024
+            file.size >
+            10 * 1024 * 1024
           ) {
 
             this.value = "";
@@ -858,17 +948,11 @@
             );
 
             return;
-
           }
 
 
-          const imageURL =
-            URL.createObjectURL(file);
-
-
           image.src =
-            imageURL;
-
+            URL.createObjectURL(file);
 
           preview.style.display =
             "block";
@@ -936,12 +1020,11 @@
 
           showMessage(
             "productMessage",
-            "⚠️ Please fill all product details and select an image.",
+            "⚠️ Please fill all details and select an image.",
             "error"
           );
 
           return;
-
         }
 
 
@@ -961,7 +1044,6 @@
           );
 
           return;
-
         }
 
 
@@ -974,30 +1056,13 @@
           );
 
           return;
-
-        }
-
-
-        if (
-          !auth.currentUser.email ||
-          auth.currentUser.email.toLowerCase() !==
-          ADMIN_EMAIL.toLowerCase()
-        ) {
-
-          showMessage(
-            "productMessage",
-            "❌ You are not authorized.",
-            "error"
-          );
-
-          return;
-
         }
 
 
         try {
 
-          button.disabled = true;
+          button.disabled =
+            true;
 
           button.textContent =
             "Uploading...";
@@ -1010,30 +1075,64 @@
           );
 
 
-          /* =================================================
-             CREATE UNIQUE IMAGE NAME
-             ================================================= */
+          /* =============================================
+             GET NEXT NUMBER AGAIN
+             ============================================= */
 
-          const safeName =
-            name
-              .replace(
-                /[^a-zA-Z0-9-_]/g,
-                "-"
-              )
-              .toLowerCase();
+          await findNextProductNumber();
 
 
-          const fileName =
-            Date.now() +
-            "-" +
-            safeName +
-            "-" +
-            file.name;
+          const number =
+            window.nextProductNumber || 11;
+
+
+          /*
+            File extension
+            */
+
+          let extension =
+            "jpg";
+
+
+          if (
+            file.type ===
+            "image/png"
+          ) {
+
+            extension =
+              "png";
+
+          }
+
+          else if (
+            file.type ===
+            "image/webp"
+          ) {
+
+            extension =
+              "webp";
+
+          }
+
+
+          /*
+            EXACT FILE NAME
+
+            product-11.jpg
+            product-12.jpg
+            etc.
+          */
+
+          const imageName =
+            "product-" +
+            number +
+            "." +
+            extension;
 
 
           const storagePath =
             "products/" +
-            fileName;
+            imageName;
 
 
           const storageRef =
@@ -1043,9 +1142,9 @@
             );
 
 
-          /* =================================================
-             UPLOAD IMAGE
-             ================================================= */
+          /* =============================================
+             UPLOAD
+             ============================================= */
 
           const uploadTask =
             uploadBytesResumable(
@@ -1114,9 +1213,9 @@
           );
 
 
-          /* =================================================
-             GET IMAGE URL
-             ================================================= */
+          /* =============================================
+             GET DOWNLOAD URL
+             ============================================= */
 
           const imageURL =
             await getDownloadURL(
@@ -1124,15 +1223,9 @@
             );
 
 
-          console.log(
-            "IMAGE URL:",
-            imageURL
-          );
-
-
-          /* =================================================
-             SAVE PRODUCT IN FIRESTORE
-             ================================================= */
+          /* =============================================
+             SAVE FIRESTORE
+             ============================================= */
 
           const productData = {
 
@@ -1150,6 +1243,9 @@
 
             image:
               imageURL,
+
+            imageName:
+              imageName,
 
             createdAt:
               serverTimestamp()
@@ -1173,11 +1269,14 @@
           );
 
 
-          /* SUCCESS */
+          /* =============================================
+             SUCCESS
+             ============================================= */
 
           showMessage(
             "productMessage",
-            "✅ Product added successfully!",
+            "✅ Product added successfully as " +
+            imageName,
             "success"
           );
 
@@ -1225,6 +1324,22 @@
             "progressBar"
           ).style.width =
             "0%";
+
+
+          /*
+            Next number બતાવો
+          */
+
+          window.nextProductNumber =
+            number + 1;
+
+
+          document.getElementById(
+            "nextProductName"
+          ).textContent =
+            "📁 Next image: product-" +
+            (number + 1) +
+            ".jpg";
 
         }
 
