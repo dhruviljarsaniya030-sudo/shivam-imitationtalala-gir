@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <title>Admin Panel | Shivam Imitation</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #003d37;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 650px;
+      margin: auto;
+      padding: 30px 18px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      color: #f3d77b;
+      font-size: 30px;
+    }
+
+    .logo p {
+      margin: 6px 0 0;
+      color: #ddd;
+    }
+
+    .card {
+      background: #002f2b;
+      border: 1px solid rgba(231, 189, 85, 0.4);
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #f3d77b;
+    }
+
+    label {
+      display: block;
+      margin: 16px 0 7px;
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid rgba(231, 189, 85, 0.35);
+      background: #003d37;
+      color: #fff;
+      outline: none;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aebbb8;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 14px;
+      border: none;
+      border-radius: 9px;
+      background: #e7bd55;
+      color: #002f2b;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #f3d77b;
+    }
+
+    .logout {
+      background: transparent;
+      color: #f3d77b;
+      border: 1px solid #e7bd55;
+      margin-top: 12px;
+    }
+
+    .message {
+      display: none;
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .success {
+      display: block;
+      background: rgba(50, 180, 100, 0.18);
+      color: #9ff0bd;
+    }
+
+    .error {
+      display: block;
+      background: rgba(220, 60, 60, 0.18);
+      color: #ffaaaa;
+    }
+
+    .preview {
+      margin-top: 15px;
+      text-align: center;
+      display: none;
+    }
+
+    .preview img {
+      max-width: 220px;
+      max-height: 220px;
+      border-radius: 12px;
+      border: 1px solid #e7bd55;
+      object-fit: cover;
+    }
+
+    .admin-panel {
+      display: none;
+    }
+
+    .login-panel {
+      display: block;
+    }
+
+    .small {
+      color: #aebbb8;
+      font-size: 13px;
+      margin-top: 7px;
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="container">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="logo">
+
+      <h1>SHIVAM IMITATION</h1>
+
+      <p>Admin Product Panel</p>
+
+    </div>
+
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <div
+      id="loginPanel"
+      class="card login-panel">
+
+      <h2>Admin Login</h2>
+
+      <label for="loginEmail">
+        Email
+      </label>
+
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="Enter admin email">
+
+
+      <label for="loginPassword">
+        Password
+      </label>
+
+      <input
+        type="password"
+        id="loginPassword"
+        placeholder="Enter password">
+
+
+      <button
+        type="button"
+        onclick="loginAdmin()">
+
+        🔐 Login
+
+      </button>
+
+
+      <div
+        id="loginMessage"
+        class="message">
+      </div>
+
+    </div>
+
+
+
+    <!-- ================= ADMIN PANEL ================= -->
+
+    <div
+      id="adminPanel"
+      class="card admin-panel">
+
+      <h2>Add New Product</h2>
+
+
+      <!-- PRODUCT NAME -->
+
+      <label for="productName">
+        Product Name
+      </label>
+
+      <input
+        type="text"
+        id="productName"
+        placeholder="Example: Royal Green Drop Set">
+
+
+
+      <!-- PRICE -->
+
+      <label for="productPrice">
+        Price
+      </label>
+
+      <input
+        type="number"
+        id="productPrice"
+        placeholder="Example: 499"
+        min="0">
+
+
+
+      <!-- CATEGORY -->
+
+      <label for="productCategory">
+        Category
+      </label>
+
+      <select id="productCategory">
+
+        <option value="">
+          Select Category
+        </option>
+
+        <option value="Necklaces">
+          Necklaces
+        </option>
+
+        <option value="Bridal">
+          Bridal
+        </option>
+
+        <option value="Traditional">
+          Traditional
+        </option>
+
+        <option value="Daily Wear">
+          Daily Wear
+        </option>
+
+        <option value="Bracelets">
+          Bracelets
+        </option>
+
+        <option value="Novelties">
+          Novelties
+        </option>
+
+      </select>
+
+
+
+      <!-- DESCRIPTION -->
+
+      <label for="productDescription">
+        Description
+      </label>
+
+      <textarea
+        id="productDescription"
+        placeholder="Example: Premium imitation jewellery">
+      </textarea>
+
+
+
+      <!-- IMAGE URL -->
+
+      <label for="productImage">
+        Product Image URL
+      </label>
+
+      <input
+        type="url"
+        id="productImage"
+        placeholder="Paste GitHub raw image URL">
+
+      <div class="small">
+        Example: https://raw.githubusercontent.com/...
+      </div>
+
+
+
+      <!-- IMAGE PREVIEW -->
+
+      <div
+        id="imagePreview"
+        class="preview">
+
+        <img
+          id="previewImage"
+          src=""
+          alt="Product Preview">
+
+      </div>
+
+
+
+      <!-- ADD PRODUCT -->
+
+      <button
+        id="addProductButton"
+        type="button"
+        onclick="addProduct()">
+
+        ➕ Add Product
+
+      </button>
+
+
+
+      <!-- LOGOUT -->
+
+      <button
+        type="button"
+        class="logout"
+        onclick="logoutAdmin()">
+
+        Logout
+
+      </button>
+
+
+      <div
+        id="productMessage"
+        class="message">
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       FIREBASE
+       ===================================================== -->
+
+  <script type="module">
+
+    import {
+      initializeApp
+    } from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+    import {
+      getAuth,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      signOut
+    } from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+    import {
+      getFirestore,
+      collection,
+      addDoc
+    } from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+
+    /* ================= FIREBASE CONFIG ================= */
+
+    const firebaseConfig = {
+
+      apiKey:
+        "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
+
+      authDomain:
+        "shivam-imitation.firebaseapp.com",
+
+      projectId:
+        "shivam-imitation",
+
+      storageBucket:
+        "shivam-imitation.firebasestorage.app",
+
+      messagingSenderId:
+        "625171137884",
+
+      appId:
+        "1:625171137884:web:d1928af5e11fad077e6d99",
+
+      measurementId:
+        "G-ER1ETZSLPD"
+
+    };
+
+
+
+    /* ================= INITIALIZE ================= */
+
+    const app =
+      initializeApp(
+        firebaseConfig
+      );
+
+
+    const auth =
+      getAuth(app);
+
+
+    const db =
+      getFirestore(app);
+
+
+
+    /* ================= ADMIN EMAIL ================= */
+
+    const ADMIN_EMAIL =
+      "dhruviljarsaniya030@gmail.com";
+
+
+
+    /* =====================================================
+       LOGIN
+       ===================================================== */
+
+    window.loginAdmin =
+      async function () {
+
+        const email =
+          document.getElementById(
+            "loginEmail"
+          ).value.trim();
+
+
+        const password =
+          document.getElementById(
+            "loginPassword"
+          ).value;
+
+
+        const message =
+          document.getElementById(
+            "loginMessage"
+          );
+
+
+        message.className =
+          "message";
+
+
+        if (!email || !password) {
+
+          message.textContent =
+            "Please enter email and password.";
+
+          message.classList.add(
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        if (
+          email.toLowerCase() !==
+          ADMIN_EMAIL.toLowerCase()
+        ) {
+
+          message.textContent =
+            "This email is not authorized.";
+
+          message.classList.add(
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        try {
+
+          await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+
+        }
+
+        catch (error) {
+
+          console.error(
+            error
+          );
+
+
+          message.textContent =
+            "Login failed. Check your email and password.";
+
+          message.classList.add(
+            "error"
+          );
+
+        }
+
+      };
+
+
+
+    /* =====================================================
+       AUTH STATE
+       ===================================================== */
+
+    onAuthStateChanged(
+      auth,
+      function (user) {
+
+        const loginPanel =
+          document.getElementById(
+            "loginPanel"
+          );
+
+
+        const adminPanel =
+          document.getElementById(
+            "adminPanel"
+          );
+
+
+        if (user) {
+
+          if (
+            user.email.toLowerCase() ===
+            ADMIN_EMAIL.toLowerCase()
+          ) {
+
+            loginPanel.style.display =
+              "none";
+
+            adminPanel.style.display =
+              "block";
+
+          }
+
+          else {
+
+            signOut(auth);
+
+          }
+
+        }
+
+        else {
+
+          loginPanel.style.display =
+            "block";
+
+          adminPanel.style.display =
+            "none";
+
+        }
+
+      }
+    );
+
+
+
+    /* =====================================================
+       IMAGE PREVIEW
+       ===================================================== */
+
+    document
+      .getElementById("productImage")
+      .addEventListener(
+        "input",
+        function () {
+
+          const url =
+            this.value.trim();
+
+
+          const preview =
+            document.getElementById(
+              "imagePreview"
+            );
+
+
+          const image =
+            document.getElementById(
+              "previewImage"
+            );
+
+
+          if (url) {
+
+            image.src =
+              url;
+
+            preview.style.display =
+              "block";
+
+          }
+
+          else {
+
+            preview.style.display =
+              "none";
+
+          }
+
+        }
+      );
+
+
+
+    /* =====================================================
+       ADD PRODUCT
+       ===================================================== */
+
+    window.addProduct =
+      async function () {
+
+        const name =
+          document.getElementById(
+            "productName"
+          ).value.trim();
+
+
+        const price =
+          document.getElementById(
+            "productPrice"
+          ).value.trim();
+
+
+        const category =
+          document.getElementById(
+            "productCategory"
+          ).value.trim();
+
+
+        const description =
+          document.getElementById(
+            "productDescription"
+          ).value.trim();
+
+
+        const image =
+          document.getElementById(
+            "productImage"
+          ).value.trim();
+
+
+        const message =
+          document.getElementById(
+            "productMessage"
+          );
+
+
+        const button =
+          document.getElementById(
+            "addProductButton"
+          );
+
+
+        message.className =
+          "message";
+
+
+        if (
+          !name ||
+          !price ||
+          !category ||
+          !description ||
+          !image
+        ) {
+
+          message.textContent =
+            "Please fill all product details.";
+
+          message.classList.add(
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        if (!auth.currentUser) {
+
+          message.textContent =
+            "Please login first.";
+
+          message.classList.add(
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        try {
+
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Adding Product...";
+
+
+          await addDoc(
+            collection(
+              db,
+              "products"
+            ),
+            {
+
+              name: name,
+
+              price: Number(price),
+
+              category: category,
+
+              description: description,
+
+              image: image
+
+            }
+          );
+
+
+          message.textContent =
+            "✅ Product added successfully!";
+
+          message.classList.add(
+            "success"
+          );
+
+
+          document
+            .getElementById(
+              "productName"
+            ).value = "";
+
+
+          document
+            .getElementById(
+              "productPrice"
+            ).value = "";
+
+
+          document
+            .getElementById(
+              "productCategory"
+            ).value = "";
+
+
+          document
+            .getElementById(
+              "productDescription"
+            ).value = "";
+
+
+          document
+            .getElementById(
+              "productImage"
+            ).value = "";
+
+
+          document
+            .getElementById(
+              "imagePreview"
+            ).style.display =
+            "none";
+
+
+        }
+
+        catch (error) {
+
+          console.error(
+            error
+          );
+
+
+          message.textContent =
+            "❌ Product could not be added.";
+
+          message.classList.add(
+            "error"
+          );
+
+        }
+
+
+        finally {
+
+          button.disabled =
+            false;
+
+          button.textContent =
+            "➕ Add Product";
+
+        }
+
+      };
+
+
+
+    /* =====================================================
+       LOGOUT
+       ===================================================== */
+
+    window.logoutAdmin =
+      async function () {
+
+        await signOut(
+          auth
+        );
+
+      };
+
+  </script>
+
+</body>
+
+</html>
