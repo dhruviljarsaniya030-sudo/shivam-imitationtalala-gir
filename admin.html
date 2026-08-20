@@ -92,6 +92,11 @@
       color: #fff;
     }
 
+    input[type="file"] {
+      padding: 10px;
+      cursor: pointer;
+    }
+
     button {
       width: 100%;
       margin-top: 22px;
@@ -156,8 +161,8 @@
     }
 
     .preview img {
-      max-width: 220px;
-      max-height: 220px;
+      width: 220px;
+      height: 220px;
       border-radius: 12px;
       border: 1px solid #e7bd55;
       object-fit: cover;
@@ -187,33 +192,59 @@
       color: #9ff0bd;
       font-size: 14px;
     }
+
+    .upload-box {
+      border: 1px dashed rgba(231, 189, 85, 0.6);
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 5px;
+      background: rgba(0, 61, 55, 0.5);
+    }
+
+    .progress-box {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: #003d37;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(231, 189, 85, 0.3);
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #e7bd55;
+      transition: width 0.2s;
+    }
+
+    .progress-text {
+      text-align: center;
+      margin-top: 7px;
+      font-size: 13px;
+      color: #f3d77b;
+    }
   </style>
 
 </head>
-
 
 <body>
 
   <div class="container">
 
-
-    <!-- ================= HEADER ================= -->
-
     <div class="logo">
-
       <h1>SHIVAM IMITATION</h1>
-
       <p>Admin Product Panel</p>
-
     </div>
-
 
 
     <!-- ================= LOGIN ================= -->
 
-    <div
-      id="loginPanel"
-      class="card login-panel">
+    <div id="loginPanel" class="card login-panel">
 
       <h2>🔐 Admin Login</h2>
 
@@ -227,7 +258,6 @@
         placeholder="Enter admin email"
         autocomplete="email">
 
-
       <label for="loginPassword">
         Password
       </label>
@@ -238,7 +268,6 @@
         placeholder="Enter password"
         autocomplete="current-password">
 
-
       <button
         id="loginButton"
         type="button"
@@ -248,21 +277,14 @@
 
       </button>
 
-
-      <div
-        id="loginMessage"
-        class="message">
-      </div>
+      <div id="loginMessage" class="message"></div>
 
     </div>
 
 
-
     <!-- ================= ADMIN PANEL ================= -->
 
-    <div
-      id="adminPanel"
-      class="card admin-panel">
+    <div id="adminPanel" class="card admin-panel">
 
       <div class="status">
         ✅ Admin logged in
@@ -283,7 +305,6 @@
         placeholder="Example: Royal Green Drop Set">
 
 
-
       <!-- PRICE -->
 
       <label for="productPrice">
@@ -293,10 +314,9 @@
       <input
         type="number"
         id="productPrice"
-        placeholder="Example: 499"
+        placeholder="Example: 599"
         min="0"
         step="1">
-
 
 
       <!-- CATEGORY -->
@@ -338,7 +358,6 @@
       </select>
 
 
-
       <!-- DESCRIPTION -->
 
       <label for="productDescription">
@@ -350,30 +369,31 @@
         placeholder="Example: Premium imitation jewellery"></textarea>
 
 
-
-      <!-- IMAGE URL -->
+      <!-- ================= IMAGE UPLOAD ================= -->
 
       <label for="productImage">
-        Product Image URL *
+        Product Image *
       </label>
 
-      <input
-        type="url"
-        id="productImage"
-        placeholder="Paste GitHub raw image URL">
+      <div class="upload-box">
 
-      <div class="small">
-        GitHub image example:<br>
-        https://raw.githubusercontent.com/username/repository/main/product.jpg
+        <input
+          type="file"
+          id="productImage"
+          accept="image/jpeg,image/png,image/webp">
+
+        <div class="small">
+          📷 Computerમાંથી સીધી product photo select કરો.
+          <br>
+          JPG, PNG અથવા WEBP.
+        </div>
+
       </div>
-
 
 
       <!-- IMAGE PREVIEW -->
 
-      <div
-        id="imagePreview"
-        class="preview">
+      <div id="imagePreview" class="preview">
 
         <img
           id="previewImage"
@@ -382,6 +402,29 @@
 
       </div>
 
+
+      <!-- UPLOAD PROGRESS -->
+
+      <div id="progressBox" class="progress-box">
+
+        <div class="progress-bar-bg">
+
+          <div
+            id="progressBar"
+            class="progress-bar">
+          </div>
+
+        </div>
+
+        <div
+          id="progressText"
+          class="progress-text">
+
+          Uploading 0%
+
+        </div>
+
+      </div>
 
 
       <!-- ADD PRODUCT -->
@@ -396,7 +439,6 @@
       </button>
 
 
-
       <!-- LOGOUT -->
 
       <button
@@ -409,7 +451,7 @@
       </button>
 
 
-      <!-- PRODUCT MESSAGE -->
+      <!-- MESSAGE -->
 
       <div
         id="productMessage"
@@ -419,7 +461,6 @@
     </div>
 
   </div>
-
 
 
   <!-- =====================================================
@@ -452,6 +493,14 @@
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
+    import {
+      getStorage,
+      ref,
+      uploadBytesResumable,
+      getDownloadURL
+    } from
+      "https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
+
 
     /* =====================================================
        FIREBASE CONFIG
@@ -483,15 +532,12 @@
     };
 
 
-
     /* =====================================================
-       INITIALIZE FIREBASE
+       INITIALIZE
        ===================================================== */
 
     const app =
-      initializeApp(
-        firebaseConfig
-      );
+      initializeApp(firebaseConfig);
 
 
     const auth =
@@ -502,6 +548,9 @@
       getFirestore(app);
 
 
+    const storage =
+      getStorage(app);
+
 
     /* =====================================================
        ADMIN EMAIL
@@ -511,9 +560,8 @@
       "dhruviljarsaniya030@gmail.com";
 
 
-
     /* =====================================================
-       HELPER - MESSAGE
+       MESSAGE
        ===================================================== */
 
     function showMessage(
@@ -523,23 +571,16 @@
     ) {
 
       const element =
-        document.getElementById(
-          elementId
-        );
-
+        document.getElementById(elementId);
 
       if (!element) return;
 
-
-      element.textContent =
-        text;
-
+      element.textContent = text;
 
       element.className =
         "message " + type;
 
     }
-
 
 
     /* =====================================================
@@ -554,12 +595,10 @@
             "loginEmail"
           ).value.trim();
 
-
         const password =
           document.getElementById(
             "loginPassword"
           ).value;
-
 
         const button =
           document.getElementById(
@@ -598,8 +637,7 @@
 
         try {
 
-          button.disabled =
-            true;
+          button.disabled = true;
 
           button.textContent =
             "Logging in...";
@@ -639,8 +677,7 @@
 
         finally {
 
-          button.disabled =
-            false;
+          button.disabled = false;
 
           button.textContent =
             "🔐 Login";
@@ -650,21 +687,15 @@
       };
 
 
-
     /* =====================================================
-       FIREBASE ERROR MESSAGE
+       FIREBASE ERROR
        ===================================================== */
 
-    function getFirebaseErrorMessage(
-      error
-    ) {
+    function getFirebaseErrorMessage(error) {
 
       if (!error) {
-
         return "Unknown error.";
-
       }
-
 
       if (error.code) {
 
@@ -676,14 +707,12 @@
 
       }
 
-
       return (
         error.message ||
         "Unknown Firebase error."
       );
 
     }
-
 
 
     /* =====================================================
@@ -698,7 +727,6 @@
           document.getElementById(
             "loginPanel"
           );
-
 
         const adminPanel =
           document.getElementById(
@@ -756,28 +784,23 @@
     );
 
 
-
     /* =====================================================
        IMAGE PREVIEW
        ===================================================== */
 
     document
-      .getElementById(
-        "productImage"
-      )
+      .getElementById("productImage")
       .addEventListener(
-        "input",
+        "change",
         function () {
 
-          const url =
-            this.value.trim();
-
+          const file =
+            this.files[0];
 
           const preview =
             document.getElementById(
               "imagePreview"
             );
-
 
           const image =
             document.getElementById(
@@ -785,49 +808,73 @@
             );
 
 
-          if (url) {
-
-            image.src =
-              url;
-
-            preview.style.display =
-              "block";
-
-          }
-
-          else {
+          if (!file) {
 
             preview.style.display =
               "none";
 
+            return;
+
           }
 
+
+          /* IMAGE TYPE CHECK */
+
+          if (
+            !file.type.startsWith("image/")
+          ) {
+
+            this.value = "";
+
+            preview.style.display =
+              "none";
+
+            showMessage(
+              "productMessage",
+              "❌ Please select an image file.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          /* SIZE CHECK - 10 MB */
+
+          if (
+            file.size > 10 * 1024 * 1024
+          ) {
+
+            this.value = "";
+
+            preview.style.display =
+              "none";
+
+            showMessage(
+              "productMessage",
+              "❌ Image must be smaller than 10 MB.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          const imageURL =
+            URL.createObjectURL(file);
+
+
+          image.src =
+            imageURL;
+
+
+          preview.style.display =
+            "block";
+
         }
       );
-
-
-
-    /* =====================================================
-       IMAGE PREVIEW ERROR
-       ===================================================== */
-
-    document
-      .getElementById(
-        "previewImage"
-      )
-      .addEventListener(
-        "error",
-        function () {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Image URL is not loading. Check that it is a public RAW GitHub image URL.",
-            "error"
-          );
-
-        }
-      );
-
 
 
     /* =====================================================
@@ -861,17 +908,20 @@
           ).value.trim();
 
 
-        const image =
+        const imageInput =
           document.getElementById(
             "productImage"
-          ).value.trim();
+          );
+
+
+        const file =
+          imageInput.files[0];
 
 
         const button =
           document.getElementById(
             "addProductButton"
           );
-
 
 
         /* ================= VALIDATION ================= */
@@ -881,12 +931,12 @@
           !priceText ||
           !category ||
           !description ||
-          !image
+          !file
         ) {
 
           showMessage(
             "productMessage",
-            "⚠️ Please fill all product details.",
+            "⚠️ Please fill all product details and select an image.",
             "error"
           );
 
@@ -936,7 +986,7 @@
 
           showMessage(
             "productMessage",
-            "❌ You are not authorized to add products.",
+            "❌ You are not authorized.",
             "error"
           );
 
@@ -945,24 +995,144 @@
         }
 
 
-
-        /* ================= ADD TO FIRESTORE ================= */
-
         try {
 
-          button.disabled =
-            true;
+          button.disabled = true;
 
           button.textContent =
-            "Adding Product...";
+            "Uploading...";
 
 
           showMessage(
             "productMessage",
-            "Please wait...",
+            "📷 Uploading product image...",
             "info"
           );
 
+
+          /* =================================================
+             CREATE UNIQUE IMAGE NAME
+             ================================================= */
+
+          const safeName =
+            name
+              .replace(
+                /[^a-zA-Z0-9-_]/g,
+                "-"
+              )
+              .toLowerCase();
+
+
+          const fileName =
+            Date.now() +
+            "-" +
+            safeName +
+            "-" +
+            file.name;
+
+
+          const storagePath =
+            "products/" +
+            fileName;
+
+
+          const storageRef =
+            ref(
+              storage,
+              storagePath
+            );
+
+
+          /* =================================================
+             UPLOAD IMAGE
+             ================================================= */
+
+          const uploadTask =
+            uploadBytesResumable(
+              storageRef,
+              file
+            );
+
+
+          document.getElementById(
+            "progressBox"
+          ).style.display =
+            "block";
+
+
+          await new Promise(
+            function (
+              resolve,
+              reject
+            ) {
+
+              uploadTask.on(
+
+                "state_changed",
+
+                function (snapshot) {
+
+                  const progress =
+                    Math.round(
+                      (
+                        snapshot.bytesTransferred /
+                        snapshot.totalBytes
+                      ) * 100
+                    );
+
+
+                  document.getElementById(
+                    "progressBar"
+                  ).style.width =
+                    progress + "%";
+
+
+                  document.getElementById(
+                    "progressText"
+                  ).textContent =
+                    "Uploading " +
+                    progress +
+                    "%";
+
+                },
+
+                function (error) {
+
+                  reject(error);
+
+                },
+
+                function () {
+
+                  resolve();
+
+                }
+
+              );
+
+            }
+          );
+
+
+          /* =================================================
+             GET IMAGE URL
+             ================================================= */
+
+          const imageURL =
+            await getDownloadURL(
+              uploadTask.snapshot.ref
+            );
+
+
+          console.log(
+            "IMAGE URL:",
+            imageURL
+          );
+
+
+          /* =================================================
+             SAVE PRODUCT IN FIRESTORE
+             ================================================= */
 
           const productData = {
 
@@ -979,7 +1149,7 @@
               description,
 
             image:
-              image,
+              imageURL,
 
             createdAt:
               serverTimestamp()
@@ -1003,6 +1173,8 @@
           );
 
 
+          /* SUCCESS */
+
           showMessage(
             "productMessage",
             "✅ Product added successfully!",
@@ -1010,7 +1182,7 @@
           );
 
 
-          /* ================= CLEAR FORM ================= */
+          /* CLEAR FORM */
 
           document.getElementById(
             "productName"
@@ -1043,12 +1215,23 @@
             "none";
 
 
+          document.getElementById(
+            "progressBox"
+          ).style.display =
+            "none";
+
+
+          document.getElementById(
+            "progressBar"
+          ).style.width =
+            "0%";
+
         }
 
         catch (error) {
 
           console.error(
-            "FIREBASE ADD PRODUCT ERROR:",
+            "ADD PRODUCT ERROR:",
             error
           );
 
@@ -1075,7 +1258,6 @@
       };
 
 
-
     /* =====================================================
        LOGOUT
        ===================================================== */
@@ -1085,9 +1267,7 @@
 
         try {
 
-          await signOut(
-            auth
-          );
+          await signOut(auth);
 
         }
 
