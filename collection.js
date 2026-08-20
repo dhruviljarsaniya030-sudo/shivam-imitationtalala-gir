@@ -1,222 +1,534 @@
-const products = {
+// =====================================================
+// SHIVAM IMITATION - FIREBASE COLLECTION
+// =====================================================
 
-  necklace: [
-    {
-      image: "product-1.jpg",
-      category: "NECKLACE SET",
-      name: "Royal Green Drop Set"
-    },
-    {
-      image: "product-2.jpg",
-      category: "NECKLACE SET",
-      name: "Elegant Pearl Drop Set"
-    },
-    {
-      image: "product-3.jpg",
-      category: "NECKLACE",
-      name: "Butterfly Charm Necklace"
-    },
-    {
-      image: "product-6.jpg",
-      category: "NECKLACE",
-      name: "Multicolor Stone Necklace"
-    }
-  ],
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-  traditional: [
-    {
-      image: "product-4.jpg",
-      category: "TRADITIONAL",
-      name: "Classic Gold Pendant Set"
-    }
-  ],
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  orderBy
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-  bridal: [
-    {
-      image: "product-5.jpg",
-      category: "BRIDAL STYLE",
-      name: "Heritage Statement Set"
-    }
-  ],
 
-  "daily-wear": [
-    {
-      image: "product-7.jpg",
-      category: "DAILY WEAR",
-      name: "Minimal Rose Pendant"
-    }
-  ],
+// =====================================================
+// FIREBASE CONFIG
+// =====================================================
 
-  bracelet: [
-    {
-      image: "product-8.jpg",
-      category: "BRACELET",
-      name: "Rose Gold Crystal Bracelet"
-    },
-    {
-      image: "product-9.jpg",
-      category: "BRACELET",
-      name: "Black Stone Bracelet"
-    }
-  ],
+const firebaseConfig = {
 
-  novelty: [
-    {
-      image: "product-10.jpg",
-      category: "NOVELTY",
-      name: "Crystal Hair Accessories"
-    }
-  ]
+  apiKey:
+    "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
+
+  authDomain:
+    "shivam-imitation.firebaseapp.com",
+
+  projectId:
+    "shivam-imitation",
+
+  storageBucket:
+    "shivam-imitation.firebasestorage.app",
+
+  messagingSenderId:
+    "625171137884",
+
+  appId:
+    "1:625171137884:web:d1928af5e11fad077e6d99",
+
+  measurementId:
+    "G-ER1ETZSLPD"
 
 };
 
 
-const categoryNames = {
+// =====================================================
+// INITIALIZE FIREBASE
+// =====================================================
 
-  necklace: "Necklace Collection",
+const app =
+  initializeApp(firebaseConfig);
 
-  traditional: "Traditional Collection",
-
-  bridal: "Bridal Collection",
-
-  "daily-wear": "Daily Wear Collection",
-
-  bracelet: "Bracelet Collection",
-
-  novelty: "Novelty Collection"
-
-};
+const db =
+  getFirestore(app);
 
 
-function openCategory(category) {
+// =====================================================
+// ELEMENTS
+// =====================================================
 
-  const productSection =
-    document.getElementById("productSection");
+const productSection =
+  document.getElementById("productSection");
 
-  const productGrid =
-    document.getElementById("productGrid");
+const productGrid =
+  document.getElementById("productGrid");
 
-  const productDetails =
-    document.getElementById("productDetails");
+const productDetails =
+  document.getElementById("productDetails");
 
-  const categoryTitle =
-    document.getElementById("categoryTitle");
+const categoryTitle =
+  document.getElementById("categoryTitle");
 
+const detailImage =
+  document.getElementById("detailImage");
 
-  productDetails.classList.remove("show");
+const detailName =
+  document.getElementById("detailName");
 
-  productSection.classList.add("show");
+const detailCategory =
+  document.getElementById("detailCategory");
 
-
-  categoryTitle.textContent =
-    categoryNames[category];
-
-
-  productGrid.innerHTML = "";
-
-
-  products[category].forEach((product, index) => {
-
-    const card =
-      document.createElement("article");
-
-    card.className =
-      "catalog-product-card";
+const detailWhatsapp =
+  document.getElementById("detailWhatsapp");
 
 
-    card.innerHTML = `
+// =====================================================
+// PRODUCTS
+// =====================================================
 
-      <div class="catalog-product-image">
-
-        <img
-          src="${product.image}"
-          alt="${product.name}">
-
-        <div class="product-view">
-          View Product →
-        </div>
-
-      </div>
-
-      <div class="catalog-product-info">
-
-        <small>
-          ${product.category}
-        </small>
-
-        <h3>
-          ${product.name}
-        </h3>
-
-      </div>
-
-    `;
+let products = [];
 
 
-    card.addEventListener("click", function() {
+// =====================================================
+// LOAD PRODUCTS FROM FIRESTORE
+// =====================================================
 
-      openProduct(
-        category,
-        index
+async function loadProducts() {
+
+  try {
+
+    const productsRef =
+      collection(db, "products");
+
+    let snapshot;
+
+    try {
+
+      const productsQuery =
+        query(
+          productsRef,
+          orderBy("createdAt", "desc")
+        );
+
+      snapshot =
+        await getDocs(
+          productsQuery
+        );
+
+    } catch (error) {
+
+      console.warn(
+        "Sorting unavailable. Loading products normally.",
+        error
       );
 
-    });
+      snapshot =
+        await getDocs(
+          productsRef
+        );
+
+    }
 
 
-    productGrid.appendChild(card);
+    products = [];
 
-  });
+    snapshot.forEach(
+      function (doc) {
+
+        products.push({
+
+          id: doc.id,
+
+          ...doc.data()
+
+        });
+
+      }
+    );
 
 
-  productSection.scrollIntoView({
-    behavior: "smooth"
-  });
+    console.log(
+      "Products loaded:",
+      products
+    );
+
+
+    // Show all products initially
+
+    displayProducts(
+      products,
+      "All Products"
+    );
+
+  }
+
+  catch (error) {
+
+    console.error(
+      "FIREBASE PRODUCTS ERROR:",
+      error
+    );
+
+
+    if (productGrid) {
+
+      productGrid.innerHTML = `
+        <div style="
+          width:100%;
+          text-align:center;
+          padding:40px 20px;
+          color:#d8d8d8;
+        ">
+          <h3>Unable to load products.</h3>
+          <p>
+            Please try again later.
+          </p>
+        </div>
+      `;
+
+    }
+
+  }
 
 }
 
 
-function openProduct(category, index) {
+// =====================================================
+// DISPLAY PRODUCTS
+// =====================================================
 
-  const product =
-    products[category][index];
+function displayProducts(
+  productList,
+  title
+) {
 
-
-  const productSection =
-    document.getElementById("productSection");
-
-  const productDetails =
-    document.getElementById("productDetails");
-
-
-  document.getElementById("detailImage").src =
-    product.image;
+  if (!productGrid) return;
 
 
-  document.getElementById("detailImage").alt =
-    product.name;
+  if (categoryTitle) {
+
+    categoryTitle.textContent =
+      title;
+
+  }
 
 
-  document.getElementById("detailCategory").textContent =
-    product.category;
+  productGrid.innerHTML =
+    "";
 
 
-  document.getElementById("detailName").textContent =
-    product.name;
+  if (!productList.length) {
+
+    productGrid.innerHTML = `
+      <div style="
+        width:100%;
+        text-align:center;
+        padding:50px 20px;
+      ">
+        <h3>
+          No products found
+        </h3>
+
+        <p>
+          New products will be added soon.
+        </p>
+      </div>
+    `;
+
+    return;
+
+  }
 
 
-  const message =
-    "Hello Shivam Imitation, I want to know about " +
-    product.name;
+  productList.forEach(
+    function (product) {
+
+      const card =
+        document.createElement(
+          "article"
+        );
 
 
-  document.getElementById("detailWhatsapp").href =
-    "https://wa.me/919714978206?text=" +
-    encodeURIComponent(message);
+      card.className =
+        "catalog-product-card";
 
 
-  productSection.classList.remove("show");
+      const price =
+        product.price !== undefined &&
+        product.price !== null
+          ? "₹" + product.price
+          : "Price on request";
 
-  productDetails.classList.add("show");
+
+      card.innerHTML = `
+
+        <div class="catalog-product-image">
+
+          <img
+            src="${escapeHTML(product.image || "")}"
+            alt="${escapeHTML(product.name || "Shivam Imitation Product")}"
+            loading="lazy"
+            onerror="this.style.display='none';"
+          >
+
+        </div>
+
+
+        <div class="catalog-product-content">
+
+          <span>
+            ${escapeHTML(product.category || "JEWELLERY")}
+          </span>
+
+          <h3>
+            ${escapeHTML(product.name || "Product")}
+          </h3>
+
+          <p>
+            ${escapeHTML(product.description || "")}
+          </p>
+
+          <div class="catalog-product-bottom">
+
+            <strong>
+              ${price}
+            </strong>
+
+            <button
+              type="button"
+              class="gold-btn product-view-btn">
+
+              View Product
+
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+
+      const viewButton =
+        card.querySelector(
+          ".product-view-btn"
+        );
+
+
+      if (viewButton) {
+
+        viewButton.addEventListener(
+          "click",
+          function () {
+
+            openProduct(
+              product
+            );
+
+          }
+        );
+
+      }
+
+
+      productGrid.appendChild(
+        card
+      );
+
+    }
+  );
+
+
+  if (productSection) {
+
+    productSection.style.display =
+      "block";
+
+  }
+
+}
+
+
+// =====================================================
+// OPEN CATEGORY
+// =====================================================
+
+window.openCategory =
+  function (category) {
+
+    let filtered =
+      [];
+
+
+    const categoryMap = {
+
+      "necklace":
+        "Necklaces",
+
+      "bridal":
+        "Bridal",
+
+      "traditional":
+        "Traditional",
+
+      "daily-wear":
+        "Daily Wear",
+
+      "bracelet":
+        "Bracelets",
+
+      "novelty":
+        "Novelties"
+
+    };
+
+
+    const firebaseCategory =
+      categoryMap[category] ||
+      category;
+
+
+    filtered =
+      products.filter(
+        function (product) {
+
+          return String(
+            product.category || ""
+          ).toLowerCase() ===
+          String(
+            firebaseCategory
+          ).toLowerCase();
+
+        }
+      );
+
+
+    displayProducts(
+      filtered,
+      firebaseCategory
+    );
+
+
+    if (productSection) {
+
+      productSection.scrollIntoView({
+        behavior: "smooth"
+      });
+
+    }
+
+};
+
+
+// =====================================================
+// BACK TO CATEGORIES
+// =====================================================
+
+window.backToCategories =
+  function () {
+
+    if (productSection) {
+
+      productSection.style.display =
+        "none";
+
+    }
+
+
+    if (productDetails) {
+
+      productDetails.style.display =
+        "none";
+
+    }
+
+
+    const catalogSection =
+      document.querySelector(
+        ".catalog-section"
+      );
+
+
+    if (catalogSection) {
+
+      catalogSection.scrollIntoView({
+        behavior: "smooth"
+      });
+
+    }
+
+};
+
+
+// =====================================================
+// OPEN PRODUCT DETAILS
+// =====================================================
+
+function openProduct(
+  product
+) {
+
+  if (!productDetails) return;
+
+
+  if (detailImage) {
+
+    detailImage.src =
+      product.image || "";
+
+    detailImage.alt =
+      product.name || "Product";
+
+  }
+
+
+  if (detailName) {
+
+    detailName.textContent =
+      product.name || "Product";
+
+  }
+
+
+  if (detailCategory) {
+
+    detailCategory.textContent =
+      product.category ||
+      "SHIVAM IMITATION";
+
+  }
+
+
+  if (detailWhatsapp) {
+
+    const message =
+      "Hello Shivam Imitation, I am interested in: " +
+      (product.name || "this product") +
+      ". Price: ₹" +
+      (product.price || "Please tell me");
+
+    detailWhatsapp.href =
+      "https://wa.me/919714978206?text=" +
+      encodeURIComponent(
+        message
+      );
+
+  }
+
+
+  if (productSection) {
+
+    productSection.style.display =
+      "none";
+
+  }
+
+
+  productDetails.style.display =
+    "block";
 
 
   productDetails.scrollIntoView({
@@ -226,39 +538,66 @@ function openProduct(category, index) {
 }
 
 
-function backToCategories() {
+// =====================================================
+// CLOSE PRODUCT
+// =====================================================
 
-  const productSection =
-    document.getElementById("productSection");
+window.closeProduct =
+  function () {
 
-  const productDetails =
-    document.getElementById("productDetails");
+    if (productDetails) {
+
+      productDetails.style.display =
+        "none";
+
+    }
 
 
-  productSection.classList.remove("show");
+    if (productSection) {
 
-  productDetails.classList.remove("show");
+      productSection.style.display =
+        "block";
+
+    }
+
+  };
 
 
-  document.querySelector(".catalog-section")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
+// =====================================================
+// ESCAPE HTML
+// =====================================================
+
+function escapeHTML(
+  value
+) {
+
+  return String(value)
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+    .replace(
+      /</g,
+      "&lt;"
+    )
+    .replace(
+      />/g,
+      "&gt;"
+    )
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
 
-function closeProduct() {
+// =====================================================
+// START
+// =====================================================
 
-  const productDetails =
-    document.getElementById("productDetails");
-
-  productDetails.classList.remove("show");
-
-
-  document.querySelector(".catalog-section")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-
-}
+loadProducts();
