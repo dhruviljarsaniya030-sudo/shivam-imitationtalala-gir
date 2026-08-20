@@ -87,6 +87,11 @@
       color: #aebbb8;
     }
 
+    select option {
+      background: #003d37;
+      color: #fff;
+    }
+
     button {
       width: 100%;
       margin-top: 22px;
@@ -104,6 +109,11 @@
       background: #f3d77b;
     }
 
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
     .logout {
       background: transparent;
       color: #f3d77b;
@@ -114,10 +124,11 @@
     .message {
       display: none;
       margin-top: 18px;
-      padding: 12px;
+      padding: 13px;
       border-radius: 8px;
       text-align: center;
       font-weight: 600;
+      word-break: break-word;
     }
 
     .success {
@@ -130,6 +141,12 @@
       display: block;
       background: rgba(220, 60, 60, 0.18);
       color: #ffaaaa;
+    }
+
+    .info {
+      display: block;
+      background: rgba(231, 189, 85, 0.12);
+      color: #f3d77b;
     }
 
     .preview {
@@ -158,6 +175,17 @@
       color: #aebbb8;
       font-size: 13px;
       margin-top: 7px;
+      line-height: 1.5;
+    }
+
+    .status {
+      margin-bottom: 18px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      background: rgba(50, 180, 100, 0.12);
+      color: #9ff0bd;
+      font-size: 14px;
     }
   </style>
 
@@ -187,7 +215,7 @@
       id="loginPanel"
       class="card login-panel">
 
-      <h2>Admin Login</h2>
+      <h2>🔐 Admin Login</h2>
 
       <label for="loginEmail">
         Email
@@ -196,7 +224,8 @@
       <input
         type="email"
         id="loginEmail"
-        placeholder="Enter admin email">
+        placeholder="Enter admin email"
+        autocomplete="email">
 
 
       <label for="loginPassword">
@@ -206,10 +235,12 @@
       <input
         type="password"
         id="loginPassword"
-        placeholder="Enter password">
+        placeholder="Enter password"
+        autocomplete="current-password">
 
 
       <button
+        id="loginButton"
         type="button"
         onclick="loginAdmin()">
 
@@ -233,13 +264,17 @@
       id="adminPanel"
       class="card admin-panel">
 
-      <h2>Add New Product</h2>
+      <div class="status">
+        ✅ Admin logged in
+      </div>
+
+      <h2>➕ Add New Product</h2>
 
 
       <!-- PRODUCT NAME -->
 
       <label for="productName">
-        Product Name
+        Product Name *
       </label>
 
       <input
@@ -252,21 +287,22 @@
       <!-- PRICE -->
 
       <label for="productPrice">
-        Price
+        Price *
       </label>
 
       <input
         type="number"
         id="productPrice"
         placeholder="Example: 499"
-        min="0">
+        min="0"
+        step="1">
 
 
 
       <!-- CATEGORY -->
 
       <label for="productCategory">
-        Category
+        Category *
       </label>
 
       <select id="productCategory">
@@ -306,20 +342,19 @@
       <!-- DESCRIPTION -->
 
       <label for="productDescription">
-        Description
+        Description *
       </label>
 
       <textarea
         id="productDescription"
-        placeholder="Example: Premium imitation jewellery">
-      </textarea>
+        placeholder="Example: Premium imitation jewellery"></textarea>
 
 
 
       <!-- IMAGE URL -->
 
       <label for="productImage">
-        Product Image URL
+        Product Image URL *
       </label>
 
       <input
@@ -328,7 +363,8 @@
         placeholder="Paste GitHub raw image URL">
 
       <div class="small">
-        Example: https://raw.githubusercontent.com/...
+        GitHub image example:<br>
+        https://raw.githubusercontent.com/username/repository/main/product.jpg
       </div>
 
 
@@ -373,6 +409,8 @@
       </button>
 
 
+      <!-- PRODUCT MESSAGE -->
+
       <div
         id="productMessage"
         class="message">
@@ -408,13 +446,16 @@
     import {
       getFirestore,
       collection,
-      addDoc
+      addDoc,
+      serverTimestamp
     } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 
-    /* ================= FIREBASE CONFIG ================= */
+    /* =====================================================
+       FIREBASE CONFIG
+       ===================================================== */
 
     const firebaseConfig = {
 
@@ -443,7 +484,9 @@
 
 
 
-    /* ================= INITIALIZE ================= */
+    /* =====================================================
+       INITIALIZE FIREBASE
+       ===================================================== */
 
     const app =
       initializeApp(
@@ -460,10 +503,42 @@
 
 
 
-    /* ================= ADMIN EMAIL ================= */
+    /* =====================================================
+       ADMIN EMAIL
+       ===================================================== */
 
     const ADMIN_EMAIL =
       "dhruviljarsaniya030@gmail.com";
+
+
+
+    /* =====================================================
+       HELPER - MESSAGE
+       ===================================================== */
+
+    function showMessage(
+      elementId,
+      text,
+      type
+    ) {
+
+      const element =
+        document.getElementById(
+          elementId
+        );
+
+
+      if (!element) return;
+
+
+      element.textContent =
+        text;
+
+
+      element.className =
+        "message " + type;
+
+    }
 
 
 
@@ -486,22 +561,17 @@
           ).value;
 
 
-        const message =
+        const button =
           document.getElementById(
-            "loginMessage"
+            "loginButton"
           );
-
-
-        message.className =
-          "message";
 
 
         if (!email || !password) {
 
-          message.textContent =
-            "Please enter email and password.";
-
-          message.classList.add(
+          showMessage(
+            "loginMessage",
+            "Please enter email and password.",
             "error"
           );
 
@@ -515,10 +585,9 @@
           ADMIN_EMAIL.toLowerCase()
         ) {
 
-          message.textContent =
-            "This email is not authorized.";
-
-          message.classList.add(
+          showMessage(
+            "loginMessage",
+            "This email is not authorized.",
             "error"
           );
 
@@ -529,10 +598,24 @@
 
         try {
 
+          button.disabled =
+            true;
+
+          button.textContent =
+            "Logging in...";
+
+
           await signInWithEmailAndPassword(
             auth,
             email,
             password
+          );
+
+
+          showMessage(
+            "loginMessage",
+            "Login successful!",
+            "success"
           );
 
         }
@@ -540,20 +623,66 @@
         catch (error) {
 
           console.error(
+            "LOGIN ERROR:",
             error
           );
 
 
-          message.textContent =
-            "Login failed. Check your email and password.";
-
-          message.classList.add(
+          showMessage(
+            "loginMessage",
+            "❌ Login Error: " +
+            getFirebaseErrorMessage(error),
             "error"
           );
 
         }
 
+        finally {
+
+          button.disabled =
+            false;
+
+          button.textContent =
+            "🔐 Login";
+
+        }
+
       };
+
+
+
+    /* =====================================================
+       FIREBASE ERROR MESSAGE
+       ===================================================== */
+
+    function getFirebaseErrorMessage(
+      error
+    ) {
+
+      if (!error) {
+
+        return "Unknown error.";
+
+      }
+
+
+      if (error.code) {
+
+        return (
+          error.code +
+          " — " +
+          (error.message || "")
+        );
+
+      }
+
+
+      return (
+        error.message ||
+        "Unknown Firebase error."
+      );
+
+    }
 
 
 
@@ -580,6 +709,7 @@
         if (user) {
 
           if (
+            user.email &&
             user.email.toLowerCase() ===
             ADMIN_EMAIL.toLowerCase()
           ) {
@@ -595,6 +725,18 @@
           else {
 
             signOut(auth);
+
+            loginPanel.style.display =
+              "block";
+
+            adminPanel.style.display =
+              "none";
+
+            showMessage(
+              "loginMessage",
+              "This account is not authorized.",
+              "error"
+            );
 
           }
 
@@ -620,7 +762,9 @@
        ===================================================== */
 
     document
-      .getElementById("productImage")
+      .getElementById(
+        "productImage"
+      )
       .addEventListener(
         "input",
         function () {
@@ -664,6 +808,29 @@
 
 
     /* =====================================================
+       IMAGE PREVIEW ERROR
+       ===================================================== */
+
+    document
+      .getElementById(
+        "previewImage"
+      )
+      .addEventListener(
+        "error",
+        function () {
+
+          showMessage(
+            "productMessage",
+            "⚠️ Image URL is not loading. Check that it is a public RAW GitHub image URL.",
+            "error"
+          );
+
+        }
+      );
+
+
+
+    /* =====================================================
        ADD PRODUCT
        ===================================================== */
 
@@ -676,7 +843,7 @@
           ).value.trim();
 
 
-        const price =
+        const priceText =
           document.getElementById(
             "productPrice"
           ).value.trim();
@@ -700,34 +867,46 @@
           ).value.trim();
 
 
-        const message =
-          document.getElementById(
-            "productMessage"
-          );
-
-
         const button =
           document.getElementById(
             "addProductButton"
           );
 
 
-        message.className =
-          "message";
 
+        /* ================= VALIDATION ================= */
 
         if (
           !name ||
-          !price ||
+          !priceText ||
           !category ||
           !description ||
           !image
         ) {
 
-          message.textContent =
-            "Please fill all product details.";
+          showMessage(
+            "productMessage",
+            "⚠️ Please fill all product details.",
+            "error"
+          );
 
-          message.classList.add(
+          return;
+
+        }
+
+
+        const price =
+          Number(priceText);
+
+
+        if (
+          Number.isNaN(price) ||
+          price < 0
+        ) {
+
+          showMessage(
+            "productMessage",
+            "⚠️ Please enter a valid price.",
             "error"
           );
 
@@ -738,10 +917,9 @@
 
         if (!auth.currentUser) {
 
-          message.textContent =
-            "Please login first.";
-
-          message.classList.add(
+          showMessage(
+            "productMessage",
+            "❌ Please login first.",
             "error"
           );
 
@@ -749,6 +927,26 @@
 
         }
 
+
+        if (
+          !auth.currentUser.email ||
+          auth.currentUser.email.toLowerCase() !==
+          ADMIN_EMAIL.toLowerCase()
+        ) {
+
+          showMessage(
+            "productMessage",
+            "❌ You are not authorized to add products.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+
+        /* ================= ADD TO FIRESTORE ================= */
 
         try {
 
@@ -759,69 +957,89 @@
             "Adding Product...";
 
 
-          await addDoc(
-            collection(
-              db,
-              "products"
-            ),
-            {
-
-              name: name,
-
-              price: Number(price),
-
-              category: category,
-
-              description: description,
-
-              image: image
-
-            }
+          showMessage(
+            "productMessage",
+            "Please wait...",
+            "info"
           );
 
 
-          message.textContent =
-            "✅ Product added successfully!";
+          const productData = {
 
-          message.classList.add(
+            name:
+              name,
+
+            price:
+              price,
+
+            category:
+              category,
+
+            description:
+              description,
+
+            image:
+              image,
+
+            createdAt:
+              serverTimestamp()
+
+          };
+
+
+          const docRef =
+            await addDoc(
+              collection(
+                db,
+                "products"
+              ),
+              productData
+            );
+
+
+          console.log(
+            "PRODUCT ADDED:",
+            docRef.id
+          );
+
+
+          showMessage(
+            "productMessage",
+            "✅ Product added successfully!",
             "success"
           );
 
 
-          document
-            .getElementById(
-              "productName"
-            ).value = "";
+          /* ================= CLEAR FORM ================= */
+
+          document.getElementById(
+            "productName"
+          ).value = "";
 
 
-          document
-            .getElementById(
-              "productPrice"
-            ).value = "";
+          document.getElementById(
+            "productPrice"
+          ).value = "";
 
 
-          document
-            .getElementById(
-              "productCategory"
-            ).value = "";
+          document.getElementById(
+            "productCategory"
+          ).value = "";
 
 
-          document
-            .getElementById(
-              "productDescription"
-            ).value = "";
+          document.getElementById(
+            "productDescription"
+          ).value = "";
 
 
-          document
-            .getElementById(
-              "productImage"
-            ).value = "";
+          document.getElementById(
+            "productImage"
+          ).value = "";
 
 
-          document
-            .getElementById(
-              "imagePreview"
-            ).style.display =
+          document.getElementById(
+            "imagePreview"
+          ).style.display =
             "none";
 
 
@@ -830,19 +1048,19 @@
         catch (error) {
 
           console.error(
+            "FIREBASE ADD PRODUCT ERROR:",
             error
           );
 
 
-          message.textContent =
-            "❌ Product could not be added.";
-
-          message.classList.add(
+          showMessage(
+            "productMessage",
+            "❌ " +
+            getFirebaseErrorMessage(error),
             "error"
           );
 
         }
-
 
         finally {
 
@@ -865,9 +1083,22 @@
     window.logoutAdmin =
       async function () {
 
-        await signOut(
-          auth
-        );
+        try {
+
+          await signOut(
+            auth
+          );
+
+        }
+
+        catch (error) {
+
+          console.error(
+            "LOGOUT ERROR:",
+            error
+          );
+
+        }
 
       };
 
