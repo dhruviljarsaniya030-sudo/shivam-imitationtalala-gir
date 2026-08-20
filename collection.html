@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description"
-    content="Explore Shivam Imitation's premium jewellery collection in Talala Gir.">
+    content="Explore Shivam Imitation's premium imitation jewellery collection in Talala Gir.">
 
   <meta name="keywords"
-    content="Shivam Imitation, jewellery collection, imitation jewellery, necklace, bridal jewellery, bracelets, Talala Gir">
+    content="Shivam Imitation, imitation jewellery, necklace, bridal jewellery, bracelets, Talala Gir">
 
-  <meta name="theme-color" content="#080808">
+  <meta name="theme-color" content="#003d37">
 
   <title>Collection | Shivam Imitation</title>
 
@@ -20,13 +20,16 @@
   <link rel="stylesheet" href="collection.css">
 </head>
 
+
 <body>
+
 
   <!-- ================= TOP BAR ================= -->
 
   <div class="topbar">
     ✨ BEST COLLECTION • SHIVAM IMITATION • TALALA GIR
   </div>
+
 
 
   <!-- ================= NAVBAR ================= -->
@@ -37,7 +40,7 @@
 
       <img
         src="logo.jpg"
-        alt="Shivam Imitation">
+        alt="Shivam Imitation Logo">
 
       <span>
         SHIVAM <b>IMITATION</b>
@@ -67,12 +70,20 @@
         Collection
       </a>
 
+      <a href="index.html#categories">
+        Categories
+      </a>
+
       <a href="index.html#offers">
         Offers
       </a>
 
       <a href="index.html#about">
         About
+      </a>
+
+      <a href="index.html#reviews">
+        Reviews
       </a>
 
       <a href="index.html#contact">
@@ -84,10 +95,11 @@
   </header>
 
 
+
   <main>
 
 
-    <!-- ================= COLLECTION HERO ================= -->
+    <!-- ================= HERO ================= -->
 
     <section class="catalog-hero">
 
@@ -112,6 +124,7 @@
     </section>
 
 
+
     <!-- ================= CATEGORY SECTION ================= -->
 
     <section class="catalog-section">
@@ -133,11 +146,6 @@
       </div>
 
 
-      <!--
-        Categories are generated from Firebase.
-        No product/category coding is required later.
-      -->
-
       <div
         id="categoryGrid"
         class="category-grid">
@@ -149,6 +157,7 @@
       </div>
 
     </section>
+
 
 
     <!-- ================= PRODUCTS ================= -->
@@ -185,6 +194,7 @@
       </div>
 
 
+
       <div
         id="productGrid"
         class="catalog-product-grid">
@@ -195,8 +205,8 @@
 
       </div>
 
-
     </section>
+
 
 
     <!-- ================= PRODUCT DETAILS ================= -->
@@ -259,9 +269,6 @@
             id="detailDescription"
             class="detail-description">
 
-            Discover this beautiful piece from
-            Shivam Imitation's latest collection.
-
           </p>
 
 
@@ -281,6 +288,7 @@
       </div>
 
     </section>
+
 
 
     <!-- ================= OFFER ================= -->
@@ -323,6 +331,7 @@
   </main>
 
 
+
   <!-- ================= FLOATING WHATSAPP ================= -->
 
   <a
@@ -335,6 +344,7 @@
     ☏
 
   </a>
+
 
 
   <!-- ================= FOOTER ================= -->
@@ -355,7 +365,14 @@
       Shivam Imitation • Talala Gir
     </small>
 
+    <br>
+
+    <small>
+      Imitation Jewellery • Talala Gir
+    </small>
+
   </footer>
+
 
 
   <!-- ================= MOBILE MENU ================= -->
@@ -390,31 +407,37 @@
       document.getElementById("year");
 
     if (year) {
+
       year.textContent =
         new Date().getFullYear();
+
     }
 
   </script>
 
 
-  <!-- ================= FIREBASE COLLECTION SYSTEM ================= -->
+
+  <!-- =====================================================
+       FIREBASE
+       ===================================================== -->
 
   <script type="module">
 
     import {
       initializeApp
-    } from
+    }
+    from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
     import {
       getFirestore,
       collection,
-      getDocs,
-      query,
-      orderBy
-    } from
+      getDocs
+    }
+    from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 
 
     /* ================= FIREBASE CONFIG ================= */
@@ -445,21 +468,25 @@
     };
 
 
-    /* ================= INITIALIZE ================= */
+
+    /* ================= INITIALIZE FIREBASE ================= */
 
     const app =
       initializeApp(firebaseConfig);
+
 
     const db =
       getFirestore(app);
 
 
-    /* ================= GLOBAL PRODUCTS ================= */
+
+    /* ================= PRODUCTS ================= */
 
     let allProducts = [];
 
 
-    /* ================= ESCAPE HTML ================= */
+
+    /* ================= HTML SECURITY ================= */
 
     function escapeHTML(value) {
 
@@ -478,7 +505,10 @@
     }
 
 
-    /* ================= LOAD PRODUCTS ================= */
+
+    /* =====================================================
+       LOAD PRODUCTS FROM FIREBASE
+       ===================================================== */
 
     async function loadProducts() {
 
@@ -486,6 +516,7 @@
         document.getElementById(
           "categoryGrid"
         );
+
 
       const productGrid =
         document.getElementById(
@@ -495,22 +526,12 @@
 
       try {
 
-        const productsQuery =
-          query(
+        const snapshot =
+          await getDocs(
             collection(
               db,
               "products"
-            ),
-            orderBy(
-              "createdAt",
-              "desc"
             )
-          );
-
-
-        const snapshot =
-          await getDocs(
-            productsQuery
           );
 
 
@@ -532,12 +553,14 @@
         );
 
 
-        /* CATEGORIES */
+        console.log(
+          "Firebase Products:",
+          allProducts
+        );
+
 
         createCategories();
 
-
-        /* SHOW ALL PRODUCTS */
 
         showProducts(
           "all",
@@ -545,10 +568,12 @@
         );
 
 
-      } catch (error) {
+      }
+
+      catch (error) {
 
         console.error(
-          "Firebase error:",
+          "Firebase Error:",
           error
         );
 
@@ -587,7 +612,10 @@
     }
 
 
-    /* ================= CREATE CATEGORIES ================= */
+
+    /* =====================================================
+       CREATE CATEGORY CARDS
+       ===================================================== */
 
     function createCategories() {
 
@@ -639,8 +667,7 @@
 
           <div class="category-loading">
 
-            Products will appear here
-            when you add them.
+            No categories found.
 
           </div>
 
@@ -651,10 +678,15 @@
       }
 
 
-      categories.forEach(
-        function (category, index) {
 
-          const products =
+      categories.forEach(
+        function (
+          category,
+          index
+        ) {
+
+
+          const categoryProducts =
             allProducts.filter(
               function (product) {
 
@@ -668,14 +700,17 @@
 
 
           const firstProduct =
-            products[0];
+            categoryProducts[0];
 
 
           const image =
             firstProduct &&
             firstProduct.image
+
               ? firstProduct.image
+
               : "logo.jpg";
+
 
 
           const card =
@@ -701,7 +736,8 @@
             <div class="category-content">
 
               <small>
-                COLLECTION ${String(index + 1).padStart(2, "0")}
+                COLLECTION
+                ${String(index + 1).padStart(2, "0")}
               </small>
 
               <h3>
@@ -741,7 +777,10 @@
     }
 
 
-    /* ================= SHOW PRODUCTS ================= */
+
+    /* =====================================================
+       SHOW PRODUCTS
+       ===================================================== */
 
     function showProducts(
       category,
@@ -753,10 +792,12 @@
           "productSection"
         );
 
+
       const grid =
         document.getElementById(
           "productGrid"
         );
+
 
       const categoryTitle =
         document.getElementById(
@@ -783,7 +824,9 @@
         products =
           allProducts;
 
-      } else {
+      }
+
+      else {
 
         products =
           allProducts.filter(
@@ -816,7 +859,9 @@
 
         `;
 
-      } else {
+      }
+
+      else {
 
         products.forEach(
           function (product) {
@@ -840,8 +885,11 @@
 
 
         section.scrollIntoView({
+
           behavior: "smooth",
+
           block: "start"
+
         });
 
       }
@@ -849,7 +897,10 @@
     }
 
 
-    /* ================= PRODUCT CARD ================= */
+
+    /* =====================================================
+       CREATE PRODUCT CARD
+       ===================================================== */
 
     function createProductCard(
       product,
@@ -877,8 +928,12 @@
 
 
       const price =
-        product.price ||
-        "";
+        product.price !== undefined &&
+        product.price !== null
+
+          ? product.price
+
+          : "";
 
 
       const description =
@@ -889,6 +944,7 @@
       const image =
         product.image ||
         "logo.jpg";
+
 
 
       card.innerHTML = `
@@ -907,33 +963,49 @@
         <div class="catalog-product-content">
 
           <span class="product-category">
+
             ${escapeHTML(category)}
+
           </span>
 
 
           <h3>
+
             ${escapeHTML(name)}
+
           </h3>
 
 
           ${
-            price
+            price !== ""
+
               ? `
+
                 <div class="product-price">
+
                   ₹${escapeHTML(price)}
+
                 </div>
+
               `
+
               : ""
           }
 
 
           ${
             description
+
               ? `
+
                 <p>
+
                   ${escapeHTML(description)}
+
                 </p>
+
               `
+
               : ""
           }
 
@@ -951,6 +1023,7 @@
       `;
 
 
+
       const viewButton =
         card.querySelector(
           ".view-product-btn"
@@ -964,6 +1037,7 @@
           function (event) {
 
             event.stopPropagation();
+
 
             openProduct(
               product
@@ -994,7 +1068,10 @@
     }
 
 
-    /* ================= OPEN PRODUCT ================= */
+
+    /* =====================================================
+       OPEN PRODUCT DETAILS
+       ===================================================== */
 
     function openProduct(
       product
@@ -1042,6 +1119,7 @@
         );
 
 
+
       const productName =
         product.name ||
         "Jewellery Product";
@@ -1053,8 +1131,12 @@
 
 
       const productPrice =
-        product.price ||
-        "";
+        product.price !== undefined &&
+        product.price !== null
+
+          ? product.price
+
+          : "";
 
 
       const productDescription =
@@ -1065,6 +1147,7 @@
       const productImage =
         product.image ||
         "logo.jpg";
+
 
 
       if (image) {
@@ -1097,8 +1180,10 @@
       if (price) {
 
         price.textContent =
-          productPrice
+          productPrice !== ""
+
             ? "₹" + productPrice
+
             : "";
 
       }
@@ -1121,7 +1206,8 @@
 
         whatsapp.href =
           "https://wa.me/919714978206?text="
-          + encodeURIComponent(
+          +
+          encodeURIComponent(
             message
           );
 
@@ -1136,8 +1222,11 @@
 
 
         details.scrollIntoView({
+
           behavior: "smooth",
+
           block: "start"
+
         });
 
       }
@@ -1145,7 +1234,10 @@
     }
 
 
-    /* ================= BACK CATEGORY ================= */
+
+    /* =====================================================
+       BACK TO CATEGORIES
+       ===================================================== */
 
     window.backToCategories =
       function () {
@@ -1156,27 +1248,40 @@
           );
 
 
+        const categories =
+          document.querySelector(
+            ".catalog-section"
+          );
+
+
         if (section) {
 
           section.classList.remove(
             "active"
           );
 
+        }
 
-          document
-            .querySelector(
-              ".catalog-section"
-            )
-            ?.scrollIntoView({
-              behavior: "smooth"
-            });
+
+        if (categories) {
+
+          categories.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+          });
 
         }
 
       };
 
 
-    /* ================= CLOSE PRODUCT ================= */
+
+    /* =====================================================
+       CLOSE PRODUCT
+       ===================================================== */
 
     window.closeProduct =
       function () {
@@ -1198,11 +1303,15 @@
       };
 
 
-    /* ================= START ================= */
+
+    /* =====================================================
+       START FIREBASE
+       ===================================================== */
 
     loadProducts();
 
   </script>
+
 
 </body>
 
