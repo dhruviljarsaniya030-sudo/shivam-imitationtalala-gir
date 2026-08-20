@@ -241,12 +241,23 @@
 
     .worker-status {
       margin-top: 10px;
-      padding: 9px;
+      padding: 10px;
       border-radius: 8px;
       background: rgba(231, 189, 85, 0.08);
-      color: #ddd;
+      color: #f3d77b;
       font-size: 13px;
       text-align: center;
+    }
+
+    .url-box {
+      margin-top: 12px;
+      padding: 10px;
+      background: rgba(50, 180, 100, 0.10);
+      border-radius: 8px;
+      font-size: 12px;
+      word-break: break-all;
+      color: #9ff0bd;
+      display: none;
     }
   </style>
 </head>
@@ -255,17 +266,35 @@
 
   <div class="container">
 
+    <!-- =================================================
+         LOGO
+         ================================================= -->
+
     <div class="logo">
-      <h1>SHIVAM IMITATION</h1>
-      <p>Admin Product Panel</p>
+
+      <h1>
+        SHIVAM IMITATION
+      </h1>
+
+      <p>
+        Admin Product Panel
+      </p>
+
     </div>
 
 
-    <!-- ================= LOGIN ================= -->
+    <!-- =================================================
+         LOGIN PANEL
+         ================================================= -->
 
-    <div id="loginPanel" class="card login-panel">
+    <div
+      id="loginPanel"
+      class="card login-panel">
 
-      <h2>🔐 Admin Login</h2>
+      <h2>
+        🔐 Admin Login
+      </h2>
+
 
       <label for="loginEmail">
         Email
@@ -277,6 +306,7 @@
         placeholder="Enter admin email"
         autocomplete="email">
 
+
       <label for="loginPassword">
         Password
       </label>
@@ -287,6 +317,7 @@
         placeholder="Enter password"
         autocomplete="current-password">
 
+
       <button
         id="loginButton"
         type="button"
@@ -296,23 +327,39 @@
 
       </button>
 
-      <div id="loginMessage" class="message"></div>
+
+      <div
+        id="loginMessage"
+        class="message">
+      </div>
 
     </div>
 
 
-    <!-- ================= ADMIN PANEL ================= -->
+    <!-- =================================================
+         ADMIN PANEL
+         ================================================= -->
 
-    <div id="adminPanel" class="card admin-panel">
+    <div
+      id="adminPanel"
+      class="card admin-panel">
+
 
       <div class="status">
+
         ✅ Admin logged in
+
       </div>
 
-      <h2>➕ Add New Product</h2>
+
+      <h2>
+        ➕ Add New Product
+      </h2>
 
 
-      <!-- PRODUCT NAME -->
+      <!-- =================================================
+           PRODUCT NAME
+           ================================================= -->
 
       <label for="productName">
         Product Name *
@@ -324,7 +371,9 @@
         placeholder="Example: Royal Green Drop Set">
 
 
-      <!-- PRICE -->
+      <!-- =================================================
+           PRICE
+           ================================================= -->
 
       <label for="productPrice">
         Price *
@@ -338,13 +387,16 @@
         step="1">
 
 
-      <!-- CATEGORY -->
+      <!-- =================================================
+           CATEGORY
+           ================================================= -->
 
       <label for="productCategory">
         Category *
       </label>
 
-      <select id="productCategory">
+      <select
+        id="productCategory">
 
         <option value="">
           Select Category
@@ -377,7 +429,9 @@
       </select>
 
 
-      <!-- DESCRIPTION -->
+      <!-- =================================================
+           DESCRIPTION
+           ================================================= -->
 
       <label for="productDescription">
         Description *
@@ -385,54 +439,77 @@
 
       <textarea
         id="productDescription"
-        placeholder="Example: Premium imitation jewellery"></textarea>
+        placeholder="Example: Premium imitation jewellery">
+      </textarea>
 
 
-      <!-- IMAGE -->
+      <!-- =================================================
+           IMAGE
+           ================================================= -->
 
       <label for="productImage">
         Product Image *
       </label>
+
 
       <div class="upload-box">
 
         <input
           type="file"
           id="productImage"
-          accept="image/jpeg,image/jpg,image/png,image/webp">
+          accept="image/jpeg,image/png,image/webp">
+
 
         <div class="small">
+
           📷 Computerમાંથી સીધી product photo પસંદ કરો.
+
           <br>
-          Photo Cloudflare Worker મારફતે GitHubમાં upload થશે.
+
+          Image Cloudflare Worker દ્વારા GitHub પર upload થશે.
+
           <br>
-          Maximum size: 5 MB.
+
+          URL નાખવાની જરૂર નથી.
+
+          <br>
+
+          Maximum image size: 5 MB.
+
         </div>
 
       </div>
 
 
+      <!-- =================================================
+           WORKER STATUS
+           ================================================= -->
+
       <div
         id="workerStatus"
         class="worker-status">
 
-        ☁️ Image upload system ready
+        ☁️ Cloudflare Worker ready
 
       </div>
 
 
-      <!-- NEXT IMAGE -->
+      <!-- =================================================
+           NEXT IMAGE NUMBER
+           ================================================= -->
 
       <div
         id="nextProductName"
         class="next-name">
 
-        Checking next image number...
+        📁 Checking next image number...
 
       </div>
 
 
-      <!-- PREVIEW -->
+      <!-- =================================================
+           IMAGE PREVIEW
+           ================================================= -->
 
       <div
         id="imagePreview"
@@ -446,7 +523,9 @@
       </div>
 
 
-      <!-- PROGRESS -->
+      <!-- =================================================
+           PROGRESS
+           ================================================= -->
 
       <div
         id="progressBox"
@@ -461,18 +540,31 @@
 
         </div>
 
+
         <div
           id="progressText"
           class="progress-text">
 
-          Uploading 0%
+          Preparing upload...
 
         </div>
 
       </div>
 
 
-      <!-- ADD -->
+      <!-- =================================================
+           IMAGE URL
+           ================================================= -->
+
+      <div
+        id="urlBox"
+        class="url-box">
+      </div>
+
+
+      <!-- =================================================
+           ADD PRODUCT BUTTON
+           ================================================= -->
 
       <button
         id="addProductButton"
@@ -484,7 +576,9 @@
       </button>
 
 
-      <!-- LOGOUT -->
+      <!-- =================================================
+           LOGOUT
+           ================================================= -->
 
       <button
         type="button"
@@ -495,6 +589,10 @@
 
       </button>
 
+
+      <!-- =================================================
+           MESSAGE
+           ================================================= -->
 
       <div
         id="productMessage"
@@ -507,29 +605,40 @@
 
 
   <!-- =====================================================
-       FIREBASE + CLOUDFLARE WORKER
+       FIREBASE
        ===================================================== -->
 
   <script type="module">
 
+
     /* =====================================================
-       FIREBASE IMPORTS
+       FIREBASE APP
        ===================================================== */
 
     import {
       initializeApp
-    } from
+    }
+    from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
+
+    /* =====================================================
+       FIREBASE AUTH
+       ===================================================== */
 
     import {
       getAuth,
       signInWithEmailAndPassword,
       onAuthStateChanged,
       signOut
-    } from
+    }
+    from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
+
+    /* =====================================================
+       FIREBASE FIRESTORE
+       ===================================================== */
 
     import {
       getFirestore,
@@ -537,7 +646,8 @@
       addDoc,
       getDocs,
       serverTimestamp
-    } from
+    }
+    from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
@@ -567,31 +677,8 @@
 
       measurementId:
         "G-ER1ETZSLPD"
+
     };
-
-
-    /* =====================================================
-       INITIALIZE FIREBASE
-       ===================================================== */
-
-    const app =
-      initializeApp(firebaseConfig);
-
-
-    const auth =
-      getAuth(app);
-
-
-    const db =
-      getFirestore(app);
-
-
-    /* =====================================================
-       ADMIN EMAIL
-       ===================================================== */
-
-    const ADMIN_EMAIL =
-      "dhruviljarsaniya030@gmail.com";
 
 
     /* =====================================================
@@ -603,11 +690,33 @@
 
 
     /* =====================================================
-       GITHUB IMAGE BASE URL
+       ADMIN EMAIL
        ===================================================== */
 
-    const GITHUB_IMAGE_BASE =
-      "https://raw.githubusercontent.com/dhruviljarsaniya030-sudo/shivam-imitationtalala-gir/main/";
+    const ADMIN_EMAIL =
+      "dhruviljarsaniya030@gmail.com";
+
+
+    /* =====================================================
+       INITIALIZE
+       ===================================================== */
+
+    const app =
+      initializeApp(
+        firebaseConfig
+      );
+
+
+    const auth =
+      getAuth(
+        app
+      );
+
+
+    const db =
+      getFirestore(
+        app
+      );
 
 
     /* =====================================================
@@ -626,7 +735,9 @@
         );
 
 
-      if (!element) return;
+      if (!element) {
+        return;
+      }
 
 
       element.textContent =
@@ -643,10 +754,14 @@
        FIREBASE ERROR
        ===================================================== */
 
-    function getFirebaseErrorMessage(error) {
+    function getFirebaseErrorMessage(
+      error
+    ) {
 
       if (!error) {
+
         return "Unknown error.";
+
       }
 
 
@@ -655,7 +770,10 @@
         return (
           error.code +
           " — " +
-          (error.message || "")
+          (
+            error.message ||
+            ""
+          )
         );
 
       }
@@ -670,11 +788,12 @@
 
 
     /* =====================================================
-       LOGIN
+       ADMIN LOGIN
        ===================================================== */
 
     window.loginAdmin =
       async function () {
+
 
         const email =
           document.getElementById(
@@ -694,7 +813,12 @@
           );
 
 
-        if (!email || !password) {
+        /* VALIDATION */
+
+        if (
+          !email ||
+          !password
+        ) {
 
           showMessage(
             "loginMessage",
@@ -703,8 +827,11 @@
           );
 
           return;
+
         }
 
+
+        /* EMAIL CHECK */
 
         if (
           email.toLowerCase() !==
@@ -718,13 +845,16 @@
           );
 
           return;
+
         }
 
 
         try {
 
+
           button.disabled =
             true;
+
 
           button.textContent =
             "Logging in...";
@@ -743,23 +873,36 @@
             "success"
           );
 
+
         }
 
         catch (error) {
 
+
+          console.error(
+            "LOGIN ERROR:",
+            error
+          );
+
+
           showMessage(
             "loginMessage",
             "❌ Login Error: " +
-            getFirebaseErrorMessage(error),
+            getFirebaseErrorMessage(
+              error
+            ),
             "error"
           );
+
 
         }
 
         finally {
 
+
           button.disabled =
             false;
+
 
           button.textContent =
             "🔐 Login";
@@ -777,6 +920,7 @@
       auth,
       function (user) {
 
+
         const loginPanel =
           document.getElementById(
             "loginPanel"
@@ -791,11 +935,13 @@
 
         if (user) {
 
+
           if (
             user.email &&
             user.email.toLowerCase() ===
             ADMIN_EMAIL.toLowerCase()
           ) {
+
 
             loginPanel.style.display =
               "none";
@@ -807,11 +953,15 @@
 
             findNextProductNumber();
 
+
           }
 
           else {
 
-            signOut(auth);
+
+            signOut(
+              auth
+            );
 
 
             loginPanel.style.display =
@@ -823,9 +973,11 @@
 
           }
 
+
         }
 
         else {
+
 
           loginPanel.style.display =
             "block";
@@ -846,7 +998,9 @@
 
     async function findNextProductNumber() {
 
+
       try {
+
 
         const snapshot =
           await getDocs(
@@ -864,11 +1018,15 @@
         snapshot.forEach(
           function (doc) {
 
+
             const data =
               doc.data();
 
 
-            if (data.imageName) {
+            if (
+              data.imageName
+            ) {
+
 
               const match =
                 String(
@@ -880,6 +1038,7 @@
 
               if (match) {
 
+
                 const number =
                   Number(
                     match[1]
@@ -887,7 +1046,8 @@
 
 
                 if (
-                  number > highestNumber
+                  number >
+                  highestNumber
                 ) {
 
                   highestNumber =
@@ -911,24 +1071,18 @@
           nextNumber;
 
 
-        const nextElement =
-          document.getElementById(
-            "nextProductName"
-          );
+        document.getElementById(
+          "nextProductName"
+        ).textContent =
+          "📁 Next image: product-" +
+          nextNumber +
+          ".jpg";
 
-
-        if (nextElement) {
-
-          nextElement.textContent =
-            "📁 Next image: product-" +
-            nextNumber +
-            ".jpg";
-
-        }
 
       }
 
       catch (error) {
+
 
         console.error(
           "NUMBER ERROR:",
@@ -962,6 +1116,7 @@
         "change",
         function () {
 
+
           const file =
             this.files[0];
 
@@ -980,21 +1135,25 @@
 
           if (!file) {
 
+
             preview.style.display =
               "none";
+
 
             return;
 
           }
 
 
-          /* TYPE CHECK */
+          /* IMAGE TYPE */
 
           const allowedTypes = [
+
             "image/jpeg",
             "image/jpg",
             "image/png",
             "image/webp"
+
           ];
 
 
@@ -1004,7 +1163,9 @@
             )
           ) {
 
-            this.value = "";
+
+            this.value =
+              "";
 
 
             preview.style.display =
@@ -1023,14 +1184,16 @@
           }
 
 
-          /* SIZE CHECK */
+          /* IMAGE SIZE */
 
           if (
             file.size >
             5 * 1024 * 1024
           ) {
 
-            this.value = "";
+
+            this.value =
+              "";
 
 
             preview.style.display =
@@ -1063,8 +1226,8 @@
 
           showMessage(
             "productMessage",
-            "✅ Image selected successfully.",
-            "success"
+            "✅ Image selected. Ready to upload.",
+            "info"
           );
 
         }
@@ -1072,10 +1235,13 @@
 
 
     /* =====================================================
-       UPLOAD IMAGE TO CLOUDFLARE WORKER
+       CLOUDFLARE WORKER IMAGE UPLOAD
        ===================================================== */
 
-    async function uploadImageToWorker(file) {
+    async function uploadImageToWorker(
+      file
+    ) {
+
 
       const formData =
         new FormData();
@@ -1091,18 +1257,23 @@
         await fetch(
           WORKER_URL,
           {
-            method: "POST",
-            body: formData
+
+            method:
+              "POST",
+
+            body:
+              formData
+
           }
         );
 
 
-      let data;
+      let result;
 
 
       try {
 
-        data =
+        result =
           await response.json();
 
       }
@@ -1116,31 +1287,20 @@
       }
 
 
-      if (!response.ok || !data.success) {
-
-        let message =
-          data.message ||
-          "Image upload failed.";
-
-
-        if (data.details) {
-
-          console.error(
-            "Worker details:",
-            data.details
-          );
-
-        }
-
+      if (
+        !response.ok ||
+        !result.success
+      ) {
 
         throw new Error(
-          message
+          result.message ||
+          "GitHub image upload failed."
         );
 
       }
 
 
-      return data;
+      return result;
 
     }
 
@@ -1151,6 +1311,7 @@
 
     window.addProduct =
       async function () {
+
 
         const name =
           document.getElementById(
@@ -1204,11 +1365,13 @@
           !file
         ) {
 
+
           showMessage(
             "productMessage",
             "⚠️ Please fill all details and select an image.",
             "error"
           );
+
 
           return;
 
@@ -1226,24 +1389,30 @@
           price < 0
         ) {
 
+
           showMessage(
             "productMessage",
             "⚠️ Please enter a valid price.",
             "error"
           );
 
+
           return;
 
         }
 
 
-        if (!auth.currentUser) {
+        if (
+          !auth.currentUser
+        ) {
+
 
           showMessage(
             "productMessage",
             "❌ Please login first.",
             "error"
           );
+
 
           return;
 
@@ -1252,7 +1421,8 @@
 
         try {
 
-          /* DISABLE BUTTON */
+
+          /* BUTTON */
 
           button.disabled =
             true;
@@ -1262,7 +1432,7 @@
             "Uploading...";
 
 
-          /* RESET PROGRESS */
+          /* PROGRESS */
 
           document.getElementById(
             "progressBox"
@@ -1279,21 +1449,21 @@
           document.getElementById(
             "progressText"
           ).textContent =
-            "Preparing image...";
+            "📷 Uploading product image...";
 
 
           showMessage(
             "productMessage",
-            "📷 Uploading image to GitHub...",
+            "📷 Uploading product image...",
             "info"
           );
 
 
           /* =================================================
-             CLOUDFLARE WORKER UPLOAD
+             WORKER UPLOAD
              ================================================= */
 
-          const uploadData =
+          const uploadResult =
             await uploadImageToWorker(
               file
             );
@@ -1308,41 +1478,48 @@
           document.getElementById(
             "progressText"
           ).textContent =
-            "Image uploaded. Saving product...";
+            "✅ Image uploaded. Saving product...";
 
 
-          /* =================================================
-             GET IMAGE DATA
-             ================================================= */
-
-          const imageName =
-            uploadData.fileName;
-
+          /* IMAGE URL */
 
           const imageURL =
-            uploadData.image;
+            uploadResult.image;
+
+
+          const imageName =
+            uploadResult.fileName;
 
 
           if (
-            !imageName ||
             !imageURL
           ) {
 
             throw new Error(
-              "Worker did not return image information."
+              "Cloudflare Worker did not return image URL."
             );
 
           }
 
 
-          console.log(
-            "GitHub Image:",
-            imageURL
-          );
+          /* SHOW URL */
+
+          const urlBox =
+            document.getElementById(
+              "urlBox"
+            );
+
+
+          urlBox.textContent =
+            imageURL;
+
+
+          urlBox.style.display =
+            "block";
 
 
           /* =================================================
-             SAVE TO FIRESTORE
+             FIRESTORE PRODUCT
              ================================================= */
 
           const productData = {
@@ -1371,6 +1548,8 @@
           };
 
 
+          /* SAVE */
+
           const docRef =
             await addDoc(
               collection(
@@ -1388,7 +1567,7 @@
 
 
           /* =================================================
-             COMPLETE
+             SUCCESS
              ================================================= */
 
           document.getElementById(
@@ -1400,7 +1579,7 @@
           document.getElementById(
             "progressText"
           ).textContent =
-            "Upload complete!";
+            "✅ Upload complete";
 
 
           showMessage(
@@ -1417,27 +1596,32 @@
 
           document.getElementById(
             "productName"
-          ).value = "";
+          ).value =
+            "";
 
 
           document.getElementById(
             "productPrice"
-          ).value = "";
+          ).value =
+            "";
 
 
           document.getElementById(
             "productCategory"
-          ).value = "";
+          ).value =
+            "";
 
 
           document.getElementById(
             "productDescription"
-          ).value = "";
+          ).value =
+            "";
 
 
           document.getElementById(
             "productImage"
-          ).value = "";
+          ).value =
+            "";
 
 
           document.getElementById(
@@ -1453,8 +1637,13 @@
           await findNextProductNumber();
 
 
+          /* =================================================
+             HIDE PROGRESS
+             ================================================= */
+
           setTimeout(
             function () {
+
 
               document.getElementById(
                 "progressBox"
@@ -1467,28 +1656,20 @@
               ).style.width =
                 "0%";
 
+
             },
-            1500
+            2500
           );
+
 
         }
 
         catch (error) {
 
+
           console.error(
             "ADD PRODUCT ERROR:",
             error
-          );
-
-
-          showMessage(
-            "productMessage",
-            "❌ " +
-            (
-              error.message ||
-              "Product upload failed."
-            ),
-            "error"
           );
 
 
@@ -1503,9 +1684,22 @@
           ).style.width =
             "0%";
 
+
+          showMessage(
+            "productMessage",
+            "❌ " +
+            (
+              error.message ||
+              "Product upload failed."
+            ),
+            "error"
+          );
+
+
         }
 
         finally {
+
 
           button.disabled =
             false;
@@ -1526,15 +1720,19 @@
     window.logoutAdmin =
       async function () {
 
+
         try {
+
 
           await signOut(
             auth
           );
 
+
         }
 
         catch (error) {
+
 
           console.error(
             "LOGOUT ERROR:",
@@ -1547,65 +1745,19 @@
 
 
     /* =====================================================
-       WORKER STATUS
+       CONSOLE
        ===================================================== */
 
-    async function checkWorker() {
-
-      const status =
-        document.getElementById(
-          "workerStatus"
-        );
+    console.log(
+      "Shivam Imitation Admin Panel Loaded"
+    );
 
 
-      try {
+    console.log(
+      "Cloudflare Worker:",
+      WORKER_URL
+    );
 
-        const response =
-          await fetch(
-            WORKER_URL,
-            {
-              method: "GET"
-            }
-          );
-
-
-        if (
-          response.status ===
-          405
-        ) {
-
-          status.textContent =
-            "✅ Cloudflare Worker connected";
-
-          status.style.color =
-            "#9ff0bd";
-
-        }
-
-        else {
-
-          status.textContent =
-            "⚠️ Worker responded with status " +
-            response.status;
-
-        }
-
-      }
-
-      catch (error) {
-
-        status.textContent =
-          "❌ Worker connection failed";
-
-        status.style.color =
-          "#ffaaaa";
-
-      }
-
-    }
-
-
-    checkWorker();
 
   </script>
 
