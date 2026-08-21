@@ -1,92 +1,239 @@
 /* =====================================================
+   UPLOAD + DELETE GITHUB IMAGE
+===================================================== */
+
+
+/* =====================================================
    UPLOAD IMAGE TO CLOUDFLARE WORKER
 ===================================================== */
 
 async function uploadImageToWorker(file) {
 
-  const formData = new FormData();
+  try {
 
-  /* ================= ACTION ================= */
-
-  formData.append(
-    "action",
-    "upload"
-  );
+    const formData =
+      new FormData();
 
 
-  /* ================= IMAGE ================= */
+    /* ================= ACTION ================= */
 
-  formData.append(
-    "image",
-    file
-  );
-
-
-  /* ================= SEND TO WORKER ================= */
-
-  const response =
-    await fetch(
-      WORKER_URL,
-      {
-        method: "POST",
-        body: formData
-      }
+    formData.append(
+      "action",
+      "upload"
     );
 
 
-  /* ================= RESPONSE ================= */
+    /* ================= IMAGE ================= */
 
-  let result;
+    formData.append(
+      "image",
+      file
+    );
 
-  try {
 
-    result =
-      await response.json();
+    /* ================= SEND TO WORKER ================= */
+
+    const response =
+      await fetch(
+        WORKER_URL,
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+
+
+    /* ================= READ RESPONSE ================= */
+
+    let result;
+
+    try {
+
+      result =
+        await response.json();
+
+    }
+
+    catch {
+
+      throw new Error(
+        "Worker returned invalid response."
+      );
+
+    }
+
+
+    /* ================= CHECK RESPONSE ================= */
+
+    if (
+      !response.ok ||
+      !result.success
+    ) {
+
+      console.error(
+        "UPLOAD ERROR:",
+        result
+      );
+
+      throw new Error(
+        result.message ||
+        "Image upload failed."
+      );
+
+    }
+
+
+    /* ================= SUCCESS ================= */
+
+    console.log(
+      "✅ GitHub image uploaded:",
+      result.fileName
+    );
+
+    console.log(
+      "🔗 Image URL:",
+      result.image
+    );
+
+
+    return result;
 
   }
 
   catch (error) {
 
     console.error(
-      "WORKER RESPONSE ERROR:",
+      "❌ IMAGE UPLOAD ERROR:",
       error
     );
 
-    throw new Error(
-      "Worker returned invalid response."
-    );
+    throw error;
 
   }
 
+}
 
-  /* ================= CHECK RESULT ================= */
 
-  if (
-    !response.ok ||
-    !result.success
-  ) {
+/* =====================================================
+   DELETE IMAGE FROM GITHUB
+===================================================== */
+
+async function deleteImageFromGitHub(
+  imageName
+) {
+
+  try {
+
+    /* ================= CHECK ================= */
+
+    if (!imageName) {
+
+      console.log(
+        "ℹ️ No GitHub image name found."
+      );
+
+      return {
+        success: true
+      };
+
+    }
+
+
+    /* ================= FORM DATA ================= */
+
+    const formData =
+      new FormData();
+
+
+    /* ================= ACTION ================= */
+
+    formData.append(
+      "action",
+      "delete"
+    );
+
+
+    /* ================= IMAGE NAME ================= */
+
+    formData.append(
+      "imageName",
+      imageName
+    );
+
+
+    /* ================= SEND TO WORKER ================= */
+
+    const response =
+      await fetch(
+        WORKER_URL,
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+
+
+    /* ================= READ RESPONSE ================= */
+
+    let result;
+
+    try {
+
+      result =
+        await response.json();
+
+    }
+
+    catch {
+
+      throw new Error(
+        "Worker returned invalid delete response."
+      );
+
+    }
+
+
+    /* ================= CHECK RESPONSE ================= */
+
+    if (
+      !response.ok ||
+      !result.success
+    ) {
+
+      console.error(
+        "GITHUB DELETE ERROR:",
+        result
+      );
+
+      throw new Error(
+        result.message ||
+        "GitHub image delete failed."
+      );
+
+    }
+
+
+    /* ================= SUCCESS ================= */
+
+    console.log(
+      "✅ GitHub image deleted:",
+      imageName
+    );
+
+
+    return result;
+
+  }
+
+  catch (error) {
 
     console.error(
-      "IMAGE UPLOAD ERROR:",
-      result
+      "❌ GITHUB IMAGE DELETE ERROR:",
+      error
     );
 
-    throw new Error(
-      result.message ||
-      "Image upload failed."
-    );
+    throw error;
 
   }
-
-
-  /* ================= SUCCESS ================= */
-
-  console.log(
-    "IMAGE UPLOAD SUCCESS:",
-    result
-  );
-
-
-  return result;
 
 }
