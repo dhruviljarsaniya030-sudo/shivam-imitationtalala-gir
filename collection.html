@@ -23,14 +23,18 @@
 
 <body>
 
-  <!-- ================= TOP BAR ================= -->
+  <!-- =====================================================
+       TOP BAR
+  ====================================================== -->
 
   <div class="topbar">
     ✨ BEST COLLECTION • SHIVAM IMITATION • TALALA GIR
   </div>
 
 
-  <!-- ================= NAVBAR ================= -->
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
 
   <header class="navbar">
 
@@ -60,33 +64,19 @@
 
     <nav id="nav">
 
-      <a href="index.html">
-        Home
-      </a>
+      <a href="index.html">Home</a>
 
-      <a href="collection.html">
-        Collection
-      </a>
+      <a href="collection.html">Collection</a>
 
-      <a href="index.html#categories">
-        Categories
-      </a>
+      <a href="index.html#categories">Categories</a>
 
-      <a href="index.html#offers">
-        Offers
-      </a>
+      <a href="index.html#offers">Offers</a>
 
-      <a href="index.html#about">
-        About
-      </a>
+      <a href="index.html#about">About</a>
 
-      <a href="index.html#reviews">
-        Reviews
-      </a>
+      <a href="index.html#reviews">Reviews</a>
 
-      <a href="index.html#contact">
-        Contact
-      </a>
+      <a href="index.html#contact">Contact</a>
 
     </nav>
 
@@ -95,8 +85,9 @@
 
   <main>
 
-
-    <!-- ================= HERO ================= -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section class="catalog-hero">
 
@@ -121,7 +112,9 @@
     </section>
 
 
-    <!-- ================= CATEGORY SECTION ================= -->
+    <!-- =====================================================
+         CATEGORY SECTION
+    ====================================================== -->
 
     <section class="catalog-section">
 
@@ -155,7 +148,9 @@
     </section>
 
 
-    <!-- ================= PRODUCT SECTION ================= -->
+    <!-- =====================================================
+         PRODUCT SECTION
+    ====================================================== -->
 
     <section
       id="productSection"
@@ -201,7 +196,9 @@
     </section>
 
 
-    <!-- ================= PRODUCT DETAILS ================= -->
+    <!-- =====================================================
+         PRODUCT DETAILS
+    ====================================================== -->
 
     <section
       id="productDetails"
@@ -219,8 +216,7 @@
 
       <div class="product-detail-inner">
 
-
-        <!-- PRODUCT IMAGE -->
+        <!-- IMAGE -->
 
         <div class="product-detail-image">
 
@@ -232,7 +228,7 @@
         </div>
 
 
-        <!-- PRODUCT INFORMATION -->
+        <!-- INFORMATION -->
 
         <div class="product-detail-content">
 
@@ -262,18 +258,30 @@
           </p>
 
 
-          <!-- WHATSAPP ORDER -->
+          <div class="detail-buttons">
 
-          <a
-            id="detailWhatsapp"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="gold-btn">
+            <a
+              id="detailWhatsapp"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="gold-btn">
 
-            💬 WhatsApp Order
+              💬 WhatsApp Order
 
-          </a>
+            </a>
+
+
+            <button
+              type="button"
+              class="whatsapp-order-btn detail-order-button"
+              id="detailOrderButton">
+
+              🛍️ Order This Product
+
+            </button>
+
+          </div>
 
         </div>
 
@@ -282,7 +290,9 @@
     </section>
 
 
-    <!-- ================= OFFER ================= -->
+    <!-- =====================================================
+         OFFER
+    ====================================================== -->
 
     <section class="offer catalog-offer">
 
@@ -318,11 +328,12 @@
 
     </section>
 
-
   </main>
 
 
-  <!-- ================= FLOATING WHATSAPP ================= -->
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ====================================================== -->
 
   <a
     class="floating-whatsapp"
@@ -336,7 +347,9 @@
   </a>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
   <footer>
 
@@ -363,7 +376,9 @@
   </footer>
 
 
-  <!-- ================= BASIC JAVASCRIPT ================= -->
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
 
   <script>
 
@@ -391,6 +406,17 @@
     }
 
 
+    document.querySelectorAll("#nav a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        closeMenu();
+
+      });
+
+    });
+
+
     const year =
       document.getElementById("year");
 
@@ -406,7 +432,7 @@
 
   <!-- =====================================================
        FIREBASE
-  ===================================================== -->
+  ====================================================== -->
 
   <script type="module">
 
@@ -424,12 +450,14 @@
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-    /* ================= FIREBASE CONFIG ================= */
+    /* =====================================================
+       FIREBASE CONFIG
+    ====================================================== */
 
     const firebaseConfig = {
 
       apiKey:
-        "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9UzA4",
+        "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
 
       authDomain:
         "shivam-imitation.firebaseapp.com",
@@ -452,21 +480,31 @@
     };
 
 
-    /* ================= INITIALIZE FIREBASE ================= */
+    /* =====================================================
+       INITIALIZE FIREBASE
+    ====================================================== */
 
     const app =
       initializeApp(firebaseConfig);
+
 
     const db =
       getFirestore(app);
 
 
-    /* ================= PRODUCT DATA ================= */
+    /* =====================================================
+       PRODUCT ARRAY
+    ====================================================== */
 
     let allProducts = [];
 
 
-    /* ================= HTML SECURITY ================= */
+    let selectedProduct = null;
+
+
+    /* =====================================================
+       HTML SECURITY
+    ====================================================== */
 
     function escapeHTML(value) {
 
@@ -486,51 +524,40 @@
 
 
     /* =====================================================
-       CONVERT GITHUB IMAGE URL
-    ===================================================== */
+       GET PRODUCT IMAGE
+       
+       Supports:
+       image
+       imageUrl
+       photoUrl
+       productImage
+       url
+    ====================================================== */
 
-    function getProductImage(image) {
+    function getProductImage(product) {
 
-      if (!image) {
-        return "";
-      }
+      return (
 
-      let url = String(image).trim();
+        product.image ||
 
+        product.imageUrl ||
 
-      /*
-        GitHub normal URL:
+        product.photoUrl ||
 
-        https://github.com/USER/REPO/blob/main/photo.jpg
+        product.productImage ||
 
-        becomes:
+        product.url ||
 
-        https://raw.githubusercontent.com/USER/REPO/main/photo.jpg
-      */
+        ""
 
-      if (
-        url.includes("github.com") &&
-        url.includes("/blob/")
-      ) {
-
-        url = url
-          .replace(
-            "https://github.com/",
-            "https://raw.githubusercontent.com/"
-          )
-          .replace("/blob/", "/");
-
-      }
-
-
-      return url;
+      );
 
     }
 
 
     /* =====================================================
-       LOAD PRODUCTS
-    ===================================================== */
+       LOAD PRODUCTS FROM FIREBASE
+    ====================================================== */
 
     async function loadProducts() {
 
@@ -538,6 +565,7 @@
         document.getElementById(
           "categoryGrid"
         );
+
 
       const productGrid =
         document.getElementById(
@@ -589,7 +617,9 @@
         );
 
 
-      } catch (error) {
+      }
+
+      catch(error) {
 
         console.error(
           "Firebase Error:",
@@ -637,7 +667,7 @@
 
     /* =====================================================
        CREATE CATEGORIES
-    ===================================================== */
+    ====================================================== */
 
     function createCategories() {
 
@@ -664,10 +694,13 @@
 
 
           if (
+
             category &&
+
             !categories.includes(
               category
             )
+
           ) {
 
             categories.push(
@@ -712,8 +745,11 @@
               function(product) {
 
                 return String(
+
                   product.category ||
+
                   "Jewellery"
+
                 ).trim() === category;
 
               }
@@ -725,12 +761,11 @@
 
 
           const image =
-            firstProduct &&
-            firstProduct.image
+            firstProduct
               ? getProductImage(
-                  firstProduct.image
+                  firstProduct
                 )
-              : "logo.jpg";
+              : "";
 
 
           const card =
@@ -746,24 +781,49 @@
           card.innerHTML = `
 
             <img
-              src="${escapeHTML(image)}"
-              alt="${escapeHTML(category)} Collection"
+              src="${escapeHTML(
+                image || "logo.jpg"
+              )}"
+              alt="${escapeHTML(
+                category
+              )} Collection"
               loading="lazy"
             >
 
-            <div class="category-overlay"></div>
 
-            <div class="category-content">
+            <div
+              class="category-overlay">
+            </div>
+
+
+            <div
+              class="category-content">
 
               <small>
+
                 COLLECTION
-                ${String(index + 1).padStart(2, "0")}
+                ${String(
+                  index + 1
+                ).padStart(
+                  2,
+                  "0"
+                )}
+
               </small>
 
+
               <h3>
-                ${escapeHTML(category)}
-                <span>Collection</span>
+
+                ${escapeHTML(
+                  category
+                )}
+
+                <span>
+                  Collection
+                </span>
+
               </h3>
+
 
               <button
                 type="button">
@@ -791,7 +851,9 @@
           );
 
 
-          grid.appendChild(card);
+          grid.appendChild(
+            card
+          );
 
         }
       );
@@ -801,7 +863,7 @@
 
     /* =====================================================
        SHOW PRODUCTS
-    ===================================================== */
+    ====================================================== */
 
     function showProducts(
       category,
@@ -840,20 +902,27 @@
       let products;
 
 
-      if (category === "all") {
+      if (
+        category === "all"
+      ) {
 
         products =
           allProducts;
 
-      } else {
+      }
+
+      else {
 
         products =
           allProducts.filter(
             function(product) {
 
               return String(
+
                 product.category ||
+
                 "Jewellery"
+
               ).trim() === category;
 
             }
@@ -878,7 +947,9 @@
 
         `;
 
-      } else {
+      }
+
+      else {
 
         products.forEach(
           function(product) {
@@ -916,7 +987,7 @@
 
     /* =====================================================
        CREATE PRODUCT CARD
-    ===================================================== */
+    ====================================================== */
 
     function createProductCard(
       product,
@@ -947,7 +1018,9 @@
         product.price !== undefined &&
         product.price !== null &&
         product.price !== ""
+
           ? product.price
+
           : "";
 
 
@@ -958,63 +1031,92 @@
 
       const image =
         getProductImage(
-          product.image
-        ) ||
-        "logo.jpg";
+          product
+        );
 
 
       card.innerHTML = `
 
-        <div class="catalog-product-image">
+        <div
+          class="catalog-product-image">
 
           <img
-            src="${escapeHTML(image)}"
-            alt="${escapeHTML(name)}"
+            src="${escapeHTML(
+              image || "logo.jpg"
+            )}"
+            alt="${escapeHTML(
+              name
+            )}"
             loading="lazy"
           >
 
-          <div class="product-view">
+
+          <div
+            class="product-view">
+
             View Product
+
           </div>
 
         </div>
 
 
-        <div class="catalog-product-info">
+        <div
+          class="catalog-product-info">
+
 
           <small>
-            ${escapeHTML(category)}
+
+            ${escapeHTML(
+              category
+            )}
+
           </small>
 
 
           <h3>
-            ${escapeHTML(name)}
+
+            ${escapeHTML(
+              name
+            )}
+
           </h3>
 
 
           ${
             price !== ""
+
               ? `
-                <div class="product-price">
-                  ₹${escapeHTML(price)}
+
+                <div
+                  class="product-price">
+
+                  ₹${escapeHTML(
+                    price
+                  )}
+
                 </div>
+
               `
+
               : ""
+
           }
 
 
-          ${
-            description
-              ? `
-                <p class="catalog-product-description">
-                  ${escapeHTML(description)}
-                </p>
-              `
-              : ""
-          }
+          <p
+            class="catalog-product-description">
+
+            ${escapeHTML(
+              description
+            )}
+
+          </p>
 
 
-          <div class="product-card-actions">
+          <div
+            class="product-card-actions">
+
 
             <button
               type="button"
@@ -1033,14 +1135,18 @@
 
             </button>
 
+
           </div>
+
 
         </div>
 
       `;
 
 
-      /* ================= VIEW PRODUCT ================= */
+      /* =====================================================
+         VIEW PRODUCT BUTTON
+      ====================================================== */
 
       const viewButton =
         card.querySelector(
@@ -1056,7 +1162,9 @@
 
             event.stopPropagation();
 
-            openProduct(product);
+            openProduct(
+              product
+            );
 
           }
         );
@@ -1064,7 +1172,9 @@
       }
 
 
-      /* ================= WHATSAPP ORDER ================= */
+      /* =====================================================
+         WHATSAPP ORDER BUTTON
+      ====================================================== */
 
       const whatsappButton =
         card.querySelector(
@@ -1080,7 +1190,9 @@
 
             event.stopPropagation();
 
-            orderProduct(product);
+            orderProduct(
+              product
+            );
 
           }
         );
@@ -1088,28 +1200,44 @@
       }
 
 
-      /* ================= CARD CLICK ================= */
+      /* =====================================================
+         CARD CLICK
+      ====================================================== */
 
       card.addEventListener(
         "click",
         function() {
 
-          openProduct(product);
+          openProduct(
+            product
+          );
 
         }
       );
 
 
-      grid.appendChild(card);
+      grid.appendChild(
+        card
+      );
 
     }
 
 
     /* =====================================================
-       WHATSAPP PRODUCT ORDER
-    ===================================================== */
+       WHATSAPP ORDER FUNCTION
+       
+       Sends:
+       Product
+       Category
+       Price
+       Description
+       Photo URL
+       Product Link
+    ====================================================== */
 
-    function orderProduct(product) {
+    function orderProduct(
+      product
+    ) {
 
       const name =
         product.name ||
@@ -1125,7 +1253,9 @@
         product.price !== undefined &&
         product.price !== null &&
         product.price !== ""
+
           ? product.price
+
           : "Please confirm";
 
 
@@ -1136,16 +1266,27 @@
 
       const image =
         getProductImage(
-          product.image
+          product
         );
 
 
+      const photoURL =
+        image ||
+        "Photo not available";
+
+
+      const productLink =
+        image ||
+        "Not available";
+
+
       const message =
+
 `Hello Shivam Imitation 👋
 
-🛍️ I want to order this product.
+I want to order this product.
 
-📌 Product: ${name}
+🛍️ Product: ${name}
 
 📂 Category: ${category}
 
@@ -1155,7 +1296,10 @@
 ${description}
 
 🖼️ Product Photo:
-${image || "Photo not available"}
+${photoURL}
+
+🔗 Product Link:
+${productLink}
 
 Please confirm product availability and order details.
 
@@ -1163,7 +1307,9 @@ Thank you 🙏`;
 
 
       const whatsappURL =
-        "https://wa.me/919714978206?text=" +
+
+        "https://api.whatsapp.com/send?phone=919714978206&text=" +
+
         encodeURIComponent(
           message
         );
@@ -1171,7 +1317,8 @@ Thank you 🙏`;
 
       window.open(
         whatsappURL,
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
       );
 
     }
@@ -1179,9 +1326,15 @@ Thank you 🙏`;
 
     /* =====================================================
        OPEN PRODUCT DETAILS
-    ===================================================== */
+    ====================================================== */
 
-    function openProduct(product) {
+    function openProduct(
+      product
+    ) {
+
+      selectedProduct =
+        product;
+
 
       const details =
         document.getElementById(
@@ -1225,6 +1378,12 @@ Thank you 🙏`;
         );
 
 
+      const orderButton =
+        document.getElementById(
+          "detailOrderButton"
+        );
+
+
       const productName =
         product.name ||
         "Jewellery Product";
@@ -1239,28 +1398,31 @@ Thank you 🙏`;
         product.price !== undefined &&
         product.price !== null &&
         product.price !== ""
+
           ? product.price
+
           : "";
 
 
       const productDescription =
         product.description ||
+
         "Contact Shivam Imitation for availability and details.";
 
 
       const productImage =
         getProductImage(
-          product.image
-        ) ||
-        "logo.jpg";
+          product
+        );
 
 
-      /* ================= IMAGE ================= */
+      /* IMAGE */
 
       if (image) {
 
         image.src =
-          productImage;
+          productImage ||
+          "logo.jpg";
 
         image.alt =
           productName;
@@ -1268,7 +1430,7 @@ Thank you 🙏`;
       }
 
 
-      /* ================= NAME ================= */
+      /* NAME */
 
       if (name) {
 
@@ -1278,7 +1440,7 @@ Thank you 🙏`;
       }
 
 
-      /* ================= CATEGORY ================= */
+      /* CATEGORY */
 
       if (category) {
 
@@ -1288,19 +1450,23 @@ Thank you 🙏`;
       }
 
 
-      /* ================= PRICE ================= */
+      /* PRICE */
 
       if (price) {
 
         price.textContent =
+
           productPrice !== ""
-            ? "₹" + productPrice
-            : "";
+
+            ? "₹" +
+              productPrice
+
+            : "Price on Request";
 
       }
 
 
-      /* ================= DESCRIPTION ================= */
+      /* DESCRIPTION */
 
       if (description) {
 
@@ -1310,16 +1476,17 @@ Thank you 🙏`;
       }
 
 
-      /* ================= WHATSAPP ================= */
+      /* =====================================================
+         WHATSAPP DETAIL LINK
+      ====================================================== */
 
-      if (whatsapp) {
+      const message =
 
-        const message =
 `Hello Shivam Imitation 👋
 
-🛍️ I want to order this product.
+I want to order this product.
 
-📌 Product: ${productName}
+🛍️ Product: ${productName}
 
 📂 Category: ${productCategory}
 
@@ -1329,23 +1496,52 @@ Thank you 🙏`;
 ${productDescription}
 
 🖼️ Product Photo:
-${productImage}
+${productImage || "Photo not available"}
+
+🔗 Product Link:
+${productImage || "Not available"}
 
 Please confirm product availability and order details.
 
 Thank you 🙏`;
 
 
+      const whatsappURL =
+
+        "https://api.whatsapp.com/send?phone=919714978206&text=" +
+
+        encodeURIComponent(
+          message
+        );
+
+
+      if (whatsapp) {
+
         whatsapp.href =
-          "https://wa.me/919714978206?text=" +
-          encodeURIComponent(
-            message
-          );
+          whatsappURL;
 
       }
 
 
-      /* ================= SHOW DETAILS ================= */
+      /* =====================================================
+         DETAIL ORDER BUTTON
+      ====================================================== */
+
+      if (orderButton) {
+
+        orderButton.onclick =
+          function() {
+
+            orderProduct(
+              product
+            );
+
+          };
+
+      }
+
+
+      /* SHOW DETAILS */
 
       if (details) {
 
@@ -1368,20 +1564,8 @@ Thank you 🙏`;
 
 
     /* =====================================================
-       WHATSAPP FUNCTION GLOBAL
-    ===================================================== */
-
-    window.orderProduct =
-      orderProduct;
-
-
-    window.openProduct =
-      openProduct;
-
-
-    /* =====================================================
        BACK TO CATEGORIES
-    ===================================================== */
+    ====================================================== */
 
     window.backToCategories =
       function() {
@@ -1404,18 +1588,18 @@ Thank you 🙏`;
           );
 
 
-        if (section) {
+        if (details) {
 
-          section.classList.remove(
+          details.classList.remove(
             "active"
           );
 
         }
 
 
-        if (details) {
+        if (section) {
 
-          details.classList.remove(
+          section.classList.remove(
             "active"
           );
 
@@ -1439,7 +1623,7 @@ Thank you 🙏`;
 
     /* =====================================================
        CLOSE PRODUCT
-    ===================================================== */
+    ====================================================== */
 
     window.closeProduct =
       function() {
@@ -1458,12 +1642,31 @@ Thank you 🙏`;
 
         }
 
+
+        const section =
+          document.getElementById(
+            "productSection"
+          );
+
+
+        if (section) {
+
+          section.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "start"
+
+          });
+
+        }
+
       };
 
 
     /* =====================================================
-       START
-    ===================================================== */
+       START FIREBASE
+    ====================================================== */
 
     loadProducts();
 
