@@ -26,9 +26,9 @@
 
     .container {
       width: 100%;
-      max-width: 850px;
+      max-width: 1100px;
       margin: auto;
-      padding: 30px 18px;
+      padding: 30px 18px 60px;
     }
 
     .logo {
@@ -52,16 +52,12 @@
       border: 1px solid rgba(231, 189, 85, 0.4);
       border-radius: 18px;
       padding: 25px;
-      margin-bottom: 25px;
       box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+      margin-bottom: 25px;
     }
 
     h2 {
       margin-top: 0;
-      color: #f3d77b;
-    }
-
-    h3 {
       color: #f3d77b;
     }
 
@@ -106,7 +102,7 @@
 
     button {
       width: 100%;
-      margin-top: 15px;
+      margin-top: 18px;
       padding: 14px;
       border: none;
       border-radius: 9px;
@@ -122,7 +118,7 @@
     }
 
     button:disabled {
-      opacity: 0.6;
+      opacity: .6;
       cursor: not-allowed;
     }
 
@@ -132,19 +128,19 @@
       border: 1px solid #e7bd55;
     }
 
-    .cancel-btn {
+    .cancel {
       background: transparent;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.3);
+      color: #f3d77b;
+      border: 1px solid #e7bd55;
     }
 
     .delete-btn {
-      background: #b83232;
+      background: #b83b3b;
       color: #fff;
     }
 
     .delete-btn:hover {
-      background: #d64545;
+      background: #d64b4b;
     }
 
     .edit-btn {
@@ -180,26 +176,14 @@
       color: #f3d77b;
     }
 
-    .preview {
-      margin-top: 15px;
-      text-align: center;
-      display: none;
-    }
-
-    .preview img {
-      width: 220px;
-      height: 220px;
-      border-radius: 12px;
-      border: 1px solid #e7bd55;
-      object-fit: cover;
-    }
-
     .admin-panel {
       display: none;
     }
 
     .login-panel {
       display: block;
+      max-width: 650px;
+      margin: auto;
     }
 
     .small {
@@ -227,32 +211,18 @@
       background: rgba(0, 61, 55, 0.5);
     }
 
-    .progress-box {
-      display: none;
+    .preview {
       margin-top: 15px;
-    }
-
-    .progress-bar-bg {
-      width: 100%;
-      height: 10px;
-      background: #003d37;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(231, 189, 85, 0.3);
-    }
-
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: #e7bd55;
-      transition: width 0.2s;
-    }
-
-    .progress-text {
       text-align: center;
-      margin-top: 7px;
-      font-size: 13px;
-      color: #f3d77b;
+      display: none;
+    }
+
+    .preview img {
+      width: 220px;
+      height: 220px;
+      border-radius: 12px;
+      border: 1px solid #e7bd55;
+      object-fit: cover;
     }
 
     .next-name {
@@ -275,25 +245,42 @@
       text-align: center;
     }
 
-    .url-box {
-      margin-top: 12px;
-      padding: 10px;
-      background: rgba(50, 180, 100, 0.10);
-      border-radius: 8px;
-      font-size: 12px;
-      word-break: break-all;
-      color: #9ff0bd;
+    .progress-box {
       display: none;
+      margin-top: 15px;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: #003d37;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(231, 189, 85, 0.3);
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #e7bd55;
+      transition: width .2s;
+    }
+
+    .progress-text {
+      text-align: center;
+      margin-top: 7px;
+      font-size: 13px;
+      color: #f3d77b;
     }
 
     /* PRODUCTS */
 
     .products-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 15px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .products-header h2 {
@@ -302,128 +289,129 @@
 
     .refresh-btn {
       width: auto;
-      padding: 10px 16px;
       margin: 0;
-      font-size: 13px;
+      padding: 10px 16px;
     }
 
-    .product-list {
-      display: grid;
-      gap: 15px;
+    .product-count {
+      color: #aebbb8;
+      margin-bottom: 18px;
+      font-size: 14px;
     }
 
-    .product-item {
+    .products-grid {
       display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 16px;
-      padding: 15px;
-      border: 1px solid rgba(231,189,85,.2);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      background: #003d37;
+      border: 1px solid rgba(231, 189, 85, .25);
       border-radius: 14px;
-      background: rgba(0,61,55,.5);
+      overflow: hidden;
     }
 
-    .product-item img {
-      width: 110px;
-      height: 130px;
+    .product-card-image {
+      width: 100%;
+      height: 260px;
       object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid rgba(231,189,85,.35);
+      display: block;
+      background: #111;
     }
 
-    .product-info h3 {
-      margin: 0 0 6px;
-      font-size: 20px;
+    .product-card-content {
+      padding: 16px;
     }
 
-    .product-category {
+    .product-card-category {
       color: #f3d77b;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .product-price {
-      margin-top: 7px;
+    .product-card-name {
+      font-size: 20px;
+      margin: 7px 0;
       color: #fff;
-      font-weight: 700;
-      font-size: 17px;
     }
 
-    .product-description {
+    .product-card-price {
+      color: #f3d77b;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .product-card-description {
       color: #b8c7c3;
       font-size: 13px;
       line-height: 1.5;
-      margin: 8px 0;
+      min-height: 40px;
+      margin-bottom: 10px;
     }
 
-    .product-actions {
-      display: flex;
+    .product-id {
+      font-size: 10px;
+      color: #82938f;
+      word-break: break-all;
+      margin-bottom: 5px;
+    }
+
+    .product-image-url {
+      font-size: 10px;
+      color: #82938f;
+      word-break: break-all;
+      margin-bottom: 10px;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-top: 10px;
     }
 
-    .product-actions button {
-      width: auto;
-      margin: 0;
-      padding: 9px 14px;
+    .card-actions button {
+      margin-top: 0;
+      padding: 11px 8px;
       font-size: 13px;
     }
 
     .empty-products {
-      padding: 30px;
       text-align: center;
+      padding: 35px 15px;
       color: #b8c7c3;
-      border: 1px dashed rgba(231,189,85,.3);
+      border: 1px dashed rgba(231, 189, 85, .3);
       border-radius: 12px;
     }
 
-    .edit-box {
-      display: none;
+    .edit-mode {
+      border-color: #f3d77b;
+      box-shadow: 0 0 0 1px rgba(243, 215, 123, .2);
     }
 
-    .current-image {
-      margin-top: 10px;
-      text-align: center;
-    }
+    @media(max-width:850px) {
 
-    .current-image img {
-      width: 150px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 1px solid #e7bd55;
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
     }
 
     @media(max-width:600px) {
 
       .container {
-        padding: 20px 12px;
+        padding: 20px 12px 40px;
       }
 
       .card {
         padding: 18px;
       }
 
-      .product-item {
-        grid-template-columns: 85px 1fr;
-      }
-
-      .product-item img {
-        width: 85px;
-        height: 110px;
-      }
-
-      .product-info h3 {
-        font-size: 17px;
-      }
-
-      .product-actions {
-        flex-direction: column;
-      }
-
-      .product-actions button {
-        width: 100%;
+      .products-grid {
+        grid-template-columns: 1fr;
       }
 
       .products-header {
@@ -433,6 +421,10 @@
 
       .refresh-btn {
         width: 100%;
+      }
+
+      .product-card-image {
+        height: 300px;
       }
 
     }
@@ -487,7 +479,6 @@
       placeholder="Enter admin email"
       autocomplete="email">
 
-
     <label>
       Password
     </label>
@@ -498,7 +489,6 @@
       placeholder="Enter password"
       autocomplete="current-password">
 
-
     <button
       id="loginButton"
       type="button"
@@ -507,7 +497,6 @@
       🔐 Login
 
     </button>
-
 
     <div
       id="loginMessage"
@@ -518,7 +507,7 @@
 
 
   <!-- =====================================================
-       ADMIN PANEL
+       ADMIN
   ====================================================== -->
 
   <div
@@ -527,29 +516,25 @@
 
 
     <!-- ===================================================
-         ADD / EDIT PRODUCT
+         PRODUCT FORM
     ==================================================== -->
 
-    <div class="card">
+    <div
+      id="productFormCard"
+      class="card">
 
       <div class="status">
         ✅ Admin logged in
       </div>
-
 
       <h2 id="formTitle">
         ➕ Add New Product
       </h2>
 
 
-      <input
-        type="hidden"
-        id="editProductId">
+      <!-- PRODUCT NAME -->
 
-
-      <!-- NAME -->
-
-      <label>
+      <label for="productName">
         Product Name *
       </label>
 
@@ -561,7 +546,7 @@
 
       <!-- PRICE -->
 
-      <label>
+      <label for="productPrice">
         Price *
       </label>
 
@@ -575,7 +560,7 @@
 
       <!-- CATEGORY -->
 
-      <label>
+      <label for="productCategory">
         Category *
       </label>
 
@@ -614,18 +599,19 @@
 
       <!-- DESCRIPTION -->
 
-      <label>
+      <label for="productDescription">
         Description *
       </label>
 
       <textarea
         id="productDescription"
-        placeholder="Example: Premium imitation jewellery"></textarea>
+        placeholder="Example: Premium imitation jewellery">
+      </textarea>
 
 
       <!-- IMAGE -->
 
-      <label>
+      <label for="productImage">
         Product Image
       </label>
 
@@ -642,11 +628,15 @@
 
           <br>
 
-          ☁️ Cloudflare Worker દ્વારા GitHub પર upload થશે.
+          ☁️ Image Cloudflare Worker દ્વારા GitHub પર upload થશે.
 
           <br>
 
-          ✏️ Edit કરતી વખતે photo પસંદ ન કરો તો જૂની photo રહેશે.
+          ➕ Add વખતે image જરૂરી છે.
+
+          <br>
+
+          ✏️ Edit વખતે નવી image ન પસંદ કરો તો જૂની image રહેશે.
 
           <br>
 
@@ -657,40 +647,7 @@
       </div>
 
 
-      <!-- CURRENT IMAGE -->
-
-      <div
-        id="currentImageBox"
-        class="current-image"
-        style="display:none">
-
-        <p class="small">
-          Current Product Image
-        </p>
-
-        <img
-          id="currentImage"
-          src=""
-          alt="Current Product">
-
-      </div>
-
-
-      <!-- PREVIEW -->
-
-      <div
-        id="imagePreview"
-        class="preview">
-
-        <img
-          id="previewImage"
-          src=""
-          alt="Product Preview">
-
-      </div>
-
-
-      <!-- WORKER -->
+      <!-- WORKER STATUS -->
 
       <div
         id="workerStatus"
@@ -708,6 +665,20 @@
         class="next-name">
 
         📁 Checking next image number...
+
+      </div>
+
+
+      <!-- PREVIEW -->
+
+      <div
+        id="imagePreview"
+        class="preview">
+
+        <img
+          id="previewImage"
+          src=""
+          alt="Product Preview">
 
       </div>
 
@@ -738,15 +709,7 @@
       </div>
 
 
-      <!-- URL -->
-
-      <div
-        id="urlBox"
-        class="url-box">
-      </div>
-
-
-      <!-- SAVE BUTTON -->
+      <!-- ADD / UPDATE -->
 
       <button
         id="saveProductButton"
@@ -763,11 +726,23 @@
       <button
         id="cancelEditButton"
         type="button"
-        class="cancel-btn"
-        style="display:none"
-        onclick="cancelEdit()">
+        class="cancel"
+        onclick="cancelEdit()"
+        style="display:none;">
 
         ✖ Cancel Edit
+
+      </button>
+
+
+      <!-- LOGOUT -->
+
+      <button
+        type="button"
+        class="logout"
+        onclick="logoutAdmin()">
+
+        Logout
 
       </button>
 
@@ -781,7 +756,7 @@
 
 
     <!-- ===================================================
-         PRODUCT LIST
+         ALL PRODUCTS
     ==================================================== -->
 
     <div class="card">
@@ -789,13 +764,13 @@
       <div class="products-header">
 
         <h2>
-          📦 Manage Products
+          📦 All Products
         </h2>
 
         <button
           type="button"
           class="refresh-btn"
-          onclick="loadProducts()">
+          onclick="loadAllProducts()">
 
           🔄 Refresh
 
@@ -805,11 +780,22 @@
 
 
       <div
-        id="productList"
-        class="product-list">
+        id="productCount"
+        class="product-count">
+
+        Loading products...
+
+      </div>
+
+
+      <div
+        id="productsGrid"
+        class="products-grid">
 
         <div class="empty-products">
+
           Loading products...
+
         </div>
 
       </div>
@@ -817,24 +803,11 @@
     </div>
 
 
-    <!-- LOGOUT -->
-
-    <div class="card">
-
-      <button
-        type="button"
-        class="logout"
-        onclick="logoutAdmin()">
-
-        Logout
-
-      </button>
-
-    </div>
-
   </div>
 
+
 </div>
+
 
 
 <!-- =====================================================
@@ -844,289 +817,317 @@
 <script type="module">
 
 
-import {
-  initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  /* =====================================================
+     IMPORT FIREBASE
+  ====================================================== */
 
-
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
-
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-  serverTimestamp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-
-/* =====================================================
-   FIREBASE CONFIG
-====================================================== */
-
-const firebaseConfig = {
-
-  apiKey:
-    "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
-
-  authDomain:
-    "shivam-imitation.firebaseapp.com",
-
-  projectId:
-    "shivam-imitation",
-
-  storageBucket:
-    "shivam-imitation.firebasestorage.app",
-
-  messagingSenderId:
-    "625171137884",
-
-  appId:
-    "1:625171137884:web:d1928af5e11fad077e6d99",
-
-  measurementId:
-    "G-ER1ETZSLPD"
-
-};
-
-
-/* =====================================================
-   CLOUDFLARE WORKER
-====================================================== */
-
-const WORKER_URL =
-"https://shivam-image-upload-api.dhruviljarsaniya030.workers.dev/";
-
-
-/* =====================================================
-   ADMIN EMAIL
-====================================================== */
-
-const ADMIN_EMAIL =
-"dhruviljarsaniya030@gmail.com";
-
-
-/* =====================================================
-   INITIALIZE
-====================================================== */
-
-const app =
-initializeApp(firebaseConfig);
-
-
-const auth =
-getAuth(app);
-
-
-const db =
-getFirestore(app);
-
-
-/* =====================================================
-   MESSAGE
-====================================================== */
-
-function showMessage(
-  elementId,
-  text,
-  type
-) {
-
-  const element =
-    document.getElementById(elementId);
-
-  if (!element) return;
-
-  element.textContent = text;
-
-  element.className =
-    "message " + type;
-
-}
-
-
-/* =====================================================
-   FIREBASE ERROR
-====================================================== */
-
-function getFirebaseErrorMessage(error) {
-
-  if (!error) {
-    return "Unknown error.";
+  import {
+    initializeApp
   }
-
-  return (
-    error.code +
-    " — " +
-    (
-      error.message ||
-      ""
-    )
-  );
-
-}
+  from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-/* =====================================================
-   LOGIN
-====================================================== */
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+  }
+  from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-window.loginAdmin =
-async function() {
 
-  const email =
-    document
-      .getElementById("loginEmail")
-      .value
-      .trim();
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    doc,
+    updateDoc,
+    deleteDoc,
+    serverTimestamp
+  }
+  from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-  const password =
-    document
-      .getElementById("loginPassword")
-      .value;
 
-  const button =
-    document.getElementById(
-      "loginButton"
+  /* =====================================================
+     FIREBASE CONFIG
+  ====================================================== */
+
+  const firebaseConfig = {
+
+    apiKey:
+      "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
+
+    authDomain:
+      "shivam-imitation.firebaseapp.com",
+
+    projectId:
+      "shivam-imitation",
+
+    storageBucket:
+      "shivam-imitation.firebasestorage.app",
+
+    messagingSenderId:
+      "625171137884",
+
+    appId:
+      "1:625171137884:web:d1928af5e11fad077e6d99",
+
+    measurementId:
+      "G-ER1ETZSLPD"
+
+  };
+
+
+  /* =====================================================
+     WORKER
+  ====================================================== */
+
+  const WORKER_URL =
+    "https://shivam-image-upload-api.dhruviljarsaniya030.workers.dev/";
+
+
+  /* =====================================================
+     ADMIN EMAIL
+  ====================================================== */
+
+  const ADMIN_EMAIL =
+    "dhruviljarsaniya030@gmail.com";
+
+
+  /* =====================================================
+     INITIALIZE
+  ====================================================== */
+
+  const app =
+    initializeApp(
+      firebaseConfig
     );
 
 
-  if (!email || !password) {
-
-    showMessage(
-      "loginMessage",
-      "Please enter email and password.",
-      "error"
-    );
-
-    return;
-
-  }
+  const auth =
+    getAuth(app);
 
 
-  if (
-    email.toLowerCase() !==
-    ADMIN_EMAIL.toLowerCase()
+  const db =
+    getFirestore(app);
+
+
+  /* =====================================================
+     GLOBAL STATE
+  ====================================================== */
+
+  let allProducts = [];
+
+  let editingProductId = null;
+
+  let editingProduct = null;
+
+
+  /* =====================================================
+     MESSAGE
+  ====================================================== */
+
+  function showMessage(
+    id,
+    text,
+    type
   ) {
 
-    showMessage(
-      "loginMessage",
-      "This email is not authorized.",
-      "error"
-    );
+    const element =
+      document.getElementById(id);
 
-    return;
+    if (!element) return;
 
-  }
+    element.textContent =
+      text;
 
-
-  try {
-
-    button.disabled = true;
-
-    button.textContent =
-      "Logging in...";
-
-
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-
-    showMessage(
-      "loginMessage",
-      "Login successful!",
-      "success"
-    );
+    element.className =
+      "message " + type;
 
   }
 
-  catch(error) {
 
-    console.error(error);
+  /* =====================================================
+     FIREBASE ERROR
+  ====================================================== */
 
-    showMessage(
-      "loginMessage",
-      "❌ Login Error: " +
-      getFirebaseErrorMessage(error),
-      "error"
+  function firebaseError(error) {
+
+    if (!error) {
+      return "Unknown error.";
+    }
+
+    return (
+      (error.code || "ERROR") +
+      " — " +
+      (error.message || "Unknown error.")
     );
 
   }
 
-  finally {
 
-    button.disabled = false;
+  /* =====================================================
+     LOGIN
+  ====================================================== */
 
-    button.textContent =
-      "🔐 Login";
+  window.loginAdmin =
+    async function () {
 
-  }
+      const email =
+        document.getElementById(
+          "loginEmail"
+        ).value.trim();
 
-};
+      const password =
+        document.getElementById(
+          "loginPassword"
+        ).value;
 
-
-/* =====================================================
-   AUTH STATE
-====================================================== */
-
-onAuthStateChanged(
-  auth,
-  async function(user) {
-
-    const loginPanel =
-      document.getElementById(
-        "loginPanel"
-      );
-
-    const adminPanel =
-      document.getElementById(
-        "adminPanel"
-      );
+      const button =
+        document.getElementById(
+          "loginButton"
+        );
 
 
-    if (user) {
+      if (!email || !password) {
+
+        showMessage(
+          "loginMessage",
+          "Please enter email and password.",
+          "error"
+        );
+
+        return;
+
+      }
+
 
       if (
-        user.email &&
-        user.email.toLowerCase() ===
+        email.toLowerCase() !==
         ADMIN_EMAIL.toLowerCase()
       ) {
 
-        loginPanel.style.display =
-          "none";
+        showMessage(
+          "loginMessage",
+          "This email is not authorized.",
+          "error"
+        );
 
-        adminPanel.style.display =
-          "block";
+        return;
+
+      }
 
 
-        await findNextProductNumber();
+      try {
 
-        await loadProducts();
+        button.disabled = true;
+
+        button.textContent =
+          "Logging in...";
+
+
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+
+        showMessage(
+          "loginMessage",
+          "Login successful!",
+          "success"
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "LOGIN ERROR:",
+          error
+        );
+
+        showMessage(
+          "loginMessage",
+          "❌ " + firebaseError(error),
+          "error"
+        );
+
+      }
+
+      finally {
+
+        button.disabled = false;
+
+        button.textContent =
+          "🔐 Login";
+
+      }
+
+    };
+
+
+  /* =====================================================
+     AUTH STATE
+  ====================================================== */
+
+  onAuthStateChanged(
+    auth,
+    function(user) {
+
+      const loginPanel =
+        document.getElementById(
+          "loginPanel"
+        );
+
+      const adminPanel =
+        document.getElementById(
+          "adminPanel"
+        );
+
+
+      if (user) {
+
+        if (
+          user.email &&
+          user.email.toLowerCase() ===
+          ADMIN_EMAIL.toLowerCase()
+        ) {
+
+          loginPanel.style.display =
+            "none";
+
+          adminPanel.style.display =
+            "block";
+
+
+          loadAllProducts();
+
+          findNextProductNumber();
+
+        }
+
+        else {
+
+          signOut(auth);
+
+          loginPanel.style.display =
+            "block";
+
+          adminPanel.style.display =
+            "none";
+
+        }
 
       }
 
       else {
 
-        await signOut(auth);
-
         loginPanel.style.display =
           "block";
 
@@ -1136,782 +1137,176 @@ onAuthStateChanged(
       }
 
     }
-
-    else {
-
-      loginPanel.style.display =
-        "block";
-
-      adminPanel.style.display =
-        "none";
-
-    }
-
-  }
-);
-
-
-/* =====================================================
-   FIND NEXT IMAGE NUMBER
-====================================================== */
-
-async function findNextProductNumber() {
-
-  try {
-
-    const snapshot =
-      await getDocs(
-        collection(
-          db,
-          "products"
-        )
-      );
-
-
-    let highestNumber = 10;
-
-
-    snapshot.forEach(
-      function(item) {
-
-        const data =
-          item.data();
-
-
-        if (data.imageName) {
-
-          const match =
-            String(
-              data.imageName
-            ).match(
-              /product-(\d+)/i
-            );
-
-
-          if (match) {
-
-            const number =
-              Number(match[1]);
-
-
-            if (
-              number >
-              highestNumber
-            ) {
-
-              highestNumber =
-                number;
-
-            }
-
-          }
-
-        }
-
-      }
-    );
-
-
-    const nextNumber =
-      highestNumber + 1;
-
-
-    window.nextProductNumber =
-      nextNumber;
-
-
-    document.getElementById(
-      "nextProductName"
-    ).textContent =
-      "📁 Next image: product-" +
-      nextNumber +
-      ".jpg";
-
-  }
-
-  catch(error) {
-
-    console.error(error);
-
-    window.nextProductNumber =
-      11;
-
-    document.getElementById(
-      "nextProductName"
-    ).textContent =
-      "📁 Next image: product-11.jpg";
-
-  }
-
-}
-
-
-/* =====================================================
-   IMAGE PREVIEW
-====================================================== */
-
-document
-.getElementById("productImage")
-.addEventListener(
-  "change",
-  function() {
-
-    const file =
-      this.files[0];
-
-    const preview =
-      document.getElementById(
-        "imagePreview"
-      );
-
-    const image =
-      document.getElementById(
-        "previewImage"
-      );
-
-
-    if (!file) {
-
-      preview.style.display =
-        "none";
-
-      return;
-
-    }
-
-
-    const allowedTypes = [
-
-      "image/jpeg",
-      "image/jpg",
-      "image/png",
-      "image/webp"
-
-    ];
-
-
-    if (
-      !allowedTypes.includes(
-        file.type
-      )
-    ) {
-
-      this.value = "";
-
-      preview.style.display =
-        "none";
-
-      showMessage(
-        "productMessage",
-        "❌ Only JPG, PNG or WEBP images are allowed.",
-        "error"
-      );
-
-      return;
-
-    }
-
-
-    if (
-      file.size >
-      5 * 1024 * 1024
-    ) {
-
-      this.value = "";
-
-      preview.style.display =
-        "none";
-
-      showMessage(
-        "productMessage",
-        "❌ Image must be smaller than 5 MB.",
-        "error"
-      );
-
-      return;
-
-    }
-
-
-    image.src =
-      URL.createObjectURL(file);
-
-
-    preview.style.display =
-      "block";
-
-
-    showMessage(
-      "productMessage",
-      "✅ Image selected.",
-      "info"
-    );
-
-  }
-);
-
-
-/* =====================================================
-   UPLOAD IMAGE
-====================================================== */
-
-async function uploadImageToWorker(file) {
-
-  const formData =
-    new FormData();
-
-
-  formData.append(
-    "image",
-    file
   );
 
 
-  const response =
-    await fetch(
-      WORKER_URL,
-      {
-        method: "POST",
-        body: formData
-      }
-    );
+  /* =====================================================
+     LOAD ALL PRODUCTS
+  ====================================================== */
 
+  window.loadAllProducts =
+    async function() {
 
-  let result;
-
-
-  try {
-
-    result =
-      await response.json();
-
-  }
-
-  catch(error) {
-
-    throw new Error(
-      "Worker returned invalid response."
-    );
-
-  }
-
-
-  if (
-    !response.ok ||
-    !result.success
-  ) {
-
-    throw new Error(
-      result.message ||
-      "Image upload failed."
-    );
-
-  }
-
-
-  return result;
-
-}
-
-
-/* =====================================================
-   SAVE PRODUCT
-====================================================== */
-
-window.saveProduct =
-async function() {
-
-  const editId =
-    document
-      .getElementById(
-        "editProductId"
-      )
-      .value;
-
-
-  const name =
-    document
-      .getElementById(
-        "productName"
-      )
-      .value
-      .trim();
-
-
-  const priceText =
-    document
-      .getElementById(
-        "productPrice"
-      )
-      .value
-      .trim();
-
-
-  const category =
-    document
-      .getElementById(
-        "productCategory"
-      )
-      .value
-      .trim();
-
-
-  const description =
-    document
-      .getElementById(
-        "productDescription"
-      )
-      .value
-      .trim();
-
-
-  const imageInput =
-    document.getElementById(
-      "productImage"
-    );
-
-
-  const file =
-    imageInput.files[0];
-
-
-  const button =
-    document.getElementById(
-      "saveProductButton"
-    );
-
-
-  if (
-    !name ||
-    !priceText ||
-    !category ||
-    !description
-  ) {
-
-    showMessage(
-      "productMessage",
-      "⚠️ Please fill all product details.",
-      "error"
-    );
-
-    return;
-
-  }
-
-
-  const price =
-    Number(priceText);
-
-
-  if (
-    Number.isNaN(price) ||
-    price < 0
-  ) {
-
-    showMessage(
-      "productMessage",
-      "⚠️ Please enter a valid price.",
-      "error"
-    );
-
-    return;
-
-  }
-
-
-  if (!auth.currentUser) {
-
-    showMessage(
-      "productMessage",
-      "❌ Please login first.",
-      "error"
-    );
-
-    return;
-
-  }
-
-
-  try {
-
-    button.disabled = true;
-
-
-    /* =================================================
-       EDIT PRODUCT
-    ================================================= */
-
-    if (editId) {
-
-      button.textContent =
-        "Saving Changes...";
-
-
-      let updateData = {
-
-        name: name,
-
-        price: price,
-
-        category: category,
-
-        description: description,
-
-        updatedAt:
-          serverTimestamp()
-
-      };
-
-
-      /* NEW IMAGE */
-
-      if (file) {
-
+      const grid =
         document.getElementById(
-          "progressBox"
-        ).style.display =
-          "block";
+          "productsGrid"
+        );
 
-
+      const count =
         document.getElementById(
-          "progressText"
-        ).textContent =
-          "📷 Uploading new image...";
+          "productCount"
+        );
 
 
-        document.getElementById(
-          "progressBar"
-        ).style.width =
-          "50%";
+      if (!grid) return;
 
 
-        const uploadResult =
-          await uploadImageToWorker(
-            file
+      grid.innerHTML =
+        `<div class="empty-products">
+          Loading all Firebase products...
+        </div>`;
+
+
+      try {
+
+        const snapshot =
+          await getDocs(
+            collection(
+              db,
+              "products"
+            )
           );
 
 
-        if (!uploadResult.image) {
-
-          throw new Error(
-            "New image URL not received."
-          );
-
-        }
+        allProducts = [];
 
 
-        updateData.image =
-          uploadResult.image;
+        snapshot.forEach(
+          function(productDoc) {
+
+            allProducts.push({
+
+              id:
+                productDoc.id,
+
+              ...productDoc.data()
+
+            });
+
+          }
+        );
 
 
-        updateData.imageName =
-          uploadResult.fileName;
+        /* SORT */
+
+        allProducts.sort(
+          function(a, b) {
+
+            return String(
+              a.name || ""
+            ).localeCompare(
+              String(
+                b.name || ""
+              )
+            );
+
+          }
+        );
 
 
-        document.getElementById(
-          "progressBar"
-        ).style.width =
-          "80%";
+        count.textContent =
+          "📦 Total Products: " +
+          allProducts.length;
+
+
+        displayProducts();
+
 
       }
 
+      catch (error) {
 
-      await updateDoc(
-        doc(
-          db,
-          "products",
-          editId
-        ),
-        updateData
-      );
+        console.error(
+          "LOAD PRODUCTS ERROR:",
+          error
+        );
 
 
-      document.getElementById(
-        "progressBar"
-      ).style.width =
-        "100%";
+        count.textContent =
+          "Unable to load products.";
 
 
-      showMessage(
-        "productMessage",
-        "✅ Product updated successfully!",
-        "success"
-      );
+        grid.innerHTML =
+          `<div class="empty-products">
+            ❌ ${escapeHTML(
+              error.message ||
+              "Failed to load products."
+            )}
+          </div>`;
 
-
-      cancelEdit();
-
-
-      await loadProducts();
-
-
-      setTimeout(
-        function() {
-
-          document.getElementById(
-            "progressBox"
-          ).style.display =
-            "none";
-
-          document.getElementById(
-            "progressBar"
-          ).style.width =
-            "0%";
-
-        },
-        1500
-      );
-
-
-      return;
-
-    }
-
-
-    /* =================================================
-       ADD NEW PRODUCT
-    ================================================= */
-
-    if (!file) {
-
-      showMessage(
-        "productMessage",
-        "⚠️ Please select a product image.",
-        "error"
-      );
-
-      return;
-
-    }
-
-
-    button.textContent =
-      "Uploading...";
-
-
-    document.getElementById(
-      "progressBox"
-    ).style.display =
-      "block";
-
-
-    document.getElementById(
-      "progressBar"
-    ).style.width =
-      "10%";
-
-
-    document.getElementById(
-      "progressText"
-    ).textContent =
-      "📷 Uploading product image...";
-
-
-    const uploadResult =
-      await uploadImageToWorker(
-        file
-      );
-
-
-    document.getElementById(
-      "progressBar"
-    ).style.width =
-      "70%";
-
-
-    const imageURL =
-      uploadResult.image;
-
-
-    const imageName =
-      uploadResult.fileName;
-
-
-    if (!imageURL) {
-
-      throw new Error(
-        "Worker did not return image URL."
-      );
-
-    }
-
-
-    const productData = {
-
-      name: name,
-
-      price: price,
-
-      category: category,
-
-      description: description,
-
-      image: imageURL,
-
-      imageName: imageName,
-
-      createdAt:
-        serverTimestamp()
+      }
 
     };
 
 
-    await addDoc(
-      collection(
-        db,
-        "products"
-      ),
-      productData
-    );
+  /* =====================================================
+     ESCAPE HTML
+  ====================================================== */
 
+  function escapeHTML(value) {
 
-    document.getElementById(
-      "progressBar"
-    ).style.width =
-      "100%";
+    return String(
+      value ?? ""
+    )
 
+    .replace(
+      /&/g,
+      "&amp;"
+    )
 
-    document.getElementById(
-      "progressText"
-    ).textContent =
-      "✅ Upload complete";
+    .replace(
+      /</g,
+      "&lt;"
+    )
 
+    .replace(
+      />/g,
+      "&gt;"
+    )
 
-    showMessage(
-      "productMessage",
-      "✅ Product added successfully as " +
-      imageName,
-      "success"
-    );
+    .replace(
+      /"/g,
+      "&quot;"
+    )
 
-
-    clearForm();
-
-
-    await findNextProductNumber();
-
-    await loadProducts();
-
-
-    setTimeout(
-      function() {
-
-        document.getElementById(
-          "progressBox"
-        ).style.display =
-          "none";
-
-        document.getElementById(
-          "progressBar"
-        ).style.width =
-          "0%";
-
-      },
-      2000
+    .replace(
+      /'/g,
+      "&#039;"
     );
 
   }
 
-  catch(error) {
 
-    console.error(
-      "SAVE PRODUCT ERROR:",
-      error
-    );
+  /* =====================================================
+     DISPLAY PRODUCTS
+  ====================================================== */
 
+  function displayProducts() {
 
-    showMessage(
-      "productMessage",
-      "❌ " +
-      (
-        error.message ||
-        "Product save failed."
-      ),
-      "error"
-    );
-
-  }
-
-  finally {
-
-    button.disabled =
-      false;
-
-
-    if (
-      !document.getElementById(
-        "editProductId"
-      ).value
-    ) {
-
-      button.textContent =
-        "➕ Add Product";
-
-    }
-
-  }
-
-};
-
-
-/* =====================================================
-   LOAD ALL PRODUCTS
-====================================================== */
-
-window.loadProducts =
-async function() {
-
-  const list =
-    document.getElementById(
-      "productList"
-    );
-
-
-  list.innerHTML =
-    `<div class="empty-products">
-      Loading products...
-    </div>`;
-
-
-  try {
-
-    const snapshot =
-      await getDocs(
-        collection(
-          db,
-          "products"
-        )
+    const grid =
+      document.getElementById(
+        "productsGrid"
       );
 
 
-    const products = [];
+    if (!grid) return;
 
 
-    snapshot.forEach(
-      function(item) {
+    if (!allProducts.length) {
 
-        products.push({
-
-          id: item.id,
-
-          ...item.data()
-
-        });
-
-      }
-    );
-
-
-    /* NEWEST FIRST */
-
-    products.reverse();
-
-
-    if (!products.length) {
-
-      list.innerHTML =
+      grid.innerHTML =
         `<div class="empty-products">
-          No products found.
+          📦 No products found in Firebase.
         </div>`;
 
       return;
@@ -1919,35 +1314,25 @@ async function() {
     }
 
 
-    list.innerHTML = "";
+    grid.innerHTML = "";
 
 
-    products.forEach(
+    allProducts.forEach(
       function(product) {
 
-        const item =
+        const card =
           document.createElement(
             "div"
           );
 
 
-        item.className =
-          "product-item";
-
-
-        const image =
-          product.image ||
-          "logo.jpg";
+        card.className =
+          "product-card";
 
 
         const name =
           product.name ||
           "Unnamed Product";
-
-
-        const category =
-          product.category ||
-          "Jewellery";
 
 
         const price =
@@ -1957,43 +1342,63 @@ async function() {
             : "";
 
 
+        const category =
+          product.category ||
+          "Jewellery";
+
+
         const description =
           product.description ||
           "";
 
 
-        item.innerHTML = `
+        const image =
+          product.image ||
+          "logo.jpg";
+
+
+        card.innerHTML = `
 
           <img
+            class="product-card-image"
             src="${escapeHTML(image)}"
             alt="${escapeHTML(name)}"
+            loading="lazy"
             onerror="this.src='logo.jpg'"
           >
 
-          <div class="product-info">
+          <div class="product-card-content">
 
-            <div class="product-category">
+            <div class="product-card-category">
               ${escapeHTML(category)}
             </div>
 
-            <h3>
+            <div class="product-card-name">
               ${escapeHTML(name)}
-            </h3>
+            </div>
 
-            <div class="product-price">
+            <div class="product-card-price">
               ₹${escapeHTML(price)}
             </div>
 
-            <div class="product-description">
+            <div class="product-card-description">
               ${escapeHTML(description)}
             </div>
 
-            <div class="product-actions">
+            <div class="product-id">
+              Firebase ID: ${escapeHTML(product.id)}
+            </div>
+
+            <div class="product-image-url">
+              Image: ${escapeHTML(image)}
+            </div>
+
+            <div class="card-actions">
 
               <button
                 type="button"
                 class="edit-btn"
-                onclick="editProduct('${product.id}')">
+                data-edit-id="${escapeHTML(product.id)}">
 
                 ✏️ Edit
 
@@ -2002,7 +1407,7 @@ async function() {
               <button
                 type="button"
                 class="delete-btn"
-                onclick="deleteProduct('${product.id}')">
+                data-delete-id="${escapeHTML(product.id)}">
 
                 🗑️ Delete
 
@@ -2015,190 +1420,1063 @@ async function() {
         `;
 
 
-        list.appendChild(item);
+        const editButton =
+          card.querySelector(
+            "[data-edit-id]"
+          );
+
+
+        const deleteButton =
+          card.querySelector(
+            "[data-delete-id]"
+          );
+
+
+        if (editButton) {
+
+          editButton.addEventListener(
+            "click",
+            function() {
+
+              editProduct(
+                product.id
+              );
+
+            }
+          );
+
+        }
+
+
+        if (deleteButton) {
+
+          deleteButton.addEventListener(
+            "click",
+            function() {
+
+              deleteProduct(
+                product.id
+              );
+
+            }
+          );
+
+        }
+
+
+        grid.appendChild(
+          card
+        );
 
       }
     );
 
   }
 
-  catch(error) {
 
-    console.error(error);
+  /* =====================================================
+     EDIT PRODUCT
+  ====================================================== */
 
+  window.editProduct =
+    function(productId) {
 
-    list.innerHTML =
-      `<div class="empty-products">
-        ❌ Unable to load products.
-        <br><br>
-        ${escapeHTML(
-          error.message ||
-          ""
-        )}
-      </div>`;
+      const product =
+        allProducts.find(
+          function(item) {
 
-  }
+            return item.id === productId;
 
-};
+          }
+        );
 
 
-/* =====================================================
-   ESCAPE HTML
-====================================================== */
+      if (!product) {
 
-function escapeHTML(value) {
+        showMessage(
+          "productMessage",
+          "Product not found.",
+          "error"
+        );
 
-  return String(
-    value ?? ""
-  )
+        return;
 
-  .replace(
-    /&/g,
-    "&amp;"
-  )
-
-  .replace(
-    /</g,
-    "&lt;"
-  )
-
-  .replace(
-    />/g,
-    "&gt;"
-  )
-
-  .replace(
-    /"/g,
-    "&quot;"
-  )
-
-  .replace(
-    /'/g,
-    "&#039;"
-  );
-
-}
+      }
 
 
-/* =====================================================
-   EDIT PRODUCT
-====================================================== */
+      editingProductId =
+        productId;
 
-window.editProduct =
-async function(productId) {
 
-  try {
+      editingProduct =
+        product;
 
-    const snapshot =
-      await getDocs(
-        collection(
-          db,
-          "products"
-        )
+
+      document.getElementById(
+        "productName"
+      ).value =
+        product.name || "";
+
+
+      document.getElementById(
+        "productPrice"
+      ).value =
+        product.price ?? "";
+
+
+      document.getElementById(
+        "productCategory"
+      ).value =
+        product.category || "";
+
+
+      document.getElementById(
+        "productDescription"
+      ).value =
+        product.description || "";
+
+
+      document.getElementById(
+        "formTitle"
+      ).textContent =
+        "✏️ Edit Product";
+
+
+      document.getElementById(
+        "saveProductButton"
+      ).textContent =
+        "💾 Update Product";
+
+
+      document.getElementById(
+        "cancelEditButton"
+      ).style.display =
+        "block";
+
+
+      document.getElementById(
+        "productFormCard"
+      ).classList.add(
+        "edit-mode"
       );
 
 
-    let product = null;
+      const preview =
+        document.getElementById(
+          "imagePreview"
+        );
 
 
-    snapshot.forEach(
-      function(item) {
+      const previewImage =
+        document.getElementById(
+          "previewImage"
+        );
 
-        if (
-          item.id ===
-          productId
-        ) {
 
-          product = {
+      if (
+        product.image &&
+        preview &&
+        previewImage
+      ) {
 
-            id: item.id,
+        previewImage.src =
+          product.image;
 
-            ...item.data()
+        preview.style.display =
+          "block";
+
+      }
+
+
+      showMessage(
+        "productMessage",
+        "✏️ Editing: " +
+        (product.name || "Product"),
+        "info"
+      );
+
+
+      window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+      });
+
+    };
+
+
+  /* =====================================================
+     CANCEL EDIT
+  ====================================================== */
+
+  window.cancelEdit =
+    function() {
+
+      editingProductId =
+        null;
+
+      editingProduct =
+        null;
+
+
+      clearForm();
+
+
+      document.getElementById(
+        "formTitle"
+      ).textContent =
+        "➕ Add New Product";
+
+
+      document.getElementById(
+        "saveProductButton"
+      ).textContent =
+        "➕ Add Product";
+
+
+      document.getElementById(
+        "cancelEditButton"
+      ).style.display =
+        "none";
+
+
+      document.getElementById(
+        "productFormCard"
+      ).classList.remove(
+        "edit-mode"
+      );
+
+
+      showMessage(
+        "productMessage",
+        "Edit cancelled.",
+        "info"
+      );
+
+    };
+
+
+  /* =====================================================
+     SAVE PRODUCT
+     ====================================================== */
+
+  window.saveProduct =
+    async function() {
+
+      const name =
+        document.getElementById(
+          "productName"
+        ).value.trim();
+
+
+      const priceText =
+        document.getElementById(
+          "productPrice"
+        ).value.trim();
+
+
+      const category =
+        document.getElementById(
+          "productCategory"
+        ).value.trim();
+
+
+      const description =
+        document.getElementById(
+          "productDescription"
+        ).value.trim();
+
+
+      const imageInput =
+        document.getElementById(
+          "productImage"
+        );
+
+
+      const file =
+        imageInput.files[0];
+
+
+      const button =
+        document.getElementById(
+          "saveProductButton"
+        );
+
+
+      /* VALIDATION */
+
+      if (
+        !name ||
+        !priceText ||
+        !category ||
+        !description
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Please fill all product details.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      const price =
+        Number(priceText);
+
+
+      if (
+        Number.isNaN(price) ||
+        price < 0
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Please enter a valid price.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      if (!auth.currentUser) {
+
+        showMessage(
+          "productMessage",
+          "❌ Please login first.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      try {
+
+        button.disabled =
+          true;
+
+
+        /* =================================================
+           EDIT
+        ================================================== */
+
+        if (editingProductId) {
+
+          button.textContent =
+            "Updating...";
+
+
+          let imageURL =
+            editingProduct.image || "";
+
+
+          let imageName =
+            editingProduct.imageName || "";
+
+
+          /* NEW IMAGE */
+
+          if (file) {
+
+            showProgress(
+              "📷 Uploading new product image...",
+              20
+            );
+
+
+            const uploadResult =
+              await uploadImageToWorker(
+                file
+              );
+
+
+            imageURL =
+              uploadResult.image;
+
+
+            imageName =
+              uploadResult.fileName;
+
+
+            showProgress(
+              "✅ New image uploaded. Updating product...",
+              70
+            );
+
+          }
+
+
+          const updateData = {
+
+            name:
+              name,
+
+            price:
+              price,
+
+            category:
+              category,
+
+            description:
+              description,
+
+            image:
+              imageURL,
+
+            imageName:
+              imageName
 
           };
+
+
+          await updateDoc(
+
+            doc(
+              db,
+              "products",
+              editingProductId
+            ),
+
+            updateData
+
+          );
+
+
+          showProgress(
+            "✅ Product updated successfully!",
+            100
+          );
+
+
+          showMessage(
+            "productMessage",
+            "✅ Product updated successfully.",
+            "success"
+          );
+
+
+          cancelEdit();
+
+
+          await loadAllProducts();
+
+
+          hideProgress();
+
+        }
+
+
+        /* =================================================
+           ADD
+        ================================================== */
+
+        else {
+
+          if (!file) {
+
+            showMessage(
+              "productMessage",
+              "⚠️ Please select a product image.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          button.textContent =
+            "Uploading...";
+
+
+          showProgress(
+            "📷 Uploading product image...",
+            15
+          );
+
+
+          const uploadResult =
+            await uploadImageToWorker(
+              file
+            );
+
+
+          showProgress(
+            "✅ Image uploaded. Saving product...",
+            70
+          );
+
+
+          const imageURL =
+            uploadResult.image;
+
+
+          const imageName =
+            uploadResult.fileName;
+
+
+          if (!imageURL) {
+
+            throw new Error(
+              "Worker did not return image URL."
+            );
+
+          }
+
+
+          const productData = {
+
+            name:
+              name,
+
+            price:
+              price,
+
+            category:
+              category,
+
+            description:
+              description,
+
+            image:
+              imageURL,
+
+            imageName:
+              imageName,
+
+            createdAt:
+              serverTimestamp()
+
+          };
+
+
+          const docRef =
+            await addDoc(
+
+              collection(
+                db,
+                "products"
+              ),
+
+              productData
+
+            );
+
+
+          console.log(
+            "PRODUCT ADDED:",
+            docRef.id
+          );
+
+
+          showProgress(
+            "✅ Product added successfully!",
+            100
+          );
+
+
+          showMessage(
+            "productMessage",
+            "✅ Product added successfully as " +
+            imageName,
+            "success"
+          );
+
+
+          clearForm();
+
+
+          await findNextProductNumber();
+
+
+          await loadAllProducts();
+
+
+          setTimeout(
+            hideProgress,
+            2000
+          );
 
         }
 
       }
+
+      catch (error) {
+
+        console.error(
+          "SAVE PRODUCT ERROR:",
+          error
+        );
+
+
+        hideProgress();
+
+
+        showMessage(
+          "productMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Product save failed."
+          ),
+          "error"
+        );
+
+      }
+
+      finally {
+
+        button.disabled =
+          false;
+
+
+        if (editingProductId) {
+
+          button.textContent =
+            "💾 Update Product";
+
+        }
+
+        else {
+
+          button.textContent =
+            "➕ Add Product";
+
+        }
+
+      }
+
+    };
+
+
+  /* =====================================================
+     DELETE PRODUCT
+  ====================================================== */
+
+  window.deleteProduct =
+    async function(productId) {
+
+      const product =
+        allProducts.find(
+          function(item) {
+
+            return item.id === productId;
+
+          }
+        );
+
+
+      if (!product) {
+
+        alert(
+          "Product not found."
+        );
+
+        return;
+
+      }
+
+
+      const name =
+        product.name ||
+        "this product";
+
+
+      const confirmed =
+        confirm(
+          "⚠️ Delete Product?\n\n" +
+          name +
+          "\n\n" +
+          "This will permanently remove the product from Firebase."
+        );
+
+
+      if (!confirmed) {
+
+        return;
+
+      }
+
+
+      try {
+
+        await deleteDoc(
+
+          doc(
+            db,
+            "products",
+            productId
+          )
+
+        );
+
+
+        showMessage(
+          "productMessage",
+          "🗑️ " +
+          name +
+          " deleted successfully.",
+          "success"
+        );
+
+
+        if (
+          editingProductId ===
+          productId
+        ) {
+
+          cancelEdit();
+
+        }
+
+
+        await loadAllProducts();
+
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "DELETE ERROR:",
+          error
+        );
+
+
+        showMessage(
+          "productMessage",
+          "❌ Delete failed: " +
+          (
+            error.message ||
+            "Unknown error."
+          ),
+          "error"
+        );
+
+      }
+
+    };
+
+
+  /* =====================================================
+     UPLOAD IMAGE TO WORKER
+  ====================================================== */
+
+  async function uploadImageToWorker(
+    file
+  ) {
+
+    const formData =
+      new FormData();
+
+
+    formData.append(
+      "image",
+      file
     );
 
 
-    if (!product) {
+    const response =
+      await fetch(
 
-      showMessage(
-        "productMessage",
-        "❌ Product not found.",
-        "error"
+        WORKER_URL,
+
+        {
+
+          method:
+            "POST",
+
+          body:
+            formData
+
+        }
+
       );
 
-      return;
+
+    let result;
+
+
+    try {
+
+      result =
+        await response.json();
+
+    }
+
+    catch {
+
+      throw new Error(
+        "Worker returned invalid response."
+      );
 
     }
 
 
-    document.getElementById(
-      "editProductId"
-    ).value =
-      product.id;
+    if (
+      !response.ok ||
+      !result.success
+    ) {
 
+      throw new Error(
+        result.message ||
+        "GitHub image upload failed."
+      );
+
+    }
+
+
+    return result;
+
+  }
+
+
+  /* =====================================================
+     IMAGE PREVIEW
+  ====================================================== */
+
+  document
+    .getElementById(
+      "productImage"
+    )
+    .addEventListener(
+      "change",
+      function() {
+
+        const file =
+          this.files[0];
+
+
+        const preview =
+          document.getElementById(
+            "imagePreview"
+          );
+
+
+        const image =
+          document.getElementById(
+            "previewImage"
+          );
+
+
+        if (!file) {
+
+          return;
+
+        }
+
+
+        const allowedTypes = [
+
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "image/webp"
+
+        ];
+
+
+        if (
+          !allowedTypes.includes(
+            file.type
+          )
+        ) {
+
+          this.value =
+            "";
+
+          preview.style.display =
+            "none";
+
+          showMessage(
+            "productMessage",
+            "❌ Only JPG, PNG or WEBP images are allowed.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        if (
+          file.size >
+          5 * 1024 * 1024
+        ) {
+
+          this.value =
+            "";
+
+          preview.style.display =
+            "none";
+
+          showMessage(
+            "productMessage",
+            "❌ Image must be smaller than 5 MB.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+        image.src =
+          URL.createObjectURL(
+            file
+          );
+
+
+        preview.style.display =
+          "block";
+
+
+        showMessage(
+          "productMessage",
+          editingProductId
+            ? "✅ New image selected. It will replace the old image."
+            : "✅ Image selected. Ready to upload.",
+          "info"
+        );
+
+      }
+    );
+
+
+  /* =====================================================
+     FIND NEXT IMAGE NUMBER
+  ====================================================== */
+
+  async function findNextProductNumber() {
+
+    try {
+
+      const snapshot =
+        await getDocs(
+          collection(
+            db,
+            "products"
+          )
+        );
+
+
+      let highestNumber =
+        10;
+
+
+      snapshot.forEach(
+        function(productDoc) {
+
+          const data =
+            productDoc.data();
+
+
+          if (data.imageName) {
+
+            const match =
+              String(
+                data.imageName
+              ).match(
+                /product-(\d+)/i
+              );
+
+
+            if (match) {
+
+              const number =
+                Number(
+                  match[1]
+                );
+
+
+              if (
+                number >
+                highestNumber
+              ) {
+
+                highestNumber =
+                  number;
+
+              }
+
+            }
+
+          }
+
+        }
+      );
+
+
+      const nextNumber =
+        highestNumber + 1;
+
+
+      window.nextProductNumber =
+        nextNumber;
+
+
+      document.getElementById(
+        "nextProductName"
+      ).textContent =
+        "📁 Next image: product-" +
+        nextNumber +
+        ".jpg";
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "NUMBER ERROR:",
+        error
+      );
+
+      document.getElementById(
+        "nextProductName"
+      ).textContent =
+        "📁 Next image number unavailable.";
+
+    }
+
+  }
+
+
+  /* =====================================================
+     CLEAR FORM
+  ====================================================== */
+
+  function clearForm() {
 
     document.getElementById(
       "productName"
     ).value =
-      product.name ||
       "";
 
 
     document.getElementById(
       "productPrice"
     ).value =
-      product.price ??
       "";
 
 
     document.getElementById(
       "productCategory"
     ).value =
-      product.category ||
       "";
 
 
     document.getElementById(
       "productDescription"
     ).value =
-      product.description ||
       "";
-
-
-    document.getElementById(
-      "formTitle"
-    ).textContent =
-      "✏️ Edit Product";
-
-
-    document.getElementById(
-      "saveProductButton"
-    ).textContent =
-      "💾 Save Changes";
-
-
-    document.getElementById(
-      "cancelEditButton"
-    ).style.display =
-      "block";
-
-
-    document.getElementById(
-      "currentImageBox"
-    ).style.display =
-      "block";
-
-
-    document.getElementById(
-      "currentImage"
-    ).src =
-      product.image ||
-      "logo.jpg";
 
 
     document.getElementById(
@@ -2212,285 +2490,96 @@ async function(productId) {
     ).style.display =
       "none";
 
-
-    showMessage(
-      "productMessage",
-      "✏️ Editing: " +
-      product.name,
-      "info"
-    );
-
-
-    window.scrollTo({
-
-      top: 0,
-
-      behavior: "smooth"
-
-    });
-
   }
 
-  catch(error) {
 
-    console.error(error);
+  /* =====================================================
+     PROGRESS
+  ====================================================== */
 
-    showMessage(
-      "productMessage",
-      "❌ Unable to edit product.",
-      "error"
-    );
+  function showProgress(
+    text,
+    percent
+  ) {
 
-  }
-
-};
-
-
-/* =====================================================
-   CANCEL EDIT
-====================================================== */
-
-window.cancelEdit =
-function() {
-
-  document.getElementById(
-    "editProductId"
-  ).value =
-    "";
+    document.getElementById(
+      "progressBox"
+    ).style.display =
+      "block";
 
 
-  document.getElementById(
-    "formTitle"
-  ).textContent =
-    "➕ Add New Product";
+    document.getElementById(
+      "progressBar"
+    ).style.width =
+      percent + "%";
 
 
-  document.getElementById(
-    "saveProductButton"
-  ).textContent =
-    "➕ Add Product";
-
-
-  document.getElementById(
-    "cancelEditButton"
-  ).style.display =
-    "none";
-
-
-  document.getElementById(
-    "currentImageBox"
-  ).style.display =
-    "none";
-
-
-  clearForm();
-
-
-};
-
-
-/* =====================================================
-   CLEAR FORM
-====================================================== */
-
-function clearForm() {
-
-  document.getElementById(
-    "productName"
-  ).value =
-    "";
-
-
-  document.getElementById(
-    "productPrice"
-  ).value =
-    "";
-
-
-  document.getElementById(
-    "productCategory"
-  ).value =
-    "";
-
-
-  document.getElementById(
-    "productDescription"
-  ).value =
-    "";
-
-
-  document.getElementById(
-    "productImage"
-  ).value =
-    "";
-
-
-  document.getElementById(
-    "imagePreview"
-  ).style.display =
-    "none";
-
-
-  document.getElementById(
-    "currentImageBox"
-  ).style.display =
-    "none";
-
-}
-
-
-/* =====================================================
-   DELETE PRODUCT
-====================================================== */
-
-window.deleteProduct =
-async function(productId) {
-
-  if (!auth.currentUser) {
-
-    showMessage(
-      "productMessage",
-      "❌ Please login first.",
-      "error"
-    );
-
-    return;
+    document.getElementById(
+      "progressText"
+    ).textContent =
+      text;
 
   }
 
 
-  try {
+  function hideProgress() {
 
-    /* FIND PRODUCT NAME */
-
-    const snapshot =
-      await getDocs(
-        collection(
-          db,
-          "products"
-        )
-      );
+    document.getElementById(
+      "progressBox"
+    ).style.display =
+      "none";
 
 
-    let productName =
-      "this product";
+    document.getElementById(
+      "progressBar"
+    ).style.width =
+      "0%";
+
+  }
 
 
-    snapshot.forEach(
-      function(item) {
+  /* =====================================================
+     LOGOUT
+  ====================================================== */
 
-        if (
-          item.id ===
-          productId
-        ) {
+  window.logoutAdmin =
+    async function() {
 
-          productName =
-            item.data().name ||
-            "this product";
+      try {
 
-        }
+        await signOut(
+          auth
+        );
 
       }
-    );
+
+      catch (error) {
+
+        console.error(
+          "LOGOUT ERROR:",
+          error
+        );
+
+      }
+
+    };
 
 
-    const confirmed =
-      confirm(
-        "⚠️ Are you sure you want to delete:\n\n" +
-        productName +
-        "\n\nThis product will be removed from your website."
-      );
+  /* =====================================================
+     CONSOLE
+  ====================================================== */
 
+  console.log(
+    "Shivam Imitation Admin Panel Loaded"
+  );
 
-    if (!confirmed) {
+  console.log(
+    "Worker:",
+    WORKER_URL
+  );
 
-      return;
-
-    }
-
-
-    await deleteDoc(
-      doc(
-        db,
-        "products",
-        productId
-      )
-    );
-
-
-    showMessage(
-      "productMessage",
-      "🗑️ Product deleted successfully.",
-      "success"
-    );
-
-
-    await loadProducts();
-
-    await findNextProductNumber();
-
-  }
-
-  catch(error) {
-
-    console.error(
-      "DELETE ERROR:",
-      error
-    );
-
-
-    showMessage(
-      "productMessage",
-      "❌ Delete failed: " +
-      (
-        error.message ||
-        ""
-      ),
-      "error"
-    );
-
-  }
-
-};
-
-
-/* =====================================================
-   LOGOUT
-====================================================== */
-
-window.logoutAdmin =
-async function() {
-
-  try {
-
-    await signOut(auth);
-
-  }
-
-  catch(error) {
-
-    console.error(error);
-
-  }
-
-};
-
-
-/* =====================================================
-   CONSOLE
-====================================================== */
-
-console.log(
-  "Shivam Imitation Admin Panel Loaded"
-);
-
-console.log(
-  "Cloudflare Worker:",
-  WORKER_URL
-);
 
 </script>
-
 
 </body>
 
