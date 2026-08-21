@@ -3,112 +3,72 @@
    PREMIUM COLLECTION PAGE
 ========================================================= */
 
-
-/* =========================================================
-   COLLECTION HERO
-========================================================= */
-
-.catalog-hero {
-
-  min-height: 480px;
-
-  position: relative;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-
-  overflow: hidden;
+.catalog-hero{
+  min-height:480px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
 
   background:
-
     linear-gradient(
-      rgba(5, 5, 5, .65),
-      rgba(5, 5, 5, .88)
+      rgba(5,5,5,.65),
+      rgba(5,5,5,.88)
     ),
-
-    url("product-5.jpg")
-    center / cover
-    no-repeat;
-
+    url("product-5.jpg") center/cover no-repeat;
 }
 
+.catalog-hero::before{
+  content:"";
+  position:absolute;
+  inset:25px;
 
-.catalog-hero::before {
+  border:1px solid rgba(216,181,104,.25);
 
-  content: "";
-
-  position: absolute;
-
-  inset: 25px;
-
-  border:
-    1px solid
-    rgba(216, 181, 104, .25);
-
-  pointer-events: none;
-
+  pointer-events:none;
 }
 
+.catalog-hero-content{
+  position:relative;
+  z-index:2;
 
-.catalog-hero-content {
+  max-width:800px;
 
-  position: relative;
-
-  z-index: 2;
-
-  max-width: 800px;
-
-  padding: 30px;
-
+  padding:30px;
 }
 
+.catalog-hero h1{
+  font-family:"Cormorant Garamond",serif;
 
-.catalog-hero h1 {
+  font-size:clamp(58px,8vw,95px);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-weight:500;
 
-  font-size:
-    clamp(58px, 8vw, 95px);
+  line-height:.86;
 
-  font-weight: 500;
+  letter-spacing:-1px;
 
-  line-height: .86;
-
-  letter-spacing: -1px;
-
-  margin: 20px 0;
-
+  margin:20px 0;
 }
 
+.catalog-hero h1 span{
+  display:block;
 
-.catalog-hero h1 span {
-
-  display: block;
-
-  color: var(--gold);
-
+  color:var(--gold);
 }
 
+.catalog-hero-content > p:last-child{
+  max-width:560px;
 
-.catalog-hero-content > p:last-child {
+  margin:auto;
 
-  max-width: 560px;
+  color:#c8c3b9;
 
-  margin: auto;
+  font-size:13px;
 
-  color: #c8c3b9;
-
-  font-size: 13px;
-
-  line-height: 1.8;
-
+  line-height:1.7;
 }
 
 
@@ -116,58 +76,43 @@
    CATEGORY SECTION
 ========================================================= */
 
-.catalog-section {
-
-  padding: 110px 6%;
+.catalog-section{
+  padding:110px 6%;
 
   background:
-
     radial-gradient(
       circle at 50% 0,
       rgba(216,181,104,.08),
       transparent 40%
     );
-
 }
 
+.catalog-heading{
+  max-width:700px;
 
-.catalog-heading {
+  margin:0 auto 55px;
 
-  max-width: 700px;
-
-  margin:
-    0 auto 55px;
-
-  text-align: center;
-
+  text-align:center;
 }
 
+.catalog-heading h2{
+  font-family:"Cormorant Garamond",serif;
 
-.catalog-heading h2 {
+  font-size:clamp(48px,6vw,70px);
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
+  font-weight:500;
 
-  font-size:
-    clamp(48px, 6vw, 70px);
+  line-height:.92;
 
-  font-weight: 500;
-
-  line-height: .92;
-
-  margin:
-    12px 0 18px;
-
+  margin:12px 0 18px;
 }
 
+.catalog-heading > p:last-child{
+  color:var(--muted);
 
-.catalog-heading > p:last-child {
+  font-size:13px;
 
-  color: var(--muted);
-
-  font-size: 13px;
-
+  line-height:1.7;
 }
 
 
@@ -175,53 +120,41 @@
    CATEGORY GRID
 ========================================================= */
 
-.category-grid {
+.category-grid{
+  max-width:1250px;
 
-  max-width: 1250px;
+  margin:auto;
 
-  margin: auto;
-
-  display: grid;
+  display:grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
-  gap: 22px;
-
+  gap:22px;
 }
 
+.category-card{
+  position:relative;
 
-.category-card {
+  height:480px;
 
-  position: relative;
+  overflow:hidden;
 
-  height: 480px;
+  cursor:pointer;
 
-  overflow: hidden;
+  background:#111;
 
-  cursor: pointer;
-
-  background: #111;
-
-  border:
-    1px solid
+  border:1px solid
     rgba(216,181,104,.16);
 
   transition:
-
     transform .45s ease,
-
     border-color .45s ease,
-
     box-shadow .45s ease;
-
 }
 
-
-.category-card:hover {
-
-  transform:
-    translateY(-8px);
+.category-card:hover{
+  transform:translateY(-8px);
 
   border-color:
     rgba(216,181,104,.55);
@@ -229,165 +162,118 @@
   box-shadow:
     0 25px 55px
     rgba(0,0,0,.45);
-
 }
 
+.category-card img{
+  width:100%;
+  height:100%;
 
-.category-card img {
+  display:block;
 
-  width: 100%;
-
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
+  object-fit:cover;
 
   transition:
-
     transform .8s ease,
-
     filter .6s ease;
-
 }
 
+.category-card:hover img{
+  transform:scale(1.07);
 
-.category-card:hover img {
-
-  transform:
-    scale(1.07);
-
-  filter:
-    brightness(.85);
-
+  filter:brightness(.85);
 }
 
+.category-overlay{
+  position:absolute;
 
-.category-overlay {
+  inset:0;
 
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
+  z-index:1;
 
   background:
-
     linear-gradient(
-
       to top,
-
       rgba(0,0,0,.95) 0%,
-
       rgba(0,0,0,.58) 45%,
-
       rgba(0,0,0,.05) 100%
-
     );
-
 }
 
+.category-content{
+  position:absolute;
 
-.category-content {
+  left:0;
+  right:0;
+  bottom:0;
 
-  position: absolute;
+  z-index:2;
 
-  left: 0;
+  padding:32px 28px;
 
-  right: 0;
+  transform:translateY(5px);
 
-  bottom: 0;
-
-  z-index: 2;
-
-  padding: 32px 28px;
-
-  transform:
-    translateY(5px);
-
-  transition: .4s;
-
+  transition:.4s;
 }
-
 
 .category-card:hover
-.category-content {
-
-  transform:
-    translateY(0);
-
+.category-content{
+  transform:translateY(0);
 }
 
+.category-content small{
+  color:var(--gold);
 
-.category-content small {
+  font-size:9px;
 
-  color: var(--gold);
+  font-weight:700;
 
-  font-size: 9px;
-
-  font-weight: 700;
-
-  letter-spacing: 2.5px;
-
+  letter-spacing:2.5px;
 }
 
-
-.category-content h3 {
-
+.category-content h3{
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size: 36px;
+  font-size:36px;
 
-  font-weight: 500;
+  font-weight:500;
 
-  line-height: .9;
+  line-height:.9;
 
-  margin:
-    9px 0 20px;
-
+  margin:9px 0 20px;
 }
 
+.category-content h3 span{
+  display:block;
 
-.category-content h3 span {
-
-  display: block;
-
-  color: var(--gold);
-
+  color:var(--gold);
 }
 
+.category-content button{
+  padding:0;
 
-.category-content button {
+  border:0;
 
-  padding: 0;
+  background:transparent;
 
-  border: 0;
+  color:#eee;
 
-  background: transparent;
+  font-size:9px;
 
-  color: #eee;
+  font-weight:700;
 
-  font-size: 9px;
+  letter-spacing:1.6px;
 
-  font-weight: 700;
+  text-transform:uppercase;
 
-  letter-spacing: 1.6px;
+  cursor:pointer;
 
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition: .3s;
-
+  transition:.3s;
 }
 
-
-.category-content button:hover {
-
-  color: var(--gold);
-
+.category-content button:hover{
+  color:var(--gold);
 }
 
 
@@ -395,14 +281,12 @@
    PRODUCT SECTION
 ========================================================= */
 
-.product-section {
+.product-section{
+  display:none;
 
-  display: none;
-
-  padding: 105px 6%;
+  padding:105px 6%;
 
   background:
-
     linear-gradient(
       180deg,
       #0b0b0a,
@@ -411,38 +295,29 @@
 
   border-top:
     1px solid var(--line);
-
 }
 
-
-.product-section.active {
-
-  display: block;
+.product-section.active{
+  display:block;
 
   animation:
     catalogFade .5s ease;
-
 }
 
+@keyframes catalogFade{
 
-@keyframes catalogFade {
-
-  from {
-
-    opacity: 0;
+  from{
+    opacity:0;
 
     transform:
       translateY(18px);
-
   }
 
-  to {
-
-    opacity: 1;
+  to{
+    opacity:1;
 
     transform:
       translateY(0);
-
   }
 
 }
@@ -452,75 +327,62 @@
    PRODUCT HEADER
 ========================================================= */
 
-.product-section-header {
+.product-section-header{
+  max-width:1250px;
 
-  max-width: 1250px;
+  margin:0 auto 45px;
 
-  margin:
-    0 auto 45px;
+  display:flex;
 
-  display: flex;
+  align-items:flex-end;
 
-  align-items: flex-end;
+  justify-content:space-between;
 
-  justify-content: space-between;
-
-  gap: 30px;
-
+  gap:30px;
 }
 
-
-.product-section-header h2 {
-
+.product-section-header h2{
   font-family:
     "Cormorant Garamond",
     serif;
 
   font-size:
-    clamp(48px, 6vw, 70px);
+    clamp(48px,6vw,70px);
 
-  font-weight: 500;
+  font-weight:500;
 
-  line-height: .9;
+  line-height:.9;
 
-  margin-top: 10px;
-
+  margin-top:10px;
 }
 
+.back-category{
+  padding:10px 0;
 
-.back-category {
+  border:0;
 
-  padding: 10px 0;
+  background:transparent;
 
-  border: 0;
+  color:var(--gold);
 
-  background: transparent;
+  font-size:9px;
 
-  color: var(--gold);
+  font-weight:700;
 
-  font-size: 9px;
+  letter-spacing:1.5px;
 
-  font-weight: 700;
+  text-transform:uppercase;
 
-  letter-spacing: 1.5px;
+  cursor:pointer;
 
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition: .3s;
-
+  transition:.3s;
 }
 
-
-.back-category:hover {
-
-  color:
-    var(--gold-light);
+.back-category:hover{
+  color:var(--gold-light);
 
   transform:
     translateX(-4px);
-
 }
 
 
@@ -528,30 +390,25 @@
    PRODUCT GRID
 ========================================================= */
 
-.catalog-product-grid {
+.catalog-product-grid{
+  max-width:1250px;
 
-  max-width: 1250px;
+  margin:auto;
 
-  margin: auto;
-
-  display: grid;
+  display:grid;
 
   grid-template-columns:
-    repeat(4, minmax(0, 1fr));
+    repeat(4,minmax(0,1fr));
 
-  gap: 20px;
-
+  gap:20px;
 }
 
+.catalog-product-card{
+  position:relative;
 
-.catalog-product-card {
-
-  position: relative;
-
-  overflow: hidden;
+  overflow:hidden;
 
   background:
-
     linear-gradient(
       145deg,
       #151411,
@@ -562,21 +419,15 @@
     1px solid
     rgba(255,255,255,.07);
 
-  cursor: pointer;
+  cursor:pointer;
 
   transition:
-
     transform .4s ease,
-
     border-color .4s ease,
-
     box-shadow .4s ease;
-
 }
 
-
-.catalog-product-card:hover {
-
+.catalog-product-card:hover{
   transform:
     translateY(-8px);
 
@@ -586,7 +437,6 @@
   box-shadow:
     0 20px 45px
     rgba(0,0,0,.4);
-
 }
 
 
@@ -594,61 +444,52 @@
    PRODUCT IMAGE
 ========================================================= */
 
-.catalog-product-image {
+.catalog-product-image{
+  position:relative;
 
-  position: relative;
+  overflow:hidden;
 
-  overflow: hidden;
+  aspect-ratio:4/5;
 
-  aspect-ratio: 4 / 5;
-
+  background:#111;
 }
 
+.catalog-product-image img{
+  width:100%;
+  height:100%;
 
-.catalog-product-image img {
+  display:block;
 
-  width: 100%;
+  object-fit:cover;
 
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  transition: .7s ease;
-
+  transition:.7s ease;
 }
-
 
 .catalog-product-card:hover
-.catalog-product-image img {
-
-  transform:
-    scale(1.05);
-
+.catalog-product-image img{
+  transform:scale(1.05);
 }
 
 
 /* =========================================================
-   PRODUCT VIEW LABEL
+   VIEW PRODUCT OVERLAY
 ========================================================= */
 
-.product-view {
+.product-view{
+  position:absolute;
 
-  position: absolute;
+  left:50%;
 
-  left: 50%;
-
-  bottom: 18px;
+  bottom:18px;
 
   transform:
-    translate(-50%, 15px);
+    translate(-50%,15px);
 
-  opacity: 0;
+  opacity:0;
 
-  padding: 11px 17px;
+  padding:11px 17px;
 
-  white-space: nowrap;
+  white-space:nowrap;
 
   background:
     rgba(7,7,7,.9);
@@ -656,72 +497,60 @@
   border:
     1px solid var(--gold);
 
-  color: var(--gold);
+  color:var(--gold);
 
-  font-size: 8px;
+  font-size:8px;
 
-  font-weight: 700;
+  font-weight:700;
 
-  letter-spacing: 1.5px;
+  letter-spacing:1.5px;
 
-  text-transform: uppercase;
+  text-transform:uppercase;
 
-  transition: .35s;
-
+  transition:.35s;
 }
 
-
 .catalog-product-card:hover
-.product-view {
-
-  opacity: 1;
+.product-view{
+  opacity:1;
 
   transform:
-    translate(-50%, 0);
-
+    translate(-50%,0);
 }
 
 
 /* =========================================================
-   PRODUCT INFORMATION
+   PRODUCT INFO
 ========================================================= */
 
-.catalog-product-info {
-
-  padding: 20px;
-
+.catalog-product-info{
+  padding:20px;
 }
 
+.catalog-product-info small{
+  color:var(--gold);
 
-.catalog-product-info small {
+  font-size:8px;
 
-  color: var(--gold);
+  font-weight:700;
 
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 2px;
-
+  letter-spacing:2px;
 }
 
-
-.catalog-product-info h3 {
-
+.catalog-product-info h3{
   font-family:
     "Cormorant Garamond",
     serif;
 
-  font-size: 24px;
+  font-size:24px;
 
-  font-weight: 600;
+  font-weight:600;
 
-  line-height: 1.05;
+  line-height:1.05;
 
-  margin-top: 7px;
+  margin-top:7px;
 
-  color: #f5f0e8;
-
+  color:#f5f0e8;
 }
 
 
@@ -730,31 +559,16 @@
 ========================================================= */
 
 .catalog-product-info
-.product-price {
+.product-price{
+  margin-top:12px;
 
-  margin-top: 12px;
+  color:var(--gold);
 
-  color: var(--gold);
+  font-size:18px;
 
-  font-size: 18px;
+  font-weight:700;
 
-  font-weight: 700;
-
-}
-
-
-.product-detail-content
-.product-price {
-
-  margin:
-    10px 0 20px;
-
-  color: var(--gold);
-
-  font-size: 25px;
-
-  font-weight: 700;
-
+  letter-spacing:.5px;
 }
 
 
@@ -762,51 +576,51 @@
    PRODUCT DESCRIPTION
 ========================================================= */
 
-.catalog-product-description {
+.catalog-product-description{
+  margin-top:10px;
 
-  margin-top: 12px;
+  color:var(--muted);
 
-  color: var(--muted);
+  font-size:11px;
 
-  font-size: 11px;
+  line-height:1.6;
 
-  line-height: 1.6;
+  display:
+    -webkit-box;
 
+  -webkit-line-clamp:3;
+
+  -webkit-box-orient:vertical;
+
+  overflow:hidden;
 }
 
 
 /* =========================================================
-   PRODUCT BUTTONS
+   PRODUCT CARD BUTTONS
 ========================================================= */
 
-.product-card-actions {
+.product-card-actions{
+  display:flex;
 
-  display: flex;
+  flex-direction:column;
 
-  flex-direction: column;
+  gap:9px;
 
-  gap: 9px;
-
-  margin-top: 18px;
-
+  margin-top:17px;
 }
-
 
 .product-card-actions
-.gold-btn {
+.gold-btn{
+  width:100%;
 
-  width: 100%;
-
-  text-align: center;
-
+  text-align:center;
 }
 
+.whatsapp-order-btn{
+  width:100%;
 
-.whatsapp-order-btn {
-
-  width: 100%;
-
-  padding: 12px 15px;
+  padding:12px 15px;
 
   border:
     1px solid
@@ -815,31 +629,31 @@
   background:
     rgba(216,181,104,.08);
 
-  color: var(--gold);
+  color:var(--gold);
 
-  font-size: 9px;
+  font-size:9px;
 
-  font-weight: 700;
+  font-weight:700;
 
-  letter-spacing: 1.2px;
+  letter-spacing:1.2px;
 
-  text-transform: uppercase;
+  text-transform:uppercase;
 
-  cursor: pointer;
+  cursor:pointer;
 
-  transition: .3s;
-
+  transition:.3s;
 }
 
+.whatsapp-order-btn:hover{
+  background:var(--gold);
 
-.whatsapp-order-btn:hover {
+  color:#111;
 
-  background:
+  border-color:
     var(--gold);
 
-  color:
-    #111;
-
+  transform:
+    translateY(-2px);
 }
 
 
@@ -847,71 +661,58 @@
    PRODUCT DETAILS
 ========================================================= */
 
-.product-details {
+.product-details{
+  display:none;
 
-  display: none;
-
-  padding: 100px 6%;
+  padding:100px 6%;
 
   background:
-
     radial-gradient(
-
       circle at 20% 40%,
-
       rgba(216,181,104,.07),
-
       transparent 35%
-
     ),
-
     #080808;
 
   border-top:
     1px solid var(--line);
-
 }
 
-
-.product-details.active {
-
-  display: block;
+.product-details.active{
+  display:block;
 
   animation:
     catalogFade .5s ease;
-
 }
-
 
 .product-details >
-.back-category {
+.back-category{
+  display:block;
 
-  display: block;
+  max-width:1100px;
 
-  max-width: 1100px;
-
-  margin:
-    0 auto 35px;
-
+  margin:0 auto 35px;
 }
 
 
-.product-detail-inner {
+/* =========================================================
+   PRODUCT DETAIL LAYOUT
+========================================================= */
 
-  max-width: 1100px;
+.product-detail-inner{
+  max-width:1100px;
 
-  margin: auto;
+  margin:auto;
 
-  display: grid;
+  display:grid;
 
   grid-template-columns:
     minmax(0,1fr)
     minmax(0,1fr);
 
-  gap: 70px;
+  gap:70px;
 
-  align-items: center;
-
+  align-items:center;
 }
 
 
@@ -919,49 +720,40 @@
    DETAIL IMAGE
 ========================================================= */
 
-.product-detail-image {
+.product-detail-image{
+  position:relative;
 
-  position: relative;
+  aspect-ratio:4/5;
 
-  aspect-ratio: 4 / 5;
+  overflow:hidden;
 
-  overflow: hidden;
-
-  background: #111;
+  background:#111;
 
   border:
     1px solid var(--line);
-
 }
 
+.product-detail-image::after{
+  content:"";
 
-.product-detail-image::after {
+  position:absolute;
 
-  content: "";
-
-  position: absolute;
-
-  inset: 15px;
+  inset:15px;
 
   border:
     1px solid
     rgba(216,181,104,.3);
 
-  pointer-events: none;
-
+  pointer-events:none;
 }
 
+.product-detail-image img{
+  width:100%;
+  height:100%;
 
-.product-detail-image img {
+  display:block;
 
-  width: 100%;
-
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
+  object-fit:cover;
 }
 
 
@@ -969,68 +761,84 @@
    DETAIL CONTENT
 ========================================================= */
 
-.product-detail-content {
-
-  padding: 20px 0;
-
+.product-detail-content{
+  padding:20px 0;
 }
 
-
-.product-detail-content h2 {
-
+.product-detail-content h2{
   font-family:
     "Cormorant Garamond",
     serif;
 
   font-size:
-    clamp(52px, 6vw, 78px);
+    clamp(52px,6vw,78px);
 
-  font-weight: 500;
+  font-weight:500;
 
-  line-height: .88;
+  line-height:.88;
 
-  margin:
-    15px 0 25px;
-
+  margin:15px 0 25px;
 }
 
+.detail-line{
+  width:65px;
 
-.detail-line {
+  height:1px;
 
-  width: 65px;
+  background:var(--gold);
 
-  height: 1px;
-
-  background:
-    var(--gold);
-
-  margin-bottom: 25px;
-
+  margin-bottom:25px;
 }
-
-
-.detail-description {
-
-  max-width: 480px;
-
-  margin-bottom: 30px;
-
-  color: var(--muted);
-
-  font-size: 13px;
-
-  line-height: 1.9;
-
-}
-
 
 .product-detail-content
-.gold-btn {
+.product-price{
+  color:var(--gold);
 
-  display: inline-block;
+  font-size:26px;
 
-  text-decoration: none;
+  font-weight:700;
 
+  margin-bottom:20px;
+}
+
+.detail-description{
+  max-width:480px;
+
+  margin-bottom:30px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.9;
+}
+
+
+/* =========================================================
+   DETAIL BUTTONS
+========================================================= */
+
+.detail-buttons{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:flex-start;
+
+  gap:12px;
+
+  max-width:330px;
+}
+
+.detail-buttons
+.gold-btn{
+  width:100%;
+
+  text-align:center;
+}
+
+.detail-order-button{
+  width:100%;
 }
 
 
@@ -1038,10 +846,8 @@
    OFFER
 ========================================================= */
 
-.catalog-offer {
-
-  margin-bottom: 30px;
-
+.catalog-offer{
+  margin-bottom:30px;
 }
 
 
@@ -1050,18 +856,16 @@
 ========================================================= */
 
 .category-loading,
-.product-loading {
+.product-loading{
+  grid-column:1/-1;
 
-  width: 100%;
+  text-align:center;
 
-  padding: 40px;
+  padding:50px 20px;
 
-  text-align: center;
+  color:var(--muted);
 
-  color: var(--muted);
-
-  font-size: 13px;
-
+  font-size:13px;
 }
 
 
@@ -1069,28 +873,20 @@
    TABLET
 ========================================================= */
 
-@media(max-width:1050px) {
+@media(max-width:1050px){
 
-  .category-grid {
-
+  .category-grid{
     grid-template-columns:
       repeat(2,1fr);
-
   }
 
-
-  .catalog-product-grid {
-
+  .catalog-product-grid{
     grid-template-columns:
       repeat(3,1fr);
-
   }
 
-
-  .product-detail-inner {
-
-    gap: 45px;
-
+  .product-detail-inner{
+    gap:45px;
   }
 
 }
@@ -1100,202 +896,124 @@
    MOBILE
 ========================================================= */
 
-@media(max-width:700px) {
+@media(max-width:700px){
 
-  .catalog-hero {
-
-    min-height: 420px;
-
+  .catalog-hero{
+    min-height:420px;
   }
 
-
-  .catalog-hero::before {
-
-    inset: 15px;
-
+  .catalog-hero::before{
+    inset:15px;
   }
 
-
-  .catalog-hero h1 {
-
-    font-size: 56px;
-
+  .catalog-hero h1{
+    font-size:56px;
   }
 
-
-  .catalog-section {
-
-    padding: 75px 5%;
-
+  .catalog-section{
+    padding:75px 5%;
   }
 
-
-  .catalog-heading {
-
-    margin-bottom: 38px;
-
+  .catalog-heading{
+    margin-bottom:38px;
   }
 
-
-  .catalog-heading h2 {
-
-    font-size: 46px;
-
+  .catalog-heading h2{
+    font-size:46px;
   }
 
+  .category-grid{
+    grid-template-columns:1fr;
 
-  .category-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 14px;
-
+    gap:14px;
   }
 
-
-  .category-card {
-
-    height: 430px;
-
+  .category-card{
+    height:430px;
   }
 
-
-  .category-content {
-
-    padding:
-      25px 22px;
-
+  .category-content{
+    padding:25px 22px;
   }
 
-
-  .category-content h3 {
-
-    font-size: 32px;
-
+  .category-content h3{
+    font-size:32px;
   }
 
-
-  .product-section {
-
-    padding: 75px 5%;
-
+  .product-section{
+    padding:75px 5%;
   }
 
+  .product-section-header{
+    align-items:flex-start;
 
-  .product-section-header {
+    flex-direction:column;
 
-    align-items: flex-start;
+    gap:18px;
 
-    flex-direction: column;
-
-    gap: 18px;
-
-    margin-bottom: 30px;
-
+    margin-bottom:30px;
   }
 
-
-  .product-section-header h2 {
-
-    font-size: 46px;
-
+  .product-section-header h2{
+    font-size:46px;
   }
 
-
-  .catalog-product-grid {
-
+  .catalog-product-grid{
     grid-template-columns:
       repeat(2,1fr);
 
-    gap: 10px;
-
+    gap:10px;
   }
 
-
-  .catalog-product-info {
-
-    padding:
-      14px 12px;
-
+  .catalog-product-info{
+    padding:14px 12px;
   }
 
-
-  .catalog-product-info h3 {
-
-    font-size: 21px;
-
+  .catalog-product-info h3{
+    font-size:21px;
   }
 
-
-  .product-view {
-
-    display: none;
-
+  .catalog-product-description{
+    font-size:10px;
   }
 
-
-  .product-details {
-
-    padding:
-      75px 5%;
-
+  .product-view{
+    display:none;
   }
 
-
-  .product-detail-inner {
-
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
+  .product-details{
+    padding:75px 5%;
   }
 
+  .product-detail-inner{
+    grid-template-columns:1fr;
 
-  .product-detail-content {
-
-    padding: 0;
-
+    gap:35px;
   }
 
-
-  .product-detail-content h2 {
-
-    font-size: 53px;
-
+  .product-detail-content{
+    padding:0;
   }
 
-
-  .detail-description {
-
-    font-size: 12px;
-
+  .product-detail-content h2{
+    font-size:53px;
   }
 
-
-  .product-detail-content
-  .gold-btn {
-
-    width: 100%;
-
-    text-align: center;
-
+  .detail-description{
+    font-size:12px;
   }
 
+  .detail-buttons{
+    max-width:none;
 
-  .product-card-actions {
-
-    gap: 7px;
-
+    width:100%;
   }
 
-
-  .whatsapp-order-btn {
-
-    font-size: 8px;
-
-    padding:
-      11px 8px;
-
+  .detail-buttons
+  .gold-btn,
+  .detail-buttons
+  .whatsapp-order-btn{
+    width:100%;
   }
 
 }
@@ -1305,80 +1023,56 @@
    SMALL MOBILE
 ========================================================= */
 
-@media(max-width:430px) {
+@media(max-width:430px){
 
-  .catalog-hero {
-
-    min-height: 390px;
-
+  .catalog-hero{
+    min-height:390px;
   }
 
-
-  .catalog-hero h1 {
-
-    font-size: 48px;
-
+  .catalog-hero h1{
+    font-size:48px;
   }
 
-
-  .catalog-hero-content {
-
-    padding: 20px;
-
+  .catalog-hero-content{
+    padding:20px;
   }
 
-
-  .category-card {
-
-    height: 390px;
-
+  .category-card{
+    height:390px;
   }
 
-
-  .catalog-product-grid {
-
+  .catalog-product-grid{
     grid-template-columns:
       1fr 1fr;
 
-    gap: 9px;
-
+    gap:9px;
   }
 
-
-  .catalog-product-info {
-
-    padding:
-      12px 10px;
-
+  .catalog-product-info{
+    padding:12px 10px;
   }
 
-
-  .catalog-product-info h3 {
-
-    font-size: 19px;
-
+  .catalog-product-info h3{
+    font-size:19px;
   }
-
 
   .catalog-product-info
-  .product-price {
-
-    font-size: 16px;
-
+  .product-price{
+    font-size:15px;
   }
 
-
-  .catalog-product-description {
-
-    font-size: 10px;
-
+  .catalog-product-description{
+    font-size:9px;
   }
 
+  .whatsapp-order-btn{
+    font-size:8px;
 
-  .product-detail-content h2 {
+    padding:10px 5px;
+  }
 
-    font-size: 47px;
-
+  .product-detail-content h2{
+    font-size:47px;
   }
 
 }
@@ -1388,19 +1082,14 @@
    VERY SMALL MOBILE
 ========================================================= */
 
-@media(max-width:360px) {
+@media(max-width:360px){
 
-  .catalog-product-grid {
-
-    grid-template-columns: 1fr;
-
+  .catalog-product-grid{
+    grid-template-columns:1fr;
   }
 
-
-  .category-card {
-
-    height: 370px;
-
+  .category-card{
+    height:370px;
   }
 
 }
