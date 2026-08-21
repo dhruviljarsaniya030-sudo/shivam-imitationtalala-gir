@@ -16,9 +16,7 @@
     content="Shivam Imitation, imitation jewellery Talala Gir, imitation jewellery shop Talala, jewellery shop Talala Gir, artificial jewellery Talala, mangalsutra Talala, necklace Talala, bridal jewellery Talala, bracelets Talala, bangles Talala">
 
   <meta name="author" content="Shivam Imitation">
-
   <meta name="robots" content="index, follow, max-image-preview:large">
-
   <meta name="theme-color" content="#003d37">
 
   <!-- Google Search Console -->
@@ -31,15 +29,10 @@
   <link rel="canonical"
     href="https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/">
 
-  <!-- ================= FAVICON ================= -->
+  <!-- ================= FAVICON / LOGO ================= -->
 
-  <link rel="icon"
-    type="image/png"
-    sizes="512x512"
-    href="favicon.png">
-
-  <link rel="apple-touch-icon"
-    href="favicon.png">
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="apple-touch-icon" href="logo.jpg">
 
   <!-- ================= OPEN GRAPH ================= -->
 
@@ -85,23 +78,19 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- ================= CSS ================= -->
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- =====================================================
-       ORGANIZATION + JEWELRY STORE SCHEMA
-       ===================================================== -->
+  <!-- ================= SCHEMA ================= -->
 
   <script type="application/ld+json">
-
   {
     "@context": "https://schema.org",
     "@graph": [
 
       {
         "@type": "Organization",
-
         "@id": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/#organization",
 
         "name": "Shivam Imitation",
@@ -163,7 +152,6 @@
 
     ]
   }
-
   </script>
 
 </head>
@@ -188,7 +176,6 @@
 
         </g>
 
-
         <g id="smallLeaf">
 
           <path d="M0 0 C15 -28 40 -32 55 -12 C38 4 20 12 0 0Z"></path>
@@ -196,7 +183,6 @@
           <path d="M0 0 C18 -4 36 -12 55 -12"></path>
 
         </g>
-
 
         <g id="flower">
 
@@ -457,7 +443,9 @@
 
       <img
         src="logo.jpg"
-        alt="Shivam Imitation jewellery shop logo">
+        alt="Shivam Imitation jewellery shop logo"
+        width="60"
+        height="60">
 
       <span>
         SHIVAM <b>IMITATION</b>
@@ -660,9 +648,6 @@
 
       <div class="category-grid">
 
-
-        <!-- CATEGORY 1 -->
-
         <a href="collection.html" class="category-card">
 
           <div class="category-overlay">
@@ -679,8 +664,6 @@
 
         </a>
 
-
-        <!-- CATEGORY 2 -->
 
         <a href="collection.html" class="category-card">
 
@@ -699,8 +682,6 @@
         </a>
 
 
-        <!-- CATEGORY 3 -->
-
         <a href="collection.html" class="category-card">
 
           <div class="category-overlay">
@@ -718,8 +699,6 @@
         </a>
 
 
-        <!-- CATEGORY 4 -->
-
         <a href="collection.html" class="category-card">
 
           <div class="category-overlay">
@@ -736,8 +715,6 @@
 
         </a>
 
-
-        <!-- CATEGORY 5 -->
 
         <a href="collection.html" class="category-card">
 
@@ -800,7 +777,6 @@
     <!-- ================= ABOUT ================= -->
 
     <section id="about" class="about section">
-
 
       <div class="about-copy">
 
@@ -934,37 +910,27 @@
 
       <div class="instagram-cards">
 
-
-        <!-- INSTAGRAM CARD 1 -->
-
         <a
           href="https://www.instagram.com/shivam_imitation_gir/"
           target="_blank"
           rel="noopener noreferrer"
           class="instagram-card">
-
         </a>
 
 
-        <!-- INSTAGRAM CARD 2 -->
-
         <a
           href="https://www.instagram.com/shivam_imitation_gir/"
           target="_blank"
           rel="noopener noreferrer"
           class="instagram-card">
-
         </a>
 
 
-        <!-- INSTAGRAM CARD 3 -->
-
         <a
           href="https://www.instagram.com/shivam_imitation_gir/"
           target="_blank"
           rel="noopener noreferrer"
           class="instagram-card">
-
         </a>
 
       </div>
@@ -1157,7 +1123,9 @@
 
     <img
       src="logo.jpg"
-      alt="Shivam Imitation logo">
+      alt="Shivam Imitation logo"
+      width="80"
+      height="80">
 
     <p>
       SHIVAM
@@ -1446,7 +1414,7 @@
         container.innerHTML = "";
 
 
-        /* NO PRODUCTS */
+        /* ================= NO PRODUCTS ================= */
 
         if (snapshot.empty) {
 
@@ -1467,7 +1435,7 @@
         }
 
 
-        /* PRODUCTS */
+        /* ================= PRODUCTS ================= */
 
         snapshot.forEach(function (doc) {
 
@@ -1636,3 +1604,4 @@
 </body>
 
 </html>
+```
