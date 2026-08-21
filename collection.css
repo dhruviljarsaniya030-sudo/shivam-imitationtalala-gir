@@ -1,59 +1,80 @@
 /* =========================================================
    SHIVAM IMITATION
    PREMIUM COLLECTION PAGE
+   COMPLETE COLLECTION.CSS
+========================================================= */
+
+
+/* =========================================================
+   COLLECTION HERO
 ========================================================= */
 
 .catalog-hero {
   min-height: 480px;
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   text-align: center;
   overflow: hidden;
 
   background:
     linear-gradient(
-      rgba(5, 5, 5, 0.65),
-      rgba(5, 5, 5, 0.88)
+      rgba(0, 0, 0, 0.62),
+      rgba(0, 0, 0, 0.90)
     ),
-    url("product-5.jpg") center/cover no-repeat;
+    url("product-5.jpg") center / cover no-repeat;
 }
 
 .catalog-hero::before {
   content: "";
   position: absolute;
   inset: 25px;
-  border: 1px solid rgba(216, 181, 104, 0.25);
+
+  border: 1px solid rgba(231, 189, 85, 0.28);
+
   pointer-events: none;
 }
 
 .catalog-hero-content {
   position: relative;
   z-index: 2;
+
   max-width: 800px;
   padding: 30px;
 }
 
 .catalog-hero h1 {
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(58px, 8vw, 95px);
+
   font-weight: 500;
+
   line-height: 0.86;
+
   letter-spacing: -1px;
+
   margin: 20px 0;
 }
 
 .catalog-hero h1 span {
   display: block;
+
   color: var(--gold);
 }
 
 .catalog-hero-content > p:last-child {
   max-width: 560px;
+
   margin: auto;
+
   color: #c8c3b9;
+
   font-size: 13px;
+
   line-height: 1.8;
 }
 
@@ -68,28 +89,37 @@
   background:
     radial-gradient(
       circle at 50% 0,
-      rgba(216, 181, 104, 0.08),
+      rgba(231, 189, 85, 0.08),
       transparent 40%
     );
 }
 
 .catalog-heading {
   max-width: 700px;
+
   margin: 0 auto 55px;
+
   text-align: center;
 }
 
 .catalog-heading h2 {
   font-family: "Cormorant Garamond", serif;
+
   font-size: clamp(48px, 6vw, 70px);
+
   font-weight: 500;
+
   line-height: 0.92;
+
   margin: 12px 0 18px;
 }
 
 .catalog-heading > p:last-child {
   color: var(--muted);
+
   font-size: 13px;
+
+  line-height: 1.7;
 }
 
 
@@ -99,23 +129,28 @@
 
 .category-grid {
   max-width: 1250px;
+
   margin: auto;
 
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 22px;
 }
 
 .category-card {
   position: relative;
+
   height: 480px;
 
   overflow: hidden;
+
   cursor: pointer;
 
   background: #111;
 
-  border: 1px solid rgba(216, 181, 104, 0.16);
+  border: 1px solid rgba(231, 189, 85, 0.16);
 
   transition:
     transform 0.45s ease,
@@ -126,7 +161,7 @@
 .category-card:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(216, 181, 104, 0.55);
+  border-color: rgba(231, 189, 85, 0.55);
 
   box-shadow:
     0 25px 55px rgba(0, 0, 0, 0.45);
@@ -147,11 +182,13 @@
 
 .category-card:hover img {
   transform: scale(1.07);
+
   filter: brightness(0.85);
 }
 
 .category-overlay {
   position: absolute;
+
   inset: 0;
 
   z-index: 1;
@@ -159,14 +196,15 @@
   background:
     linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.95) 0%,
-      rgba(0, 0, 0, 0.58) 45%,
-      rgba(0, 0, 0, 0.05) 100%
+      rgba(0, 0, 0, 0.96) 0%,
+      rgba(0, 0, 0, 0.60) 45%,
+      rgba(0, 0, 0, 0.04) 100%
     );
 }
 
 .category-content {
   position: absolute;
+
   left: 0;
   right: 0;
   bottom: 0;
@@ -188,6 +226,7 @@
   color: var(--gold);
 
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: 2.5px;
@@ -197,15 +236,19 @@
   font-family: "Cormorant Garamond", serif;
 
   font-size: 36px;
+
   font-weight: 500;
 
   line-height: 0.9;
 
   margin: 9px 0 20px;
+
+  color: #fff;
 }
 
 .category-content h3 span {
   display: block;
+
   color: var(--gold);
 }
 
@@ -219,6 +262,7 @@
   color: #eee;
 
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: 1.6px;
@@ -242,18 +286,23 @@
 .category-loading,
 .product-loading {
   width: 100%;
-  padding: 35px;
+
+  padding: 40px 20px;
 
   text-align: center;
 
   color: var(--muted);
 
   font-size: 13px;
+
+  line-height: 1.8;
 }
 
 
 /* =========================================================
    PRODUCT SECTION
+   IMPORTANT:
+   JAVASCRIPT USES .active
 ========================================================= */
 
 .product-section {
@@ -271,33 +320,55 @@
   border-top: 1px solid var(--line);
 }
 
+
+/* MAIN FIX */
+
 .product-section.active {
   display: block;
 
   animation: catalogFade 0.5s ease;
 }
 
+
+/* Also support old .show if needed */
+
+.product-section.show {
+  display: block;
+
+  animation: catalogFade 0.5s ease;
+}
+
+
 @keyframes catalogFade {
 
   from {
     opacity: 0;
+
     transform: translateY(18px);
   }
 
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 
 }
 
 
+/* =========================================================
+   PRODUCT SECTION HEADER
+========================================================= */
+
 .product-section-header {
   max-width: 1250px;
+
   margin: 0 auto 45px;
 
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
 
   gap: 30px;
@@ -315,11 +386,6 @@
   margin-top: 10px;
 }
 
-
-/* =========================================================
-   BACK BUTTON
-========================================================= */
-
 .back-category {
   padding: 10px 0;
 
@@ -330,6 +396,7 @@
   color: var(--gold);
 
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: 1.5px;
@@ -343,6 +410,7 @@
 
 .back-category:hover {
   color: var(--gold-light);
+
   transform: translateX(-4px);
 }
 
@@ -353,6 +421,7 @@
 
 .catalog-product-grid {
   max-width: 1250px;
+
   margin: auto;
 
   display: grid;
@@ -362,6 +431,11 @@
 
   gap: 20px;
 }
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
 
 .catalog-product-card {
   position: relative;
@@ -388,8 +462,7 @@
 .catalog-product-card:hover {
   transform: translateY(-8px);
 
-  border-color:
-    rgba(216, 181, 104, 0.42);
+  border-color: rgba(231, 189, 85, 0.42);
 
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.4);
@@ -428,7 +501,7 @@
 
 
 /* =========================================================
-   HOVER VIEW
+   PRODUCT VIEW OVERLAY
 ========================================================= */
 
 .product-view {
@@ -446,14 +519,14 @@
 
   white-space: nowrap;
 
-  background:
-    rgba(7, 7, 7, 0.9);
+  background: rgba(7, 7, 7, 0.92);
 
   border: 1px solid var(--gold);
 
   color: var(--gold);
 
   font-size: 8px;
+
   font-weight: 700;
 
   letter-spacing: 1.5px;
@@ -461,6 +534,8 @@
   text-transform: uppercase;
 
   transition: 0.35s;
+
+  pointer-events: none;
 }
 
 .catalog-product-card:hover
@@ -484,6 +559,7 @@
   color: var(--gold);
 
   font-size: 8px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
@@ -495,6 +571,7 @@
   font-family: "Cormorant Garamond", serif;
 
   font-size: 24px;
+
   font-weight: 600;
 
   line-height: 1.05;
@@ -502,22 +579,6 @@
   margin-top: 7px;
 
   color: #f5f0e8;
-}
-
-
-/* =========================================================
-   PRODUCT PRICE
-========================================================= */
-
-.catalog-product-info .product-price,
-.product-detail-content .product-price {
-  margin-top: 12px;
-
-  color: var(--gold);
-
-  font-size: 20px;
-
-  font-weight: 700;
 }
 
 
@@ -545,7 +606,23 @@
 
 
 /* =========================================================
-   PRODUCT BUTTONS
+   PRODUCT PRICE
+========================================================= */
+
+.catalog-product-info .product-price,
+.product-detail-content .product-price {
+  margin-top: 12px;
+
+  color: var(--gold);
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PRODUCT CARD BUTTONS
 ========================================================= */
 
 .product-card-actions {
@@ -558,93 +635,30 @@
   margin-top: 16px;
 }
 
-.product-card-actions .gold-btn,
-.product-card-actions .whatsapp-order-btn {
+.product-card-actions .gold-btn {
   width: 100%;
 
-  min-height: 42px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
   text-align: center;
-}
 
-
-/* =========================================================
-   GOLD BUTTON
-========================================================= */
-
-.gold-btn {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  min-height: 44px;
-
-  padding: 12px 22px;
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--gold),
-      var(--gold-dark)
-    );
-
-  border: 1px solid var(--gold);
-
-  color: #111;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.2px;
-
-  text-transform: uppercase;
+  display: block;
 
   text-decoration: none;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    filter 0.3s ease;
 }
-
-.gold-btn:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 10px 25px rgba(216, 181, 104, 0.22);
-
-  filter: brightness(1.08);
-}
-
-
-/* =========================================================
-   WHATSAPP ORDER BUTTON
-========================================================= */
 
 .whatsapp-order-btn {
-  padding: 11px 15px;
+  width: 100%;
 
-  border: 1px solid #25d366;
+  padding: 11px 12px;
 
-  background:
-    rgba(37, 211, 102, 0.08);
+  border: 1px solid rgba(231, 189, 85, 0.45);
 
-  color: #25d366;
+  background: transparent;
+
+  color: var(--gold);
 
   font-size: 9px;
 
-  font-weight: 800;
+  font-weight: 700;
 
   letter-spacing: 1px;
 
@@ -656,10 +670,11 @@
 }
 
 .whatsapp-order-btn:hover {
-  background:
-    rgba(37, 211, 102, 0.16);
+  background: var(--gold);
 
-  transform: translateY(-2px);
+  color: #111;
+
+  border-color: var(--gold);
 }
 
 
@@ -675,7 +690,7 @@
   background:
     radial-gradient(
       circle at 20% 40%,
-      rgba(216, 181, 104, 0.07),
+      rgba(231, 189, 85, 0.07),
       transparent 35%
     ),
     #080808;
@@ -683,11 +698,24 @@
   border-top: 1px solid var(--line);
 }
 
+
+/* IMPORTANT FIX */
+
 .product-details.active {
   display: block;
 
   animation: catalogFade 0.5s ease;
 }
+
+
+/* OLD CLASS SUPPORT */
+
+.product-details.show {
+  display: block;
+
+  animation: catalogFade 0.5s ease;
+}
+
 
 .product-details > .back-category {
   display: block;
@@ -697,6 +725,10 @@
   margin: 0 auto 35px;
 }
 
+
+/* =========================================================
+   PRODUCT DETAIL INNER
+========================================================= */
 
 .product-detail-inner {
   max-width: 1100px;
@@ -716,7 +748,7 @@
 
 
 /* =========================================================
-   DETAIL IMAGE
+   PRODUCT DETAIL IMAGE
 ========================================================= */
 
 .product-detail-image {
@@ -738,9 +770,7 @@
 
   inset: 15px;
 
-  border:
-    1px solid
-    rgba(216, 181, 104, 0.3);
+  border: 1px solid rgba(231, 189, 85, 0.3);
 
   pointer-events: none;
 }
@@ -756,7 +786,7 @@
 
 
 /* =========================================================
-   DETAIL CONTENT
+   PRODUCT DETAIL CONTENT
 ========================================================= */
 
 .product-detail-content {
@@ -777,6 +807,7 @@
 
 .detail-line {
   width: 65px;
+
   height: 1px;
 
   background: var(--gold);
@@ -787,7 +818,7 @@
 .detail-description {
   max-width: 480px;
 
-  margin: 15px 0 30px;
+  margin-bottom: 30px;
 
   color: var(--muted);
 
@@ -798,20 +829,28 @@
 
 
 /* =========================================================
-   DETAIL WHATSAPP
+   DETAIL WHATSAPP BUTTON
 ========================================================= */
 
-#detailWhatsapp {
-  margin-top: 5px;
+.product-detail-content .gold-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  min-width: 210px;
 }
 
 
 /* =========================================================
-   OFFER
+   COLLECTION OFFER
 ========================================================= */
 
 .catalog-offer {
-  margin: 30px 6%;
+  margin-bottom: 30px;
 }
 
 
@@ -820,39 +859,7 @@
 ========================================================= */
 
 .floating-whatsapp {
-  position: fixed;
-
-  right: 20px;
-  bottom: 20px;
-
   z-index: 9999;
-
-  width: 55px;
-  height: 55px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #25d366;
-
-  color: #fff;
-
-  text-decoration: none;
-
-  font-size: 27px;
-
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.35);
-
-  transition: 0.3s;
-}
-
-.floating-whatsapp:hover {
-  transform: scale(1.08);
 }
 
 
@@ -928,7 +935,7 @@
   }
 
 
-  /* PRODUCTS */
+  /* PRODUCT */
 
   .product-section {
     padding: 75px 5%;
@@ -963,10 +970,6 @@
     font-size: 21px;
   }
 
-  .catalog-product-info .product-price {
-    font-size: 17px;
-  }
-
   .catalog-product-description {
     font-size: 10px;
   }
@@ -975,22 +978,15 @@
     display: none;
   }
 
-
-  /* PRODUCT BUTTONS */
-
   .product-card-actions {
-    gap: 6px;
+    gap: 7px;
   }
 
   .product-card-actions .gold-btn,
-  .product-card-actions .whatsapp-order-btn {
-    min-height: 39px;
-
-    padding: 9px 5px;
-
+  .whatsapp-order-btn {
     font-size: 8px;
 
-    letter-spacing: 0.5px;
+    padding: 10px 6px;
   }
 
 
@@ -1020,21 +1016,6 @@
 
   .product-detail-content .gold-btn {
     width: 100%;
-  }
-
-
-  /* WHATSAPP */
-
-  .floating-whatsapp {
-    right: 15px;
-
-    bottom: 15px;
-
-    width: 50px;
-
-    height: 50px;
-
-    font-size: 24px;
   }
 
 }
