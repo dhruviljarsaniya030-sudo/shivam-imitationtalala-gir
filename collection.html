@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,19 +60,33 @@
 
     <nav id="nav">
 
-      <a href="index.html">Home</a>
+      <a href="index.html">
+        Home
+      </a>
 
-      <a href="collection.html">Collection</a>
+      <a href="collection.html">
+        Collection
+      </a>
 
-      <a href="index.html#categories">Categories</a>
+      <a href="index.html#categories">
+        Categories
+      </a>
 
-      <a href="index.html#offers">Offers</a>
+      <a href="index.html#offers">
+        Offers
+      </a>
 
-      <a href="index.html#about">About</a>
+      <a href="index.html#about">
+        About
+      </a>
 
-      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#reviews">
+        Reviews
+      </a>
 
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html#contact">
+        Contact
+      </a>
 
     </nav>
 
@@ -207,7 +220,7 @@
       <div class="product-detail-inner">
 
 
-        <!-- IMAGE -->
+        <!-- PRODUCT IMAGE -->
 
         <div class="product-detail-image">
 
@@ -219,7 +232,7 @@
         </div>
 
 
-        <!-- DETAILS -->
+        <!-- PRODUCT INFORMATION -->
 
         <div class="product-detail-content">
 
@@ -248,6 +261,8 @@
             class="detail-description">
           </p>
 
+
+          <!-- WHATSAPP ORDER -->
 
           <a
             id="detailWhatsapp"
@@ -303,6 +318,7 @@
 
     </section>
 
+
   </main>
 
 
@@ -353,7 +369,8 @@
 
     function toggleMenu() {
 
-      const nav = document.getElementById("nav");
+      const nav =
+        document.getElementById("nav");
 
       if (nav) {
         nav.classList.toggle("show");
@@ -364,7 +381,8 @@
 
     function closeMenu() {
 
-      const nav = document.getElementById("nav");
+      const nav =
+        document.getElementById("nav");
 
       if (nav) {
         nav.classList.remove("show");
@@ -373,22 +391,13 @@
     }
 
 
-    document.querySelectorAll("#nav a").forEach(function(link) {
-
-      link.addEventListener("click", function() {
-
-        closeMenu();
-
-      });
-
-    });
-
-
-    const year = document.getElementById("year");
+    const year =
+      document.getElementById("year");
 
     if (year) {
 
-      year.textContent = new Date().getFullYear();
+      year.textContent =
+        new Date().getFullYear();
 
     }
 
@@ -445,9 +454,11 @@
 
     /* ================= INITIALIZE FIREBASE ================= */
 
-    const app = initializeApp(firebaseConfig);
+    const app =
+      initializeApp(firebaseConfig);
 
-    const db = getFirestore(app);
+    const db =
+      getFirestore(app);
 
 
     /* ================= PRODUCT DATA ================= */
@@ -475,40 +486,92 @@
 
 
     /* =====================================================
+       CONVERT GITHUB IMAGE URL
+    ===================================================== */
+
+    function getProductImage(image) {
+
+      if (!image) {
+        return "";
+      }
+
+      let url = String(image).trim();
+
+
+      /*
+        GitHub normal URL:
+
+        https://github.com/USER/REPO/blob/main/photo.jpg
+
+        becomes:
+
+        https://raw.githubusercontent.com/USER/REPO/main/photo.jpg
+      */
+
+      if (
+        url.includes("github.com") &&
+        url.includes("/blob/")
+      ) {
+
+        url = url
+          .replace(
+            "https://github.com/",
+            "https://raw.githubusercontent.com/"
+          )
+          .replace("/blob/", "/");
+
+      }
+
+
+      return url;
+
+    }
+
+
+    /* =====================================================
        LOAD PRODUCTS
     ===================================================== */
 
     async function loadProducts() {
 
       const categoryGrid =
-        document.getElementById("categoryGrid");
+        document.getElementById(
+          "categoryGrid"
+        );
 
       const productGrid =
-        document.getElementById("productGrid");
+        document.getElementById(
+          "productGrid"
+        );
 
 
       try {
 
         const snapshot =
           await getDocs(
-            collection(db, "products")
+            collection(
+              db,
+              "products"
+            )
           );
 
 
         allProducts = [];
 
 
-        snapshot.forEach(function(doc) {
+        snapshot.forEach(
+          function(doc) {
 
-          allProducts.push({
+            allProducts.push({
 
-            id: doc.id,
+              id: doc.id,
 
-            ...doc.data()
+              ...doc.data()
 
-          });
+            });
 
-        });
+          }
+        );
 
 
         console.log(
@@ -526,9 +589,7 @@
         );
 
 
-      }
-
-      catch (error) {
+      } catch (error) {
 
         console.error(
           "Firebase Error:",
@@ -581,7 +642,9 @@
     function createCategories() {
 
       const grid =
-        document.getElementById("categoryGrid");
+        document.getElementById(
+          "categoryGrid"
+        );
 
 
       if (!grid) return;
@@ -590,25 +653,31 @@
       const categories = [];
 
 
-      allProducts.forEach(function(product) {
+      allProducts.forEach(
+        function(product) {
 
-        const category =
-          String(
-            product.category ||
-            "Jewellery"
-          ).trim();
+          const category =
+            String(
+              product.category ||
+              "Jewellery"
+            ).trim();
 
 
-        if (
-          category &&
-          !categories.includes(category)
-        ) {
+          if (
+            category &&
+            !categories.includes(
+              category
+            )
+          ) {
 
-          categories.push(category);
+            categories.push(
+              category
+            );
+
+          }
 
         }
-
-      });
+      );
 
 
       grid.innerHTML = "";
@@ -631,82 +700,101 @@
       }
 
 
-      categories.forEach(function(category, index) {
-
-        const categoryProducts =
-          allProducts.filter(function(product) {
-
-            return String(
-              product.category ||
-              "Jewellery"
-            ).trim() === category;
-
-          });
+      categories.forEach(
+        function(
+          category,
+          index
+        ) {
 
 
-        const firstProduct =
-          categoryProducts[0];
+          const categoryProducts =
+            allProducts.filter(
+              function(product) {
+
+                return String(
+                  product.category ||
+                  "Jewellery"
+                ).trim() === category;
+
+              }
+            );
 
 
-        const image =
-          firstProduct &&
-          firstProduct.image
-            ? firstProduct.image
-            : "logo.jpg";
+          const firstProduct =
+            categoryProducts[0];
 
 
-        const card =
-          document.createElement("article");
+          const image =
+            firstProduct &&
+            firstProduct.image
+              ? getProductImage(
+                  firstProduct.image
+                )
+              : "logo.jpg";
 
 
-        card.className =
-          "category-card";
+          const card =
+            document.createElement(
+              "article"
+            );
 
 
-        card.innerHTML = `
-
-          <img
-            src="${escapeHTML(image)}"
-            alt="${escapeHTML(category)} Collection"
-            loading="lazy"
-          >
-
-          <div class="category-overlay"></div>
-
-          <div class="category-content">
-
-            <small>
-              COLLECTION
-              ${String(index + 1).padStart(2, "0")}
-            </small>
-
-            <h3>
-              ${escapeHTML(category)}
-              <span>Collection</span>
-            </h3>
-
-            <button type="button">
-              Explore Collection →
-            </button>
-
-          </div>
-
-        `;
+          card.className =
+            "category-card";
 
 
-        card.addEventListener("click", function() {
+          card.innerHTML = `
 
-          showProducts(
-            category,
-            category + " Collection"
+            <img
+              src="${escapeHTML(image)}"
+              alt="${escapeHTML(category)} Collection"
+              loading="lazy"
+            >
+
+            <div class="category-overlay"></div>
+
+            <div class="category-content">
+
+              <small>
+                COLLECTION
+                ${String(index + 1).padStart(2, "0")}
+              </small>
+
+              <h3>
+                ${escapeHTML(category)}
+                <span>Collection</span>
+              </h3>
+
+              <button
+                type="button">
+
+                Explore Collection →
+
+              </button>
+
+            </div>
+
+          `;
+
+
+          card.addEventListener(
+            "click",
+            function() {
+
+              showProducts(
+                category,
+                category +
+                " Collection"
+              );
+
+            }
           );
 
-        });
 
+          grid.appendChild(card);
 
-        grid.appendChild(card);
-
-      });
+        }
+      );
 
     }
 
@@ -715,17 +803,14 @@
        SHOW PRODUCTS
     ===================================================== */
 
-    function showProducts(category, title) {
+    function showProducts(
+      category,
+      title
+    ) {
 
       const section =
         document.getElementById(
           "productSection"
-        );
-
-
-      const details =
-        document.getElementById(
-          "productDetails"
         );
 
 
@@ -757,21 +842,22 @@
 
       if (category === "all") {
 
-        products = allProducts;
+        products =
+          allProducts;
 
-      }
-
-      else {
+      } else {
 
         products =
-          allProducts.filter(function(product) {
+          allProducts.filter(
+            function(product) {
 
-            return String(
-              product.category ||
-              "Jewellery"
-            ).trim() === category;
+              return String(
+                product.category ||
+                "Jewellery"
+              ).trim() === category;
 
-          });
+            }
+          );
 
       }
 
@@ -792,49 +878,36 @@
 
         `;
 
-      }
+      } else {
 
-      else {
+        products.forEach(
+          function(product) {
 
-        products.forEach(function(product) {
+            createProductCard(
+              product,
+              grid
+            );
 
-          createProductCard(
-            product,
-            grid
-          );
-
-        });
-
-      }
-
-
-      if (details) {
-
-        details.classList.remove("active");
-
-        details.classList.remove("show");
+          }
+        );
 
       }
 
 
       if (section) {
 
-        section.classList.add("active");
+        section.classList.add(
+          "active"
+        );
 
-        section.classList.add("show");
 
+        section.scrollIntoView({
 
-        setTimeout(function() {
+          behavior: "smooth",
 
-          section.scrollIntoView({
+          block: "start"
 
-            behavior: "smooth",
-
-            block: "start"
-
-          });
-
-        }, 50);
+        });
 
       }
 
@@ -845,10 +918,15 @@
        CREATE PRODUCT CARD
     ===================================================== */
 
-    function createProductCard(product, grid) {
+    function createProductCard(
+      product,
+      grid
+    ) {
 
       const card =
-        document.createElement("article");
+        document.createElement(
+          "article"
+        );
 
 
       card.className =
@@ -879,7 +957,9 @@
 
 
       const image =
-        product.image ||
+        getProductImage(
+          product.image
+        ) ||
         "logo.jpg";
 
 
@@ -923,11 +1003,15 @@
           }
 
 
-          <p class="catalog-product-description">
-
-            ${escapeHTML(description)}
-
-          </p>
+          ${
+            description
+              ? `
+                <p class="catalog-product-description">
+                  ${escapeHTML(description)}
+                </p>
+              `
+              : ""
+          }
 
 
           <div class="product-card-actions">
@@ -956,7 +1040,7 @@
       `;
 
 
-      /* VIEW BUTTON */
+      /* ================= VIEW PRODUCT ================= */
 
       const viewButton =
         card.querySelector(
@@ -980,7 +1064,7 @@
       }
 
 
-      /* WHATSAPP BUTTON */
+      /* ================= WHATSAPP ORDER ================= */
 
       const whatsappButton =
         card.querySelector(
@@ -1004,7 +1088,7 @@
       }
 
 
-      /* CARD CLICK */
+      /* ================= CARD CLICK ================= */
 
       card.addEventListener(
         "click",
@@ -1022,7 +1106,7 @@
 
 
     /* =====================================================
-       WHATSAPP ORDER
+       WHATSAPP PRODUCT ORDER
     ===================================================== */
 
     function orderProduct(product) {
@@ -1051,16 +1135,17 @@
 
 
       const image =
-        product.image ||
-        "";
+        getProductImage(
+          product.image
+        );
 
 
       const message =
 `Hello Shivam Imitation 👋
 
-I want to order this product.
+🛍️ I want to order this product.
 
-🛍️ Product: ${name}
+📌 Product: ${name}
 
 📂 Category: ${category}
 
@@ -1079,7 +1164,9 @@ Thank you 🙏`;
 
       const whatsappURL =
         "https://wa.me/919714978206?text=" +
-        encodeURIComponent(message);
+        encodeURIComponent(
+          message
+        );
 
 
       window.open(
@@ -1162,9 +1249,13 @@ Thank you 🙏`;
 
 
       const productImage =
-        product.image ||
+        getProductImage(
+          product.image
+        ) ||
         "logo.jpg";
 
+
+      /* ================= IMAGE ================= */
 
       if (image) {
 
@@ -1177,6 +1268,8 @@ Thank you 🙏`;
       }
 
 
+      /* ================= NAME ================= */
+
       if (name) {
 
         name.textContent =
@@ -1185,6 +1278,8 @@ Thank you 🙏`;
       }
 
 
+      /* ================= CATEGORY ================= */
+
       if (category) {
 
         category.textContent =
@@ -1192,6 +1287,8 @@ Thank you 🙏`;
 
       }
 
+
+      /* ================= PRICE ================= */
 
       if (price) {
 
@@ -1203,6 +1300,8 @@ Thank you 🙏`;
       }
 
 
+      /* ================= DESCRIPTION ================= */
+
       if (description) {
 
         description.textContent =
@@ -1211,14 +1310,16 @@ Thank you 🙏`;
       }
 
 
+      /* ================= WHATSAPP ================= */
+
       if (whatsapp) {
 
         const message =
 `Hello Shivam Imitation 👋
 
-I want to order this product.
+🛍️ I want to order this product.
 
-🛍️ Product: ${productName}
+📌 Product: ${productName}
 
 📂 Category: ${productCategory}
 
@@ -1237,33 +1338,45 @@ Thank you 🙏`;
 
         whatsapp.href =
           "https://wa.me/919714978206?text=" +
-          encodeURIComponent(message);
+          encodeURIComponent(
+            message
+          );
 
       }
 
 
+      /* ================= SHOW DETAILS ================= */
+
       if (details) {
 
-        details.classList.add("active");
+        details.classList.add(
+          "active"
+        );
 
-        details.classList.add("show");
 
+        details.scrollIntoView({
 
-        setTimeout(function() {
+          behavior: "smooth",
 
-          details.scrollIntoView({
+          block: "start"
 
-            behavior: "smooth",
-
-            block: "start"
-
-          });
-
-        }, 50);
+        });
 
       }
 
     }
+
+
+    /* =====================================================
+       WHATSAPP FUNCTION GLOBAL
+    ===================================================== */
+
+    window.orderProduct =
+      orderProduct;
+
+
+    window.openProduct =
+      openProduct;
 
 
     /* =====================================================
@@ -1293,18 +1406,18 @@ Thank you 🙏`;
 
         if (section) {
 
-          section.classList.remove("active");
-
-          section.classList.remove("show");
+          section.classList.remove(
+            "active"
+          );
 
         }
 
 
         if (details) {
 
-          details.classList.remove("active");
-
-          details.classList.remove("show");
+          details.classList.remove(
+            "active"
+          );
 
         }
 
@@ -1339,9 +1452,9 @@ Thank you 🙏`;
 
         if (details) {
 
-          details.classList.remove("active");
-
-          details.classList.remove("show");
+          details.classList.remove(
+            "active"
+          );
 
         }
 
@@ -1349,7 +1462,7 @@ Thank you 🙏`;
 
 
     /* =====================================================
-       START FIREBASE
+       START
     ===================================================== */
 
     loadProducts();
