@@ -24,7 +24,7 @@
 
     .container {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       padding: 25px 16px 50px;
     }
@@ -263,8 +263,6 @@
       border: 1px solid #e7bd55;
     }
 
-    /* PRODUCTS */
-
     .products-title {
       display: flex;
       justify-content: space-between;
@@ -300,6 +298,7 @@
       height: 220px;
       object-fit: cover;
       display: block;
+      background: #002f2b;
     }
 
     .product-info {
@@ -332,6 +331,13 @@
       min-height: 38px;
     }
 
+    .image-name {
+      margin-top: 8px;
+      color: #aebbb8;
+      font-size: 11px;
+      word-break: break-all;
+    }
+
     .product-actions {
       display: flex;
       gap: 8px;
@@ -349,15 +355,14 @@
       color: white;
     }
 
-    .empty {
+    .empty,
+    .loading {
       padding: 30px;
       text-align: center;
       color: #aebbb8;
     }
 
     .loading {
-      padding: 30px;
-      text-align: center;
       color: #f3d77b;
     }
 
@@ -416,7 +421,8 @@
         type="email"
         id="loginEmail"
         placeholder="Enter admin email"
-        autocomplete="email">
+        autocomplete="email"
+      >
 
       <label>Password</label>
 
@@ -424,15 +430,15 @@
         type="password"
         id="loginPassword"
         placeholder="Enter password"
-        autocomplete="current-password">
+        autocomplete="current-password"
+      >
 
       <button
         id="loginButton"
         class="main-button"
-        onclick="loginAdmin()">
-
+        onclick="loginAdmin()"
+      >
         🔐 Login
-
       </button>
 
       <div id="loginMessage" class="message"></div>
@@ -444,7 +450,7 @@
 
     <div id="adminPanel" class="admin-panel">
 
-      <!-- PRODUCT FORM -->
+      <!-- ADD / EDIT -->
 
       <div class="card">
 
@@ -456,7 +462,6 @@
           ➕ Add New Product
         </h2>
 
-
         <label>
           Product Name *
         </label>
@@ -464,8 +469,8 @@
         <input
           type="text"
           id="productName"
-          placeholder="Example: Royal Green Drop Set">
-
+          placeholder="Example: Royal Green Drop Set"
+        >
 
         <label>
           Price *
@@ -475,8 +480,8 @@
           type="number"
           id="productPrice"
           placeholder="Example: 599"
-          min="0">
-
+          min="0"
+        >
 
         <label>
           Category *
@@ -514,15 +519,14 @@
 
         </select>
 
-
         <label>
           Description *
         </label>
 
         <textarea
           id="productDescription"
-          placeholder="Example: Premium imitation jewellery"></textarea>
-
+          placeholder="Example: Premium imitation jewellery"
+        ></textarea>
 
         <label>
           Product Image
@@ -533,108 +537,95 @@
           <input
             type="file"
             id="productImage"
-            accept="image/jpeg,image/png,image/webp">
+            accept="image/jpeg,image/png,image/webp"
+          >
 
           <div class="small">
-            📷 New product હોય ત્યારે image પસંદ કરો.
-            <br>
-            ✏️ Edit કરતી વખતે image બદલવી હોય તો જ નવી image પસંદ કરો.
-            <br>
-            🗑️ Delete કરતી વખતે GitHub image પણ automatic delete થશે.
-            <br>
+            📷 Add Product વખતે image પસંદ કરો.<br>
+            ✏️ Edit વખતે image બદલવી હોય તો જ નવી image પસંદ કરો.<br>
+            🗑️ Delete કરવાથી Firebase સાથે GitHub image પણ delete થશે.<br>
             Maximum size: 5 MB.
           </div>
 
         </div>
 
-
         <div
           id="nextProductName"
-          class="next-name">
-
+          class="next-name"
+        >
           📁 Checking next image number...
-
         </div>
-
 
         <div
           id="imagePreview"
-          class="preview">
-
+          class="preview"
+        >
           <img
             id="previewImage"
             src=""
-            alt="Preview">
-
+            alt="Product Preview"
+          >
         </div>
-
 
         <div
           id="progressBox"
-          class="progress-box">
+          class="progress-box"
+        >
 
           <div class="progress-bar-bg">
 
             <div
               id="progressBar"
-              class="progress-bar">
-            </div>
+              class="progress-bar"
+            ></div>
 
           </div>
 
           <div
             id="progressText"
-            class="progress-text">
-
+            class="progress-text"
+          >
             Preparing...
-
           </div>
 
         </div>
 
-
         <div
           id="urlBox"
-          class="url-box">
-        </div>
-
+          class="url-box"
+        ></div>
 
         <div class="form-buttons">
 
           <button
             id="saveButton"
-            onclick="saveProduct()">
-
+            onclick="saveProduct()"
+          >
             ➕ Add Product
-
           </button>
 
           <button
             id="cancelButton"
             class="cancel-button"
             onclick="cancelEdit()"
-            style="display:none;">
-
+            style="display:none;"
+          >
             Cancel Edit
-
           </button>
 
         </div>
 
-
         <button
           class="logout"
-          onclick="logoutAdmin()">
-
+          onclick="logoutAdmin()"
+        >
           Logout
-
         </button>
-
 
         <div
           id="productMessage"
-          class="message">
-        </div>
+          class="message"
+        ></div>
 
       </div>
 
@@ -651,22 +642,20 @@
 
           <button
             class="refresh-btn"
-            onclick="loadProducts()">
-
+            onclick="loadProducts()"
+          >
             🔄 Refresh
-
           </button>
 
         </div>
 
         <div
           id="productsList"
-          class="products-grid">
-
+          class="products-grid"
+        >
           <div class="loading">
             Loading products...
           </div>
-
         </div>
 
       </div>
@@ -684,20 +673,16 @@
 
     import {
       initializeApp
-    }
-    from
+    } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
 
     import {
       getAuth,
       signInWithEmailAndPassword,
       onAuthStateChanged,
       signOut
-    }
-    from
+    } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
 
     import {
       getFirestore,
@@ -708,8 +693,7 @@
       updateDoc,
       deleteDoc,
       serverTimestamp
-    }
-    from
+    } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
@@ -785,22 +769,17 @@
 
 
     /* =====================================================
-       MESSAGE FUNCTION
+       MESSAGE
     ===================================================== */
 
-    function showMessage(
-      id,
-      text,
-      type
-    ) {
+    function showMessage(id, text, type) {
 
       const el =
         document.getElementById(id);
 
       if (!el) return;
 
-      el.textContent =
-        text;
+      el.textContent = text;
 
       el.className =
         "message " + type;
@@ -812,95 +791,94 @@
        LOGIN
     ===================================================== */
 
-    window.loginAdmin =
-      async function () {
+    window.loginAdmin = async function () {
 
-        const email =
-          document
-            .getElementById("loginEmail")
-            .value
-            .trim();
+      const email =
+        document
+          .getElementById("loginEmail")
+          .value
+          .trim();
 
-        const password =
-          document
-            .getElementById("loginPassword")
-            .value;
+      const password =
+        document
+          .getElementById("loginPassword")
+          .value;
 
-        const button =
-          document.getElementById("loginButton");
-
-
-        if (!email || !password) {
-
-          showMessage(
-            "loginMessage",
-            "Please enter email and password.",
-            "error"
-          );
-
-          return;
-
-        }
+      const button =
+        document.getElementById("loginButton");
 
 
-        if (
-          email.toLowerCase() !==
-          ADMIN_EMAIL.toLowerCase()
-        ) {
+      if (!email || !password) {
 
-          showMessage(
-            "loginMessage",
-            "This email is not authorized.",
-            "error"
-          );
+        showMessage(
+          "loginMessage",
+          "Please enter email and password.",
+          "error"
+        );
 
-          return;
+        return;
 
-        }
+      }
 
 
-        try {
+      if (
+        email.toLowerCase() !==
+        ADMIN_EMAIL.toLowerCase()
+      ) {
 
-          button.disabled = true;
+        showMessage(
+          "loginMessage",
+          "This email is not authorized.",
+          "error"
+        );
 
-          button.textContent =
-            "Logging in...";
+        return;
+
+      }
 
 
-          await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
+      try {
 
-        }
+        button.disabled = true;
 
-        catch (error) {
+        button.textContent =
+          "Logging in...";
 
-          console.error(error);
 
-          showMessage(
-            "loginMessage",
-            "❌ " +
-            (
-              error.message ||
-              "Login failed."
-            ),
-            "error"
-          );
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
 
-        }
+      }
 
-        finally {
+      catch (error) {
 
-          button.disabled = false;
+        console.error(error);
 
-          button.textContent =
-            "🔐 Login";
+        showMessage(
+          "loginMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Login failed."
+          ),
+          "error"
+        );
 
-        }
+      }
 
-      };
+      finally {
+
+        button.disabled = false;
+
+        button.textContent =
+          "🔐 Login";
+
+      }
+
+    };
 
 
     /* =====================================================
@@ -935,7 +913,6 @@
           admin.style.display =
             "block";
 
-
           await findNextProductNumber();
 
           await loadProducts();
@@ -960,12 +937,11 @@
        LOGOUT
     ===================================================== */
 
-    window.logoutAdmin =
-      async function () {
+    window.logoutAdmin = async function () {
 
-        await signOut(auth);
+      await signOut(auth);
 
-      };
+    };
 
 
     /* =====================================================
@@ -985,8 +961,7 @@
           );
 
 
-        let highest =
-          0;
+        let highest = 0;
 
 
         snapshot.forEach(
@@ -996,15 +971,13 @@
               item.data();
 
             const imageName =
-              data.imageName ||
-              "";
+              data.imageName || "";
 
 
             const match =
-              String(imageName)
-                .match(
-                  /product-(\d+)/i
-                );
+              String(imageName).match(
+                /product-(\d+)\.(jpg|jpeg|png|webp)/i
+              );
 
 
             if (match) {
@@ -1012,13 +985,9 @@
               const number =
                 Number(match[1]);
 
+              if (number > highest) {
 
-              if (
-                number > highest
-              ) {
-
-                highest =
-                  number;
+                highest = number;
 
               }
 
@@ -1051,6 +1020,11 @@
 
         window.nextProductNumber =
           1;
+
+        document.getElementById(
+          "nextProductName"
+        ).textContent =
+          "📁 Next image: product-1.jpg";
 
       }
 
@@ -1092,9 +1066,12 @@
 
 
           const allowed = [
+
             "image/jpeg",
+            "image/jpg",
             "image/png",
             "image/webp"
+
           ];
 
 
@@ -1152,28 +1129,10 @@
 
 
     /* =====================================================
-       UPLOAD IMAGE TO WORKER
+       WORKER REQUEST
     ===================================================== */
 
-    async function uploadImageToWorker(
-      file
-    ) {
-
-      const formData =
-        new FormData();
-
-
-      formData.append(
-        "action",
-        "upload"
-      );
-
-
-      formData.append(
-        "image",
-        file
-      );
-
+    async function workerRequest(formData) {
 
       const response =
         await fetch(
@@ -1186,7 +1145,6 @@
 
 
       let result;
-
 
       try {
 
@@ -1211,13 +1169,40 @@
 
         throw new Error(
           result.message ||
-          "Image upload failed."
+          "Worker operation failed."
         );
 
       }
 
 
       return result;
+
+    }
+
+
+    /* =====================================================
+       UPLOAD IMAGE TO GITHUB
+    ===================================================== */
+
+    async function uploadImageToWorker(file) {
+
+      const formData =
+        new FormData();
+
+      formData.append(
+        "action",
+        "upload"
+      );
+
+      formData.append(
+        "image",
+        file
+      );
+
+
+      return await workerRequest(
+        formData
+      );
 
     }
 
@@ -1227,73 +1212,49 @@
     ===================================================== */
 
     async function deleteImageFromGitHub(
-      imageName
+      fileName
     ) {
 
-      if (!imageName) {
-        return;
+      if (!fileName) {
+
+        return {
+          success: true,
+          skipped: true
+        };
+
+      }
+
+
+      if (
+        !/^product-\d+\.(jpg|jpeg|png|webp)$/i.test(
+          fileName
+        )
+      ) {
+
+        throw new Error(
+          "Invalid GitHub product image name."
+        );
+
       }
 
 
       const formData =
         new FormData();
 
-
       formData.append(
         "action",
         "delete"
       );
 
-
       formData.append(
         "fileName",
-        imageName
+        fileName
       );
 
 
-      const response =
-        await fetch(
-          WORKER_URL,
-          {
-            method: "POST",
-            body: formData
-          }
-        );
-
-
-      let result;
-
-
-      try {
-
-        result =
-          await response.json();
-
-      }
-
-      catch {
-
-        throw new Error(
-          "Worker returned invalid response while deleting image."
-        );
-
-      }
-
-
-      if (
-        !response.ok ||
-        !result.success
-      ) {
-
-        throw new Error(
-          result.message ||
-          "GitHub image delete failed."
-        );
-
-      }
-
-
-      return result;
+      return await workerRequest(
+        formData
+      );
 
     }
 
@@ -1302,252 +1263,250 @@
        SAVE PRODUCT
     ===================================================== */
 
-    window.saveProduct =
-      async function () {
+    window.saveProduct = async function () {
 
-        const name =
-          document
-            .getElementById("productName")
-            .value
-            .trim();
+      const name =
+        document
+          .getElementById("productName")
+          .value
+          .trim();
+
+      const priceText =
+        document
+          .getElementById("productPrice")
+          .value
+          .trim();
+
+      const category =
+        document
+          .getElementById("productCategory")
+          .value
+          .trim();
+
+      const description =
+        document
+          .getElementById("productDescription")
+          .value
+          .trim();
+
+      const imageInput =
+        document.getElementById(
+          "productImage"
+        );
+
+      const file =
+        imageInput.files[0];
+
+      const button =
+        document.getElementById(
+          "saveButton"
+        );
 
 
-        const priceText =
-          document
-            .getElementById("productPrice")
-            .value
-            .trim();
+      /* VALIDATION */
+
+      if (
+        !name ||
+        !priceText ||
+        !category ||
+        !description
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Please fill all product details.",
+          "error"
+        );
+
+        return;
+
+      }
 
 
-        const category =
-          document
-            .getElementById("productCategory")
-            .value
-            .trim();
+      if (
+        editingProductId === null &&
+        !file
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Please select product image.",
+          "error"
+        );
+
+        return;
+
+      }
 
 
-        const description =
-          document
-            .getElementById("productDescription")
-            .value
-            .trim();
+      const price =
+        Number(priceText);
 
 
-        const imageInput =
+      if (
+        Number.isNaN(price) ||
+        price < 0
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Enter a valid price.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      try {
+
+        button.disabled = true;
+
+        button.textContent =
+          editingProductId
+            ? "Updating..."
+            : "Uploading...";
+
+
+        document.getElementById(
+          "progressBox"
+        ).style.display =
+          "block";
+
+
+        document.getElementById(
+          "progressBar"
+        ).style.width =
+          "10%";
+
+
+        let imageURL =
+          editingOldImage;
+
+        let imageName =
+          editingOldImageName;
+
+
+        let newImageName = "";
+
+
+        /* =================================================
+           UPLOAD NEW IMAGE
+        ================================================= */
+
+        if (file) {
+
           document.getElementById(
-            "productImage"
-          );
+            "progressText"
+          ).textContent =
+            "📷 Uploading image to GitHub...";
 
 
-        const file =
-          imageInput.files[0];
+          const result =
+            await uploadImageToWorker(
+              file
+            );
 
 
-        const button =
-          document.getElementById(
-            "saveButton"
-          );
+          imageURL =
+            result.image;
 
+          imageName =
+            result.fileName;
 
-        /* ================= VALIDATION ================= */
-
-        if (
-          !name ||
-          !priceText ||
-          !category ||
-          !description
-        ) {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Please fill all product details.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        if (
-          editingProductId === null &&
-          !file
-        ) {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Please select product image.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        const price =
-          Number(priceText);
-
-
-        if (
-          Number.isNaN(price) ||
-          price < 0
-        ) {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Enter a valid price.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        try {
-
-          button.disabled =
-            true;
-
-
-          button.textContent =
-            editingProductId
-              ? "Updating..."
-              : "Uploading...";
-
-
-          document.getElementById(
-            "progressBox"
-          ).style.display =
-            "block";
+          newImageName =
+            result.fileName;
 
 
           document.getElementById(
             "progressBar"
           ).style.width =
-            "10%";
+            "60%";
 
 
-          let imageURL =
-            editingOldImage;
+          document.getElementById(
+            "urlBox"
+          ).textContent =
+            imageURL;
+
+          document.getElementById(
+            "urlBox"
+          ).style.display =
+            "block";
+
+        }
 
 
-          let imageName =
-            editingOldImageName;
+        /* =================================================
+           PRODUCT DATA
+        ================================================= */
+
+        const productData = {
+
+          name:
+            name,
+
+          price:
+            price,
+
+          category:
+            category,
+
+          description:
+            description,
+
+          image:
+            imageURL,
+
+          imageName:
+            imageName
+
+        };
 
 
-          /* =================================================
-             NEW IMAGE UPLOAD
-          ================================================= */
+        /* =================================================
+           EDIT PRODUCT
+        ================================================= */
 
-          if (file) {
+        if (editingProductId) {
+
+          document.getElementById(
+            "progressText"
+          ).textContent =
+            "💾 Updating product...";
+
+
+          await updateDoc(
+            doc(
+              db,
+              "products",
+              editingProductId
+            ),
+            productData
+          );
+
+
+          /*
+             IMPORTANT:
+
+             First Firestore update is completed.
+             Then old GitHub image is deleted.
+          */
+
+          if (
+            file &&
+            editingOldImageName &&
+            editingOldImageName !== newImageName
+          ) {
 
             document.getElementById(
               "progressText"
             ).textContent =
-              "📷 Uploading new image...";
+              "🗑️ Removing old GitHub image...";
 
 
-            const result =
-              await uploadImageToWorker(
-                file
-              );
-
-
-            imageURL =
-              result.image;
-
-
-            imageName =
-              result.fileName;
-
-
-            document.getElementById(
-              "progressBar"
-            ).style.width =
-              "60%";
-
-
-            document.getElementById(
-              "urlBox"
-            ).textContent =
-              imageURL;
-
-
-            document.getElementById(
-              "urlBox"
-            ).style.display =
-              "block";
-
-          }
-
-
-          /* =================================================
-             PRODUCT DATA
-          ================================================= */
-
-          const productData = {
-
-            name:
-              name,
-
-            price:
-              price,
-
-            category:
-              category,
-
-            description:
-              description,
-
-            image:
-              imageURL,
-
-            imageName:
-              imageName
-
-          };
-
-
-          /* =================================================
-             EDIT PRODUCT
-          ================================================= */
-
-          if (
-            editingProductId
-          ) {
-
-            /*
-             * First update Firebase
-             */
-
-            await updateDoc(
-              doc(
-                db,
-                "products",
-                editingProductId
-              ),
-              productData
-            );
-
-
-            /*
-             * If a NEW image was uploaded,
-             * delete OLD GitHub image.
-             */
-
-            if (
-              file &&
-              editingOldImageName &&
-              editingOldImageName !== imageName
-            ) {
-
-              document.getElementById(
-                "progressText"
-              ).textContent =
-                "🗑️ Removing old GitHub image...";
-
+            try {
 
               await deleteImageFromGitHub(
                 editingOldImageName
@@ -1555,112 +1514,130 @@
 
             }
 
+            catch (deleteError) {
 
-            showMessage(
-              "productMessage",
-              file
-                ? "✅ Product updated અને જૂની image GitHub માંથી deleted!"
-                : "✅ Product updated successfully!",
-              "success"
-            );
-
-          }
-
-
-          /* =================================================
-             ADD PRODUCT
-          ================================================= */
-
-          else {
-
-            productData.createdAt =
-              serverTimestamp();
-
-
-            const ref =
-              await addDoc(
-                collection(
-                  db,
-                  "products"
-                ),
-                productData
+              console.error(
+                "OLD IMAGE DELETE ERROR:",
+                deleteError
               );
 
+              /*
+                 Product update already succeeded.
+                 We don't undo the product update.
+              */
 
-            console.log(
-              "Added:",
-              ref.id
-            );
-
-
-            showMessage(
-              "productMessage",
-              "✅ Product added successfully!",
-              "success"
-            );
+            }
 
           }
 
 
-          /* =================================================
-             COMPLETE
-          ================================================= */
+          showMessage(
+            "productMessage",
+            "✅ Product updated successfully!",
+            "success"
+          );
 
-          document.getElementById(
-            "progressBar"
-          ).style.width =
-            "100%";
+        }
 
+
+        /* =================================================
+           ADD NEW PRODUCT
+        ================================================= */
+
+        else {
 
           document.getElementById(
             "progressText"
           ).textContent =
-            "✅ Complete";
+            "💾 Saving product to Firebase...";
 
 
-          resetForm();
+          productData.createdAt =
+            serverTimestamp();
 
 
-          await findNextProductNumber();
+          const ref =
+            await addDoc(
+              collection(
+                db,
+                "products"
+              ),
+              productData
+            );
 
-          await loadProducts();
 
-        }
-
-        catch (error) {
-
-          console.error(
-            "SAVE ERROR:",
-            error
+          console.log(
+            "Product added:",
+            ref.id
           );
 
 
           showMessage(
             "productMessage",
-            "❌ " +
-            (
-              error.message ||
-              "Operation failed."
-            ),
-            "error"
+            "✅ Product added successfully!",
+            "success"
           );
 
         }
 
-        finally {
 
-          button.disabled =
-            false;
+        /* =================================================
+           RESET + REFRESH
+        ================================================= */
+
+        document.getElementById(
+          "progressBar"
+        ).style.width =
+          "100%";
 
 
-          button.textContent =
-            editingProductId
-              ? "Update Product"
-              : "➕ Add Product";
+        document.getElementById(
+          "progressText"
+        ).textContent =
+          "✅ Complete";
 
-        }
 
-      };
+        resetForm();
+
+
+        await findNextProductNumber();
+
+        await loadProducts();
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "SAVE ERROR:",
+          error
+        );
+
+
+        showMessage(
+          "productMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Operation failed."
+          ),
+          "error"
+        );
+
+      }
+
+      finally {
+
+        button.disabled = false;
+
+        button.textContent =
+          editingProductId
+            ? "Update Product"
+            : "➕ Add Product";
+
+      }
+
+    };
 
 
     /* =====================================================
@@ -1699,9 +1676,7 @@
             "";
 
 
-          if (
-            snapshot.empty
-          ) {
+          if (snapshot.empty) {
 
             container.innerHTML =
               `
@@ -1721,7 +1696,6 @@
               const data =
                 item.data();
 
-
               const id =
                 item.id;
 
@@ -1730,24 +1704,24 @@
                 data.name ||
                 "Unnamed Product";
 
-
               const price =
                 data.price ?? "";
-
 
               const category =
                 data.category ||
                 "Jewellery";
 
-
               const description =
                 data.description ||
                 "";
 
-
               const image =
                 data.image ||
                 "logo.jpg";
+
+              const imageName =
+                data.imageName ||
+                "";
 
 
               const card =
@@ -1786,28 +1760,33 @@
                     ${escapeHTML(description)}
                   </div>
 
+                  ${
+                    imageName
+                      ? `
+                        <div class="image-name">
+                          📁 ${escapeHTML(imageName)}
+                        </div>
+                      `
+                      : ""
+                  }
+
                   <div class="product-actions">
 
                     <button
                       class="edit-btn"
-                      data-id="${escapeHTML(id)}">
-
+                    >
                       ✏️ Edit
-
                     </button>
 
                     <button
                       class="delete-btn"
-                      data-id="${escapeHTML(id)}">
-
+                    >
                       🗑️ Delete
-
                     </button>
 
                   </div>
 
                 </div>
-
               `;
 
 
@@ -1838,8 +1817,7 @@
 
                     deleteProduct(
                       id,
-                      name,
-                      data.imageName || ""
+                      data
                     );
 
                   }
@@ -1889,11 +1867,9 @@
       editingProductId =
         id;
 
-
       editingOldImage =
         data.image ||
         "";
-
 
       editingOldImageName =
         data.imageName ||
@@ -1928,8 +1904,7 @@
       document.getElementById(
         "productPrice"
       ).value =
-        data.price ??
-        "";
+        data.price ?? "";
 
 
       document.getElementById(
@@ -1957,31 +1932,32 @@
           "imagePreview"
         );
 
-
       const previewImage =
         document.getElementById(
           "previewImage"
         );
 
 
-      if (
-        data.image
-      ) {
+      if (data.image) {
 
         previewImage.src =
           data.image;
-
 
         preview.style.display =
           "block";
 
       }
 
+      else {
+
+        preview.style.display =
+          "none";
+
+      }
+
 
       document
-        .getElementById(
-          "formTitle"
-        )
+        .getElementById("formTitle")
         .scrollIntoView({
           behavior: "smooth"
         });
@@ -2001,25 +1977,36 @@
 
 
     /* =====================================================
-       DELETE PRODUCT + GITHUB IMAGE
+       DELETE PRODUCT
     ===================================================== */
 
     async function deleteProduct(
       id,
-      name,
-      imageName
+      data
     ) {
+
+      const name =
+        data.name ||
+        "Unnamed Product";
+
+      const imageName =
+        data.imageName ||
+        "";
+
 
       const confirmed =
         confirm(
           "Delete this product?\n\n" +
           name +
-          "\n\nFirebase product અને GitHub image બંને delete થશે."
+          "\n\n" +
+          "Firebase product અને GitHub image બંને delete થશે."
         );
 
 
       if (!confirmed) {
+
         return;
+
       }
 
 
@@ -2033,11 +2020,9 @@
 
 
         /*
-         * ==========================================
-         * STEP 1
-         * DELETE FIREBASE PRODUCT
-         * ==========================================
-         */
+           STEP 1:
+           Delete Firebase product
+        */
 
         await deleteDoc(
           doc(
@@ -2049,39 +2034,50 @@
 
 
         /*
-         * ==========================================
-         * STEP 2
-         * DELETE GITHUB IMAGE
-         * ==========================================
-         */
+           STEP 2:
+           Delete GitHub image
+        */
 
-        if (
-          imageName
-        ) {
+        if (imageName) {
 
-          showMessage(
-            "productMessage",
-            "⏳ Removing image from GitHub...",
-            "info"
-          );
+          try {
+
+            await deleteImageFromGitHub(
+              imageName
+            );
+
+          }
+
+          catch (githubError) {
+
+            console.error(
+              "GITHUB DELETE ERROR:",
+              githubError
+            );
 
 
-          await deleteImageFromGitHub(
-            imageName
-          );
+            showMessage(
+              "productMessage",
+              "⚠️ Product deleted from Firebase, but GitHub image could not be deleted: " +
+              githubError.message,
+              "error"
+            );
+
+
+            await loadProducts();
+
+            await findNextProductNumber();
+
+            return;
+
+          }
 
         }
 
 
-        /*
-         * ==========================================
-         * SUCCESS
-         * ==========================================
-         */
-
         showMessage(
           "productMessage",
-          "🗑️ Product અને GitHub image successfully deleted!",
+          "🗑️ Product and GitHub image deleted successfully!",
           "success"
         );
 
@@ -2105,7 +2101,7 @@
           "❌ Delete failed: " +
           (
             error.message ||
-            "Unknown error."
+            ""
           ),
           "error"
         );
@@ -2123,7 +2119,6 @@
       function () {
 
         resetForm();
-
 
         showMessage(
           "productMessage",
@@ -2143,10 +2138,8 @@
       editingProductId =
         null;
 
-
       editingOldImage =
         "";
-
 
       editingOldImageName =
         "";
@@ -2230,9 +2223,7 @@
        ESCAPE HTML
     ===================================================== */
 
-    function escapeHTML(
-      value
-    ) {
+    function escapeHTML(value) {
 
       return String(value)
 
