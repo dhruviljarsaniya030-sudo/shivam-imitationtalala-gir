@@ -210,7 +210,9 @@
 
 .category-content button{
   padding:0;
+
   border:0;
+
   background:transparent;
 
   color:#eee;
@@ -250,10 +252,6 @@
 
   border-top:1px solid var(--line);
 }
-
-/* IMPORTANT FIX:
-   HTML/JS uses .active
-*/
 
 .product-section.active{
   display:block;
@@ -425,7 +423,6 @@
 
 .catalog-product-card:hover .product-view{
   opacity:1;
-
   transform:translate(-50%,0);
 }
 
@@ -461,7 +458,12 @@
 }
 
 .catalog-product-info .product-price{
-  margin-top:12px;
+  margin-top:10px;
+
+  color:var(--gold);
+
+  font-size:18px;
+  font-weight:700;
 }
 
 .catalog-product-description{
@@ -471,11 +473,14 @@
 
   line-height:1.6;
 
-  margin:10px 0 16px;
+  margin:12px 0 16px;
 
   display:-webkit-box;
+
   -webkit-line-clamp:3;
+
   -webkit-box-orient:vertical;
+
   overflow:hidden;
 }
 
@@ -489,35 +494,40 @@
 
   flex-direction:column;
 
-  gap:9px;
+  gap:8px;
 
   margin-top:15px;
 }
 
-.product-card-actions .gold-btn{
+.product-card-actions .gold-btn,
+.product-card-actions .whatsapp-order-btn{
   width:100%;
 
-  text-align:center;
+  min-height:42px;
 
-  text-decoration:none;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  box-sizing:border-box;
 }
 
 .whatsapp-order-btn{
-  width:100%;
+  padding:11px 14px;
 
-  padding:12px 10px;
+  border:1px solid #25D366;
 
-  border:1px solid rgba(216,181,104,.45);
+  background:rgba(37,211,102,.08);
 
-  background:transparent;
-
-  color:#eee;
+  color:#25D366;
 
   font-size:9px;
 
   font-weight:700;
 
-  letter-spacing:1.2px;
+  letter-spacing:1px;
 
   text-transform:uppercase;
 
@@ -527,11 +537,8 @@
 }
 
 .whatsapp-order-btn:hover{
-  background:var(--gold);
-
-  color:#111;
-
-  border-color:var(--gold);
+  background:#25D366;
+  color:#07140c;
 }
 
 
@@ -555,10 +562,9 @@
   border-top:1px solid var(--line);
 }
 
-/* IMPORTANT FIX */
-
 .product-details.active{
   display:block;
+
   animation:catalogFade .5s ease;
 }
 
@@ -655,10 +661,10 @@
   line-height:1.9;
 }
 
-.product-detail-content .gold-btn{
-  display:inline-block;
-
-  text-decoration:none;
+.detail-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
 }
 
 
@@ -679,13 +685,15 @@
 .product-loading{
   width:100%;
 
-  padding:50px 20px;
+  padding:40px;
 
   text-align:center;
 
   color:var(--muted);
 
   font-size:13px;
+
+  grid-column:1/-1;
 }
 
 
@@ -789,6 +797,10 @@
     font-size:21px;
   }
 
+  .catalog-product-info .product-price{
+    font-size:16px;
+  }
+
   .product-view{
     display:none;
   }
@@ -815,10 +827,23 @@
     font-size:12px;
   }
 
-  .product-detail-content .gold-btn{
+  .detail-buttons{
     width:100%;
+  }
 
+  .detail-buttons .gold-btn{
+    width:100%;
     text-align:center;
+  }
+
+  .product-card-actions{
+    gap:7px;
+  }
+
+  .product-card-actions .gold-btn,
+  .product-card-actions .whatsapp-order-btn{
+    font-size:8px;
+    padding:9px 5px;
   }
 
 }
@@ -860,13 +885,12 @@
     font-size:19px;
   }
 
-  .product-detail-content h2{
-    font-size:47px;
+  .catalog-product-info .product-price{
+    font-size:15px;
   }
 
-  .whatsapp-order-btn{
-    font-size:8px;
-    padding:11px 5px;
+  .product-detail-content h2{
+    font-size:47px;
   }
 
 }
