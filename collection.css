@@ -1,6 +1,6 @@
 /* =========================================================
    SHIVAM IMITATION
-   COLLECTION PAGE - COMPLETE CSS
+   PREMIUM COLLECTION PAGE
 ========================================================= */
 
 .catalog-hero {
@@ -15,9 +15,9 @@
   background:
     linear-gradient(
       rgba(5, 5, 5, 0.65),
-      rgba(5, 5, 5, 0.9)
+      rgba(5, 5, 5, 0.88)
     ),
-    url("product-5.jpg") center / cover no-repeat;
+    url("product-5.jpg") center/cover no-repeat;
 }
 
 .catalog-hero::before {
@@ -40,6 +40,7 @@
   font-size: clamp(58px, 8vw, 95px);
   font-weight: 500;
   line-height: 0.86;
+  letter-spacing: -1px;
   margin: 20px 0;
 }
 
@@ -173,6 +174,14 @@
   z-index: 2;
 
   padding: 32px 28px;
+
+  transform: translateY(5px);
+
+  transition: 0.4s;
+}
+
+.category-card:hover .category-content {
+  transform: translateY(0);
 }
 
 .category-content small {
@@ -217,6 +226,29 @@
   text-transform: uppercase;
 
   cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.category-content button:hover {
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.category-loading,
+.product-loading {
+  width: 100%;
+  padding: 35px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 13px;
 }
 
 
@@ -239,14 +271,14 @@
   border-top: 1px solid var(--line);
 }
 
-/* IMPORTANT:
-   JS uses .active */
 .product-section.active {
   display: block;
+
   animation: catalogFade 0.5s ease;
 }
 
 @keyframes catalogFade {
+
   from {
     opacity: 0;
     transform: translateY(18px);
@@ -256,7 +288,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
+
 
 .product-section-header {
   max-width: 1250px;
@@ -281,6 +315,11 @@
   margin-top: 10px;
 }
 
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
 .back-category {
   padding: 10px 0;
 
@@ -298,10 +337,13 @@
   text-transform: uppercase;
 
   cursor: pointer;
+
+  transition: 0.3s;
 }
 
 .back-category:hover {
   color: var(--gold-light);
+  transform: translateX(-4px);
 }
 
 
@@ -346,11 +388,17 @@
 .catalog-product-card:hover {
   transform: translateY(-8px);
 
-  border-color: rgba(216, 181, 104, 0.42);
+  border-color:
+    rgba(216, 181, 104, 0.42);
 
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.4);
 }
+
+
+/* =========================================================
+   PRODUCT IMAGE
+========================================================= */
 
 .catalog-product-image {
   position: relative;
@@ -376,6 +424,51 @@
 .catalog-product-card:hover
 .catalog-product-image img {
   transform: scale(1.05);
+}
+
+
+/* =========================================================
+   HOVER VIEW
+========================================================= */
+
+.product-view {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform:
+    translate(-50%, 15px);
+
+  opacity: 0;
+
+  padding: 11px 17px;
+
+  white-space: nowrap;
+
+  background:
+    rgba(7, 7, 7, 0.9);
+
+  border: 1px solid var(--gold);
+
+  color: var(--gold);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  transition: 0.35s;
+}
+
+.catalog-product-card:hover
+.product-view {
+  opacity: 1;
+
+  transform:
+    translate(-50%, 0);
 }
 
 
@@ -406,39 +499,40 @@
 
   line-height: 1.05;
 
-  margin: 7px 0 10px;
+  margin-top: 7px;
 
   color: #f5f0e8;
 }
 
 
 /* =========================================================
-   PRICE
+   PRODUCT PRICE
 ========================================================= */
 
 .catalog-product-info .product-price,
 .product-detail-content .product-price {
+  margin-top: 12px;
+
   color: var(--gold);
 
   font-size: 20px;
-  font-weight: 700;
 
-  margin: 8px 0 14px;
+  font-weight: 700;
 }
 
 
 /* =========================================================
-   DESCRIPTION
+   PRODUCT DESCRIPTION
 ========================================================= */
 
 .catalog-product-description {
+  margin-top: 10px;
+
   color: var(--muted);
 
   font-size: 11px;
 
-  line-height: 1.7;
-
-  margin: 0 0 18px;
+  line-height: 1.6;
 
   display: -webkit-box;
 
@@ -459,9 +553,9 @@
 
   flex-direction: column;
 
-  gap: 9px;
+  gap: 8px;
 
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
 .product-card-actions .gold-btn,
@@ -476,7 +570,61 @@
 
   justify-content: center;
 
-  box-sizing: border-box;
+  text-align: center;
+}
+
+
+/* =========================================================
+   GOLD BUTTON
+========================================================= */
+
+.gold-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 12px 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--gold),
+      var(--gold-dark)
+    );
+
+  border: 1px solid var(--gold);
+
+  color: #111;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.gold-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(216, 181, 104, 0.22);
+
+  filter: brightness(1.08);
 }
 
 
@@ -485,14 +633,18 @@
 ========================================================= */
 
 .whatsapp-order-btn {
+  padding: 11px 15px;
+
   border: 1px solid #25d366;
 
-  background: rgba(37, 211, 102, 0.08);
+  background:
+    rgba(37, 211, 102, 0.08);
 
   color: #25d366;
 
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 9px;
+
+  font-weight: 800;
 
   letter-spacing: 1px;
 
@@ -500,16 +652,12 @@
 
   cursor: pointer;
 
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .whatsapp-order-btn:hover {
-  background: #25d366;
-
-  color: #07130b;
+  background:
+    rgba(37, 211, 102, 0.16);
 
   transform: translateY(-2px);
 }
@@ -535,8 +683,6 @@
   border-top: 1px solid var(--line);
 }
 
-/* IMPORTANT:
-   JS uses .active */
 .product-details.active {
   display: block;
 
@@ -551,8 +697,10 @@
   margin: 0 auto 35px;
 }
 
+
 .product-detail-inner {
   max-width: 1100px;
+
   margin: auto;
 
   display: grid;
@@ -565,6 +713,11 @@
 
   align-items: center;
 }
+
+
+/* =========================================================
+   DETAIL IMAGE
+========================================================= */
 
 .product-detail-image {
   position: relative;
@@ -585,7 +738,9 @@
 
   inset: 15px;
 
-  border: 1px solid rgba(216, 181, 104, 0.3);
+  border:
+    1px solid
+    rgba(216, 181, 104, 0.3);
 
   pointer-events: none;
 }
@@ -598,6 +753,11 @@
 
   object-fit: cover;
 }
+
+
+/* =========================================================
+   DETAIL CONTENT
+========================================================= */
 
 .product-detail-content {
   padding: 20px 0;
@@ -627,7 +787,7 @@
 .detail-description {
   max-width: 480px;
 
-  margin-bottom: 30px;
+  margin: 15px 0 30px;
 
   color: var(--muted);
 
@@ -638,23 +798,11 @@
 
 
 /* =========================================================
-   PRODUCT DETAIL WHATSAPP
+   DETAIL WHATSAPP
 ========================================================= */
 
-.product-detail-content .gold-btn {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-decoration: none;
-
-  min-height: 46px;
-
-  padding: 13px 24px;
-
-  box-sizing: border-box;
+#detailWhatsapp {
+  margin-top: 5px;
 }
 
 
@@ -663,25 +811,48 @@
 ========================================================= */
 
 .catalog-offer {
-  margin-bottom: 30px;
+  margin: 30px 6%;
 }
 
 
 /* =========================================================
-   LOADING
+   FLOATING WHATSAPP
 ========================================================= */
 
-.category-loading,
-.product-loading {
-  width: 100%;
+.floating-whatsapp {
+  position: fixed;
 
-  padding: 40px 20px;
+  right: 20px;
+  bottom: 20px;
 
-  text-align: center;
+  z-index: 9999;
 
-  color: var(--muted);
+  width: 55px;
+  height: 55px;
 
-  font-size: 13px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #25d366;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.35);
+
+  transition: 0.3s;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.08);
 }
 
 
@@ -692,11 +863,13 @@
 @media (max-width: 1050px) {
 
   .category-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
   .catalog-product-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+      repeat(3, 1fr);
   }
 
   .product-detail-inner {
@@ -738,6 +911,7 @@
 
   .category-grid {
     grid-template-columns: 1fr;
+
     gap: 14px;
   }
 
@@ -775,7 +949,8 @@
   }
 
   .catalog-product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
 
     gap: 10px;
   }
@@ -796,19 +971,26 @@
     font-size: 10px;
   }
 
+  .product-view {
+    display: none;
+  }
+
+
+  /* PRODUCT BUTTONS */
+
   .product-card-actions {
-    gap: 7px;
+    gap: 6px;
   }
 
   .product-card-actions .gold-btn,
   .product-card-actions .whatsapp-order-btn {
     min-height: 39px;
 
-    padding: 8px 5px;
+    padding: 9px 5px;
 
     font-size: 8px;
 
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
   }
 
 
@@ -840,6 +1022,21 @@
     width: 100%;
   }
 
+
+  /* WHATSAPP */
+
+  .floating-whatsapp {
+    right: 15px;
+
+    bottom: 15px;
+
+    width: 50px;
+
+    height: 50px;
+
+    font-size: 24px;
+  }
+
 }
 
 
@@ -866,7 +1063,8 @@
   }
 
   .catalog-product-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+      1fr 1fr;
 
     gap: 9px;
   }
@@ -880,18 +1078,11 @@
   }
 
   .catalog-product-info .product-price {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .catalog-product-description {
     font-size: 9px;
-  }
-
-  .product-card-actions .gold-btn,
-  .product-card-actions .whatsapp-order-btn {
-    font-size: 7px;
-
-    min-height: 36px;
   }
 
   .product-detail-content h2 {
