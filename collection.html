@@ -1,16 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-    content="Explore Shivam Imitation's premium imitation jewellery collection in Talala Gir.">
+<meta name="description"
+ content="Explore Shivam Imitation's premium imitation jewellery collection in Talala Gir.">
 
-  <meta name="keywords"
-    content="Shivam Imitation, imitation jewellery, necklace, bridal jewellery, bracelets, Talala Gir">
+<meta name="keywords"
+ content="Shivam Imitation, imitation jewellery, necklace, bridal jewellery, bracelets, Talala Gir">
 
   <meta name="theme-color" content="#003d37">
 
@@ -20,9 +20,7 @@
   <link rel="stylesheet" href="collection.css">
 </head>
 
-
 <body>
-
 
   <!-- ================= TOP BAR ================= -->
 
@@ -30,350 +28,454 @@
     ✨ BEST COLLECTION • SHIVAM IMITATION • TALALA GIR
   </div>
 
-
-
   <!-- ================= NAVBAR ================= -->
 
   <header class="navbar">
 
-    <a class="brand" href="index.html">
+```
+<a class="brand" href="index.html">
 
-      <img
-        src="logo.jpg"
-        alt="Shivam Imitation Logo">
+  <img
+    src="logo.jpg"
+    alt="Shivam Imitation Logo">
 
-      <span>
-        SHIVAM <b>IMITATION</b>
-      </span>
+  <span>
+    SHIVAM <b>IMITATION</b>
+  </span>
 
-    </a>
-
-
-    <button
-      class="menu-btn"
-      type="button"
-      aria-label="Open menu"
-      onclick="toggleMenu()">
-
-      ☰
-
-    </button>
+</a>
 
 
-    <nav id="nav">
+<button
+  class="menu-btn"
+  type="button"
+  aria-label="Open menu"
+  onclick="toggleMenu()">
 
-      <a href="index.html">
-        Home
-      </a>
+  ☰
 
-      <a href="collection.html">
-        Collection
-      </a>
+</button>
 
-      <a href="index.html#categories">
-        Categories
-      </a>
 
-      <a href="index.html#offers">
-        Offers
-      </a>
+<nav id="nav">
 
-      <a href="index.html#about">
-        About
-      </a>
+  <a href="index.html">
+    Home
+  </a>
 
-      <a href="index.html#reviews">
-        Reviews
-      </a>
+  <a href="collection.html">
+    Collection
+  </a>
 
-      <a href="index.html#contact">
-        Contact
-      </a>
+  <a href="index.html#categories">
+    Categories
+  </a>
 
-    </nav>
+  <a href="index.html#offers">
+    Offers
+  </a>
+
+  <a href="index.html#about">
+    About
+  </a>
+
+  <a href="index.html#reviews">
+    Reviews
+  </a>
+
+  <a href="index.html#contact">
+    Contact
+  </a>
+
+</nav>
+
+
+<!-- CART BUTTON -->
+
+<button
+  type="button"
+  class="cart-trigger"
+  onclick="openCart()"
+  aria-label="Open shopping cart">
+
+  🛒 Cart
+
+  <span
+    id="cartCount"
+    class="cart-count">
+    0
+  </span>
+
+</button>
+```
 
   </header>
 
+  <!-- ================= CART OVERLAY ================= -->
 
+  <div
+    id="cartOverlay"
+    class="cart-overlay"
+    onclick="closeCart()">
+  </div>
+
+  <!-- ================= CART DRAWER ================= -->
+
+  <aside
+    id="cartDrawer"
+    class="cart-drawer"
+    aria-label="Shopping cart">
+
+```
+<div class="cart-header">
+
+  <h2>
+    Your Cart
+  </h2>
+
+  <button
+    type="button"
+    class="cart-close"
+    onclick="closeCart()"
+    aria-label="Close cart">
+
+    ×
+
+  </button>
+
+</div>
+
+
+<div
+  id="cartItems"
+  class="cart-items">
+
+  <div class="cart-empty">
+    Your cart is empty.
+  </div>
+
+</div>
+
+
+<div class="cart-footer">
+
+  <div class="cart-total">
+
+    <span>
+      Total
+    </span>
+
+    <strong id="cartTotal">
+      ₹0
+    </strong>
+
+  </div>
+
+
+  <button
+    type="button"
+    class="cart-whatsapp"
+    onclick="orderCartOnWhatsApp()">
+
+    💬 Order Cart on WhatsApp
+
+  </button>
+
+
+  <button
+    type="button"
+    class="cart-clear"
+    onclick="clearCart()">
+
+    Clear Cart
+
+  </button>
+
+</div>
+```
+
+  </aside>
 
   <main>
 
+```
+<!-- ================= HERO ================= -->
 
-    <!-- ================= HERO ================= -->
+<section class="catalog-hero">
 
-    <section class="catalog-hero">
+  <div class="catalog-hero-content">
 
-      <div class="catalog-hero-content">
+    <p class="eyebrow">
+      SHIVAM IMITATION
+    </p>
 
-        <p class="eyebrow">
-          SHIVAM IMITATION
-        </p>
+    <h1>
+      Discover Your
+      <span>Perfect Style</span>
+    </h1>
 
-        <h1>
-          Discover Your
-          <span>Perfect Style</span>
-        </h1>
+    <p>
+      Explore our carefully selected collection of
+      elegant imitation jewellery for every occasion.
+    </p>
 
-        <p>
-          Explore our carefully selected collection of
-          elegant imitation jewellery for every occasion.
-        </p>
+  </div>
 
-      </div>
-
-    </section>
+</section>
 
 
+<!-- ================= CATEGORY SECTION ================= -->
 
-    <!-- ================= CATEGORY SECTION ================= -->
+<section class="catalog-section">
 
-    <section class="catalog-section">
+  <div class="catalog-heading">
 
-      <div class="catalog-heading">
+    <p class="eyebrow">
+      OUR COLLECTION
+    </p>
 
-        <p class="eyebrow">
-          OUR COLLECTION
-        </p>
+    <h2>
+      Shop By Category
+    </h2>
 
-        <h2>
-          Shop By Category
-        </h2>
+    <p>
+      Choose a category to explore our latest jewellery collection.
+    </p>
 
-        <p>
-          Choose a category to explore our latest jewellery collection.
-        </p>
+  </div>
 
-      </div>
+
+  <div
+    id="categoryGrid"
+    class="category-grid">
+
+    <div class="category-loading">
+      Loading categories...
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section
+  id="productSection"
+  class="product-section">
+
+
+  <div class="product-section-header">
+
+    <div>
+
+      <p class="eyebrow">
+        SHIVAM IMITATION
+      </p>
+
+      <h2 id="categoryTitle">
+        Collection
+      </h2>
+
+    </div>
+
+
+    <button
+      type="button"
+      class="back-category"
+      onclick="backToCategories()">
+
+      ← Back To Categories
+
+    </button>
+
+  </div>
+
+
+  <div
+    id="productGrid"
+    class="catalog-product-grid">
+
+    <div class="product-loading">
+      Loading products...
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<section
+  id="productDetails"
+  class="product-details">
+
+
+  <button
+    type="button"
+    class="back-category"
+    onclick="closeProduct()">
+
+    ← Back To Collection
+
+  </button>
+
+
+  <div class="product-detail-inner">
+
+
+    <!-- IMAGE -->
+
+    <div class="product-detail-image">
+
+      <img
+        id="detailImage"
+        src="logo.jpg"
+        alt="Product">
+
+    </div>
+
+
+    <!-- DETAILS -->
+
+    <div class="product-detail-content">
+
+      <p
+        id="detailCategory"
+        class="eyebrow">
+      </p>
+
+
+      <h2 id="detailName">
+        Product Name
+      </h2>
+
+
+      <div class="detail-line"></div>
 
 
       <div
-        id="categoryGrid"
-        class="category-grid">
-
-        <div class="category-loading">
-          Loading categories...
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= PRODUCTS ================= -->
-
-    <section
-      id="productSection"
-      class="product-section">
-
-
-      <div class="product-section-header">
-
-        <div>
-
-          <p class="eyebrow">
-            SHIVAM IMITATION
-          </p>
-
-          <h2 id="categoryTitle">
-            Collection
-          </h2>
-
-        </div>
-
-
-        <button
-          type="button"
-          class="back-category"
-          onclick="backToCategories()">
-
-          ← Back To Categories
-
-        </button>
-
+        id="detailPrice"
+        class="product-price">
       </div>
 
 
-
-      <div
-        id="productGrid"
-        class="catalog-product-grid">
-
-        <div class="product-loading">
-          Loading products...
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= PRODUCT DETAILS ================= -->
-
-    <section
-      id="productDetails"
-      class="product-details">
-
-
-      <button
-        type="button"
-        class="back-category"
-        onclick="closeProduct()">
-
-        ← Back To Collection
-
-      </button>
-
-
-      <div class="product-detail-inner">
-
-
-        <!-- IMAGE -->
-
-        <div class="product-detail-image">
-
-          <img
-            id="detailImage"
-            src="logo.jpg"
-            alt="Product">
-
-        </div>
-
-
-        <!-- DETAILS -->
-
-        <div class="product-detail-content">
-
-          <p
-            id="detailCategory"
-            class="eyebrow">
-          </p>
-
-
-          <h2 id="detailName">
-            Product Name
-          </h2>
-
-
-          <div class="detail-line"></div>
-
-
-          <div
-            id="detailPrice"
-            class="product-price">
-          </div>
-
-
-          <p
-            id="detailDescription"
-            class="detail-description">
-
-          </p>
-
-
-          <a
-            id="detailWhatsapp"
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="gold-btn">
-
-            💬 WhatsApp Enquiry
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ================= OFFER ================= -->
-
-    <section class="offer catalog-offer">
-
-      <div>
-
-        <p class="eyebrow">
-          NEED HELP?
-        </p>
-
-        <h2>
-          Find Your Perfect
-          <br>
-          <span>Jewellery</span>
-        </h2>
-
-        <p>
-          Contact Shivam Imitation on WhatsApp
-          for our latest collection and offers.
-        </p>
-
-      </div>
+      <p
+        id="detailDescription"
+        class="detail-description">
+      </p>
 
 
       <a
-        href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20please%20show%20me%20your%20latest%20collection."
+        id="detailWhatsapp"
+        href="#"
         target="_blank"
         rel="noopener noreferrer"
         class="gold-btn">
 
-        WhatsApp Us
+        💬 WhatsApp Enquiry
 
       </a>
 
-    </section>
+
+      <button
+        id="detailAddCart"
+        type="button"
+        class="add-cart-btn detail-cart-btn">
+
+        🛒 Add To Cart
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  </main>
+<!-- ================= OFFER ================= -->
 
+<section class="offer catalog-offer">
 
+  <div>
 
-  <!-- ================= FLOATING WHATSAPP ================= -->
+    <p class="eyebrow">
+      NEED HELP?
+    </p>
+
+    <h2>
+      Find Your Perfect
+      <br>
+      <span>Jewellery</span>
+    </h2>
+
+    <p>
+      Contact Shivam Imitation on WhatsApp
+      for our latest collection and offers.
+    </p>
+
+  </div>
+
 
   <a
-    class="floating-whatsapp"
-    href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20see%20your%20collection."
+    href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20please%20show%20me%20your%20latest%20collection"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="WhatsApp">
+    class="gold-btn">
 
-    ☏
+    WhatsApp Us
 
   </a>
 
+</section>
+```
 
+  </main>
+
+  <!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+ class="floating-whatsapp"
+ href="https://wa.me/919714978206?text=Hello%20Shivam%20Imitation%2C%20I%20want%20to%20see%20your%20collection"
+ target="_blank"
+ rel="noopener noreferrer"
+ aria-label="WhatsApp">
+
+```
+☏
+```
+
+  </a>
 
   <!-- ================= FOOTER ================= -->
 
   <footer>
 
-    <img
-      src="logo.jpg"
-      alt="Shivam Imitation">
+```
+<img
+  src="logo.jpg"
+  alt="Shivam Imitation">
 
-    <p>
-      SHIVAM
-      <span>IMITATION</span>
-    </p>
+<p>
+  SHIVAM
+  <span>IMITATION</span>
+</p>
 
-    <small>
-      © <span id="year"></span>
-      Shivam Imitation • Talala Gir
-    </small>
+<small>
+  © <span id="year"></span>
+  Shivam Imitation • Talala Gir
+</small>
 
-    <br>
+<br>
 
-    <small>
-      Imitation Jewellery • Talala Gir
-    </small>
+<small>
+  Imitation Jewellery • Talala Gir
+</small>
+```
 
   </footer>
-
-
 
   <!-- ================= MOBILE MENU ================= -->
 
@@ -415,18 +517,15 @@
 
   </script>
 
-
-
   <!-- =====================================================
-       FIREBASE
-       ===================================================== -->
+       FIREBASE + CART SYSTEM
+  ===================================================== -->
 
   <script type="module">
 
     import {
       initializeApp
-    }
-    from
+    } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
@@ -434,10 +533,8 @@
       getFirestore,
       collection,
       getDocs
-    }
-    from
+    } from
       "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
 
 
     /* ================= FIREBASE CONFIG ================= */
@@ -468,47 +565,725 @@
     };
 
 
-
     /* ================= INITIALIZE FIREBASE ================= */
 
     const app =
       initializeApp(firebaseConfig);
 
-
     const db =
       getFirestore(app);
-
 
 
     /* ================= PRODUCTS ================= */
 
     let allProducts = [];
 
+    let cart = [];
 
 
-    /* ================= HTML SECURITY ================= */
+    /* =====================================================
+       LOAD CART FROM LOCAL STORAGE
+    ===================================================== */
+
+    try {
+
+      const savedCart =
+        localStorage.getItem("shivamCart");
+
+      if (savedCart) {
+
+        cart =
+          JSON.parse(savedCart);
+
+        if (!Array.isArray(cart)) {
+          cart = [];
+        }
+
+      }
+
+    } catch (error) {
+
+      console.error(
+        "Cart loading error:",
+        error
+      );
+
+      cart = [];
+
+    }
+
+
+    /* =====================================================
+       SAVE CART
+    ===================================================== */
+
+    function saveCart() {
+
+      try {
+
+        localStorage.setItem(
+          "shivamCart",
+          JSON.stringify(cart)
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Cart saving error:",
+          error
+        );
+
+      }
+
+    }
+
+
+    /* =====================================================
+       HTML SECURITY
+    ===================================================== */
 
     function escapeHTML(value) {
 
       return String(value || "")
 
-        .replace(/&/g, "&amp;")
+        .replace(
+          /&/g,
+          "&amp;"
+        )
 
-        .replace(/</g, "&lt;")
+        .replace(
+          /</g,
+          "&lt;"
+        )
 
-        .replace(/>/g, "&gt;")
+        .replace(
+          />/g,
+          "&gt;"
+        )
 
-        .replace(/"/g, "&quot;")
+        .replace(
+          /"/g,
+          "&quot;"
+        )
 
-        .replace(/'/g, "&#039;");
+        .replace(
+          /'/g,
+          "&#039;"
+        );
 
     }
 
 
+    /* =====================================================
+       FORMAT PRICE
+    ===================================================== */
+
+    function formatPrice(price) {
+
+      const number =
+        Number(price);
+
+      if (!Number.isFinite(number)) {
+        return "₹0";
+      }
+
+      return "₹" +
+        number.toLocaleString("en-IN");
+
+    }
+
+
+    /* =====================================================
+       ADD TO CART
+    ===================================================== */
+
+    function addToCart(product) {
+
+      if (!product) return;
+
+
+      const id =
+        String(
+          product.id ||
+          product.name ||
+          Date.now()
+        );
+
+
+      const existing =
+        cart.find(
+          function (item) {
+
+            return item.id === id;
+
+          }
+        );
+
+
+      if (existing) {
+
+        existing.quantity += 1;
+
+      } else {
+
+        cart.push({
+
+          id: id,
+
+          name:
+            product.name ||
+            "Jewellery Product",
+
+          category:
+            product.category ||
+            "JEWELLERY",
+
+          price:
+            product.price !== undefined &&
+            product.price !== null
+              ? product.price
+              : "",
+
+          image:
+            product.image ||
+            "logo.jpg",
+
+          quantity: 1
+
+        });
+
+      }
+
+
+      saveCart();
+
+      updateCartUI();
+
+      openCart();
+
+    }
+
+
+    /* =====================================================
+       CHANGE QUANTITY
+    ===================================================== */
+
+    window.changeCartQuantity =
+      function (
+        id,
+        change
+      ) {
+
+        const item =
+          cart.find(
+            function (product) {
+
+              return product.id === id;
+
+            }
+          );
+
+
+        if (!item) return;
+
+
+        item.quantity += change;
+
+
+        if (item.quantity <= 0) {
+
+          cart =
+            cart.filter(
+              function (product) {
+
+                return product.id !== id;
+
+              }
+            );
+
+        }
+
+
+        saveCart();
+
+        updateCartUI();
+
+      };
+
+
+    /* =====================================================
+       REMOVE FROM CART
+    ===================================================== */
+
+    window.removeFromCart =
+      function (id) {
+
+        cart =
+          cart.filter(
+            function (product) {
+
+              return product.id !== id;
+
+            }
+          );
+
+
+        saveCart();
+
+        updateCartUI();
+
+      };
+
+
+    /* =====================================================
+       CLEAR CART
+    ===================================================== */
+
+    window.clearCart =
+      function () {
+
+        if (!cart.length) return;
+
+
+        const confirmed =
+          confirm(
+            "Clear all products from your cart?"
+          );
+
+
+        if (!confirmed) return;
+
+
+        cart = [];
+
+        saveCart();
+
+        updateCartUI();
+
+      };
+
+
+    /* =====================================================
+       CART TOTAL
+    ===================================================== */
+
+    function getCartTotal() {
+
+      return cart.reduce(
+
+        function (
+          total,
+          item
+        ) {
+
+          const price =
+            Number(item.price) || 0;
+
+          const quantity =
+            Number(item.quantity) || 0;
+
+          return total +
+            (price * quantity);
+
+        },
+
+        0
+
+      );
+
+    }
+
+
+    /* =====================================================
+       CART COUNT
+    ===================================================== */
+
+    function getCartCount() {
+
+      return cart.reduce(
+
+        function (
+          total,
+          item
+        ) {
+
+          return total +
+            (Number(item.quantity) || 0);
+
+        },
+
+        0
+
+      );
+
+    }
+
+
+    /* =====================================================
+       UPDATE CART UI
+    ===================================================== */
+
+    function updateCartUI() {
+
+      const cartCount =
+        document.getElementById(
+          "cartCount"
+        );
+
+
+      const cartItems =
+        document.getElementById(
+          "cartItems"
+        );
+
+
+      const cartTotal =
+        document.getElementById(
+          "cartTotal"
+        );
+
+
+      if (cartCount) {
+
+        cartCount.textContent =
+          getCartCount();
+
+      }
+
+
+      if (cartTotal) {
+
+        cartTotal.textContent =
+          formatPrice(
+            getCartTotal()
+          );
+
+      }
+
+
+      if (!cartItems) return;
+
+
+      if (!cart.length) {
+
+        cartItems.innerHTML = `
+
+          <div class="cart-empty">
+
+            🛒 Your cart is empty.
+
+            <br><br>
+
+            Add some beautiful jewellery
+            to your cart.
+
+          </div>
+
+        `;
+
+        return;
+
+      }
+
+
+      cartItems.innerHTML = "";
+
+
+      cart.forEach(
+        function (item) {
+
+          const itemElement =
+            document.createElement(
+              "div"
+            );
+
+
+          itemElement.className =
+            "cart-item";
+
+
+          const price =
+            Number(item.price) || 0;
+
+
+          const itemTotal =
+            price *
+            Number(item.quantity);
+
+
+          itemElement.innerHTML = `
+
+            <div class="cart-item-image">
+
+              <img
+                src="${escapeHTML(item.image)}"
+                alt="${escapeHTML(item.name)}"
+              >
+
+            </div>
+
+
+            <div class="cart-item-info">
+
+              <h3>
+                ${escapeHTML(item.name)}
+              </h3>
+
+              <div class="cart-item-price">
+
+                ${
+                  item.price !== ""
+                    ? formatPrice(item.price)
+                    : "Price on enquiry"
+                }
+
+              </div>
+
+
+              <div class="cart-item-controls">
+
+                <button
+                  type="button"
+                  class="cart-qty-btn"
+                  onclick="changeCartQuantity('${escapeHTML(item.id)}', -1)">
+
+                  −
+
+                </button>
+
+
+                <span class="cart-qty">
+
+                  ${item.quantity}
+
+                </span>
+
+
+                <button
+                  type="button"
+                  class="cart-qty-btn"
+                  onclick="changeCartQuantity('${escapeHTML(item.id)}', 1)">
+
+                  +
+
+                </button>
+
+              </div>
+
+
+              <button
+                type="button"
+                class="cart-remove"
+                onclick="removeFromCart('${escapeHTML(item.id)}')">
+
+                Remove
+
+              </button>
+
+            </div>
+
+
+            <strong>
+
+              ${
+                item.price !== ""
+                  ? formatPrice(itemTotal)
+                  : ""
+              }
+
+            </strong>
+
+          `;
+
+
+          cartItems.appendChild(
+            itemElement
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       OPEN CART
+    ===================================================== */
+
+    window.openCart =
+      function () {
+
+        const drawer =
+          document.getElementById(
+            "cartDrawer"
+          );
+
+
+        const overlay =
+          document.getElementById(
+            "cartOverlay"
+          );
+
+
+        updateCartUI();
+
+
+        if (drawer) {
+
+          drawer.classList.add(
+            "active"
+          );
+
+        }
+
+
+        if (overlay) {
+
+          overlay.classList.add(
+            "active"
+          );
+
+        }
+
+
+        document.body.style.overflow =
+          "hidden";
+
+      };
+
+
+    /* =====================================================
+       CLOSE CART
+    ===================================================== */
+
+    window.closeCart =
+      function () {
+
+        const drawer =
+          document.getElementById(
+            "cartDrawer"
+          );
+
+
+        const overlay =
+          document.getElementById(
+            "cartOverlay"
+          );
+
+
+        if (drawer) {
+
+          drawer.classList.remove(
+            "active"
+          );
+
+        }
+
+
+        if (overlay) {
+
+          overlay.classList.remove(
+            "active"
+          );
+
+        }
+
+
+        document.body.style.overflow =
+          "";
+
+      };
+
+
+    /* =====================================================
+       ORDER CART ON WHATSAPP
+    ===================================================== */
+
+    window.orderCartOnWhatsApp =
+      function () {
+
+        if (!cart.length) {
+
+          alert(
+            "Your cart is empty. Please add a product first."
+          );
+
+          return;
+
+        }
+
+
+        let message =
+          "Hello Shivam Imitation,%0A%0A" +
+          "I would like to enquire about these products:%0A%0A";
+
+
+        cart.forEach(
+          function (item, index) {
+
+            message +=
+              (index + 1) +
+              ". " +
+              item.name +
+              " × " +
+              item.quantity;
+
+
+            if (
+              item.price !== "" &&
+              Number(item.price)
+            ) {
+
+              message +=
+                " - " +
+                formatPrice(
+                  Number(item.price) *
+                  Number(item.quantity)
+                );
+
+            }
+
+
+            message +=
+              "%0A";
+
+          }
+        );
+
+
+        const total =
+          getCartTotal();
+
+
+        if (total > 0) {
+
+          message +=
+            "%0ATotal: " +
+            formatPrice(total);
+
+        }
+
+
+        message +=
+          "%0A%0APlease share availability and details. Thank you.";
+
+
+        const whatsappURL =
+          "https://wa.me/919714978206?text=" +
+          message;
+
+
+        window.open(
+          whatsappURL,
+          "_blank"
+        );
+
+      };
+
 
     /* =====================================================
        LOAD PRODUCTS FROM FIREBASE
-       ===================================================== */
+    ===================================================== */
 
     async function loadProducts() {
 
@@ -612,10 +1387,9 @@
     }
 
 
-
     /* =====================================================
        CREATE CATEGORY CARDS
-       ===================================================== */
+    ===================================================== */
 
     function createCategories() {
 
@@ -678,13 +1452,11 @@
       }
 
 
-
       categories.forEach(
         function (
           category,
           index
         ) {
-
 
           const categoryProducts =
             allProducts.filter(
@@ -706,11 +1478,8 @@
           const image =
             firstProduct &&
             firstProduct.image
-
               ? firstProduct.image
-
               : "logo.jpg";
-
 
 
           const card =
@@ -777,10 +1546,9 @@
     }
 
 
-
     /* =====================================================
        SHOW PRODUCTS
-       ===================================================== */
+    ===================================================== */
 
     function showProducts(
       category,
@@ -880,6 +1648,10 @@
       if (section) {
 
         section.classList.add(
+          "show"
+        );
+
+        section.classList.add(
           "active"
         );
 
@@ -897,10 +1669,9 @@
     }
 
 
-
     /* =====================================================
        CREATE PRODUCT CARD
-       ===================================================== */
+    ===================================================== */
 
     function createProductCard(
       product,
@@ -946,7 +1717,6 @@
         "logo.jpg";
 
 
-
       card.innerHTML = `
 
         <div class="catalog-product-image">
@@ -960,19 +1730,15 @@
         </div>
 
 
-        <div class="catalog-product-content">
+        <div class="catalog-product-info">
 
-          <span class="product-category">
-
+          <small>
             ${escapeHTML(category)}
-
-          </span>
+          </small>
 
 
           <h3>
-
             ${escapeHTML(name)}
-
           </h3>
 
 
@@ -1018,10 +1784,18 @@
 
           </button>
 
+
+          <button
+            type="button"
+            class="add-cart-btn">
+
+            🛒 Add To Cart
+
+          </button>
+
         </div>
 
       `;
-
 
 
       const viewButton =
@@ -1038,8 +1812,31 @@
 
             event.stopPropagation();
 
-
             openProduct(
+              product
+            );
+
+          }
+        );
+
+      }
+
+
+      const cartButton =
+        card.querySelector(
+          ".add-cart-btn"
+        );
+
+
+      if (cartButton) {
+
+        cartButton.addEventListener(
+          "click",
+          function (event) {
+
+            event.stopPropagation();
+
+            addToCart(
               product
             );
 
@@ -1068,10 +1865,9 @@
     }
 
 
-
     /* =====================================================
        OPEN PRODUCT DETAILS
-       ===================================================== */
+    ===================================================== */
 
     function openProduct(
       product
@@ -1119,6 +1915,11 @@
         );
 
 
+      const addCartButton =
+        document.getElementById(
+          "detailAddCart"
+        );
+
 
       const productName =
         product.name ||
@@ -1147,7 +1948,6 @@
       const productImage =
         product.image ||
         "logo.jpg";
-
 
 
       if (image) {
@@ -1200,13 +2000,12 @@
       if (whatsapp) {
 
         const message =
-          "Hello Shivam Imitation, I am interested in: "
-          + productName;
+          "Hello Shivam Imitation, I am interested in: " +
+          productName;
 
 
         whatsapp.href =
-          "https://wa.me/919714978206?text="
-          +
+          "https://wa.me/919714978206?text=" +
           encodeURIComponent(
             message
           );
@@ -1214,7 +2013,25 @@
       }
 
 
+      if (addCartButton) {
+
+        addCartButton.onclick =
+          function () {
+
+            addToCart(
+              product
+            );
+
+          };
+
+      }
+
+
       if (details) {
+
+        details.classList.add(
+          "show"
+        );
 
         details.classList.add(
           "active"
@@ -1234,10 +2051,9 @@
     }
 
 
-
     /* =====================================================
        BACK TO CATEGORIES
-       ===================================================== */
+    ===================================================== */
 
     window.backToCategories =
       function () {
@@ -1248,13 +2064,36 @@
           );
 
 
+        const details =
+          document.getElementById(
+            "productDetails"
+          );
+
+
         const categories =
           document.querySelector(
             ".catalog-section"
           );
 
 
+        if (details) {
+
+          details.classList.remove(
+            "show"
+          );
+
+          details.classList.remove(
+            "active"
+          );
+
+        }
+
+
         if (section) {
+
+          section.classList.remove(
+            "show"
+          );
 
           section.classList.remove(
             "active"
@@ -1278,10 +2117,9 @@
       };
 
 
-
     /* =====================================================
        CLOSE PRODUCT
-       ===================================================== */
+    ===================================================== */
 
     window.closeProduct =
       function () {
@@ -1295,6 +2133,10 @@
         if (details) {
 
           details.classList.remove(
+            "show"
+          );
+
+          details.classList.remove(
             "active"
           );
 
@@ -1303,15 +2145,35 @@
       };
 
 
+    /* =====================================================
+       ESC KEY
+    ===================================================== */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeCart();
+
+        }
+
+      }
+    );
+
 
     /* =====================================================
-       START FIREBASE
-       ===================================================== */
+       START
+    ===================================================== */
+
+    updateCartUI();
 
     loadProducts();
 
   </script>
-
 
 </body>
 
