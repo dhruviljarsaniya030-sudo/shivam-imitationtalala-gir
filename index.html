@@ -5,10 +5,7 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ================= SEO ================= -->
 
@@ -26,10 +23,7 @@
     content="Shivam Imitation, imitation jewellery Talala Gir, imitation jewellery shop Talala, jewellery shop Talala Gir, artificial jewellery Talala, necklace Talala, bridal jewellery Talala, earrings Talala, bracelet Talala, bangles Talala, mangalsutra Talala"
   >
 
-  <meta
-    name="author"
-    content="Shivam Imitation"
-  >
+  <meta name="author" content="Shivam Imitation">
 
   <meta
     name="robots"
@@ -125,15 +119,9 @@
 
   <!-- ================= FONTS ================= -->
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
@@ -142,169 +130,233 @@
 
   <!-- ================= CSS ================= -->
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="stylesheet" href="style.css">
 
-  <!-- ================= ABOUT GALLERY CSS ================= -->
+  <!-- =====================================================
+       EXTRA ABOUT PHOTO CSS
+       ===================================================== -->
 
   <style>
 
     /* =====================================================
-       PREMIUM ABOUT JEWELLERY GALLERY
+       PREMIUM ABOUT SECTION
        ===================================================== */
 
-    .about {
+    .about-premium {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
+      position: relative;
+      overflow: hidden;
     }
 
-
-    .about-copy {
-      max-width: 560px;
+    .about-premium-copy {
+      position: relative;
+      z-index: 2;
     }
 
+    .about-premium-copy h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      margin: 12px 0 24px;
+    }
+
+    .about-premium-copy h2 span {
+      color: var(--gold);
+    }
+
+    .about-premium-copy p {
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 570px;
+      margin-bottom: 18px;
+    }
+
+    .about-premium-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 15px;
+      border: 1px solid rgba(231, 189, 85, 0.35);
+      border-radius: 30px;
+      color: var(--gold-light);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      background: rgba(231, 189, 85, 0.05);
+    }
+
+    .about-premium-tag::before {
+      content: "✦";
+      color: var(--gold);
+    }
+
+    /* PHOTO COLLAGE */
 
     .about-gallery {
       position: relative;
-      min-height: 520px;
-
-      display: grid;
-
-      grid-template-columns:
-        1.25fr 0.75fr;
-
-      grid-template-rows:
-        1fr 1fr;
-
-      gap: 18px;
+      min-height: 620px;
+      width: 100%;
     }
-
 
     .about-photo {
-      position: relative;
-
+      position: absolute;
       overflow: hidden;
-
       border-radius: 22px;
-
-      border:
-        1px solid
-        rgba(231, 189, 85, 0.35);
-
+      border: 1px solid rgba(231, 189, 85, 0.45);
       background: #002f2b;
-
       box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.28),
-        0 0 25px rgba(231, 189, 85, 0.08);
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(231, 189, 85, 0.08);
     }
-
-
-    .about-photo-large {
-      grid-row: 1 / 3;
-    }
-
-
-    .about-photo-small {
-      min-height: 245px;
-    }
-
 
     .about-photo img {
       width: 100%;
       height: 100%;
-
       display: block;
-
       object-fit: cover;
-
-      transition:
-        transform 0.6s ease,
-        filter 0.6s ease;
+      transition: transform 0.6s ease;
     }
-
 
     .about-photo:hover img {
-      transform: scale(1.07);
-
-      filter:
-        brightness(1.08);
+      transform: scale(1.06);
     }
 
+    .about-photo-main {
+      width: 60%;
+      height: 470px;
+      right: 0;
+      top: 55px;
+      z-index: 2;
+    }
 
-    .about-photo::after {
-      content: "";
+    .about-photo-left {
+      width: 43%;
+      height: 300px;
+      left: 0;
+      top: 0;
+      z-index: 3;
+    }
 
+    .about-photo-bottom {
+      width: 45%;
+      height: 290px;
+      left: 4%;
+      bottom: 0;
+      z-index: 4;
+    }
+
+    .about-photo-label {
       position: absolute;
-
-      inset: 10px;
-
-      border:
-        1px solid
-        rgba(243, 215, 123, 0.35);
-
-      border-radius: 16px;
-
-      pointer-events: none;
+      left: 18px;
+      bottom: 18px;
+      padding: 9px 14px;
+      border-radius: 30px;
+      background: rgba(0, 39, 34, 0.88);
+      border: 1px solid rgba(231, 189, 85, 0.45);
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 1px;
+      backdrop-filter: blur(8px);
     }
 
+    .about-gold-line {
+      width: 75px;
+      height: 2px;
+      background: var(--gold);
+      margin: 25px 0;
+    }
 
-    /* =====================================================
-       MOBILE ABOUT GALLERY
-       ===================================================== */
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 30px 0;
+      max-width: 600px;
+    }
 
-    @media (max-width: 850px) {
+    .about-feature {
+      padding: 15px;
+      border: 1px solid rgba(231, 189, 85, 0.2);
+      border-radius: 14px;
+      background: rgba(0, 72, 65, 0.35);
+    }
 
-      .about {
+    .about-feature strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .about-feature span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* MOBILE ABOUT */
+
+    @media (max-width: 900px) {
+
+      .about-premium {
         grid-template-columns: 1fr;
         gap: 35px;
       }
 
-      .about-copy {
-        max-width: 100%;
+      .about-gallery {
+        min-height: 600px;
+        order: -1;
       }
 
-      .about-gallery {
-        min-height: 430px;
-        gap: 12px;
+      .about-photo-main {
+        width: 62%;
+        height: 430px;
+      }
+
+      .about-photo-left {
+        width: 44%;
+        height: 280px;
+      }
+
+      .about-photo-bottom {
+        width: 46%;
+        height: 270px;
       }
 
     }
 
-
-    @media (max-width: 550px) {
+    @media (max-width: 600px) {
 
       .about-gallery {
-        min-height: 360px;
-
-        grid-template-columns:
-          1fr 1fr;
-
-        gap: 10px;
+        min-height: 500px;
       }
 
-
-      .about-photo-large {
-        grid-row: 1 / 3;
+      .about-photo-main {
+        width: 64%;
+        height: 360px;
+        top: 45px;
       }
 
-
-      .about-photo-small {
-        min-height: 175px;
+      .about-photo-left {
+        width: 45%;
+        height: 220px;
       }
 
-
-      .about-photo {
-        border-radius: 16px;
+      .about-photo-bottom {
+        width: 47%;
+        height: 220px;
       }
 
+      .about-features {
+        grid-template-columns: 1fr;
+      }
 
-      .about-photo::after {
-        inset: 6px;
-        border-radius: 11px;
+      .about-premium-copy h2 {
+        font-size: 40px;
       }
 
     }
@@ -318,120 +370,70 @@
 
   {
     "@context": "https://schema.org",
-
     "@graph": [
 
       {
-
         "@type": "Organization",
+        "@id": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/#organization",
 
-        "@id":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/#organization",
+        "name": "Shivam Imitation",
 
-        "name":
-          "Shivam Imitation",
-
-        "url":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/",
+        "url": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/",
 
         "logo": {
-
-          "@type":
-            "ImageObject",
-
-          "url":
-            "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
-
-          "width":
-            512,
-
-          "height":
-            512
-
+          "@type": "ImageObject",
+          "url": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
+          "width": 512,
+          "height": 512
         },
 
-        "image":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
+        "image": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
 
-        "description":
-          "Shivam Imitation is an imitation jewellery shop in Talala Gir offering necklace sets, earrings, rings, bracelets, bangles, bridal jewellery, mangalsutra and trendy accessories.",
+        "description": "Shivam Imitation is an imitation jewellery shop in Talala Gir offering necklace sets, earrings, rings, bracelets, bangles, bridal jewellery, mangalsutra and trendy accessories.",
 
-        "telephone":
-          "+91-9714978206",
+        "telephone": "+91-9714978206",
 
-        "email":
-          "shivamimitationgir26@gmail.com",
+        "email": "shivamimitationgir26@gmail.com",
 
         "sameAs": [
-
           "https://www.instagram.com/shivam_imitation_gir/"
-
         ]
-
       },
 
-
       {
+        "@type": "JewelryStore",
 
-        "@type":
-          "JewelryStore",
+        "@id": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/#store",
 
-        "@id":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/#store",
+        "name": "Shivam Imitation",
 
-        "name":
-          "Shivam Imitation",
+        "url": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/",
 
-        "url":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/",
+        "logo": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
 
-        "logo":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
+        "image": "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
 
-        "image":
-          "https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg",
+        "description": "Shivam Imitation is an imitation jewellery shop in Talala Gir offering beautiful imitation jewellery.",
 
-        "description":
-          "Shivam Imitation is an imitation jewellery shop in Talala Gir offering beautiful imitation jewellery.",
+        "telephone": "+91-9714978206",
 
-        "telephone":
-          "+91-9714978206",
-
-        "email":
-          "shivamimitationgir26@gmail.com",
+        "email": "shivamimitationgir26@gmail.com",
 
         "address": {
-
-          "@type":
-            "PostalAddress",
-
-          "streetAddress":
-            "Akshar Arcade, Gitanjali Talkies, Shop No. 16",
-
-          "addressLocality":
-            "Talala",
-
-          "addressRegion":
-            "Gujarat",
-
-          "postalCode":
-            "362150",
-
-          "addressCountry":
-            "IN"
-
+          "@type": "PostalAddress",
+          "streetAddress": "Akshar Arcade, Gitanjali Talkies, Shop No. 16",
+          "addressLocality": "Talala",
+          "addressRegion": "Gujarat",
+          "postalCode": "362150",
+          "addressCountry": "IN"
         },
 
         "sameAs": [
-
           "https://www.instagram.com/shivam_imitation_gir/"
-
         ]
-
       }
 
     ]
-
   }
 
   </script>
@@ -446,10 +448,7 @@
        FLORAL BACKGROUND
        ===================================================== -->
 
-  <div
-    class="floral-bg"
-    aria-hidden="true"
-  >
+  <div class="floral-bg" aria-hidden="true">
 
     <svg
       viewBox="0 0 1200 1200"
@@ -460,44 +459,25 @@
 
         <g id="leaf">
 
-          <path
-            d="M0 0 C25 -45 70 -55 100 -20 C65 5 35 25 0 0Z"
-          ></path>
+          <path d="M0 0 C25 -45 70 -55 100 -20 C65 5 35 25 0 0Z"></path>
 
-          <path
-            d="M0 0 C35 -8 65 -25 100 -20"
-          ></path>
+          <path d="M0 0 C35 -8 65 -25 100 -20"></path>
 
         </g>
-
 
         <g id="smallLeaf">
 
-          <path
-            d="M0 0 C15 -28 40 -32 55 -12 C38 4 20 12 0 0Z"
-          ></path>
+          <path d="M0 0 C15 -28 40 -32 55 -12 C38 4 20 12 0 0Z"></path>
 
-          <path
-            d="M0 0 C18 -4 36 -12 55 -12"
-          ></path>
+          <path d="M0 0 C18 -4 36 -12 55 -12"></path>
 
         </g>
 
-
         <g id="flower">
 
-          <circle
-            cx="0"
-            cy="0"
-            r="7"
-          ></circle>
+          <circle cx="0" cy="0" r="7"></circle>
 
-          <ellipse
-            cx="0"
-            cy="-28"
-            rx="10"
-            ry="24"
-          ></ellipse>
+          <ellipse cx="0" cy="-28" rx="10" ry="24"></ellipse>
 
           <ellipse
             cx="20"
@@ -568,50 +548,23 @@
           d="M20 300 C100 190 160 100 285 70 C390 45 455 105 470 180"
         ></path>
 
-        <use
-          href="#leaf"
-          transform="translate(70 235) rotate(-35) scale(1.1)"
-        ></use>
+        <use href="#leaf" transform="translate(70 235) rotate(-35) scale(1.1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(130 175) rotate(-55) scale(.9)"
-        ></use>
+        <use href="#leaf" transform="translate(130 175) rotate(-55) scale(.9)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(195 125) rotate(-40) scale(1.05)"
-        ></use>
+        <use href="#leaf" transform="translate(195 125) rotate(-40) scale(1.05)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(270 85) rotate(-25) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(270 85) rotate(-25) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(110 285) rotate(20) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(110 285) rotate(20) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(205 230) rotate(25) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(205 230) rotate(25) scale(1)"></use>
 
-        <use
-          href="#flower"
-          transform="translate(300 100) scale(.65)"
-        ></use>
+        <use href="#flower" transform="translate(300 100) scale(.65)"></use>
 
-        <use
-          href="#smallLeaf"
-          transform="translate(330 165) rotate(45)"
-        ></use>
+        <use href="#smallLeaf" transform="translate(330 165) rotate(45)"></use>
 
-        <use
-          href="#smallLeaf"
-          transform="translate(365 205) rotate(70)"
-        ></use>
+        <use href="#smallLeaf" transform="translate(365 205) rotate(70)"></use>
 
       </g>
 
@@ -624,50 +577,23 @@
           d="M1180 270 C1100 190 1050 105 920 70 C820 45 750 105 730 180"
         ></path>
 
-        <use
-          href="#leaf"
-          transform="translate(1130 235) rotate(215) scale(1.1)"
-        ></use>
+        <use href="#leaf" transform="translate(1130 235) rotate(215) scale(1.1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1070 175) rotate(235) scale(.9)"
-        ></use>
+        <use href="#leaf" transform="translate(1070 175) rotate(235) scale(.9)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1005 125) rotate(220) scale(1.05)"
-        ></use>
+        <use href="#leaf" transform="translate(1005 125) rotate(220) scale(1.05)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(930 85) rotate(205) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(930 85) rotate(205) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1090 285) rotate(160) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(1090 285) rotate(160) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(995 230) rotate(155) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(995 230) rotate(155) scale(1)"></use>
 
-        <use
-          href="#flower"
-          transform="translate(900 100) scale(.65)"
-        ></use>
+        <use href="#flower" transform="translate(900 100) scale(.65)"></use>
 
-        <use
-          href="#smallLeaf"
-          transform="translate(870 165) rotate(135)"
-        ></use>
+        <use href="#smallLeaf" transform="translate(870 165) rotate(135)"></use>
 
-        <use
-          href="#smallLeaf"
-          transform="translate(835 205) rotate(110)"
-        ></use>
+        <use href="#smallLeaf" transform="translate(835 205) rotate(110)"></use>
 
       </g>
 
@@ -680,40 +606,19 @@
           d="M0 780 C80 650 135 555 260 520 C355 495 420 545 440 620"
         ></path>
 
-        <use
-          href="#leaf"
-          transform="translate(55 710) rotate(-35) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(55 710) rotate(-35) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(115 635) rotate(-50) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(115 635) rotate(-50) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(175 570) rotate(-35) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(175 570) rotate(-35) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(245 535) rotate(-15) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(245 535) rotate(-15) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(95 765) rotate(20) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(95 765) rotate(20) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(195 705) rotate(25) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(195 705) rotate(25) scale(1)"></use>
 
-        <use
-          href="#flower"
-          transform="translate(280 545) scale(.6)"
-        ></use>
+        <use href="#flower" transform="translate(280 545) scale(.6)"></use>
 
       </g>
 
@@ -726,40 +631,19 @@
           d="M1200 780 C1120 650 1065 555 940 520 C845 495 780 545 760 620"
         ></path>
 
-        <use
-          href="#leaf"
-          transform="translate(1145 710) rotate(215) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(1145 710) rotate(215) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1085 635) rotate(230) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(1085 635) rotate(230) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1025 570) rotate(215) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(1025 570) rotate(215) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(955 535) rotate(195) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(955 535) rotate(195) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1105 765) rotate(160) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(1105 765) rotate(160) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1005 705) rotate(155) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(1005 705) rotate(155) scale(1)"></use>
 
-        <use
-          href="#flower"
-          transform="translate(920 545) scale(.6)"
-        ></use>
+        <use href="#flower" transform="translate(920 545) scale(.6)"></use>
 
       </g>
 
@@ -772,40 +656,19 @@
           d="M0 1180 C120 1070 185 990 300 955 C395 925 455 975 475 1050"
         ></path>
 
-        <use
-          href="#leaf"
-          transform="translate(65 1115) rotate(-35) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(65 1115) rotate(-35) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(130 1040) rotate(-50) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(130 1040) rotate(-50) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(200 985) rotate(-35) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(200 985) rotate(-35) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(270 955) rotate(-15) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(270 955) rotate(-15) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(105 1160) rotate(20) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(105 1160) rotate(20) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(205 1100) rotate(25) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(205 1100) rotate(25) scale(1)"></use>
 
-        <use
-          href="#flower"
-          transform="translate(310 970) scale(.6)"
-        ></use>
+        <use href="#flower" transform="translate(310 970) scale(.6)"></use>
 
       </g>
 
@@ -818,40 +681,19 @@
           d="M1200 1180 C1080 1070 1015 990 900 955 C805 925 745 975 725 1050"
         ></path>
 
-        <use
-          href="#leaf"
-          transform="translate(1135 1115) rotate(215) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(1135 1115) rotate(215) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1070 1040) rotate(230) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(1070 1040) rotate(230) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1000 985) rotate(215) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(1000 985) rotate(215) scale(1)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(930 955) rotate(195) scale(.8)"
-        ></use>
+        <use href="#leaf" transform="translate(930 955) rotate(195) scale(.8)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(1095 1160) rotate(160) scale(.85)"
-        ></use>
+        <use href="#leaf" transform="translate(1095 1160) rotate(160) scale(.85)"></use>
 
-        <use
-          href="#leaf"
-          transform="translate(995 1100) rotate(155) scale(1)"
-        ></use>
+        <use href="#leaf" transform="translate(995 1100) rotate(155) scale(1)"></use>
 
-        <use
-          href="#flower"
-          transform="translate(890 970) scale(.6)"
-        ></use>
+        <use href="#flower" transform="translate(890 970) scale(.6)"></use>
 
       </g>
 
@@ -877,10 +719,7 @@
 
   <header class="navbar">
 
-    <a
-      class="brand"
-      href="#home"
-    >
+    <a class="brand" href="#home">
 
       <img
         src="logo.jpg"
@@ -908,52 +747,31 @@
 
     <nav id="nav">
 
-      <a
-        href="#home"
-        onclick="closeMenu()"
-      >
+      <a href="#home" onclick="closeMenu()">
         Home
       </a>
 
-      <a
-        href="collection.html"
-        onclick="closeMenu()"
-      >
+      <a href="collection.html" onclick="closeMenu()">
         Collection
       </a>
 
-      <a
-        href="#categories"
-        onclick="closeMenu()"
-      >
+      <a href="#categories" onclick="closeMenu()">
         Categories
       </a>
 
-      <a
-        href="#offers"
-        onclick="closeMenu()"
-      >
+      <a href="#offers" onclick="closeMenu()">
         Offers
       </a>
 
-      <a
-        href="#about"
-        onclick="closeMenu()"
-      >
+      <a href="#about" onclick="closeMenu()">
         About
       </a>
 
-      <a
-        href="#reviews"
-        onclick="closeMenu()"
-      >
+      <a href="#reviews" onclick="closeMenu()">
         Reviews
       </a>
 
-      <a
-        href="#contact"
-        onclick="closeMenu()"
-      >
+      <a href="#contact" onclick="closeMenu()">
         Contact
       </a>
 
@@ -971,10 +789,7 @@
 
     <!-- ================= HERO ================= -->
 
-    <section
-      id="home"
-      class="hero"
-    >
+    <section id="home" class="hero">
 
       <div class="hero-slider">
 
@@ -982,6 +797,18 @@
           src="product-1.jpg"
           alt="Premium imitation necklace set at Shivam Imitation Talala Gir"
           class="hero-slide active"
+        >
+
+        <img
+          src="product-2.jpg"
+          alt="Premium jewellery collection at Shivam Imitation"
+          class="hero-slide"
+        >
+
+        <img
+          src="product-3.jpg"
+          alt="Beautiful imitation jewellery at Shivam Imitation"
+          class="hero-slide"
         >
 
         <img
@@ -1033,17 +860,11 @@
 
         <div class="hero-actions">
 
-          <a
-            href="#collection"
-            class="gold-btn"
-          >
+          <a href="#collection" class="gold-btn">
             Explore Collection
           </a>
 
-          <a
-            href="collection.html"
-            class="text-link"
-          >
+          <a href="collection.html" class="text-link">
             View Collection →
           </a>
 
@@ -1052,10 +873,7 @@
       </div>
 
 
-      <div
-        class="dots"
-        id="dots"
-      ></div>
+      <div class="dots" id="dots"></div>
 
     </section>
 
@@ -1088,10 +906,7 @@
          DYNAMIC COLLECTION
          ===================================================== -->
 
-    <section
-      id="collection"
-      class="section"
-    >
+    <section id="collection" class="section">
 
       <div class="section-heading">
 
@@ -1108,10 +923,7 @@
         </div>
 
 
-        <a
-          href="collection.html"
-          class="text-link"
-        >
+        <a href="collection.html" class="text-link">
           View Catalogue →
         </a>
 
@@ -1136,10 +948,7 @@
          DYNAMIC CATEGORIES
          ===================================================== -->
 
-    <section
-      id="categories"
-      class="section"
-    >
+    <section id="categories" class="section">
 
       <div class="section-heading center">
 
@@ -1169,9 +978,7 @@
       >
 
         <div class="category-loading">
-
           Loading categories...
-
         </div>
 
       </div>
@@ -1181,10 +988,7 @@
 
     <!-- ================= OFFER ================= -->
 
-    <section
-      id="offers"
-      class="offer"
-    >
+    <section id="offers" class="offer">
 
       <div>
 
@@ -1219,17 +1023,23 @@
 
 
     <!-- =====================================================
-         ABOUT + 3 JEWELLERY PHOTOS
+         PREMIUM ABOUT SECTION
+         THREE PRODUCT PHOTOS
          ===================================================== -->
 
     <section
       id="about"
-      class="about section"
+      class="about section about-premium"
     >
 
-      <!-- ABOUT TEXT -->
 
-      <div class="about-copy">
+      <!-- ================= ABOUT TEXT ================= -->
+
+      <div class="about-premium-copy">
+
+        <div class="about-premium-tag">
+          Premium Jewellery Showroom
+        </div>
 
         <p class="eyebrow">
           ABOUT SHIVAM IMITATION
@@ -1241,6 +1051,8 @@
           <span>Your Statement.</span>
         </h2>
 
+        <div class="about-gold-line"></div>
+
         <p>
           Shivam Imitation brings together stylish
           imitation jewellery for festive looks,
@@ -1248,10 +1060,57 @@
         </p>
 
         <p>
+          From elegant necklace sets and bridal
+          jewellery to beautiful earrings, rings,
+          bracelets and traditional designs, discover
+          something special for every occasion.
+        </p>
+
+        <p>
           Visit our showroom at Akshar Arcade,
           Gitanjali Talkies, Shop No. 16,
-          Talala Gir to explore the latest collection.
+          Talala Gir and explore our latest collection.
         </p>
+
+
+        <!-- ABOUT FEATURES -->
+
+        <div class="about-features">
+
+          <div class="about-feature">
+
+            <strong>21+</strong>
+
+            <span>
+              Jewellery Categories
+            </span>
+
+          </div>
+
+
+          <div class="about-feature">
+
+            <strong>New</strong>
+
+            <span>
+              Designs Regularly
+            </span>
+
+          </div>
+
+
+          <div class="about-feature">
+
+            <strong>Talala</strong>
+
+            <span>
+              Local Showroom
+            </span>
+
+          </div>
+
+        </div>
+
 
         <a
           href="#contact"
@@ -1263,55 +1122,61 @@
       </div>
 
 
-      <!-- ================= JEWELLERY PHOTO GALLERY ================= -->
+      <!-- ================= ABOUT PHOTOS ================= -->
 
       <div class="about-gallery">
 
 
-        <!-- PRODUCT 1 -->
+        <!-- PHOTO 1 -->
 
-        <div
-          class="about-photo about-photo-large"
-        >
+        <div class="about-photo about-photo-left">
 
           <img
             src="product-1.jpg"
-            alt="Premium imitation jewellery collection at Shivam Imitation"
+            alt="Shivam Imitation jewellery collection product 1"
             loading="lazy"
             onerror="this.onerror=null;this.src='logo.jpg';"
           >
 
+          <div class="about-photo-label">
+            Signature Collection
+          </div>
+
         </div>
 
 
-        <!-- PRODUCT 2 -->
+        <!-- PHOTO 2 MAIN -->
 
-        <div
-          class="about-photo about-photo-small"
-        >
+        <div class="about-photo about-photo-main">
 
           <img
             src="product-2.jpg"
-            alt="Beautiful imitation jewellery at Shivam Imitation"
+            alt="Shivam Imitation jewellery collection product 2"
             loading="lazy"
             onerror="this.onerror=null;this.src='logo.jpg';"
           >
+
+          <div class="about-photo-label">
+            Premium Jewellery
+          </div>
 
         </div>
 
 
-        <!-- PRODUCT 3 -->
+        <!-- PHOTO 3 -->
 
-        <div
-          class="about-photo about-photo-small"
-        >
+        <div class="about-photo about-photo-bottom">
 
           <img
             src="product-3.jpg"
-            alt="Elegant jewellery collection at Shivam Imitation"
+            alt="Shivam Imitation jewellery collection product 3"
             loading="lazy"
             onerror="this.onerror=null;this.src='logo.jpg';"
           >
+
+          <div class="about-photo-label">
+            Latest Designs
+          </div>
 
         </div>
 
@@ -1323,10 +1188,7 @@
 
     <!-- ================= REVIEWS ================= -->
 
-    <section
-      id="reviews"
-      class="section reviews"
-    >
+    <section id="reviews" class="section reviews">
 
       <div class="section-heading center">
 
@@ -1390,9 +1252,7 @@
 
     <!-- ================= INSTAGRAM ================= -->
 
-    <section
-      class="instagram-section section"
-    >
+    <section class="instagram-section section">
 
       <div class="instagram-content">
 
@@ -1497,10 +1357,7 @@
 
     <!-- ================= CONTACT ================= -->
 
-    <section
-      id="contact"
-      class="contact section"
-    >
+    <section id="contact" class="contact section">
 
       <div class="section-heading center">
 
@@ -1589,9 +1446,7 @@
 
           <p>
 
-            <a
-              href="mailto:shivamimitationgir26@gmail.com"
-            >
+            <a href="mailto:shivamimitationgir26@gmail.com">
               shivamimitationgir26@gmail.com
             </a>
 
@@ -1690,16 +1545,10 @@
       function () {
 
         const slides =
-          document.querySelectorAll(
-            ".hero-slide"
-          );
-
+          document.querySelectorAll(".hero-slide");
 
         const dotsContainer =
-          document.getElementById(
-            "dots"
-          );
-
+          document.getElementById("dots");
 
         let currentSlide = 0;
 
@@ -1716,9 +1565,7 @@
           slides.forEach(
             function (slide) {
 
-              slide.classList.remove(
-                "active"
-              );
+              slide.classList.remove("active");
 
             }
           );
@@ -1726,39 +1573,30 @@
 
           const dots =
             dotsContainer
-              ? dotsContainer.querySelectorAll(
-                  "button"
-                )
+              ? dotsContainer.querySelectorAll("button")
               : [];
 
 
           dots.forEach(
             function (dot) {
 
-              dot.classList.remove(
-                "active"
-              );
+              dot.classList.remove("active");
 
             }
           );
 
 
-          slides[index].classList.add(
-            "active"
-          );
+          slides[index].classList.add("active");
 
 
           if (dots[index]) {
 
-            dots[index].classList.add(
-              "active"
-            );
+            dots[index].classList.add("active");
 
           }
 
 
-          currentSlide =
-            index;
+          currentSlide = index;
 
         }
 
@@ -1766,15 +1604,9 @@
         function nextSlide() {
 
           currentSlide =
-            (
-              currentSlide + 1
-            ) %
-            slides.length;
+            (currentSlide + 1) % slides.length;
 
-
-          showSlide(
-            currentSlide
-          );
+          showSlide(currentSlide);
 
         }
 
@@ -1785,27 +1617,16 @@
         ) {
 
           slides.forEach(
-            function (
-              slide,
-              index
-            ) {
+            function (slide, index) {
 
               const dot =
-                document.createElement(
-                  "button"
-                );
+                document.createElement("button");
 
-
-              dot.type =
-                "button";
-
+              dot.type = "button";
 
               dot.setAttribute(
                 "aria-label",
-                "Go to slide " +
-                (
-                  index + 1
-                )
+                "Go to slide " + (index + 1)
               );
 
 
@@ -1813,15 +1634,9 @@
                 "click",
                 function () {
 
-                  showSlide(
-                    index
-                  );
+                  showSlide(index);
 
-
-                  clearInterval(
-                    sliderTimer
-                  );
-
+                  clearInterval(sliderTimer);
 
                   sliderTimer =
                     setInterval(
@@ -1833,9 +1648,7 @@
               );
 
 
-              dotsContainer.appendChild(
-                dot
-              );
+              dotsContainer.appendChild(dot);
 
             }
           );
@@ -1856,9 +1669,7 @@
         /* FOOTER YEAR */
 
         const yearElement =
-          document.getElementById(
-            "year"
-          );
+          document.getElementById("year");
 
 
         if (yearElement) {
@@ -1879,16 +1690,12 @@
     function toggleMenu() {
 
       const nav =
-        document.getElementById(
-          "nav"
-        );
+        document.getElementById("nav");
 
 
       if (nav) {
 
-        nav.classList.toggle(
-          "show"
-        );
+        nav.classList.toggle("show");
 
       }
 
@@ -1898,16 +1705,12 @@
     function closeMenu() {
 
       const nav =
-        document.getElementById(
-          "nav"
-        );
+        document.getElementById("nav");
 
 
       if (nav) {
 
-        nav.classList.remove(
-          "show"
-        );
+        nav.classList.remove("show");
 
       }
 
@@ -1918,9 +1721,7 @@
        WHATSAPP PRODUCT ORDER
        ===================================================== */
 
-    function orderProduct(
-      productName
-    ) {
+    function orderProduct(productName) {
 
       const message =
         "Hello Shivam Imitation, I am interested in: " +
@@ -1929,9 +1730,7 @@
 
       const url =
         "https://wa.me/919714978206?text=" +
-        encodeURIComponent(
-          message
-        );
+        encodeURIComponent(message);
 
 
       window.open(
@@ -1949,7 +1748,6 @@
        ===================================================== -->
 
   <script type="module">
-
 
     /* =====================================================
        FIREBASE IMPORTS
@@ -2004,15 +1802,11 @@
        ===================================================== */
 
     const app =
-      initializeApp(
-        firebaseConfig
-      );
+      initializeApp(firebaseConfig);
 
 
     const db =
-      getFirestore(
-        app
-      );
+      getFirestore(app);
 
 
     /* =====================================================
@@ -2094,45 +1888,25 @@
     const categoryNumbers = {
 
       "Necklace Set": "01",
-
       "Long Necklace": "02",
-
       "Short Necklace": "03",
-
       "Bridal Necklace": "04",
-
       "AD Necklace": "05",
-
       "Pendant Set": "06",
-
       "Mangalsutra": "07",
-
       "Earrings": "08",
-
       "Finger Ring": "09",
-
       "Adjustable Ring": "10",
-
       "Bracelet": "11",
-
       "Kada": "12",
-
       "Bangles": "13",
-
       "Bridal Jewellery Set": "14",
-
       "Bajuband": "15",
-
       "Kamarbandh": "16",
-
       "Payal": "17",
-
       "Chain": "18",
-
       "Tanmaniya": "19",
-
       "Loket": "20",
-
       "Mala": "21"
 
     };
@@ -2142,49 +1916,28 @@
        ESCAPE HTML
        ===================================================== */
 
-    function escapeHTML(
-      value
-    ) {
+    function escapeHTML(value) {
 
-      return String(
-        value ?? ""
-      )
+      return String(value ?? "")
 
-        .replace(
-          /&/g,
-          "&amp;"
-        )
+        .replace(/&/g, "&amp;")
 
-        .replace(
-          /</g,
-          "&lt;"
-        )
+        .replace(/</g, "&lt;")
 
-        .replace(
-          />/g,
-          "&gt;"
-        )
+        .replace(/>/g, "&gt;")
 
-        .replace(
-          /"/g,
-          "&quot;"
-        )
+        .replace(/"/g, "&quot;")
 
-        .replace(
-          /'/g,
-          "&#039;"
-        );
+        .replace(/'/g, "&#039;");
 
     }
 
 
     /* =====================================================
-       GET TIME
+       GET PRODUCT TIME
        ===================================================== */
 
-    function getProductTime(
-      product
-    ) {
+    function getProductTime(product) {
 
       if (
         product &&
@@ -2222,9 +1975,7 @@
 
 
       snapshot.forEach(
-        function (
-          item
-        ) {
+        function (item) {
 
           const data =
             item.data();
@@ -2244,10 +1995,7 @@
 
 
       products.sort(
-        function (
-          a,
-          b
-        ) {
+        function (a, b) {
 
           return (
             getProductTime(b) -
@@ -2286,14 +2034,10 @@
           await getAllProducts();
 
 
-        container.innerHTML =
-          "";
+        container.innerHTML = "";
 
 
-        if (
-          products.length ===
-          0
-        ) {
+        if (products.length === 0) {
 
           container.innerHTML = `
 
@@ -2314,16 +2058,11 @@
 
 
         const featuredProducts =
-          products.slice(
-            0,
-            6
-          );
+          products.slice(0, 6);
 
 
         featuredProducts.forEach(
-          function (
-            product
-          ) {
+          function (product) {
 
             const name =
               product.name ||
@@ -2331,13 +2070,11 @@
 
 
             const price =
-              product.price ??
-              "";
+              product.price ?? "";
 
 
             const description =
-              product.description ||
-              "";
+              product.description || "";
 
 
             const category =
@@ -2345,9 +2082,16 @@
               "JEWELLERY";
 
 
+            /*
+              IMPORTANT:
+              Firebase image is used first.
+              If Firebase image is empty,
+              product-1.jpg is used.
+            */
+
             const image =
               product.image ||
-              "logo.jpg";
+              "product-1.jpg";
 
 
             const card =
@@ -2366,7 +2110,7 @@
                 src="${escapeHTML(image)}"
                 alt="${escapeHTML(name)}"
                 loading="lazy"
-                onerror="this.onerror=null;this.src='logo.jpg';"
+                onerror="this.onerror=null;this.src='product-1.jpg';"
               >
 
               <div class="card-body">
@@ -2424,9 +2168,7 @@
                 "click",
                 function () {
 
-                  orderProduct(
-                    name
-                  );
+                  orderProduct(name);
 
                 }
               );
@@ -2434,9 +2176,7 @@
             }
 
 
-            container.appendChild(
-              card
-            );
+            container.appendChild(card);
 
           }
         );
@@ -2501,14 +2241,11 @@
 
 
         products.forEach(
-          function (
-            product
-          ) {
+          function (product) {
 
             const category =
               String(
-                product.category ||
-                ""
+                product.category || ""
               ).trim();
 
 
@@ -2518,9 +2255,7 @@
 
 
             if (
-              !categoryMap.has(
-                category
-              )
+              !categoryMap.has(category)
             ) {
 
               categoryMap.set(
@@ -2534,13 +2269,11 @@
         );
 
 
-        container.innerHTML =
-          "";
+        container.innerHTML = "";
 
 
         if (
-          categoryMap.size ===
-          0
+          categoryMap.size === 0
         ) {
 
           container.innerHTML = `
@@ -2570,14 +2303,10 @@
 
 
         orderedCategories.forEach(
-          function (
-            category
-          ) {
+          function (category) {
 
             if (
-              categoryMap.has(
-                category
-              )
+              categoryMap.has(category)
             ) {
 
               finalCategories.push(
@@ -2591,10 +2320,7 @@
 
 
         categoryMap.forEach(
-          function (
-            product,
-            category
-          ) {
+          function (product, category) {
 
             if (
               !finalCategories.includes(
@@ -2613,40 +2339,29 @@
 
 
         finalCategories.forEach(
-          function (
-            category,
-            index
-          ) {
+          function (category, index) {
 
             const product =
-              categoryMap.get(
-                category
-              );
+              categoryMap.get(category);
 
 
             const image =
               product &&
               product.image
                 ? product.image
-                : "logo.jpg";
+                : "product-1.jpg";
 
 
             const number =
-              categoryNumbers[
-                category
-              ] ||
-              String(
-                index + 1
-              ).padStart(
+              categoryNumbers[category] ||
+              String(index + 1).padStart(
                 2,
                 "0"
               );
 
 
             const description =
-              categoryDescriptions[
-                category
-              ] ||
+              categoryDescriptions[category] ||
               "Explore our latest " +
               category +
               " collection";
@@ -2660,14 +2375,10 @@
 
 
             const card =
-              document.createElement(
-                "a"
-              );
+              document.createElement("a");
 
 
-            card.href =
-              link;
-
+            card.href = link;
 
             card.className =
               "category-card";
@@ -2675,9 +2386,7 @@
 
             card.style.backgroundImage =
               "url('" +
-              String(
-                image
-              ).replace(
+              String(image).replace(
                 /'/g,
                 "\\'"
               ) +
@@ -2705,9 +2414,7 @@
             `;
 
 
-            container.appendChild(
-              card
-            );
+            container.appendChild(card);
 
           }
         );
