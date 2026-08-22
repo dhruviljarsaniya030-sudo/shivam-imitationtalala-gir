@@ -1,6 +1,6 @@
 /* =========================================================
    SHIVAM IMITATION
-   COMPLETE STYLE.CSS
+   COMPLETE PREMIUM STYLE.CSS
    Dark Teal + Gold Luxury Jewellery Theme
    ========================================================= */
 
@@ -72,6 +72,10 @@ body {
   overflow-x: hidden;
 
   line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
 
 }
 
@@ -154,7 +158,7 @@ button {
 
 
 /* =========================================================
-   GOLD PARTICLES / LIGHT
+   GOLD LIGHT EFFECT
    ========================================================= */
 
 body::before {
@@ -214,15 +218,20 @@ body::before {
   color:
     var(--gold-light);
 
-  text-align: center;
+  text-align:
+    center;
 
-  padding: 9px 15px;
+  padding:
+    9px 15px;
 
-  font-size: 13px;
+  font-size:
+    13px;
 
-  font-weight: 600;
+  font-weight:
+    600;
 
-  letter-spacing: 0.4px;
+  letter-spacing:
+    0.4px;
 
 }
 
@@ -233,26 +242,35 @@ body::before {
 
 .navbar {
 
-  position: sticky;
+  position:
+    sticky;
 
-  top: 0;
+  top:
+    0;
 
-  z-index: 1000;
+  z-index:
+    1000;
 
-  width: 100%;
+  width:
+    100%;
 
-  min-height: 78px;
+  min-height:
+    78px;
 
   padding:
     10px 6%;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  gap: 30px;
+  gap:
+    30px;
 
   background:
     rgba(0, 39, 34, 0.94);
@@ -264,8 +282,7 @@ body::before {
     blur(16px);
 
   border-bottom:
-    1px solid
-    rgba(231, 189, 85, 0.22);
+    1px solid rgba(231, 189, 85, 0.22);
 
 }
 
@@ -276,33 +293,56 @@ body::before {
 
 .brand {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 12px;
+  gap:
+    12px;
 
-  min-width: max-content;
+  min-width:
+    max-content;
 
 }
 
 
 .brand img {
 
-  width: 58px;
-  height: 58px;
+  width:
+    58px;
 
-  object-fit: cover;
+  height:
+    58px;
 
-  border-radius: 50%;
+  object-fit:
+    cover;
+
+  border-radius:
+    50%;
 
   border:
-    2px solid
-    var(--gold);
+    2px solid var(--gold);
 
   box-shadow:
-    0 0 20px
-    rgba(231, 189, 85, 0.18);
+    0 0 20px rgba(231, 189, 85, 0.18);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+
+}
+
+
+.brand img:hover {
+
+  transform:
+    rotate(-5deg)
+    scale(1.05);
+
+  box-shadow:
+    0 0 30px rgba(231, 189, 85, 0.35);
 
 }
 
@@ -313,9 +353,11 @@ body::before {
     "Playfair Display",
     serif;
 
-  font-size: 20px;
+  font-size:
+    20px;
 
-  letter-spacing: 1.5px;
+  letter-spacing:
+    1.5px;
 
   color:
     var(--white);
@@ -337,27 +379,34 @@ body::before {
 
 .navbar nav {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: flex-end;
+  justify-content:
+    flex-end;
 
-  gap: 28px;
+  gap:
+    28px;
 
 }
 
 
 .navbar nav a {
 
-  position: relative;
+  position:
+    relative;
 
   color:
     var(--text);
 
-  font-size: 14px;
+  font-size:
+    14px;
 
-  font-weight: 600;
+  font-weight:
+    600;
 
   padding:
     8px 0;
@@ -370,17 +419,23 @@ body::before {
 
 .navbar nav a::after {
 
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  left: 0;
+  left:
+    0;
 
-  bottom: 0;
+  bottom:
+    0;
 
-  width: 0;
+  width:
+    0;
 
-  height: 2px;
+  height:
+    2px;
 
   background:
     var(--gold);
@@ -401,7 +456,8 @@ body::before {
 
 .navbar nav a:hover::after {
 
-  width: 100%;
+  width:
+    100%;
 
 }
 
@@ -412,14 +468,26 @@ body::before {
 
 .menu-btn {
 
-  display: none;
+  display:
+    none;
 
-  width: 44px;
-  height: 44px;
+  position:
+    relative;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  padding:
+    0;
 
   border:
-    1px solid
-    var(--border);
+    1px solid rgba(231, 189, 85, 0.5);
+
+  border-radius:
+    12px;
 
   background:
     rgba(231, 189, 85, 0.06);
@@ -427,11 +495,80 @@ body::before {
   color:
     var(--gold-light);
 
-  border-radius: 10px;
+  cursor:
+    pointer;
 
-  font-size: 23px;
+  font-size:
+    0;
 
-  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.menu-btn::before,
+.menu-btn::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    11px;
+
+  width:
+    21px;
+
+  height:
+    2px;
+
+  border-radius:
+    5px;
+
+  background:
+    var(--gold-light);
+
+  transition:
+    transform 0.3s ease,
+    top 0.3s ease;
+
+}
+
+
+.menu-btn::before {
+
+  top:
+    16px;
+
+  box-shadow:
+    0 7px 0 var(--gold-light);
+
+}
+
+
+.menu-btn::after {
+
+  top:
+    30px;
+
+}
+
+
+.menu-btn:hover {
+
+  background:
+    rgba(231, 189, 85, 0.13);
+
+  border-color:
+    var(--gold);
+
+  transform:
+    scale(1.04);
 
 }
 
@@ -442,17 +579,16 @@ body::before {
 
 main {
 
-  position: relative;
+  position:
+    relative;
 
 }
 
 
 .section {
 
-  width: min(
-    1180px,
-    92%
-  );
+  width:
+    min(1180px, 92%);
 
   margin:
     0 auto;
@@ -468,15 +604,20 @@ main {
   color:
     var(--gold);
 
-  font-size: 12px;
+  font-size:
+    12px;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  letter-spacing: 3px;
+  letter-spacing:
+    3px;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
-  margin-bottom: 12px;
+  margin-bottom:
+    12px;
 
 }
 
@@ -498,7 +639,8 @@ h2 {
   font-size:
     clamp(34px, 4vw, 52px);
 
-  line-height: 1.15;
+  line-height:
+    1.15;
 
   color:
     var(--white);
@@ -521,45 +663,57 @@ h1 span {
 
 .hero {
 
-  position: relative;
+  position:
+    relative;
 
   min-height:
     calc(100vh - 115px);
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
   border-bottom:
-    1px solid
-    rgba(231, 189, 85, 0.2);
+    1px solid rgba(231, 189, 85, 0.2);
 
 }
 
 
 .hero-slider {
 
-  position: absolute;
+  position:
+    absolute;
 
-  inset: 0;
+  inset:
+    0;
 
 }
 
 
 .hero-slide {
 
-  position: absolute;
+  position:
+    absolute;
 
-  inset: 0;
+  inset:
+    0;
 
-  width: 100%;
-  height: 100%;
+  width:
+    100%;
 
-  object-fit: cover;
+  height:
+    100%;
 
-  opacity: 0;
+  object-fit:
+    cover;
+
+  opacity:
+    0;
 
   transform:
     scale(1.04);
@@ -573,7 +727,8 @@ h1 span {
 
 .hero-slide.active {
 
-  opacity: 1;
+  opacity:
+    1;
 
   transform:
     scale(1);
@@ -583,9 +738,11 @@ h1 span {
 
 .hero-overlay {
 
-  position: absolute;
+  position:
+    absolute;
 
-  inset: 0;
+  inset:
+    0;
 
   background:
 
@@ -601,20 +758,23 @@ h1 span {
 
 .hero-content {
 
-  position: relative;
+  position:
+    relative;
 
-  z-index: 5;
+  z-index:
+    5;
 
-  width: min(
-    1180px,
-    92%
-  );
+  width:
+    min(1180px, 92%);
 
   margin:
     0 auto;
 
   padding:
     70px 0;
+
+  animation:
+    heroContentIn 1s cubic-bezier(.2,.8,.2,1) both;
 
 }
 
@@ -636,6 +796,9 @@ h1 span {
   margin-bottom:
     24px;
 
+  animation:
+    fadeUp 0.8s 0.2s ease both;
+
 }
 
 
@@ -653,18 +816,28 @@ h1 span {
   margin-bottom:
     30px;
 
+  animation:
+    fadeUp 0.8s 0.35s ease both;
+
 }
 
 
 .hero-actions {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  flex-wrap: wrap;
+  flex-wrap:
+    wrap;
 
-  gap: 18px;
+  gap:
+    18px;
+
+  animation:
+    fadeUp 0.8s 0.5s ease both;
 
 }
 
@@ -675,13 +848,26 @@ h1 span {
 
 .gold-btn {
 
-  display: inline-flex;
+  position:
+    relative;
 
-  align-items: center;
+  overflow:
+    hidden;
 
-  justify-content: center;
+  isolation:
+    isolate;
 
-  min-height: 48px;
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    48px;
 
   padding:
     12px 24px;
@@ -699,21 +885,69 @@ h1 span {
   color:
     #1b1a11;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  font-size: 14px;
+  font-size:
+    14px;
 
   border:
-    1px solid
-    rgba(255,255,255,0.15);
+    1px solid rgba(255,255,255,0.15);
 
   box-shadow:
-    0 10px 30px
-    rgba(231, 189, 85, 0.16);
+    0 10px 30px rgba(231,189,85,0.16);
 
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+
+}
+
+
+.gold-btn::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    -100%;
+
+  width:
+    60%;
+
+  height:
+    100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.35),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  transition:
+    left 0.65s ease;
+
+  z-index:
+    -1;
+
+}
+
+
+.gold-btn:hover::after {
+
+  left:
+    140%;
 
 }
 
@@ -724,21 +958,24 @@ h1 span {
     translateY(-3px);
 
   box-shadow:
-    0 15px 35px
-    rgba(231, 189, 85, 0.3);
+    0 15px 35px rgba(231,189,85,0.3);
 
 }
 
 
 .outline-btn {
 
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  min-height: 48px;
+  min-height:
+    48px;
 
   padding:
     12px 24px;
@@ -747,13 +984,13 @@ h1 span {
     999px;
 
   border:
-    1px solid
-    var(--gold);
+    1px solid var(--gold);
 
   color:
     var(--gold-light);
 
-  font-weight: 700;
+  font-weight:
+    700;
 
   transition:
     0.3s ease;
@@ -764,7 +1001,7 @@ h1 span {
 .outline-btn:hover {
 
   background:
-    rgba(231, 189, 85, 0.1);
+    rgba(231,189,85,0.1);
 
   transform:
     translateY(-2px);
@@ -806,39 +1043,52 @@ h1 span {
 
 .dots {
 
-  position: absolute;
+  position:
+    absolute;
 
-  z-index: 10;
+  z-index:
+    10;
 
-  bottom: 30px;
+  bottom:
+    30px;
 
-  left: 50%;
+  left:
+    50%;
 
   transform:
     translateX(-50%);
 
-  display: flex;
+  display:
+    flex;
 
-  gap: 8px;
+  gap:
+    8px;
 
 }
 
 
 .dots button {
 
-  width: 9px;
-  height: 9px;
+  width:
+    9px;
 
-  padding: 0;
+  height:
+    9px;
 
-  border: 0;
+  padding:
+    0;
 
-  border-radius: 50%;
+  border:
+    0;
+
+  border-radius:
+    50%;
 
   background:
     rgba(255,255,255,0.45);
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   transition:
     0.3s ease;
@@ -848,9 +1098,11 @@ h1 span {
 
 .dots button.active {
 
-  width: 28px;
+  width:
+    28px;
 
-  border-radius: 10px;
+  border-radius:
+    10px;
 
   background:
     var(--gold);
@@ -864,18 +1116,20 @@ h1 span {
 
 .intro {
 
-  width: min(
-    850px,
-    92%
-  );
+  width:
+    min(850px, 92%);
 
   margin:
     0 auto;
 
-  text-align: center;
+  text-align:
+    center;
 
   padding:
     110px 0 80px;
+
+  animation:
+    fadeUp 0.8s ease both;
 
 }
 
@@ -905,13 +1159,17 @@ h1 span {
 
 .section-heading {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: flex-end;
+  align-items:
+    flex-end;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  gap: 25px;
+  gap:
+    25px;
 
   margin-bottom:
     45px;
@@ -921,9 +1179,11 @@ h1 span {
 
 .section-heading.center {
 
-  display: block;
+  display:
+    block;
 
-  text-align: center;
+  text-align:
+    center;
 
 }
 
@@ -940,49 +1200,163 @@ h1 span {
 
 
 /* =========================================================
-   PRODUCTS
+   PREMIUM PRODUCT CARDS
    ========================================================= */
 
 .products {
 
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     repeat(4, minmax(0, 1fr));
 
-  gap: 22px;
+  gap:
+    22px;
 
 }
 
 
+/* Main card */
+
 .card {
 
-  position: relative;
+  position:
+    relative;
 
-  overflow: hidden;
+  isolation:
+    isolate;
+
+  overflow:
+    hidden;
 
   background:
+
     linear-gradient(
-      180deg,
-      rgba(0, 72, 65, 0.92),
-      rgba(0, 47, 43, 0.98)
+      145deg,
+      rgba(8,88,78,0.96),
+      rgba(0,47,43,0.98) 55%,
+      rgba(0,34,31,1)
     );
 
   border:
-    1px solid
-    rgba(231, 189, 85, 0.2);
+    1px solid rgba(231,189,85,0.25);
 
   border-radius:
-    var(--radius);
+    22px;
 
   box-shadow:
-    0 12px 35px
-    rgba(0,0,0,0.22);
+    0 12px 35px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  transform:
+    translateY(0);
 
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+
+  animation:
+    productCardIn 0.7s ease both;
+
+}
+
+
+/* Gold border */
+
+.card::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  border-radius:
+    inherit;
+
+  padding:
+    1px;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 20%,
+      rgba(243,215,123,0.7),
+      transparent 55%,
+      rgba(231,189,85,0.35)
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:
+    xor;
+
+  mask-composite:
+    exclude;
+
+  opacity:
+    0;
+
+  transition:
+    opacity 0.45s ease;
+
+  pointer-events:
+    none;
+
+  z-index:
+    5;
+
+}
+
+
+/* Shine */
+
+.card::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    -120%;
+
+  left:
+    -80%;
+
+  width:
+    55%;
+
+  height:
+    300%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.12),
+      transparent
+    );
+
+  transform:
+    rotate(25deg);
+
+  transition:
+    left 0.8s ease;
+
+  pointer-events:
+    none;
+
+  z-index:
+    6;
 
 }
 
@@ -990,46 +1364,110 @@ h1 span {
 .card:hover {
 
   transform:
-    translateY(-8px);
+    translateY(-12px)
+    scale(1.015);
 
   border-color:
-    var(--gold);
+    rgba(231,189,85,0.75);
 
   box-shadow:
-    0 20px 45px
-    rgba(0,0,0,0.4);
+    0 25px 60px rgba(0,0,0,0.45),
+    0 0 35px rgba(231,189,85,0.12);
 
 }
 
 
+.card:hover::before {
+
+  opacity:
+    1;
+
+}
+
+
+.card:hover::after {
+
+  left:
+    130%;
+
+}
+
+
+/* Product image */
+
 .card > img {
 
-  display: block;
+  display:
+    block;
 
-  width: 100%;
+  width:
+    100%;
 
   aspect-ratio:
     1 / 1;
 
-  object-fit: cover;
+  object-fit:
+    cover;
 
   background:
-    var(--green-deep);
+    linear-gradient(
+      135deg,
+      var(--green-card),
+      var(--green-deep)
+    );
+
+  transition:
+    transform 0.7s cubic-bezier(.2,.8,.2,1),
+    filter 0.5s ease;
 
 }
 
 
+.card:hover > img {
+
+  transform:
+    scale(1.08);
+
+  filter:
+    brightness(1.06)
+    saturate(1.08);
+
+}
+
+
+/* Product body */
+
 .card-body {
 
+  position:
+    relative;
+
+  z-index:
+    7;
+
   padding:
-    18px;
+    20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,47,43,0.82),
+      rgba(0,34,31,0.98)
+    );
 
 }
 
 
 .card-body > span {
 
-  display: inline-block;
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
 
   color:
     var(--gold);
@@ -1038,16 +1476,39 @@ h1 span {
     10px;
 
   font-weight:
-    700;
+    800;
 
   letter-spacing:
-    1.5px;
+    2px;
 
   text-transform:
     uppercase;
 
   margin-bottom:
-    6px;
+    8px;
+
+}
+
+
+.card-body > span::before {
+
+  content:
+    "";
+
+  width:
+    5px;
+
+  height:
+    5px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--gold);
+
+  box-shadow:
+    0 0 10px rgba(231,189,85,0.7);
 
 }
 
@@ -1066,22 +1527,39 @@ h1 span {
   margin-bottom:
     8px;
 
+  transition:
+    color 0.3s ease;
+
+}
+
+
+.card:hover .card-body h3 {
+
+  color:
+    var(--gold-light);
+
 }
 
 
 .product-price {
 
+  display:
+    inline-block;
+
   color:
     var(--gold-light);
 
   font-size:
-    19px;
+    20px;
 
   font-weight:
-    700;
+    800;
 
   margin:
-    8px 0;
+    7px 0 10px;
+
+  text-shadow:
+    0 0 18px rgba(231,189,85,0.12);
 
 }
 
@@ -1095,41 +1573,102 @@ h1 span {
     13px;
 
   line-height:
-    1.5;
+    1.55;
 
   margin-bottom:
-    15px;
+    17px;
 
 }
 
 
+/* Order button */
+
 .product-order-btn {
 
-  width: 100%;
+  position:
+    relative;
 
-  min-height: 42px;
+  overflow:
+    hidden;
+
+  width:
+    100%;
+
+  min-height:
+    44px;
 
   border:
-    1px solid
-    var(--gold);
+    1px solid var(--gold);
 
   border-radius:
     999px;
 
   background:
-    transparent;
+    linear-gradient(
+      135deg,
+      rgba(231,189,85,0.08),
+      rgba(231,189,85,0.02)
+    );
 
   color:
     var(--gold-light);
 
   font-weight:
-    700;
+    800;
 
   cursor:
     pointer;
 
   transition:
-    0.3s ease;
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+.product-order-btn::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  top:
+    0;
+
+  left:
+    -120%;
+
+  width:
+    80%;
+
+  height:
+    100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.25),
+      transparent
+    );
+
+  transform:
+    skewX(-20deg);
+
+  transition:
+    left 0.6s ease;
+
+}
+
+
+.product-order-btn:hover::before {
+
+  left:
+    140%;
 
 }
 
@@ -1137,10 +1676,20 @@ h1 span {
 .product-order-btn:hover {
 
   background:
-    var(--gold);
+    linear-gradient(
+      135deg,
+      var(--gold-light),
+      var(--gold-dark)
+    );
 
   color:
     #182018;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(231,189,85,0.22);
 
 }
 
@@ -1158,8 +1707,7 @@ h1 span {
     45px 20px;
 
   border:
-    1px dashed
-    var(--border);
+    1px dashed var(--border);
 
   border-radius:
     var(--radius);
@@ -1176,32 +1724,37 @@ h1 span {
 
 .category-grid {
 
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     repeat(3, minmax(0, 1fr));
 
-  gap: 20px;
+  gap:
+    20px;
 
 }
 
 
 .category-card {
 
-  position: relative;
+  position:
+    relative;
 
   min-height:
     210px;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: flex-end;
+  align-items:
+    flex-end;
 
   border:
-    1px solid
-    rgba(231, 189, 85, 0.25);
+    1px solid rgba(231,189,85,0.25);
 
   border-radius:
     18px;
@@ -1210,30 +1763,37 @@ h1 span {
 
     linear-gradient(
       135deg,
-      rgba(231, 189, 85, 0.08),
-      rgba(0, 72, 65, 0.9)
+      rgba(231,189,85,0.08),
+      rgba(0,72,65,0.9)
     );
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.4s cubic-bezier(.2,.8,.2,1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+
+  animation:
+    fadeUp 0.7s ease both;
 
 }
 
 
 .category-card::before {
 
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  inset: 0;
+  inset:
+    0;
 
   background:
 
     radial-gradient(
       circle at 75% 25%,
-      rgba(231, 189, 85, 0.18),
+      rgba(231,189,85,0.18),
       transparent 30%
     );
 
@@ -1242,21 +1802,29 @@ h1 span {
 
 .category-card::after {
 
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  width: 150px;
-  height: 150px;
+  width:
+    150px;
 
-  right: -55px;
-  top: -55px;
+  height:
+    150px;
+
+  right:
+    -55px;
+
+  top:
+    -55px;
 
   border:
-    1px solid
-    rgba(231, 189, 85, 0.22);
+    1px solid rgba(231,189,85,0.22);
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
 }
 
@@ -1264,21 +1832,29 @@ h1 span {
 .category-card:hover {
 
   transform:
-    translateY(-7px);
+    translateY(-10px)
+    scale(1.015);
 
   border-color:
     var(--gold);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.35),
+    0 0 25px rgba(231,189,85,0.08);
 
 }
 
 
 .category-overlay {
 
-  position: relative;
+  position:
+    relative;
 
-  z-index: 2;
+  z-index:
+    2;
 
-  width: 100%;
+  width:
+    100%;
 
   padding:
     24px;
@@ -1287,7 +1863,7 @@ h1 span {
     linear-gradient(
       180deg,
       transparent,
-      rgba(0, 25, 22, 0.92)
+      rgba(0,25,22,0.92)
     );
 
 }
@@ -1341,8 +1917,14 @@ h1 span {
 
 .offer {
 
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
   width:
-    min(1180px, 92%);
+    min(1180px,92%);
 
   margin:
     40px auto 100px;
@@ -1350,17 +1932,20 @@ h1 span {
   padding:
     60px;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  gap: 35px;
+  gap:
+    35px;
 
   border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
   border-radius:
     28px;
@@ -1369,7 +1954,7 @@ h1 span {
 
     radial-gradient(
       circle at 85% 20%,
-      rgba(231, 189, 85, 0.15),
+      rgba(231,189,85,0.15),
       transparent 35%
     ),
 
@@ -1381,6 +1966,42 @@ h1 span {
 
   box-shadow:
     var(--shadow);
+
+}
+
+
+.offer::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    250px;
+
+  height:
+    250px;
+
+  right:
+    -100px;
+
+  bottom:
+    -130px;
+
+  border:
+    1px solid rgba(231,189,85,0.2);
+
+  border-radius:
+    50%;
+
+  box-shadow:
+    0 0 0 35px rgba(231,189,85,0.03),
+    0 0 0 70px rgba(231,189,85,0.02);
+
+  pointer-events:
+    none;
 
 }
 
@@ -1413,9 +2034,11 @@ h1 span {
   min-height:
     520px;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
 }
 
@@ -1470,22 +2093,26 @@ h1 span {
   padding:
     35px;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  gap: 30px;
+  gap:
+    30px;
 
-  text-align: center;
+  text-align:
+    center;
 
   background:
-    rgba(0, 72, 65, 0.72);
+    rgba(0,72,65,0.72);
 
   border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
   border-radius:
     22px;
@@ -1539,7 +2166,7 @@ h1 span {
 .review-note {
 
   width:
-    min(650px, 100%);
+    min(650px,100%);
 
   margin:
     25px auto 0;
@@ -1557,7 +2184,7 @@ h1 span {
     14px;
 
   background:
-    rgba(231, 189, 85, 0.05);
+    rgba(231,189,85,0.05);
 
 }
 
@@ -1568,14 +2195,17 @@ h1 span {
 
 .instagram-section {
 
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
     1fr 1fr;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 60px;
+  gap:
+    60px;
 
 }
 
@@ -1604,12 +2234,14 @@ h1 span {
 
 .instagram-cards {
 
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
-  gap: 12px;
+  gap:
+    12px;
 
 }
 
@@ -1623,14 +2255,13 @@ h1 span {
     16px;
 
   border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
   background:
 
     radial-gradient(
       circle at 30% 25%,
-      rgba(231, 189, 85, 0.2),
+      rgba(231,189,85,0.2),
       transparent 25%
     ),
 
@@ -1647,7 +2278,7 @@ h1 span {
     hidden;
 
   transition:
-    0.3s ease;
+    0.35s ease;
 
 }
 
@@ -1673,7 +2304,7 @@ h1 span {
     center;
 
   color:
-    rgba(243, 215, 123, 0.5);
+    rgba(243,215,123,0.5);
 
   font-family:
     "Playfair Display",
@@ -1688,10 +2319,14 @@ h1 span {
 .instagram-card:hover {
 
   transform:
-    translateY(-6px);
+    translateY(-7px)
+    scale(1.02);
 
   border-color:
     var(--gold);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.3);
 
 }
 
@@ -1744,7 +2379,7 @@ h1 span {
 .map-wrapper {
 
   width:
-    min(1180px, 100%);
+    min(1180px,100%);
 
   margin:
     auto;
@@ -1753,8 +2388,7 @@ h1 span {
     hidden;
 
   border:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
   border-radius:
     22px;
@@ -1794,7 +2428,7 @@ h1 span {
     grid;
 
   grid-template-columns:
-    repeat(3, 1fr);
+    repeat(3,1fr);
 
   gap:
     20px;
@@ -1804,6 +2438,12 @@ h1 span {
 
 .contact-card {
 
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
   padding:
     30px 24px;
 
@@ -1811,17 +2451,56 @@ h1 span {
     center;
 
   background:
-    rgba(0, 72, 65, 0.72);
+    rgba(0,72,65,0.72);
 
   border:
-    1px solid
-    rgba(231, 189, 85, 0.2);
+    1px solid rgba(231,189,85,0.2);
 
   border-radius:
     18px;
 
   transition:
-    0.3s ease;
+    0.4s ease;
+
+}
+
+
+.contact-card::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    100px;
+
+  height:
+    100px;
+
+  top:
+    -50px;
+
+  right:
+    -50px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(231,189,85,0.08);
+
+  transition:
+    transform 0.5s ease;
+
+}
+
+
+.contact-card:hover::before {
+
+  transform:
+    scale(2.5);
 
 }
 
@@ -1832,7 +2511,10 @@ h1 span {
     var(--gold);
 
   transform:
-    translateY(-5px);
+    translateY(-6px);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.3);
 
 }
 
@@ -1858,8 +2540,7 @@ h1 span {
     0 auto 15px;
 
   border:
-    1px solid
-    var(--gold);
+    1px solid var(--gold);
 
   border-radius:
     50%;
@@ -1975,11 +2656,13 @@ h1 span {
     28px;
 
   box-shadow:
-    0 10px 30px
-    rgba(0,0,0,0.35);
+    0 10px 30px rgba(0,0,0,0.35);
 
   transition:
     0.3s ease;
+
+  animation:
+    whatsappPulse 2.5s infinite;
 
 }
 
@@ -1989,6 +2672,9 @@ h1 span {
   transform:
     translateY(-5px)
     scale(1.05);
+
+  animation:
+    none;
 
 }
 
@@ -2009,8 +2695,7 @@ footer {
     var(--green-deep);
 
   border-top:
-    1px solid
-    var(--border);
+    1px solid var(--border);
 
 }
 
@@ -2030,8 +2715,7 @@ footer img {
     50%;
 
   border:
-    2px solid
-    var(--gold);
+    2px solid var(--gold);
 
   margin-bottom:
     15px;
@@ -2082,52 +2766,39 @@ footer small {
 
 @media (max-width: 1000px) {
 
-
   .navbar {
-
     padding:
       10px 4%;
-
   }
 
 
   .navbar nav {
-
     gap:
       18px;
-
   }
 
 
   .products {
-
     grid-template-columns:
-      repeat(3, 1fr);
-
+      repeat(3,1fr);
   }
 
 
   .category-grid {
-
     grid-template-columns:
-      repeat(2, 1fr);
-
+      repeat(2,1fr);
   }
 
 
   .instagram-section {
-
     grid-template-columns:
       1fr;
-
   }
 
 
   .contact-grid {
-
     grid-template-columns:
-      repeat(2, 1fr);
-
+      repeat(2,1fr);
   }
 
 }
@@ -2138,7 +2809,6 @@ footer small {
    ========================================================= */
 
 @media (max-width: 760px) {
-
 
   .topbar {
 
@@ -2155,6 +2825,9 @@ footer small {
 
     min-height:
       70px;
+
+    padding:
+      8px 4%;
 
   }
 
@@ -2178,13 +2851,20 @@ footer small {
   }
 
 
+  /* MOBILE BUTTON */
+
   .menu-btn {
 
     display:
       block;
 
+    flex-shrink:
+      0;
+
   }
 
+
+  /* MOBILE NAV */
 
   .navbar nav {
 
@@ -2195,13 +2875,13 @@ footer small {
       100%;
 
     left:
-      0;
+      3%;
 
     right:
-      0;
+      3%;
 
     display:
-      none;
+      flex;
 
     flex-direction:
       column;
@@ -2213,37 +2893,206 @@ footer small {
       0;
 
     padding:
-      10px 5% 20px;
+      8px;
 
     background:
-      rgba(0, 39, 34, 0.98);
+      rgba(0,39,34,0.98);
 
-    border-bottom:
-      1px solid
-      var(--border);
+    border:
+      1px solid rgba(231,189,85,0.25);
+
+    border-radius:
+      0 0 18px 18px;
+
+    box-shadow:
+      0 20px 45px rgba(0,0,0,0.4);
+
+    opacity:
+      0;
+
+    visibility:
+      hidden;
+
+    transform:
+      translateY(-12px)
+      scale(0.98);
+
+    transform-origin:
+      top center;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+
+    overflow:
+      hidden;
 
   }
 
 
   .navbar nav.show {
 
-    display:
-      flex;
+    opacity:
+      1;
+
+    visibility:
+      visible;
+
+    transform:
+      translateY(0)
+      scale(1);
 
   }
 
 
   .navbar nav a {
 
+    display:
+      flex;
+
+    align-items:
+      center;
+
+    min-height:
+      48px;
+
     padding:
-      13px 0;
+      12px 15px;
+
+    border-radius:
+      10px;
 
     border-bottom:
-      1px solid
-      rgba(231, 189, 85, 0.08);
+      1px solid rgba(231,189,85,0.08);
+
+    color:
+      var(--text);
+
+    font-size:
+      14px;
+
+    transform:
+      translateX(-8px);
+
+    opacity:
+      0;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      transform 0.3s ease,
+      opacity 0.3s ease;
 
   }
 
+
+  .navbar nav.show a {
+
+    transform:
+      translateX(0);
+
+    opacity:
+      1;
+
+  }
+
+
+  .navbar nav.show a:nth-child(1) {
+    transition-delay:
+      0.04s;
+  }
+
+
+  .navbar nav.show a:nth-child(2) {
+    transition-delay:
+      0.08s;
+  }
+
+
+  .navbar nav.show a:nth-child(3) {
+    transition-delay:
+      0.12s;
+  }
+
+
+  .navbar nav.show a:nth-child(4) {
+    transition-delay:
+      0.16s;
+  }
+
+
+  .navbar nav.show a:nth-child(5) {
+    transition-delay:
+      0.20s;
+  }
+
+
+  .navbar nav.show a:nth-child(6) {
+    transition-delay:
+      0.24s;
+  }
+
+
+  .navbar nav a:hover {
+
+    background:
+      rgba(231,189,85,0.08);
+
+    color:
+      var(--gold-light);
+
+    padding-left:
+      20px;
+
+  }
+
+
+  .navbar nav a::after {
+    display:
+      none;
+  }
+
+
+  /* ACTIVE MENU ICON */
+
+  .menu-btn.active {
+
+    border-color:
+      var(--gold);
+
+    background:
+      rgba(231,189,85,0.12);
+
+  }
+
+
+  .menu-btn.active::before {
+
+    top:
+      21px;
+
+    transform:
+      rotate(45deg);
+
+    box-shadow:
+      none;
+
+  }
+
+
+  .menu-btn.active::after {
+
+    top:
+      21px;
+
+    transform:
+      rotate(-45deg);
+
+  }
+
+
+  /* HERO */
 
   .hero {
 
@@ -2264,7 +3113,7 @@ footer small {
   .hero-content h1 {
 
     font-size:
-      clamp(45px, 14vw, 68px);
+      clamp(45px,14vw,68px);
 
   }
 
@@ -2276,6 +3125,8 @@ footer small {
 
   }
 
+
+  /* SECTIONS */
 
   .section {
 
@@ -2296,10 +3147,12 @@ footer small {
   }
 
 
+  /* PRODUCTS */
+
   .products {
 
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2,1fr);
 
     gap:
       14px;
@@ -2307,10 +3160,26 @@ footer small {
   }
 
 
+  .card {
+
+    border-radius:
+      18px;
+
+  }
+
+
+  .card:hover {
+
+    transform:
+      translateY(-6px);
+
+  }
+
+
   .card-body {
 
     padding:
-      14px;
+      15px;
 
   }
 
@@ -2322,6 +3191,35 @@ footer small {
 
   }
 
+
+  .product-price {
+
+    font-size:
+      18px;
+
+  }
+
+
+  .product-description {
+
+    font-size:
+      12px;
+
+  }
+
+
+  .product-order-btn {
+
+    min-height:
+      42px;
+
+    font-size:
+      13px;
+
+  }
+
+
+  /* CATEGORIES */
 
   .category-grid {
 
@@ -2338,6 +3236,8 @@ footer small {
 
   }
 
+
+  /* OFFER */
 
   .offer {
 
@@ -2367,6 +3267,8 @@ footer small {
   }
 
 
+  /* ABOUT */
+
   .about {
 
     min-height:
@@ -2374,6 +3276,8 @@ footer small {
 
   }
 
+
+  /* REVIEWS */
 
   .rating-highlight {
 
@@ -2394,13 +3298,7 @@ footer small {
   }
 
 
-  .contact-grid {
-
-    grid-template-columns:
-      1fr;
-
-  }
-
+  /* MAP */
 
   .map-section {
 
@@ -2418,6 +3316,16 @@ footer small {
   }
 
 
+  /* CONTACT */
+
+  .contact-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
 }
 
 
@@ -2426,7 +3334,6 @@ footer small {
    ========================================================= */
 
 @media (max-width: 480px) {
-
 
   .brand span {
 
@@ -2439,6 +3346,17 @@ footer small {
   }
 
 
+  .navbar nav {
+
+    left:
+      2%;
+
+    right:
+      2%;
+
+  }
+
+
   .products {
 
     grid-template-columns:
@@ -2447,10 +3365,26 @@ footer small {
   }
 
 
+  .card {
+
+    border-radius:
+      16px;
+
+  }
+
+
   .card > img {
 
     aspect-ratio:
       1 / 1;
+
+  }
+
+
+  .card-body h3 {
+
+    font-size:
+      18px;
 
   }
 
@@ -2516,11 +3450,111 @@ footer small {
 :focus-visible {
 
   outline:
-    2px solid
-    var(--gold-light);
+    2px solid var(--gold-light);
 
   outline-offset:
     3px;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes productCardIn {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateY(25px);
+
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes fadeUp {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateY(25px);
+
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+
+
+@keyframes heroContentIn {
+
+  from {
+
+    opacity:
+      0;
+
+    transform:
+      translateX(-35px);
+
+  }
+
+  to {
+
+    opacity:
+      1;
+
+    transform:
+      translateX(0);
+
+  }
+
+}
+
+
+@keyframes whatsappPulse {
+
+  0%,
+  100% {
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.35),
+      0 0 0 0 rgba(37,211,102,0.35);
+
+  }
+
+  50% {
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.35),
+      0 0 0 10px rgba(37,211,102,0);
+
+  }
 
 }
 
@@ -2535,6 +3569,7 @@ footer small {
     scroll-behavior:
       auto;
   }
+
 
   *,
   *::before,
@@ -2555,5 +3590,5 @@ footer small {
 
 
 /* =========================================================
-   END
+   END OF SHIVAM IMITATION PREMIUM STYLE.CSS
    ========================================================= */
