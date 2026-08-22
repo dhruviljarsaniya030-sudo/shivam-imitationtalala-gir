@@ -1212,7 +1212,10 @@
     </section>
 
 
-    <!-- ================= INSTAGRAM ================= -->
+    <!-- =====================================================
+         PRODUCT SHOWCASE
+         PRODUCT 1 / PRODUCT 2 / PRODUCT 3
+         ===================================================== -->
 
     <section
       class="instagram-section section"
@@ -1221,7 +1224,7 @@
       <div class="instagram-content">
 
         <p class="eyebrow">
-          FOLLOW OUR STYLE
+          OUR LATEST COLLECTION
         </p>
 
         <h2>
@@ -1230,48 +1233,116 @@
         </h2>
 
         <p>
-          Follow us on Instagram for new jewellery
-          designs, latest arrivals, offers and updates.
+          Explore our latest jewellery designs,
+          beautiful collections and new arrivals
+          at Shivam Imitation, Talala Gir.
         </p>
 
 
         <a
-          href="https://www.instagram.com/shivam_imitation_gir/"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="collection.html"
           class="gold-btn"
         >
-          Follow @shivam_imitation_gir
+          View Full Collection
         </a>
 
       </div>
 
 
+      <!-- ================= PRODUCT CARDS ================= -->
+
       <div class="instagram-cards">
 
-        <a
-          href="https://www.instagram.com/shivam_imitation_gir/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="instagram-card"
-          aria-label="Visit Shivam Imitation Instagram"
-        ></a>
+
+        <!-- PRODUCT 1 -->
 
         <a
-          href="https://www.instagram.com/shivam_imitation_gir/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="instagram-card"
-          aria-label="Visit Shivam Imitation Instagram"
-        ></a>
+          href="collection.html"
+          class="instagram-card product-showcase-card"
+          aria-label="View Product 1"
+        >
+
+          <img
+            src="product-1.jpg"
+            alt="Shivam Imitation Product 1"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='logo.jpg';"
+          >
+
+          <div class="product-showcase-overlay">
+
+            <span>
+              PRODUCT 01
+            </span>
+
+            <strong>
+              View Collection →
+            </strong>
+
+          </div>
+
+        </a>
+
+
+        <!-- PRODUCT 2 -->
 
         <a
-          href="https://www.instagram.com/shivam_imitation_gir/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="instagram-card"
-          aria-label="Visit Shivam Imitation Instagram"
-        ></a>
+          href="collection.html"
+          class="instagram-card product-showcase-card"
+          aria-label="View Product 2"
+        >
+
+          <img
+            src="product-2.jpg"
+            alt="Shivam Imitation Product 2"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='logo.jpg';"
+          >
+
+          <div class="product-showcase-overlay">
+
+            <span>
+              PRODUCT 02
+            </span>
+
+            <strong>
+              View Collection →
+            </strong>
+
+          </div>
+
+        </a>
+
+
+        <!-- PRODUCT 3 -->
+
+        <a
+          href="collection.html"
+          class="instagram-card product-showcase-card"
+          aria-label="View Product 3"
+        >
+
+          <img
+            src="product-3.jpg"
+            alt="Shivam Imitation Product 3"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='logo.jpg';"
+          >
+
+          <div class="product-showcase-overlay">
+
+            <span>
+              PRODUCT 03
+            </span>
+
+            <strong>
+              View Collection →
+            </strong>
+
+          </div>
+
+        </a>
+
 
       </div>
 
@@ -2585,7 +2656,7 @@
 
 
   <!-- =====================================================
-       PREMIUM ABOUT CSS
+       PREMIUM ABOUT + PRODUCT SHOWCASE CSS
        ===================================================== -->
 
   <style>
@@ -2876,6 +2947,220 @@
     }
 
 
+    /* =====================================================
+       PRODUCT SHOWCASE
+       ===================================================== */
+
+    .product-showcase-card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      display: block;
+
+      min-height: 230px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid
+        rgba(
+          231,
+          189,
+          85,
+          0.40
+        );
+
+      background:
+        #002f2b;
+
+      text-decoration:
+        none;
+
+      box-shadow:
+        0 15px 35px
+        rgba(
+          0,
+          0,
+          0,
+          0.25
+        );
+
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    }
+
+
+    .product-showcase-card img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      min-height:
+        230px;
+
+      display:
+        block;
+
+      object-fit:
+        cover;
+
+      object-position:
+        center;
+
+      transition:
+        transform 0.55s ease,
+        filter 0.45s ease;
+    }
+
+
+    .product-showcase-card::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(
+            0,
+            39,
+            34,
+            0.90
+          ) 0%,
+
+          rgba(
+            0,
+            39,
+            34,
+            0.25
+          ) 45%,
+
+          rgba(
+            0,
+            0,
+            0,
+            0.02
+          ) 100%
+        );
+
+      pointer-events:
+        none;
+    }
+
+
+    .product-showcase-overlay {
+
+      position:
+        absolute;
+
+      z-index:
+        3;
+
+      left:
+        18px;
+
+      right:
+        18px;
+
+      bottom:
+        18px;
+
+      display:
+        flex;
+
+      align-items:
+        flex-end;
+
+      justify-content:
+        space-between;
+
+      gap:
+        12px;
+    }
+
+
+    .product-showcase-overlay span {
+
+      color:
+        #f3d77b;
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      font-size:
+        11px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        2px;
+    }
+
+
+    .product-showcase-overlay strong {
+
+      color:
+        #fffdf7;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        14px;
+
+      font-weight:
+        600;
+
+      white-space:
+        nowrap;
+    }
+
+
+    .product-showcase-card:hover {
+
+      transform:
+        translateY(-8px);
+
+      border-color:
+        #e7bd55;
+
+      box-shadow:
+        0 22px 45px
+        rgba(
+          0,
+          0,
+          0,
+          0.38
+        );
+    }
+
+
+    .product-showcase-card:hover img {
+
+      transform:
+        scale(1.08);
+
+      filter:
+        brightness(0.78);
+    }
+
+
     /* TABLET */
 
     @media (
@@ -2929,6 +3214,26 @@
 
 
     /* MOBILE */
+
+    @media (
+      max-width: 700px
+    ) {
+
+      .product-showcase-card {
+
+        min-height:
+          210px;
+      }
+
+
+      .product-showcase-card img {
+
+        min-height:
+          210px;
+      }
+
+    }
+
 
     @media (
       max-width: 600px
@@ -3009,6 +3314,39 @@
 
         font-size:
           10px;
+      }
+
+    }
+
+
+    @media (
+      max-width: 480px
+    ) {
+
+      .product-showcase-card {
+
+        min-height:
+          240px;
+      }
+
+
+      .product-showcase-card img {
+
+        min-height:
+          240px;
+      }
+
+
+      .product-showcase-overlay {
+
+        left:
+          14px;
+
+        right:
+          14px;
+
+        bottom:
+          14px;
       }
 
     }
