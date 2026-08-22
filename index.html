@@ -41,7 +41,6 @@
     content="#003d37"
   >
 
-
   <!-- Google Search Console -->
 
   <meta
@@ -49,14 +48,12 @@
     content="jPD9PknmMd6IFZ7ggz4s2OAI0Co4EH_YG927VHukxMg"
   >
 
-
   <!-- Canonical -->
 
   <link
     rel="canonical"
     href="https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/"
   >
-
 
   <!-- ================= FAVICON ================= -->
 
@@ -71,7 +68,6 @@
     rel="apple-touch-icon"
     href="favicon.png"
   >
-
 
   <!-- ================= OPEN GRAPH ================= -->
 
@@ -105,7 +101,6 @@
     content="Shivam Imitation"
   >
 
-
   <!-- ================= TWITTER ================= -->
 
   <meta
@@ -128,7 +123,6 @@
     content="https://dhruviljarsaniya030-sudo.github.io/shivam-imitationtalala-gir/logo.jpg"
   >
 
-
   <!-- ================= FONTS ================= -->
 
   <link
@@ -146,14 +140,12 @@
     rel="stylesheet"
   >
 
-
   <!-- ================= CSS ================= -->
 
   <link
     rel="stylesheet"
     href="style.css"
   >
-
 
   <!-- ================= STRUCTURED DATA ================= -->
 
@@ -1009,43 +1001,144 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+    <!-- =====================================================
+         PREMIUM ABOUT SECTION
+         ===================================================== -->
 
     <section
       id="about"
       class="about section"
     >
 
-      <div class="about-copy">
+      <div class="about-content">
 
-        <p class="eyebrow">
-          ABOUT SHIVAM IMITATION
-        </p>
 
-        <h2>
-          Your Style.
-          <br>
-          <span>Your Statement.</span>
-        </h2>
+        <!-- ABOUT TEXT -->
 
-        <p>
-          Shivam Imitation brings together stylish
-          imitation jewellery for festive looks,
-          functions, gifting and everyday fashion.
-        </p>
+        <div class="about-copy">
 
-        <p>
-          Visit our showroom at Akshar Arcade,
-          Gitanjali Talkies, Shop No. 16,
-          Talala Gir to explore the latest collection.
-        </p>
+          <p class="eyebrow">
+            ABOUT SHIVAM IMITATION
+          </p>
 
-        <a
-          href="#contact"
-          class="gold-btn"
-        >
-          Visit Our Store
-        </a>
+          <h2>
+            Your Style.
+            <br>
+            <span>Your Statement.</span>
+          </h2>
+
+          <p>
+            Shivam Imitation brings together stylish
+            imitation jewellery for festive looks,
+            functions, gifting and everyday fashion.
+          </p>
+
+          <p>
+            Visit our showroom at Akshar Arcade,
+            Gitanjali Talkies, Shop No. 16,
+            Talala Gir to explore the latest collection.
+          </p>
+
+          <a
+            href="#contact"
+            class="gold-btn"
+          >
+            Visit Our Store
+          </a>
+
+        </div>
+
+
+        <!-- PREMIUM JEWELLERY GALLERY -->
+
+        <div class="about-gallery">
+
+
+          <!-- PHOTO 1 -->
+
+          <div
+            class="about-photo about-photo-main"
+          >
+
+            <img
+              src="product-1.jpg"
+              alt="Premium necklace set at Shivam Imitation Talala Gir"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='logo.jpg';"
+            >
+
+            <div class="photo-label">
+
+              <span>
+                01
+              </span>
+
+              <strong>
+                Premium Collection
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 2 -->
+
+          <div
+            class="about-photo about-photo-small"
+          >
+
+            <img
+              src="product-4.jpg"
+              alt="Traditional bridal jewellery at Shivam Imitation"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='logo.jpg';"
+            >
+
+            <div class="photo-label">
+
+              <span>
+                02
+              </span>
+
+              <strong>
+                Bridal Jewellery
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO 3 -->
+
+          <div
+            class="about-photo about-photo-small"
+          >
+
+            <img
+              src="product-6.jpg"
+              alt="Beautiful imitation jewellery collection at Shivam Imitation"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='logo.jpg';"
+            >
+
+            <div class="photo-label">
+
+              <span>
+                03
+              </span>
+
+              <strong>
+                Elegant Designs
+              </strong>
+
+            </div>
+
+          </div>
+
+
+        </div>
 
       </div>
 
@@ -1411,7 +1504,6 @@
        ===================================================== -->
 
   <script>
-
 
     /* =====================================================
        HERO SLIDER
@@ -1975,11 +2067,6 @@
       );
 
 
-      /*
-        Newest products first.
-        This does NOT require Firestore orderBy.
-      */
-
       products.sort(
         function (
           a,
@@ -2027,8 +2114,6 @@
           "";
 
 
-        /* NO PRODUCTS */
-
         if (
           products.length ===
           0
@@ -2051,13 +2136,6 @@
 
         }
 
-
-        /*
-          Show latest 6 products
-          on homepage.
-          Full collection will be
-          available on collection.html.
-        */
 
         const featuredProducts =
           products.slice(
@@ -2242,10 +2320,6 @@
           await getAllProducts();
 
 
-        /*
-          Map category -> first product
-        */
-
         const categoryMap =
           new Map();
 
@@ -2266,11 +2340,6 @@
               return;
             }
 
-
-            /*
-              First product image becomes
-              category image.
-            */
 
             if (
               !categoryMap.has(
@@ -2293,10 +2362,6 @@
           "";
 
 
-        /*
-          No categories yet
-        */
-
         if (
           categoryMap.size ===
           0
@@ -2318,11 +2383,6 @@
 
         }
 
-
-        /*
-          Preserve the order of
-          the 21 categories.
-        */
 
         const orderedCategories =
           Object.keys(
@@ -2354,13 +2414,6 @@
         );
 
 
-        /*
-          If any custom category
-          exists that is not in
-          the standard 21,
-          add it at the end.
-        */
-
         categoryMap.forEach(
           function (
             product,
@@ -2382,10 +2435,6 @@
           }
         );
 
-
-        /*
-          CREATE CATEGORY CARDS
-        */
 
         finalCategories.forEach(
           function (
@@ -2447,12 +2496,6 @@
             card.className =
               "category-card";
 
-
-            /*
-              Inline background image.
-              Existing CSS overlay will
-              remain on top.
-            */
 
             card.style.backgroundImage =
               "url('" +
@@ -2539,6 +2582,438 @@
     startDynamicSystem();
 
   </script>
+
+
+  <!-- =====================================================
+       PREMIUM ABOUT CSS
+       ===================================================== -->
+
+  <style>
+
+    .about {
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        0.9fr
+        1.1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+
+    /* ABOUT TEXT */
+
+    .about-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+
+    .about-copy h2 {
+      margin-bottom: 25px;
+    }
+
+
+    .about-copy > p:not(.eyebrow) {
+      max-width: 560px;
+
+      line-height: 1.8;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* PHOTO GALLERY */
+
+    .about-gallery {
+
+      position: relative;
+
+      min-height: 560px;
+
+      display: grid;
+
+      grid-template-columns:
+        1.25fr
+        0.75fr;
+
+      grid-template-rows:
+        1fr
+        1fr;
+
+      gap: 18px;
+    }
+
+
+    /* PHOTO */
+
+    .about-photo {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 18px;
+
+      border:
+        1px solid
+        rgba(
+          231,
+          189,
+          85,
+          0.38
+        );
+
+      background:
+        #002f2b;
+
+      box-shadow:
+        0 20px 50px
+        rgba(
+          0,
+          0,
+          0,
+          0.30
+        ),
+
+        0 0 0 1px
+        rgba(
+          231,
+          189,
+          85,
+          0.08
+        );
+    }
+
+
+    /* LARGE IMAGE */
+
+    .about-photo-main {
+      grid-row:
+        1 / 3;
+    }
+
+
+    /* SMALL IMAGES */
+
+    .about-photo-small {
+      min-height:
+        270px;
+    }
+
+
+    /* IMAGE */
+
+    .about-photo img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      display:
+        block;
+
+      object-fit:
+        cover;
+
+      transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+    }
+
+
+    /* IMAGE OVERLAY */
+
+    .about-photo::after {
+
+      content:
+        "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(
+            0,
+            0,
+            0,
+            0.02
+          ) 35%,
+
+          rgba(
+            0,
+            0,
+            0,
+            0.72
+          ) 100%
+        );
+
+      pointer-events:
+        none;
+    }
+
+
+    /* HOVER */
+
+    .about-photo:hover img {
+
+      transform:
+        scale(1.07);
+
+      filter:
+        brightness(1.06);
+    }
+
+
+    /* PHOTO LABEL */
+
+    .photo-label {
+
+      position:
+        absolute;
+
+      z-index:
+        2;
+
+      left:
+        18px;
+
+      right:
+        18px;
+
+      bottom:
+        16px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        15px;
+
+      color:
+        #fffdf7;
+    }
+
+
+    .photo-label span {
+
+      width:
+        34px;
+
+      height:
+        34px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        50%;
+
+      border:
+        1px solid
+        rgba(
+          231,
+          189,
+          85,
+          0.65
+        );
+
+      color:
+        #f3d77b;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+    }
+
+
+    .photo-label strong {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        15px;
+
+      font-weight:
+        600;
+
+      letter-spacing:
+        0.3px;
+    }
+
+
+    /* TABLET */
+
+    @media (
+      max-width: 900px
+    ) {
+
+      .about-content {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          45px;
+      }
+
+
+      .about-copy {
+
+        text-align:
+          center;
+      }
+
+
+      .about-copy >
+      p:not(.eyebrow) {
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
+      }
+
+
+      .about-gallery {
+
+        max-width:
+          700px;
+
+        width:
+          100%;
+
+        margin:
+          0 auto;
+
+        min-height:
+          500px;
+      }
+
+    }
+
+
+    /* MOBILE */
+
+    @media (
+      max-width: 600px
+    ) {
+
+      .about-content {
+
+        gap:
+          35px;
+      }
+
+
+      .about-gallery {
+
+        min-height:
+          auto;
+
+        grid-template-columns:
+          1fr
+          1fr;
+
+        grid-template-rows:
+          280px
+          180px;
+
+        gap:
+          12px;
+      }
+
+
+      .about-photo-main {
+
+        grid-column:
+          1 / 3;
+
+        grid-row:
+          1;
+      }
+
+
+      .about-photo-small {
+
+        grid-row:
+          2;
+
+        min-height:
+          180px;
+      }
+
+
+      .photo-label {
+
+        left:
+          12px;
+
+        right:
+          12px;
+
+        bottom:
+          12px;
+      }
+
+
+      .photo-label strong {
+
+        font-size:
+          12px;
+      }
+
+
+      .photo-label span {
+
+        width:
+          28px;
+
+        height:
+          28px;
+
+        font-size:
+          10px;
+      }
+
+    }
+
+  </style>
 
 
 </body>
