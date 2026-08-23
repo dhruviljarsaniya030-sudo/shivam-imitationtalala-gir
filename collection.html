@@ -220,6 +220,7 @@
 
     .collection-products .card {
       overflow: hidden;
+      scroll-margin-top: 120px;
     }
 
 
@@ -288,6 +289,34 @@
     .product-order-btn:hover {
       background: transparent;
       color: var(--gold);
+    }
+
+
+    /* PRODUCT HIGHLIGHT */
+
+    .product-highlight {
+      animation: productHighlight 2.5s ease;
+    }
+
+
+    @keyframes productHighlight {
+
+      0% {
+        box-shadow: 0 0 0 0 rgba(231, 189, 85, 0.9);
+      }
+
+      30% {
+        box-shadow: 0 0 0 8px rgba(231, 189, 85, 0.25);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(231, 189, 85, 0.15);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(231, 189, 85, 0);
+      }
+
     }
 
 
@@ -741,7 +770,7 @@
 
 
   <!-- =====================================================
-       MOBILE MENU
+       MENU
        ===================================================== -->
 
   <script>
@@ -770,157 +799,6 @@
         nav.classList.remove("show");
 
       }
-
-    }
-
-
-    /* =====================================================
-       WHATSAPP PRODUCT ORDER
-       COMPLETE PRODUCT DETAILS
-       ===================================================== */
-
-    function orderProduct(product) {
-
-      /*
-        PRODUCT NAME
-      */
-
-      const productName =
-        product.name ||
-        "Shivam Imitation Product";
-
-
-      /*
-        CATEGORY
-      */
-
-      const category =
-        product.category ||
-        "Jewellery";
-
-
-      /*
-        PRICE
-      */
-
-      const price =
-        product.price !== undefined &&
-        product.price !== null &&
-        product.price !== ""
-          ? "₹" + product.price
-          : "Price on Request";
-
-
-      /*
-        DESCRIPTION
-      */
-
-      const description =
-        product.description ||
-        "Beautiful imitation jewellery product.";
-
-
-      /*
-        IMAGE
-      */
-
-      const image =
-        product.image ||
-        "";
-
-
-      /*
-        PRODUCT ID
-      */
-
-      const productId =
-        product.id ||
-        "";
-
-
-      /*
-        EXACT COLLECTION PAGE LINK
-
-        Product ID સાથે link બનાવવામાં આવશે.
-      */
-
-      const websiteLink =
-        window.location.origin +
-        window.location.pathname +
-        "#product-" +
-        encodeURIComponent(productId);
-
-
-      /*
-        IMAGE LINK
-
-        જો Firebase માં image relative URL હોય
-        તો તેને complete URL બનાવશે.
-      */
-
-      let imageLink =
-        image;
-
-
-      if (
-        image &&
-        !image.startsWith("http")
-      ) {
-
-        imageLink =
-          new URL(
-            image,
-            window.location.href
-          ).href;
-
-      }
-
-
-      /*
-        WHATSAPP MESSAGE
-      */
-
-      const message =
-`Hello Shivam Imitation 👋
-
-I am interested in this product:
-
-🛍️ Product: ${productName}
-
-📂 Category: ${category}
-
-💰 Price: ${price}
-
-📝 Description:
-${description}
-
-🔗 Product Link:
-${websiteLink}
-
-🖼️ Product Image:
-${imageLink}
-
-Please share more details about this product.`;
-
-
-      /*
-        WHATSAPP URL
-      */
-
-      const whatsappURL =
-        "https://wa.me/919714978206?text=" +
-        encodeURIComponent(message);
-
-
-      /*
-        OPEN WHATSAPP
-      */
-
-      window.open(
-        whatsappURL,
-        "_blank",
-        "noopener,noreferrer"
-      );
 
     }
 
@@ -1015,6 +893,244 @@ Please share more details about this product.`;
 
 
     /* =====================================================
+       HTML ESCAPE
+       ===================================================== */
+
+    function escapeHTML(value) {
+
+      return String(
+        value ?? ""
+      )
+
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+
+        .replace(
+          /</g,
+          "&lt;"
+        )
+
+        .replace(
+          />/g,
+          "&gt;"
+        )
+
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+
+        .replace(
+          /'/g,
+          "&#039;"
+        );
+
+    }
+
+
+    /* =====================================================
+       GET PRODUCT TIME
+       ===================================================== */
+
+    function getProductTime(product) {
+
+      if (
+        product &&
+        product.createdAt &&
+        typeof product.createdAt.toMillis ===
+          "function"
+      ) {
+
+        return product.createdAt.toMillis();
+
+      }
+
+      return 0;
+
+    }
+
+
+    /* =====================================================
+       GET PRODUCT LINK
+       ===================================================== */
+
+    function getProductLink(product) {
+
+      const productId =
+        product &&
+        product.id
+          ? String(product.id)
+          : "";
+
+
+      /*
+        IMPORTANT:
+
+        WhatsApp link will be:
+
+        collection.html?product=DOCUMENT_ID
+      */
+
+      const baseURL =
+        window.location.origin +
+        window.location.pathname;
+
+
+      return (
+        baseURL +
+        "?product=" +
+        encodeURIComponent(
+          productId
+        )
+      );
+
+    }
+
+
+    /* =====================================================
+       GET IMAGE LINK
+       ===================================================== */
+
+    function getImageLink(image) {
+
+      if (!image) {
+
+        return "";
+
+      }
+
+
+      if (
+        String(image)
+          .startsWith("http://") ||
+        String(image)
+          .startsWith("https://")
+      ) {
+
+        return String(image);
+
+      }
+
+
+      try {
+
+        return new URL(
+          image,
+          window.location.href
+        ).href;
+
+      }
+
+      catch(error) {
+
+        return String(image);
+
+      }
+
+    }
+
+
+    /* =====================================================
+       WHATSAPP PRODUCT ORDER
+       ===================================================== */
+
+    function orderProduct(product) {
+
+      if (!product) {
+
+        return;
+
+      }
+
+
+      const productName =
+        product.name ||
+        "Shivam Imitation Product";
+
+
+      const category =
+        product.category ||
+        "Jewellery";
+
+
+      const price =
+        product.price !== undefined &&
+        product.price !== null &&
+        product.price !== ""
+
+          ? "₹" + product.price
+
+          : "Price on Request";
+
+
+      const description =
+        product.description ||
+        "Beautiful imitation jewellery product.";
+
+
+      const imageLink =
+        getImageLink(
+          product.image ||
+          ""
+        );
+
+
+      const productLink =
+        getProductLink(
+          product
+        );
+
+
+      /*
+        COMPLETE WHATSAPP MESSAGE
+      */
+
+      const message =
+`Hello Shivam Imitation 👋
+
+I am interested in this product:
+
+🛍️ Product: ${productName}
+
+📂 Category: ${category}
+
+💰 Price: ${price}
+
+📝 Description:
+${description}
+
+🔗 Product Link:
+${productLink}
+
+🖼️ Product Image:
+${imageLink}
+
+Please share more details about this product.`;
+
+
+      const whatsappURL =
+        "https://wa.me/919714978206?text=" +
+        encodeURIComponent(
+          message
+        );
+
+
+      /*
+        OPEN WHATSAPP
+      */
+
+      window.open(
+        whatsappURL,
+        "_blank",
+        "noopener,noreferrer"
+      );
+
+    }
+
+
+    /* =====================================================
        LOAD PRODUCTS
        ===================================================== */
 
@@ -1061,33 +1177,26 @@ Please share more details about this product.`;
         allProducts.sort(
           function(a, b) {
 
-            const aTime =
-              a.createdAt &&
-              typeof a.createdAt.toMillis ===
-                "function"
-
-                ? a.createdAt.toMillis()
-
-                : 0;
-
-
-            const bTime =
-              b.createdAt &&
-              typeof b.createdAt.toMillis ===
-                "function"
-
-                ? b.createdAt.toMillis()
-
-                : 0;
-
-
-            return bTime - aTime;
+            return (
+              getProductTime(b) -
+              getProductTime(a)
+            );
 
           }
         );
 
 
         renderProducts();
+
+
+        /*
+          CHECK IF A SPECIFIC PRODUCT
+          WAS OPENED USING:
+
+          collection.html?product=ID
+        */
+
+        openRequestedProduct();
 
       }
 
@@ -1282,14 +1391,14 @@ Please share more details about this product.`;
 
 
           /*
-            PRODUCT ANCHOR ID
+            IMPORTANT PRODUCT ID
 
-            WhatsApp link માં આ ID
-            ઉપયોગ થશે.
+            Example:
+
+            product-abc123
           */
 
-          card.id =
-            "product-" +
+          const safeProductId =
             String(
               product.id || ""
             ).replace(
@@ -1298,9 +1407,10 @@ Please share more details about this product.`;
             );
 
 
-          /*
-            PRODUCT CARD HTML
-          */
+          card.id =
+            "product-" +
+            safeProductId;
+
 
           card.innerHTML = `
 
@@ -1377,11 +1487,6 @@ Please share more details about this product.`;
             "click",
             function() {
 
-              /*
-                IMPORTANT:
-                આખું product object મોકલવું
-              */
-
               orderProduct(
                 product
               );
@@ -1401,39 +1506,130 @@ Please share more details about this product.`;
 
 
     /* =====================================================
-       HTML ESCAPE
+       OPEN REQUESTED PRODUCT
        ===================================================== */
 
-    function escapeHTML(value) {
+    function openRequestedProduct() {
 
-      return String(
-        value ?? ""
-      )
-
-        .replace(
-          /&/g,
-          "&amp;"
-        )
-
-        .replace(
-          /</g,
-          "&lt;"
-        )
-
-        .replace(
-          />/g,
-          "&gt;"
-        )
-
-        .replace(
-          /"/g,
-          "&quot;"
-        )
-
-        .replace(
-          /'/g,
-          "&#039;"
+      const params =
+        new URLSearchParams(
+          window.location.search
         );
+
+
+      const requestedProductId =
+        params.get(
+          "product"
+        );
+
+
+      if (
+        !requestedProductId
+      ) {
+
+        return;
+
+      }
+
+
+      /*
+        FIND PRODUCT
+      */
+
+      const product =
+        allProducts.find(
+          function(item) {
+
+            return String(
+              item.id
+            ) === String(
+              requestedProductId
+            );
+
+          }
+        );
+
+
+      if (!product) {
+
+        console.warn(
+          "Requested product not found:",
+          requestedProductId
+        );
+
+        return;
+
+      }
+
+
+      /*
+        FIND PRODUCT CARD
+      */
+
+      const safeProductId =
+        String(
+          product.id
+        ).replace(
+          /[^a-zA-Z0-9_-]/g,
+          ""
+        );
+
+
+      const card =
+        document.getElementById(
+          "product-" +
+          safeProductId
+        );
+
+
+      if (!card) {
+
+        return;
+
+      }
+
+
+      /*
+        SCROLL TO PRODUCT
+      */
+
+      setTimeout(
+        function() {
+
+          card.scrollIntoView({
+
+            behavior:
+              "smooth",
+
+            block:
+              "center"
+
+          });
+
+
+          /*
+            HIGHLIGHT
+          */
+
+          card.classList.add(
+            "product-highlight"
+          );
+
+
+          setTimeout(
+            function() {
+
+              card.classList.remove(
+                "product-highlight"
+              );
+
+            },
+            3000
+          );
+
+        },
+        500
+      );
 
     }
 
@@ -1460,7 +1656,6 @@ Please share more details about this product.`;
 
     filterButtons.forEach(
       function(button) {
-
 
         button.addEventListener(
           "click",
