@@ -15,10 +15,7 @@
     content="noindex, nofollow"
   >
 
-  <title>
-    Admin Panel | Shivam Imitation
-  </title>
-
+  <title>Admin Panel | Shivam Imitation</title>
 
   <style>
 
@@ -26,709 +23,402 @@
       box-sizing: border-box;
     }
 
-
     body {
-
       margin: 0;
-
       font-family: Arial, sans-serif;
-
       background: #003d37;
-
       color: #fff;
-
       min-height: 100vh;
-
     }
-
 
     .container {
-
       width: 100%;
-
       max-width: 1100px;
-
       margin: auto;
-
       padding: 25px 16px 50px;
-
     }
-
 
     .logo {
-
       text-align: center;
-
       margin-bottom: 25px;
-
     }
-
 
     .logo h1 {
-
       margin: 0;
-
       color: #f3d77b;
-
       font-size: 30px;
-
     }
-
 
     .logo p {
-
       color: #ddd;
-
       margin: 7px 0 0;
-
     }
-
 
     .card {
-
       background: #002f2b;
-
       border: 1px solid rgba(231, 189, 85, .4);
-
       border-radius: 18px;
-
       padding: 24px;
-
-      box-shadow:
-        0 10px 35px rgba(0, 0, 0, .25);
-
+      box-shadow: 0 10px 35px rgba(0, 0, 0, .25);
       margin-bottom: 20px;
-
     }
-
 
     h2 {
-
       margin-top: 0;
-
       color: #f3d77b;
-
     }
-
 
     label {
-
       display: block;
-
       margin: 15px 0 7px;
-
       font-weight: 600;
-
     }
-
 
     input,
     textarea,
     select {
-
       width: 100%;
-
       padding: 13px;
-
       border-radius: 9px;
-
       border: 1px solid rgba(231, 189, 85, .35);
-
       background: #003d37;
-
       color: #fff;
-
       outline: none;
-
       font-size: 15px;
-
     }
-
 
     textarea {
-
       min-height: 100px;
-
       resize: vertical;
-
     }
-
 
     select option {
-
       background: #003d37;
-
       color: white;
-
     }
-
 
     input[type="file"] {
-
       padding: 10px;
-
     }
-
 
     button {
-
       border: none;
-
       border-radius: 9px;
-
       background: #e7bd55;
-
       color: #002f2b;
-
       font-size: 15px;
-
       font-weight: 700;
-
       cursor: pointer;
-
       padding: 12px 16px;
-
     }
-
 
     button:hover {
-
       background: #f3d77b;
-
     }
-
 
     button:disabled {
-
       opacity: .6;
-
       cursor: not-allowed;
-
     }
-
 
     .main-button {
-
       width: 100%;
-
       margin-top: 20px;
-
     }
-
 
     .logout {
-
       width: 100%;
-
       margin-top: 12px;
-
       background: transparent;
-
       color: #f3d77b;
-
       border: 1px solid #e7bd55;
-
     }
-
 
     .message {
-
       display: none;
-
       margin-top: 16px;
-
       padding: 13px;
-
       border-radius: 8px;
-
       text-align: center;
-
       font-weight: 600;
-
       word-break: break-word;
-
     }
-
 
     .success {
-
       display: block;
-
       background: rgba(50, 180, 100, .18);
-
       color: #9ff0bd;
-
     }
-
 
     .error {
-
       display: block;
-
       background: rgba(220, 60, 60, .18);
-
       color: #ffaaaa;
-
     }
-
 
     .info {
-
       display: block;
-
       background: rgba(231, 189, 85, .12);
-
       color: #f3d77b;
-
     }
-
 
     .login-panel {
-
       max-width: 600px;
-
       margin: auto;
-
     }
-
 
     .admin-panel {
-
       display: none;
-
     }
-
 
     .status {
-
       margin-bottom: 18px;
-
       padding: 10px;
-
       border-radius: 8px;
-
       text-align: center;
-
       background: rgba(50, 180, 100, .12);
-
       color: #9ff0bd;
-
     }
-
 
     .upload-box {
-
       border: 1px dashed rgba(231, 189, 85, .6);
-
       padding: 15px;
-
       border-radius: 12px;
-
       margin-top: 5px;
-
     }
-
 
     .small {
-
       color: #aebbb8;
-
       font-size: 13px;
-
       margin-top: 7px;
-
       line-height: 1.5;
-
     }
-
 
     .preview {
-
       display: none;
-
       text-align: center;
-
       margin-top: 15px;
-
     }
-
 
     .preview img {
-
       width: 180px;
-
       height: 180px;
-
       object-fit: cover;
-
       border-radius: 12px;
-
       border: 1px solid #e7bd55;
-
     }
-
 
     .next-name {
-
       margin-top: 12px;
-
       padding: 10px;
-
       border-radius: 8px;
-
       background: rgba(231, 189, 85, .1);
-
       color: #f3d77b;
-
       text-align: center;
-
       font-size: 14px;
-
     }
-
 
     .progress-box {
-
       display: none;
-
       margin-top: 15px;
-
     }
-
 
     .progress-bar-bg {
-
       width: 100%;
-
       height: 10px;
-
       background: #003d37;
-
       border-radius: 20px;
-
       overflow: hidden;
-
     }
-
 
     .progress-bar {
-
       width: 0%;
-
       height: 100%;
-
       background: #e7bd55;
-
       transition: width .2s;
-
     }
-
 
     .progress-text {
-
       text-align: center;
-
       margin-top: 7px;
-
       color: #f3d77b;
-
       font-size: 13px;
-
     }
-
 
     .url-box {
-
       display: none;
-
       margin-top: 12px;
-
       padding: 10px;
-
       border-radius: 8px;
-
       background: rgba(50, 180, 100, .1);
-
       color: #9ff0bd;
-
       font-size: 12px;
-
       word-break: break-all;
-
     }
-
 
     .form-buttons {
-
       display: flex;
-
       gap: 10px;
-
       margin-top: 20px;
-
     }
-
 
     .form-buttons button {
-
       flex: 1;
-
     }
-
 
     .cancel-button {
-
       background: transparent;
-
       color: #f3d77b;
-
       border: 1px solid #e7bd55;
-
     }
-
 
     .products-title {
-
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
-
       gap: 10px;
-
       margin-bottom: 15px;
-
     }
-
 
     .products-title h2 {
-
       margin: 0;
-
     }
-
 
     .refresh-btn {
-
       padding: 9px 14px;
-
       font-size: 13px;
-
     }
-
 
     .products-grid {
-
       display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-
     }
-
 
     .product-card {
-
       background: #003d37;
-
       border: 1px solid rgba(231, 189, 85, .25);
-
       border-radius: 14px;
-
       overflow: hidden;
-
     }
-
 
     .product-card img {
-
       width: 100%;
-
       height: 220px;
-
       object-fit: cover;
-
       display: block;
-
       background: #002f2b;
-
     }
-
 
     .product-info {
-
       padding: 14px;
-
     }
-
 
     .product-category {
-
       color: #f3d77b;
-
       font-size: 12px;
-
       text-transform: uppercase;
-
       font-weight: 700;
-
     }
-
 
     .product-info h3 {
-
       margin: 7px 0;
-
       font-size: 17px;
-
     }
-
 
     .product-price {
-
       color: #f3d77b;
-
       font-size: 18px;
-
       font-weight: 700;
-
       margin-bottom: 7px;
-
     }
-
 
     .product-description {
-
       color: #c9d4d1;
-
       font-size: 13px;
-
       line-height: 1.4;
-
       min-height: 38px;
-
     }
-
 
     .image-name {
-
       margin-top: 8px;
-
       color: #aebbb8;
-
       font-size: 11px;
-
       word-break: break-all;
-
     }
-
 
     .product-actions {
-
       display: flex;
-
       gap: 8px;
-
       margin-top: 12px;
-
     }
-
 
     .edit-btn {
-
       flex: 1;
-
       background: #e7bd55;
-
     }
-
 
     .delete-btn {
-
       flex: 1;
-
       background: #b83b3b;
-
       color: white;
-
     }
-
 
     .empty,
     .loading {
-
       padding: 30px;
-
       text-align: center;
-
       color: #aebbb8;
-
     }
-
 
     .loading {
-
       color: #f3d77b;
-
     }
 
+    .debug-box {
+      display: none;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: #241919;
+      color: #ffbaba;
+      font-size: 12px;
+      line-height: 1.5;
+      word-break: break-word;
+    }
 
     @media (max-width: 800px) {
 
       .products-grid {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
       }
 
     }
 
-
     @media (max-width: 550px) {
 
       .container {
-
         padding: 18px 12px 40px;
-
       }
-
 
       .card {
-
         padding: 18px;
-
       }
-
 
       .products-grid {
-
         grid-template-columns: 1fr;
-
       }
-
 
       .product-card img {
-
         height: 260px;
-
       }
-
 
       .form-buttons {
-
         flex-direction: column;
-
       }
 
-
       .products-title {
-
         align-items: flex-start;
-
       }
 
     }
@@ -740,726 +430,798 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
 
 
-    <div class="logo">
+  <!-- LOGO -->
 
-      <h1>
-        SHIVAM IMITATION
-      </h1>
+  <div class="logo">
 
-      <p>
-        Admin Product Panel
-      </p>
+    <h1>
+      SHIVAM IMITATION
+    </h1>
 
-    </div>
+    <p>
+      Admin Product Panel
+    </p>
+
+  </div>
 
 
-    <!-- LOGIN -->
+  <!-- LOGIN -->
 
-    <div
-      id="loginPanel"
-      class="card login-panel"
+  <div
+    id="loginPanel"
+    class="card login-panel"
+  >
+
+    <h2>
+      🔐 Admin Login
+    </h2>
+
+
+    <label>
+      Email
+    </label>
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Enter admin email"
+      autocomplete="email"
     >
 
-      <h2>
-        🔐 Admin Login
+
+    <label>
+      Password
+    </label>
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Enter password"
+      autocomplete="current-password"
+    >
+
+
+    <button
+      id="loginButton"
+      class="main-button"
+      onclick="loginAdmin()"
+    >
+      🔐 Login
+    </button>
+
+
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
+
+  </div>
+
+
+  <!-- ADMIN PANEL -->
+
+  <div
+    id="adminPanel"
+    class="admin-panel"
+  >
+
+
+    <!-- ADD / EDIT -->
+
+    <div class="card">
+
+      <div class="status">
+        ✅ Admin logged in
+      </div>
+
+
+      <h2 id="formTitle">
+        ➕ Add New Product
       </h2>
 
 
       <label>
-        Email
+        Product Name *
       </label>
 
       <input
-        type="email"
-        id="loginEmail"
-        placeholder="Enter admin email"
-        autocomplete="email"
+        type="text"
+        id="productName"
+        placeholder="Example: Royal Green Drop Set"
       >
 
 
       <label>
-        Password
+        Price *
       </label>
 
       <input
-        type="password"
-        id="loginPassword"
-        placeholder="Enter password"
-        autocomplete="current-password"
+        type="number"
+        id="productPrice"
+        placeholder="Example: 599"
+        min="0"
+        step="1"
       >
+
+
+      <label>
+        Category *
+      </label>
+
+      <select id="productCategory">
+
+        <option value="">
+          Select Category
+        </option>
+
+        <option value="Necklace Set">
+          Necklace Set
+        </option>
+
+        <option value="Long Necklace">
+          Long Necklace
+        </option>
+
+        <option value="Short Necklace">
+          Short Necklace
+        </option>
+
+        <option value="Bridal Necklace">
+          Bridal Necklace
+        </option>
+
+        <option value="AD Necklace">
+          AD Necklace
+        </option>
+
+        <option value="Pendant Set">
+          Pendant Set
+        </option>
+
+        <option value="Mangalsutra">
+          Mangalsutra
+        </option>
+
+        <option value="Earrings">
+          Earrings
+        </option>
+
+        <option value="Finger Ring">
+          Finger Ring
+        </option>
+
+        <option value="Adjustable Ring">
+          Adjustable Ring
+        </option>
+
+        <option value="Bracelet">
+          Bracelet
+        </option>
+
+        <option value="Kada">
+          Kada
+        </option>
+
+        <option value="Bangles">
+          Bangles
+        </option>
+
+        <option value="Bridal Jewellery Set">
+          Bridal Jewellery Set
+        </option>
+
+        <option value="Bajuband">
+          Bajuband
+        </option>
+
+        <option value="Kamarbandh">
+          Kamarbandh
+        </option>
+
+        <option value="Payal">
+          Payal
+        </option>
+
+        <option value="Chain">
+          Chain
+        </option>
+
+        <option value="Tanmaniya">
+          Tanmaniya
+        </option>
+
+        <option value="Loket">
+          Loket
+        </option>
+
+        <option value="Mala">
+          Mala
+        </option>
+
+      </select>
+
+
+      <label>
+        Description *
+      </label>
+
+      <textarea
+        id="productDescription"
+        placeholder="Example: Premium imitation jewellery"
+      ></textarea>
+
+
+      <label>
+        Product Image
+      </label>
+
+
+      <div class="upload-box">
+
+        <input
+          type="file"
+          id="productImage"
+          accept="image/jpeg,image/png,image/webp"
+        >
+
+        <div class="small">
+
+          📷 Add Product વખતે image પસંદ કરો.
+
+          <br>
+
+          ✏️ Edit વખતે image બદલવી હોય તો જ નવી image પસંદ કરો.
+
+          <br>
+
+          🗑️ Delete કરવાથી Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે.
+
+          <br>
+
+          Maximum size: 5 MB.
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="nextProductName"
+        class="next-name"
+      >
+        📁 Checking next image number...
+      </div>
+
+
+      <div
+        id="imagePreview"
+        class="preview"
+      >
+
+        <img
+          id="previewImage"
+          src=""
+          alt="Product Preview"
+        >
+
+      </div>
+
+
+      <div
+        id="progressBox"
+        class="progress-box"
+      >
+
+        <div class="progress-bar-bg">
+
+          <div
+            id="progressBar"
+            class="progress-bar"
+          ></div>
+
+        </div>
+
+
+        <div
+          id="progressText"
+          class="progress-text"
+        >
+          Preparing...
+        </div>
+
+      </div>
+
+
+      <div
+        id="urlBox"
+        class="url-box"
+      ></div>
+
+
+      <div
+        id="debugBox"
+        class="debug-box"
+      ></div>
+
+
+      <div class="form-buttons">
+
+        <button
+          id="saveButton"
+          onclick="saveProduct()"
+        >
+          ➕ Add Product
+        </button>
+
+
+        <button
+          id="cancelButton"
+          class="cancel-button"
+          onclick="cancelEdit()"
+          style="display:none;"
+        >
+          Cancel Edit
+        </button>
+
+      </div>
 
 
       <button
-        id="loginButton"
-        class="main-button"
-        onclick="loginAdmin()"
+        class="logout"
+        onclick="logoutAdmin()"
       >
-        🔐 Login
+        Logout
       </button>
 
 
       <div
-        id="loginMessage"
+        id="productMessage"
         class="message"
       ></div>
 
     </div>
 
 
-    <!-- ADMIN PANEL -->
+    <!-- ALL PRODUCTS -->
 
-    <div
-      id="adminPanel"
-      class="admin-panel"
-    >
+    <div class="card">
 
+      <div class="products-title">
 
-      <!-- ADD / EDIT -->
-
-      <div class="card">
-
-
-        <div class="status">
-          ✅ Admin logged in
-        </div>
-
-
-        <h2 id="formTitle">
-          ➕ Add New Product
+        <h2>
+          📦 All Products
         </h2>
 
 
-        <label>
-          Product Name *
-        </label>
-
-        <input
-          type="text"
-          id="productName"
-          placeholder="Example: Royal Green Drop Set"
-        >
-
-
-        <label>
-          Price *
-        </label>
-
-        <input
-          type="number"
-          id="productPrice"
-          placeholder="Example: 599"
-          min="0"
-          step="1"
-        >
-
-
-        <label>
-          Category *
-        </label>
-
-
-        <!-- 21 CATEGORIES -->
-
-        <select id="productCategory">
-
-          <option value="">
-            Select Category
-          </option>
-
-          <option value="Necklace Set">
-            Necklace Set
-          </option>
-
-          <option value="Long Necklace">
-            Long Necklace
-          </option>
-
-          <option value="Short Necklace">
-            Short Necklace
-          </option>
-
-          <option value="Bridal Necklace">
-            Bridal Necklace
-          </option>
-
-          <option value="AD Necklace">
-            AD Necklace
-          </option>
-
-          <option value="Pendant Set">
-            Pendant Set
-          </option>
-
-          <option value="Mangalsutra">
-            Mangalsutra
-          </option>
-
-          <option value="Earrings">
-            Earrings
-          </option>
-
-          <option value="Finger Ring">
-            Finger Ring
-          </option>
-
-          <option value="Adjustable Ring">
-            Adjustable Ring
-          </option>
-
-          <option value="Bracelet">
-            Bracelet
-          </option>
-
-          <option value="Kada">
-            Kada
-          </option>
-
-          <option value="Bangles">
-            Bangles
-          </option>
-
-          <option value="Bridal Jewellery Set">
-            Bridal Jewellery Set
-          </option>
-
-          <option value="Bajuband">
-            Bajuband
-          </option>
-
-          <option value="Kamarbandh">
-            Kamarbandh
-          </option>
-
-          <option value="Payal">
-            Payal
-          </option>
-
-          <option value="Chain">
-            Chain
-          </option>
-
-          <option value="Tanmaniya">
-            Tanmaniya
-          </option>
-
-          <option value="Loket">
-            Loket
-          </option>
-
-          <option value="Mala">
-            Mala
-          </option>
-
-        </select>
-
-
-        <label>
-          Description *
-        </label>
-
-        <textarea
-          id="productDescription"
-          placeholder="Example: Premium imitation jewellery"
-        ></textarea>
-
-
-        <label>
-          Product Image
-        </label>
-
-
-        <div class="upload-box">
-
-          <input
-            type="file"
-            id="productImage"
-            accept="image/jpeg,image/png,image/webp"
-          >
-
-          <div class="small">
-
-            📷 Add Product વખતે image પસંદ કરો.
-            <br>
-
-            ✏️ Edit વખતે image બદલવી હોય તો જ નવી image પસંદ કરો.
-            <br>
-
-            🗑️ Delete કરવાથી Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે.
-            <br>
-
-            Maximum size: 5 MB.
-
-          </div>
-
-        </div>
-
-
-        <div
-          id="nextProductName"
-          class="next-name"
-        >
-          📁 Checking next image number...
-        </div>
-
-
-        <div
-          id="imagePreview"
-          class="preview"
-        >
-
-          <img
-            id="previewImage"
-            src=""
-            alt="Product Preview"
-          >
-
-        </div>
-
-
-        <div
-          id="progressBox"
-          class="progress-box"
-        >
-
-          <div class="progress-bar-bg">
-
-            <div
-              id="progressBar"
-              class="progress-bar"
-            ></div>
-
-          </div>
-
-
-          <div
-            id="progressText"
-            class="progress-text"
-          >
-            Preparing...
-          </div>
-
-        </div>
-
-
-        <div
-          id="urlBox"
-          class="url-box"
-        ></div>
-
-
-        <div class="form-buttons">
-
-          <button
-            id="saveButton"
-            onclick="saveProduct()"
-          >
-            ➕ Add Product
-          </button>
-
-
-          <button
-            id="cancelButton"
-            class="cancel-button"
-            onclick="cancelEdit()"
-            style="display:none;"
-          >
-            Cancel Edit
-          </button>
-
-        </div>
-
-
         <button
-          class="logout"
-          onclick="logoutAdmin()"
+          class="refresh-btn"
+          onclick="loadProducts()"
         >
-          Logout
+          🔄 Refresh
         </button>
-
-
-        <div
-          id="productMessage"
-          class="message"
-        ></div>
 
       </div>
 
 
-      <!-- ALL PRODUCTS -->
+      <div
+        id="productsList"
+        class="products-grid"
+      >
 
-      <div class="card">
-
-        <div class="products-title">
-
-          <h2>
-            📦 All Products
-          </h2>
-
-
-          <button
-            class="refresh-btn"
-            onclick="loadProducts()"
-          >
-            🔄 Refresh
-          </button>
-
-        </div>
-
-
-        <div
-          id="productsList"
-          class="products-grid"
-        >
-
-          <div class="loading">
-            Loading products...
-          </div>
-
+        <div class="loading">
+          Loading products...
         </div>
 
       </div>
 
     </div>
 
+
   </div>
 
-
-  <!-- FIREBASE -->
-
-  <script type="module">
+</div>
 
 
-    /* =====================================================
-       IMPORTS
-       ===================================================== */
 
-    import {
-      initializeApp
-    } from
-      "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+<!-- FIREBASE -->
+
+<script type="module">
 
 
-    import {
-      getAuth,
-      signInWithEmailAndPassword,
-      onAuthStateChanged,
-      signOut
-    } from
-      "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+  // =====================================================
+  // FIREBASE IMPORTS
+  // =====================================================
+
+  import {
+    initializeApp
+  } from
+    "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-    import {
-      getFirestore,
-      collection,
-      addDoc,
-      getDocs,
-      doc,
-      updateDoc,
-      deleteDoc,
-      serverTimestamp
-    } from
-      "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+  } from
+    "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-    /* =====================================================
-       FIREBASE CONFIG
-       ===================================================== */
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    doc,
+    updateDoc,
+    deleteDoc,
+    serverTimestamp
+  } from
+    "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-    const firebaseConfig = {
 
-      apiKey:
-        "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
 
-      authDomain:
-        "shivam-imitation.firebaseapp.com",
+  // =====================================================
+  // FIREBASE CONFIG
+  // =====================================================
 
-      projectId:
-        "shivam-imitation",
+  const firebaseConfig = {
 
-      storageBucket:
-        "shivam-imitation.firebasestorage.app",
+    apiKey:
+      "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
 
-      messagingSenderId:
-        "625171137884",
+    authDomain:
+      "shivam-imitation.firebaseapp.com",
 
-      appId:
-        "1:625171137884:web:d1928af5e11fad077e6d99",
+    projectId:
+      "shivam-imitation",
 
-      measurementId:
-        "G-ER1ETZSLPD"
+    storageBucket:
+      "shivam-imitation.firebasestorage.app",
+
+    messagingSenderId:
+      "625171137884",
+
+    appId:
+      "1:625171137884:web:d1928af5e11fad077e6d99",
+
+    measurementId:
+      "G-ER1ETZSLPD"
+
+  };
+
+
+
+  // =====================================================
+  // CLOUDFLARE WORKER URL
+  // =====================================================
+
+  const WORKER_URL =
+    "https://shivam-image-upload-api.dhruviljarsaniya030.workers.dev";
+
+
+
+  // =====================================================
+  // ADMIN EMAIL
+  // =====================================================
+
+  const ADMIN_EMAIL =
+    "dhruviljarsaniya030@gmail.com";
+
+
+
+  // =====================================================
+  // INITIALIZE FIREBASE
+  // =====================================================
+
+  const app =
+    initializeApp(firebaseConfig);
+
+
+  const auth =
+    getAuth(app);
+
+
+  const db =
+    getFirestore(app);
+
+
+
+  // =====================================================
+  // EDIT STATE
+  // =====================================================
+
+  let editingProductId = null;
+
+  let editingOldImage = "";
+
+  let editingOldImageName = "";
+
+
+
+  // =====================================================
+  // MESSAGE
+  // =====================================================
+
+  function showMessage(
+    id,
+    text,
+    type
+  ) {
+
+    const el =
+      document.getElementById(id);
+
+
+    if (!el) {
+      return;
+    }
+
+
+    el.textContent =
+      text;
+
+
+    el.className =
+      "message " + type;
+
+  }
+
+
+
+  // =====================================================
+  // DEBUG
+  // =====================================================
+
+  function showDebug(text) {
+
+    const box =
+      document.getElementById(
+        "debugBox"
+      );
+
+
+    if (!box) {
+      return;
+    }
+
+
+    box.textContent =
+      text;
+
+
+    box.style.display =
+      "block";
+
+  }
+
+
+
+  // =====================================================
+  // LOGIN
+  // =====================================================
+
+  window.loginAdmin =
+    async function () {
+
+      const email =
+        document
+          .getElementById(
+            "loginEmail"
+          )
+          .value
+          .trim();
+
+
+      const password =
+        document
+          .getElementById(
+            "loginPassword"
+          )
+          .value;
+
+
+      const button =
+        document.getElementById(
+          "loginButton"
+        );
+
+
+      if (
+        !email ||
+        !password
+      ) {
+
+        showMessage(
+          "loginMessage",
+          "Please enter email and password.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      if (
+        email.toLowerCase() !==
+        ADMIN_EMAIL.toLowerCase()
+      ) {
+
+        showMessage(
+          "loginMessage",
+          "This email is not authorized.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      try {
+
+        button.disabled =
+          true;
+
+
+        button.textContent =
+          "Logging in...";
+
+
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "LOGIN ERROR:",
+          error
+        );
+
+
+        showMessage(
+          "loginMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Login failed."
+          ),
+          "error"
+        );
+
+      }
+
+      finally {
+
+        button.disabled =
+          false;
+
+
+        button.textContent =
+          "🔐 Login";
+
+      }
 
     };
 
 
-    /* =====================================================
-       CLOUDFLARE WORKER
-       ===================================================== */
 
-    const WORKER_URL =
-      "https://shivam-image-upload-api.dhruviljarsaniya030.workers.dev/";
+  // =====================================================
+  // AUTH STATE
+  // =====================================================
 
+  onAuthStateChanged(
+    auth,
+    async function (user) {
 
-    /* =====================================================
-       ADMIN EMAIL
-       ===================================================== */
+      const loginPanel =
+        document.getElementById(
+          "loginPanel"
+        );
 
-    const ADMIN_EMAIL =
-      "dhruviljarsaniya030@gmail.com";
 
+      const adminPanel =
+        document.getElementById(
+          "adminPanel"
+        );
 
-    /* =====================================================
-       INITIALIZE
-       ===================================================== */
 
-    const app =
-      initializeApp(firebaseConfig);
+      if (
+        user &&
+        user.email &&
+        user.email.toLowerCase() ===
+        ADMIN_EMAIL.toLowerCase()
+      ) {
 
+        loginPanel.style.display =
+          "none";
 
-    const auth =
-      getAuth(app);
 
+        adminPanel.style.display =
+          "block";
 
-    const db =
-      getFirestore(app);
 
+        await findNextProductNumber();
 
-    /* =====================================================
-       EDIT STATE
-       ===================================================== */
-
-    let editingProductId = null;
-
-    let editingOldImage = "";
-
-    let editingOldImageName = "";
-
-
-    /* =====================================================
-       MESSAGE
-       ===================================================== */
-
-    function showMessage(
-      id,
-      text,
-      type
-    ) {
-
-      const el =
-        document.getElementById(id);
-
-
-      if (!el) return;
-
-
-      el.textContent = text;
-
-
-      el.className =
-        "message " + type;
-
-    }
-
-
-    /* =====================================================
-       LOGIN
-       ===================================================== */
-
-    window.loginAdmin =
-      async function () {
-
-        const email =
-          document
-            .getElementById("loginEmail")
-            .value
-            .trim();
-
-
-        const password =
-          document
-            .getElementById("loginPassword")
-            .value;
-
-
-        const button =
-          document.getElementById(
-            "loginButton"
-          );
-
-
-        if (!email || !password) {
-
-          showMessage(
-            "loginMessage",
-            "Please enter email and password.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        if (
-          email.toLowerCase() !==
-          ADMIN_EMAIL.toLowerCase()
-        ) {
-
-          showMessage(
-            "loginMessage",
-            "This email is not authorized.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        try {
-
-          button.disabled = true;
-
-          button.textContent =
-            "Logging in...";
-
-
-          await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-          );
-
-        }
-
-        catch (error) {
-
-          console.error(error);
-
-
-          showMessage(
-            "loginMessage",
-            "❌ " +
-            (
-              error.message ||
-              "Login failed."
-            ),
-            "error"
-          );
-
-        }
-
-        finally {
-
-          button.disabled = false;
-
-          button.textContent =
-            "🔐 Login";
-
-        }
-
-      };
-
-
-    /* =====================================================
-       AUTH STATE
-       ===================================================== */
-
-    onAuthStateChanged(
-      auth,
-      async function (user) {
-
-        const loginPanel =
-          document.getElementById(
-            "loginPanel"
-          );
-
-
-        const adminPanel =
-          document.getElementById(
-            "adminPanel"
-          );
-
-
-        if (
-          user &&
-          user.email &&
-          user.email.toLowerCase() ===
-          ADMIN_EMAIL.toLowerCase()
-        ) {
-
-          loginPanel.style.display =
-            "none";
-
-
-          adminPanel.style.display =
-            "block";
-
-
-          await findNextProductNumber();
-
-          await loadProducts();
-
-        }
-
-        else {
-
-          loginPanel.style.display =
-            "block";
-
-
-          adminPanel.style.display =
-            "none";
-
-        }
+        await loadProducts();
 
       }
-    );
+
+      else {
+
+        loginPanel.style.display =
+          "block";
 
 
-    /* =====================================================
-       LOGOUT
-       ===================================================== */
+        adminPanel.style.display =
+          "none";
 
-    window.logoutAdmin =
-      async function () {
+      }
 
-        await signOut(auth);
-
-      };
+    }
+  );
 
 
-    /* =====================================================
-       FIND NEXT PRODUCT NUMBER
-       ===================================================== */
 
-    async function findNextProductNumber() {
+  // =====================================================
+  // LOGOUT
+  // =====================================================
 
-      try {
+  window.logoutAdmin =
+    async function () {
 
-        const snapshot =
-          await getDocs(
-            collection(db, "products")
-          );
+      await signOut(auth);
 
-
-        let highest = 0;
+    };
 
 
-        snapshot.forEach(function(item) {
+
+  // =====================================================
+  // FIND NEXT PRODUCT NUMBER
+  // =====================================================
+
+  async function findNextProductNumber() {
+
+    try {
+
+      const snapshot =
+        await getDocs(
+          collection(
+            db,
+            "products"
+          )
+        );
+
+
+      let highest =
+        0;
+
+
+      snapshot.forEach(
+        function (item) {
 
           const data =
             item.data();
 
 
           const imageName =
-            data.imageName || "";
+            data.imageName ||
+            "";
 
 
           const match =
-            String(imageName).match(
+            String(
+              imageName
+            ).match(
               /^product-(\d+)\.(jpg|jpeg|png|webp)$/i
             );
 
@@ -1467,175 +1229,232 @@
           if (match) {
 
             const number =
-              Number(match[1]);
+              Number(
+                match[1]
+              );
 
 
-            if (number > highest) {
+            if (
+              number >
+              highest
+            ) {
 
-              highest = number;
+              highest =
+                number;
 
             }
 
           }
 
-        });
-
-
-        const next =
-          highest + 1;
-
-
-        window.nextProductNumber =
-          next;
-
-
-        document.getElementById(
-          "nextProductName"
-        ).textContent =
-          "📁 Next image: product-" +
-          next +
-          ".jpg";
-
-      }
-
-      catch (error) {
-
-        console.error(error);
-
-
-        window.nextProductNumber =
-          1;
-
-
-        document.getElementById(
-          "nextProductName"
-        ).textContent =
-          "📁 Next image: product-1.jpg";
-
-      }
-
-    }
-
-
-    /* =====================================================
-       IMAGE PREVIEW
-       ===================================================== */
-
-    document
-      .getElementById("productImage")
-      .addEventListener(
-        "change",
-        function () {
-
-          const file =
-            this.files[0];
-
-
-          const preview =
-            document.getElementById(
-              "imagePreview"
-            );
-
-
-          const image =
-            document.getElementById(
-              "previewImage"
-            );
-
-
-          if (!file) {
-
-            preview.style.display =
-              "none";
-
-            return;
-
-          }
-
-
-          const allowed = [
-
-            "image/jpeg",
-
-            "image/png",
-
-            "image/webp"
-
-          ];
-
-
-          if (
-            !allowed.includes(
-              file.type
-            )
-          ) {
-
-            this.value = "";
-
-            preview.style.display =
-              "none";
-
-
-            showMessage(
-              "productMessage",
-              "❌ JPG, PNG or WEBP only.",
-              "error"
-            );
-
-
-            return;
-
-          }
-
-
-          if (
-            file.size >
-            5 * 1024 * 1024
-          ) {
-
-            this.value = "";
-
-            preview.style.display =
-              "none";
-
-
-            showMessage(
-              "productMessage",
-              "❌ Image must be smaller than 5 MB.",
-              "error"
-            );
-
-
-            return;
-
-          }
-
-
-          image.src =
-            URL.createObjectURL(file);
-
-
-          preview.style.display =
-            "block";
-
         }
       );
 
 
-    /* =====================================================
-       WORKER REQUEST
-       ===================================================== */
+      const next =
+        highest + 1;
 
-    async function workerRequest(formData) {
+
+      window.nextProductNumber =
+        next;
+
+
+      document.getElementById(
+        "nextProductName"
+      ).textContent =
+        "📁 Next image: product-" +
+        next +
+        ".jpg";
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "NEXT NUMBER ERROR:",
+        error
+      );
+
+
+      window.nextProductNumber =
+        1;
+
+
+      document.getElementById(
+        "nextProductName"
+      ).textContent =
+        "📁 Next image: product-1.jpg";
+
+    }
+
+  }
+
+
+
+  // =====================================================
+  // IMAGE PREVIEW
+  // =====================================================
+
+  document
+    .getElementById(
+      "productImage"
+    )
+    .addEventListener(
+      "change",
+      function () {
+
+        const file =
+          this.files[0];
+
+
+        const preview =
+          document.getElementById(
+            "imagePreview"
+          );
+
+
+        const image =
+          document.getElementById(
+            "previewImage"
+          );
+
+
+        if (!file) {
+
+          preview.style.display =
+            "none";
+
+          return;
+
+        }
+
+
+        const allowed = [
+
+          "image/jpeg",
+
+          "image/jpg",
+
+          "image/png",
+
+          "image/webp"
+
+        ];
+
+
+        if (
+          !allowed.includes(
+            file.type
+          )
+        ) {
+
+          this.value =
+            "";
+
+
+          preview.style.display =
+            "none";
+
+
+          showMessage(
+            "productMessage",
+            "❌ JPG, PNG or WEBP only.",
+            "error"
+          );
+
+
+          return;
+
+        }
+
+
+        if (
+          file.size >
+          5 * 1024 * 1024
+        ) {
+
+          this.value =
+            "";
+
+
+          preview.style.display =
+            "none";
+
+
+          showMessage(
+            "productMessage",
+            "❌ Image must be smaller than 5 MB.",
+            "error"
+          );
+
+
+          return;
+
+        }
+
+
+        image.src =
+          URL.createObjectURL(
+            file
+          );
+
+
+        preview.style.display =
+          "block";
+
+      }
+    );
+
+
+
+  // =====================================================
+  // WORKER REQUEST
+  // =====================================================
+
+  async function workerRequest(
+    formData
+  ) {
+
+    try {
+
+      console.log(
+        "WORKER REQUEST:",
+        WORKER_URL
+      );
+
 
       const response =
         await fetch(
           WORKER_URL,
           {
-            method: "POST",
-            body: formData
+            method:
+              "POST",
+
+            body:
+              formData,
+
+            mode:
+              "cors",
+
+            cache:
+              "no-store"
           }
         );
+
+
+      console.log(
+        "WORKER STATUS:",
+        response.status
+      );
+
+
+      const text =
+        await response.text();
+
+
+      console.log(
+        "WORKER RESPONSE:",
+        text
+      );
 
 
       let result;
@@ -1644,21 +1463,36 @@
       try {
 
         result =
-          await response.json();
+          JSON.parse(
+            text
+          );
 
       }
 
       catch {
 
         throw new Error(
-          "Worker returned invalid response."
+          "Worker response JSON નથી: " +
+          text
         );
 
       }
 
 
       if (
-        !response.ok ||
+        !response.ok
+      ) {
+
+        throw new Error(
+          result.message ||
+          "Worker HTTP error: " +
+          response.status
+        );
+
+      }
+
+
+      if (
         !result.success
       ) {
 
@@ -1674,529 +1508,611 @@
 
     }
 
+    catch (error) {
 
-    /* =====================================================
-       UPLOAD IMAGE
-       ===================================================== */
-
-    async function uploadImageToWorker(file) {
-
-      const formData =
-        new FormData();
-
-
-      formData.append(
-        "action",
-        "upload"
+      console.error(
+        "WORKER FETCH ERROR:",
+        error
       );
-
-
-      formData.append(
-        "image",
-        file
-      );
-
-
-      return await workerRequest(
-        formData
-      );
-
-    }
-
-
-    /* =====================================================
-       DELETE IMAGE
-       ===================================================== */
-
-    async function deleteImageFromGitHub(
-      fileName
-    ) {
-
-      if (!fileName) {
-
-        return {
-          success: true,
-          skipped: true
-        };
-
-      }
 
 
       if (
-        !/^product-\d+\.(jpg|jpeg|png|webp)$/i.test(
-          fileName
-        )
+        error instanceof TypeError
       ) {
 
         throw new Error(
-          "Invalid GitHub product image name."
+          "Cloudflare Worker સાથે connection થતું નથી. Worker URL / CORS / deployment check કરો."
         );
 
       }
 
 
-      const formData =
-        new FormData();
+      throw error;
+
+    }
+
+  }
 
 
-      formData.append(
-        "action",
-        "delete"
-      );
+
+  // =====================================================
+  // UPLOAD IMAGE
+  // =====================================================
+
+  async function uploadImageToWorker(
+    file
+  ) {
+
+    const formData =
+      new FormData();
 
 
-      formData.append(
-        "fileName",
+    formData.append(
+      "action",
+      "upload"
+    );
+
+
+    formData.append(
+      "image",
+      file
+    );
+
+
+    return await workerRequest(
+      formData
+    );
+
+  }
+
+
+
+  // =====================================================
+  // DELETE IMAGE
+  // =====================================================
+
+  async function deleteImageFromGitHub(
+    fileName
+  ) {
+
+    if (!fileName) {
+
+      return {
+        success: true,
+        skipped: true
+      };
+
+    }
+
+
+    if (
+      !/^product-\d+\.(jpg|jpeg|png|webp)$/i.test(
         fileName
-      );
+      )
+    ) {
 
-
-      return await workerRequest(
-        formData
+      throw new Error(
+        "Invalid GitHub product image name."
       );
 
     }
 
 
-    /* =====================================================
-       SAVE PRODUCT
-       ===================================================== */
-
-    window.saveProduct =
-      async function () {
+    const formData =
+      new FormData();
 
 
-        const name =
-          document
-            .getElementById("productName")
-            .value
-            .trim();
+    formData.append(
+      "action",
+      "delete"
+    );
 
 
-        const priceText =
-          document
-            .getElementById("productPrice")
-            .value
-            .trim();
+    formData.append(
+      "fileName",
+      fileName
+    );
 
 
-        const category =
-          document
-            .getElementById("productCategory")
-            .value
-            .trim();
+    return await workerRequest(
+      formData
+    );
+
+  }
 
 
-        const description =
-          document
-            .getElementById("productDescription")
-            .value
-            .trim();
+
+  // =====================================================
+  // SAVE PRODUCT
+  // =====================================================
+
+  window.saveProduct =
+    async function () {
+
+      const name =
+        document
+          .getElementById(
+            "productName"
+          )
+          .value
+          .trim();
 
 
-        const imageInput =
+      const priceText =
+        document
+          .getElementById(
+            "productPrice"
+          )
+          .value
+          .trim();
+
+
+      const category =
+        document
+          .getElementById(
+            "productCategory"
+          )
+          .value
+          .trim();
+
+
+      const description =
+        document
+          .getElementById(
+            "productDescription"
+          )
+          .value
+          .trim();
+
+
+      const imageInput =
+        document.getElementById(
+          "productImage"
+        );
+
+
+      const file =
+        imageInput.files[0];
+
+
+      const button =
+        document.getElementById(
+          "saveButton"
+        );
+
+
+      const debugBox =
+        document.getElementById(
+          "debugBox"
+        );
+
+
+      debugBox.style.display =
+        "none";
+
+
+      // ===============================================
+      // VALIDATION
+      // ===============================================
+
+      if (
+        !name ||
+        !priceText ||
+        !category ||
+        !description
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Please fill all product details.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      if (
+        editingProductId === null &&
+        !file
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Please select product image.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      const price =
+        Number(
+          priceText
+        );
+
+
+      if (
+        Number.isNaN(price) ||
+        price < 0
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Enter a valid price.",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      try {
+
+        button.disabled =
+          true;
+
+
+        const isEditing =
+          Boolean(
+            editingProductId
+          );
+
+
+        button.textContent =
+          isEditing
+            ? "Updating..."
+            : "Uploading...";
+
+
+        document.getElementById(
+          "progressBox"
+        ).style.display =
+          "block";
+
+
+        document.getElementById(
+          "progressBar"
+        ).style.width =
+          "10%";
+
+
+        document.getElementById(
+          "progressText"
+        ).textContent =
+          "Preparing...";
+
+
+        let imageURL =
+          editingOldImage;
+
+
+        let imageName =
+          editingOldImageName;
+
+
+        let newImageName =
+          "";
+
+
+        // =============================================
+        // UPLOAD IMAGE
+        // =============================================
+
+        if (file) {
+
           document.getElementById(
-            "productImage"
-          );
-
-
-        const file =
-          imageInput.files[0];
-
-
-        const button =
-          document.getElementById(
-            "saveButton"
-          );
-
-
-        /* VALIDATION */
-
-
-        if (
-          !name ||
-          !priceText ||
-          !category ||
-          !description
-        ) {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Please fill all product details.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        if (
-          editingProductId === null &&
-          !file
-        ) {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Please select product image.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        const price =
-          Number(priceText);
-
-
-        if (
-          Number.isNaN(price) ||
-          price < 0
-        ) {
-
-          showMessage(
-            "productMessage",
-            "⚠️ Enter a valid price.",
-            "error"
-          );
-
-          return;
-
-        }
-
-
-        try {
-
-          button.disabled = true;
-
-
-          const isEditing =
-            Boolean(editingProductId);
-
-
-          button.textContent =
-            isEditing
-              ? "Updating..."
-              : "Uploading...";
-
-
-          document.getElementById(
-            "progressBox"
-          ).style.display =
-            "block";
+            "progressText"
+          ).textContent =
+            "📷 Uploading image to GitHub...";
 
 
           document.getElementById(
             "progressBar"
           ).style.width =
-            "10%";
+            "25%";
 
 
-          let imageURL =
-            editingOldImage;
+          const result =
+            await uploadImageToWorker(
+              file
+            );
 
 
-          let imageName =
-            editingOldImageName;
+          if (
+            !result.image ||
+            !result.fileName
+          ) {
 
-
-          let newImageName = "";
-
-
-          /* UPLOAD NEW IMAGE */
-
-
-          if (file) {
-
-            document.getElementById(
-              "progressText"
-            ).textContent =
-              "📷 Uploading image to GitHub...";
-
-
-            const result =
-              await uploadImageToWorker(
-                file
-              );
-
-
-            if (
-              !result.image ||
-              !result.fileName
-            ) {
-
-              throw new Error(
-                "Worker did not return image URL or file name."
-              );
-
-            }
-
-
-            imageURL =
-              result.image;
-
-
-            imageName =
-              result.fileName;
-
-
-            newImageName =
-              result.fileName;
-
-
-            document.getElementById(
-              "progressBar"
-            ).style.width =
-              "60%";
-
-
-            document.getElementById(
-              "urlBox"
-            ).textContent =
-              imageURL;
-
-
-            document.getElementById(
-              "urlBox"
-            ).style.display =
-              "block";
+            throw new Error(
+              "Worker did not return image URL or file name."
+            );
 
           }
 
 
-          /* PRODUCT DATA */
+          imageURL =
+            result.image;
 
 
-          const productData = {
-
-            name:
-              name,
-
-            price:
-              price,
-
-            category:
-              category,
-
-            description:
-              description,
-
-            image:
-              imageURL,
-
-            imageName:
-              imageName
-
-          };
+          imageName =
+            result.fileName;
 
 
-          /* EDIT */
+          newImageName =
+            result.fileName;
 
 
-          if (editingProductId) {
+          document.getElementById(
+            "progressBar"
+          ).style.width =
+            "60%";
+
+
+          document.getElementById(
+            "urlBox"
+          ).textContent =
+            imageURL;
+
+
+          document.getElementById(
+            "urlBox"
+          ).style.display =
+            "block";
+
+        }
+
+
+        // =============================================
+        // PRODUCT DATA
+        // =============================================
+
+        const productData = {
+
+          name:
+            name,
+
+          price:
+            price,
+
+          category:
+            category,
+
+          description:
+            description,
+
+          image:
+            imageURL,
+
+          imageName:
+            imageName
+
+        };
+
+
+        // =============================================
+        // EDIT
+        // =============================================
+
+        if (
+          editingProductId
+        ) {
+
+          document.getElementById(
+            "progressText"
+          ).textContent =
+            "💾 Updating product...";
+
+
+          await updateDoc(
+            doc(
+              db,
+              "products",
+              editingProductId
+            ),
+            productData
+          );
+
+
+          // ===========================================
+          // DELETE OLD IMAGE
+          // ===========================================
+
+          if (
+            file &&
+            editingOldImageName &&
+            editingOldImageName !==
+            newImageName
+          ) {
 
             document.getElementById(
               "progressText"
             ).textContent =
-              "💾 Updating product...";
+              "🗑️ Removing old GitHub image...";
 
 
-            await updateDoc(
-              doc(
+            try {
+
+              await deleteImageFromGitHub(
+                editingOldImageName
+              );
+
+            }
+
+            catch (
+              deleteError
+            ) {
+
+              console.error(
+                "OLD IMAGE DELETE ERROR:",
+                deleteError
+              );
+
+            }
+
+          }
+
+
+          showMessage(
+            "productMessage",
+            "✅ Product updated successfully!",
+            "success"
+          );
+
+        }
+
+
+        // =============================================
+        // ADD
+        // =============================================
+
+        else {
+
+          document.getElementById(
+            "progressText"
+          ).textContent =
+            "💾 Saving product to Firebase...";
+
+
+          productData.createdAt =
+            serverTimestamp();
+
+
+          const ref =
+            await addDoc(
+              collection(
                 db,
-                "products",
-                editingProductId
+                "products"
               ),
               productData
             );
 
 
-            /*
-              Delete old image only after
-              Firestore update succeeds.
-            */
-
-
-            if (
-              file &&
-              editingOldImageName &&
-              editingOldImageName !== newImageName
-            ) {
-
-              document.getElementById(
-                "progressText"
-              ).textContent =
-                "🗑️ Removing old GitHub image...";
-
-
-              try {
-
-                await deleteImageFromGitHub(
-                  editingOldImageName
-                );
-
-              }
-
-              catch (deleteError) {
-
-                console.error(
-                  "OLD IMAGE DELETE ERROR:",
-                  deleteError
-                );
-
-              }
-
-            }
-
-
-            showMessage(
-              "productMessage",
-              "✅ Product updated successfully!",
-              "success"
-            );
-
-          }
-
-
-          /* ADD */
-
-
-          else {
-
-            document.getElementById(
-              "progressText"
-            ).textContent =
-              "💾 Saving product to Firebase...";
-
-
-            productData.createdAt =
-              serverTimestamp();
-
-
-            const ref =
-              await addDoc(
-                collection(
-                  db,
-                  "products"
-                ),
-                productData
-              );
-
-
-            console.log(
-              "Product added:",
-              ref.id
-            );
-
-
-            showMessage(
-              "productMessage",
-              "✅ Product added successfully!",
-              "success"
-            );
-
-          }
-
-
-          /* COMPLETE */
-
-
-          document.getElementById(
-            "progressBar"
-          ).style.width =
-            "100%";
-
-
-          document.getElementById(
-            "progressText"
-          ).textContent =
-            "✅ Complete";
-
-
-          resetForm();
-
-
-          await findNextProductNumber();
-
-          await loadProducts();
-
-        }
-
-        catch (error) {
-
-          console.error(
-            "SAVE ERROR:",
-            error
+          console.log(
+            "PRODUCT ADDED:",
+            ref.id
           );
 
 
           showMessage(
             "productMessage",
-            "❌ " +
-            (
-              error.message ||
-              "Operation failed."
-            ),
-            "error"
+            "✅ Product added successfully!",
+            "success"
           );
 
         }
 
-        finally {
 
-          button.disabled = false;
+        // =============================================
+        // COMPLETE
+        // =============================================
 
-
-          button.textContent =
-            editingProductId
-              ? "Update Product"
-              : "➕ Add Product";
-
-        }
-
-      };
+        document.getElementById(
+          "progressBar"
+        ).style.width =
+          "100%";
 
 
-    /* =====================================================
-       LOAD PRODUCTS
-       ===================================================== */
-
-    window.loadProducts =
-      async function () {
+        document.getElementById(
+          "progressText"
+        ).textContent =
+          "✅ Complete";
 
 
-        const container =
-          document.getElementById(
-            "productsList"
+        resetForm();
+
+
+        await findNextProductNumber();
+
+        await loadProducts();
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "SAVE ERROR:",
+          error
+        );
+
+
+        showMessage(
+          "productMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Operation failed."
+          ),
+          "error"
+        );
+
+
+        showDebug(
+          error.stack ||
+          error.message ||
+          String(error)
+        );
+
+      }
+
+      finally {
+
+        button.disabled =
+          false;
+
+
+        button.textContent =
+          editingProductId
+            ? "Update Product"
+            : "➕ Add Product";
+
+      }
+
+    };
+
+
+
+  // =====================================================
+  // LOAD PRODUCTS
+  // =====================================================
+
+  window.loadProducts =
+    async function () {
+
+      const container =
+        document.getElementById(
+          "productsList"
+        );
+
+
+      container.innerHTML = `
+        <div class="loading">
+          Loading all Firebase products...
+        </div>
+      `;
+
+
+      try {
+
+        const snapshot =
+          await getDocs(
+            collection(
+              db,
+              "products"
+            )
           );
 
 
-        container.innerHTML = `
-
-          <div class="loading">
-            Loading all Firebase products...
-          </div>
-
-        `;
+        const products =
+          [];
 
 
-        try {
-
-          const snapshot =
-            await getDocs(
-              collection(
-                db,
-                "products"
-              )
-            );
-
-
-          const products = [];
-
-
-          snapshot.forEach(function(item) {
+        snapshot.forEach(
+          function (item) {
 
             products.push({
 
@@ -2208,56 +2124,58 @@
 
             });
 
-          });
+          }
+        );
 
 
-          /*
-            Newest products first.
-            No Firestore orderBy required.
-          */
-
-
-          products.sort(function(a, b) {
+        products.sort(
+          function (a, b) {
 
             const aTime =
               a.data.createdAt &&
-              typeof a.data.createdAt.toMillis === "function"
+              typeof a.data.createdAt.toMillis ===
+              "function"
                 ? a.data.createdAt.toMillis()
                 : 0;
 
 
             const bTime =
               b.data.createdAt &&
-              typeof b.data.createdAt.toMillis === "function"
+              typeof b.data.createdAt.toMillis ===
+              "function"
                 ? b.data.createdAt.toMillis()
                 : 0;
 
 
             return bTime - aTime;
 
-          });
-
-
-          container.innerHTML = "";
-
-
-          if (products.length === 0) {
-
-            container.innerHTML = `
-
-              <div class="empty">
-                No products found in Firebase.
-              </div>
-
-            `;
-
-
-            return;
-
           }
+        );
 
 
-          products.forEach(function(item) {
+        container.innerHTML =
+          "";
+
+
+        if (
+          products.length ===
+          0
+        ) {
+
+          container.innerHTML = `
+            <div class="empty">
+              No products found in Firebase.
+            </div>
+          `;
+
+
+          return;
+
+        }
+
+
+        products.forEach(
+          function (item) {
 
             const data =
               item.data;
@@ -2367,14 +2285,13 @@
             `;
 
 
-            /* EDIT */
-
-
             card
-              .querySelector(".edit-btn")
+              .querySelector(
+                ".edit-btn"
+              )
               .addEventListener(
                 "click",
-                function() {
+                function () {
 
                   editProduct(
                     id,
@@ -2385,14 +2302,13 @@
               );
 
 
-            /* DELETE */
-
-
             card
-              .querySelector(".delete-btn")
+              .querySelector(
+                ".delete-btn"
+              )
               .addEventListener(
                 "click",
-                function() {
+                function () {
 
                   deleteProduct(
                     id,
@@ -2407,460 +2323,486 @@
               card
             );
 
-          });
-
-        }
-
-        catch (error) {
-
-          console.error(
-            "LOAD PRODUCTS ERROR:",
-            error
-          );
-
-
-          container.innerHTML = `
-
-            <div class="empty">
-
-              ❌ Products could not be loaded.
-
-              <br><br>
-
-              ${escapeHTML(error.message)}
-
-            </div>
-
-          `;
-
-        }
-
-      };
-
-
-    /* =====================================================
-       EDIT PRODUCT
-       ===================================================== */
-
-    function editProduct(
-      id,
-      data
-    ) {
-
-      editingProductId =
-        id;
-
-
-      editingOldImage =
-        data.image ||
-        "";
-
-
-      editingOldImageName =
-        data.imageName ||
-        "";
-
-
-      document.getElementById(
-        "formTitle"
-      ).textContent =
-        "✏️ Edit Product";
-
-
-      document.getElementById(
-        "saveButton"
-      ).textContent =
-        "Update Product";
-
-
-      document.getElementById(
-        "cancelButton"
-      ).style.display =
-        "block";
-
-
-      document.getElementById(
-        "productName"
-      ).value =
-        data.name ||
-        "";
-
-
-      document.getElementById(
-        "productPrice"
-      ).value =
-        data.price ??
-        "";
-
-
-      document.getElementById(
-        "productCategory"
-      ).value =
-        data.category ||
-        "";
-
-
-      document.getElementById(
-        "productDescription"
-      ).value =
-        data.description ||
-        "";
-
-
-      document.getElementById(
-        "productImage"
-      ).value =
-        "";
-
-
-      const preview =
-        document.getElementById(
-          "imagePreview"
-        );
-
-
-      const previewImage =
-        document.getElementById(
-          "previewImage"
-        );
-
-
-      if (data.image) {
-
-        previewImage.src =
-          data.image;
-
-
-        preview.style.display =
-          "block";
-
-      }
-
-      else {
-
-        preview.style.display =
-          "none";
-
-      }
-
-
-      document
-        .getElementById("formTitle")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-
-      showMessage(
-        "productMessage",
-        "✏️ Editing: " +
-        (
-          data.name ||
-          "Product"
-        ),
-        "info"
-      );
-
-    }
-
-
-    /* =====================================================
-       DELETE PRODUCT
-       ===================================================== */
-
-    async function deleteProduct(
-      id,
-      data
-    ) {
-
-
-      const name =
-        data.name ||
-        "Unnamed Product";
-
-
-      const imageName =
-        data.imageName ||
-        "";
-
-
-      const confirmed =
-        confirm(
-          "Delete this product?\n\n" +
-          name +
-          "\n\n" +
-          "Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે."
-        );
-
-
-      if (!confirmed) {
-
-        return;
-
-      }
-
-
-      try {
-
-        showMessage(
-          "productMessage",
-          "⏳ Deleting product...",
-          "info"
-        );
-
-
-        /*
-          STEP 1
-          Delete Firebase product
-        */
-
-
-        await deleteDoc(
-          doc(
-            db,
-            "products",
-            id
-          )
-        );
-
-
-        /*
-          STEP 2
-          Delete GitHub image
-        */
-
-
-        if (imageName) {
-
-          try {
-
-            await deleteImageFromGitHub(
-              imageName
-            );
-
           }
-
-          catch (githubError) {
-
-            console.error(
-              "GITHUB DELETE ERROR:",
-              githubError
-            );
-
-
-            showMessage(
-              "productMessage",
-              "⚠️ Product deleted from Firebase, but GitHub image could not be deleted: " +
-              githubError.message,
-              "error"
-            );
-
-
-            await loadProducts();
-
-            await findNextProductNumber();
-
-            return;
-
-          }
-
-        }
-
-
-        showMessage(
-          "productMessage",
-          "🗑️ Product and GitHub image deleted successfully!",
-          "success"
         );
-
-
-        await loadProducts();
-
-        await findNextProductNumber();
 
       }
 
       catch (error) {
 
         console.error(
-          "DELETE ERROR:",
+          "LOAD PRODUCTS ERROR:",
           error
         );
 
 
-        showMessage(
-          "productMessage",
-          "❌ Delete failed: " +
-          (
-            error.message ||
-            ""
-          ),
-          "error"
-        );
+        container.innerHTML = `
+
+          <div class="empty">
+
+            ❌ Products could not be loaded.
+
+            <br><br>
+
+            ${escapeHTML(
+              error.message
+            )}
+
+          </div>
+
+        `;
 
       }
 
-    }
+    };
 
 
-    /* =====================================================
-       CANCEL EDIT
-       ===================================================== */
 
-    window.cancelEdit =
-      function () {
+  // =====================================================
+  // EDIT PRODUCT
+  // =====================================================
 
-        resetForm();
+  function editProduct(
+    id,
+    data
+  ) {
 
-
-        showMessage(
-          "productMessage",
-          "Edit cancelled.",
-          "info"
-        );
-
-      };
+    editingProductId =
+      id;
 
 
-    /* =====================================================
-       RESET FORM
-       ===================================================== */
-
-    function resetForm() {
-
-      editingProductId =
-        null;
+    editingOldImage =
+      data.image ||
+      "";
 
 
-      editingOldImage =
-        "";
+    editingOldImageName =
+      data.imageName ||
+      "";
 
 
-      editingOldImageName =
-        "";
+    document.getElementById(
+      "formTitle"
+    ).textContent =
+      "✏️ Edit Product";
 
 
-      document.getElementById(
-        "formTitle"
-      ).textContent =
-        "➕ Add New Product";
+    document.getElementById(
+      "saveButton"
+    ).textContent =
+      "Update Product";
 
 
-      document.getElementById(
-        "saveButton"
-      ).textContent =
-        "➕ Add Product";
+    document.getElementById(
+      "cancelButton"
+    ).style.display =
+      "block";
 
 
-      document.getElementById(
-        "cancelButton"
-      ).style.display =
-        "none";
+    document.getElementById(
+      "productName"
+    ).value =
+      data.name ||
+      "";
 
 
-      document.getElementById(
-        "productName"
-      ).value =
-        "";
+    document.getElementById(
+      "productPrice"
+    ).value =
+      data.price ??
+      "";
 
 
-      document.getElementById(
-        "productPrice"
-      ).value =
-        "";
+    document.getElementById(
+      "productCategory"
+    ).value =
+      data.category ||
+      "";
 
 
-      document.getElementById(
-        "productCategory"
-      ).value =
-        "";
+    document.getElementById(
+      "productDescription"
+    ).value =
+      data.description ||
+      "";
 
 
-      document.getElementById(
-        "productDescription"
-      ).value =
-        "";
+    document.getElementById(
+      "productImage"
+    ).value =
+      "";
 
 
-      document.getElementById(
-        "productImage"
-      ).value =
-        "";
-
-
+    const preview =
       document.getElementById(
         "imagePreview"
-      ).style.display =
+      );
+
+
+    const previewImage =
+      document.getElementById(
+        "previewImage"
+      );
+
+
+    if (
+      data.image
+    ) {
+
+      previewImage.src =
+        data.image;
+
+
+      preview.style.display =
+        "block";
+
+    }
+
+    else {
+
+      preview.style.display =
         "none";
-
-
-      document.getElementById(
-        "urlBox"
-      ).style.display =
-        "none";
-
-
-      document.getElementById(
-        "progressBox"
-      ).style.display =
-        "none";
-
-
-      document.getElementById(
-        "progressBar"
-      ).style.width =
-        "0%";
-
-
-      document.getElementById(
-        "progressText"
-      ).textContent =
-        "Preparing...";
 
     }
 
 
-    /* =====================================================
-       ESCAPE HTML
-       ===================================================== */
-
-    function escapeHTML(value) {
-
-      return String(value)
-
-        .replace(
-          /&/g,
-          "&amp;"
-        )
-
-        .replace(
-          /</g,
-          "&lt;"
-        )
-
-        .replace(
-          />/g,
-          "&gt;"
-        )
-
-        .replace(
-          /"/g,
-          "&quot;"
-        )
-
-        .replace(
-          /'/g,
-          "&#039;"
-        );
-
-    }
+    document.getElementById(
+      "formTitle"
+    ).scrollIntoView({
+      behavior: "smooth"
+    });
 
 
-    console.log(
-      "Shivam Imitation Admin Panel Ready"
+    showMessage(
+      "productMessage",
+      "✏️ Editing: " +
+      (
+        data.name ||
+        "Product"
+      ),
+      "info"
     );
 
-  </script>
+  }
+
+
+
+  // =====================================================
+  // DELETE PRODUCT
+  // =====================================================
+
+  async function deleteProduct(
+    id,
+    data
+  ) {
+
+    const name =
+      data.name ||
+      "Unnamed Product";
+
+
+    const imageName =
+      data.imageName ||
+      "";
+
+
+    const confirmed =
+      confirm(
+        "Delete this product?\n\n" +
+        name +
+        "\n\n" +
+        "Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે."
+      );
+
+
+    if (!confirmed) {
+      return;
+    }
+
+
+    try {
+
+      showMessage(
+        "productMessage",
+        "⏳ Deleting product...",
+        "info"
+      );
+
+
+      // ===============================================
+      // DELETE FIREBASE PRODUCT
+      // ===============================================
+
+      await deleteDoc(
+        doc(
+          db,
+          "products",
+          id
+        )
+      );
+
+
+      // ===============================================
+      // DELETE GITHUB IMAGE
+      // ===============================================
+
+      if (
+        imageName
+      ) {
+
+        try {
+
+          await deleteImageFromGitHub(
+            imageName
+          );
+
+        }
+
+        catch (
+          githubError
+        ) {
+
+          console.error(
+            "GITHUB DELETE ERROR:",
+            githubError
+          );
+
+
+          showMessage(
+            "productMessage",
+            "⚠️ Product deleted from Firebase, but GitHub image could not be deleted: " +
+            githubError.message,
+            "error"
+          );
+
+
+          await loadProducts();
+
+          await findNextProductNumber();
+
+          return;
+
+        }
+
+      }
+
+
+      showMessage(
+        "productMessage",
+        "🗑️ Product and GitHub image deleted successfully!",
+        "success"
+      );
+
+
+      await loadProducts();
+
+      await findNextProductNumber();
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "DELETE ERROR:",
+        error
+      );
+
+
+      showMessage(
+        "productMessage",
+        "❌ Delete failed: " +
+        (
+          error.message ||
+          ""
+        ),
+        "error"
+      );
+
+    }
+
+  }
+
+
+
+  // =====================================================
+  // CANCEL EDIT
+  // =====================================================
+
+  window.cancelEdit =
+    function () {
+
+      resetForm();
+
+
+      showMessage(
+        "productMessage",
+        "Edit cancelled.",
+        "info"
+      );
+
+    };
+
+
+
+  // =====================================================
+  // RESET FORM
+  // =====================================================
+
+  function resetForm() {
+
+    editingProductId =
+      null;
+
+
+    editingOldImage =
+      "";
+
+
+    editingOldImageName =
+      "";
+
+
+    document.getElementById(
+      "formTitle"
+    ).textContent =
+      "➕ Add New Product";
+
+
+    document.getElementById(
+      "saveButton"
+    ).textContent =
+      "➕ Add Product";
+
+
+    document.getElementById(
+      "cancelButton"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "productName"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productPrice"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productCategory"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productDescription"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productImage"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "imagePreview"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "urlBox"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "debugBox"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "progressBox"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "progressBar"
+    ).style.width =
+      "0%";
+
+
+    document.getElementById(
+      "progressText"
+    ).textContent =
+      "Preparing...";
+
+  }
+
+
+
+  // =====================================================
+  // ESCAPE HTML
+  // =====================================================
+
+  function escapeHTML(
+    value
+  ) {
+
+    return String(value)
+
+      .replace(
+        /&/g,
+        "&amp;"
+      )
+
+      .replace(
+        /</g,
+        "&lt;"
+      )
+
+      .replace(
+        />/g,
+        "&gt;"
+      )
+
+      .replace(
+        /"/g,
+        "&quot;"
+      )
+
+      .replace(
+        /'/g,
+        "&#039;"
+      );
+
+  }
+
+
+
+  // =====================================================
+  // READY
+  // =====================================================
+
+  console.log(
+    "Shivam Imitation Admin Panel Ready"
+  );
+
+  console.log(
+    "Worker URL:",
+    WORKER_URL
+  );
+
+
+</script>
 
 </body>
 
