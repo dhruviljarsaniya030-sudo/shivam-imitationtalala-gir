@@ -3,22 +3,54 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
 
   <title>Admin Panel | Shivam Imitation</title>
 
   <style>
     * {
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      width: 100%;
+      min-height: 100%;
+      background: #003d37;
     }
 
     body {
       margin: 0;
+      width: 100%;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
       background: #003d37;
       color: #fff;
-      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: Arial, sans-serif;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      -webkit-appearance: none;
+      appearance: none;
     }
 
     .container {
@@ -45,6 +77,7 @@
     }
 
     .card {
+      width: 100%;
       background: #002f2b;
       border: 1px solid rgba(231, 189, 85, .4);
       border-radius: 18px;
@@ -74,7 +107,21 @@
       background: #003d37;
       color: #fff;
       outline: none;
-      font-size: 15px;
+      font-size: 16px;
+      min-height: 48px;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #e7bd55;
+      box-shadow: 0 0 0 2px rgba(231, 189, 85, .12);
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aebbb8;
+      opacity: 1;
     }
 
     textarea {
@@ -89,6 +136,7 @@
 
     input[type="file"] {
       padding: 10px;
+      min-height: 48px;
     }
 
     button {
@@ -100,10 +148,16 @@
       font-weight: 700;
       cursor: pointer;
       padding: 12px 16px;
+      min-height: 46px;
+      touch-action: manipulation;
     }
 
     button:hover {
       background: #f3d77b;
+    }
+
+    button:active {
+      transform: scale(.99);
     }
 
     button:disabled {
@@ -154,6 +208,7 @@
     }
 
     .login-panel {
+      width: 100%;
       max-width: 600px;
       margin: auto;
     }
@@ -207,6 +262,7 @@
       color: #f3d77b;
       text-align: center;
       font-size: 14px;
+      word-break: break-word;
     }
 
     .progress-box {
@@ -278,6 +334,7 @@
     .refresh-btn {
       padding: 9px 14px;
       font-size: 13px;
+      min-height: 42px;
     }
 
     .products-grid {
@@ -291,6 +348,7 @@
       border: 1px solid rgba(231, 189, 85, .25);
       border-radius: 14px;
       overflow: hidden;
+      min-width: 0;
     }
 
     .product-card img {
@@ -315,6 +373,7 @@
     .product-info h3 {
       margin: 7px 0;
       font-size: 17px;
+      overflow-wrap: anywhere;
     }
 
     .product-price {
@@ -329,6 +388,7 @@
       font-size: 13px;
       line-height: 1.4;
       min-height: 38px;
+      overflow-wrap: anywhere;
     }
 
     .image-name {
@@ -360,6 +420,7 @@
       padding: 30px;
       text-align: center;
       color: #aebbb8;
+      overflow-wrap: anywhere;
     }
 
     .loading {
@@ -373,12 +434,39 @@
     }
 
     @media (max-width: 550px) {
+
       .container {
-        padding: 18px 12px 40px;
+        padding:
+          max(18px, env(safe-area-inset-top))
+          12px
+          max(40px, env(safe-area-inset-bottom));
+      }
+
+      .logo {
+        margin-bottom: 18px;
+      }
+
+      .logo h1 {
+        font-size: 25px;
+      }
+
+      .logo p {
+        font-size: 14px;
       }
 
       .card {
         padding: 18px;
+        border-radius: 15px;
+      }
+
+      .login-panel {
+        max-width: 100%;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 16px;
       }
 
       .products-grid {
@@ -396,6 +484,30 @@
       .products-title {
         align-items: flex-start;
       }
+
+      .products-title h2 {
+        font-size: 20px;
+      }
+
+      .refresh-btn {
+        flex-shrink: 0;
+      }
+    }
+
+    @media (max-width: 360px) {
+
+      .container {
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+
+      .logo h1 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
@@ -409,22 +521,37 @@
     <p>Admin Product Panel</p>
   </div>
 
-  <!-- LOGIN -->
 
-  <div id="loginPanel" class="card login-panel">
+  <!-- =====================================================
+       LOGIN
+       ===================================================== -->
+
+  <div
+    id="loginPanel"
+    class="card login-panel"
+  >
 
     <h2>🔐 Admin Login</h2>
 
-    <label>Email</label>
+    <label for="loginEmail">
+      Email
+    </label>
 
     <input
       type="email"
       id="loginEmail"
       placeholder="Enter admin email"
-      autocomplete="email"
+      autocomplete="username"
+      autocapitalize="none"
+      autocorrect="off"
+      spellcheck="false"
+      inputmode="email"
     >
 
-    <label>Password</label>
+
+    <label for="loginPassword">
+      Password
+    </label>
 
     <input
       type="password"
@@ -433,22 +560,32 @@
       autocomplete="current-password"
     >
 
+
     <button
       id="loginButton"
       class="main-button"
-      onclick="loginAdmin()"
+      type="button"
     >
       🔐 Login
     </button>
 
-    <div id="loginMessage" class="message"></div>
+
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
 
   </div>
 
 
-  <!-- ADMIN PANEL -->
+  <!-- =====================================================
+       ADMIN PANEL
+       ===================================================== -->
 
-  <div id="adminPanel" class="admin-panel">
+  <div
+    id="adminPanel"
+    class="admin-panel"
+  >
 
     <!-- ADD PRODUCT -->
 
@@ -458,21 +595,27 @@
         ✅ Admin logged in
       </div>
 
+
       <h2 id="formTitle">
         ➕ Add New Product
       </h2>
 
 
-      <label>Product Name *</label>
+      <label for="productName">
+        Product Name *
+      </label>
 
       <input
         type="text"
         id="productName"
         placeholder="Example: Silver Payal"
+        autocomplete="off"
       >
 
 
-      <label>Price *</label>
+      <label for="productPrice">
+        Price *
+      </label>
 
       <input
         type="number"
@@ -480,10 +623,13 @@
         placeholder="Example: 599"
         min="0"
         step="1"
+        inputmode="numeric"
       >
 
 
-      <label>Category *</label>
+      <label for="productCategory">
+        Category *
+      </label>
 
       <select id="productCategory">
 
@@ -491,32 +637,96 @@
           Select Category
         </option>
 
-        <option value="Necklace Set">Necklace Set</option>
-        <option value="Long Necklace">Long Necklace</option>
-        <option value="Short Necklace">Short Necklace</option>
-        <option value="Bridal Necklace">Bridal Necklace</option>
-        <option value="AD Necklace">AD Necklace</option>
-        <option value="Pendant Set">Pendant Set</option>
-        <option value="Mangalsutra">Mangalsutra</option>
-        <option value="Earrings">Earrings</option>
-        <option value="Finger Ring">Finger Ring</option>
-        <option value="Adjustable Ring">Adjustable Ring</option>
-        <option value="Bracelet">Bracelet</option>
-        <option value="Kada">Kada</option>
-        <option value="Bangles">Bangles</option>
-        <option value="Bridal Jewellery Set">Bridal Jewellery Set</option>
-        <option value="Bajuband">Bajuband</option>
-        <option value="Kamarbandh">Kamarbandh</option>
-        <option value="Payal">Payal</option>
-        <option value="Chain">Chain</option>
-        <option value="Tanmaniya">Tanmaniya</option>
-        <option value="Loket">Loket</option>
-        <option value="Mala">Mala</option>
+        <option value="Necklace Set">
+          Necklace Set
+        </option>
+
+        <option value="Long Necklace">
+          Long Necklace
+        </option>
+
+        <option value="Short Necklace">
+          Short Necklace
+        </option>
+
+        <option value="Bridal Necklace">
+          Bridal Necklace
+        </option>
+
+        <option value="AD Necklace">
+          AD Necklace
+        </option>
+
+        <option value="Pendant Set">
+          Pendant Set
+        </option>
+
+        <option value="Mangalsutra">
+          Mangalsutra
+        </option>
+
+        <option value="Earrings">
+          Earrings
+        </option>
+
+        <option value="Finger Ring">
+          Finger Ring
+        </option>
+
+        <option value="Adjustable Ring">
+          Adjustable Ring
+        </option>
+
+        <option value="Bracelet">
+          Bracelet
+        </option>
+
+        <option value="Kada">
+          Kada
+        </option>
+
+        <option value="Bangles">
+          Bangles
+        </option>
+
+        <option value="Bridal Jewellery Set">
+          Bridal Jewellery Set
+        </option>
+
+        <option value="Bajuband">
+          Bajuband
+        </option>
+
+        <option value="Kamarbandh">
+          Kamarbandh
+        </option>
+
+        <option value="Payal">
+          Payal
+        </option>
+
+        <option value="Chain">
+          Chain
+        </option>
+
+        <option value="Tanmaniya">
+          Tanmaniya
+        </option>
+
+        <option value="Loket">
+          Loket
+        </option>
+
+        <option value="Mala">
+          Mala
+        </option>
 
       </select>
 
 
-      <label>Description *</label>
+      <label for="productDescription">
+        Description *
+      </label>
 
       <textarea
         id="productDescription"
@@ -524,7 +734,9 @@
       ></textarea>
 
 
-      <label>Product Image</label>
+      <label>
+        Product Image
+      </label>
 
       <div class="upload-box">
 
@@ -537,12 +749,15 @@
         <div class="small">
 
           📷 Add Product વખતે image પસંદ કરો.
+
           <br>
 
           ✏️ Edit વખતે image બદલવી હોય તો જ નવી image પસંદ કરો.
+
           <br>
 
           🗑️ Delete કરવાથી Firebase product અને GitHub image delete કરવાનો પ્રયાસ થશે.
+
           <br>
 
           Maximum size: 5 MB.
@@ -608,7 +823,7 @@
 
         <button
           id="saveButton"
-          onclick="saveProduct()"
+          type="button"
         >
           ➕ Add Product
         </button>
@@ -616,7 +831,7 @@
         <button
           id="cancelButton"
           class="cancel-button"
-          onclick="cancelEdit()"
+          type="button"
           style="display:none;"
         >
           Cancel Edit
@@ -626,8 +841,9 @@
 
 
       <button
+        id="logoutButton"
         class="logout"
-        onclick="logoutAdmin()"
+        type="button"
       >
         Logout
       </button>
@@ -641,7 +857,9 @@
     </div>
 
 
-    <!-- ALL PRODUCTS -->
+    <!-- =====================================================
+         ALL PRODUCTS
+         ===================================================== -->
 
     <div class="card">
 
@@ -650,8 +868,9 @@
         <h2>📦 All Products</h2>
 
         <button
+          id="refreshButton"
           class="refresh-btn"
-          onclick="loadProducts()"
+          type="button"
         >
           🔄 Refresh
         </button>
@@ -685,7 +904,8 @@
 
 import {
   initializeApp
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
@@ -693,8 +913,11 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
-} from
+  signOut,
+  setPersistence,
+  browserLocalPersistence
+}
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
@@ -707,7 +930,8 @@ import {
   updateDoc,
   deleteDoc,
   serverTimestamp
-} from
+}
+from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
@@ -737,6 +961,7 @@ const firebaseConfig = {
 
   measurementId:
     "G-ER1ETZSLPD"
+
 };
 
 
@@ -763,8 +988,10 @@ const ADMIN_EMAIL =
 const app =
 initializeApp(firebaseConfig);
 
+
 const auth =
 getAuth(app);
+
 
 const db =
 getFirestore(app);
@@ -782,17 +1009,22 @@ let editingOldImageName = "";
 
 
 /* =====================================================
-   MESSAGE
+   MESSAGE FUNCTION
    ===================================================== */
 
-function showMessage(id, text, type) {
+function showMessage(
+  id,
+  text,
+  type
+) {
 
   const el =
     document.getElementById(id);
 
   if (!el) return;
 
-  el.textContent = text;
+  el.textContent =
+    text;
 
   el.className =
     "message " + type;
@@ -800,24 +1032,92 @@ function showMessage(id, text, type) {
 
 
 /* =====================================================
+   CLEAR MESSAGE
+   ===================================================== */
+
+function clearMessage(id) {
+
+  const el =
+    document.getElementById(id);
+
+  if (!el) return;
+
+  el.textContent =
+    "";
+
+  el.className =
+    "message";
+
+}
+
+
+/* =====================================================
+   FIREBASE PERSISTENCE
+   IMPORTANT FOR MOBILE LOGIN
+   ===================================================== */
+
+async function setupAuthPersistence() {
+
+  try {
+
+    await setPersistence(
+      auth,
+      browserLocalPersistence
+    );
+
+    console.log(
+      "Firebase Auth persistence enabled."
+    );
+
+  }
+
+  catch(error) {
+
+    console.warn(
+      "Auth persistence could not be enabled:",
+      error
+    );
+
+  }
+
+}
+
+
+/* =====================================================
    LOGIN
    ===================================================== */
 
-window.loginAdmin = async function() {
+async function loginAdmin() {
 
-  const email =
-    document
-      .getElementById("loginEmail")
-      .value
-      .trim();
+  const emailInput =
+    document.getElementById(
+      "loginEmail"
+    );
 
-  const password =
-    document
-      .getElementById("loginPassword")
-      .value;
+  const passwordInput =
+    document.getElementById(
+      "loginPassword"
+    );
 
   const button =
-    document.getElementById("loginButton");
+    document.getElementById(
+      "loginButton"
+    );
+
+
+  const email =
+    emailInput.value
+      .trim()
+      .toLowerCase();
+
+
+  const password =
+    passwordInput.value;
+
+
+  clearMessage(
+    "loginMessage"
+  );
 
 
   if (!email || !password) {
@@ -833,7 +1133,7 @@ window.loginAdmin = async function() {
 
 
   if (
-    email.toLowerCase() !==
+    email !==
     ADMIN_EMAIL.toLowerCase()
   ) {
 
@@ -849,10 +1149,23 @@ window.loginAdmin = async function() {
 
   try {
 
-    button.disabled = true;
+    button.disabled =
+      true;
 
     button.textContent =
       "Logging in...";
+
+
+    /*
+      IMPORTANT:
+      Mobile browser માટે persistence
+      login પહેલા set કરવામાં આવે છે.
+    */
+
+    await setPersistence(
+      auth,
+      browserLocalPersistence
+    );
 
 
     await signInWithEmailAndPassword(
@@ -861,16 +1174,109 @@ window.loginAdmin = async function() {
       password
     );
 
+
+    showMessage(
+      "loginMessage",
+      "✅ Login successful. Opening admin panel...",
+      "success"
+    );
+
+
   }
 
   catch(error) {
 
-    console.error(error);
+    console.error(
+      "LOGIN ERROR:",
+      error
+    );
+
+
+    let message =
+      "Login failed.";
+
+
+    switch(error.code) {
+
+      case "auth/invalid-credential":
+
+        message =
+          "❌ Email અથવા password ખોટો છે.";
+
+        break;
+
+
+      case "auth/invalid-email":
+
+        message =
+          "❌ Please enter a valid email address.";
+
+        break;
+
+
+      case "auth/user-disabled":
+
+        message =
+          "❌ આ admin account disabled છે.";
+
+        break;
+
+
+      case "auth/too-many-requests":
+
+        message =
+          "⚠️ ઘણા login attempts થયા છે. થોડા સમય પછી ફરી પ્રયાસ કરો.";
+
+        break;
+
+
+      case "auth/network-request-failed":
+
+        message =
+          "❌ Internet connection problem. Mobile data/Wi-Fi check કરો.";
+
+        break;
+
+
+      case "auth/operation-not-allowed":
+
+        message =
+          "❌ Firebase Email/Password Login enabled નથી.";
+
+        break;
+
+
+      case "auth/user-not-found":
+
+        message =
+          "❌ Admin account મળ્યું નથી.";
+
+        break;
+
+
+      case "auth/wrong-password":
+
+        message =
+          "❌ Password ખોટો છે.";
+
+        break;
+
+
+      default:
+
+        message =
+          "❌ " +
+          (
+            error.message ||
+            "Login failed."
+          );
+
+    }
+
 
     showMessage(
       "loginMessage",
-      "❌ " +
-      (error.message || "Login failed."),
+      message,
       "error"
     );
 
@@ -878,13 +1284,82 @@ window.loginAdmin = async function() {
 
   finally {
 
-    button.disabled = false;
+    button.disabled =
+      false;
 
     button.textContent =
       "🔐 Login";
+
   }
 
-};
+}
+
+
+/* =====================================================
+   MAKE LOGIN AVAILABLE
+   ===================================================== */
+
+window.loginAdmin =
+loginAdmin;
+
+
+/* =====================================================
+   ENTER KEY LOGIN
+   MOBILE + DESKTOP
+   ===================================================== */
+
+document
+  .getElementById("loginEmail")
+  .addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
+        event.preventDefault();
+
+        document
+          .getElementById(
+            "loginPassword"
+          )
+          .focus();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById("loginPassword")
+  .addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
+        event.preventDefault();
+
+        loginAdmin();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById("loginButton")
+  .addEventListener(
+    "click",
+    loginAdmin
+  );
 
 
 /* =====================================================
@@ -896,10 +1371,14 @@ onAuthStateChanged(
   async function(user) {
 
     const loginPanel =
-      document.getElementById("loginPanel");
+      document.getElementById(
+        "loginPanel"
+      );
 
     const adminPanel =
-      document.getElementById("adminPanel");
+      document.getElementById(
+        "adminPanel"
+      );
 
 
     if (
@@ -916,9 +1395,22 @@ onAuthStateChanged(
         "block";
 
 
-      await findNextProductNumber();
+      try {
 
-      await loadProducts();
+        await findNextProductNumber();
+
+        await loadProducts();
+
+      }
+
+      catch(error) {
+
+        console.error(
+          "ADMIN INITIALIZATION ERROR:",
+          error
+        );
+
+      }
 
     }
 
@@ -929,6 +1421,7 @@ onAuthStateChanged(
 
       adminPanel.style.display =
         "none";
+
     }
 
   }
@@ -939,11 +1432,56 @@ onAuthStateChanged(
    LOGOUT
    ===================================================== */
 
-window.logoutAdmin = async function() {
+async function logoutAdmin() {
 
-  await signOut(auth);
+  try {
 
-};
+    await signOut(auth);
+
+    document
+      .getElementById(
+        "loginPassword"
+      )
+      .value = "";
+
+    showMessage(
+      "loginMessage",
+      "✅ Logged out successfully.",
+      "success"
+    );
+
+  }
+
+  catch(error) {
+
+    console.error(
+      "LOGOUT ERROR:",
+      error
+    );
+
+    showMessage(
+      "loginMessage",
+      "❌ Logout failed.",
+      "error"
+    );
+
+  }
+
+}
+
+
+window.logoutAdmin =
+logoutAdmin;
+
+
+document
+  .getElementById(
+    "logoutButton"
+  )
+  .addEventListener(
+    "click",
+    logoutAdmin
+  );
 
 
 /* =====================================================
@@ -956,40 +1494,56 @@ async function findNextProductNumber() {
 
     const snapshot =
       await getDocs(
-        collection(db, "products")
+        collection(
+          db,
+          "products"
+        )
       );
 
 
-    let highest = 0;
+    let highest =
+      0;
 
 
-    snapshot.forEach(function(item) {
+    snapshot.forEach(
+      function(item) {
 
-      const data =
-        item.data();
-
-      const imageName =
-        data.imageName || "";
+        const data =
+          item.data();
 
 
-      const match =
-        String(imageName).match(
-          /^product-(\d+)\.(jpg|jpeg|png|webp)$/i
-        );
+        const imageName =
+          data.imageName || "";
 
 
-      if (match) {
+        const match =
+          String(imageName).match(
+            /^product-(\d+)\.(jpg|jpeg|png|webp)$/i
+          );
 
-        const number =
-          Number(match[1]);
 
-        if (number > highest) {
+        if (match) {
 
-          highest = number;
+          const number =
+            Number(
+              match[1]
+            );
+
+
+          if (
+            number >
+            highest
+          ) {
+
+            highest =
+              number;
+
+          }
+
         }
-      }
 
-    });
+      }
+    );
 
 
     const next =
@@ -1017,13 +1571,15 @@ async function findNextProductNumber() {
     );
 
 
-    window.nextProductNumber = 1;
+    window.nextProductNumber =
+      1;
 
 
     document.getElementById(
       "nextProductName"
     ).textContent =
       "📁 Next image: product-1.jpg";
+
   }
 
 }
@@ -1034,7 +1590,9 @@ async function findNextProductNumber() {
    ===================================================== */
 
 document
-  .getElementById("productImage")
+  .getElementById(
+    "productImage"
+  )
   .addEventListener(
     "change",
     function() {
@@ -1042,10 +1600,12 @@ document
       const file =
         this.files[0];
 
+
       const preview =
         document.getElementById(
           "imagePreview"
         );
+
 
       const image =
         document.getElementById(
@@ -1059,6 +1619,7 @@ document
           "none";
 
         return;
+
       }
 
 
@@ -1071,12 +1632,18 @@ document
       ];
 
 
-      if (!allowed.includes(file.type)) {
+      if (
+        !allowed.includes(
+          file.type
+        )
+      ) {
 
-        this.value = "";
+        this.value =
+          "";
 
         preview.style.display =
           "none";
+
 
         showMessage(
           "productMessage",
@@ -1085,6 +1652,7 @@ document
         );
 
         return;
+
       }
 
 
@@ -1093,10 +1661,12 @@ document
         5 * 1024 * 1024
       ) {
 
-        this.value = "";
+        this.value =
+          "";
 
         preview.style.display =
           "none";
+
 
         showMessage(
           "productMessage",
@@ -1105,11 +1675,15 @@ document
         );
 
         return;
+
       }
 
 
       image.src =
-        URL.createObjectURL(file);
+        URL.createObjectURL(
+          file
+        );
+
 
       preview.style.display =
         "block";
@@ -1122,7 +1696,9 @@ document
    CLOUDFLARE WORKER REQUEST
    ===================================================== */
 
-async function workerRequest(formData) {
+async function workerRequest(
+  formData
+) {
 
   let response;
 
@@ -1133,10 +1709,17 @@ async function workerRequest(formData) {
       await fetch(
         WORKER_URL,
         {
-          method: "POST",
-          body: formData,
-          mode: "cors",
-          cache: "no-store"
+          method:
+            "POST",
+
+          body:
+            formData,
+
+          mode:
+            "cors",
+
+          cache:
+            "no-store"
         }
       );
 
@@ -1149,9 +1732,11 @@ async function workerRequest(formData) {
       error
     );
 
+
     throw new Error(
-      "Cloudflare Worker સાથે connection થઈ નથી. Worker URL, CORS અને deployment check કરો."
+      "Cloudflare Worker સાથે connection થઈ નથી. Internet, Worker URL અને CORS check કરો."
     );
+
   }
 
 
@@ -1165,7 +1750,9 @@ async function workerRequest(formData) {
   try {
 
     result =
-      JSON.parse(responseText);
+      JSON.parse(
+        responseText
+      );
 
   }
 
@@ -1176,9 +1763,11 @@ async function workerRequest(formData) {
       responseText
     );
 
+
     throw new Error(
       "Cloudflare Worker એ valid JSON response આપ્યો નથી. Worker deployment check કરો."
     );
+
   }
 
 
@@ -1197,10 +1786,12 @@ async function workerRequest(formData) {
       result.message ||
       "Cloudflare Worker operation failed."
     );
+
   }
 
 
   return result;
+
 }
 
 
@@ -1208,7 +1799,9 @@ async function workerRequest(formData) {
    UPLOAD IMAGE
    ===================================================== */
 
-async function uploadImageToWorker(file) {
+async function uploadImageToWorker(
+  file
+) {
 
   const formData =
     new FormData();
@@ -1229,6 +1822,7 @@ async function uploadImageToWorker(file) {
   return await workerRequest(
     formData
   );
+
 }
 
 
@@ -1236,14 +1830,20 @@ async function uploadImageToWorker(file) {
    DELETE IMAGE
    ===================================================== */
 
-async function deleteImageFromGitHub(fileName) {
+async function deleteImageFromGitHub(
+  fileName
+) {
 
   if (!fileName) {
 
     return {
-      success: true,
-      skipped: true
+      success:
+        true,
+
+      skipped:
+        true
     };
+
   }
 
 
@@ -1256,6 +1856,7 @@ async function deleteImageFromGitHub(fileName) {
     throw new Error(
       "Invalid GitHub product image name."
     );
+
   }
 
 
@@ -1278,6 +1879,7 @@ async function deleteImageFromGitHub(fileName) {
   return await workerRequest(
     formData
   );
+
 }
 
 
@@ -1285,33 +1887,40 @@ async function deleteImageFromGitHub(fileName) {
    SAVE PRODUCT
    ===================================================== */
 
-window.saveProduct =
-async function() {
+async function saveProduct() {
 
   const name =
     document
-      .getElementById("productName")
+      .getElementById(
+        "productName"
+      )
       .value
       .trim();
 
 
   const priceText =
     document
-      .getElementById("productPrice")
+      .getElementById(
+        "productPrice"
+      )
       .value
       .trim();
 
 
   const category =
     document
-      .getElementById("productCategory")
+      .getElementById(
+        "productCategory"
+      )
       .value
       .trim();
 
 
   const description =
     document
-      .getElementById("productDescription")
+      .getElementById(
+        "productDescription"
+      )
       .value
       .trim();
 
@@ -1346,6 +1955,7 @@ async function() {
     );
 
     return;
+
   }
 
 
@@ -1361,11 +1971,14 @@ async function() {
     );
 
     return;
+
   }
 
 
   const price =
-    Number(priceText);
+    Number(
+      priceText
+    );
 
 
   if (
@@ -1380,16 +1993,20 @@ async function() {
     );
 
     return;
+
   }
 
 
   try {
 
-    button.disabled = true;
+    button.disabled =
+      true;
 
 
     const isEditing =
-      Boolean(editingProductId);
+      Boolean(
+        editingProductId
+      );
 
 
     button.textContent =
@@ -1418,10 +2035,13 @@ async function() {
       editingOldImageName;
 
 
-    let newImageName = "";
+    let newImageName =
+      "";
 
 
-    /* UPLOAD */
+    /* =================================================
+       UPLOAD
+       ================================================= */
 
     if (file) {
 
@@ -1445,6 +2065,7 @@ async function() {
         throw new Error(
           "Worker did not return image URL or file name."
         );
+
       }
 
 
@@ -1476,10 +2097,13 @@ async function() {
         "urlBox"
       ).style.display =
         "block";
+
     }
 
 
-    /* PRODUCT DATA */
+    /* =================================================
+       PRODUCT DATA
+       ================================================= */
 
     const productData = {
 
@@ -1500,12 +2124,17 @@ async function() {
 
       imageName:
         imageName
+
     };
 
 
-    /* EDIT */
+    /* =================================================
+       EDIT
+       ================================================= */
 
-    if (editingProductId) {
+    if (
+      editingProductId
+    ) {
 
       document.getElementById(
         "progressText"
@@ -1526,7 +2155,8 @@ async function() {
       if (
         file &&
         editingOldImageName &&
-        editingOldImageName !== newImageName
+        editingOldImageName !==
+        newImageName
       ) {
 
         try {
@@ -1543,7 +2173,9 @@ async function() {
             "OLD IMAGE DELETE ERROR:",
             error
           );
+
         }
+
       }
 
 
@@ -1552,10 +2184,13 @@ async function() {
         "✅ Product updated successfully!",
         "success"
       );
+
     }
 
 
-    /* ADD */
+    /* =================================================
+       ADD
+       ================================================= */
 
     else {
 
@@ -1583,6 +2218,7 @@ async function() {
         "✅ Product added successfully!",
         "success"
       );
+
     }
 
 
@@ -1624,27 +2260,44 @@ async function() {
       ),
       "error"
     );
+
   }
 
   finally {
 
-    button.disabled = false;
+    button.disabled =
+      false;
+
 
     button.textContent =
       editingProductId
         ? "Update Product"
         : "➕ Add Product";
+
   }
 
-};
+}
+
+
+window.saveProduct =
+saveProduct;
+
+
+document
+  .getElementById(
+    "saveButton"
+  )
+  .addEventListener(
+    "click",
+    saveProduct
+  );
 
 
 /* =====================================================
    LOAD PRODUCTS
    ===================================================== */
 
-window.loadProducts =
-async function() {
+async function loadProducts() {
 
   const container =
     document.getElementById(
@@ -1670,49 +2323,66 @@ async function() {
       );
 
 
-    const products = [];
+    const products =
+      [];
 
 
-    snapshot.forEach(function(item) {
+    snapshot.forEach(
+      function(item) {
 
-      products.push({
+        products.push({
 
-        id:
-          item.id,
+          id:
+            item.id,
 
-        data:
-          item.data()
+          data:
+            item.data()
 
-      });
+        });
 
-    });
-
-
-    products.sort(function(a, b) {
-
-      const aTime =
-        a.data.createdAt &&
-        typeof a.data.createdAt.toMillis === "function"
-          ? a.data.createdAt.toMillis()
-          : 0;
+      }
+    );
 
 
-      const bTime =
-        b.data.createdAt &&
-        typeof b.data.createdAt.toMillis === "function"
-          ? b.data.createdAt.toMillis()
-          : 0;
+    products.sort(
+      function(a, b) {
+
+        const aTime =
+          a.data.createdAt &&
+          typeof
+          a.data.createdAt.toMillis ===
+          "function"
+
+            ? a.data.createdAt.toMillis()
+
+            : 0;
 
 
-      return bTime - aTime;
+        const bTime =
+          b.data.createdAt &&
+          typeof
+          b.data.createdAt.toMillis ===
+          "function"
 
-    });
+            ? b.data.createdAt.toMillis()
+
+            : 0;
 
 
-    container.innerHTML = "";
+        return bTime - aTime;
+
+      }
+    );
 
 
-    if (products.length === 0) {
+    container.innerHTML =
+      "";
+
+
+    if (
+      products.length ===
+      0
+    ) {
 
       container.innerHTML = `
         <div class="empty">
@@ -1721,146 +2391,160 @@ async function() {
       `;
 
       return;
+
     }
 
 
-    products.forEach(function(item) {
+    products.forEach(
+      function(item) {
 
-      const data =
-        item.data;
-
-      const id =
-        item.id;
-
-      const name =
-        data.name ||
-        "Unnamed Product";
-
-      const price =
-        data.price ??
-        "";
-
-      const category =
-        data.category ||
-        "Jewellery";
-
-      const description =
-        data.description ||
-        "";
-
-      const image =
-        data.image ||
-        "logo.jpg";
-
-      const imageName =
-        data.imageName ||
-        "";
+        const data =
+          item.data;
 
 
-      const card =
-        document.createElement(
-          "div"
-        );
+        const id =
+          item.id;
 
 
-      card.className =
-        "product-card";
+        const name =
+          data.name ||
+          "Unnamed Product";
 
 
-      card.innerHTML = `
+        const price =
+          data.price ??
+          "";
 
-        <img
-          src="${escapeHTML(image)}"
-          alt="${escapeHTML(name)}"
-          loading="lazy"
-          onerror="this.onerror=null;this.src='logo.jpg';"
-        >
 
-        <div class="product-info">
+        const category =
+          data.category ||
+          "Jewellery";
 
-          <div class="product-category">
-            ${escapeHTML(category)}
+
+        const description =
+          data.description ||
+          "";
+
+
+        const image =
+          data.image ||
+          "logo.jpg";
+
+
+        const imageName =
+          data.imageName ||
+          "";
+
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+
+        card.className =
+          "product-card";
+
+
+        card.innerHTML = `
+
+          <img
+            src="${escapeHTML(image)}"
+            alt="${escapeHTML(name)}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='logo.jpg';"
+          >
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ${escapeHTML(category)}
+            </div>
+
+            <h3>
+              ${escapeHTML(name)}
+            </h3>
+
+            <div class="product-price">
+              ₹${escapeHTML(price)}
+            </div>
+
+            <div class="product-description">
+              ${escapeHTML(description)}
+            </div>
+
+            ${
+              imageName
+                ? `
+                  <div class="image-name">
+                    📁 ${escapeHTML(imageName)}
+                  </div>
+                `
+                : ""
+            }
+
+            <div class="product-actions">
+
+              <button
+                class="edit-btn"
+                type="button"
+              >
+                ✏️ Edit
+              </button>
+
+              <button
+                class="delete-btn"
+                type="button"
+              >
+                🗑️ Delete
+              </button>
+
+            </div>
+
           </div>
-
-          <h3>
-            ${escapeHTML(name)}
-          </h3>
-
-          <div class="product-price">
-            ₹${escapeHTML(price)}
-          </div>
-
-          <div class="product-description">
-            ${escapeHTML(description)}
-          </div>
-
-          ${
-            imageName
-              ? `
-                <div class="image-name">
-                  📁 ${escapeHTML(imageName)}
-                </div>
-              `
-              : ""
-          }
-
-          <div class="product-actions">
-
-            <button
-              class="edit-btn"
-              type="button"
-            >
-              ✏️ Edit
-            </button>
-
-            <button
-              class="delete-btn"
-              type="button"
-            >
-              🗑️ Delete
-            </button>
-
-          </div>
-
-        </div>
-      `;
+        `;
 
 
-      card
-        .querySelector(".edit-btn")
-        .addEventListener(
-          "click",
-          function() {
-
-            editProduct(
-              id,
-              data
-            );
-
-          }
-        );
-
-
-      card
-        .querySelector(".delete-btn")
-        .addEventListener(
-          "click",
-          function() {
-
-            deleteProduct(
-              id,
-              data
-            );
-
-          }
-        );
-
-
-      container.appendChild(
         card
-      );
+          .querySelector(
+            ".edit-btn"
+          )
+          .addEventListener(
+            "click",
+            function() {
 
-    });
+              editProduct(
+                id,
+                data
+              );
+
+            }
+          );
+
+
+        card
+          .querySelector(
+            ".delete-btn"
+          )
+          .addEventListener(
+            "click",
+            function() {
+
+              deleteProduct(
+                id,
+                data
+              );
+
+            }
+          );
+
+
+        container.appendChild(
+          card
+        );
+
+      }
+    );
 
   }
 
@@ -1880,27 +2564,49 @@ async function() {
 
         <br><br>
 
-        ${escapeHTML(error.message)}
+        ${escapeHTML(
+          error.message
+        )}
 
       </div>
 
     `;
+
   }
 
-};
+}
+
+
+window.loadProducts =
+loadProducts;
+
+
+document
+  .getElementById(
+    "refreshButton"
+  )
+  .addEventListener(
+    "click",
+    loadProducts
+  );
 
 
 /* =====================================================
    EDIT PRODUCT
    ===================================================== */
 
-function editProduct(id, data) {
+function editProduct(
+  id,
+  data
+) {
 
   editingProductId =
     id;
 
+
   editingOldImage =
     data.image || "";
+
 
   editingOldImageName =
     data.imageName || "";
@@ -1966,10 +2672,13 @@ function editProduct(id, data) {
     );
 
 
-  if (data.image) {
+  if (
+    data.image
+  ) {
 
     previewImage.src =
       data.image;
+
 
     preview.style.display =
       "block";
@@ -1980,13 +2689,19 @@ function editProduct(id, data) {
 
     preview.style.display =
       "none";
+
   }
 
 
   document
-    .getElementById("formTitle")
+    .getElementById(
+      "formTitle"
+    )
     .scrollIntoView({
-      behavior: "smooth"
+      behavior:
+        "smooth",
+      block:
+        "start"
     });
 
 
@@ -1999,6 +2714,7 @@ function editProduct(id, data) {
     ),
     "info"
   );
+
 }
 
 
@@ -2006,11 +2722,15 @@ function editProduct(id, data) {
    DELETE PRODUCT
    ===================================================== */
 
-async function deleteProduct(id, data) {
+async function deleteProduct(
+  id,
+  data
+) {
 
   const name =
     data.name ||
     "Unnamed Product";
+
 
   const imageName =
     data.imageName ||
@@ -2027,7 +2747,9 @@ async function deleteProduct(id, data) {
 
 
   if (!confirmed) {
+
     return;
+
   }
 
 
@@ -2049,7 +2771,9 @@ async function deleteProduct(id, data) {
     );
 
 
-    if (imageName) {
+    if (
+      imageName
+    ) {
 
       try {
 
@@ -2080,7 +2804,9 @@ async function deleteProduct(id, data) {
         await findNextProductNumber();
 
         return;
+
       }
+
     }
 
 
@@ -2114,7 +2840,9 @@ async function deleteProduct(id, data) {
       ),
       "error"
     );
+
   }
+
 }
 
 
@@ -2122,8 +2850,7 @@ async function deleteProduct(id, data) {
    CANCEL EDIT
    ===================================================== */
 
-window.cancelEdit =
-function() {
+function cancelEdit() {
 
   resetForm();
 
@@ -2133,7 +2860,22 @@ function() {
     "Edit cancelled.",
     "info"
   );
-};
+
+}
+
+
+window.cancelEdit =
+cancelEdit;
+
+
+document
+  .getElementById(
+    "cancelButton"
+  )
+  .addEventListener(
+    "click",
+    cancelEdit
+  );
 
 
 /* =====================================================
@@ -2145,8 +2887,10 @@ function resetForm() {
   editingProductId =
     null;
 
+
   editingOldImage =
     "";
+
 
   editingOldImageName =
     "";
@@ -2228,6 +2972,7 @@ function resetForm() {
     "progressText"
   ).textContent =
     "Preparing...";
+
 }
 
 
@@ -2235,9 +2980,13 @@ function resetForm() {
    ESCAPE HTML
    ===================================================== */
 
-function escapeHTML(value) {
+function escapeHTML(
+  value
+) {
 
-  return String(value)
+  return String(
+    value
+  )
 
     .replace(
       /&/g,
@@ -2263,8 +3012,20 @@ function escapeHTML(value) {
       /'/g,
       "&#039;"
     );
+
 }
 
+
+/* =====================================================
+   START AUTH PERSISTENCE
+   ===================================================== */
+
+setupAuthPersistence();
+
+
+/* =====================================================
+   READY
+   ===================================================== */
 
 console.log(
   "Shivam Imitation Admin Panel Ready"
