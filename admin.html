@@ -3,2290 +3,2602 @@
 
 <head>
 
-<meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
-
-<meta
-  name="robots"
-  content="noindex, nofollow"
->
-
-<title>Admin Panel | Shivam Imitation</title>
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #003d37;
-  color: #fff;
-  min-height: 100vh;
-}
-
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: auto;
-  padding: 25px 16px 50px;
-}
-
-.logo {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.logo h1 {
-  margin: 0;
-  color: #f3d77b;
-  font-size: 30px;
-}
-
-.logo p {
-  color: #ddd;
-  margin: 7px 0 0;
-}
-
-.card {
-  background: #002f2b;
-  border: 1px solid rgba(231,189,85,.4);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 10px 35px rgba(0,0,0,.25);
-  margin-bottom: 20px;
-}
-
-h2 {
-  margin-top: 0;
-  color: #f3d77b;
-}
-
-label {
-  display: block;
-  margin: 15px 0 7px;
-  font-weight: 600;
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 13px;
-  border-radius: 9px;
-  border: 1px solid rgba(231,189,85,.35);
-  background: #003d37;
-  color: #fff;
-  outline: none;
-  font-size: 15px;
-}
-
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-select option {
-  background: #003d37;
-  color: white;
-}
-
-input[type="file"] {
-  padding: 10px;
-}
-
-button {
-  border: none;
-  border-radius: 9px;
-  background: #e7bd55;
-  color: #002f2b;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 12px 16px;
-}
-
-button:hover {
-  background: #f3d77b;
-}
-
-button:disabled {
-  opacity: .6;
-  cursor: not-allowed;
-}
-
-.main-button {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.logout {
-  width: 100%;
-  margin-top: 12px;
-  background: transparent;
-  color: #f3d77b;
-  border: 1px solid #e7bd55;
-}
-
-.message {
-  display: none;
-  margin-top: 16px;
-  padding: 13px;
-  border-radius: 8px;
-  text-align: center;
-  font-weight: 600;
-  word-break: break-word;
-}
-
-.success {
-  display: block;
-  background: rgba(50,180,100,.18);
-  color: #9ff0bd;
-}
-
-.error {
-  display: block;
-  background: rgba(220,60,60,.18);
-  color: #ffaaaa;
-}
-
-.info {
-  display: block;
-  background: rgba(231,189,85,.12);
-  color: #f3d77b;
-}
-
-.login-panel {
-  max-width: 600px;
-  margin: auto;
-}
-
-.admin-panel {
-  display: none;
-}
-
-.status {
-  margin-bottom: 18px;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  background: rgba(50,180,100,.12);
-  color: #9ff0bd;
-}
-
-.upload-box {
-  border: 1px dashed rgba(231,189,85,.6);
-  padding: 15px;
-  border-radius: 12px;
-  margin-top: 5px;
-}
-
-.small {
-  color: #aebbb8;
-  font-size: 13px;
-  margin-top: 7px;
-  line-height: 1.5;
-}
-
-.preview {
-  display: none;
-  text-align: center;
-  margin-top: 15px;
-}
-
-.preview img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #e7bd55;
-}
-
-.next-name {
-  margin-top: 12px;
-  padding: 10px;
-  border-radius: 8px;
-  background: rgba(231,189,85,.1);
-  color: #f3d77b;
-  text-align: center;
-  font-size: 14px;
-}
-
-.progress-box {
-  display: none;
-  margin-top: 15px;
-}
-
-.progress-bar-bg {
-  width: 100%;
-  height: 10px;
-  background: #003d37;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.progress-bar {
-  width: 0%;
-  height: 100%;
-  background: #e7bd55;
-  transition: width .2s;
-}
-
-.progress-text {
-  text-align: center;
-  margin-top: 7px;
-  color: #f3d77b;
-  font-size: 13px;
-}
-
-.url-box {
-  display: none;
-  margin-top: 12px;
-  padding: 10px;
-  border-radius: 8px;
-  background: rgba(50,180,100,.1);
-  color: #9ff0bd;
-  font-size: 12px;
-  word-break: break-all;
-}
-
-.form-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.form-buttons button {
-  flex: 1;
-}
-
-.cancel-button {
-  background: transparent;
-  color: #f3d77b;
-  border: 1px solid #e7bd55;
-}
-
-.products-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.products-title h2 {
-  margin: 0;
-}
-
-.refresh-btn {
-  padding: 9px 14px;
-  font-size: 13px;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-}
-
-.product-card {
-  background: #003d37;
-  border: 1px solid rgba(231,189,85,.25);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.product-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-  background: #002f2b;
-}
-
-.product-info {
-  padding: 14px;
-}
-
-.product-category {
-  color: #f3d77b;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.product-info h3 {
-  margin: 7px 0;
-  font-size: 17px;
-}
-
-.product-price {
-  color: #f3d77b;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 7px;
-}
-
-.product-description {
-  color: #c9d4d1;
-  font-size: 13px;
-  line-height: 1.4;
-  min-height: 38px;
-}
-
-.image-name {
-  margin-top: 8px;
-  color: #aebbb8;
-  font-size: 11px;
-  word-break: break-all;
-}
-
-.product-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.edit-btn {
-  flex: 1;
-  background: #e7bd55;
-}
-
-.delete-btn {
-  flex: 1;
-  background: #b83b3b;
-  color: white;
-}
-
-.empty,
-.loading {
-  padding: 30px;
-  text-align: center;
-  color: #aebbb8;
-}
-
-.loading {
-  color: #f3d77b;
-}
-
-@media(max-width:800px) {
-
-  .products-grid {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-}
-
-@media(max-width:550px) {
-
-  .container {
-    padding: 18px 12px 40px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card img {
-    height: 260px;
-  }
-
-  .form-buttons {
-    flex-direction: column;
-  }
-
-  .products-title {
-    align-items: flex-start;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>Admin Panel | Shivam Imitation</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #003d37;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 16px 50px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      color: #f3d77b;
+      font-size: 30px;
+    }
+
+    .logo p {
+      color: #ddd;
+      margin: 7px 0 0;
+    }
+
+    .card {
+      background: #002f2b;
+      border: 1px solid rgba(231, 189, 85, .4);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, .25);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #f3d77b;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 7px;
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border-radius: 9px;
+      border: 1px solid rgba(231, 189, 85, .35);
+      background: #003d37;
+      color: #fff;
+      outline: none;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    select option {
+      background: #003d37;
+      color: white;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+    }
+
+    button {
+      border: none;
+      border-radius: 9px;
+      background: #e7bd55;
+      color: #002f2b;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 12px 16px;
+    }
+
+    button:hover {
+      background: #f3d77b;
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .main-button {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .logout {
+      width: 100%;
+      margin-top: 12px;
+      background: transparent;
+      color: #f3d77b;
+      border: 1px solid #e7bd55;
+    }
+
+    .message {
+      display: none;
+      margin-top: 16px;
+      padding: 13px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 600;
+      word-break: break-word;
+      line-height: 1.5;
+    }
+
+    .success {
+      display: block;
+      background: rgba(50, 180, 100, .18);
+      color: #9ff0bd;
+    }
+
+    .error {
+      display: block;
+      background: rgba(220, 60, 60, .18);
+      color: #ffaaaa;
+    }
+
+    .info {
+      display: block;
+      background: rgba(231, 189, 85, .12);
+      color: #f3d77b;
+    }
+
+    .login-panel {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .admin-panel {
+      display: none;
+    }
+
+    .status {
+      margin-bottom: 18px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      background: rgba(50, 180, 100, .12);
+      color: #9ff0bd;
+    }
+
+    .upload-box {
+      border: 1px dashed rgba(231, 189, 85, .6);
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 5px;
+    }
+
+    .small {
+      color: #aebbb8;
+      font-size: 13px;
+      margin-top: 7px;
+      line-height: 1.5;
+    }
+
+    .preview {
+      display: none;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .preview img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #e7bd55;
+    }
+
+    .next-name {
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(231, 189, 85, .1);
+      color: #f3d77b;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .progress-box {
+      display: none;
+      margin-top: 15px;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: #003d37;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #e7bd55;
+      transition: width .2s;
+    }
+
+    .progress-text {
+      text-align: center;
+      margin-top: 7px;
+      color: #f3d77b;
+      font-size: 13px;
+    }
+
+    .url-box {
+      display: none;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 8px;
+      background: rgba(50, 180, 100, .1);
+      color: #9ff0bd;
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .form-buttons button {
+      flex: 1;
+    }
+
+    .cancel-button {
+      background: transparent;
+      color: #f3d77b;
+      border: 1px solid #e7bd55;
+    }
+
+    .products-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .products-title h2 {
+      margin: 0;
+    }
+
+    .refresh-btn {
+      padding: 9px 14px;
+      font-size: 13px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .product-card {
+      background: #003d37;
+      border: 1px solid rgba(231, 189, 85, .25);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      background: #002f2b;
+    }
+
+    .product-info {
+      padding: 14px;
+    }
+
+    .product-category {
+      color: #f3d77b;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .product-info h3 {
+      margin: 7px 0;
+      font-size: 17px;
+    }
+
+    .product-price {
+      color: #f3d77b;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .product-description {
+      color: #c9d4d1;
+      font-size: 13px;
+      line-height: 1.4;
+      min-height: 38px;
+    }
+
+    .image-name {
+      margin-top: 8px;
+      color: #aebbb8;
+      font-size: 11px;
+      word-break: break-all;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .edit-btn {
+      flex: 1;
+      background: #e7bd55;
+    }
+
+    .delete-btn {
+      flex: 1;
+      background: #b83b3b;
+      color: white;
+    }
+
+    .empty,
+    .loading {
+      padding: 30px;
+      text-align: center;
+      color: #aebbb8;
+    }
+
+    .loading {
+      color: #f3d77b;
+    }
+
+    @media (max-width: 800px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .container {
+        padding: 18px 12px 40px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card img {
+        height: 260px;
+      }
+
+      .form-buttons {
+        flex-direction: column;
+      }
+
+      .products-title {
+        align-items: flex-start;
+      }
+
+      .logo h1 {
+        font-size: 25px;
+      }
+    }
+
+  </style>
 
 </head>
+
 
 <body>
 
 <div class="container">
 
-<div class="logo">
 
-<h1>SHIVAM IMITATION</h1>
+  <!-- LOGO -->
 
-<p>Admin Product Panel</p>
+  <div class="logo">
+
+    <h1>SHIVAM IMITATION</h1>
+
+    <p>Admin Product Panel</p>
+
+  </div>
+
+
+  <!-- LOGIN -->
+
+  <div
+    id="loginPanel"
+    class="card login-panel"
+  >
+
+    <h2>🔐 Admin Login</h2>
+
+    <label>Email</label>
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Enter admin email"
+      autocomplete="email"
+    >
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Enter password"
+      autocomplete="current-password"
+    >
+
+    <button
+      id="loginButton"
+      class="main-button"
+      onclick="loginAdmin()"
+    >
+      🔐 Login
+    </button>
+
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
+
+  </div>
+
+
+  <!-- ADMIN PANEL -->
+
+  <div
+    id="adminPanel"
+    class="admin-panel"
+  >
+
+
+    <!-- ADD / EDIT PRODUCT -->
+
+    <div class="card">
+
+      <div class="status">
+        ✅ Admin logged in
+      </div>
+
+      <h2 id="formTitle">
+        ➕ Add New Product
+      </h2>
+
+
+      <label>Product Name *</label>
+
+      <input
+        type="text"
+        id="productName"
+        placeholder="Example: Royal Green Drop Set"
+      >
+
+
+      <label>Price *</label>
+
+      <input
+        type="number"
+        id="productPrice"
+        placeholder="Example: 599"
+        min="0"
+        step="1"
+      >
+
+
+      <label>Category *</label>
+
+      <select id="productCategory">
+
+        <option value="">
+          Select Category
+        </option>
+
+        <option value="Necklace Set">
+          Necklace Set
+        </option>
+
+        <option value="Long Necklace">
+          Long Necklace
+        </option>
+
+        <option value="Short Necklace">
+          Short Necklace
+        </option>
+
+        <option value="Bridal Necklace">
+          Bridal Necklace
+        </option>
+
+        <option value="AD Necklace">
+          AD Necklace
+        </option>
+
+        <option value="Pendant Set">
+          Pendant Set
+        </option>
+
+        <option value="Mangalsutra">
+          Mangalsutra
+        </option>
+
+        <option value="Earrings">
+          Earrings
+        </option>
+
+        <option value="Finger Ring">
+          Finger Ring
+        </option>
+
+        <option value="Adjustable Ring">
+          Adjustable Ring
+        </option>
+
+        <option value="Bracelet">
+          Bracelet
+        </option>
+
+        <option value="Kada">
+          Kada
+        </option>
+
+        <option value="Bangles">
+          Bangles
+        </option>
+
+        <option value="Bridal Jewellery Set">
+          Bridal Jewellery Set
+        </option>
+
+        <option value="Bajuband">
+          Bajuband
+        </option>
+
+        <option value="Kamarbandh">
+          Kamarbandh
+        </option>
+
+        <option value="Payal">
+          Payal
+        </option>
+
+        <option value="Chain">
+          Chain
+        </option>
+
+        <option value="Tanmaniya">
+          Tanmaniya
+        </option>
+
+        <option value="Loket">
+          Loket
+        </option>
+
+        <option value="Mala">
+          Mala
+        </option>
+
+      </select>
+
+
+      <label>Description *</label>
+
+      <textarea
+        id="productDescription"
+        placeholder="Example: Premium imitation jewellery"
+      ></textarea>
+
+
+      <label>Product Image</label>
+
+      <div class="upload-box">
+
+        <input
+          type="file"
+          id="productImage"
+          accept="image/jpeg,image/png,image/webp"
+        >
+
+        <div class="small">
+
+          📷 Add Product વખતે image પસંદ કરો.
+          <br>
+
+          ✏️ Edit વખતે image બદલવી હોય તો જ નવી image પસંદ કરો.
+          <br>
+
+          🗑️ Delete કરવાથી Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે.
+          <br>
+
+          Maximum size: 5 MB.
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="nextProductName"
+        class="next-name"
+      >
+        📁 Checking next image number...
+      </div>
+
+
+      <div
+        id="imagePreview"
+        class="preview"
+      >
+
+        <img
+          id="previewImage"
+          src=""
+          alt="Product Preview"
+        >
+
+      </div>
+
+
+      <div
+        id="progressBox"
+        class="progress-box"
+      >
+
+        <div class="progress-bar-bg">
+
+          <div
+            id="progressBar"
+            class="progress-bar"
+          ></div>
+
+        </div>
+
+        <div
+          id="progressText"
+          class="progress-text"
+        >
+          Preparing...
+        </div>
+
+      </div>
+
+
+      <div
+        id="urlBox"
+        class="url-box"
+      ></div>
+
+
+      <div class="form-buttons">
+
+        <button
+          id="saveButton"
+          onclick="saveProduct()"
+        >
+          ➕ Add Product
+        </button>
+
+        <button
+          id="cancelButton"
+          class="cancel-button"
+          onclick="cancelEdit()"
+          style="display:none;"
+        >
+          Cancel Edit
+        </button>
+
+      </div>
+
+
+      <button
+        class="logout"
+        onclick="logoutAdmin()"
+      >
+        Logout
+      </button>
+
+
+      <div
+        id="productMessage"
+        class="message"
+      ></div>
+
+    </div>
+
+
+    <!-- ALL PRODUCTS -->
+
+    <div class="card">
+
+      <div class="products-title">
+
+        <h2>
+          📦 All Products
+        </h2>
+
+        <button
+          class="refresh-btn"
+          onclick="loadProducts()"
+        >
+          🔄 Refresh
+        </button>
+
+      </div>
+
+
+      <div
+        id="productsList"
+        class="products-grid"
+      >
+
+        <div class="loading">
+          Loading products...
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
 
 <!-- =====================================================
-LOGIN
-===================================================== -->
-
-<div
-  id="loginPanel"
-  class="card login-panel"
->
-
-<h2>🔐 Admin Login</h2>
-
-<label>Email</label>
-
-<input
-  type="email"
-  id="loginEmail"
-  placeholder="Enter admin email"
-  autocomplete="email"
->
-
-<label>Password</label>
-
-<input
-  type="password"
-  id="loginPassword"
-  placeholder="Enter password"
-  autocomplete="current-password"
->
-
-<button
-  id="loginButton"
-  class="main-button"
-  onclick="loginAdmin()"
->
-🔐 Login
-</button>
-
-<div
-  id="loginMessage"
-  class="message"
-></div>
-
-</div>
-
-
-<!-- =====================================================
-ADMIN
-===================================================== -->
-
-<div
-  id="adminPanel"
-  class="admin-panel"
->
-
-
-<!-- =====================================================
-ADD / EDIT
-===================================================== -->
-
-<div class="card">
-
-<div class="status">
-✅ Admin logged in
-</div>
-
-<h2 id="formTitle">
-➕ Add New Product
-</h2>
-
-<label>Product Name *</label>
-
-<input
-  type="text"
-  id="productName"
-  placeholder="Example: Silver Payal"
->
-
-<label>Price *</label>
-
-<input
-  type="number"
-  id="productPrice"
-  placeholder="Example: 599"
-  min="0"
-  step="1"
->
-
-<label>Category *</label>
-
-<select id="productCategory">
-
-<option value="">
-Select Category
-</option>
-
-<option>Necklace Set</option>
-<option>Long Necklace</option>
-<option>Short Necklace</option>
-<option>Bridal Necklace</option>
-<option>AD Necklace</option>
-<option>Pendant Set</option>
-<option>Mangalsutra</option>
-<option>Earrings</option>
-<option>Finger Ring</option>
-<option>Adjustable Ring</option>
-<option>Bracelet</option>
-<option>Kada</option>
-<option>Bangles</option>
-<option>Bridal Jewellery Set</option>
-<option>Bajuband</option>
-<option>Kamarbandh</option>
-<option>Payal</option>
-<option>Chain</option>
-<option>Tanmaniya</option>
-<option>Loket</option>
-<option>Mala</option>
-
-</select>
-
-<label>Description *</label>
-
-<textarea
-  id="productDescription"
-  placeholder="Example: Premium imitation jewellery"
-></textarea>
-
-<label>Product Image</label>
-
-<div class="upload-box">
-
-<input
-  type="file"
-  id="productImage"
-  accept="image/jpeg,image/png,image/webp"
->
-
-<div class="small">
-
-📷 Add Product વખતે image પસંદ કરો.
-<br>
-✏️ Edit વખતે image બદલવી હોય તો નવી image પસંદ કરો.
-<br>
-🗑️ Delete કરવાથી Firebase product અને GitHub image delete કરવાનો પ્રયાસ થશે.
-<br>
-Maximum size: 5 MB.
-
-</div>
-
-</div>
-
-<div
-  id="nextProductName"
-  class="next-name"
->
-📁 Checking next image number...
-</div>
-
-<div
-  id="imagePreview"
-  class="preview"
->
-
-<img
-  id="previewImage"
-  src=""
-  alt="Product Preview"
->
-
-</div>
-
-<div
-  id="progressBox"
-  class="progress-box"
->
-
-<div class="progress-bar-bg">
-
-<div
-  id="progressBar"
-  class="progress-bar"
-></div>
-
-</div>
-
-<div
-  id="progressText"
-  class="progress-text"
->
-Preparing...
-</div>
-
-</div>
-
-<div
-  id="urlBox"
-  class="url-box"
-></div>
-
-<div class="form-buttons">
-
-<button
-  id="saveButton"
-  onclick="saveProduct()"
->
-➕ Add Product
-</button>
-
-<button
-  id="cancelButton"
-  class="cancel-button"
-  onclick="cancelEdit()"
-  style="display:none;"
->
-Cancel Edit
-</button>
-
-</div>
-
-<button
-  class="logout"
-  onclick="logoutAdmin()"
->
-Logout
-</button>
-
-<div
-  id="productMessage"
-  class="message"
-></div>
-
-</div>
-
-
-<!-- =====================================================
-ALL PRODUCTS
-===================================================== -->
-
-<div class="card">
-
-<div class="products-title">
-
-<h2>📦 All Products</h2>
-
-<button
-  class="refresh-btn"
-  onclick="loadProducts()"
->
-🔄 Refresh
-</button>
-
-</div>
-
-<div
-  id="productsList"
-  class="products-grid"
->
-
-<div class="loading">
-Loading products...
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+     FIREBASE
+     ===================================================== -->
 
 <script type="module">
 
-// =====================================================
-// FIREBASE IMPORTS
-// =====================================================
 
-import {
-  initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+  // =====================================================
+  // IMPORTS
+  // =====================================================
 
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-  doc,
-  updateDoc,
-  deleteDoc,
-  serverTimestamp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+  import {
+    initializeApp
+  } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
-// =====================================================
-// FIREBASE CONFIG
-// =====================================================
-
-const firebaseConfig = {
-
-  apiKey:
-    "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
-
-  authDomain:
-    "shivam-imitation.firebaseapp.com",
-
-  projectId:
-    "shivam-imitation",
-
-  storageBucket:
-    "shivam-imitation.firebasestorage.app",
-
-  messagingSenderId:
-    "625171137884",
-
-  appId:
-    "1:625171137884:web:d1928af5e11fad077e6d99",
-
-  measurementId:
-    "G-ER1ETZSLPD"
-
-};
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+  } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 
-// =====================================================
-// CLOUDFLARE WORKER
-// =====================================================
-
-const WORKER_URL =
-  "https://shivam-image-upload-api.dhruviljarsaniya030.workers.dev";
-
-
-// =====================================================
-// ADMIN
-// =====================================================
-
-const ADMIN_EMAIL =
-  "dhruviljarsaniya030@gmail.com";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    doc,
+    updateDoc,
+    deleteDoc,
+    serverTimestamp
+  } from
+  "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-// =====================================================
-// FIREBASE INIT
-// =====================================================
+  // =====================================================
+  // FIREBASE CONFIG
+  // =====================================================
 
-const app =
-  initializeApp(
-    firebaseConfig
+  const firebaseConfig = {
+
+    apiKey:
+      "AIzaSyDEbDU7EnS8f0k5o6nRSxGSl-X7k9Uz2A4",
+
+    authDomain:
+      "shivam-imitation.firebaseapp.com",
+
+    projectId:
+      "shivam-imitation",
+
+    storageBucket:
+      "shivam-imitation.firebasestorage.app",
+
+    messagingSenderId:
+      "625171137884",
+
+    appId:
+      "1:625171137884:web:d1928af5e11fad077e6d99",
+
+    measurementId:
+      "G-ER1ETZSLPD"
+
+  };
+
+
+  // =====================================================
+  // CLOUDFLARE WORKER
+  // =====================================================
+
+  const WORKER_URL =
+    "https://shivam-image-upload-api.dhruviljarsaniya030.workers.dev/";
+
+
+  // =====================================================
+  // ADMIN EMAIL
+  // =====================================================
+
+  const ADMIN_EMAIL =
+    "dhruviljarsaniya030@gmail.com";
+
+
+  // =====================================================
+  // INITIALIZE FIREBASE
+  // =====================================================
+
+  const app =
+    initializeApp(firebaseConfig);
+
+  const auth =
+    getAuth(app);
+
+  const db =
+    getFirestore(app);
+
+
+  // =====================================================
+  // EDIT STATE
+  // =====================================================
+
+  let editingProductId = null;
+
+  let editingOldImage = "";
+
+  let editingOldImageName = "";
+
+
+  // =====================================================
+  // MESSAGE
+  // =====================================================
+
+  function showMessage(
+    id,
+    text,
+    type
+  ) {
+
+    const el =
+      document.getElementById(id);
+
+    if (!el) return;
+
+    el.textContent =
+      text;
+
+    el.className =
+      "message " + type;
+
+  }
+
+
+  // =====================================================
+  // LOGIN
+  // =====================================================
+
+  window.loginAdmin =
+    async function () {
+
+      const email =
+        document
+          .getElementById("loginEmail")
+          .value
+          .trim();
+
+      const password =
+        document
+          .getElementById("loginPassword")
+          .value;
+
+      const button =
+        document.getElementById(
+          "loginButton"
+        );
+
+
+      if (!email || !password) {
+
+        showMessage(
+          "loginMessage",
+          "Please enter email and password.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      if (
+        email.toLowerCase() !==
+        ADMIN_EMAIL.toLowerCase()
+      ) {
+
+        showMessage(
+          "loginMessage",
+          "This email is not authorized.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      try {
+
+        button.disabled =
+          true;
+
+        button.textContent =
+          "Logging in...";
+
+
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "LOGIN ERROR:",
+          error
+        );
+
+        showMessage(
+          "loginMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Login failed."
+          ),
+          "error"
+        );
+
+      }
+
+      finally {
+
+        button.disabled =
+          false;
+
+        button.textContent =
+          "🔐 Login";
+
+      }
+
+    };
+
+
+  // =====================================================
+  // AUTH STATE
+  // =====================================================
+
+  onAuthStateChanged(
+    auth,
+    async function(user) {
+
+      const loginPanel =
+        document.getElementById(
+          "loginPanel"
+        );
+
+      const adminPanel =
+        document.getElementById(
+          "adminPanel"
+        );
+
+
+      if (
+        user &&
+        user.email &&
+        user.email.toLowerCase() ===
+        ADMIN_EMAIL.toLowerCase()
+      ) {
+
+        loginPanel.style.display =
+          "none";
+
+        adminPanel.style.display =
+          "block";
+
+
+        await findNextProductNumber();
+
+        await loadProducts();
+
+      }
+
+      else {
+
+        loginPanel.style.display =
+          "block";
+
+        adminPanel.style.display =
+          "none";
+
+      }
+
+    }
   );
 
-const auth =
-  getAuth(app);
 
-const db =
-  getFirestore(app);
+  // =====================================================
+  // LOGOUT
+  // =====================================================
 
+  window.logoutAdmin =
+    async function() {
 
-// =====================================================
-// EDIT STATE
-// =====================================================
+      await signOut(auth);
 
-let editingProductId = null;
-let editingOldImage = "";
-let editingOldImageName = "";
+    };
 
 
-// =====================================================
-// MESSAGE
-// =====================================================
+  // =====================================================
+  // FIND NEXT PRODUCT NUMBER
+  // =====================================================
 
-function showMessage(
-  id,
-  text,
-  type
-) {
+  async function findNextProductNumber() {
 
-  const el =
-    document.getElementById(id);
+    try {
 
-  if (!el) return;
+      const snapshot =
+        await getDocs(
+          collection(
+            db,
+            "products"
+          )
+        );
 
-  el.textContent = text;
 
-  el.className =
-    "message " + type;
+      let highest =
+        0;
 
-}
 
+      snapshot.forEach(
+        function(item) {
 
-// =====================================================
-// LOGIN
-// =====================================================
+          const data =
+            item.data();
 
-window.loginAdmin =
-async function() {
+          const imageName =
+            data.imageName || "";
 
-  const email =
-    document
-      .getElementById("loginEmail")
-      .value
-      .trim();
 
-  const password =
-    document
-      .getElementById("loginPassword")
-      .value;
+          const match =
+            String(
+              imageName
+            ).match(
+              /^product-(\d+)\.(jpg|jpeg|png|webp)$/i
+            );
 
-  const button =
-    document.getElementById(
-      "loginButton"
-    );
 
-  if (
-    !email ||
-    !password
-  ) {
+          if (match) {
 
-    showMessage(
-      "loginMessage",
-      "Please enter email and password.",
-      "error"
-    );
+            const number =
+              Number(
+                match[1]
+              );
 
-    return;
-  }
 
-  if (
-    email.toLowerCase() !==
-    ADMIN_EMAIL.toLowerCase()
-  ) {
+            if (
+              number > highest
+            ) {
 
-    showMessage(
-      "loginMessage",
-      "This email is not authorized.",
-      "error"
-    );
+              highest =
+                number;
 
-    return;
-  }
-
-  try {
-
-    button.disabled = true;
-
-    button.textContent =
-      "Logging in...";
-
-    await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-
-  }
-
-  catch(error) {
-
-    console.error(
-      "LOGIN ERROR:",
-      error
-    );
-
-    showMessage(
-      "loginMessage",
-      "❌ " +
-      (
-        error.message ||
-        "Login failed."
-      ),
-      "error"
-    );
-
-  }
-
-  finally {
-
-    button.disabled = false;
-
-    button.textContent =
-      "🔐 Login";
-
-  }
-
-};
-
-
-// =====================================================
-// AUTH STATE
-// =====================================================
-
-onAuthStateChanged(
-  auth,
-  async function(user) {
-
-    const loginPanel =
-      document.getElementById(
-        "loginPanel"
-      );
-
-    const adminPanel =
-      document.getElementById(
-        "adminPanel"
-      );
-
-    if (
-      user &&
-      user.email &&
-      user.email.toLowerCase() ===
-      ADMIN_EMAIL.toLowerCase()
-    ) {
-
-      loginPanel.style.display =
-        "none";
-
-      adminPanel.style.display =
-        "block";
-
-      await findNextProductNumber();
-
-      await loadProducts();
-
-    }
-
-    else {
-
-      loginPanel.style.display =
-        "block";
-
-      adminPanel.style.display =
-        "none";
-
-    }
-
-  }
-);
-
-
-// =====================================================
-// LOGOUT
-// =====================================================
-
-window.logoutAdmin =
-async function() {
-
-  await signOut(auth);
-
-};
-
-
-// =====================================================
-// FIND NEXT PRODUCT NUMBER
-// =====================================================
-
-async function findNextProductNumber() {
-
-  try {
-
-    const snapshot =
-      await getDocs(
-        collection(
-          db,
-          "products"
-        )
-      );
-
-    let highest = 0;
-
-    snapshot.forEach(
-      function(item) {
-
-        const data =
-          item.data();
-
-        const imageName =
-          data.imageName || "";
-
-        const match =
-          String(imageName).match(
-            /^product-(\d+)\.(jpg|jpeg|png|webp)$/i
-          );
-
-        if (match) {
-
-          const number =
-            Number(match[1]);
-
-          if (
-            number > highest
-          ) {
-
-            highest =
-              number;
+            }
 
           }
 
         }
+      );
+
+
+      const next =
+        highest + 1;
+
+
+      window.nextProductNumber =
+        next;
+
+
+      document.getElementById(
+        "nextProductName"
+      ).textContent =
+        "📁 Next image: product-" +
+        next +
+        ".jpg";
+
+    }
+
+    catch (error) {
+
+      console.error(
+        "NEXT NUMBER ERROR:",
+        error
+      );
+
+
+      window.nextProductNumber =
+        1;
+
+
+      document.getElementById(
+        "nextProductName"
+      ).textContent =
+        "📁 Next image: product-1.jpg";
+
+    }
+
+  }
+
+
+  // =====================================================
+  // IMAGE PREVIEW
+  // =====================================================
+
+  document
+    .getElementById(
+      "productImage"
+    )
+    .addEventListener(
+      "change",
+      function() {
+
+        const file =
+          this.files[0];
+
+        const preview =
+          document.getElementById(
+            "imagePreview"
+          );
+
+        const image =
+          document.getElementById(
+            "previewImage"
+          );
+
+
+        if (!file) {
+
+          preview.style.display =
+            "none";
+
+          return;
+        }
+
+
+        const allowed = [
+          "image/jpeg",
+          "image/jpg",
+          "image/png",
+          "image/webp"
+        ];
+
+
+        if (
+          !allowed.includes(
+            file.type
+          )
+        ) {
+
+          this.value =
+            "";
+
+          preview.style.display =
+            "none";
+
+
+          showMessage(
+            "productMessage",
+            "❌ JPG, PNG or WEBP only.",
+            "error"
+          );
+
+          return;
+        }
+
+
+        if (
+          file.size >
+          5 * 1024 * 1024
+        ) {
+
+          this.value =
+            "";
+
+          preview.style.display =
+            "none";
+
+
+          showMessage(
+            "productMessage",
+            "❌ Image must be smaller than 5 MB.",
+            "error"
+          );
+
+          return;
+        }
+
+
+        image.src =
+          URL.createObjectURL(
+            file
+          );
+
+
+        preview.style.display =
+          "block";
 
       }
     );
 
-    const next =
-      highest + 1;
 
-    window.nextProductNumber =
-      next;
+  // =====================================================
+  // WORKER REQUEST
+  // =====================================================
 
-    document.getElementById(
-      "nextProductName"
-    ).textContent =
-      "📁 Next image: product-" +
-      next +
-      ".jpg";
+  async function workerRequest(
+    formData
+  ) {
+
+    let response;
+
+
+    try {
+
+      response =
+        await fetch(
+          WORKER_URL,
+          {
+            method:
+              "POST",
+
+            body:
+              formData
+          }
+        );
+
+    }
+
+    catch (networkError) {
+
+      console.error(
+        "WORKER CONNECTION ERROR:",
+        networkError
+      );
+
+
+      throw new Error(
+        "Cloudflare Worker સાથે connection થયું નથી. Worker URL / CORS / deployment check કરો."
+      );
+
+    }
+
+
+    const responseText =
+      await response.text();
+
+
+    let result = {};
+
+
+    try {
+
+      result =
+        JSON.parse(
+          responseText
+        );
+
+    }
+
+    catch {
+
+      throw new Error(
+        "Worker response invalid છે. HTTP " +
+        response.status +
+        " — " +
+        responseText.substring(
+          0,
+          300
+        )
+      );
+
+    }
+
+
+    if (
+      !response.ok ||
+      !result.success
+    ) {
+
+      let message =
+        result.message ||
+        "Worker operation failed.";
+
+
+      if (
+        result.githubStatus
+      ) {
+
+        message +=
+          " | GitHub HTTP: " +
+          result.githubStatus;
+
+      }
+
+
+      throw new Error(
+        message
+      );
+
+    }
+
+
+    return result;
 
   }
 
-  catch(error) {
 
-    console.error(
-      "NEXT NUMBER ERROR:",
-      error
+  // =====================================================
+  // UPLOAD IMAGE
+  // =====================================================
+
+  async function uploadImageToWorker(
+    file
+  ) {
+
+    const formData =
+      new FormData();
+
+
+    formData.append(
+      "action",
+      "upload"
     );
 
-    document.getElementById(
-      "nextProductName"
-    ).textContent =
-      "📁 Next image: product-1.jpg";
+
+    formData.append(
+      "image",
+      file
+    );
+
+
+    return await workerRequest(
+      formData
+    );
 
   }
 
-}
+
+  // =====================================================
+  // DELETE IMAGE FROM GITHUB
+  // =====================================================
+
+  async function deleteImageFromGitHub(
+    fileName
+  ) {
+
+    if (!fileName) {
+
+      return {
+        success:
+          true,
+
+        skipped:
+          true
+      };
+
+    }
 
 
-// =====================================================
-// IMAGE PREVIEW
-// =====================================================
+    if (
+      !/^product-\d+\.(jpg|jpeg|png|webp)$/i.test(
+        fileName
+      )
+    ) {
 
-document
-  .getElementById(
-    "productImage"
-  )
-  .addEventListener(
-    "change",
-    function() {
+      throw new Error(
+        "Invalid GitHub product image name."
+      );
+
+    }
+
+
+    const formData =
+      new FormData();
+
+
+    formData.append(
+      "action",
+      "delete"
+    );
+
+
+    formData.append(
+      "fileName",
+      fileName
+    );
+
+
+    return await workerRequest(
+      formData
+    );
+
+  }
+
+
+  // =====================================================
+  // SAVE PRODUCT
+  // =====================================================
+
+  window.saveProduct =
+    async function() {
+
+      const name =
+        document
+          .getElementById(
+            "productName"
+          )
+          .value
+          .trim();
+
+
+      const priceText =
+        document
+          .getElementById(
+            "productPrice"
+          )
+          .value
+          .trim();
+
+
+      const category =
+        document
+          .getElementById(
+            "productCategory"
+          )
+          .value
+          .trim();
+
+
+      const description =
+        document
+          .getElementById(
+            "productDescription"
+          )
+          .value
+          .trim();
+
+
+      const imageInput =
+        document.getElementById(
+          "productImage"
+        );
+
 
       const file =
-        this.files[0];
+        imageInput.files[0];
 
-      const preview =
+
+      const button =
         document.getElementById(
-          "imagePreview"
+          "saveButton"
         );
 
-      const image =
-        document.getElementById(
-          "previewImage"
-        );
 
-      if (!file) {
-
-        preview.style.display =
-          "none";
-
-        return;
-      }
-
-      const allowed = [
-        "image/jpeg",
-        "image/png",
-        "image/webp"
-      ];
+      // =========================
+      // VALIDATION
+      // =========================
 
       if (
-        !allowed.includes(
-          file.type
-        )
+        !name ||
+        !priceText ||
+        !category ||
+        !description
       ) {
-
-        this.value = "";
-
-        preview.style.display =
-          "none";
 
         showMessage(
           "productMessage",
-          "❌ JPG, PNG or WEBP only.",
+          "⚠️ Please fill all product details.",
           "error"
         );
 
         return;
       }
 
+
       if (
-        file.size >
-        5 * 1024 * 1024
+        editingProductId === null &&
+        !file
       ) {
-
-        this.value = "";
-
-        preview.style.display =
-          "none";
 
         showMessage(
           "productMessage",
-          "❌ Image must be smaller than 5 MB.",
+          "⚠️ Please select product image.",
           "error"
         );
 
         return;
       }
 
-      image.src =
-        URL.createObjectURL(
-          file
+
+      const price =
+        Number(
+          priceText
         );
+
+
+      if (
+        Number.isNaN(price) ||
+        price < 0
+      ) {
+
+        showMessage(
+          "productMessage",
+          "⚠️ Enter a valid price.",
+          "error"
+        );
+
+        return;
+      }
+
+
+      try {
+
+        button.disabled =
+          true;
+
+
+        const isEditing =
+          Boolean(
+            editingProductId
+          );
+
+
+        button.textContent =
+          isEditing
+            ? "Updating..."
+            : "Uploading...";
+
+
+        document.getElementById(
+          "progressBox"
+        ).style.display =
+          "block";
+
+
+        document.getElementById(
+          "progressBar"
+        ).style.width =
+          "10%";
+
+
+        let imageURL =
+          editingOldImage;
+
+
+        let imageName =
+          editingOldImageName;
+
+
+        let newImageName =
+          "";
+
+
+        // =========================
+        // UPLOAD NEW IMAGE
+        // =========================
+
+        if (file) {
+
+          document.getElementById(
+            "progressText"
+          ).textContent =
+            "📷 Uploading image to GitHub...";
+
+
+          const result =
+            await uploadImageToWorker(
+              file
+            );
+
+
+          if (
+            !result.image ||
+            !result.fileName
+          ) {
+
+            throw new Error(
+              "Worker did not return image URL or file name."
+            );
+
+          }
+
+
+          imageURL =
+            result.image;
+
+
+          imageName =
+            result.fileName;
+
+
+          newImageName =
+            result.fileName;
+
+
+          document.getElementById(
+            "progressBar"
+          ).style.width =
+            "60%";
+
+
+          document.getElementById(
+            "urlBox"
+          ).textContent =
+            imageURL;
+
+
+          document.getElementById(
+            "urlBox"
+          ).style.display =
+            "block";
+
+        }
+
+
+        // =========================
+        // PRODUCT DATA
+        // =========================
+
+        const productData = {
+
+          name:
+            name,
+
+          price:
+            price,
+
+          category:
+            category,
+
+          description:
+            description,
+
+          image:
+            imageURL,
+
+          imageName:
+            imageName
+
+        };
+
+
+        // =========================
+        // EDIT
+        // =========================
+
+        if (
+          editingProductId
+        ) {
+
+          document.getElementById(
+            "progressText"
+          ).textContent =
+            "💾 Updating product...";
+
+
+          await updateDoc(
+            doc(
+              db,
+              "products",
+              editingProductId
+            ),
+            productData
+          );
+
+
+          // Delete old image
+
+          if (
+            file &&
+            editingOldImageName &&
+            editingOldImageName !==
+            newImageName
+          ) {
+
+            document.getElementById(
+              "progressText"
+            ).textContent =
+              "🗑️ Removing old GitHub image...";
+
+
+            try {
+
+              await deleteImageFromGitHub(
+                editingOldImageName
+              );
+
+            }
+
+            catch (deleteError) {
+
+              console.error(
+                "OLD IMAGE DELETE ERROR:",
+                deleteError
+              );
+
+            }
+
+          }
+
+
+          showMessage(
+            "productMessage",
+            "✅ Product updated successfully!",
+            "success"
+          );
+
+        }
+
+
+        // =========================
+        // ADD
+        // =========================
+
+        else {
+
+          document.getElementById(
+            "progressText"
+          ).textContent =
+            "💾 Saving product to Firebase...";
+
+
+          productData.createdAt =
+            serverTimestamp();
+
+
+          const ref =
+            await addDoc(
+              collection(
+                db,
+                "products"
+              ),
+              productData
+            );
+
+
+          console.log(
+            "Product added:",
+            ref.id
+          );
+
+
+          showMessage(
+            "productMessage",
+            "✅ Product added successfully!",
+            "success"
+          );
+
+        }
+
+
+        // =========================
+        // COMPLETE
+        // =========================
+
+        document.getElementById(
+          "progressBar"
+        ).style.width =
+          "100%";
+
+
+        document.getElementById(
+          "progressText"
+        ).textContent =
+          "✅ Complete";
+
+
+        resetForm();
+
+
+        await findNextProductNumber();
+
+        await loadProducts();
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "SAVE ERROR:",
+          error
+        );
+
+
+        showMessage(
+          "productMessage",
+          "❌ " +
+          (
+            error.message ||
+            "Operation failed."
+          ),
+          "error"
+        );
+
+      }
+
+      finally {
+
+        button.disabled =
+          false;
+
+
+        button.textContent =
+          editingProductId
+            ? "Update Product"
+            : "➕ Add Product";
+
+      }
+
+    };
+
+
+  // =====================================================
+  // LOAD PRODUCTS
+  // =====================================================
+
+  window.loadProducts =
+    async function() {
+
+      const container =
+        document.getElementById(
+          "productsList"
+        );
+
+
+      container.innerHTML = `
+        <div class="loading">
+          Loading all Firebase products...
+        </div>
+      `;
+
+
+      try {
+
+        const snapshot =
+          await getDocs(
+            collection(
+              db,
+              "products"
+            )
+          );
+
+
+        const products =
+          [];
+
+
+        snapshot.forEach(
+          function(item) {
+
+            products.push({
+
+              id:
+                item.id,
+
+              data:
+                item.data()
+
+            });
+
+          }
+        );
+
+
+        // Newest first
+
+        products.sort(
+          function(a, b) {
+
+            const aTime =
+              a.data.createdAt &&
+              typeof
+                a.data.createdAt.toMillis ===
+                "function"
+                ? a.data.createdAt.toMillis()
+                : 0;
+
+
+            const bTime =
+              b.data.createdAt &&
+              typeof
+                b.data.createdAt.toMillis ===
+                "function"
+                ? b.data.createdAt.toMillis()
+                : 0;
+
+
+            return bTime - aTime;
+
+          }
+        );
+
+
+        container.innerHTML =
+          "";
+
+
+        if (
+          products.length ===
+          0
+        ) {
+
+          container.innerHTML = `
+            <div class="empty">
+              No products found in Firebase.
+            </div>
+          `;
+
+          return;
+        }
+
+
+        products.forEach(
+          function(item) {
+
+            const data =
+              item.data;
+
+            const id =
+              item.id;
+
+
+            const name =
+              data.name ||
+              "Unnamed Product";
+
+
+            const price =
+              data.price ??
+              "";
+
+
+            const category =
+              data.category ||
+              "Jewellery";
+
+
+            const description =
+              data.description ||
+              "";
+
+
+            const image =
+              data.image ||
+              "logo.jpg";
+
+
+            const imageName =
+              data.imageName ||
+              "";
+
+
+            const card =
+              document.createElement(
+                "div"
+              );
+
+
+            card.className =
+              "product-card";
+
+
+            card.innerHTML = `
+
+              <img
+                src="${escapeHTML(image)}"
+                alt="${escapeHTML(name)}"
+                loading="lazy"
+                onerror="this.onerror=null;this.src='logo.jpg';"
+              >
+
+              <div class="product-info">
+
+                <div class="product-category">
+                  ${escapeHTML(category)}
+                </div>
+
+                <h3>
+                  ${escapeHTML(name)}
+                </h3>
+
+                <div class="product-price">
+                  ₹${escapeHTML(price)}
+                </div>
+
+                <div class="product-description">
+                  ${escapeHTML(description)}
+                </div>
+
+                ${
+                  imageName
+                    ? `
+                      <div class="image-name">
+                        📁 ${escapeHTML(imageName)}
+                      </div>
+                    `
+                    : ""
+                }
+
+                <div class="product-actions">
+
+                  <button
+                    class="edit-btn"
+                    type="button"
+                  >
+                    ✏️ Edit
+                  </button>
+
+                  <button
+                    class="delete-btn"
+                    type="button"
+                  >
+                    🗑️ Delete
+                  </button>
+
+                </div>
+
+              </div>
+            `;
+
+
+            // EDIT
+
+            card
+              .querySelector(
+                ".edit-btn"
+              )
+              .addEventListener(
+                "click",
+                function() {
+
+                  editProduct(
+                    id,
+                    data
+                  );
+
+                }
+              );
+
+
+            // DELETE
+
+            card
+              .querySelector(
+                ".delete-btn"
+              )
+              .addEventListener(
+                "click",
+                function() {
+
+                  deleteProduct(
+                    id,
+                    data
+                  );
+
+                }
+              );
+
+
+            container.appendChild(
+              card
+            );
+
+          }
+        );
+
+      }
+
+      catch (error) {
+
+        console.error(
+          "LOAD PRODUCTS ERROR:",
+          error
+        );
+
+
+        container.innerHTML = `
+
+          <div class="empty">
+
+            ❌ Products could not be loaded.
+
+            <br><br>
+
+            ${escapeHTML(
+              error.message
+            )}
+
+          </div>
+
+        `;
+
+      }
+
+    };
+
+
+  // =====================================================
+  // EDIT PRODUCT
+  // =====================================================
+
+  function editProduct(
+    id,
+    data
+  ) {
+
+    editingProductId =
+      id;
+
+
+    editingOldImage =
+      data.image ||
+      "";
+
+
+    editingOldImageName =
+      data.imageName ||
+      "";
+
+
+    document.getElementById(
+      "formTitle"
+    ).textContent =
+      "✏️ Edit Product";
+
+
+    document.getElementById(
+      "saveButton"
+    ).textContent =
+      "Update Product";
+
+
+    document.getElementById(
+      "cancelButton"
+    ).style.display =
+      "block";
+
+
+    document.getElementById(
+      "productName"
+    ).value =
+      data.name ||
+      "";
+
+
+    document.getElementById(
+      "productPrice"
+    ).value =
+      data.price ??
+      "";
+
+
+    document.getElementById(
+      "productCategory"
+    ).value =
+      data.category ||
+      "";
+
+
+    document.getElementById(
+      "productDescription"
+    ).value =
+      data.description ||
+      "";
+
+
+    document.getElementById(
+      "productImage"
+    ).value =
+      "";
+
+
+    const preview =
+      document.getElementById(
+        "imagePreview"
+      );
+
+
+    const previewImage =
+      document.getElementById(
+        "previewImage"
+      );
+
+
+    if (
+      data.image
+    ) {
+
+      previewImage.src =
+        data.image;
+
 
       preview.style.display =
         "block";
 
     }
-  );
 
+    else {
 
-// =====================================================
-// WORKER REQUEST
-// =====================================================
-
-async function workerRequest(
-  formData
-) {
-
-  let response;
-
-  try {
-
-    response =
-      await fetch(
-        WORKER_URL,
-        {
-          method: "POST",
-          body: formData,
-          mode: "cors"
-        }
-      );
-
-  }
-
-  catch(error) {
-
-    console.error(
-      "WORKER FETCH ERROR:",
-      error
-    );
-
-    throw new Error(
-      "Cloudflare Worker સાથે connection થતું નથી. Worker URL, CORS અને deployment check કરો."
-    );
-
-  }
-
-  const text =
-    await response.text();
-
-  let result;
-
-  try {
-
-    result =
-      JSON.parse(text);
-
-  }
-
-  catch {
-
-    throw new Error(
-      "Worker returned invalid response: " +
-      text
-    );
-
-  }
-
-  if (
-    !response.ok ||
-    !result.success
-  ) {
-
-    throw new Error(
-      result.message ||
-      "Worker operation failed."
-    );
-
-  }
-
-  return result;
-
-}
-
-
-// =====================================================
-// UPLOAD IMAGE
-// =====================================================
-
-async function uploadImageToWorker(
-  file
-) {
-
-  const formData =
-    new FormData();
-
-  formData.append(
-    "action",
-    "upload"
-  );
-
-  formData.append(
-    "image",
-    file
-  );
-
-  return await workerRequest(
-    formData
-  );
-
-}
-
-
-// =====================================================
-// DELETE IMAGE
-// =====================================================
-
-async function deleteImageFromGitHub(
-  fileName
-) {
-
-  if (!fileName) {
-
-    return {
-      success: true,
-      skipped: true
-    };
-
-  }
-
-  if (
-    !/^product-\d+\.(jpg|jpeg|png|webp)$/i.test(
-      fileName
-    )
-  ) {
-
-    throw new Error(
-      "Invalid GitHub product image name."
-    );
-
-  }
-
-  const formData =
-    new FormData();
-
-  formData.append(
-    "action",
-    "delete"
-  );
-
-  formData.append(
-    "fileName",
-    fileName
-  );
-
-  return await workerRequest(
-    formData
-  );
-
-}
-
-
-// =====================================================
-// SAVE PRODUCT
-// =====================================================
-
-window.saveProduct =
-async function() {
-
-  const name =
-    document
-      .getElementById(
-        "productName"
-      )
-      .value
-      .trim();
-
-  const priceText =
-    document
-      .getElementById(
-        "productPrice"
-      )
-      .value
-      .trim();
-
-  const category =
-    document
-      .getElementById(
-        "productCategory"
-      )
-      .value
-      .trim();
-
-  const description =
-    document
-      .getElementById(
-        "productDescription"
-      )
-      .value
-      .trim();
-
-  const imageInput =
-    document.getElementById(
-      "productImage"
-    );
-
-  const file =
-    imageInput.files[0];
-
-  const button =
-    document.getElementById(
-      "saveButton"
-    );
-
-  if (
-    !name ||
-    !priceText ||
-    !category ||
-    !description
-  ) {
-
-    showMessage(
-      "productMessage",
-      "⚠️ Please fill all product details.",
-      "error"
-    );
-
-    return;
-
-  }
-
-  if (
-    editingProductId === null &&
-    !file
-  ) {
-
-    showMessage(
-      "productMessage",
-      "⚠️ Please select product image.",
-      "error"
-    );
-
-    return;
-
-  }
-
-  const price =
-    Number(priceText);
-
-  if (
-    Number.isNaN(price) ||
-    price < 0
-  ) {
-
-    showMessage(
-      "productMessage",
-      "⚠️ Enter a valid price.",
-      "error"
-    );
-
-    return;
-
-  }
-
-  const isEditing =
-    Boolean(
-      editingProductId
-    );
-
-  try {
-
-    button.disabled = true;
-
-    button.textContent =
-      isEditing
-        ? "Updating..."
-        : "Uploading...";
-
-    document.getElementById(
-      "progressBox"
-    ).style.display =
-      "block";
-
-    document.getElementById(
-      "progressBar"
-    ).style.width =
-      "10%";
-
-    let imageURL =
-      editingOldImage;
-
-    let imageName =
-      editingOldImageName;
-
-    let newImageName =
-      "";
-
-    // =================================================
-    // UPLOAD
-    // =================================================
-
-    if (file) {
-
-      document.getElementById(
-        "progressText"
-      ).textContent =
-        "📷 Uploading image to GitHub...";
-
-      const result =
-        await uploadImageToWorker(
-          file
-        );
-
-      if (
-        !result.image ||
-        !result.fileName
-      ) {
-
-        throw new Error(
-          "Worker did not return image URL or file name."
-        );
-
-      }
-
-      imageURL =
-        result.image;
-
-      imageName =
-        result.fileName;
-
-      newImageName =
-        result.fileName;
-
-      document.getElementById(
-        "progressBar"
-      ).style.width =
-        "60%";
-
-      document.getElementById(
-        "urlBox"
-      ).textContent =
-        imageURL;
-
-      document.getElementById(
-        "urlBox"
-      ).style.display =
-        "block";
+      preview.style.display =
+        "none";
 
     }
 
-    // =================================================
-    // PRODUCT DATA
-    // =================================================
 
-    const productData = {
+    document
+      .getElementById(
+        "formTitle"
+      )
+      .scrollIntoView({
+        behavior:
+          "smooth"
+      });
 
-      name:
-        name,
 
-      price:
-        price,
+    showMessage(
+      "productMessage",
+      "✏️ Editing: " +
+      (
+        data.name ||
+        "Product"
+      ),
+      "info"
+    );
 
-      category:
-        category,
+  }
 
-      description:
-        description,
 
-      image:
-        imageURL,
+  // =====================================================
+  // DELETE PRODUCT
+  // =====================================================
 
-      imageName:
-        imageName
+  async function deleteProduct(
+    id,
+    data
+  ) {
 
-    };
+    const name =
+      data.name ||
+      "Unnamed Product";
 
-    // =================================================
-    // EDIT
-    // =================================================
 
-    if (editingProductId) {
+    const imageName =
+      data.imageName ||
+      "";
 
-      document.getElementById(
-        "progressText"
-      ).textContent =
-        "💾 Updating product...";
 
-      await updateDoc(
+    const confirmed =
+      confirm(
+        "Delete this product?\n\n" +
+        name +
+        "\n\n" +
+        "Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે."
+      );
+
+
+    if (!confirmed) {
+      return;
+    }
+
+
+    try {
+
+      showMessage(
+        "productMessage",
+        "⏳ Deleting product...",
+        "info"
+      );
+
+
+      // =========================
+      // DELETE FIREBASE
+      // =========================
+
+      await deleteDoc(
         doc(
           db,
           "products",
-          editingProductId
-        ),
-        productData
+          id
+        )
       );
 
-      // Delete old image
+
+      // =========================
+      // DELETE GITHUB IMAGE
+      // =========================
+
       if (
-        file &&
-        editingOldImageName &&
-        editingOldImageName !==
-        newImageName
+        imageName
       ) {
 
         try {
 
           await deleteImageFromGitHub(
-            editingOldImageName
+            imageName
           );
 
         }
 
-        catch(error) {
+        catch (githubError) {
 
           console.error(
-            "OLD IMAGE DELETE ERROR:",
-            error
+            "GITHUB DELETE ERROR:",
+            githubError
           );
+
+
+          showMessage(
+            "productMessage",
+            "⚠️ Product Firebaseમાંથી delete થઈ ગયું, પરંતુ GitHub image delete થઈ નથી: " +
+            githubError.message,
+            "error"
+          );
+
+
+          await loadProducts();
+
+          await findNextProductNumber();
+
+          return;
 
         }
 
       }
 
+
       showMessage(
         "productMessage",
-        "✅ Product updated successfully!",
+        "🗑️ Product and GitHub image deleted successfully!",
         "success"
       );
 
+
+      await loadProducts();
+
+      await findNextProductNumber();
+
     }
 
-    // =================================================
-    // ADD
-    // =================================================
+    catch (error) {
 
-    else {
+      console.error(
+        "DELETE ERROR:",
+        error
+      );
 
-      document.getElementById(
-        "progressText"
-      ).textContent =
-        "💾 Saving product to Firebase...";
 
-      productData.createdAt =
-        serverTimestamp();
-
-      await addDoc(
-        collection(
-          db,
-          "products"
+      showMessage(
+        "productMessage",
+        "❌ Delete failed: " +
+        (
+          error.message ||
+          ""
         ),
-        productData
-      );
-
-      showMessage(
-        "productMessage",
-        "✅ Product added successfully!",
-        "success"
+        "error"
       );
 
     }
+
+  }
+
+
+  // =====================================================
+  // CANCEL EDIT
+  // =====================================================
+
+  window.cancelEdit =
+    function() {
+
+      resetForm();
+
+
+      showMessage(
+        "productMessage",
+        "Edit cancelled.",
+        "info"
+      );
+
+    };
+
+
+  // =====================================================
+  // RESET FORM
+  // =====================================================
+
+  function resetForm() {
+
+    editingProductId =
+      null;
+
+
+    editingOldImage =
+      "";
+
+
+    editingOldImageName =
+      "";
+
+
+    document.getElementById(
+      "formTitle"
+    ).textContent =
+      "➕ Add New Product";
+
+
+    document.getElementById(
+      "saveButton"
+    ).textContent =
+      "➕ Add Product";
+
+
+    document.getElementById(
+      "cancelButton"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "productName"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productPrice"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productCategory"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productDescription"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "productImage"
+    ).value =
+      "";
+
+
+    document.getElementById(
+      "imagePreview"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "urlBox"
+    ).style.display =
+      "none";
+
+
+    document.getElementById(
+      "progressBox"
+    ).style.display =
+      "none";
+
 
     document.getElementById(
       "progressBar"
     ).style.width =
-      "100%";
+      "0%";
+
 
     document.getElementById(
       "progressText"
     ).textContent =
-      "✅ Complete";
-
-    resetForm();
-
-    await findNextProductNumber();
-
-    await loadProducts();
+      "Preparing...";
 
   }
 
-  catch(error) {
 
-    console.error(
-      "SAVE ERROR:",
-      error
-    );
+  // =====================================================
+  // ESCAPE HTML
+  // =====================================================
 
-    showMessage(
-      "productMessage",
-      "❌ " +
-      (
-        error.message ||
-        "Operation failed."
-      ),
-      "error"
-    );
+  function escapeHTML(
+    value
+  ) {
 
-  }
+    return String(value)
 
-  finally {
+      .replace(
+        /&/g,
+        "&amp;"
+      )
 
-    button.disabled = false;
+      .replace(
+        /</g,
+        "&lt;"
+      )
 
-    button.textContent =
-      editingProductId
-        ? "Update Product"
-        : "➕ Add Product";
+      .replace(
+        />/g,
+        "&gt;"
+      )
 
-  }
+      .replace(
+        /"/g,
+        "&quot;"
+      )
 
-};
-
-
-// =====================================================
-// LOAD PRODUCTS
-// =====================================================
-
-window.loadProducts =
-async function() {
-
-  const container =
-    document.getElementById(
-      "productsList"
-    );
-
-  container.innerHTML =
-    `
-      <div class="loading">
-        Loading all Firebase products...
-      </div>
-    `;
-
-  try {
-
-    const snapshot =
-      await getDocs(
-        collection(
-          db,
-          "products"
-        )
+      .replace(
+        /'/g,
+        "&#039;"
       );
 
-    const products = [];
-
-    snapshot.forEach(
-      function(item) {
-
-        products.push({
-
-          id:
-            item.id,
-
-          data:
-            item.data()
-
-        });
-
-      }
-    );
-
-    products.sort(
-      function(a,b) {
-
-        const aTime =
-          a.data.createdAt &&
-          typeof a.data.createdAt.toMillis ===
-          "function"
-            ? a.data.createdAt.toMillis()
-            : 0;
-
-        const bTime =
-          b.data.createdAt &&
-          typeof b.data.createdAt.toMillis ===
-          "function"
-            ? b.data.createdAt.toMillis()
-            : 0;
-
-        return bTime - aTime;
-
-      }
-    );
-
-    container.innerHTML = "";
-
-    if (
-      products.length === 0
-    ) {
-
-      container.innerHTML =
-        `
-          <div class="empty">
-            No products found in Firebase.
-          </div>
-        `;
-
-      return;
-    }
-
-    products.forEach(
-      function(item) {
-
-        const data =
-          item.data;
-
-        const id =
-          item.id;
-
-        const name =
-          data.name ||
-          "Unnamed Product";
-
-        const price =
-          data.price ??
-          "";
-
-        const category =
-          data.category ||
-          "Jewellery";
-
-        const description =
-          data.description ||
-          "";
-
-        const image =
-          data.image ||
-          "logo.jpg";
-
-        const imageName =
-          data.imageName ||
-          "";
-
-        const card =
-          document.createElement(
-            "div"
-          );
-
-        card.className =
-          "product-card";
-
-        card.innerHTML =
-          `
-            <img
-              src="${escapeHTML(image)}"
-              alt="${escapeHTML(name)}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='logo.jpg';"
-            >
-
-            <div class="product-info">
-
-              <div class="product-category">
-                ${escapeHTML(category)}
-              </div>
-
-              <h3>
-                ${escapeHTML(name)}
-              </h3>
-
-              <div class="product-price">
-                ₹${escapeHTML(price)}
-              </div>
-
-              <div class="product-description">
-                ${escapeHTML(description)}
-              </div>
-
-              ${
-                imageName
-                  ?
-                  `
-                    <div class="image-name">
-                      📁 ${escapeHTML(imageName)}
-                    </div>
-                  `
-                  :
-                  ""
-              }
-
-              <div class="product-actions">
-
-                <button
-                  class="edit-btn"
-                  type="button"
-                >
-                  ✏️ Edit
-                </button>
-
-                <button
-                  class="delete-btn"
-                  type="button"
-                >
-                  🗑️ Delete
-                </button>
-
-              </div>
-
-            </div>
-          `;
-
-        card
-          .querySelector(
-            ".edit-btn"
-          )
-          .addEventListener(
-            "click",
-            function() {
-
-              editProduct(
-                id,
-                data
-              );
-
-            }
-          );
-
-        card
-          .querySelector(
-            ".delete-btn"
-          )
-          .addEventListener(
-            "click",
-            function() {
-
-              deleteProduct(
-                id,
-                data
-              );
-
-            }
-          );
-
-        container.appendChild(
-          card
-        );
-
-      }
-    );
-
   }
 
-  catch(error) {
 
-    console.error(
-      "LOAD PRODUCTS ERROR:",
-      error
-    );
-
-    container.innerHTML =
-      `
-        <div class="empty">
-
-          ❌ Products could not be loaded.
-
-          <br><br>
-
-          ${escapeHTML(
-            error.message
-          )}
-
-        </div>
-      `;
-
-  }
-
-};
-
-
-// =====================================================
-// EDIT PRODUCT
-// =====================================================
-
-function editProduct(
-  id,
-  data
-) {
-
-  editingProductId =
-    id;
-
-  editingOldImage =
-    data.image ||
-    "";
-
-  editingOldImageName =
-    data.imageName ||
-    "";
-
-  document.getElementById(
-    "formTitle"
-  ).textContent =
-    "✏️ Edit Product";
-
-  document.getElementById(
-    "saveButton"
-  ).textContent =
-    "Update Product";
-
-  document.getElementById(
-    "cancelButton"
-  ).style.display =
-    "block";
-
-  document.getElementById(
-    "productName"
-  ).value =
-    data.name ||
-    "";
-
-  document.getElementById(
-    "productPrice"
-  ).value =
-    data.price ??
-    "";
-
-  document.getElementById(
-    "productCategory"
-  ).value =
-    data.category ||
-    "";
-
-  document.getElementById(
-    "productDescription"
-  ).value =
-    data.description ||
-    "";
-
-  document.getElementById(
-    "productImage"
-  ).value =
-    "";
-
-  const preview =
-    document.getElementById(
-      "imagePreview"
-    );
-
-  const previewImage =
-    document.getElementById(
-      "previewImage"
-    );
-
-  if (data.image) {
-
-    previewImage.src =
-      data.image;
-
-    preview.style.display =
-      "block";
-
-  }
-
-  else {
-
-    preview.style.display =
-      "none";
-
-  }
-
-  document
-    .getElementById(
-      "formTitle"
-    )
-    .scrollIntoView({
-      behavior:
-        "smooth"
-    });
-
-  showMessage(
-    "productMessage",
-    "✏️ Editing: " +
-    (
-      data.name ||
-      "Product"
-    ),
-    "info"
+  console.log(
+    "Shivam Imitation Admin Panel Ready"
   );
-
-}
-
-
-// =====================================================
-// DELETE PRODUCT
-// =====================================================
-
-async function deleteProduct(
-  id,
-  data
-) {
-
-  const name =
-    data.name ||
-    "Unnamed Product";
-
-  const imageName =
-    data.imageName ||
-    "";
-
-  const confirmed =
-    confirm(
-      "Delete this product?\n\n" +
-      name +
-      "\n\n" +
-      "Firebase product અને GitHub image બંને delete કરવાનો પ્રયાસ થશે."
-    );
-
-  if (!confirmed) {
-    return;
-  }
-
-  try {
-
-    showMessage(
-      "productMessage",
-      "⏳ Deleting product...",
-      "info"
-    );
-
-    // Firebase
-    await deleteDoc(
-      doc(
-        db,
-        "products",
-        id
-      )
-    );
-
-    // GitHub
-    if (imageName) {
-
-      try {
-
-        await deleteImageFromGitHub(
-          imageName
-        );
-
-      }
-
-      catch(error) {
-
-        console.error(
-          "GITHUB DELETE ERROR:",
-          error
-        );
-
-        showMessage(
-          "productMessage",
-          "⚠️ Firebase product deleted, but GitHub image delete failed: " +
-          error.message,
-          "error"
-        );
-
-        await loadProducts();
-
-        await findNextProductNumber();
-
-        return;
-      }
-
-    }
-
-    showMessage(
-      "productMessage",
-      "🗑️ Product and GitHub image deleted successfully!",
-      "success"
-    );
-
-    await loadProducts();
-
-    await findNextProductNumber();
-
-  }
-
-  catch(error) {
-
-    console.error(
-      "DELETE ERROR:",
-      error
-    );
-
-    showMessage(
-      "productMessage",
-      "❌ Delete failed: " +
-      (
-        error.message ||
-        ""
-      ),
-      "error"
-    );
-
-  }
-
-}
-
-
-// =====================================================
-// CANCEL EDIT
-// =====================================================
-
-window.cancelEdit =
-function() {
-
-  resetForm();
-
-  showMessage(
-    "productMessage",
-    "Edit cancelled.",
-    "info"
-  );
-
-};
-
-
-// =====================================================
-// RESET FORM
-// =====================================================
-
-function resetForm() {
-
-  editingProductId =
-    null;
-
-  editingOldImage =
-    "";
-
-  editingOldImageName =
-    "";
-
-  document.getElementById(
-    "formTitle"
-  ).textContent =
-    "➕ Add New Product";
-
-  document.getElementById(
-    "saveButton"
-  ).textContent =
-    "➕ Add Product";
-
-  document.getElementById(
-    "cancelButton"
-  ).style.display =
-    "none";
-
-  document.getElementById(
-    "productName"
-  ).value =
-    "";
-
-  document.getElementById(
-    "productPrice"
-  ).value =
-    "";
-
-  document.getElementById(
-    "productCategory"
-  ).value =
-    "";
-
-  document.getElementById(
-    "productDescription"
-  ).value =
-    "";
-
-  document.getElementById(
-    "productImage"
-  ).value =
-    "";
-
-  document.getElementById(
-    "imagePreview"
-  ).style.display =
-    "none";
-
-  document.getElementById(
-    "urlBox"
-  ).style.display =
-    "none";
-
-  document.getElementById(
-    "progressBox"
-  ).style.display =
-    "none";
-
-  document.getElementById(
-    "progressBar"
-  ).style.width =
-    "0%";
-
-  document.getElementById(
-    "progressText"
-  ).textContent =
-    "Preparing...";
-
-}
-
-
-// =====================================================
-// ESCAPE HTML
-// =====================================================
-
-function escapeHTML(
-  value
-) {
-
-  return String(value)
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
-
-}
-
-
-console.log(
-  "Shivam Imitation Admin Panel Ready"
-);
 
 </script>
 
 </body>
+
 </html>
